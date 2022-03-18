@@ -6,7 +6,15 @@ execute if entity @a store result score $onlinePlayers CmdData
 # If all players leave, reset the game entirely
 execute if score $onlinePlayers CmdData matches 0 run function mcm:reseteverything
 
-# Lobby control
-execute if score $onlinePlayers CmdData matches 1.. if entity @e[tag=Brain,tag=LobbyPeriod] run function mcm:lobby/voting
+#> Game control
+#Vote countdown
+execute if score $gamestate CmdData matches -1 run function mcm:lobby/countdown
+#Join game + game start countdown loop
+execute if score $gamestate CmdData matches 0 run function mcm:game/loop/gamestart
+#Ingame loop
+execute if score $gamestate CmdData matches 1 run function mcm:game/loop/ingame
+#Game end loop
+execute if score $gamestate CmdData matches 2 run function mcm:game/loop/gameend
 
+#> Chandelier
 execute if entity @e[tag=Brain,tag=dropChandelier] run function mcm:game/dropchandelier

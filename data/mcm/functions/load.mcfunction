@@ -5,7 +5,7 @@ forceload add 0 0
 # First time load only (ideally), spawn the marker entity used to hold game flags and whatnot
 execute unless entity @e[type=marker,tag=Brain] run summon marker 0 0 0 {Tags:["Brain"]}
 
-
 # Scoreboards
 scoreboard objectives add CmdData dummy
+scoreboard objectives add mapvote trigger
 scoreboard players set $one CmdData 1
