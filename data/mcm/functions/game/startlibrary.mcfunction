@@ -1,0 +1,2 @@
+execute as @a[tag=!prevMurderer,sort=random,limit=1] at @s run tag @s add murderer
+execute unless entity @a[tag=alreadyTped] as @e[tag=library,sort=random,limit=1] at @s run spreadplayers ~ ~ 3 3 true @r[tag=!alreadyTped,limit=1,sort=random]
