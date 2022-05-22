@@ -1,6 +1,3 @@
-tag @e[tag=PlayerSpawn,tag=!Occupied] add TpHere
+tp @s @e[tag=PlayerSpawn,tag=!Occupied,limit=1,sort=random]
 
-tp @s @e[tag=TpHere,limit=1]
-
-tag @e[tag=TpHere] add Occupied
-tag @e[tag=TpHere] remove TpHere
+execute as @s at @s run tag @e[tag=PlayerSpawn,limit=1,sort=nearest,distance=..1] add Occupied

@@ -1,0 +1,2 @@
+execute as @a at @s if score $selectedMap CmdData matches 1 if entity @s[predicate=mcm:bounding_boxes/join_pad] run tp @s -5 -60 -11
+execute as @a at @s if score $selectedMap CmdData matches 2 if entity @s[predicate=mcm:bounding_boxes/join_pad] run tp @s 6 -60 -11

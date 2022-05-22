@@ -15,10 +15,13 @@ execute if score $countSec CmdData matches 20.. if score $countdown CmdData matc
 execute if score $countSec CmdData matches 20.. if score $countdown CmdData matches 1 if entity @e[tag=MapVote,scores={CmdData=1..}] run scoreboard players add @e[tag=MapVote] CmdData 1
 execute if score $countSec CmdData matches 20.. if score $countdown CmdData matches 1 if entity @e[tag=MapVote,scores={CmdData=1..}] run function mcm:lobby/map_poggercalculation
 execute if score $countSec CmdData matches 20.. if score $countdown CmdData matches 1 run tag @e[tag=MapVote,scores={CmdData=0},sort=random,limit=1] add SelectedMap
+execute if score $countSec CmdData matches 20.. if score $countdown CmdData matches 1 run scoreboard players operation $selectedMap CmdData = @e[tag=SelectedMap] MapValues
 
 #> Map specific activation
 #Library
 execute if score $countSec CmdData matches 20.. if score $countdown CmdData matches 1 if entity @e[tag=SelectedMap,tag=Library] run function mcm:maps/library/activate
+#Airship
+execute if score $countSec CmdData matches 20.. if score $countdown CmdData matches 1 if entity @e[tag=SelectedMap,tag=Airship] run function mcm:maps/airship/activate
 
 #> Change gamestate to 0 (Players can now join, game has not started yet)
 execute if score $countSec CmdData matches 20.. if score $countdown CmdData matches 1 run kill @e[tag=MapVote]
@@ -41,11 +44,20 @@ execute as @a[scores={mapvote=1}] run scoreboard players add @e[tag=MapVote,tag=
 execute as @a[scores={mapvote=1}] at @s run playsound block.note_block.bit master @s ~ ~ ~ 1 1.4
 execute as @a[scores={mapvote=1}] run tag @s add Voted
 
+# Airship
+execute as @a[scores={mapvote=2}] run tellraw @s ["",{"text":"You voted for: ","color":"gray"},{"text":"Airship","color":"dark_green"}]
+execute as @a[scores={mapvote=2}] run scoreboard players add @e[tag=MapVote,tag=Airship] CmdData 1
+execute as @a[scores={mapvote=2}] at @s run playsound block.note_block.bit master @s ~ ~ ~ 1 1.4
+execute as @a[scores={mapvote=2}] run tag @s add Voted
+
+
 #> Place signs
 fill 9 -59 16 7 -59 16 glass
 setblock 8 -59 15 minecraft:oak_wall_sign[facing=north]
+setblock 7 -59 15 minecraft:oak_wall_sign[facing=north]
 
 data merge block 8 -59 15 {Text1:'{"text":"","clickEvent":{"action":"run_command","value":"trigger mapvote set 1"}}',Text2:'{"text":"Library","underlined":true,"color":"dark_green"}',Text3:'{"text":""}',Text4:'{"score":{"name":"@e[tag=MapVote,tag=Library,limit=1]","objective":"CmdData"},"color":"#FFE700"}'}
+data merge block 7 -59 15 {Text1:'{"text":"","clickEvent":{"action":"run_command","value":"trigger mapvote set 2"}}',Text2:'{"text":"Airship","underlined":true,"color":"dark_green"}',Text3:'{"text":""}',Text4:'{"score":{"name":"@e[tag=MapVote,tag=Airship,limit=1]","objective":"CmdData"},"color":"#FFE700"}'}
 
 scoreboard players reset @a[tag=Voted] mapvote
-execute as @a unless entity @s[scores={mapvote=0..1}] run scoreboard players reset @s mapvote
+execute as @a unless entity @s[scores={mapvote=0..2}] run scoreboard players reset @s mapvote

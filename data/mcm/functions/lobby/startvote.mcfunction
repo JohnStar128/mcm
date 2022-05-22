@@ -1,12 +1,16 @@
 #> Remove voted tag
 tag @a remove Voted
 scoreboard players reset @a mapvote
+scoreboard players reset $selectedMap CmdData
 
 #> Kill potential old entities
 kill @e[tag=MapVote]
 
 #> Summon mapvote markers
 summon marker 0 0 0 {Tags:["MapVote","Library"]}
+summon marker 0 0 0 {Tags:["MapVote","Airship"]}
+scoreboard players set @e[nbt={Tags:["MapVote","Library"]}] MapValues 1
+scoreboard players set @e[nbt={Tags:["MapVote","Airship"]}] MapValues 2
 scoreboard players set @e[tag=MapVote] CmdData 0
 
 #> Set countdown to 20 seconds
