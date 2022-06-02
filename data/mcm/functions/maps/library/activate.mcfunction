@@ -21,4 +21,10 @@ summon marker 997 143 1021 {Tags:["MapEntity","PlayerSpawn"]}
 summon marker 933 143 1005 {Tags:["MapEntity","PlayerSpawn"]}
 summon marker 961 143 969 {Tags:["MapEntity","PlayerSpawn"]}
 
+#> Spectator spawnpoint
+summon marker 933 150 1000 {"Tags":["MapEntity","SpectatorSpawn"]}
+
+#> Chandelier entity
+summon marker 975 139 1000 {Tags:["MapEntity","Chandelier"]}
+
 tellraw @a ["","\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"The game is ready to play!","underlined":true,"color":"green"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Selected Map: ","color":"gray"},{"text":"Library","color":"dark_green"},"\n"]

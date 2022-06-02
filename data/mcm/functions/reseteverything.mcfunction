@@ -1,11 +1,10 @@
-# Probably a temporary function 'til things're more fleshed out ~John
+#> Probably a temporary function 'til things're more fleshed out ~John
+tag @a remove innocent
+tag @a remove murderer
+tag @a remove gunner
+tag @a remove shotGun
+tag @a remove Voted
 
-# Reset marker's tags
-tag @e[tag=Brain] add LobbyPeriod
-tag @e[tag=Brain] remove votingStart
-
-# Reset scores
-scoreboard players set $tick CmdData 0
-scoreboard players set $displaySec 30
+#> Reset scores
 scoreboard players set $gamestate CmdData -1
 function mcm:lobby/startvote

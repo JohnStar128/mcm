@@ -11,10 +11,10 @@ execute if score $roundtimer CmdData matches 2 run scoreboard players set $gamet
 team modify nametags friendlyFire false
 
 #> temp command
-function mcm:maps/library/activate
+function mcm:maps/vineyard/activate
 
 #> Teleport players to spawnpoints within the map
-execute as @a[team=!test4,tag=queued] at @s run function mcm:maps/library/tptospawn
+execute as @a[team=!test4,tag=queued] at @s run function mcm:maps/vineyard/tptospawn
 
 #> Set everyone that's not on the developer team to adventure mode
 gamemode adventure @a[team=!test4,tag=queued]

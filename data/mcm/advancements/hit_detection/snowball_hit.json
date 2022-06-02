@@ -1,0 +1,26 @@
+{
+ "criteria": {
+   "hit_player": {
+     "trigger": "minecraft:player_hurt_entity",
+     "conditions": {
+       "entity": {
+           "type": "minecraft:player"
+       }
+     }
+   },
+   "player_hit": {
+    "trigger": "minecraft:entity_hurt_player",
+    "conditions": {
+      "damage": {
+        "type": {
+          "is_projectile": true,
+          "direct_entity": {
+            "type":"minecraft:arrow",
+            "nbt": "{Tags:[\"knife\"]}"
+            }
+          }
+        }
+      }
+    }
+  }
+}
