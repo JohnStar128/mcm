@@ -10,9 +10,6 @@ execute if score $roundtimer CmdData matches 2 run scoreboard players set $gamet
 #> Turn friendly fire off
 team modify nametags friendlyFire false
 
-#> temp command
-function mcm:maps/airship/activate
-
 #> Teleport players to spawnpoints within the map
 execute as @a[team=!test4,tag=queued] at @s run function mcm:maps/airship/tptospawn
 

@@ -15,9 +15,9 @@ title @a[tag=innocent] title {"text":"You are ","color":"gold","extra":[{"text":
 title @a[tag=innocent] actionbar {"text":"Objective: Survive ","color":"gold"}
 
 # Gunner
-execute as @e[tag=queued,tag=innocent,limit=1,sort=random] run item replace entity @s hotbar.5 with warped_fungus_on_a_stick 1
-execute as @a[tag=innocent,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] at @s run tellraw @s ["","\n",{"text":"You are ","color":"gold"},{"text":"the gunner","color":"dark_aqua"}]
-execute as @a[tag=innocent,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] at @s run title @s title ["",{"text":"You are ","color":"gold"},{"text":"the gunner","color":"dark_aqua"}]
-execute as @a[tag=innocent,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] at @s run title @s subtitle ["",{"text":"Kill the murderer ","color":"dark_gray"}]
+execute as @e[tag=queued,tag=innocent,limit=1,sort=random] run item replace entity @s hotbar.5 with warped_fungus_on_a_stick{CustomModelData:1111} 1
+execute as @a[tag=innocent,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,CustomModelData:1111}]}] at @s run tellraw @s ["","\n",{"text":"You are ","color":"gold"},{"text":"the gunner","color":"dark_aqua"}]
+execute as @a[tag=innocent,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,CustomModelData:1111}]}] at @s run title @s title ["",{"text":"You are ","color":"gold"},{"text":"the gunner","color":"dark_aqua"}]
+execute as @a[tag=innocent,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,CustomModelData:1111}]}] at @s run title @s subtitle ["",{"text":"Kill the murderer ","color":"dark_gray"}]
 
 scoreboard players set $pickedroles CmdData 1

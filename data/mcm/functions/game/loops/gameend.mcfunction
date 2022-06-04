@@ -1,10 +1,12 @@
 #> TEMPORARY COMMANDS REMOVE LATER
 
 # teleport
-tp @a[team=!test4] 0 -59 0
+tp @a[team=!test4,tag=queued] 0 -59 0
+
+time set 6000
 
 # gamemode
-gamemode adventure @a[team=!test4]
+gamemode adventure @a[team=!test4,tag=queued]
 
 # kill spawnpoints
 kill @e[tag=MapEntity]
@@ -16,6 +18,7 @@ tag @e remove innocent
 tag @e remove spectating
 tag @a remove queued
 tag @a remove retrieved
+tag @a remove shotGun
 
 # remove death related scores
 scoreboard players reset @a dead

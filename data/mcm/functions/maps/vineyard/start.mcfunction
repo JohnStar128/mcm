@@ -10,8 +10,7 @@ execute if score $roundtimer CmdData matches 2 run scoreboard players set $gamet
 #> Turn friendly fire off
 team modify nametags friendlyFire false
 
-#> temp command
-function mcm:maps/vineyard/activate
+time set 12500
 
 #> Teleport players to spawnpoints within the map
 execute as @a[team=!test4,tag=queued] at @s run function mcm:maps/vineyard/tptospawn
