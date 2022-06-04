@@ -5,6 +5,8 @@ execute store result score $onlinePlayers CmdData run execute if entity @a
 #And resistance because arrows hurt :(
 effect give @a saturation 1000000 100 true
 effect give @a resistance 1000000 100 true
+effect give @a weakness 1000000 100 true
+effect clear @a[tag=HoldKnife] weakness
 
 #> Commands for various stages of gameplay flow will branch into their own directories from this file
 
@@ -23,6 +25,10 @@ execute if score $gamestate CmdData matches 2 run function mcm:game/loops/gameen
 
 #> Chandelier
 execute if entity @e[tag=Brain,tag=dropChandelier] run function mcm:game/dropchandelier
+
+#> Knife
+tag @a[nbt={SelectedItem:{id:"minecraft:snowball",Count:1b}}] add HoldKnife
+tag @a[nbt=!{SelectedItem:{id:"minecraft:snowball",Count:1b}}] remove HoldKnife
 
 #> Add every player to the no nametag team unless they are on the development team
 team join nametags @a[team=!test4,team=!nametags]

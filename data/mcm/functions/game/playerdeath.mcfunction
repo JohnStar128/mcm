@@ -2,6 +2,7 @@
 
 tellraw @s[advancements={mcm:hit_detection/gun_hit=true}] {"text":"You were killed by ","color":"gold","extra":[{"selector":"@a[tag=shotGun]","color":"red"}]}
 tellraw @s[advancements={mcm:hit_detection/knife_hit=true}] {"text":"You were killed by ","color":"gold","extra":[{"selector":"@a[tag=murderer]","color":"red"}]}
+tellraw @s[advancements={mcm:hit_detection/knife_melee_hit=true}] {"text":"You were killed by ","color":"gold","extra":[{"selector":"@a[tag=murderer]","color":"red"}]}
 
 tag @s add TempDead
 execute at @s run tp @s @s
@@ -32,3 +33,4 @@ tag @s remove TempDead
 
 advancement revoke @s only mcm:hit_detection/gun_hit
 advancement revoke @s only mcm:hit_detection/knife_hit
+advancement revoke @s only mcm:hit_detection/knife_melee_hit
