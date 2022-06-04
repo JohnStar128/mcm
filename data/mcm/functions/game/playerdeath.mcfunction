@@ -25,6 +25,7 @@ execute at @s run summon item ~ ~0.5 ~ {Tags:["BoneDeco","6"],PickupDelay:200000
 execute at @s run gamemode spectator @s
 execute at @s run spectate @a[tag=murderer,limit=1,sort=nearest]
 execute at @s run tag @s remove innocent
+execute at @s run tag @s remove gunner
 execute at @s run tag @s add spectating
 
 tag @s remove TempDead

@@ -18,6 +18,7 @@ kill @e[tag=KeyItem]
 # clear old tags
 tag @e remove murderer
 tag @e remove innocent
+tag @e remove gunner
 tag @e remove spectating
 tag @a remove queued
 tag @a remove retrieved

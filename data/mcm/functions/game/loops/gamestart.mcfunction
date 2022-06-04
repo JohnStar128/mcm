@@ -14,6 +14,7 @@ execute store result score $queued CmdData run execute if entity @e[tag=queued]
 #> Probably don't need this anymore
 scoreboard players reset @a dead
 tag @a[team=!test4] remove innocent
+tag @a[team=!test4] remove gunner
 tag @a[team=!test4] remove murderer
 tag @a[team=!test4] remove Voted
 

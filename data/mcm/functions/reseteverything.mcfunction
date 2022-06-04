@@ -1,5 +1,6 @@
 #> Probably a temporary function 'til things're more fleshed out ~John
 tag @a remove innocent
+tag @a remove gunner
 tag @a remove murderer
 tag @a remove gunner
 tag @a remove shotGun

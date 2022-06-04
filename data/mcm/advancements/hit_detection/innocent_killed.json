@@ -1,0 +1,25 @@
+{
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:player_hurt_entity",
+        "conditions": {
+          "player": {
+            "nbt": "{Tags:[\"gunner\"]}"
+          },
+          "damage": {
+            "type": {
+              "is_projectile": true
+            }
+          },
+          "entity": {
+            "type": "minecraft:player",
+            "nbt": "{Tags:[\"innocent\"]}"
+          }
+        }
+      }
+    },
+    "rewards": {
+      "function": "mcm:game/innocentshot"
+    }
+  }
+  

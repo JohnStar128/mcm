@@ -19,5 +19,6 @@ execute as @e[tag=queued,tag=innocent,limit=1,sort=random] run item replace enti
 execute as @a[tag=innocent,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,CustomModelData:1111}]}] at @s run tellraw @s ["","\n",{"text":"You are ","color":"gold"},{"text":"the gunner","color":"dark_aqua"}]
 execute as @a[tag=innocent,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,CustomModelData:1111}]}] at @s run title @s title ["",{"text":"You are ","color":"gold"},{"text":"the gunner","color":"dark_aqua"}]
 execute as @a[tag=innocent,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,CustomModelData:1111}]}] at @s run title @s subtitle ["",{"text":"Kill the murderer ","color":"dark_gray"}]
+execute as @a[tag=innocent,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,CustomModelData:1111}]}] at @s run tag @s add gunner
 
 scoreboard players set $pickedroles CmdData 1
