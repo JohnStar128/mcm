@@ -8,6 +8,9 @@ time set 6000
 # gamemode
 gamemode adventure @a[team=!test4,tag=queued]
 
+# kill player skulls
+kill @e[type=item,nbt={Item:{id:"minecraft:player_head"}}]
+
 # kill spawnpoints
 kill @e[tag=MapEntity]
 kill @e[tag=KeyItem]
