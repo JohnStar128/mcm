@@ -15,6 +15,7 @@ scoreboard objectives add gunclick minecraft.used:minecraft.warped_fungus_on_a_s
 scoreboard objectives add gundist dummy
 scoreboard objectives add canPickupGun dummy
 scoreboard objectives add GameRules dummy
+scoreboard objectives add gundelay dummy
 scoreboard players set $one CmdData 1
 scoreboard players set $start CmdData 0
 scoreboard players set $startcountdown CmdData 200

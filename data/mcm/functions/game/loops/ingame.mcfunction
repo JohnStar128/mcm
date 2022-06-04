@@ -53,8 +53,8 @@ execute if score $scrapclock CmdData matches 20.. run scoreboard players set $sc
 execute as @a[tag=innocent,nbt={Inventory:[{id:"minecraft:netherite_scrap",Count:10b}]}] at @s run item replace entity @s hotbar.5 with warped_fungus_on_a_stick{Unbreakable:1,CustomModelData:1111,display:{Name:'[{"text":"Gun","italic":false}]',Lore:['[{"text":"Right click to shoot","italic":false}]']}}
 
 #> Clear scrap from players with a gun
-execute as @a[nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] at @s run clear @s netherite_scrap
-execute as @a[tag=murderer] at @s run clear @s netherite_scrap
+execute as @a[nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] if entity @s[nbt={Inventory:[{id:"minecraft:netherite_scrap"}]}] run clear @s netherite_scrap
+execute as @a[tag=murderer,nbt={Inventory:[{id:"minecraft:netherite_scrap"}]}] at @s run clear @s netherite_scrap
 
 #> Turn the knife snowball into an arrow with the knife item as a passenger
 execute as @e[type=snowball] at @s run summon arrow ~ ~ ~ {life:1100s,Tags:["knife","MapEntity"],Passengers:[{id:"minecraft:item",PickupDelay:100,Tags:["knifeCosmetic","MapEntity","KeyItem"],Item:{id:"minecraft:snowball",Count:1b,tag:{CustomModelData:1111,PickupDelay:10}}}]}
@@ -97,14 +97,6 @@ execute as @a[tag=murderer,limit=1,sort=nearest,nbt={Inventory:[{Slot:8b,id:"min
 execute as @a[tag=murderer] at @s run item replace entity @s hotbar.7 with spyglass
 execute as @a[tag=innocent] at @s run item replace entity @s hotbar.7 with spyglass
 
-#> When the knife hits a player
-# Person throwing the knife
-#execute as @a[advancements={mcm:hit_detection/snowball_hit={hit_player=true}}] at @s run say I hit them
-execute as @a[advancements={mcm:hit_detection/snowball_hit={hit_player=true}}] at @s run advancement revoke @s only mcm:hit_detection/snowball_hit
-# Person that got hit by the knife
-execute as @a[advancements={mcm:hit_detection/snowball_hit={player_hit=true}}] at @s run scoreboard players set @s dead 1
-execute as @a[advancements={mcm:hit_detection/snowball_hit={player_hit=true}}] at @s run advancement revoke @s only mcm:hit_detection/snowball_hit
-
 #> Win conditions
 # Murderer victory
 execute if score $graceperiod CmdData matches ..0 if score $deadInnocents CmdData = $innocents CmdData run tellraw @a ["", "\n", {"text":"The Murderer has won!","color":"red"}, "\n"]
@@ -116,12 +108,6 @@ execute if score $graceperiod CmdData matches ..0 if entity @a[tag=murderer,scor
 
 execute if score $graceperiod CmdData matches ..0 unless entity @a[tag=murderer] run tellraw @a ["", "\n", {"text":"The Innocents have won!","color":"green"}, "\n"]
 execute if score $graceperiod CmdData matches ..0 unless entity @a[tag=murderer] run scoreboard players set $gamestate CmdData 2
-
-#> Spectate (temporary)
-execute as @a[scores={dead=1..},tag=!spectating,limit=1,sort=nearest] run gamemode spectator @s
-execute as @a[scores={dead=1..},tag=!spectating,limit=1,sort=nearest] run spectate @a[tag=murderer,limit=1,sort=nearest]
-execute as @a[scores={dead=1..},tag=!spectating,limit=1,sort=nearest] run tag @s remove innocent
-execute as @a[scores={dead=1..},tag=!spectating,limit=1,sort=nearest] run tag @s add spectating
 
 #> Make sure murderer can't drop their knife
 #kill @e[type=item,nbt={"Item":{id:"minecraft:netherite_sword",Count:1b}}]

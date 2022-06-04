@@ -2,7 +2,9 @@
 execute store result score $onlinePlayers CmdData run execute if entity @a 
 
 #> Give everyone saturation because "Murder isn't peaceful"
+#And resistance because arrows hurt :(
 effect give @a saturation 1000000 100 true
+effect give @a resistance 1000000 100 true
 
 #> Commands for various stages of gameplay flow will branch into their own directories from this file
 
@@ -27,5 +29,14 @@ team join nametags @a[team=!test4,team=!nametags]
 
 #> Raycasting
 execute as @a[scores={knifeclick=1..}] at @s anchored eyes run function mcm:game/loops/kniferay
-execute as @a[scores={gunclick=1..}] at @s anchored eyes run function mcm:game/loops/gunray
-execute as @a[scores={gunclick=1..}] at @s anchored eyes run scoreboard players reset @s gunclick
+
+#> Guns
+function mcm:game/items/gun/shoot
+
+#> Dead players
+scoreboard players add @e[tag=BoneDeco,nbt={OnGround:1b}] CmdData 1
+execute as @e[tag=BoneDeco,scores={CmdData=20..}] at @s run particle item bone ~ ~ ~ 0 0 0 0.1 4 force
+kill @e[tag=BoneDeco,scores={CmdData=20..}]
+
+#> Scoreboards
+scoreboard players reset @a[scores={gunclick=1..}] gunclick
