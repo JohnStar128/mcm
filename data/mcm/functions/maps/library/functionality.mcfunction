@@ -1,4 +1,4 @@
-execute as @e[tag=Chandelier] at @s if entity @a[limit=3,distance=..3] run scoreboard players add $chandelierdroptimer CmdData 1
+execute as @e[tag=Chandelier] at @s if entity @a[limit=3] if entity @a[limit=3,distance=..3] run scoreboard players add $chandelierdroptimer CmdData 1
 execute as @e[tag=Chandelier] at @s unless entity @a[limit=3,distance=..3] run scoreboard players set $chandelierdroptimer CmdData 0
 
 

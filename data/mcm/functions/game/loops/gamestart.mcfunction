@@ -12,11 +12,11 @@ execute as @a[tag=queued] at @s if score $selectedMap CmdData matches 3 if entit
 execute store result score $queued CmdData run execute if entity @e[tag=queued]
 
 #> Probably don't need this anymore
-scoreboard players reset @a dead
-tag @a[team=!test4] remove innocent
-tag @a[team=!test4] remove gunner
-tag @a[team=!test4] remove murderer
-tag @a[team=!test4] remove Voted
+#scoreboard players reset @a dead
+#tag @a[team=!test4] remove innocent
+#tag @a[team=!test4] remove gunner
+#tag @a[team=!test4] remove murderer
+#tag @a[team=!test4] remove Voted
 
 #> Post-ready pre-game countdown before teleporting to the map
 execute if score $queued CmdData matches 3.. if score $start CmdData matches 1.. run scoreboard players remove $startcountdown CmdData 1

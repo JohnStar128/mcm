@@ -2,7 +2,6 @@
 tag @a remove innocent
 tag @a remove gunner
 tag @a remove murderer
-tag @a remove gunner
 tag @a remove shotGun
 tag @a remove Voted
 
