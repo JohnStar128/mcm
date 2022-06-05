@@ -11,6 +11,8 @@ gamemode adventure @a[team=!test4,tag=queued]
 # kill player skulls
 kill @e[type=item,nbt={Item:{id:"minecraft:player_head"}}]
 
+effect clear @a
+
 # kill spawnpoints
 kill @e[tag=MapEntity]
 kill @e[tag=KeyItem]
@@ -32,6 +34,8 @@ scoreboard players set $pickedroles CmdData 0
 scoreboard players set $start CmdData 0
 scoreboard players set $startcountdown CmdData 200
 scoreboard players reset @a knifeRetrieve 
+scoreboard players reset @a throwKnife
+scoreboard players reset @a canPickupGun
 
 # remove items
 clear @a snowball
@@ -44,6 +48,9 @@ clear @a spyglass
 execute if score $selectedMap CmdData matches 1 run setblock 977 110 992 structure_block{mode:"LOAD",name:"minecraft:chandelier_frame0",posX:-6,posY:-10,posZ:5} destroy
 execute if score $selectedMap CmdData matches 1 run setblock 977 111 992 air destroy
 execute if score $selectedMap CmdData matches 1 run setblock 977 111 992 redstone_block destroy
+#execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 1 run function mcm:maps/library/reset
+#execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 2 run function mcm:maps/airship/reset
+#execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 3 run function mcm:maps/vineyard/reset
 
 # disable friendly fire
 team modify nametags friendlyFire false

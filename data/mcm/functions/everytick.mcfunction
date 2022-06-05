@@ -1,5 +1,5 @@
 #> Store count of online players to score in CmdData board
-execute store result score $onlinePlayers CmdData run execute if entity @a 
+execute store result score $onlinePlayers CmdData run execute if entity @a
 
 #> Give everyone saturation because "Murder isn't peaceful"
 #And resistance because arrows hurt :(
@@ -33,9 +33,6 @@ tag @a[nbt=!{SelectedItem:{id:"minecraft:snowball",Count:1b}}] remove HoldKnife
 #> Add every player to the no nametag team unless they are on the development team
 team join nametags @a[team=!test4,team=!nametags]
 
-#> Raycasting
-execute as @a[scores={knifeclick=1..}] at @s anchored eyes run function mcm:game/loops/kniferay
-
 #> Guns
 function mcm:game/items/gun/shoot
 
@@ -46,3 +43,23 @@ kill @e[tag=BoneDeco,scores={CmdData=20..}]
 
 #> Scoreboards
 scoreboard players reset @a[scores={gunclick=1..}] gunclick
+
+#> Leave game stuff
+# Tags
+execute as @a[scores={leave=1..}] at @s run tag @s remove innocent
+execute as @a[scores={leave=1..}] at @s run tag @s remove gunner
+execute as @a[scores={leave=1..}] at @s run tag @s remove murderer
+execute as @a[scores={leave=1..}] at @s run tag @s remove spectating
+execute as @a[scores={leave=1..}] at @s run tag @s remove shotGun
+execute as @a[scores={leave=1..}] at @s run tag @s remove retrieved
+execute as @a[scores={leave=1..}] at @s run tag @s remove queued
+# Clearing items
+execute as @a[scores={leave=1..}] at @s run clear @s warped_fungus_on_a_stick
+execute as @a[scores={leave=1..}] at @s run clear @s snowball
+execute as @a[scores={leave=1..}] at @s run clear @s carrot_on_a_stick
+execute as @a[scores={leave=1..}] at @s run clear @s spyglass
+execute as @a[scores={leave=1..}] at @s run clear @s netherite_scrap
+# The rest
+execute as @a[scores={leave=1..}] at @s run effect clear @s
+execute as @a[scores={leave=1..}] at @s run tp @s 0 -59 0
+execute as @a[scores={leave=1..}] at @s run scoreboard players reset @s leave

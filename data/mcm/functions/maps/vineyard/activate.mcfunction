@@ -6,6 +6,7 @@ kill @e[tag=MapEntity]
 
 #> Set Player Spawnpoints
 summon marker 1961 66 1986 {Tags:["MapEntity","PlayerSpawn"]}
+summon marker 1966 66 1959 {Tags:["MapEntity","PlayerSpawn"]}
 summon marker 1987 69 1993 {Tags:["MapEntity","PlayerSpawn"]}
 summon marker 2004 70 1987 {Tags:["MapEntity","PlayerSpawn"]}
 summon marker 1985 66 1956 {Tags:["MapEntity","PlayerSpawn"]}
@@ -29,6 +30,8 @@ summon marker 2102 78 2058 {Tags:["MapEntity","PlayerSpawn"]}
 summon marker 2081 78 2072 {Tags:["MapEntity","PlayerSpawn"]}
 summon marker 2048 78 2080 {Tags:["MapEntity","PlayerSpawn"]}
 summon marker 2027 78 2072 {Tags:["MapEntity","PlayerSpawn"]}
+summon marker 2066 78 2036 {Tags:["MapEntity","PlayerSpawn"]}
+summon marker 2068 78 1991 {Tags:["MapEntity","PlayerSpawn"]}
 summon marker 1995 70 2059 {Tags:["MapEntity","PlayerSpawn"]}
 summon marker 1995 70 2039 {Tags:["MapEntity","PlayerSpawn"]}
 summon marker 1996 70 2010 {Tags:["MapEntity","PlayerSpawn"]}
@@ -41,7 +44,13 @@ summon marker 2056 95 2034 {Tags:["MapEntity","PlayerSpawn"]}
 summon marker 2074 95 2039 {Tags:["MapEntity","PlayerSpawn"]}
 summon marker 2054 95 2015 {Tags:["MapEntity","PlayerSpawn"]}
 summon marker 2038 95 2017 {Tags:["MapEntity","PlayerSpawn"]}
+summon marker 2038 95 2034 {Tags:["MapEntity","PlayerSpawn"]}
+summon marker 2048 95 2045 {Tags:["MapEntity","PlayerSpawn"]}
+summon marker 2072 95 2016 {Tags:["MapEntity","PlayerSpawn"]}
 summon marker 2072 87 1994 {Tags:["MapEntity","PlayerSpawn"]}
+summon marker 2066 87 2047 {Tags:["MapEntity","PlayerSpawn"]}
+summon marker 2037 87 2015 {Tags:["MapEntity","PlayerSpawn"]}
+summon marker 2037 87 2042 {Tags:["MapEntity","PlayerSpawn"]}
 summon marker 2056 104 2033 {Tags:["MapEntity","PlayerSpawn"]}
 
 #> Set Scrap spawnpoints

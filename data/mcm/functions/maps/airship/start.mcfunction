@@ -16,8 +16,5 @@ execute as @a[team=!test4,tag=queued] at @s run function mcm:maps/airship/tptosp
 #> Set everyone that's not on the developer team to adventure mode
 gamemode adventure @a[team=!test4,tag=queued]
 
-#> Spyglass
-item replace entity @a hotbar.7 with spyglass
-
 #> Set gamestate to playing ($gamestate CmdData=1)
 scoreboard players set $gamestate CmdData 1
