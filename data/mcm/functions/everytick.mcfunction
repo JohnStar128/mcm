@@ -23,6 +23,9 @@ execute if score $gamestate CmdData matches 1 run function mcm:game/loops/ingame
 #Game end loop
 execute if score $gamestate CmdData matches 2 run function mcm:game/loops/gameend
 
+#> Popcorn
+function mcm:lobby/popcorn
+
 #> Chandelier
 execute if entity @e[tag=Brain,tag=dropChandelier] run function mcm:game/dropchandelier
 
@@ -46,6 +49,7 @@ scoreboard players reset @a[scores={gunclick=1..}] gunclick
 
 #> Leave game stuff
 # Tags
+execute as @a[scores={leave=1..}] at @s run tag @s remove WonLast
 execute as @a[scores={leave=1..}] at @s run tag @s remove innocent
 execute as @a[scores={leave=1..}] at @s run tag @s remove gunner
 execute as @a[scores={leave=1..}] at @s run tag @s remove murderer

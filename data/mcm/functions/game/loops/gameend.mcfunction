@@ -5,7 +5,9 @@ scoreboard players set $didGameEnd CmdData 1
 execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches 200 run title @a clear
 execute as @e[tag=KeyItem] at @s if score $didGameEnd CmdData matches 1 run data merge entity @s {PickupDelay:-1s}
 execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches 200 run tellraw @a ["", {"text":"Returning to lobby in 10 seconds...","color":"yellow"}]
+execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches 200 if score $innocentWin CmdData matches 1 run tag @a[tag=innocent,gamemode=adventure,tag=!murderer] add WonLast
 execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches 200 if score $innocentWin CmdData matches 1 run title @a title ["", {"text":"Innocents win!","color":"green"}]
+execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches 200 if score $murderWin CmdData matches 1 run tag @a[tag=murderer,gamemode=adventure] add WonLast
 execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches 200 if score $murderWin CmdData matches 1 run title @a title ["", {"text":"Murderer wins!","color":"red"}]
 execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches 200 if score $innocentWin CmdData matches 1 run playsound minecraft:ui.toast.challenge_complete ambient @a ~ ~ ~ 1 1 1
 execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches 200 if score $murderWin CmdData matches 1 run playsound minecraft:entity.wither.spawn ambient @a ~ ~ ~ 1 2 1
@@ -58,6 +60,10 @@ clear @a carrot_on_a_stick
 clear @a netherite_scrap
 clear @a warped_fungus_on_a_stick
 clear @a spyglass
+
+# give popcorn
+item replace entity @a[tag=WonLast] hotbar.0 with warped_fungus_on_a_stick{CustomModelData:1114,display:{Name:'[{"text":"Victory Popcorn","italic":false,"color":"yellow"}]',Lore:['[{"text":"The snack that\'s worth dying for!","italic":false,"color":"dark_gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]']},HideFlags:3}
+tag @a[tag=WonLast] remove WonLast
 
 # reset map specific stuff that changes during the game
 execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run execute if score $selectedMap CmdData matches 1 run setblock 977 110 992 structure_block{mode:"LOAD",name:"minecraft:chandelier_frame0",posX:-6,posY:-10,posZ:5} destroy
