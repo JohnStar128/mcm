@@ -62,7 +62,7 @@ clear @a warped_fungus_on_a_stick
 clear @a spyglass
 
 # give popcorn
-item replace entity @a[tag=WonLast] hotbar.0 with warped_fungus_on_a_stick{CustomModelData:1114,display:{Name:'[{"text":"Victory Popcorn","italic":false,"color":"yellow"}]',Lore:['[{"text":"The snack that\'s worth dying for!","italic":false,"color":"dark_gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]']},HideFlags:3}
+item replace entity @a[tag=WonLast] hotbar.0 with warped_fungus_on_a_stick{CustomModelData:1114,display:{Name:'[{"text":"Victory Popcorn","italic":false,"color":"yellow"}]',Lore:['[{"text":"","italic":false}]','[{"text":"The snack that\'s worth dying for!","italic":true,"color":"dark_gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]']},HideFlags:3,HideFlags:3}
 tag @a[tag=WonLast] remove WonLast
 
 # reset map specific stuff that changes during the game
