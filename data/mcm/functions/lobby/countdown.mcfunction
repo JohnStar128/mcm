@@ -30,7 +30,7 @@ execute if score $countSec CmdData matches 20.. if score $countdown CmdData matc
 execute if score $countSec CmdData matches 20.. if score $countdown CmdData matches 1 run scoreboard players set $gamestate CmdData 0
 
 #> Remove 1 from countdown, reset countSec
-execute if score $countSec CmdData matches 20.. run scoreboard players remove $countdown CmdData 1
+execute if entity @e[tag=MapVote,scores={CmdData=1..}] if score $countSec CmdData matches 20.. run scoreboard players remove $countdown CmdData 1
 execute if score $countSec CmdData matches 20.. run scoreboard players set $countSec CmdData 0
 
 #> Bossbar
@@ -59,13 +59,13 @@ execute as @a[scores={mapvote=3}] run tag @s add Voted
 
 #> Place signs
 fill 9 -59 16 7 -59 16 glass
-setblock 8 -59 15 minecraft:oak_wall_sign[facing=north]
-setblock 7 -59 15 minecraft:oak_wall_sign[facing=north]
-setblock 9 -59 15 minecraft:oak_wall_sign[facing=north]
+setblock 27 3 89 minecraft:oak_wall_sign[facing=west]
+setblock 27 3 94 minecraft:oak_wall_sign[facing=west]
+setblock 27 3 99 minecraft:oak_wall_sign[facing=west]
 
-data merge block 8 -59 15 {Text1:'{"text":"","clickEvent":{"action":"run_command","value":"trigger mapvote set 1"}}',Text2:'{"text":"Library","underlined":true,"color":"dark_green"}',Text3:'{"text":""}',Text4:'{"score":{"name":"@e[tag=MapVote,tag=Library,limit=1]","objective":"CmdData"},"color":"#FFE700"}'}
-data merge block 7 -59 15 {Text1:'{"text":"","clickEvent":{"action":"run_command","value":"trigger mapvote set 2"}}',Text2:'{"text":"Airship","underlined":true,"color":"dark_green"}',Text3:'{"text":""}',Text4:'{"score":{"name":"@e[tag=MapVote,tag=Airship,limit=1]","objective":"CmdData"},"color":"#FFE700"}'}
-data merge block 9 -59 15 {Text1:'{"text":"","clickEvent":{"action":"run_command","value":"trigger mapvote set 3"}}',Text2:'{"text":"Vineyard","underlined":true,"color":"dark_green"}',Text3:'{"text":""}',Text4:'{"score":{"name":"@e[tag=MapVote,tag=Vineyard,limit=1]","objective":"CmdData"},"color":"#FFE700"}'}
+data merge block 27 3 89 {Text1:'{"text":"","clickEvent":{"action":"run_command","value":"trigger mapvote set 1"}}',Text2:'{"text":"Library","underlined":true,"color":"dark_green"}',Text3:'{"text":""}',Text4:'{"score":{"name":"@e[tag=MapVote,tag=Library,limit=1]","objective":"CmdData"},"color":"#FFE700"}'}
+data merge block 27 3 94 {Text1:'{"text":"","clickEvent":{"action":"run_command","value":"trigger mapvote set 2"}}',Text2:'{"text":"Airship","underlined":true,"color":"dark_green"}',Text3:'{"text":""}',Text4:'{"score":{"name":"@e[tag=MapVote,tag=Airship,limit=1]","objective":"CmdData"},"color":"#FFE700"}'}
+data merge block 27 3 99 {Text1:'{"text":"","clickEvent":{"action":"run_command","value":"trigger mapvote set 3"}}',Text2:'{"text":"Vineyard","underlined":true,"color":"dark_green"}',Text3:'{"text":""}',Text4:'{"score":{"name":"@e[tag=MapVote,tag=Vineyard,limit=1]","objective":"CmdData"},"color":"#FFE700"}'}
 
 scoreboard players reset @a[tag=Voted] mapvote
 execute as @a unless entity @s[scores={mapvote=0..3}] run scoreboard players reset @s mapvote

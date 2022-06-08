@@ -61,5 +61,5 @@ execute as @a[scores={leave=1..}] at @s run clear @s spyglass
 execute as @a[scores={leave=1..}] at @s run clear @s netherite_scrap
 # The rest
 execute as @a[scores={leave=1..}] at @s run effect clear @s
-execute as @a[scores={leave=1..}] at @s run tp @s 0 -59 0
+execute as @a[scores={leave=1..}] at @s run tp @s -1 1 69
 execute as @a[scores={leave=1..}] at @s run scoreboard players reset @s leave
