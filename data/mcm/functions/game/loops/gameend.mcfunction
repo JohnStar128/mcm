@@ -54,16 +54,17 @@ execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData ma
 execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run scoreboard players reset @a throwKnife
 execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run scoreboard players reset @a canPickupGun
 
-#give
-execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run item replace entity @a[tag=WonLast] hotbar.0 with warped_fungus_on_a_stick{CustomModelData:1114,display:{Name:'[{"text":"Victory Popcorn","italic":false,"color":"yellow"}]',Lore:['[{"text":"","italic":false}]','[{"text":"The snack that\'s worth dying for!","italic":true,"color":"dark_gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]']},HideFlags:3,HideFlags:3}
-execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run tag @a[tag=WonLast] remove WonLast
-
 # remove items
 clear @a snowball
 clear @a carrot_on_a_stick
 clear @a netherite_scrap
 clear @a warped_fungus_on_a_stick
 clear @a spyglass
+
+#give popcorn
+execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run item replace entity @a[tag=WonLast] hotbar.0 with warped_fungus_on_a_stick{CustomModelData:1114,display:{Name:'[{"text":"Victory Popcorn","italic":false,"color":"yellow"}]',Lore:['[{"text":"","italic":false}]','[{"text":"The snack that\'s worth dying for!","italic":true,"color":"dark_gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]']},HideFlags:3,HideFlags:3}
+execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run tag @a[tag=WonLast] remove WonLast
+
 
 # reset map specific stuff that changes during the game
 execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run execute if score $selectedMap CmdData matches 1 run setblock 977 110 992 structure_block{mode:"LOAD",name:"minecraft:chandelier_frame0",posX:-6,posY:-10,posZ:5} destroy
