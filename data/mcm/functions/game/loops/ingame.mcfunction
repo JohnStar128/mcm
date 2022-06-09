@@ -81,7 +81,7 @@ execute as @a[tag=innocent,nbt={Inventory:[{id:"minecraft:netherite_scrap",Count
 
 #> Clear scrap from players with a gun
 execute as @a[nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] if entity @s[nbt={Inventory:[{id:"minecraft:netherite_scrap"}]}] run clear @s netherite_scrap
-execute as @a[tag=murderer,nbt={Inventory:[{id:"minecraft:netherite_scrap"}]}] at @s run clear @s netherite_scrap
+execute as @a[tag=murderer,nbt={Inventory:[{id:"minecraft:netherite_scrap"}]}] at @s run clear @s netherite_scrap{CustomModelData:1}
 
 #> Turn the knife snowball into an arrow with the knife item as a passenger
 execute as @e[type=snowball] at @s run summon arrow ~ ~ ~ {life:1100s,Tags:["knife","MapEntity"],Passengers:[{id:"minecraft:item",PickupDelay:50,Tags:["knifeCosmetic","MapEntity","KeyItem"],Item:{id:"minecraft:snowball",Count:1b,tag:{CustomModelData:1111,PickupDelay:10,display:{Name:'[{"translate":"mcm.item.knife","italic":false}]',Lore:['[{"text":"Right click to shoot","italic":false}]']}}}}]}

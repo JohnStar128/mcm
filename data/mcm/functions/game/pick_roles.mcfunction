@@ -7,10 +7,11 @@ title @a[tag=murderer] subtitle {"text":"Kill the innocent ","color":"gold"}
 execute as @a[tag=murderer,limit=1] run item replace entity @s hotbar.1 with snowball{Unbreakable:1,CustomModelData:1111,AttributeModifiers:[{AttributeName:"generic.attack_damage",Amount:100,Slot:mainhand,Name:"generic.attack_damage",UUID:[I;-122419,10812,22346,-21624]}],display:{Name:'[{"translate":"mcm.item.knife","italic":false}]',Lore:['[{"translate":"mcm.item.knife.lore","italic":false}]']}} 1
 execute as @a[tag=murderer,limit=1] run item replace entity @s hotbar.4 with carrot_on_a_stick{CustomModelData:1113,display:{Name:'[{"translate":"mcm.item.adrenaline","italic":false}]',Lore:['[{"translate":"mcm.item.adrenaline.lore","italic":false}]']}}
 execute as @a[tag=murderer,limit=1] run item replace entity @s hotbar.3 with carrot_on_a_stick{CustomModelData:1112,display:{Name:'[{"translate":"mcm.item.teleporter","italic":false}]',Lore:['[{"translate":"mcm.item.teleporter.lore","italic":false}]']}}
+execute as @a[tag=murderer,limit=1] run item replace entity @s hotbar.8 with netherite_scrap{display:{Name:'[{"translate":"mcm.item.fake_scrap","italic":false}]',Lore:['[{"translate":"mcm.item.fake_scrap.lore","italic":false}]']}}
 
 # Innocent
 execute as @e[tag=queued,tag=!murderer] at @s run tag @s add innocent
-item replace entity @e[tag=innocent] hotbar.8 with netherite_scrap{display:{Name:'{"translate":"mcm.item.scrap","italic":"false"}',Lore:['[{"text":"Collect 10 to craft a gun","italic":false}]']}}
+item replace entity @e[tag=innocent] hotbar.8 with netherite_scrap{CustomModelData:1,Tags:["KeyItem"],display:{Name:'{"translate":"mcm.item.scrap","italic":"false"}',Lore:['[{"translate":"mcm.item.scrap.lore","italic":false}]']}}
 tellraw @a[tag=innocent] {"text":"You are ","color":"gold","extra":[{"text":"innocent!","color":"light_purple"}]}
 title @a[tag=innocent] title {"text":"You are ","color":"gold","extra":[{"text":"innocent!","color":"light_purple"}]}
 title @a[tag=innocent] subtitle {"text":"Objective: Survive ","color":"gold"}
