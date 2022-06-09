@@ -11,7 +11,7 @@ execute as @a[tag=murderer,limit=1] run item replace entity @s hotbar.8 with net
 
 # Innocent
 execute as @e[tag=queued,tag=!murderer] at @s run tag @s add innocent
-item replace entity @e[tag=innocent] hotbar.8 with netherite_scrap{CustomModelData:1,Tags:["KeyItem"],display:{Name:'{"translate":"mcm.item.scrap","italic":"false"}',Lore:['[{"translate":"mcm.item.scrap.lore","italic":false}]']}}
+item replace entity @e[tag=innocent] hotbar.8 with netherite_scrap{CustomModelData:1,Tags:["KeyItem"],display:{Name:"{\"translate\":\"mcm.item.scrap\",\"italic\":\"false\"}"},Lore:['[{"translate":"mcm.item.scrap.lore","italic":false}]']}
 tellraw @a[tag=innocent] {"text":"You are ","color":"gold","extra":[{"text":"innocent!","color":"light_purple"}]}
 title @a[tag=innocent] title {"text":"You are ","color":"gold","extra":[{"text":"innocent!","color":"light_purple"}]}
 title @a[tag=innocent] subtitle {"text":"Objective: Survive ","color":"gold"}
