@@ -1,3 +1,6 @@
+item replace entity @a[tag=WonLast] hotbar.0 with warped_fungus_on_a_stick{CustomModelData:1114,display:{Name:'[{"text":"Victory Popcorn","italic":false,"color":"yellow"}]',Lore:['[{"text":"","italic":false}]','[{"text":"The snack that\'s worth dying for!","italic":true,"color":"dark_gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]']},HideFlags:3,HideFlags:3}
+tag @a[tag=WonLast] remove WonLast
+
 tag @a[nbt={SelectedItem:{id:"minecraft:warped_fungus_on_a_stick",tag:{CustomModelData:1114}}}] add HoldPopcorn
 
 execute as @a[tag=!PopcornDelay,tag=HoldPopcorn,scores={popcornClick=1..}] at @s run playsound minecraft:entity.generic.eat master @a ~ ~ ~ 0.4 1.1
