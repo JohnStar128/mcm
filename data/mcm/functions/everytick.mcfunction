@@ -26,6 +26,9 @@ execute if score $gamestate CmdData matches 2 run function mcm:game/loops/gameen
 #> Popcorn
 function mcm:lobby/popcorn
 
+#> NoDrop module
+function mcm:game/nodrop
+
 #> Chandelier
 execute if entity @e[tag=Brain,tag=dropChandelier] run function mcm:game/dropchandelier
 
