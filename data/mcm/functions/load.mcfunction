@@ -15,6 +15,7 @@ scoreboard objectives add dead deathCount
 scoreboard objectives add knifeRetrieval minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add adrenalineClick minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add teleporterClick minecraft.used:minecraft.carrot_on_a_stick
+scoreboard objectives add popcornClick minecraft.used:minecraft.warped_fungus_on_a_stick
 scoreboard objectives add gunclick minecraft.used:minecraft.warped_fungus_on_a_stick
 scoreboard objectives add gundist dummy
 scoreboard objectives add canPickupGun dummy
@@ -30,6 +31,7 @@ scoreboard objectives add droppedSpyglass minecraft.dropped:minecraft.spyglass
 scoreboard players set $one CmdData 1
 scoreboard players set $start CmdData 0
 scoreboard players set $startcountdown CmdData 200
+scoreboard objectives add popcorndelay dummy
 
 scoreboard players reset @a dead
 
