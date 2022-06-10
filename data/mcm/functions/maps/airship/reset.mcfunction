@@ -1,633 +1,633 @@
-setblock -693 46 28 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] replace
-setblock -692 46 28 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] replace
-setblock -694 46 29 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] replace
-setblock -692 46 29 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] replace
-setblock -691 46 29 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] replace
-setblock -695 46 30 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] replace
-setblock -691 47 31 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -694 47 32 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -693 47 32 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -692 47 32 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -694 51 39 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -693 51 39 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -692 51 39 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -694 51 41 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -693 51 41 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -692 51 41 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -694 51 43 minecraft:dark_oak_trapdoor[waterlogged=true,half=bottom,powered=false,facing=south,open=false] replace
-setblock -693 51 43 minecraft:dark_oak_trapdoor[waterlogged=true,half=bottom,powered=false,facing=south,open=false] replace
-setblock -692 51 43 minecraft:dark_oak_trapdoor[waterlogged=true,half=bottom,powered=false,facing=south,open=false] replace
-setblock -694 52 37 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -693 52 37 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -692 52 37 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -694 52 45 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -693 52 45 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -692 52 45 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -694 54 36 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -693 54 36 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -692 54 36 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -694 54 46 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -693 54 46 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -692 54 46 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -694 56 36 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -693 56 36 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -692 56 36 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -694 56 46 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -693 56 46 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -692 56 46 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -694 58 36 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -693 58 36 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -692 58 36 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -694 58 46 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -693 58 46 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -692 58 46 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -694 60 37 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -693 60 37 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -692 60 37 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -694 60 45 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=true] replace
-setblock -693 60 45 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=true] replace
-setblock -692 60 45 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=true] replace
-setblock -694 61 39 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -693 61 39 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -692 61 39 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -694 61 41 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -693 61 41 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -692 61 41 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -694 61 43 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -693 61 43 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -692 61 43 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -673 56 33 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -674 56 34 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -674 56 35 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -674 56 36 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -673 56 37 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -674 56 38 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -673 56 38 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -674 56 39 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -674 56 41 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -673 56 42 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -668 45 -1 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -667 45 -1 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -668 44 0 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
-setblock -668 44 1 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] replace
-setblock -667 44 1 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
-setblock -667 44 2 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
-setblock -667 45 0 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -668 45 2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] replace
-setblock -663 56 5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -662 56 5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -661 56 5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -664 56 6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -660 56 6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -663 56 7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -662 56 7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -661 56 7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -664 57 12 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -663 57 12 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -665 57 13 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -662 57 13 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -666 57 14 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -661 57 14 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -666 57 15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -662 57 15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -661 57 15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -666 57 16 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -663 57 16 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -662 57 16 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -665 57 17 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -664 57 17 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -663 57 17 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -672 56 34 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -672 56 35 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -672 56 36 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -672 56 38 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -671 56 39 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -671 56 40 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -671 56 41 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -672 56 42 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -653 81 -21 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
-setblock -656 81 -20 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -656 81 -19 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -656 81 -18 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -656 81 -17 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -641 52 -11 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -641 52 -10 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -642 52 -8 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -642 52 -7 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -643 52 -5 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -643 52 -4 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -642 56 -6 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
-setblock -642 56 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
-setblock -642 56 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
-setblock -642 56 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
-setblock -642 57 -6 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
-setblock -642 57 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
-setblock -642 57 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
-setblock -642 57 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
-setblock -642 58 -6 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
-setblock -642 58 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
-setblock -642 58 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
-setblock -642 58 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
-setblock -642 59 -6 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
-setblock -642 59 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
-setblock -642 59 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
-setblock -642 59 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
-setblock -641 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
-setblock -641 61 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -641 61 -6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -641 61 -5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -641 61 -4 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -641 61 -3 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -656 81 -16 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -650 81 -16 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
-setblock -656 81 -15 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -656 81 -14 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -649 81 -14 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
-setblock -656 81 -13 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -656 81 -12 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -656 81 -11 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -655 81 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -655 81 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -655 81 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -642 55 8 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] replace
-setblock -654 81 4 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -654 81 5 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -642 52 28 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -642 52 29 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -642 52 30 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -641 55 16 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] replace
-setblock -641 52 35 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -641 52 36 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -641 52 37 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -636 54 -17 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -636 98 -21 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
-setblock -636 101 -20 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -636 101 -19 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -636 101 -18 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -638 51 -2 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] replace
-setblock -634 51 -2 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] replace
-setblock -638 51 -1 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] replace
-setblock -634 51 -1 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] replace
-setblock -638 52 -13 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -637 52 -13 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -635 52 -13 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -634 52 -13 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -640 52 -12 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -632 52 -12 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -631 52 -11 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -631 52 -10 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -630 52 -8 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -630 52 -7 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -629 52 -5 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -629 52 -4 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -637 56 -8 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -636 56 -8 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -635 56 -8 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -630 56 -6 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -630 56 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -630 56 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -630 56 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -630 57 -6 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -630 57 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -630 57 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -630 57 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -630 58 -6 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -630 58 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -630 58 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -630 58 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -640 59 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] replace
-setblock -639 59 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] replace
-setblock -638 59 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -637 59 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -636 59 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -635 59 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -634 59 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] replace
-setblock -633 59 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -632 59 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -638 59 -8 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -634 59 -8 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -630 59 -6 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -630 59 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -638 59 -3 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -634 59 -3 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -630 59 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -630 59 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -640 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
-setblock -639 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
-setblock -638 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
-setblock -637 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
-setblock -636 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
-setblock -635 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
-setblock -634 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
-setblock -633 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
-setblock -632 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
-setblock -631 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
-setblock -637 61 -12 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -636 61 -12 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -635 61 -12 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -634 61 -12 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -638 61 -11 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -633 61 -11 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -638 61 -10 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -633 61 -10 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -638 61 -9 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -633 61 -9 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -640 61 -8 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -639 61 -8 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -638 61 -8 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -637 61 -8 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -636 61 -8 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -635 61 -8 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -634 61 -8 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -637 61 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -635 61 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -634 61 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -633 61 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -632 61 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -637 61 -6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -636 61 -6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -631 61 -6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -637 61 -5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -636 61 -5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -631 61 -5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -637 61 -4 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -636 61 -4 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -631 61 -4 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -637 61 -3 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -635 61 -3 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -634 61 -3 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -633 61 -3 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -632 61 -3 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -640 61 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -639 61 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -638 61 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -636 94 -14 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
-setblock -636 95 -16 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
-setblock -636 100 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -636 100 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -636 100 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -636 101 -13 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -636 101 -12 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -636 101 -11 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -636 101 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -636 51 2 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] replace
-setblock -636 51 3 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] replace
-setblock -636 51 4 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] replace
-setblock -636 51 5 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] replace
-setblock -636 51 6 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] replace
-setblock -638 51 8 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] replace
-setblock -634 51 8 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] replace
-setblock -636 51 10 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
-setblock -636 51 11 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
-setblock -636 51 12 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
-setblock -636 51 13 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
-setblock -636 51 14 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
-setblock -639 54 0 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -633 54 0 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -639 54 8 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -633 54 8 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -638 55 5 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -637 55 5 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -635 55 5 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -634 55 5 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -638 55 6 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -637 55 6 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -635 55 6 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -634 55 6 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -638 55 7 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -637 55 7 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -635 55 7 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -634 55 7 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -638 55 8 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -637 55 8 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -635 55 8 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -634 55 8 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -630 55 8 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] replace
-setblock -638 55 9 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -637 55 9 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -635 55 9 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -634 55 9 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -638 55 10 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -637 55 10 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -635 55 10 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -634 55 10 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -638 55 11 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -637 55 11 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -635 55 11 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -634 55 11 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -638 55 13 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -637 55 13 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -635 55 13 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -634 55 13 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -638 55 14 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -637 55 14 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -635 55 14 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -634 55 14 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -638 55 15 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -637 55 15 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -635 55 15 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -634 55 15 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -636 59 1 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -636 59 15 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -636 60 2 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
-setblock -639 61 0 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=north,open=false] replace
-setblock -638 61 0 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=north,open=false] replace
-setblock -634 61 0 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=north,open=false] replace
-setblock -633 61 0 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=north,open=false] replace
-setblock -636 61 4 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
-setblock -636 61 7 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -636 61 9 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -636 61 11 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
-setblock -636 61 13 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
-setblock -636 62 6 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
-setblock -636 97 13 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -636 98 11 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -636 99 4 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -636 99 5 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -632 49 28 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -633 49 30 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -636 50 25 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -632 50 27 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -632 50 29 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
-setblock -638 51 16 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] replace
-setblock -634 51 16 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] replace
-setblock -636 51 18 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
-setblock -636 51 19 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
-setblock -636 51 20 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
-setblock -636 51 21 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
-setblock -636 51 22 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
-setblock -640 51 24 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
-setblock -639 51 24 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
-setblock -633 51 24 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
-setblock -632 51 24 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
-setblock -640 52 24 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -640 52 27 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -633 52 28 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] replace
-setblock -630 52 28 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -633 52 29 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] replace
-setblock -630 52 29 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -633 52 30 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] replace
-setblock -630 52 30 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -640 52 31 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -640 53 24 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -640 53 27 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -640 53 31 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -639 54 16 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -633 54 16 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -640 54 24 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -638 54 24 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -634 54 24 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -632 54 26 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -640 54 27 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -632 54 27 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -640 54 31 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -632 54 31 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -638 55 16 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -637 55 16 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -635 55 16 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -634 55 16 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -631 55 16 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] replace
-setblock -638 55 17 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -637 55 17 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -635 55 17 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -634 55 17 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -638 55 18 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -637 55 18 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -635 55 18 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -634 55 18 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -638 55 19 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -637 55 19 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -635 55 19 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -634 55 19 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -636 59 17 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -636 59 19 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
-setblock -636 59 21 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
-setblock -636 60 23 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
-setblock -636 60 27 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -636 61 25 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
-setblock -636 61 26 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
-setblock -636 61 30 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
-setblock -633 50 32 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
-setblock -636 50 36 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -631 52 35 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -631 52 36 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -631 52 37 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -639 53 37 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] replace
-setblock -633 53 37 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -636 53 39 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
-setblock -632 54 32 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -639 54 37 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -633 54 37 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -636 62 32 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
-setblock -636 62 33 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
-setblock -636 62 36 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -636 63 35 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
-setblock -636 64 37 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
-setblock -636 65 39 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
-setblock -636 65 42 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -636 65 47 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -636 66 41 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
-setblock -636 67 43 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
-setblock -636 56 57 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -636 56 58 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -636 56 59 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -639 81 56 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -633 81 56 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -638 81 57 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -637 81 57 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -635 81 57 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -634 81 57 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -638 81 58 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -637 81 58 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -635 81 58 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -634 81 58 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -637 81 59 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -635 81 59 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -637 81 60 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -635 81 60 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -619 81 -21 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
-setblock -616 81 -20 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -616 81 -19 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -616 81 -18 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -616 81 -17 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -622 81 -16 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
-setblock -616 81 -16 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -616 81 -15 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -623 81 -14 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
-setblock -616 81 -14 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -616 81 -13 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -616 81 -12 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -616 81 -11 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -617 81 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -617 81 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -617 81 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -618 81 4 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -618 81 5 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -602 53 -17 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -598 55 -19 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
-setblock -594 56 -18 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] replace
-setblock -594 57 -18 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] replace
-setblock -599 58 -20 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -597 58 -19 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -596 58 -19 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -596 58 -18 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -594 58 -18 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] replace
-setblock -594 59 -18 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] replace
-setblock -594 66 -17 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -594 70 -17 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -603 53 -16 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -598 54 -16 minecraft:lantern[waterlogged=false,hanging=false] replace
-setblock -599 56 -16 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=true] replace
-setblock -599 57 -16 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=true] replace
-setblock -600 58 -13 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -594 58 -11 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -603 62 -4 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -603 62 -3 minecraft:dark_oak_door[hinge=right,half=lower,powered=false,facing=east,open=false] replace
-setblock -603 62 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -603 63 -8 minecraft:dark_oak_door[hinge=right,half=lower,powered=false,facing=west,open=false] replace
-setblock -605 63 -6 minecraft:dark_oak_door[hinge=left,half=lower,powered=false,facing=north,open=false] replace
-setblock -599 63 -6 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -598 63 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -603 63 -4 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -603 63 -3 minecraft:dark_oak_door[hinge=right,half=upper,powered=false,facing=east,open=false] replace
-setblock -603 63 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -598 63 -1 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -602 64 -12 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -603 64 -8 minecraft:dark_oak_door[hinge=right,half=upper,powered=false,facing=west,open=false] replace
-setblock -605 64 -6 minecraft:dark_oak_door[hinge=left,half=upper,powered=false,facing=north,open=false] replace
-setblock -603 64 -4 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -603 64 -3 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] replace
-setblock -603 64 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -605 65 -10 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -606 65 -9 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -603 65 -3 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] replace
-setblock -595 66 -16 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -593 66 -16 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -594 66 -15 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -599 66 -11 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -605 66 -4 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -606 66 -2 minecraft:potted_bamboo replace
-setblock -603 67 -12 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -603 67 -11 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -603 67 -10 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -605 67 -9 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -603 67 -9 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -605 67 -8 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -603 67 -8 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -605 67 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -603 67 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -605 67 -6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -603 67 -6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
-setblock -600 67 -4 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -597 68 -16 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -598 70 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -597 70 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -596 70 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -595 70 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -594 70 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -593 70 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -594 71 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -595 71 -4 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -598 75 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -599 75 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -593 75 -2 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -594 59 3 minecraft:dark_oak_door[hinge=right,half=lower,powered=false,facing=north,open=false] replace
-setblock -599 60 3 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -594 60 3 minecraft:dark_oak_door[hinge=right,half=upper,powered=false,facing=north,open=false] replace
-setblock -598 60 4 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -597 60 6 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
-setblock -603 62 0 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -594 62 0 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -602 62 1 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -601 62 2 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -594 63 5 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -593 73 3 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -594 73 4 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -600 74 1 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -601 74 2 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -586 55 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -584 56 -14 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -585 56 -13 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -584 56 -12 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -585 57 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -585 57 -11 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -586 57 -10 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -585 57 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -582 57 -7 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -585 57 -6 minecraft:jungle_door[hinge=right,half=lower,powered=false,facing=east,open=false] replace
-setblock -582 57 -6 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -585 57 -5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -585 57 -4 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -584 57 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -586 57 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -585 57 -1 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -591 58 -16 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -585 58 -16 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -585 58 -11 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -586 58 -10 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -585 58 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -582 58 -7 minecraft:potted_cornflower replace
-setblock -585 58 -6 minecraft:jungle_door[hinge=right,half=upper,powered=false,facing=east,open=false] replace
-setblock -585 58 -5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -582 58 -5 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -582 58 -4 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -582 58 -3 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
-setblock -592 58 -2 minecraft:dark_oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
-setblock -586 58 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -585 58 -1 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -588 59 -14 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -585 59 -11 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -586 59 -10 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -585 59 -10 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] replace
-setblock -583 59 -10 minecraft:potted_crimson_fungus replace
-setblock -585 59 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -585 59 -6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -585 59 -5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -582 59 -5 minecraft:potted_red_tulip replace
-setblock -582 59 -3 minecraft:potted_lily_of_the_valley replace
-setblock -589 59 -2 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -586 59 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -585 59 -2 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
-setblock -584 59 -2 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
-setblock -585 59 -1 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -585 60 -11 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -586 60 -10 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -585 60 -10 minecraft:potted_crimson_roots replace
-setblock -585 60 -7 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
-setblock -585 60 -6 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
-setblock -583 60 -6 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -585 60 -5 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
-setblock -586 60 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -585 60 -1 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -589 61 -13 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -586 61 -12 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -585 61 -6 minecraft:potted_cactus replace
-setblock -585 61 -5 minecraft:potted_azalea_bush replace
-setblock -586 62 -10 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -586 62 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -586 63 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -586 63 -6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -586 63 -5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
-setblock -588 64 -5 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -588 68 -12 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -589 68 -11 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -587 68 -11 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -588 68 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
-setblock -590 69 -12 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -592 69 -11 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -592 70 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -591 70 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -590 70 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
-setblock -587 70 -5 minecraft:spruce_fence_gate[in_wall=false,powered=false,facing=north,open=false] replace
-setblock -588 71 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -589 71 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -591 72 -8 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -588 72 -4 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -587 57 0 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -588 57 1 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -586 57 1 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
-setblock -586 58 1 minecraft:lantern[waterlogged=false,hanging=true] replace
-setblock -588 58 2 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
-setblock -589 58 3 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
-setblock -587 58 3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] replace
-setblock -586 61 0 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -693 46 28 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] run setblock -693 46 28 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] replace
+execute unless block -692 46 28 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] run setblock -692 46 28 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] replace
+execute unless block -694 46 29 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] run setblock -694 46 29 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] replace
+execute unless block -692 46 29 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] run setblock -692 46 29 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] replace
+execute unless block -691 46 29 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] run setblock -691 46 29 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] replace
+execute unless block -695 46 30 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] run setblock -695 46 30 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] replace
+execute unless block -691 47 31 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -691 47 31 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -694 47 32 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -694 47 32 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -693 47 32 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -693 47 32 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -692 47 32 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -692 47 32 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -694 51 39 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -694 51 39 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -693 51 39 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -693 51 39 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -692 51 39 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -692 51 39 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -694 51 41 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -694 51 41 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -693 51 41 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -693 51 41 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -692 51 41 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -692 51 41 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -694 51 43 minecraft:dark_oak_trapdoor[waterlogged=true,half=bottom,powered=false,facing=south,open=false] run setblock -694 51 43 minecraft:dark_oak_trapdoor[waterlogged=true,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -693 51 43 minecraft:dark_oak_trapdoor[waterlogged=true,half=bottom,powered=false,facing=south,open=false] run setblock -693 51 43 minecraft:dark_oak_trapdoor[waterlogged=true,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -692 51 43 minecraft:dark_oak_trapdoor[waterlogged=true,half=bottom,powered=false,facing=south,open=false] run setblock -692 51 43 minecraft:dark_oak_trapdoor[waterlogged=true,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -694 52 37 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -694 52 37 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -693 52 37 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -693 52 37 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -692 52 37 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -692 52 37 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -694 52 45 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -694 52 45 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -693 52 45 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -693 52 45 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -692 52 45 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -692 52 45 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -694 54 36 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -694 54 36 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -693 54 36 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -693 54 36 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -692 54 36 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -692 54 36 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -694 54 46 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -694 54 46 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -693 54 46 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -693 54 46 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -692 54 46 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -692 54 46 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -694 56 36 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -694 56 36 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -693 56 36 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -693 56 36 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -692 56 36 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -692 56 36 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -694 56 46 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -694 56 46 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -693 56 46 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -693 56 46 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -692 56 46 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -692 56 46 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -694 58 36 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -694 58 36 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -693 58 36 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -693 58 36 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -692 58 36 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -692 58 36 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -694 58 46 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -694 58 46 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -693 58 46 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -693 58 46 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -692 58 46 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -692 58 46 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -694 60 37 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -694 60 37 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -693 60 37 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -693 60 37 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -692 60 37 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -692 60 37 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -694 60 45 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=true] run setblock -694 60 45 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=true] replace
+execute unless block -693 60 45 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=true] run setblock -693 60 45 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=true] replace
+execute unless block -692 60 45 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=true] run setblock -692 60 45 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=true] replace
+execute unless block -694 61 39 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -694 61 39 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -693 61 39 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -693 61 39 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -692 61 39 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -692 61 39 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -694 61 41 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -694 61 41 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -693 61 41 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -693 61 41 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -692 61 41 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -692 61 41 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -694 61 43 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -694 61 43 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -693 61 43 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -693 61 43 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -692 61 43 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -692 61 43 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -673 56 33 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -673 56 33 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -674 56 34 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -674 56 34 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -674 56 35 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -674 56 35 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -674 56 36 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -674 56 36 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -673 56 37 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -673 56 37 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -674 56 38 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -674 56 38 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -673 56 38 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -673 56 38 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -674 56 39 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -674 56 39 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -674 56 41 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -674 56 41 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -673 56 42 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -673 56 42 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -668 45 -1 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -668 45 -1 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -667 45 -1 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -667 45 -1 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -668 44 0 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock -668 44 0 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block -668 44 1 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] run setblock -668 44 1 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] replace
+execute unless block -667 44 1 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock -667 44 1 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block -667 44 2 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock -667 44 2 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block -667 45 0 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -667 45 0 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -668 45 2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] run setblock -668 45 2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] replace
+execute unless block -663 56 5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -663 56 5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -662 56 5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -662 56 5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -661 56 5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -661 56 5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -664 56 6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -664 56 6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -660 56 6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -660 56 6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -663 56 7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -663 56 7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -662 56 7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -662 56 7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -661 56 7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -661 56 7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -664 57 12 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -664 57 12 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -663 57 12 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -663 57 12 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -665 57 13 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -665 57 13 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -662 57 13 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -662 57 13 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -666 57 14 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -666 57 14 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -661 57 14 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -661 57 14 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -666 57 15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -666 57 15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -662 57 15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -662 57 15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -661 57 15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -661 57 15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -666 57 16 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -666 57 16 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -663 57 16 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -663 57 16 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -662 57 16 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -662 57 16 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -665 57 17 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -665 57 17 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -664 57 17 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -664 57 17 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -663 57 17 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -663 57 17 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -672 56 34 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -672 56 34 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -672 56 35 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -672 56 35 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -672 56 36 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -672 56 36 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -672 56 38 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -672 56 38 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -671 56 39 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -671 56 39 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -671 56 40 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -671 56 40 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -671 56 41 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -671 56 41 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -672 56 42 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -672 56 42 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -653 81 -21 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] run setblock -653 81 -21 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
+execute unless block -656 81 -20 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -656 81 -20 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -656 81 -19 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -656 81 -19 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -656 81 -18 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -656 81 -18 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -656 81 -17 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -656 81 -17 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -641 52 -11 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -641 52 -11 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -641 52 -10 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -641 52 -10 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -642 52 -8 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -642 52 -8 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -642 52 -7 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -642 52 -7 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -643 52 -5 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -643 52 -5 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -643 52 -4 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -643 52 -4 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -642 56 -6 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] run setblock -642 56 -6 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
+execute unless block -642 56 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] run setblock -642 56 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
+execute unless block -642 56 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] run setblock -642 56 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
+execute unless block -642 56 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] run setblock -642 56 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
+execute unless block -642 57 -6 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] run setblock -642 57 -6 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
+execute unless block -642 57 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] run setblock -642 57 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
+execute unless block -642 57 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] run setblock -642 57 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
+execute unless block -642 57 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] run setblock -642 57 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
+execute unless block -642 58 -6 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] run setblock -642 58 -6 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
+execute unless block -642 58 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] run setblock -642 58 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
+execute unless block -642 58 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] run setblock -642 58 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
+execute unless block -642 58 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] run setblock -642 58 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
+execute unless block -642 59 -6 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] run setblock -642 59 -6 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
+execute unless block -642 59 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] run setblock -642 59 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
+execute unless block -642 59 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] run setblock -642 59 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
+execute unless block -642 59 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] run setblock -642 59 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
+execute unless block -641 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock -641 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block -641 61 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -641 61 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -641 61 -6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -641 61 -6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -641 61 -5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -641 61 -5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -641 61 -4 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -641 61 -4 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -641 61 -3 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -641 61 -3 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -656 81 -16 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -656 81 -16 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -650 81 -16 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] run setblock -650 81 -16 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
+execute unless block -656 81 -15 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -656 81 -15 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -656 81 -14 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -656 81 -14 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -649 81 -14 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] run setblock -649 81 -14 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
+execute unless block -656 81 -13 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -656 81 -13 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -656 81 -12 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -656 81 -12 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -656 81 -11 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -656 81 -11 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -655 81 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -655 81 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -655 81 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -655 81 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -655 81 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -655 81 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -642 55 8 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] run setblock -642 55 8 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] replace
+execute unless block -654 81 4 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -654 81 4 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -654 81 5 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -654 81 5 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -642 52 28 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -642 52 28 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -642 52 29 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -642 52 29 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -642 52 30 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -642 52 30 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -641 55 16 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] run setblock -641 55 16 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] replace
+execute unless block -641 52 35 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -641 52 35 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -641 52 36 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -641 52 36 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -641 52 37 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -641 52 37 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -636 54 -17 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -636 54 -17 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -636 98 -21 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] run setblock -636 98 -21 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
+execute unless block -636 101 -20 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -636 101 -20 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -636 101 -19 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -636 101 -19 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -636 101 -18 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -636 101 -18 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -638 51 -2 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] run setblock -638 51 -2 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] replace
+execute unless block -634 51 -2 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] run setblock -634 51 -2 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] replace
+execute unless block -638 51 -1 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] run setblock -638 51 -1 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] replace
+execute unless block -634 51 -1 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] run setblock -634 51 -1 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] replace
+execute unless block -638 52 -13 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -638 52 -13 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -637 52 -13 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -637 52 -13 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -635 52 -13 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -635 52 -13 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -634 52 -13 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -634 52 -13 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -640 52 -12 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -640 52 -12 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -632 52 -12 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -632 52 -12 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -631 52 -11 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -631 52 -11 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -631 52 -10 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -631 52 -10 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -630 52 -8 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -630 52 -8 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -630 52 -7 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -630 52 -7 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -629 52 -5 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -629 52 -5 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -629 52 -4 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -629 52 -4 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -637 56 -8 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -637 56 -8 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -636 56 -8 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -636 56 -8 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -635 56 -8 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -635 56 -8 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -630 56 -6 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -630 56 -6 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -630 56 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -630 56 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -630 56 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -630 56 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -630 56 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -630 56 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -630 57 -6 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -630 57 -6 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -630 57 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -630 57 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -630 57 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -630 57 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -630 57 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -630 57 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -630 58 -6 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -630 58 -6 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -630 58 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -630 58 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -630 58 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -630 58 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -630 58 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -630 58 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -640 59 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] run setblock -640 59 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] replace
+execute unless block -639 59 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] run setblock -639 59 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] replace
+execute unless block -638 59 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -638 59 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -637 59 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -637 59 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -636 59 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -636 59 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -635 59 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -635 59 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -634 59 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] run setblock -634 59 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] replace
+execute unless block -633 59 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -633 59 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -632 59 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -632 59 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -638 59 -8 minecraft:lantern[waterlogged=false,hanging=true] run setblock -638 59 -8 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -634 59 -8 minecraft:lantern[waterlogged=false,hanging=true] run setblock -634 59 -8 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -630 59 -6 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -630 59 -6 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -630 59 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -630 59 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -638 59 -3 minecraft:lantern[waterlogged=false,hanging=true] run setblock -638 59 -3 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -634 59 -3 minecraft:lantern[waterlogged=false,hanging=true] run setblock -634 59 -3 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -630 59 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -630 59 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -630 59 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -630 59 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -640 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock -640 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block -639 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock -639 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block -638 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock -638 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block -637 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock -637 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block -636 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock -636 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block -635 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock -635 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block -634 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock -634 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block -633 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock -633 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block -632 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock -632 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block -631 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock -631 59 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block -637 61 -12 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -637 61 -12 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -636 61 -12 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -636 61 -12 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -635 61 -12 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -635 61 -12 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -634 61 -12 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -634 61 -12 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -638 61 -11 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -638 61 -11 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -633 61 -11 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -633 61 -11 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -638 61 -10 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -638 61 -10 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -633 61 -10 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -633 61 -10 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -638 61 -9 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -638 61 -9 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -633 61 -9 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -633 61 -9 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -640 61 -8 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -640 61 -8 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -639 61 -8 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -639 61 -8 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -638 61 -8 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -638 61 -8 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -637 61 -8 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -637 61 -8 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -636 61 -8 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -636 61 -8 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -635 61 -8 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -635 61 -8 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -634 61 -8 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -634 61 -8 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -637 61 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -637 61 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -635 61 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -635 61 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -634 61 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -634 61 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -633 61 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -633 61 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -632 61 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -632 61 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -637 61 -6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -637 61 -6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -636 61 -6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -636 61 -6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -631 61 -6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -631 61 -6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -637 61 -5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -637 61 -5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -636 61 -5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -636 61 -5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -631 61 -5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -631 61 -5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -637 61 -4 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -637 61 -4 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -636 61 -4 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -636 61 -4 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -631 61 -4 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -631 61 -4 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -637 61 -3 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -637 61 -3 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -635 61 -3 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -635 61 -3 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -634 61 -3 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -634 61 -3 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -633 61 -3 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -633 61 -3 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -632 61 -3 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -632 61 -3 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -640 61 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -640 61 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -639 61 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -639 61 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -638 61 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -638 61 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -636 94 -14 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] run setblock -636 94 -14 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
+execute unless block -636 95 -16 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] run setblock -636 95 -16 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
+execute unless block -636 100 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -636 100 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -636 100 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -636 100 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -636 100 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -636 100 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -636 101 -13 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -636 101 -13 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -636 101 -12 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -636 101 -12 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -636 101 -11 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -636 101 -11 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -636 101 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -636 101 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -636 51 2 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] run setblock -636 51 2 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] replace
+execute unless block -636 51 3 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] run setblock -636 51 3 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] replace
+execute unless block -636 51 4 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] run setblock -636 51 4 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] replace
+execute unless block -636 51 5 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] run setblock -636 51 5 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] replace
+execute unless block -636 51 6 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] run setblock -636 51 6 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] replace
+execute unless block -638 51 8 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] run setblock -638 51 8 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] replace
+execute unless block -634 51 8 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] run setblock -634 51 8 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] replace
+execute unless block -636 51 10 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock -636 51 10 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block -636 51 11 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock -636 51 11 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block -636 51 12 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock -636 51 12 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block -636 51 13 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock -636 51 13 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block -636 51 14 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock -636 51 14 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block -639 54 0 minecraft:lantern[waterlogged=false,hanging=true] run setblock -639 54 0 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -633 54 0 minecraft:lantern[waterlogged=false,hanging=true] run setblock -633 54 0 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -639 54 8 minecraft:lantern[waterlogged=false,hanging=true] run setblock -639 54 8 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -633 54 8 minecraft:lantern[waterlogged=false,hanging=true] run setblock -633 54 8 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -638 55 5 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -638 55 5 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -637 55 5 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -637 55 5 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -635 55 5 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -635 55 5 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -634 55 5 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -634 55 5 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -638 55 6 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -638 55 6 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -637 55 6 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -637 55 6 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -635 55 6 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -635 55 6 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -634 55 6 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -634 55 6 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -638 55 7 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -638 55 7 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -637 55 7 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -637 55 7 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -635 55 7 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -635 55 7 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -634 55 7 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -634 55 7 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -638 55 8 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -638 55 8 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -637 55 8 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -637 55 8 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -635 55 8 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -635 55 8 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -634 55 8 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -634 55 8 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -630 55 8 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] run setblock -630 55 8 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] replace
+execute unless block -638 55 9 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -638 55 9 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -637 55 9 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -637 55 9 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -635 55 9 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -635 55 9 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -634 55 9 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -634 55 9 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -638 55 10 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -638 55 10 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -637 55 10 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -637 55 10 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -635 55 10 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -635 55 10 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -634 55 10 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -634 55 10 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -638 55 11 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -638 55 11 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -637 55 11 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -637 55 11 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -635 55 11 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -635 55 11 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -634 55 11 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -634 55 11 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -638 55 13 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -638 55 13 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -637 55 13 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -637 55 13 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -635 55 13 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -635 55 13 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -634 55 13 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -634 55 13 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -638 55 14 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -638 55 14 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -637 55 14 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -637 55 14 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -635 55 14 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -635 55 14 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -634 55 14 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -634 55 14 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -638 55 15 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -638 55 15 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -637 55 15 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -637 55 15 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -635 55 15 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -635 55 15 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -634 55 15 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -634 55 15 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -636 59 1 minecraft:lantern[waterlogged=false,hanging=true] run setblock -636 59 1 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -636 59 15 minecraft:lantern[waterlogged=false,hanging=true] run setblock -636 59 15 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -636 60 2 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] run setblock -636 60 2 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
+execute unless block -639 61 0 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=north,open=false] run setblock -639 61 0 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=north,open=false] replace
+execute unless block -638 61 0 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=north,open=false] run setblock -638 61 0 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=north,open=false] replace
+execute unless block -634 61 0 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=north,open=false] run setblock -634 61 0 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=north,open=false] replace
+execute unless block -633 61 0 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=north,open=false] run setblock -633 61 0 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=north,open=false] replace
+execute unless block -636 61 4 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] run setblock -636 61 4 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
+execute unless block -636 61 7 minecraft:lantern[waterlogged=false,hanging=true] run setblock -636 61 7 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -636 61 9 minecraft:lantern[waterlogged=false,hanging=true] run setblock -636 61 9 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -636 61 11 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] run setblock -636 61 11 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
+execute unless block -636 61 13 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] run setblock -636 61 13 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
+execute unless block -636 62 6 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] run setblock -636 62 6 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
+execute unless block -636 97 13 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -636 97 13 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -636 98 11 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -636 98 11 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -636 99 4 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -636 99 4 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -636 99 5 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -636 99 5 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -632 49 28 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -632 49 28 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -633 49 30 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -633 49 30 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -636 50 25 minecraft:lantern[waterlogged=false,hanging=true] run setblock -636 50 25 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -632 50 27 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -632 50 27 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -632 50 29 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] run setblock -632 50 29 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
+execute unless block -638 51 16 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] run setblock -638 51 16 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] replace
+execute unless block -634 51 16 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] run setblock -634 51 16 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] replace
+execute unless block -636 51 18 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock -636 51 18 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block -636 51 19 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock -636 51 19 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block -636 51 20 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock -636 51 20 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block -636 51 21 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock -636 51 21 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block -636 51 22 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock -636 51 22 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block -640 51 24 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] run setblock -640 51 24 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
+execute unless block -639 51 24 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] run setblock -639 51 24 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
+execute unless block -633 51 24 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] run setblock -633 51 24 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
+execute unless block -632 51 24 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] run setblock -632 51 24 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
+execute unless block -640 52 24 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -640 52 24 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -640 52 27 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -640 52 27 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -633 52 28 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] run setblock -633 52 28 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] replace
+execute unless block -630 52 28 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -630 52 28 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -633 52 29 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] run setblock -633 52 29 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] replace
+execute unless block -630 52 29 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -630 52 29 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -633 52 30 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] run setblock -633 52 30 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] replace
+execute unless block -630 52 30 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -630 52 30 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -640 52 31 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -640 52 31 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -640 53 24 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -640 53 24 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -640 53 27 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -640 53 27 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -640 53 31 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -640 53 31 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -639 54 16 minecraft:lantern[waterlogged=false,hanging=true] run setblock -639 54 16 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -633 54 16 minecraft:lantern[waterlogged=false,hanging=true] run setblock -633 54 16 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -640 54 24 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -640 54 24 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -638 54 24 minecraft:lantern[waterlogged=false,hanging=true] run setblock -638 54 24 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -634 54 24 minecraft:lantern[waterlogged=false,hanging=true] run setblock -634 54 24 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -632 54 26 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -632 54 26 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -640 54 27 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -640 54 27 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -632 54 27 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -632 54 27 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -640 54 31 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -640 54 31 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -632 54 31 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -632 54 31 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -638 55 16 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -638 55 16 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -637 55 16 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -637 55 16 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -635 55 16 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -635 55 16 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -634 55 16 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -634 55 16 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -631 55 16 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] run setblock -631 55 16 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] replace
+execute unless block -638 55 17 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -638 55 17 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -637 55 17 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -637 55 17 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -635 55 17 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -635 55 17 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -634 55 17 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -634 55 17 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -638 55 18 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -638 55 18 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -637 55 18 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -637 55 18 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -635 55 18 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -635 55 18 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -634 55 18 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -634 55 18 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -638 55 19 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -638 55 19 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -637 55 19 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -637 55 19 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -635 55 19 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -635 55 19 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -634 55 19 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -634 55 19 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -636 59 17 minecraft:lantern[waterlogged=false,hanging=true] run setblock -636 59 17 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -636 59 19 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] run setblock -636 59 19 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
+execute unless block -636 59 21 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] run setblock -636 59 21 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
+execute unless block -636 60 23 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] run setblock -636 60 23 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
+execute unless block -636 60 27 minecraft:lantern[waterlogged=false,hanging=true] run setblock -636 60 27 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -636 61 25 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] run setblock -636 61 25 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
+execute unless block -636 61 26 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] run setblock -636 61 26 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
+execute unless block -636 61 30 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] run setblock -636 61 30 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
+execute unless block -633 50 32 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] run setblock -633 50 32 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
+execute unless block -636 50 36 minecraft:lantern[waterlogged=false,hanging=true] run setblock -636 50 36 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -631 52 35 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -631 52 35 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -631 52 36 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -631 52 36 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -631 52 37 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -631 52 37 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -639 53 37 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] run setblock -639 53 37 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] replace
+execute unless block -633 53 37 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -633 53 37 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -636 53 39 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock -636 53 39 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block -632 54 32 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -632 54 32 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -639 54 37 minecraft:lantern[waterlogged=false,hanging=true] run setblock -639 54 37 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -633 54 37 minecraft:lantern[waterlogged=false,hanging=true] run setblock -633 54 37 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -636 62 32 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] run setblock -636 62 32 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
+execute unless block -636 62 33 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] run setblock -636 62 33 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
+execute unless block -636 62 36 minecraft:lantern[waterlogged=false,hanging=true] run setblock -636 62 36 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -636 63 35 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] run setblock -636 63 35 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
+execute unless block -636 64 37 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] run setblock -636 64 37 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
+execute unless block -636 65 39 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] run setblock -636 65 39 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
+execute unless block -636 65 42 minecraft:lantern[waterlogged=false,hanging=true] run setblock -636 65 42 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -636 65 47 minecraft:lantern[waterlogged=false,hanging=true] run setblock -636 65 47 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -636 66 41 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] run setblock -636 66 41 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
+execute unless block -636 67 43 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] run setblock -636 67 43 minecraft:oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
+execute unless block -636 56 57 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -636 56 57 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -636 56 58 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -636 56 58 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -636 56 59 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -636 56 59 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -639 81 56 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -639 81 56 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -633 81 56 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -633 81 56 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -638 81 57 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -638 81 57 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -637 81 57 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -637 81 57 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -635 81 57 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -635 81 57 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -634 81 57 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -634 81 57 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -638 81 58 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -638 81 58 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -637 81 58 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -637 81 58 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -635 81 58 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -635 81 58 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -634 81 58 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -634 81 58 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -637 81 59 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -637 81 59 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -635 81 59 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -635 81 59 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -637 81 60 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -637 81 60 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -635 81 60 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -635 81 60 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -619 81 -21 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] run setblock -619 81 -21 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
+execute unless block -616 81 -20 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -616 81 -20 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -616 81 -19 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -616 81 -19 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -616 81 -18 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -616 81 -18 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -616 81 -17 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -616 81 -17 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -622 81 -16 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] run setblock -622 81 -16 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
+execute unless block -616 81 -16 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -616 81 -16 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -616 81 -15 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -616 81 -15 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -623 81 -14 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] run setblock -623 81 -14 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
+execute unless block -616 81 -14 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -616 81 -14 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -616 81 -13 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -616 81 -13 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -616 81 -12 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -616 81 -12 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -616 81 -11 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -616 81 -11 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -617 81 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -617 81 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -617 81 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -617 81 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -617 81 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -617 81 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -618 81 4 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -618 81 4 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -618 81 5 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -618 81 5 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -602 53 -17 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -602 53 -17 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -598 55 -19 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock -598 55 -19 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block -594 56 -18 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] run setblock -594 56 -18 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] replace
+execute unless block -594 57 -18 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] run setblock -594 57 -18 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] replace
+execute unless block -599 58 -20 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -599 58 -20 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -597 58 -19 minecraft:lantern[waterlogged=false,hanging=true] run setblock -597 58 -19 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -596 58 -19 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -596 58 -19 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -596 58 -18 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -596 58 -18 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -594 58 -18 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] run setblock -594 58 -18 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] replace
+execute unless block -594 59 -18 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] run setblock -594 59 -18 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] replace
+execute unless block -594 66 -17 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -594 66 -17 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -594 70 -17 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -594 70 -17 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -603 53 -16 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -603 53 -16 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -598 54 -16 minecraft:lantern[waterlogged=false,hanging=false] run setblock -598 54 -16 minecraft:lantern[waterlogged=false,hanging=false] replace
+execute unless block -599 56 -16 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=true] run setblock -599 56 -16 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=true] replace
+execute unless block -599 57 -16 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=true] run setblock -599 57 -16 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=true] replace
+execute unless block -600 58 -13 minecraft:lantern[waterlogged=false,hanging=true] run setblock -600 58 -13 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -594 58 -11 minecraft:lantern[waterlogged=false,hanging=true] run setblock -594 58 -11 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -603 62 -4 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -603 62 -4 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -603 62 -3 minecraft:dark_oak_door[hinge=right,half=lower,powered=false,facing=east,open=true] run setblock -603 62 -3 minecraft:dark_oak_door[hinge=right,half=lower,powered=false,facing=east,open=true] replace
+execute unless block -603 62 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -603 62 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -603 63 -8 minecraft:dark_oak_door[hinge=right,half=lower,powered=false,facing=west,open=true] run setblock -603 63 -8 minecraft:dark_oak_door[hinge=right,half=lower,powered=false,facing=west,open=true] replace
+execute unless block -605 63 -6 minecraft:dark_oak_door[hinge=left,half=lower,powered=false,facing=north,open=true] run setblock -605 63 -6 minecraft:dark_oak_door[hinge=left,half=lower,powered=false,facing=north,open=true] replace
+execute unless block -599 63 -6 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -599 63 -6 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -598 63 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -598 63 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -603 63 -4 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -603 63 -4 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -603 63 -3 minecraft:dark_oak_door[hinge=right,half=upper,powered=false,facing=east,open=true] run setblock -603 63 -3 minecraft:dark_oak_door[hinge=right,half=upper,powered=false,facing=east,open=true] replace
+execute unless block -603 63 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -603 63 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -598 63 -1 minecraft:lantern[waterlogged=false,hanging=true] run setblock -598 63 -1 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -602 64 -12 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -602 64 -12 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -603 64 -8 minecraft:dark_oak_door[hinge=right,half=upper,powered=false,facing=west,open=true] run setblock -603 64 -8 minecraft:dark_oak_door[hinge=right,half=upper,powered=false,facing=west,open=true] replace
+execute unless block -605 64 -6 minecraft:dark_oak_door[hinge=left,half=upper,powered=false,facing=north,open=true] run setblock -605 64 -6 minecraft:dark_oak_door[hinge=left,half=upper,powered=false,facing=north,open=true] replace
+execute unless block -603 64 -4 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -603 64 -4 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -603 64 -3 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] run setblock -603 64 -3 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] replace
+execute unless block -603 64 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -603 64 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -605 65 -10 minecraft:lantern[waterlogged=false,hanging=true] run setblock -605 65 -10 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -606 65 -9 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -606 65 -9 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -603 65 -3 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] run setblock -603 65 -3 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] replace
+execute unless block -595 66 -16 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -595 66 -16 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -593 66 -16 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -593 66 -16 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -594 66 -15 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -594 66 -15 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -599 66 -11 minecraft:lantern[waterlogged=false,hanging=true] run setblock -599 66 -11 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -605 66 -4 minecraft:lantern[waterlogged=false,hanging=true] run setblock -605 66 -4 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -606 66 -2 minecraft:potted_bamboo run setblock -606 66 -2 minecraft:potted_bamboo replace
+execute unless block -603 67 -12 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -603 67 -12 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -603 67 -11 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -603 67 -11 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -603 67 -10 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -603 67 -10 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -605 67 -9 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -605 67 -9 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -603 67 -9 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -603 67 -9 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -605 67 -8 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -605 67 -8 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -603 67 -8 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -603 67 -8 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -605 67 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -605 67 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -603 67 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -603 67 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -605 67 -6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] run setblock -605 67 -6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=false] replace
+execute unless block -603 67 -6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -603 67 -6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -600 67 -4 minecraft:lantern[waterlogged=false,hanging=true] run setblock -600 67 -4 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -597 68 -16 minecraft:lantern[waterlogged=false,hanging=true] run setblock -597 68 -16 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -598 70 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -598 70 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -597 70 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -597 70 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -596 70 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -596 70 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -595 70 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -595 70 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -594 70 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -594 70 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -593 70 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -593 70 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -594 71 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -594 71 -5 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -595 71 -4 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -595 71 -4 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -598 75 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -598 75 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -599 75 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -599 75 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -593 75 -2 minecraft:lantern[waterlogged=false,hanging=true] run setblock -593 75 -2 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -594 59 3 minecraft:dark_oak_door[hinge=right,half=lower,powered=false,facing=north,open=true] run setblock -594 59 3 minecraft:dark_oak_door[hinge=right,half=lower,powered=false,facing=north,open=true] replace
+execute unless block -599 60 3 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -599 60 3 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -594 60 3 minecraft:dark_oak_door[hinge=right,half=upper,powered=false,facing=north,open=true] run setblock -594 60 3 minecraft:dark_oak_door[hinge=right,half=upper,powered=false,facing=north,open=true] replace
+execute unless block -598 60 4 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -598 60 4 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -597 60 6 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] run setblock -597 60 6 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
+execute unless block -603 62 0 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -603 62 0 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -594 62 0 minecraft:lantern[waterlogged=false,hanging=true] run setblock -594 62 0 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -602 62 1 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -602 62 1 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -601 62 2 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -601 62 2 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -594 63 5 minecraft:lantern[waterlogged=false,hanging=true] run setblock -594 63 5 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -593 73 3 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -593 73 3 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -594 73 4 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -594 73 4 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -600 74 1 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -600 74 1 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -601 74 2 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -601 74 2 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -586 55 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -586 55 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -584 56 -14 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -584 56 -14 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -585 56 -13 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -585 56 -13 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -584 56 -12 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -584 56 -12 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -585 57 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -585 57 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -585 57 -11 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -585 57 -11 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -586 57 -10 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -586 57 -10 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -585 57 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -585 57 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -582 57 -7 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -582 57 -7 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -585 57 -6 minecraft:jungle_door[hinge=right,half=lower,powered=false,facing=east,open=false] run setblock -585 57 -6 minecraft:jungle_door[hinge=right,half=lower,powered=false,facing=east,open=false] replace
+execute unless block -582 57 -6 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -582 57 -6 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -585 57 -5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -585 57 -5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -585 57 -4 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -585 57 -4 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -584 57 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -584 57 -3 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -586 57 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -586 57 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -585 57 -1 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -585 57 -1 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -591 58 -16 minecraft:lantern[waterlogged=false,hanging=true] run setblock -591 58 -16 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -585 58 -16 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -585 58 -16 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -585 58 -11 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -585 58 -11 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -586 58 -10 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -586 58 -10 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -585 58 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -585 58 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -582 58 -7 minecraft:potted_cornflower run setblock -582 58 -7 minecraft:potted_cornflower replace
+execute unless block -585 58 -6 minecraft:jungle_door[hinge=right,half=upper,powered=false,facing=east,open=false] run setblock -585 58 -6 minecraft:jungle_door[hinge=right,half=upper,powered=false,facing=east,open=false] replace
+execute unless block -585 58 -5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -585 58 -5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -582 58 -5 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -582 58 -5 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -582 58 -4 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -582 58 -4 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -582 58 -3 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -582 58 -3 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
+execute unless block -592 58 -2 minecraft:dark_oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] run setblock -592 58 -2 minecraft:dark_oak_fence_gate[in_wall=false,powered=false,facing=east,open=false] replace
+execute unless block -586 58 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -586 58 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -585 58 -1 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -585 58 -1 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -588 59 -14 minecraft:lantern[waterlogged=false,hanging=true] run setblock -588 59 -14 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -585 59 -11 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -585 59 -11 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -586 59 -10 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -586 59 -10 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -585 59 -10 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] run setblock -585 59 -10 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] replace
+execute unless block -583 59 -10 minecraft:potted_crimson_fungus run setblock -583 59 -10 minecraft:potted_crimson_fungus replace
+execute unless block -585 59 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -585 59 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -585 59 -6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -585 59 -6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -585 59 -5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -585 59 -5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -582 59 -5 minecraft:potted_red_tulip run setblock -582 59 -5 minecraft:potted_red_tulip replace
+execute unless block -582 59 -3 minecraft:potted_lily_of_the_valley run setblock -582 59 -3 minecraft:potted_lily_of_the_valley replace
+execute unless block -589 59 -2 minecraft:lantern[waterlogged=false,hanging=true] run setblock -589 59 -2 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -586 59 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -586 59 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -585 59 -2 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock -585 59 -2 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block -584 59 -2 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock -584 59 -2 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block -585 59 -1 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -585 59 -1 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -585 60 -11 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -585 60 -11 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -586 60 -10 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -586 60 -10 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -585 60 -10 minecraft:potted_crimson_roots run setblock -585 60 -10 minecraft:potted_crimson_roots replace
+execute unless block -585 60 -7 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] run setblock -585 60 -7 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
+execute unless block -585 60 -6 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] run setblock -585 60 -6 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
+execute unless block -583 60 -6 minecraft:lantern[waterlogged=false,hanging=true] run setblock -583 60 -6 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -585 60 -5 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] run setblock -585 60 -5 minecraft:oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
+execute unless block -586 60 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -586 60 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -585 60 -1 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -585 60 -1 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -589 61 -13 minecraft:lantern[waterlogged=false,hanging=true] run setblock -589 61 -13 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -586 61 -12 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -586 61 -12 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -585 61 -6 minecraft:potted_cactus run setblock -585 61 -6 minecraft:potted_cactus replace
+execute unless block -585 61 -5 minecraft:potted_azalea_bush run setblock -585 61 -5 minecraft:potted_azalea_bush replace
+execute unless block -586 62 -10 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -586 62 -10 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -586 62 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -586 62 -2 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -586 63 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -586 63 -7 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -586 63 -6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -586 63 -6 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -586 63 -5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -586 63 -5 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+execute unless block -588 64 -5 minecraft:lantern[waterlogged=false,hanging=true] run setblock -588 64 -5 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -588 68 -12 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -588 68 -12 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -589 68 -11 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -589 68 -11 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -587 68 -11 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -587 68 -11 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -588 68 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -588 68 -10 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace
+execute unless block -590 69 -12 minecraft:lantern[waterlogged=false,hanging=true] run setblock -590 69 -12 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -592 69 -11 minecraft:lantern[waterlogged=false,hanging=true] run setblock -592 69 -11 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -592 70 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -592 70 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -591 70 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -591 70 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -590 70 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] run setblock -590 70 -15 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=false] replace
+execute unless block -587 70 -5 minecraft:spruce_fence_gate[in_wall=false,powered=false,facing=north,open=false] run setblock -587 70 -5 minecraft:spruce_fence_gate[in_wall=false,powered=false,facing=north,open=false] replace
+execute unless block -588 71 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -588 71 -2 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -589 71 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -589 71 -1 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -591 72 -8 minecraft:lantern[waterlogged=false,hanging=true] run setblock -591 72 -8 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -588 72 -4 minecraft:lantern[waterlogged=false,hanging=true] run setblock -588 72 -4 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -587 57 0 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -587 57 0 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -588 57 1 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -588 57 1 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -586 57 1 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock -586 57 1 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
+execute unless block -586 58 1 minecraft:lantern[waterlogged=false,hanging=true] run setblock -586 58 1 minecraft:lantern[waterlogged=false,hanging=true] replace
+execute unless block -588 58 2 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -588 58 2 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
+execute unless block -589 58 3 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -589 58 3 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
+execute unless block -587 58 3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] run setblock -587 58 3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] replace
+execute unless block -586 61 0 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -586 61 0 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace

@@ -22,6 +22,8 @@ scoreboard objectives add canPickupGun dummy
 scoreboard objectives add canGetRetrieval dummy
 scoreboard objectives add GameRules dummy
 scoreboard objectives add gundelay dummy
+scoreboard objectives add scrapCount dummy
+scoreboard objectives add scrapRNG dummy
 scoreboard objectives add leave minecraft.custom:minecraft.leave_game
 scoreboard objectives add droppedGun minecraft.dropped:minecraft.warped_fungus_on_a_stick
 scoreboard objectives add droppedKnife minecraft.dropped:minecraft.snowball
@@ -32,6 +34,7 @@ scoreboard players set $one CmdData 1
 scoreboard players set $start CmdData 0
 scoreboard players set $startcountdown CmdData 200
 scoreboard objectives add popcorndelay dummy
+scoreboard objectives add playerUUID dummy
 
 scoreboard players reset @a dead
 

@@ -23,6 +23,9 @@ execute if score $gamestate CmdData matches 1 run function mcm:game/loops/ingame
 #Game end loop
 execute if score $gamestate CmdData matches 2 run function mcm:game/loops/gameend
 
+#> Player UUID
+execute as @a store result score @s playerUUID run data get entity @s UUID[0]
+
 #> Popcorn
 function mcm:lobby/popcorn
 
@@ -60,6 +63,7 @@ execute as @a[scores={leave=1..}] at @s run tag @s remove spectating
 execute as @a[scores={leave=1..}] at @s run tag @s remove shotGun
 execute as @a[scores={leave=1..}] at @s run tag @s remove retrieved
 execute as @a[scores={leave=1..}] at @s run tag @s remove queued
+execute as @a[scores={leave=1..}] at @s run tag @s remove lostGun
 # Clearing items
 execute as @a[scores={leave=1..}] at @s run clear @s warped_fungus_on_a_stick
 execute as @a[scores={leave=1..}] at @s run clear @s snowball
@@ -68,5 +72,5 @@ execute as @a[scores={leave=1..}] at @s run clear @s spyglass
 execute as @a[scores={leave=1..}] at @s run clear @s netherite_scrap
 # The rest
 execute as @a[scores={leave=1..}] at @s run effect clear @s
-execute as @a[scores={leave=1..}] at @s run tp @s -1 1 69
+execute as @a[scores={leave=1..}] at @s run tp @s -1 1 69 0 0
 execute as @a[scores={leave=1..}] at @s run scoreboard players reset @s leave

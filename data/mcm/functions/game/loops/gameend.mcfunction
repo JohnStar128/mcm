@@ -15,7 +15,7 @@ execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData ma
 execute if score $didGameEnd CmdData matches 1 run scoreboard players remove $gameEndTimer CmdData 1
 
 # teleport
-execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run tp @a[team=!test4,tag=queued] -1 1 69
+execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run tp @a[team=!test4,tag=queued] -1 1 69 0 0
 
 execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run time set 6000
 
@@ -41,6 +41,7 @@ execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData ma
 execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run tag @a remove queued
 execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run tag @a remove retrieved
 execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run tag @a remove shotGun
+execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run tag @a remove lostGun
 
 # remove death related scores
 execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run scoreboard players reset @a dead
@@ -52,7 +53,13 @@ execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData ma
 execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run scoreboard players set $startcountdown CmdData 200
 execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run scoreboard players reset @a knifeRetrieval 
 execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run scoreboard players reset @a throwKnife
+execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run scoreboard players reset @a scrapCount
 execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run scoreboard players reset @a canPickupGun
+
+# Reset the maps
+execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 1 run function mcm:maps/library/reset
+execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 2 run function mcm:maps/airship/reset
+execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 3 run function mcm:maps/vineyard/reset
 
 # remove items
 clear @a snowball
@@ -60,6 +67,7 @@ clear @a carrot_on_a_stick
 clear @a netherite_scrap
 clear @a warped_fungus_on_a_stick
 clear @a spyglass
+clear @a compass
 
 #give popcorn
 execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run item replace entity @a[tag=WonLast] hotbar.0 with warped_fungus_on_a_stick{NoDrop:1b,CustomModelData:1114,display:{Name:'[{"text":"Victory Popcorn","italic":false,"color":"yellow"}]',Lore:['[{"text":"","italic":false}]','[{"text":"The snack that\'s worth dying for!","italic":true,"color":"dark_gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]']},HideFlags:3,HideFlags:3}
