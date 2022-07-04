@@ -4,6 +4,9 @@ forceload add 2111 2095 1937 1911
 #> Kill potential leftover entities
 kill @e[tag=MapEntity]
 
+#> Lobby poster visual
+fill 27 5 98 27 1 101 warped_trapdoor[open=true,facing=west] replace crimson_trapdoor
+
 #> Set Player Spawnpoints
 summon marker 1961 66 1986 {Tags:["MapEntity","PlayerSpawn"]}
 summon marker 1966 66 1959 {Tags:["MapEntity","PlayerSpawn"]}
@@ -71,7 +74,7 @@ summon marker 2003 70 2084 {Tags:["MapEntity",ScrapSpawn]}
 summon marker 2002 65 1921 {Tags:["MapEntity",ScrapSpawn]}
 
 #> Spectator spawnpoint
-#summon marker 933 150 1000 {"Tags":["MapEntity","SpectatorSpawn"]}
+summon marker 1983 96 1932 {Tags:["MapEntity","SpectatorSpawn"]}
 
 #> Chandelier entity
 #summon marker 975 139 1000 {Tags:["MapEntity","Chandelier"]}

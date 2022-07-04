@@ -1,6 +1,6 @@
 ##Blatantly stolen from Meteor Miners but it works
 scoreboard players remove @e[tag=MapVote] CmdData 1
-execute if entity @e[tag=MapVote,scores={CmdData=1024..}] run scoreboard players remove @e[tag=MapVote] CmdData 1024
+execute if entity @e[tag=MapVote,scores={CmdData=1024..}] run scoreboard players remove @e[tag=MapVote,scores={CmdData=1024..}] CmdData 1024
 execute if entity @e[tag=MapVote,scores={CmdData=512..}] run scoreboard players remove @e[tag=MapVote] CmdData 512
 execute if entity @e[tag=MapVote,scores={CmdData=256..}] run scoreboard players remove @e[tag=MapVote] CmdData 256
 execute if entity @e[tag=MapVote,scores={CmdData=128..}] run scoreboard players remove @e[tag=MapVote] CmdData 128

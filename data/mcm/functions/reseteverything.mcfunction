@@ -6,5 +6,5 @@ tag @a remove shotGun
 tag @a remove Voted
 
 #> Reset scores
-scoreboard players set $gamestate CmdData -1
-function mcm:lobby/startvote
+#scoreboard players set $gamestate CmdData -1
+#function mcm:lobby/startvote

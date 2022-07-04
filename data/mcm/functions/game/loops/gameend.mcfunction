@@ -16,11 +16,13 @@ execute if score $didGameEnd CmdData matches 1 run scoreboard players remove $ga
 
 # teleport
 execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run tp @a[team=!test4,tag=queued] -1 1 69 0 0
+execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run tp @a[team=!test4,tag=spectating] -1 1 69 0 0
 
-execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run time set 6000
+execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run time set 13850
 
 # gamemode
 execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run gamemode adventure @a[team=!test4,tag=queued]
+execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run gamemode adventure @a[team=!test4,tag=spectating]
 
 # kill player skulls
 execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run kill @e[type=item,nbt={Item:{id:"minecraft:player_head"}}]
@@ -67,20 +69,27 @@ clear @a carrot_on_a_stick
 clear @a netherite_scrap
 clear @a warped_fungus_on_a_stick
 clear @a spyglass
-clear @a compass
+clear @a stick
+
+# Kill items
+execute if score $didGameEnd CmdData matches ..1 if score $gameEndTimer CmdData matches ..1 run kill @e[tag=KeyItem]
 
 #give popcorn
 execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run item replace entity @a[tag=WonLast] hotbar.0 with warped_fungus_on_a_stick{NoDrop:1b,CustomModelData:1114,display:{Name:'[{"text":"Victory Popcorn","italic":false,"color":"yellow"}]',Lore:['[{"text":"","italic":false}]','[{"text":"The snack that\'s worth dying for!","italic":true,"color":"dark_gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]']},HideFlags:3,HideFlags:3}
 execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run tag @a[tag=WonLast] remove WonLast
+
+# AutoQueue items
+execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run item replace entity @a[tag=autoqueue] hotbar.8 with warped_fungus_on_a_stick{CustomModelData:1235,NoDrop:1b,display:{Name:'[{"translate":"mcm.item.autoqueue.disable","italic":false,"color":"red"}]'}}
+execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run item replace entity @a[tag=!autoqueue] hotbar.8 with warped_fungus_on_a_stick{CustomModelData:1234,NoDrop:1b,display:{Name:'[{"translate":"mcm.item.autoqueue.enable","italic":false,"color":"green"}]'}}
 
 
 # reset map specific stuff that changes during the game
 execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run execute if score $selectedMap CmdData matches 1 run setblock 977 110 992 structure_block{mode:"LOAD",name:"minecraft:chandelier_frame0",posX:-6,posY:-10,posZ:5} destroy
 execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run execute if score $selectedMap CmdData matches 1 run setblock 977 111 992 air destroy
 execute if score $didGameEnd CmdData matches 1 if score $gameEndTimer CmdData matches ..1 run execute if score $selectedMap CmdData matches 1 run setblock 977 111 992 redstone_block destroy
-#execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 1 run function mcm:maps/library/reset
-#execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 2 run function mcm:maps/airship/reset
-#execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 3 run function mcm:maps/vineyard/reset
+execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 1 run function mcm:maps/library/reset
+execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 2 run function mcm:maps/airship/reset
+execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 3 run function mcm:maps/vineyard/reset
 
 # disable friendly fire
 team modify nametags friendlyFire false

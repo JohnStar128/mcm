@@ -1,14 +1,25 @@
 #> Assign roles when grace period is over
 # Murderer
-execute as @a[tag=queued,tag=!prevMurderer,tag=!murderer,sort=random,limit=1] at @s unless entity @a[tag=murderer] run tag @s add murderer
-tellraw @a[tag=murderer] {"text":"You are ","color":"gold","extra":[{"text":"the murderer!","color":"red"}]}
-title @a[tag=murderer] title {"text":"You are ","color":"gold","extra":[{"text":"the murderer!","color":"red"}]}
-title @a[tag=murderer] subtitle {"text":"Kill the innocent ","color":"gold"}
-execute as @a[tag=murderer,limit=1] run item replace entity @s hotbar.1 with snowball{NoDrop:1b,Unbreakable:1,CustomModelData:1111,AttributeModifiers:[{AttributeName:"generic.attack_damage",Amount:100,Slot:mainhand,Name:"generic.attack_damage",UUID:[I;-122419,10812,22346,-21624]}],display:{Name:'[{"translate":"mcm.item.knife","italic":false}]',Lore:['[{"translate":"mcm.item.knife.lore","italic":false}]']}} 1
-execute as @a[tag=murderer,limit=1] run item replace entity @s hotbar.2 with compass{NoDrop:1b,CustomModelData:1111,display:{Name:'[{"translate":"mcm.item.player_tracker","italic":false}]',Lore:['[{"translate":"mcm.item.player_tracker.lore","italic":false}]']}}
-execute as @a[tag=murderer,limit=1] run item replace entity @s hotbar.3 with carrot_on_a_stick{NoDrop:1b,CustomModelData:1112,display:{Name:'[{"translate":"mcm.item.teleporter","italic":false}]',Lore:['[{"translate":"mcm.item.teleporter.lore","italic":false}]']}}
-execute as @a[tag=murderer,limit=1] run item replace entity @s hotbar.4 with carrot_on_a_stick{NoDrop:1b,CustomModelData:1113,display:{Name:'[{"translate":"mcm.item.adrenaline","italic":false}]',Lore:['[{"translate":"mcm.item.adrenaline.lore","italic":false}]']}}
-execute as @a[tag=murderer,limit=1] run item replace entity @s hotbar.8 with netherite_scrap{NoDrop:1b,display:{Name:'[{"translate":"mcm.item.fake_scrap","italic":false}]',Lore:['[{"translate":"mcm.item.fake_scrap.lore","italic":false}]']}}
+execute if score $murderers GameRules matches ..1 run execute as @a[tag=queued,tag=!prevMurderer,tag=!murderer,sort=random,limit=1] at @s unless entity @a[tag=murderer] run tag @s add murderer
+execute if score $murderers GameRules matches ..1 run tellraw @a[tag=murderer] {"text":"You are ","color":"gold","extra":[{"text":"the murderer!","color":"red"}]}
+execute if score $murderers GameRules matches ..1 run title @a[tag=murderer] title {"text":"You are ","color":"gold","extra":[{"text":"the murderer!","color":"red"}]}
+execute if score $murderers GameRules matches ..1 run title @a[tag=murderer] subtitle {"text":"Kill the innocent ","color":"gold"}
+execute if score $murderers GameRules matches ..1 run execute as @a[tag=murderer,limit=1] run item replace entity @s hotbar.1 with snowball{NoDrop:1b,Unbreakable:1,CustomModelData:1111,AttributeModifiers:[{AttributeName:"generic.attack_damage",Amount:100,Slot:mainhand,Name:"generic.attack_damage",UUID:[I;-122419,10812,22346,-21624]}],display:{Name:'[{"translate":"mcm.item.knife","italic":false}]',Lore:['[{"translate":"mcm.item.knife.lore","italic":false}]']}} 1
+execute if score $murderers GameRules matches ..1 run execute as @a[tag=murderer,limit=1] run item replace entity @s hotbar.2 with stick{NoDrop:1b,CustomModelData:1111,display:{Name:'[{"translate":"mcm.item.player_tracker","italic":false}]',Lore:['[{"translate":"mcm.item.player_tracker.lore","italic":false}]']}}
+execute if score $murderers GameRules matches ..1 run execute as @a[tag=murderer,limit=1] run item replace entity @s hotbar.3 with carrot_on_a_stick{NoDrop:1b,CustomModelData:1112,display:{Name:'[{"translate":"mcm.item.teleporter","italic":false}]',Lore:['[{"translate":"mcm.item.teleporter.lore","italic":false}]']}}
+execute if score $murderers GameRules matches ..1 run execute as @a[tag=murderer,limit=1] run item replace entity @s hotbar.4 with carrot_on_a_stick{NoDrop:1b,CustomModelData:1113,display:{Name:'[{"translate":"mcm.item.adrenaline","italic":false}]',Lore:['[{"translate":"mcm.item.adrenaline.lore","italic":false}]']}}
+execute if score $murderers GameRules matches ..1 run execute as @a[tag=murderer,limit=1] run item replace entity @s hotbar.8 with netherite_scrap{NoDrop:1b,display:{Name:'[{"translate":"mcm.item.fake_scrap","italic":false}]',Lore:['[{"translate":"mcm.item.fake_scrap.lore","italic":false}]']}}
+
+# 2 murderers
+execute if score $murderers GameRules matches 2.. run execute as @a[tag=queued,tag=!prevMurderer,tag=!murderer,sort=random,limit=2] at @s run tag @s add murderer
+execute if score $murderers GameRules matches 2.. run tellraw @a[tag=murderer] {"text":"You are ","color":"gold","extra":[{"text":"the murderer!","color":"red"}]}
+execute if score $murderers GameRules matches 2.. run title @a[tag=murderer] title {"text":"You are ","color":"gold","extra":[{"text":"the murderer!","color":"red"}]}
+execute if score $murderers GameRules matches 2.. run title @a[tag=murderer] subtitle {"text":"Kill the innocent ","color":"gold"}
+execute if score $murderers GameRules matches 2.. run execute as @a[tag=murderer,limit=2] run item replace entity @s hotbar.1 with snowball{NoDrop:1b,Unbreakable:1,CustomModelData:1111,AttributeModifiers:[{AttributeName:"generic.attack_damage",Amount:100,Slot:mainhand,Name:"generic.attack_damage",UUID:[I;-122419,10812,22346,-21624]}],display:{Name:'[{"translate":"mcm.item.knife","italic":false}]',Lore:['[{"translate":"mcm.item.knife.lore","italic":false}]']}} 1
+execute if score $murderers GameRules matches 2.. run execute as @a[tag=murderer,limit=2] run item replace entity @s hotbar.2 with stick{NoDrop:1b,CustomModelData:1111,display:{Name:'[{"translate":"mcm.item.player_tracker","italic":false}]',Lore:['[{"translate":"mcm.item.player_tracker.lore","italic":false}]']}}
+execute if score $murderers GameRules matches 2.. run execute as @a[tag=murderer,limit=2] run item replace entity @s hotbar.3 with carrot_on_a_stick{NoDrop:1b,CustomModelData:1112,display:{Name:'[{"translate":"mcm.item.teleporter","italic":false}]',Lore:['[{"translate":"mcm.item.teleporter.lore","italic":false}]']}}
+execute if score $murderers GameRules matches 2.. run execute as @a[tag=murderer,limit=2] run item replace entity @s hotbar.4 with carrot_on_a_stick{NoDrop:1b,CustomModelData:1113,display:{Name:'[{"translate":"mcm.item.adrenaline","italic":false}]',Lore:['[{"translate":"mcm.item.adrenaline.lore","italic":false}]']}}
+execute if score $murderers GameRules matches 2.. run execute as @a[tag=murderer,limit=2] run item replace entity @s hotbar.8 with netherite_scrap{NoDrop:1b,display:{Name:'[{"translate":"mcm.item.fake_scrap","italic":false}]',Lore:['[{"translate":"mcm.item.fake_scrap.lore","italic":false}]']}}
 
 # Gunner
 execute as @a[tag=queued,tag=!murderer,limit=1,sort=random] at @s run tag @s add gunner
@@ -20,7 +31,7 @@ execute as @a[tag=gunner] at @s run item replace entity @s hotbar.8 with netheri
 
 # Innocent
 execute as @e[tag=queued,tag=!murderer,tag=!gunner] at @s run tag @s add innocent
-item replace entity @a[tag=innocent] hotbar.8 with netherite_scrap{CustomModelData:1, Tags: ["KeyItem"], display:{Name:'{"translate":"mcm.item.scrap","italic":"false"}',Lore: ['[{"translate":"mcm.item.scrap.lore","italic":false}]']}}
+execute if score $startscrap GameRules matches 1.. run item replace entity @a[tag=innocent] hotbar.8 with netherite_scrap{CustomModelData:1, Tags: ["KeyItem"], display:{Name:'{"translate":"mcm.item.scrap","italic":"false"}',Lore: ['[{"translate":"mcm.item.scrap.lore","italic":false}]']}}
 tellraw @a[tag=innocent] {"text":"You are ","color":"gold","extra":[{"text":"innocent!","color":"light_purple"}]}
 title @a[tag=innocent] title {"text":"You are ","color":"gold","extra":[{"text":"innocent!","color":"light_purple"}]}
 title @a[tag=innocent] subtitle {"text":"Objective: Survive ","color":"gold"}

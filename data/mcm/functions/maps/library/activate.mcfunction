@@ -4,6 +4,9 @@ forceload add 1023 960 912 1039
 #> Kill potential leftover entities
 kill @e[tag=MapEntity]
 
+# Lobby poster visual
+fill 27 5 88 27 1 91 warped_trapdoor[open=true,facing=west] replace crimson_trapdoor
+
 #> Set Player Spawnpoints
 summon marker 937 110 1000 {Tags:["MapEntity","PlayerSpawn"]}
 summon marker 976 110 1019 {Tags:["MapEntity","PlayerSpawn"]}

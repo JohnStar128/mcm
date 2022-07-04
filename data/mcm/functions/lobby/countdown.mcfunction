@@ -26,6 +26,7 @@ execute if score $countSec CmdData matches 20.. if score $countdown CmdData matc
 
 #> Change gamestate to 0 (Players can now join, game has not started yet)
 execute if score $countSec CmdData matches 20.. if score $countdown CmdData matches 1 run kill @e[tag=MapVote]
+execute if score $countSec CmdData matches 20.. if score $countdown CmdData matches 1 run tp @e[tag=MapVoteEntity] ~ ~-2000 ~
 execute if score $countSec CmdData matches 20.. if score $countdown CmdData matches 1 run bossbar remove lobbybar
 execute if score $countSec CmdData matches 20.. if score $countdown CmdData matches 1 run scoreboard players set $gamestate CmdData 0
 
@@ -38,6 +39,20 @@ bossbar set lobbybar players @a
 bossbar set lobbybar name ["",{"text":"Vote for a map! ","color":"gold"},{"text":"[","color":"gray"},{"score":{"name":"$countdown","objective":"CmdData"},"bold":true,"color":"yellow"},{"text":"]","color":"gray"}]
 execute store result bossbar lobbybar value run scoreboard players get $countdown CmdData
 
+execute as @e[tag=map1,tag=VoteDisplay] at @s run data modify entity @s CustomName set from block 29 3 89 Text4
+execute as @e[tag=map2,tag=VoteDisplay] at @s run data modify entity @s CustomName set from block 29 3 94 Text4
+execute as @e[tag=map3,tag=VoteDisplay] at @s run data modify entity @s CustomName set from block 29 3 99 Text4
+
+#> Villager right click detection
+execute as @a[advancements={mcm:map_votes/map1=true}] at @s run trigger mapvote set 1
+execute as @a[advancements={mcm:map_votes/map1=true}] at @s run advancement revoke @s only mcm:map_votes/map1
+
+execute as @a[advancements={mcm:map_votes/map2=true}] at @s run trigger mapvote set 2
+execute as @a[advancements={mcm:map_votes/map2=true}] at @s run advancement revoke @s only mcm:map_votes/map2
+
+execute as @a[advancements={mcm:map_votes/map3=true}] at @s run trigger mapvote set 3
+execute as @a[advancements={mcm:map_votes/map3=true}] at @s run advancement revoke @s only mcm:map_votes/map3
+
 #> Map voting
 # Library
 execute as @a[scores={mapvote=1}] run tellraw @s ["",{"text":"You voted for: ","color":"gray"},{"text":"Library","color":"dark_green"}]
@@ -46,7 +61,7 @@ execute as @a[scores={mapvote=1}] at @s run playsound block.note_block.bit maste
 execute as @a[scores={mapvote=1}] run tag @s add Voted
 
 # Airship
-execute as @a[scores={mapvote=2}] run tellraw @s ["",{"text":"You voted for: ","color":"gray"},{"text":"Airship","color":"dark_green"}]
+execute as @a[scores={mapvote=2}] run tellraw @s ["",{"text":"You voted for: ","color":"gray"},{"text":"Floating Islands","color":"dark_green"}]
 execute as @a[scores={mapvote=2}] run scoreboard players add @e[tag=MapVote,tag=Airship] CmdData 1
 execute as @a[scores={mapvote=2}] at @s run playsound block.note_block.bit master @s ~ ~ ~ 1 1.4
 execute as @a[scores={mapvote=2}] run tag @s add Voted
@@ -59,13 +74,13 @@ execute as @a[scores={mapvote=3}] run tag @s add Voted
 
 #> Place signs
 fill 9 -59 16 7 -59 16 glass
-setblock 27 3 89 minecraft:oak_wall_sign[facing=west]
-setblock 27 3 94 minecraft:oak_wall_sign[facing=west]
-setblock 27 3 99 minecraft:oak_wall_sign[facing=west]
+setblock 29 3 89 minecraft:oak_wall_sign[facing=west]
+setblock 29 3 94 minecraft:oak_wall_sign[facing=west]
+setblock 29 3 99 minecraft:oak_wall_sign[facing=west]
 
-data merge block 27 3 89 {Text1:'{"text":"","clickEvent":{"action":"run_command","value":"trigger mapvote set 1"}}',Text2:'{"text":"Library","underlined":true,"color":"dark_green"}',Text3:'{"text":""}',Text4:'{"score":{"name":"@e[tag=MapVote,tag=Library,limit=1]","objective":"CmdData"},"color":"#FFE700"}'}
-data merge block 27 3 94 {Text1:'{"text":"","clickEvent":{"action":"run_command","value":"trigger mapvote set 2"}}',Text2:'{"text":"Airship","underlined":true,"color":"dark_green"}',Text3:'{"text":""}',Text4:'{"score":{"name":"@e[tag=MapVote,tag=Airship,limit=1]","objective":"CmdData"},"color":"#FFE700"}'}
-data merge block 27 3 99 {Text1:'{"text":"","clickEvent":{"action":"run_command","value":"trigger mapvote set 3"}}',Text2:'{"text":"Vineyard","underlined":true,"color":"dark_green"}',Text3:'{"text":""}',Text4:'{"score":{"name":"@e[tag=MapVote,tag=Vineyard,limit=1]","objective":"CmdData"},"color":"#FFE700"}'}
+data merge block 29 3 89 {Text1:'{"text":"","clickEvent":{"action":"run_command","value":"trigger mapvote set 1"}}',Text2:'{"text":"Library","underlined":true,"color":"dark_green"}',Text3:'{"text":""}',Text4:'{"text":"Votes: ","extra":[{"score":{"name":"@e[tag=MapVote,tag=Library,limit=1]","objective":"CmdData"},"color":"#FFE700"}]}'}
+data merge block 29 3 94 {Text1:'{"text":"","clickEvent":{"action":"run_command","value":"trigger mapvote set 2"}}',Text2:'{"text":"Airship","underlined":true,"color":"dark_green"}',Text3:'{"text":""}',Text4:'{"text":"Votes: ","extra":[{"score":{"name":"@e[tag=MapVote,tag=Airship,limit=1]","objective":"CmdData"},"color":"#FFE700"}]}'}
+data merge block 29 3 99 {Text1:'{"text":"","clickEvent":{"action":"run_command","value":"trigger mapvote set 3"}}',Text2:'{"text":"Vineyard","underlined":true,"color":"dark_green"}',Text3:'{"text":""}',Text4:'{"text":"Votes: ","extra":[{"score":{"name":"@e[tag=MapVote,tag=Vineyard,limit=1]","objective":"CmdData"},"color":"#FFE700"}]}'}
 
 scoreboard players reset @a[tag=Voted] mapvote
 execute as @a unless entity @s[scores={mapvote=0..3}] run scoreboard players reset @s mapvote

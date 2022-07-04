@@ -15,6 +15,7 @@ scoreboard objectives add dead deathCount
 scoreboard objectives add knifeRetrieval minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add adrenalineClick minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add teleporterClick minecraft.used:minecraft.carrot_on_a_stick
+scoreboard objectives add autoqueue minecraft.used:minecraft.warped_fungus_on_a_stick
 scoreboard objectives add popcornClick minecraft.used:minecraft.warped_fungus_on_a_stick
 scoreboard objectives add gunclick minecraft.used:minecraft.warped_fungus_on_a_stick
 scoreboard objectives add gundist dummy
@@ -24,12 +25,15 @@ scoreboard objectives add GameRules dummy
 scoreboard objectives add gundelay dummy
 scoreboard objectives add scrapCount dummy
 scoreboard objectives add scrapRNG dummy
+scoreboard objectives add RainbowHat dummy
+scoreboard objectives add hatchange trigger
 scoreboard objectives add leave minecraft.custom:minecraft.leave_game
 scoreboard objectives add droppedGun minecraft.dropped:minecraft.warped_fungus_on_a_stick
 scoreboard objectives add droppedKnife minecraft.dropped:minecraft.snowball
 scoreboard objectives add droppedScrap minecraft.dropped:minecraft.netherite_scrap
 scoreboard objectives add droppedRetrieve minecraft.dropped:minecraft.carrot_on_a_stick
 scoreboard objectives add droppedSpyglass minecraft.dropped:minecraft.spyglass
+scoreboard objectives add RingBell minecraft.custom:minecraft.bell_ring
 scoreboard players set $one CmdData 1
 scoreboard players set $start CmdData 0
 scoreboard players set $startcountdown CmdData 200
@@ -40,7 +44,10 @@ scoreboard players reset @a dead
 
 #> Add the team which hides nametags
 team add nametags
+team add posters
 team modify nametags nametagVisibility never
 team add chair
 team modify chair collisionRule never
+team modify posters collisionRule never
 team join chair @e[tag=chair]
+team join posters @e[tag=MapVoteEntity]

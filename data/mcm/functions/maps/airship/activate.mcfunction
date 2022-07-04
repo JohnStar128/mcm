@@ -4,6 +4,9 @@ forceload add -555 -56 -744 77
 #> Kill potential leftover entities
 kill @e[tag=MapEntity]
 
+#> Lobby poster visual
+fill 27 5 93 27 1 96 warped_trapdoor[open=true,facing=west] replace crimson_trapdoor
+
 #> Set Player Spawnpoints
 summon marker -636 56 42 {Tags:["MapEntity","PlayerSpawn"]}
 summon marker -636 61 -1 {Tags:["MapEntity","PlayerSpawn"]}
@@ -23,3 +26,5 @@ summon marker -605 50 -8 {Tags:["MapEntity","PlayerSpawn"]}
 summon marker -600 86 3 {Tags:["MapEntity","PlayerSpawn"]}
 
 tellraw @a ["","\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"The game is ready to play!","underlined":true,"color":"green"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Selected Map: ","color":"gray"},{"text":"Floating Islands","color":"dark_green","hoverEvent":{"action":"show_text","value":{"text":"Concept by _topaz","color":"aqua"}}},"\n"]
+
+summon marker -703 65 25 {Tags:["MapEntity","SpectatorSpawn"]}
