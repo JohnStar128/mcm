@@ -1,54 +1,17 @@
-#> development join stuff
-# Legacy
-execute as @a at @s if score $selectedMap CmdData matches 1 if entity @s[predicate=mcm:bounding_boxes/join_pad] run tag @s add queued
-execute as @a at @s if score $selectedMap CmdData matches 2 if entity @s[predicate=mcm:bounding_boxes/join_pad] run tag @s add queued
-execute as @a at @s if score $selectedMap CmdData matches 3 if entity @s[predicate=mcm:bounding_boxes/join_pad] run tag @s add queued
-# New stuff
-execute as @a[nbt={RootVehicle:{Entity:{Tags:["chair"]}}},tag=!queued,tag=!autoqueue] at @s run scoreboard players add $queued CmdData 1
-execute as @a[nbt={RootVehicle:{Entity:{Tags:["chair"]}}},tag=!queued,tag=!autoqueue] at @s run tellraw @a ["", {"selector":"@s","color":"green"},{"text":" is ready to play!"}, {"text":" (","color":"yellow"}, {"score":{"name":"$queued","objective":"CmdData"},"color":"green"}, {"text":"/","color":"dark_green"}, {"score":{"name":"$maxplayers","objective":"GameRules"},"color":"green"}, {"text":")","color":"yellow"}]
-execute as @a[nbt={RootVehicle:{Entity:{Tags:["chair"]}}},tag=!queued,tag=!autoqueue] at @s run item replace entity @s armor.head with diamond_hoe{CustomModelData:69,display:{Name:'[{"text":"3","italic":false,"bold":true,"color":"red"},{"text":"D","color":"blue"},{"text":" ","color":"blue","bold":false},{"text":"Glasses","color":"white","bold":false}]',Lore:['[{"text":"You are Ready to play!","italic":false,"color":"green","underlined":true},{"text":"","italic":false,"color":"dark_purple","underlined":false}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"This is so immersive!","italic":true,"color":"dark_gray"}]','[{"text":"It almost feels like","italic":true,"color":"dark_gray"}]','[{"text":"you\'re actually there!","italic":true,"color":"dark_gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]']},Enchantments:[{id:binding_curse,lvl:1}],HideFlags:127}
-execute as @a[nbt={RootVehicle:{Entity:{Tags:["chair"]}}},tag=!queued,tag=!autoqueue] at @s run tag @s add queued
+# Handle queueing and de-queueing players
+execute as @a[nbt={RootVehicle:{Entity:{Tags:["chair"]}}},tag=!queued,tag=!autoqueue] run function mcm:lobby/queue
+execute as @a[predicate=!mcm:bounding_boxes/queue_area,tag=queued,tag=!autoqueue] run function mcm:lobby/dequeue
 
-execute as @a[predicate=!mcm:bounding_boxes/queue_area,tag=queued,tag=!autoqueue] at @s run scoreboard players remove $queued CmdData 1
-execute as @a[predicate=!mcm:bounding_boxes/queue_area,tag=queued,tag=!autoqueue,nbt=!{SelectedItem:{id:"minecraft:warped_fungus_on_a_stick",Count:1b}}] at @s run tellraw @a ["", {"selector":"@s","color":"green"},{"text":" has left the theater!"}, {"text":" (","color":"yellow"}, {"score":{"name":"$queued","objective":"CmdData"},"color":"green"}, {"text":"/","color":"dark_green"}, {"score":{"name":"$maxplayers","objective":"GameRules"},"color":"green"}, {"text":")","color":"yellow"}]
-execute as @a[predicate=!mcm:bounding_boxes/queue_area,tag=queued,tag=!autoqueue] at @s run item replace entity @s armor.head with air
-execute as @a[predicate=!mcm:bounding_boxes/queue_area,tag=queued,tag=!autoqueue] at @s run tag @s remove queued
+# Queue any auto-queued players who clicked their ticket before the queueing period started
+execute as @a[scores={deferred_queue=1}] run function mcm:lobby/queue
+scoreboard players reset @a deferred_queue
 
-#> Make sure no one died in lobby for some reason
+#> Make sure no one died in lobby for some reason (cough blocky)
 scoreboard players reset @a dead
 
-#execute as @a[tag=queued] at @s if score $selectedMap CmdData matches 1 if entity @s[predicate=mcm:bounding_boxes/join_pad] run tp @s -5 -60 -11
-#execute as @a[tag=queued] at @s if score $selectedMap CmdData matches 2 if entity @s[predicate=mcm:bounding_boxes/join_pad] run tp @s 6 -60 -11
-#execute as @a[tag=queued] at @s if score $selectedMap CmdData matches 3 if entity @s[predicate=mcm:bounding_boxes/join_pad] run tp @s 17 -60 -11
-
 #> Store the current queued players
-execute store result score $queued CmdData run execute if entity @e[tag=queued]
-execute store result score $queued CmdData run execute if entity @e[tag=queued]
+# TODO change to @a when we don't need armor stands to test anymore
+execute store result score $queued CmdData if entity @e[tag=queued]
 
-#> Probably don't need this anymore
-#scoreboard players reset @a dead
-#tag @a[team=!test4] remove innocent
-#tag @a[team=!test4] remove gunner
-#tag @a[team=!test4] remove murderer
-#tag @a[team=!test4] remove Voted
-
-#> Post-ready pre-game countdown before teleporting to the map
-execute if score $queued CmdData matches 3.. if score $start CmdData matches 1.. run scoreboard players remove $startcountdown CmdData 1
-execute if score $startcountdown CmdData matches 199 run tellraw @a {"text":"The game begins in 10.."}
-execute if score $startcountdown CmdData matches 112 run playsound minecraft:movie_start record @a ~ ~ ~ 1 1 1
-execute if score $startcountdown CmdData matches 0..100 run function mcm:game/loops/screen
-execute if score $startcountdown CmdData matches 100 run tellraw @a {"text":"The game begins in 5.."}
-execute if score $startcountdown CmdData matches 80 run tellraw @a {"text":"The game begins in 4.."}
-execute if score $startcountdown CmdData matches 60 run tellraw @a {"text":"The game begins in 3.."}
-execute if score $startcountdown CmdData matches 40 run tellraw @a {"text":"The game begins in 2.."}
-execute if score $startcountdown CmdData matches 20 run tellraw @a {"text":"The game begins in 1.."}
-execute if score $startcountdown CmdData matches 1 run clear @a warped_fungus_on_a_stick{CustomModelData:1114}
-execute if score $startcountdown CmdData matches 1 run clear @a warped_fungus_on_a_stick{CustomModelData:1234}
-execute if score $startcountdown CmdData matches 1 run clear @a warped_fungus_on_a_stick{CustomModelData:1235}
-execute if score $startcountdown CmdData matches 1 run clear @a diamond_hoe{CustomModelData:69}
-# Library
-execute if score $startcountdown CmdData matches 1 if score $selectedMap CmdData matches 1 run function mcm:maps/library/start
-# Floating Islands
-execute if score $startcountdown CmdData matches 1 if score $selectedMap CmdData matches 2 run function mcm:maps/airship/start
-# Vineyard
-execute if score $startcountdown CmdData matches 1 if score $selectedMap CmdData matches 3 run function mcm:maps/vineyard/start
+execute if score $gamestate CmdData matches 0 if score $start CmdData matches 1.. run function mcm:lobby/start
+execute if score $queued CmdData matches 3.. if score $autostart GameRules matches 1.. run scoreboard players set $start CmdData 1

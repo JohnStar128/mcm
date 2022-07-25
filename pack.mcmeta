@@ -5,11 +5,11 @@
     "filter": {
       "block": [
           {
-              "namespace": "minecraft",
+              "namespace": "^minecraft$",
               "path": "recipes/.*"
           },
           {
-              "namespace": "minecraft",
+              "namespace": "^minecraft$",
               "path": "advancements/.*"
           }
       ]

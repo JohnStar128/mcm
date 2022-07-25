@@ -1,0 +1,20 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:netherite_scrap"
+            ],
+            "count": {
+              "min": 10,
+              "max": 100
+            }
+          }
+        ]
+      }
+    }
+  }
+}

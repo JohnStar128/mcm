@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:carrot_on_a_stick",
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{NoDrop:1b,CustomModelData:1113,display:{Name:'[{\"translate\":\"mcm.item.adrenaline\",\"italic\":false}]',Lore:['[{\"translate\":\"mcm.item.adrenaline.lore\",\"italic\":false}]']}}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

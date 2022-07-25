@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:warped_fungus_on_a_stick",
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{PickupDelay:100s,Tags:[\"deadDrop\",\"gun\",\"KeyItem\"],CustomModelData:1111,display:{Name:'[{\"translate\":\"mcm.item.gun\",\"italic\":false}]',Lore:['[{\"translate\":\"mcm.item.gun.lore\",\"italic\":false}]']}}"
+            }
+         ]
+        }
+      ]
+    }
+  ]
+}

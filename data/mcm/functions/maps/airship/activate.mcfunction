@@ -25,6 +25,16 @@ summon marker -597 59 -1 {Tags:["MapEntity","PlayerSpawn"]}
 summon marker -605 50 -8 {Tags:["MapEntity","PlayerSpawn"]}
 summon marker -600 86 3 {Tags:["MapEntity","PlayerSpawn"]}
 
-tellraw @a ["","\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"The game is ready to play!","underlined":true,"color":"green"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Selected Map: ","color":"gray"},{"text":"Floating Islands","color":"dark_green","hoverEvent":{"action":"show_text","value":{"text":"Concept by _topaz","color":"aqua"}}},"\n"]
+#> Sound markers
+summon marker -596 70 15 {Tags:["MapEntity","WindSoundMarker"]}
+summon marker -614 93 -2 {Tags:["MapEntity","WindSoundMarker"]}
+summon marker -688 55 6 {Tags:["MapEntity","WindSoundMarker"]}
+summon marker -619 53 -8 {Tags:["MapEntity","WindSoundMarker"]}
+summon marker -677 64 52 {Tags:["MapEntity","WindSoundMarker"]}
+summon marker -637 59 20 {Tags:["MapEntity","WindSoundMarker"]}
+summon marker -651 64 28 {Tags:["MapEntity","WindSoundMarker"]}
 
-summon marker -703 65 25 {Tags:["MapEntity","SpectatorSpawn"]}
+#> Spectator spawn
+summon marker -688 72 14 {Tags:["MapEntity","SpectatorSpawn"]}
+
+tellraw @a ["","\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"The game is ready to play!","underlined":true,"color":"green"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Selected Map: ","color":"gray"},{"text":"Floating Islands","color":"dark_green","hoverEvent":{"action":"show_text","value":{"text":"Concept by _topaz","color":"aqua"}}},"\n"]

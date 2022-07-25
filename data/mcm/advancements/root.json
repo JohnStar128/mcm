@@ -1,0 +1,24 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:snowball",
+      "nbt": "{CustomModelData:1111}"
+    },
+    "title": {
+      "translate": "mcm.secret.root.title"
+    },
+    "description": {
+      "translate": "mcm.secret.root.description"
+    },
+    "frame": "challenge",
+    "show_toast": "false",
+    "announce_to_chat": "false",
+    "hidden": "false",
+    "background": "minecraft:textures/block/brown_mushroom_block.png"
+  },
+  "criteria": {
+    "space": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

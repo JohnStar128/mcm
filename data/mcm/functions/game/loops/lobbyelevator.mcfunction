@@ -3,7 +3,7 @@ execute unless entity @a[predicate=mcm:bounding_boxes/lobby_elevator_top] if sco
 execute unless entity @a[predicate=mcm:bounding_boxes/lobby_elevator_bottom] if score $elevatordoorbottom CmdData matches 1.. run scoreboard players remove $elevatordoorbottom CmdData 1
 
 #> Top elevator
-execute as @a[predicate=mcm:bounding_boxes/lobby_elevator_top] at @s if score $elevatordoortop CmdData matches ..15 run scoreboard players add $elevatordoortop CmdData 1 
+execute as @a[predicate=mcm:bounding_boxes/lobby_elevator_top,limit=1] at @s if score $elevatordoortop CmdData matches ..15 run scoreboard players add $elevatordoortop CmdData 1 
 execute if score $elevatordoortop CmdData matches 1 run clone 25 13 141 23 11 141 22 8 122
 execute if score $elevatordoortop CmdData matches 1 run playsound minecraft:block.chain.place block @a 23 7 122 1 0 0
 execute if score $elevatordoortop CmdData matches 5 run clone 23 11 143 25 13 143 22 8 122
@@ -15,7 +15,7 @@ execute if score $elevatordoortop CmdData matches 15 run playsound minecraft:blo
 
 
 #> Bottom elevator
-execute as @a[predicate=mcm:bounding_boxes/lobby_elevator_bottom] at @s if score $elevatordoorbottom CmdData matches ..15 run scoreboard players add $elevatordoorbottom CmdData 1 
+execute as @a[predicate=mcm:bounding_boxes/lobby_elevator_bottom,limit=1] at @s if score $elevatordoorbottom CmdData matches ..15 run scoreboard players add $elevatordoorbottom CmdData 1 
 execute if score $elevatordoorbottom CmdData matches 1 run clone 25 13 141 23 11 141 22 1 121
 execute if score $elevatordoorbottom CmdData matches 1 run playsound minecraft:block.chain.place block @a 23 7 122 1 0 0
 execute if score $elevatordoorbottom CmdData matches 5 run clone 23 11 143 25 13 143 22 1 121

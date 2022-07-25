@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:book",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:score",
+                "target": "this",
+                "score": "books"
+              }
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{display:{Lore:['[{\"text\":\"You should probably return this\",\"italic\":false}]'],Name:'[{\"text\":\"Overdue Book\",\"italic\":false,\"color\":\"red\"}]'}}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

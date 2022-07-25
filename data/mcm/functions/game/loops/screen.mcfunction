@@ -33,7 +33,7 @@ execute if score $startcountdown CmdData matches 33 run clone -65 -35 117 -62 -5
 execute if score $startcountdown CmdData matches 30 run clone -58 -35 117 -55 -55 95 -28 -2 93
 execute if score $startcountdown CmdData matches 28 run clone -51 -35 117 -48 -55 95 -28 -2 93
 execute if score $startcountdown CmdData matches 25 run clone -44 -35 117 -41 -55 95 -28 -2 93
-execute if score $startcountdown CmdData matches 23 run clone -37 -35 117 -35 -55 95 -28 -2 93
+execute if score $startcountdown CmdData matches 23 run clone -37 -35 117 -34 -55 95 -28 -2 93
 #> One
 execute if score $startcountdown CmdData matches 20 run clone -30 -35 117 -27 -55 95 -28 -2 93
 execute if score $startcountdown CmdData matches 18 run clone -23 -35 117 -20 -55 95 -28 -2 93
@@ -43,4 +43,5 @@ execute if score $startcountdown CmdData matches 10 run clone -2 -35 117 1 -55 9
 execute if score $startcountdown CmdData matches 8 run clone 5 -35 117 8 -55 95 -28 -2 93
 execute if score $startcountdown CmdData matches 5 run clone 12 -35 117 15 -55 95 -28 -2 93
 execute if score $startcountdown CmdData matches 3 run clone 19 -35 117 22 -55 95 -28 -2 93
-execute if score $startcountdown CmdData matches 3 run clone 26 -35 117 26 -55 95 -28 -2 93
+
+execute if score $startcountdown CmdData matches 1 run fill -25 18 115 -27 -2 93 air replace black_wool

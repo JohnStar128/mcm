@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{CustomModelData:1111,display:{Name:'[{\"translate\":\"mcm.item.player_tracker\",\"italic\":false}]',Lore:['[{\"translate\":\"mcm.item.player_tracker.lore\",\"italic\":false}]']}}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

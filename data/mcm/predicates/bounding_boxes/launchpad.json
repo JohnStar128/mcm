@@ -1,0 +1,115 @@
+{
+  "condition": "minecraft:alternative",
+  "terms": [
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "location": {
+          "position": {
+            "x": {
+              "max": -916,
+              "min": -1116
+            },
+            "y": {
+              "max": 311,
+              "min": 46
+            },
+            "z": {
+              "max": -997,
+              "min": -1198
+            }
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "location": {
+          "position": {
+            "x": {
+              "max": -1037,
+              "min": -1056
+            },
+            "y": {
+              "max": 65,
+              "min": 49
+            },
+            "z": {
+              "max": -1197,
+              "min": -1207
+            }
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "location": {
+          "position": {
+            "x": {
+              "max": -996,
+              "min": -1037
+            },
+            "y": {
+              "max": 73,
+              "min": 49
+            },
+            "z": {
+              "max": -1195,
+              "min": -1279
+            }
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "location": {
+          "position": {
+            "x": {
+              "max": -1068,
+              "min": -1146
+            },
+            "y": {
+              "max": 311,
+              "min": 44
+            },
+            "z": {
+              "max": -895,
+              "min": -981
+            }
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "location": {
+          "position": {
+            "x": {
+              "max": -1001,
+              "min": -1031
+            },
+            "y": {
+              "max": 44,
+              "min": -1
+            },
+            "z": {
+              "max": -1082,
+              "min": -1112
+            }
+          }
+        }
+      }
+    }
+  ]
+}

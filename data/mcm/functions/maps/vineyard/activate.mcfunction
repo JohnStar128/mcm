@@ -73,10 +73,41 @@ summon marker 2012 72 2026 {Tags:["MapEntity",ScrapSpawn]}
 summon marker 2003 70 2084 {Tags:["MapEntity",ScrapSpawn]}
 summon marker 2002 65 1921 {Tags:["MapEntity",ScrapSpawn]}
 
+#> Sound markers
+summon marker 1972 74 2034 {Tags:["MapEntity","PlantSoundMarker"]}
+summon marker 2046 75 1948 {Tags:["MapEntity","PlantSoundMarker"]}
+summon marker 2054 73 1925 {Tags:["MapEntity","PlantSoundMarker"]}
+summon marker 2047 73 1934 {Tags:["MapEntity","PlantSoundMarker"]}
+summon marker 1974 75 2002 {Tags:["MapEntity","PlantSoundMarker"]}
+summon marker 2086 76 1949 {Tags:["MapEntity","PlantSoundMarker"]}
+summon marker 1984 75 2001 {Tags:["MapEntity","PlantSoundMarker"]}
+summon marker 2066 73 1926 {Tags:["MapEntity","PlantSoundMarker"]}
+summon marker 2039 73 1931 {Tags:["MapEntity","PlantSoundMarker"]}
+summon marker 1972 74 2012 {Tags:["MapEntity","PlantSoundMarker"]}
+summon marker 2033 75 1944 {Tags:["MapEntity","PlantSoundMarker"]}
+summon marker 1997 78 2033 {Tags:["MapEntity","PlantSoundMarker"]}
+summon marker 1974 75 2053 {Tags:["MapEntity","PlantSoundMarker"]}
+summon marker 2052 76 1947 {Tags:["MapEntity","PlantSoundMarker"]}
+summon marker 1972 74 2044 {Tags:["MapEntity","PlantSoundMarker"]}
+summon marker 2033 72 1924 {Tags:["MapEntity","PlantSoundMarker"]}
+summon marker 2071 75 1939 {Tags:["MapEntity","PlantSoundMarker"]}
+summon marker 2057 74 1937 {Tags:["MapEntity","PlantSoundMarker"]}
+summon marker 1986 76 2036 {Tags:["MapEntity","PlantSoundMarker"]}
+summon marker 1993 77 2050 {Tags:["MapEntity","PlantSoundMarker"]}
+summon marker 1978 75 2028 {Tags:["MapEntity","PlantSoundMarker"]}
+summon marker 1993 77 2026 {Tags:["MapEntity","PlantSoundMarker"]}
+summon marker 1982 75 2010 {Tags:["MapEntity","PlantSoundMarker"]}
+summon marker 2082 74 1940 {Tags:["MapEntity","PlantSoundMarker"]}
+summon marker 1992 77 2007 {Tags:["MapEntity","PlantSoundMarker"]}
+summon marker 2065 75 1948 {Tags:["MapEntity","PlantSoundMarker"]}
+summon marker 2080 73 1925 {Tags:["MapEntity","PlantSoundMarker"]}
+summon marker 1981 75 2046 {Tags:["MapEntity","PlantSoundMarker"]}
+
+
 #> Spectator spawnpoint
 summon marker 1983 96 1932 {Tags:["MapEntity","SpectatorSpawn"]}
 
 #> Chandelier entity
 #summon marker 975 139 1000 {Tags:["MapEntity","Chandelier"]}
 
-tellraw @a ["","\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"The game is ready to play!","underlined":true,"color":"green"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Selected Map: ","color":"gray"},{"text":"Vineyard","color":"dark_green"},"\n"]
+tellraw @a ["","\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"The game is ready to play!","underlined":true,"color":"green"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Selected Map: ","color":"gray"},{"text":"Vineyard","color":"dark_green","hoverEvent":{"action":"show_text","value":{"text":"A deal you can't refuse","color":"aqua"}}},"\n"]

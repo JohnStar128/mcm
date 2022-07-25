@@ -1,0 +1,7 @@
+#> Queue when sitting in a chair
+scoreboard players add $queued CmdData 1
+# this message uses maxplayers but that's not actually implemented right now
+# tellraw @a ["", {"selector":"@s","color":"green"},{"text":" is ready to play!"}, {"text":" (","color":"yellow"}, {"score":{"name":"$queued","objective":"CmdData"},"color":"green"}, {"text":"/","color":"dark_green"}, {"score":{"name":"$maxplayers","objective":"GameRules"},"color":"green"}, {"text":")","color":"yellow"}]
+tellraw @a ["", {"selector":"@s","color":"green"},{"text":" is ready to play!"}, {"text":" (","color":"yellow"}, {"score":{"name":"$queued","objective":"CmdData"},"color":"green"}, {"text":")","color":"yellow"}]
+item replace entity @s armor.head with diamond_hoe{CustomModelData:69,display:{Name:'[{"text":"3","italic":false,"bold":true,"color":"red"},{"text":"D","color":"blue"},{"text":" ","color":"blue","bold":false},{"text":"Glasses","color":"white","bold":false}]',Lore:['[{"text":"You are Ready to play!","italic":false,"color":"green","underlined":true},{"text":"","italic":false,"color":"dark_purple","underlined":false}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"This is so immersive!","italic":true,"color":"dark_gray"}]','[{"text":"It almost feels like","italic":true,"color":"dark_gray"}]','[{"text":"you\'re actually there!","italic":true,"color":"dark_gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]']},Enchantments:[{id:binding_curse,lvl:1}],HideFlags:127}
+tag @s add queued
