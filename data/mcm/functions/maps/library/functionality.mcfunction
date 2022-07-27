@@ -1,6 +1,8 @@
 execute as @e[type=marker,tag=Chandelier] at @s if entity @a[tag=!spectating,limit=3] if entity @a[tag=!spectating,limit=3,distance=..3] run scoreboard players add $chandelierdroptimer CmdData 1
 execute as @e[type=marker,tag=Chandelier] at @s unless entity @a[tag=!spectating,limit=3,distance=..3] run scoreboard players set $chandelierdroptimer CmdData 0
 
+#> Enable taking books
+execute if score $graceperiod CmdData matches ..1 as @e[type=armor_stand,tag=bookspawn,nbt={ArmorItems:[{},{},{},{id:"minecraft:book",Count:1b}]}] run data merge entity @s {DisabledSlots:0}
 
 execute if score $chandelierdroptimer CmdData matches 100.. run tag @e[type=marker,tag=Chandelier,tag=!canDropChandelier] add canDropChandelier
 execute as @e[type=marker,tag=canDropChandelier] at @s run function mcm:game/dropchandelier
@@ -16,10 +18,12 @@ execute as @a[scores={droppedBook=1..}] run scoreboard players reset @s droppedB
 #execute if score $books CmdData matches 5 run place template minecraft:library_basementwall_empty 981 110 979 none none
 #> ^
 execute unless score $stairsopen CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:2b}]} run place template minecraft:library_basementwall_empty 981 110 979 none none
-execute unless score $stairsopen CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:2b}]} run particle minecraft:explosion 980.52 112.00 980.48 1.5 1 1.5 0 40 force
-execute unless score $stairsopen CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:2b}]} run particle minecraft:explosion 980.56 112.00 1020.61 1.5 1 1.5 0 40 force
-execute unless score $stairsopen CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:2b}]} run playsound minecraft:generic_explosion block @s 979.74 110.00 1000.50 50 1 0
-#execute unless score $stairsopen CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:2b}]} run setblock 945 104 996 minecraft:chest destroy
+execute unless score $stairsopen CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:2b}]} run particle minecraft:electric_spark 980.52 112.00 980.48 1.5 1 1.5 0 40 force
+execute unless score $stairsopen CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:2b}]} run particle minecraft:electric_spark 980.56 112.00 1020.61 1.5 1 1.5 0 40 force
+execute unless score $stairsopen CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:2b}]} run playsound minecraft:block.wooden_door.open block @a 980 110 1020 3 1 0.0
+execute unless score $stairsopen CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:2b}]} run playsound minecraft:block.chest.open block @a 980 110 1020 3 0.8 0.0
+execute unless score $stairsopen CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:2b}]} run playsound minecraft:block.wooden_door.open block @a 980 110 980 3 1 0.0
+execute unless score $stairsopen CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:2b}]} run playsound minecraft:block.chest.open block @a 980 110 980 3 0.8 0.0
 execute unless score $stairsopen CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:2b}]} run scoreboard players set $stairsopen CmdData 1
 
 #> When you have all 5 books, open the book in the basement

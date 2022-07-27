@@ -1,7 +1,5 @@
-advancement revoke @s only mcm:lobby/start
-
 #> Set start to 1 only if game is ready to start
-execute if score $queued CmdData matches 3.. if score $gamestate CmdData matches 0 run scoreboard players set $start CmdData 1
+execute if score $queued CmdData matches 4.. if score $gamestate CmdData matches 0 run scoreboard players set $start CmdData 1
 
 #> Don't start if map isn't selected
 execute if score $gamestate CmdData matches -1 run tellraw @s ["\n", {"text":"Usher: ","color":"dark_green"},{"text":"We can't start if we don't know what we're watching!", "color":"green"}, "\n"]
@@ -32,8 +30,8 @@ execute if score $startcountdown CmdData matches 1 if score $queued CmdData matc
 
 #> Clear lobby items if game starts
 execute if score $gamestate CmdData matches 0 if score $startcountdown CmdData matches 1 run clear @a warped_fungus_on_a_stick{CustomModelData:1114}
-execute if score $gamestate CmdData matches 0 if score $startcountdown CmdData matches 1 run clear @a[tag=queued] warped_fungus_on_a_stick{CustomModelData:1234}
-execute if score $gamestate CmdData matches 0 if score $startcountdown CmdData matches 1 run clear @a[tag=queued] warped_fungus_on_a_stick{CustomModelData:1235}
+execute if score $gamestate CmdData matches 0 if score $startcountdown CmdData matches 1 run clear @a[tag=queued] warped_fungus_on_a_stick
+execute if score $gamestate CmdData matches 0 if score $startcountdown CmdData matches 1 run clear @a[tag=queued] snowball
 execute if score $gamestate CmdData matches 0 if score $startcountdown CmdData matches 1 run clear @a[tag=queued] written_book
 #execute if score $gamestate CmdData matches 0 if score $startcountdown CmdData matches 1 run clear @a[tag=queued] diamond_hoe{CustomModelData:69}
 

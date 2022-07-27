@@ -11,6 +11,6 @@
     }
   },
   "rewards": {
-    "function": "mcm:lobby/start"
+    "function": "mcm:lobby/usher"
   }
 }

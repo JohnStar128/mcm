@@ -16,8 +16,10 @@ effect give @a weakness 1000000 100 true
 effect clear @a[tag=HoldKnife] weakness
 
 #> Auto queue
-execute as @a[tag=first_join,scores={autoqueue=1..},tag=!autoqueue,nbt={SelectedItem:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1234}}}] at @s run function mcm:lobby/autoqueue
-execute as @a[tag=first_join,scores={autoqueue=1..},tag=autoqueue,nbt={SelectedItem:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1235}}}] at @s run function mcm:lobby/deautoqueue
+execute as @a[tag=first_join,scores={autoqueue=1..},tag=!autoqueue,nbt={SelectedItem:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1234}}}] run item replace entity @s weapon with warped_fungus_on_a_stick{CustomModelData:1235,NoDrop:1b,display:{Name:'[{"text":"Disable AutoQueue","italic":false,"color":"red"}]'}}
+execute as @a[tag=first_join,scores={autoqueue=1..},tag=autoqueue,nbt={SelectedItem:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1235}}}] run item replace entity @s weapon with warped_fungus_on_a_stick{CustomModelData:1234,NoDrop:1b,display:{Name:'[{"text":"Enable AutoQueue","italic":false,"color":"green"}]'}}
+execute as @a[tag=first_join,scores={autoqueue=1..},tag=!autoqueue,nbt={SelectedItem:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1235}}}] at @s run function mcm:lobby/autoqueue
+execute as @a[tag=first_join,scores={autoqueue=1..},tag=autoqueue,nbt={SelectedItem:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1234}}}] at @s run function mcm:lobby/deautoqueue
 
 #> If all players leave, reset the game entirely
 #execute if score $onlinePlayers CmdData matches 0 run function mcm:reseteverything
@@ -34,9 +36,6 @@ execute if score $gamestate CmdData matches 1 run function mcm:game/loops/ingame
 #Game end loop
 execute if score $gamestate CmdData matches 2 run function mcm:game/loops/gameend
 
-#> Player UUID - what do we use this for? (apparently NoDrop)
-execute as @a store result score @s playerUUID run data get entity @s UUID[0]
-
 #> Debug room only accessible to test4
 execute as @a[predicate=mcm:bounding_boxes/debug,team=!test4] at @s run particle minecraft:witch ~ ~ ~ .7 .7 .7 1 100
 execute as @a[predicate=mcm:bounding_boxes/debug,team=!test4] at @s run tellraw @s ["", {"text":"<Bouncer> You're not on "}, {"text":"[","color":"gold"}, {"text":"The","color":"white"}, {"text":"]","color":"gold"}, {"text":" list.","color":"white"}]
@@ -50,8 +49,8 @@ execute if score $gamestate CmdData matches -1..0 run function mcm:lobby/popcorn
 scoreboard players reset @a[scores={autoqueue=1..}] autoqueue
 
 #> Testing range item frames
-execute as @a[advancements={mcm:lobby/testing_range_knife=true},nbt=!{Inventory:[{id:"minecraft:snowball",Count:1b,tag:{CustomModelData:1111}}]}] run give @s snowball{NoDrop:1b,Unbreakable:1,CustomModelData:1111,AttributeModifiers:[{AttributeName:"generic.attack_damage",Amount:100,Slot:mainhand,Name:"generic.attack_damage",UUID:[I;-122419,10812,22346,-21624]}],display:{Name:'[{"translate":"mcm.item.knife","italic":false}]',Lore:['[{"translate":"mcm.item.knife.lore","italic":false}]']}} 
-execute as @a[advancements={mcm:lobby/testing_range_gun=true},nbt=!{Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}]}] run give @s warped_fungus_on_a_stick{NoDrop:1b,CustomModelData:1111,display:{Name:'[{"translate":"mcm.item.gun","italic":false}]'}} 
+execute as @a[advancements={mcm:lobby/testing_range_knife=true},nbt=!{Inventory:[{id:"minecraft:snowball",Count:1b,tag:{CustomModelData:1111}}]}] run give @s snowball{NoDrop:0b,Unbreakable:1,CustomModelData:1111,AttributeModifiers:[{AttributeName:"generic.attack_damage",Amount:100,Slot:mainhand,Name:"generic.attack_damage",UUID:[I;-122419,10812,22346,-21624]}],display:{Name:'[{"translate":"mcm.item.knife","italic":false}]',Lore:['[{"translate":"mcm.item.knife.lore","italic":false}]']}} 
+execute as @a[advancements={mcm:lobby/testing_range_gun=true},nbt=!{Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}]}] run give @s warped_fungus_on_a_stick{NoDrop:0b,CustomModelData:1111,display:{Name:'[{"translate":"mcm.item.gun","italic":false}]'}} 
 execute as @a[advancements={mcm:lobby/testing_range_knife=true}] run advancement revoke @s only mcm:lobby/testing_range_knife
 execute as @a[advancements={mcm:lobby/testing_range_gun=true}] run advancement revoke @s only mcm:lobby/testing_range_gun
 
@@ -69,7 +68,7 @@ function mcm:game/nodrop
 #> Tp players who use the book to go back to spawnpoint
 scoreboard players enable @a[tag=!queued] stuck
 execute as @a[scores={stuck=1..},tag=!queued] run tp @s -1 1 69
-execute as @a[scores={stuck=1..},tag=!queued] run clear @s warped_fungus_on_a_stick
+execute as @a[scores={stuck=1..},tag=!queued] run clear @s warped_fungus_on_a_stick{CustomModelData:1111}
 execute as @a[scores={stuck=1..},tag=!queued] run clear @s snowball
 execute as @a[scores={stuck=1..},tag=!queued] run scoreboard players reset @s stuck
 
@@ -133,3 +132,9 @@ function mcm:lobby/credits/credits
 
 #> Rule updates
 execute if entity @a[scores={player_rule_update=1..}] run function mcm:lobby/rule_update
+
+#> Remove items players shouldn't have
+function mcm:lobby/remove_items
+
+#> Kill knives/guns in the lobby
+execute as @e[type=item,predicate=mcm:bounding_boxes/test_range_kill_items,nbt={OnGround:1b}] run kill @s

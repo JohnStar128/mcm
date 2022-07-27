@@ -1,32 +1,25 @@
-#>Selects (currently) 5 of the bookspawn armorstands to hold an Overdue book for the Basement Unlock
-execute as @e[type=minecraft:armor_stand,tag=bookspawn,tag=!hasbook,limit=5,sort=random] at @s run data merge entity @s {Tags: ["hasbook","bookspawn"],HandItems:[{id: "minecraft:book", Count: 1b, tag: {display: {Lore: ['[{"text":"You should probably return this","italic":false}]'],Name:'[{"text":"Overdue Book","italic":false,"color":"red"}]'}}}]}
-execute as @e[type=armor_stand,tag=bookspawn,nbt={HandItems:[{id:"minecraft:book",Count:1b}]}] at @s run tag @s add hasbook
+#>Selects (currently) 5 of the bookspawn armorstands to have an Overdue book in their Helmet slot for the Basement Unlock
+execute as @e[type=minecraft:armor_stand,tag=bookspawn,tag=!hasbook,limit=5,sort=random] at @s run data merge entity @s {Tags: ["hasbook","bookspawn"],ArmorItems:[{},{},{},{id: "minecraft:book", Count: 1b, tag: {display: {Lore: ['[{"text":"You should probably return this","italic":false}]'],Name:'[{"text":"Overdue Book","italic":false,"color":"red"}]'}}}]}
+execute as @e[type=armor_stand,tag=bookspawn,nbt={ArmorItems:[{},{},{},{id:"minecraft:book",Count:1b}]}] at @s run tag @s add hasbook
+#> Prevent taking books until game starts
+execute as @e[type=armor_stand,tag=bookspawn,nbt={ArmorItems:[{},{},{},{id:"minecraft:book",Count:1b}]}] run data merge entity @s {DisabledSlots:4096}
 
 #Armor stand locations
-#995.6 109.8 993.9
-#983.4 109.85 1009.15
-#975.4 109.85 993.15
-#954.6 109.85 1009.9
-#952.4 109.85 990.1
-#982.85 120.8 1008.45
-#987.1 120.8 992.6
-#984.85 120.8 1012.4
-#961.85 131.8 1009.4
-#957.15 131.8 1014.6
-#965.6 131.8 1026.9
-#951.4 131.8 1023.15
-#958.85 131.8 989.4
-#953.85 131.8 976.4
-#966.85 131.8 973.4
-#944.15 142.8 971.6
-#942.85 142.8 1023.4
-#943.15 142.8 1031.6
-
-#>Useful commands I'm gonna need while doing this
-#/data get entity @e[type=minecraft:armor_stand,sort=nearest,limit=1]
-#/execute as @e[type=minecraft:armor_stand,sort=nearest,limit=1] at @s run tp @e[type=minecraft:armor_stand,sort=nearest,limit=1] ~ ~ ~
-#/data merge entity @e[type=minecraft:armor_stand,sort=nearest,limit=1] {Rotation:[90f]}
-#/summon minecraft:armor_stand ~ ~ ~ {Pose:{RightArm:[270f,0f,0f]},ShowArms:1b,Invulnerable:1b,NoGravity:1b,HandItems:[{id: "minecraft:book", Count: 1b, tag: {display: {Lore: ['[{"text":"You should probably return this","italic":false}]'],Name:'[{"text":"Overdue Book","italic":false,"color":"red"}]'},Count:1b}}],Invisible:1b}
-
-#execute as @e[type=minecraft:armor_stand,sort=nearest,limit=1] at @s run data merge entity @e[type=minecraft:armor_stand,sort=nearest,limit=1] {HandItems:[{id: "minecraft:book", Count: 1b, tag: {display: {Lore: ['[{"text":"You should probably return this","italic":false}]'],Name:'[{"text":"Overdue Book","italic":false,"color":"red"}]'},Count:1b}}]}
-#execute as @e[type=minecraft:armor_stand,sort=nearest,limit=1] at @s run data merge entity @e[type=minecraft:armor_stand,sort=nearest,limit=1] {Tags: ["bookspawn"]}
+#995.3 109.3 993.5
+#983.7 109.3 1009.5
+#975.7 109.3 993.5
+#954.3 109.3 1009.5
+#952.7 109.3 990.5
+#983.5 120.3 1008.7
+#987.5 120.3 992.3
+#984.5 120.3 1012.7
+#961.5 131.3 1009.7
+#957.5 131.3 1014.3
+#965.3 131.3 1026.5
+#951.7 131.3 1023.5
+#958.5 131.3 989.7
+#953.5 131.3 976.7
+#966.5 131.3 973.7
+#944.5 142.3 971.3
+#942.5 142.3 1023.7
+#943.5 142.3 1031.3

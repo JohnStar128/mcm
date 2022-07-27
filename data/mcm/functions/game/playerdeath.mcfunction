@@ -23,13 +23,12 @@ execute at @s run summon item ~ ~0.5 ~ {Tags:["BoneDeco","5","KeyItem"],PickupDe
 execute at @s run summon item ~ ~0.5 ~ {Tags:["BoneDeco","6","KeyItem"],PickupDelay:2000000000,Item:{id:"minecraft:bone",Count:1b},Motion:[0.15d,0.3d,-0.15d]}
 
 #> Drop gun if gunner is killed
-#execute as @a[tag=gunner,scores={dead=1..},nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] at @s run summon item ~ ~ ~ {PickupDelay:10s,Tags:["deadDrop","gun","KeyItem"],Item:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111,Tags:["KeyItem"],display:{Name:"{\"translate\":\"mcm.item.gun\",\"italic\":\"false\"}"}}}}
-execute as @a[tag=gunner,scores={dead=1..},nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] at @s run loot spawn ~ ~ ~ loot mcm:gun_normal
-execute as @a[tag=gunner,scores={dead=1..},nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] at @s run clear @s warped_fungus_on_a_stick 
+execute at @s[tag=gunner] run loot spawn ~ ~ ~ loot mcm:gun_normal 
+execute at @s run clear @s warped_fungus_on_a_stick 
 
 #> LIBRARY: Drop books if they have any
-execute if score $selectedMap CmdData matches 1 as @a[tag=innocent,scores={books=1..}] at @s run loot spawn ~ ~ ~ loot mcm:books
-execute if score $selectedMap CmdData matches 1 as @a[tag=innocent,scores={books=1..}] at @s run clear @s book
+execute if score $selectedMap CmdData matches 1 at @s run loot spawn ~ ~ ~ loot mcm:books
+execute if score $selectedMap CmdData matches 1 at @s run clear @s book
 
 #> Spectate (temporary)
 execute at @s run gamemode spectator @s

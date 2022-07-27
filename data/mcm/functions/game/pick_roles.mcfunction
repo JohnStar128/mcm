@@ -13,7 +13,7 @@ execute if score $murderers GameRules matches 1.. run item replace entity @a[tag
 
 # 2 murderers
 execute if score $murderers GameRules matches 2.. run execute as @a[tag=queued,tag=!prevMurderer,tag=!murderer,sort=random,limit=2] at @s run tag @s add murderer
-execute if score $murderers GameRules matches 2.. run tellraw @a[tag=murderer] ["" ,{"text":"You ","color":"red"}, {"text":"and ","color":"gold"}, {"selector":"@p[tag=murderer,limit=1,sort=nearest]","color":"red"} ,{"text":" are the ","color":"gold"},{"text":"murderers!","color":"red"}]
+execute if score $murderers GameRules matches 2.. run tellraw @a[tag=murderer] ["" ,{"selector":"@p[tag=murderer,limit=2,sort=nearest]","color":"red"} ,{"text":" are the ","color":"gold"},{"text":"murderers!","color":"red"}]
 execute if score $murderers GameRules matches 2.. run title @a[tag=murderer] title {"text":"You are ","color":"gold","extra":[{"text":"the murderer!","color":"red"}]}
 execute if score $murderers GameRules matches 2.. run title @a[tag=murderer] subtitle {"text":"Kill the innocent ","color":"gold"}
 execute as @a[tag=murderer,limit=2] if score $murderers GameRules matches 2.. run item replace entity @s hotbar.1 with snowball{NoDrop:1b,Unbreakable:1,CustomModelData:1111,AttributeModifiers:[{AttributeName:"generic.attack_damage",Amount:100,Slot:mainhand,Name:"generic.attack_damage",UUID:[I;-122419,10812,22346,-21624]}],display:{Name:'[{"translate":"mcm.item.knife","italic":false}]',Lore:['[{"translate":"mcm.item.knife.lore","italic":false}]']}} 1

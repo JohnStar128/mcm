@@ -13,5 +13,9 @@ scoreboard players reset @a dead
 # TODO change to @a when we don't need armor stands to test anymore
 execute store result score $queued CmdData if entity @e[tag=queued]
 
+execute if score $gamestate CmdData matches 0 if score $start CmdData matches 0 run advancement revoke @a[advancements={mcm:lobby/start=true}] only mcm:lobby/start
 execute if score $gamestate CmdData matches 0 if score $start CmdData matches 1.. run function mcm:lobby/start
 execute if score $queued CmdData matches 3.. if score $autostart GameRules matches 1.. run scoreboard players set $start CmdData 1
+
+clear @a #mcm:pottable_plants
+clear @a #mcm:dyes

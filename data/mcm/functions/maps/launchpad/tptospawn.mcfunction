@@ -1,3 +1,4 @@
+execute unless entity @e[type=marker,tag=PlayerSpawn,tag=!Occupied] as @e[type=marker,tag=PlayerSpawn,tag=Occupied] run tag @s remove Occupied
 #> John Spawnpoint
 execute as @r[limit=1] at @s if entity @s[name=JohnStar128,tag=queued,tag=!murderer] run tp @s @e[type=marker,tag=JohnSpawn,limit=1]
 #> Blocky Spawnpoint

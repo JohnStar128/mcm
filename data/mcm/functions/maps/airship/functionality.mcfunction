@@ -11,3 +11,20 @@ execute if score $animate GameRules matches 1.. run execute positioned -693 56 4
 execute if score $animate GameRules matches 1.. run execute positioned -693 56 40 if score $wheeltimer CmdData matches 40 run playsound minecraft:block.chest.open block @a -693 56 40 2.25 0 0.0
 execute if score $animate GameRules matches 1.. run execute if score $wheeltimer CmdData matches 40 run place template mcm:waterwheel_1 -696 51 35
 execute if score $animate GameRules matches 1.. run execute if score $wheeltimer CmdData matches 80.. run scoreboard players set $wheeltimer CmdData 0
+
+#> Prevent water spread
+execute if block -694 60 45 dark_oak_trapdoor[waterlogged=true] run setblock -694 60 45 dark_oak_trapdoor[open=true,waterlogged=false,powered=false,half=top,facing=south] replace
+execute if block -693 60 45 dark_oak_trapdoor[waterlogged=true] run setblock -693 60 45 dark_oak_trapdoor[open=true,waterlogged=false,powered=false,half=top,facing=south] replace
+execute if block -692 60 45 dark_oak_trapdoor[waterlogged=true] run setblock -692 60 45 dark_oak_trapdoor[open=true,waterlogged=false,powered=false,half=top,facing=south] replace
+execute if block -694 58 46 dark_oak_trapdoor[waterlogged=true] run setblock -694 58 46 dark_oak_trapdoor[open=true,waterlogged=false,powered=false,half=top,facing=south] replace
+execute if block -693 58 46 dark_oak_trapdoor[waterlogged=true] run setblock -693 58 46 dark_oak_trapdoor[open=true,waterlogged=false,powered=false,half=top,facing=south] replace
+execute if block -692 58 46 dark_oak_trapdoor[waterlogged=true] run setblock -692 58 46 dark_oak_trapdoor[open=true,waterlogged=false,powered=false,half=top,facing=south] replace
+execute if block -694 56 46 dark_oak_trapdoor[waterlogged=true] run setblock -694 56 46 dark_oak_trapdoor[open=true,waterlogged=false,powered=false,half=top,facing=south] replace
+execute if block -693 56 46 dark_oak_trapdoor[waterlogged=true] run setblock -693 56 46 dark_oak_trapdoor[open=true,waterlogged=false,powered=false,half=top,facing=south] replace
+execute if block -692 56 46 dark_oak_trapdoor[waterlogged=true] run setblock -692 56 46 dark_oak_trapdoor[open=true,waterlogged=false,powered=false,half=top,facing=south] replace
+execute if block -694 54 46 dark_oak_trapdoor[waterlogged=true] run setblock -694 54 46 dark_oak_trapdoor[open=true,waterlogged=false,powered=false,half=top,facing=south] replace
+execute if block -693 54 46 dark_oak_trapdoor[waterlogged=true] run setblock -693 54 46 dark_oak_trapdoor[open=true,waterlogged=false,powered=false,half=top,facing=south] replace
+execute if block -692 54 46 dark_oak_trapdoor[waterlogged=true] run setblock -692 54 46 dark_oak_trapdoor[open=true,waterlogged=false,powered=false,half=top,facing=south] replace
+execute if block -694 52 45 dark_oak_trapdoor[waterlogged=true] run setblock -694 52 45 dark_oak_trapdoor[open=true,waterlogged=false,powered=false,half=top,facing=south] replace
+execute if block -693 52 45 dark_oak_trapdoor[waterlogged=true] run setblock -693 52 45 dark_oak_trapdoor[open=true,waterlogged=false,powered=false,half=top,facing=south] replace
+execute if block -692 52 45 dark_oak_trapdoor[waterlogged=true] run setblock -692 52 45 dark_oak_trapdoor[open=true,waterlogged=false,powered=false,half=top,facing=south] replace

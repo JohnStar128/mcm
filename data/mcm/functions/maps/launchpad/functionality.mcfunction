@@ -3,16 +3,19 @@ execute if block -982 57 -1099 stone_button[powered=true] run fill -983 54 -1098
 execute if block -982 57 -1099 stone_button[powered=true] run fill -982 56 -1100 -981 57 -1100 black_wool
 execute as @a[predicate=mcm:bounding_boxes/elevator_bottom] at @s if block -982 57 -1099 stone_button[powered=true] run tp @s ~ ~90 ~
 execute as @a[predicate=mcm:bounding_boxes/elevator_bottom] at @s if block -982 57 -1099 stone_button[powered=true] run playsound minecraft:entity.zombie_villager.converted block @s -982 147 -1099 1 1.2 0
+execute if block -982 57 -1099 stone_button[powered=true] run setblock -982 57 -1099 stone_button[powered=false,facing=east]
 
 #> Teleport from top to bottom
-execute as @a[predicate=mcm:bounding_boxes/elevator_top] at @s if block -982 147 -1099 stone_button[powered=true] run fill -982 56 -1100 -981 57 -1100 air
-execute as @a[predicate=mcm:bounding_boxes/elevator_top] at @s if block -982 147 -1099 stone_button[powered=true] run fill -983 54 -1098 -983 54 -1098 air
+execute if block -982 147 -1099 stone_button[powered=true] run fill -982 56 -1100 -981 57 -1100 air
+execute if block -982 147 -1099 stone_button[powered=true] run fill -983 54 -1098 -983 54 -1098 air
 execute as @a[predicate=mcm:bounding_boxes/elevator_top] at @s if block -982 147 -1099 stone_button[powered=true] run tp @s ~ ~-90 ~
 execute as @a[predicate=mcm:bounding_boxes/elevator_top] at @s if block -982 147 -1099 stone_button[powered=true] run playsound minecraft:entity.zombie_villager.converted block @s -982 57 -1099 1 1.2 0
+execute if block -982 147 -1099 stone_button[powered=true] run setblock -982 147 -1099 stone_button[powered=false,facing=east]
 
 #> Call elevator from top to bottom
 execute if block -984 57 -1102 stone_button[powered=true] run fill -982 56 -1100 -981 57 -1100 air
 execute if block -984 57 -1102 stone_button[powered=true] run fill -983 54 -1098 -983 54 -1098 air
+execute if block -984 57 -1102 stone_button[powered=true] run setblock -984 57 -1102 stone_button[powered=false]
 
 #> Rocket launch sequence buttons
 execute if block -1035 55 -1266 stone_button[powered=true] run scoreboard players add $launchButton CmdData 1

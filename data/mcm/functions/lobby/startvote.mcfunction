@@ -65,3 +65,5 @@ scoreboard players set $gamestate CmdData -1
 
 #> Set the pre-game start countdown to 10 seconds
 scoreboard players set $startcountdown CmdData 200
+
+advancement revoke @a[advancements={mcm:lobby/start=true}] only mcm:lobby/start
