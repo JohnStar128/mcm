@@ -24,6 +24,7 @@ scoreboard players set $library_flip CmdData 0
 #> Reset worldborder
 worldborder set 30000000
 
+#> Other blocks
 execute unless block 941 112 971 minecraft:lantern[waterlogged=false,hanging=true] run setblock 941 112 971 minecraft:lantern[waterlogged=false,hanging=true] replace
 execute unless block 935 117 968 minecraft:lantern[waterlogged=false,hanging=true] run setblock 935 117 968 minecraft:lantern[waterlogged=false,hanging=true] replace
 execute unless block 941 123 971 minecraft:lantern[waterlogged=false,hanging=true] run setblock 941 123 971 minecraft:lantern[waterlogged=false,hanging=true] replace

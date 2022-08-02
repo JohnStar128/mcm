@@ -18,7 +18,6 @@ execute if entity @e[type=marker,tag=SelectedMap,tag=Random] run tag @e[type=mar
 execute as @e[type=marker,tag=SelectedMap,tag=Random] run tag @s remove SelectedMap
 execute if score $countSec CmdData matches 20.. if score $countdown CmdData matches 1 run scoreboard players operation $selectedMap CmdData = @e[type=marker,tag=SelectedMap] MapValues
 
-
 #> Map specific activation
 #Library
 execute if score $countSec CmdData matches 20.. if score $countdown CmdData matches 1 if entity @e[type=marker,tag=SelectedMap,tag=Library] run function mcm:maps/library/activate
@@ -28,6 +27,9 @@ execute if score $countSec CmdData matches 20.. if score $countdown CmdData matc
 execute if score $countSec CmdData matches 20.. if score $countdown CmdData matches 1 if entity @e[type=marker,tag=SelectedMap,tag=Vineyard] run function mcm:maps/vineyard/activate
 #Launch Complex
 execute if score $countSec CmdData matches 20.. if score $countdown CmdData matches 1 if entity @e[type=marker,tag=SelectedMap,tag=Launchpad] run function mcm:maps/launchpad/activate
+
+#> A normal person would want the rules printed here, BEFORE the game starts, but alas, we live in a lazy world
+# execute if score $countSec CmdData matches 20.. if score $countdown CmdData matches 1 as @a run function mcm:lobby/print_game_rules
 
 #> Change gamestate to 0 (Players can now join, game has not started yet)
 execute if score $countSec CmdData matches 20.. if score $countdown CmdData matches 1 run kill @e[type=marker,tag=MapVote]
@@ -49,7 +51,7 @@ execute as @e[type=armor_stand,tag=map1,tag=VoteDisplay] at @s run data modify e
 execute as @e[type=armor_stand,tag=map2,tag=VoteDisplay] at @s run data modify entity @s CustomName set from block 29 3 94 Text4
 execute as @e[type=armor_stand,tag=map3,tag=VoteDisplay] at @s run data modify entity @s CustomName set from block 29 3 99 Text4
 execute as @e[type=armor_stand,tag=map4,tag=VoteDisplay] at @s run data modify entity @s CustomName set from block 29 3 104 Text4
-execute as @e[type=armor_stand,tag=map_random,tag=VoteDisplay] at @s run data modify entity @s CustomName set from block 29 3 114 Text4
+execute as @e[type=armor_stand,tag=map_random,tag=VoteDisplay] at @s run data modify entity @s CustomName set from block 29 3 83 Text4
 
 #> Villager right click detection
 execute as @a[advancements={mcm:map_votes/map1=true}] at @s run trigger mapvote set 1
@@ -104,13 +106,14 @@ setblock 29 3 89 minecraft:oak_wall_sign[facing=west]
 setblock 29 3 94 minecraft:oak_wall_sign[facing=west]
 setblock 29 3 99 minecraft:oak_wall_sign[facing=west]
 setblock 29 3 104 minecraft:oak_wall_sign[facing=west]
-setblock 29 3 114 minecraft:oak_wall_sign[facing=west]
+setblock 29 3 83 minecraft:oak_wall_sign[facing=west]
 
 data merge block 29 3 89 {Text1:'{"text":"","clickEvent":{"action":"run_command","value":"trigger mapvote set 1"}}',Text2:'{"text":"Library","underlined":true,"color":"dark_green"}',Text3:'{"text":""}',Text4:'{"text":"Votes: ","extra":[{"score":{"name":"@e[type=marker,tag=MapVote,tag=Library,limit=1]","objective":"CmdData"},"color":"#FFE700"}]}'}
 data merge block 29 3 94 {Text1:'{"text":"","clickEvent":{"action":"run_command","value":"trigger mapvote set 2"}}',Text2:'{"text":"Airship","underlined":true,"color":"dark_green"}',Text3:'{"text":""}',Text4:'{"text":"Votes: ","extra":[{"score":{"name":"@e[type=marker,tag=MapVote,tag=Airship,limit=1]","objective":"CmdData"},"color":"#FFE700"}]}'}
 data merge block 29 3 99 {Text1:'{"text":"","clickEvent":{"action":"run_command","value":"trigger mapvote set 3"}}',Text2:'{"text":"Vineyard","underlined":true,"color":"dark_green"}',Text3:'{"text":""}',Text4:'{"text":"Votes: ","extra":[{"score":{"name":"@e[type=marker,tag=MapVote,tag=Vineyard,limit=1]","objective":"CmdData"},"color":"#FFE700"}]}'}
 data merge block 29 3 104 {Text1:'{"text":"","clickEvent":{"action":"run_command","value":"trigger mapvote set 4"}}',Text2:'{"text":"Launch Complex","underlined":true,"color":"dark_green"}',Text3:'{"text":""}',Text4:'{"text":"Votes: ","extra":[{"score":{"name":"@e[type=marker,tag=MapVote,tag=Launchpad,limit=1]","objective":"CmdData"},"color":"#FFE700"}]}'}
-data merge block 29 3 114 {Text1:'{"text":"","clickEvent":{"action":"run_command","value":"trigger mapvote set -1"}}',Text2:'{"text":"Random","underlined":true,"color":"dark_green"}',Text3:'{"text":""}',Text4:'{"text":"Votes: ","extra":[{"score":{"name":"@e[type=marker,tag=MapVote,tag=Random,limit=1]","objective":"CmdData"},"color":"#FFE700"}]}'}
+
+data merge block 29 3 83 {Text1:'{"text":"","clickEvent":{"action":"run_command","value":"trigger mapvote set -1"}}',Text2:'{"text":"Random","underlined":true,"color":"dark_green"}',Text3:'{"text":""}',Text4:'{"text":"Votes: ","extra":[{"score":{"name":"@e[type=marker,tag=MapVote,tag=Random,limit=1]","objective":"CmdData"},"color":"#FFE700"}]}'}
 
 scoreboard players reset @a[tag=Voted] mapvote
 execute as @a unless entity @s[scores={mapvote=-1..4}] run scoreboard players reset @s mapvote

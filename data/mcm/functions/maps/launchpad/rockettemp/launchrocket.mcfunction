@@ -76,7 +76,7 @@ execute if score $launchTime CmdData matches 211..220 run particle minecraft:lav
 
 execute if score $launchTime CmdData matches 220 run function mcm:maps/launchpad/rockettemp/clearrocket
 execute if score $launchTime CmdData matches 221 as @a[tag=launch_player] at @s run tp @s ~ ~-281 ~
-execute if score $launchTime CmdData matches 220 as @a[tag=launch_player,advancements={mcm:secrets/spaceship=false}] at @s run advancement grant @s only mcm:secrets/spaceship
+execute if score $launchTime CmdData matches 220 as @a[tag=launch_player,tag=!spectating,advancements={mcm:secrets/spaceship=false}] at @s run advancement grant @s only mcm:secrets/spaceship
 
 # fire
 execute if score $launchTime CmdData matches 5 run fill -1022 50 -1091 -1010 50 -1091 fire

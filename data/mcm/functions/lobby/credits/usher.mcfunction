@@ -1,0 +1,2 @@
+execute if score $credit_timer CmdData matches -1 run scoreboard players set $credit_timer CmdData 0
+execute as @a[advancements={mcm:lobby/start_credits=true}] run advancement revoke @s only mcm:lobby/start_credits

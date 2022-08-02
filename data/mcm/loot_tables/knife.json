@@ -10,7 +10,7 @@
           "functions": [
             {
               "function": "set_nbt",
-              "tag": "{NoDrop:1b,Tags:[\"knifeCosmetic\",\"MapEntity\",\"KeyItem\"],PickupDelay:20s,Unbreakable:1,CustomModelData:1111,AttributeModifiers:[{AttributeName:\"generic.attack_damage\",Amount:100,Slot:mainhand,Name:\"generic.attack_damage\",UUID:[I;-122419,10812,22346,-21624]}],display:{Name:'[{\"translate\":\"mcm.item.knife\",\"italic\":false}]',Lore:['[{\"translate\":\"mcm.item.knife.lore\",\"italic\":false}]']}}"
+              "tag": "{Tags:[\"knifeCosmetic\",\"MapEntity\",\"KeyItem\"],PickupDelay:20s,Unbreakable:1,CustomModelData:1111,AttributeModifiers:[{AttributeName:\"generic.attack_damage\",Amount:100,Slot:mainhand,Name:\"generic.attack_damage\",UUID:[I;-122419,10812,22346,-21624]}],display:{Name:'[{\"translate\":\"mcm.item.knife\",\"italic\":false}]',Lore:['[{\"translate\":\"mcm.item.knife.lore\",\"italic\":false}]']}}"
             }
          ]
         }

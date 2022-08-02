@@ -45,11 +45,9 @@ execute if score $mapflipeffect CmdData matches 1 run scoreboard players set $ma
 scoreboard players reset @a[scores={flipmap=1..}] flipmap
 execute if score $flippingmap CmdData matches 1 run function mcm:maps/library/flipmap
 
-#>Old stuff we probably don't need but keeping just in case [DONT UNCOMMENT]
-#execute if block 944 110 996 minecraft:hopper{Items: [{Slot: 0b, id: "minecraft:book", Count: 5b, tag: {display: {Lore: ['[{"text":"You should probably return this","italic":false}]'], Name: '[{"text":"Overdue Book","italic":false,"color":"red"}]'}}}]} run place template minecraft:library_basementwall_empty 981 110 979 none none
-#Remove Junk from book return hopper
-#execute unless score $books CmdData matches 1..5 run item replace block 944 110 996 container.0 with air{Count:1b}
-
+#> Teleport players out of bounds back inbounds (escape prevention)
+execute as @a[tag=queued,tag=!spectating,predicate=!mcm:bounding_boxes/library_escapeprevention] if score $library_flip CmdData matches 0 at @s run tp @s @e[tag=PlayerSpawn,limit=1,sort=random]
+execute as @a[tag=queued,tag=!spectating,predicate=!mcm:bounding_boxes/library_flipped_escapeprevention] if score $library_flip CmdData matches 1 at @s run tp @s @e[tag=LibraryFlip,limit=1,sort=random]
 
 
 #> LIBRARY FLIPPING WORLD BORDER VALUE NOTES

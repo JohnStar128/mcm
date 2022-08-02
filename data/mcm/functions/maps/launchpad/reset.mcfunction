@@ -39,6 +39,12 @@ scoreboard players set $launchControl CmdData 0
 scoreboard players set $launchTime CmdData 0
 
 # other blocks
+execute unless block -1096 62 -1087 flower_pot run setblock -1096 62 -1087 flower_pot
+execute unless block -1096 62 -1093 flower_pot run setblock -1096 62 -1093 flower_pot
+execute unless block -1096 62 -1099 flower_pot run setblock -1096 62 -1099 flower_pot
+execute unless block -1096 62 -1105 flower_pot run setblock -1096 62 -1105 flower_pot
+execute unless block -1096 62 -1111 flower_pot run setblock -1096 62 -1111 flower_pot
+
 execute unless block -1111 59 -1145 minecraft:lever[face=ceiling,powered=false,facing=east] run setblock -1111 59 -1145 minecraft:lever[face=ceiling,powered=false,facing=east] replace
 execute unless block -1111 59 -1049 minecraft:lever[face=ceiling,powered=false,facing=east] run setblock -1111 59 -1049 minecraft:lever[face=ceiling,powered=false,facing=east] replace
 execute unless block -1093 60 -1121 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -1093 60 -1121 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace

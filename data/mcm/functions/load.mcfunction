@@ -24,6 +24,7 @@ scoreboard objectives add gundelay dummy
 scoreboard objectives add scrapCount dummy
 scoreboard objectives add scrapRNG dummy
 scoreboard objectives add RainbowHat dummy
+scoreboard objectives add gameID dummy
 scoreboard objectives add hatchange trigger
 scoreboard objectives add flipmap trigger
 scoreboard objectives add leave minecraft.custom:minecraft.leave_game
@@ -46,10 +47,10 @@ scoreboard objectives add jump minecraft.custom:minecraft.jump
 scoreboard objectives add walk minecraft.custom:minecraft.walk_one_cm
 scoreboard objectives add sprint minecraft.custom:minecraft.sprint_one_cm
 scoreboard objectives add crouch minecraft.custom:minecraft.crouch_one_cm
-
-scoreboard players reset @a dead
+scoreboard objectives add autoqueue_delay dummy
 
 execute as @e[type=villager,tag=Usher] run data modify entity @s Offers set value {}
+execute as @e[type=villager,tag=credits_usher] run data modify entity @s Offers set value {}
 
 #> Add the team which hides nametags
 team add nametags

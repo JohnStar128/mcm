@@ -1,3 +1,22 @@
+execute unless block -632 57 30 flower_pot run setblock -632 57 30 flower_pot
+execute unless block -633 56 29 flower_pot run setblock -633 56 29 flower_pot
+execute unless block -637 56 42 flower_pot run setblock -637 56 42 flower_pot
+execute unless block -638 56 40 flower_pot run setblock -638 56 40 flower_pot
+execute unless block -635 57 -9 flower_pot run setblock -635 57 -9 flower_pot
+execute unless block -639 50 26 flower_pot run setblock -639 50 26 flower_pot
+execute unless block -639 49 29 flower_pot run setblock -639 49 29 flower_pot
+execute unless block -636 49 36 flower_pot run setblock -636 49 36 flower_pot
+execute unless block -634 50 35 flower_pot run setblock -634 50 35 flower_pot
+execute unless block -633 49 26 flower_pot run setblock -633 49 26 flower_pot
+
+execute unless block -585 57 -2 composter[level=0] run setblock -585 57 -2 composter[level=0]
+execute unless block -584 57 -2 composter[level=0] run setblock -584 57 -2 composter[level=0]
+execute unless block -583 57 -2 composter[level=0] run setblock -583 57 -2 composter[level=0]
+execute unless block -639 56 40 composter[level=0] run setblock -639 56 40 composter[level=0]
+execute unless block -633 56 31 composter[level=0] run setblock -633 56 31 composter[level=0]
+execute unless block -633 56 1 composter[level=0] run setblock -633 56 1 composter[level=0]
+execute unless block -639 56 1 composter[level=0] run setblock -639 56 1 composter[level=0]
+
 execute unless block -693 46 28 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] run setblock -693 46 28 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] replace
 execute unless block -692 46 28 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] run setblock -692 46 28 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] replace
 execute unless block -694 46 29 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] run setblock -694 46 29 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=false] replace

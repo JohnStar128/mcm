@@ -77,6 +77,6 @@ execute if score $launchControl CmdData matches 2 run function mcm:maps/launchpa
 execute if score $launchTime CmdData matches 1..220 as @a[predicate=mcm:bounding_boxes/launchpad_kill] at @s run function mcm:game/playerdeath
 execute if score $launchTime CmdData matches 1..220 as @e[type=glow_squid,predicate=mcm:bounding_boxes/launchpad_kill] at @s run kill @s
 
-#> Teleport players out of bounds back inbounds
+#> Teleport players out of bounds back inbounds (escape prevention)
 execute as @a[tag=queued,tag=!spectating,predicate=!mcm:bounding_boxes/launchpad] at @s run tellraw @s ["", {"text":"<Gate guard> Can the owner of the purple Tesla get back in bounds.","color":"white"}]
 execute as @a[tag=queued,tag=!spectating,predicate=!mcm:bounding_boxes/launchpad] at @s run tp @s @e[tag=PlayerSpawn,limit=1,sort=random]

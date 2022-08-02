@@ -1,3 +1,13 @@
+execute unless block 2040 79 2025 flower_pot run setblock 2040 79 2025 flower_pot
+execute unless block 2077 79 1989 flower_pot run setblock 2077 79 1989 flower_pot
+execute unless block 2078 79 1990 flower_pot run setblock 2078 79 1990 flower_pot
+execute unless block 2077 79 1991 flower_pot run setblock 2077 79 1991 flower_pot
+execute unless block 2070 79 1987 flower_pot run setblock 2070 79 1987 flower_pot
+execute unless block 2070 96 2036 flower_pot run setblock 2070 96 2036 flower_pot
+execute unless block 2070 96 2037 flower_pot run setblock 2070 96 2037 flower_pot
+execute unless block 2070 98 2038 flower_pot run setblock 2070 98 2038 flower_pot
+execute unless block 1964 66 1938 composter[level=0] run setblock 1964 66 1938 composter[level=0]
+
 execute unless block 1961 67 1935 air unless block 1961 67 1935 minecraft:jungle_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock 1961 67 1935 minecraft:jungle_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
 execute unless block 1965 67 1935 air unless block 1965 67 1935 minecraft:jungle_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock 1965 67 1935 minecraft:jungle_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
 execute unless block 1961 68 1935 air unless block 1961 68 1935 minecraft:jungle_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] run setblock 1961 68 1935 minecraft:jungle_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
@@ -2565,7 +2575,7 @@ execute unless block 2068 87 1992 air unless block 2068 87 1992 minecraft:dark_o
 execute unless block 2069 87 1992 air unless block 2069 87 1992 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=true] run setblock 2069 87 1992 minecraft:spruce_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=true] replace
 execute unless block 2070 87 1992 air unless block 2070 87 1992 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=true] run setblock 2070 87 1992 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=true] replace
 execute unless block 2076 87 1995 air unless block 2076 87 1995 minecraft:jungle_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock 2076 87 1995 minecraft:jungle_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
-execute unless block 2074 87 1997 air unless block 2074 87 1997 minecraft:jungle_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] run setblock 2074 87 1997 minecraft:jungle_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=true] replace
+execute unless block 2074 87 1997 air unless block 2074 87 1997 minecraft:jungle_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock 2074 87 1997 minecraft:jungle_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
 execute unless block 2078 87 1997 air unless block 2078 87 1997 minecraft:jungle_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] run setblock 2078 87 1997 minecraft:jungle_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=false] replace
 execute unless block 2076 87 1999 air unless block 2076 87 1999 minecraft:jungle_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] run setblock 2076 87 1999 minecraft:jungle_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=false] replace
 execute unless block 2066 88 1985 air unless block 2066 88 1985 minecraft:acacia_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock 2066 88 1985 minecraft:acacia_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace
@@ -2643,7 +2653,7 @@ execute unless block 2069 97 2009 air unless block 2069 97 2009 minecraft:acacia
 execute unless block 2070 97 2009 air unless block 2070 97 2009 minecraft:acacia_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] run setblock 2070 97 2009 minecraft:acacia_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
 execute unless block 2072 97 2009 air unless block 2072 97 2009 minecraft:acacia_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] run setblock 2072 97 2009 minecraft:acacia_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
 execute unless block 2073 97 2009 air unless block 2073 97 2009 minecraft:acacia_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] run setblock 2073 97 2009 minecraft:acacia_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
-execute unless block 2075 97 2009 air unless block 2075 97 2009 minecraft:acacia_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] run setblock 2075 97 2009 minecraft:acacia_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=false] replace
+execute unless block 2075 97 2009 air unless block 2075 97 2009 minecraft:acacia_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] run setblock 2075 97 2009 minecraft:acacia_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
 execute unless block 2076 97 2009 air unless block 2076 97 2009 minecraft:acacia_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] run setblock 2076 97 2009 minecraft:acacia_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
 execute unless block 2078 97 2009 air unless block 2078 97 2009 minecraft:acacia_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] run setblock 2078 97 2009 minecraft:acacia_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace
 execute unless block 2079 97 2009 air unless block 2079 97 2009 minecraft:acacia_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] run setblock 2079 97 2009 minecraft:acacia_trapdoor[waterlogged=false,half=top,powered=false,facing=north,open=true] replace

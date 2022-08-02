@@ -1,0 +1,49 @@
+{
+    "condition": "minecraft:alternative",
+    "terms": [
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "location": {
+            "position": {
+              "x": {
+                "max": 120,
+                "min": -112
+              },
+              "y": {
+                "max": 55,
+                "min": -7
+              },
+              "z": {
+                "max": 128,
+                "min": -34
+              }
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "location": {
+            "position": {
+              "x": {
+                "max": -2,
+                "min": -29
+              },
+              "y": {
+                "max": -14,
+                "min": -44
+              },
+              "z": {
+                "max": 180,
+                "min": 148
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
