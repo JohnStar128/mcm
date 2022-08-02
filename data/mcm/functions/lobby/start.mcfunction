@@ -35,15 +35,8 @@ execute if score $gamestate CmdData matches 0 if score $startcountdown CmdData m
 execute if score $gamestate CmdData matches 0 if score $startcountdown CmdData matches 1 run clear @a[tag=queued] written_book
 #execute if score $gamestate CmdData matches 0 if score $startcountdown CmdData matches 1 run clear @a[tag=queued] diamond_hoe{CustomModelData:69}
 
-#> Start the game if the selected map is...
-# Library
-execute if score $queued CmdData matches 3.. if score $startcountdown CmdData matches 1 if score $selectedMap CmdData matches 1 run function mcm:maps/library/start
-# Floating Islands
-execute if score $queued CmdData matches 3.. if score $startcountdown CmdData matches 1 if score $selectedMap CmdData matches 2 run function mcm:maps/airship/start
-# Vineyard
-execute if score $queued CmdData matches 3.. if score $startcountdown CmdData matches 1 if score $selectedMap CmdData matches 3 run function mcm:maps/vineyard/start
-# Launch Complex
-execute if score $queued CmdData matches 3.. if score $startcountdown CmdData matches 1 if score $selectedMap CmdData matches 4 run function mcm:maps/launchpad/start
+#> Start the game
+execute if score $queued CmdData matches 3.. if score $startcountdown CmdData matches 1 run function mcm:maps/start
 
 #> Give players their hats back if they were replaced
 execute if score $startcountdown CmdData matches 1 as @a[tag=queued] run function mcm:cosmetics/change_hat

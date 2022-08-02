@@ -1,7 +1,11 @@
 #> Set the start game grace period to 15 seconds
 scoreboard players set $graceperiod CmdData 300
 
-time set 12500
+execute if score $selectedMap CmdData matches 1 run time set 6000
+execute if score $selectedMap CmdData matches 2 run time set 6000
+execute if score $selectedMap CmdData matches 3 run time set 12500
+execute if score $selectedMap CmdData matches 4 run time set 9000
+execute if score $selectedMap CmdData matches 4 run gamerule doDaylightCycle true
 
 tellraw @a ["\n",{"text":"Assigning roles in 15 seconds...","color":"yellow"},"\n"]
 
@@ -9,14 +13,11 @@ tellraw @a ["\n",{"text":"Assigning roles in 15 seconds...","color":"yellow"},"\
 execute if score $roundtimer GameRules matches 1 run scoreboard players set $gametimer CmdData 6000
 execute if score $roundtimer GameRules matches 2 run scoreboard players set $gametimer CmdData 12000
 
-#> Turn friendly fire off (legacy)
-# team modify nametags friendlyFire false
-
 #> Make queued players join ingame team (this allows friendly fire)
 team join ingame_players @a[tag=queued]
 
 #> Teleport players to spawnpoints within the map
-execute as @a[team=!test4,tag=queued] at @s run function mcm:maps/vineyard/tptospawn
+execute as @a[team=!test4,tag=queued] at @s run function mcm:maps/tptospawn
 
 #> Set everyone that's not on the developer team to adventure mode
 gamemode adventure @a[team=!test4,tag=queued]
