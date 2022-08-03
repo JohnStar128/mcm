@@ -45,7 +45,7 @@ execute if score $gamestate CmdData matches -1..0 as @e[type=villager,tag=MapVot
 execute if score $gamestate CmdData matches -1..0 as @e[type=villager,tag=arcade] run effect give @s invisibility 999999 1 true
 
 #> Lobby elevator
-function mcm:game/loops/lobbyelevator
+function mcm:lobby/elevator
 
 #> Secret related stuff
 execute as @a[scores={RingBell=1..},advancements={mcm:secrets/ring_bell=false},predicate=mcm:secrets/lobby_bell] at @s run advancement grant @s only mcm:secrets/ring_bell
