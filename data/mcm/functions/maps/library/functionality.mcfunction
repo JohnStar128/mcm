@@ -5,7 +5,7 @@ execute as @e[type=marker,tag=Chandelier] at @s unless entity @a[tag=!spectating
 execute if score $graceperiod CmdData matches ..1 as @e[type=armor_stand,tag=bookspawn,nbt={ArmorItems:[{},{},{},{id:"minecraft:book",Count:1b}]}] run data merge entity @s {DisabledSlots:0}
 
 execute if score $chandelierdroptimer CmdData matches 100.. run tag @e[type=marker,tag=Chandelier,tag=!canDropChandelier] add canDropChandelier
-execute as @e[type=marker,tag=canDropChandelier] at @s run function mcm:game/dropchandelier
+execute as @e[type=marker,tag=canDropChandelier] at @s run function mcm:maps/library/dropchandelier
 
 #> Track how many books players have
 execute as @a[advancements={mcm:item_counts/books=true}] store result score @s books run clear @s book 0

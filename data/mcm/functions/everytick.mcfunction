@@ -9,7 +9,7 @@ effect give @a resistance 1000000 100 true
 effect give @a weakness 1000000 100 true
 effect clear @a[tag=HoldKnife] weakness
 
-#> Run lobby-related code only if people are actually three
+#> Run lobby-related code only if people are actually there
 execute if entity @a[predicate=mcm:bounding_boxes/lobby] run function mcm:lobby/lobby_functions
 
 #> Commands for various stages of gameplay flow will branch into their own directories from this file
@@ -17,14 +17,14 @@ execute if entity @a[predicate=mcm:bounding_boxes/lobby] run function mcm:lobby/
 #Vote countdown
 execute if score $gamestate CmdData matches -1 run function mcm:lobby/countdown
 #Join game + game start countdown loop
-execute if score $gamestate CmdData matches 0 run function mcm:game/loops/gamestart
+execute if score $gamestate CmdData matches 0 run function mcm:game/loops/queueing_period
 #Ingame loop
 execute if score $gamestate CmdData matches 1 run function mcm:game/loops/ingame
 #Game end loop
 execute if score $gamestate CmdData matches 2 run function mcm:game/loops/gameend
 
 #> NoDrop module
-function mcm:game/nodrop
+function mcm:util/nodrop
 
 #> Mark whether someone's holding a knife or not (lets you hit stuff)
 tag @a[tag=murderer,nbt={SelectedItem:{id:"minecraft:snowball",Count:1b}}] add HoldKnife
