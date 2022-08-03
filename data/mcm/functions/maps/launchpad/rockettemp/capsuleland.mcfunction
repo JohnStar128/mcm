@@ -1,5 +1,5 @@
 # $launchTime is still gonna be increasing from the launchrocket function
-execute if score $launchTime CmdData matches 400 as @a[tag=launch_player] at @s run effect give @s minecraft:blindness 2 1 true
+execute if score $launchTime CmdData matches 400 as @a[tag=launch_player] at @s run effect give @s minecraft:darkness 5 5 true
 execute if score $launchTime CmdData matches 401 as @a[tag=launch_player] at @s run tp @s ~-93 ~147 ~149
 execute if score $launchTime CmdData matches 400 run place template minecraft:sensibly_named_landing_frame -1122 174 -963
 
@@ -49,5 +49,5 @@ execute if score $launchTime CmdData matches 680 run place template minecraft:cr
 execute if score $launchTime CmdData matches 700 run place template minecraft:crewdragonlanding2 -1122 46 -963
 
 execute if score $launchTime CmdData matches 720 run place template minecraft:crewdragonlanded -1122 46 -963
-execute if score $launchTime CmdData matches 720 as @a[tag=launch_player] at @s run effect give @s minecraft:blindness 3 1 true
+execute if score $launchTime CmdData matches 720 as @a[tag=launch_player] at @s run effect give @s minecraft:darkness 5 5 true
 execute if score $launchTime CmdData matches 720 as @a[tag=launch_player] at @s run tp @s -1080 51 -1097

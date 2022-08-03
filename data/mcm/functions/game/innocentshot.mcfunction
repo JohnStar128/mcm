@@ -5,8 +5,8 @@ tellraw @s ["\n", {"text":"* You feel your sins crawling down your back","color"
 scoreboard players set @s canPickupGun 1
 tag @s add lostGun
 execute at @s run playsound minecraft:entity.ghast.hurt master @a ~ ~ ~ 1 1.2
-effect give @s minecraft:nausea 45 0 true
-effect give @s minecraft:blindness 2 100 true
-effect give @s minecraft:slowness 120 3 true
+effect give @s minecraft:nausea 15 0 true
+effect give @s minecraft:darkness 5 100 true
+effect give @s minecraft:slowness 120 4 true
 
 advancement revoke @s only mcm:hit_detection/innocent_killed
