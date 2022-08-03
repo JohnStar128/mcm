@@ -57,57 +57,55 @@ execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 2037
 execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 2056 104 2033 run function mcm:util/alloc_entity
 
 #> Set Scrap spawnpoints
-summon marker 1949 66 1925 {Tags:["MapEntity",ScrapSpawn]}
-summon marker 1951 66 1999 {Tags:["MapEntity",ScrapSpawn]}
-summon marker 2033 59 1953 {Tags:["MapEntity",ScrapSpawn]}
-summon marker 1990 56 2080 {Tags:["MapEntity",ScrapSpawn]}
-summon marker 1982 56 2019 {Tags:["MapEntity",ScrapSpawn]}
-summon marker 2020 56 2049 {Tags:["MapEntity",ScrapSpawn]}
-summon marker 2032 60 2011 {Tags:["MapEntity",ScrapSpawn]}
-summon marker 2008 59 2000 {Tags:["MapEntity",ScrapSpawn]}
-summon marker 1977 56 1983 {Tags:["MapEntity",ScrapSpawn]}
-summon marker 1962 56 1953 {Tags:["MapEntity",ScrapSpawn]}
-summon marker 2005 61 1979 {Tags:["MapEntity",ScrapSpawn]}
-summon marker 2029 61 1967 {Tags:["MapEntity",ScrapSpawn]}
-summon marker 2012 72 2026 {Tags:["MapEntity",ScrapSpawn]}
-summon marker 2003 70 2084 {Tags:["MapEntity",ScrapSpawn]}
-summon marker 2002 65 1921 {Tags:["MapEntity",ScrapSpawn]}
+execute as @e[type=marker,tag=available,tag=ScrapSpawn,limit=1] positioned 1949 66 1925 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=ScrapSpawn,limit=1] positioned 1951 66 1999 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=ScrapSpawn,limit=1] positioned 2033 59 1953 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=ScrapSpawn,limit=1] positioned 1990 56 2080 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=ScrapSpawn,limit=1] positioned 1982 56 2019 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=ScrapSpawn,limit=1] positioned 2020 56 2049 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=ScrapSpawn,limit=1] positioned 2032 60 2011 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=ScrapSpawn,limit=1] positioned 2008 59 2000 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=ScrapSpawn,limit=1] positioned 1977 56 1983 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=ScrapSpawn,limit=1] positioned 1962 56 1953 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=ScrapSpawn,limit=1] positioned 2005 61 1979 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=ScrapSpawn,limit=1] positioned 2029 61 1967 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=ScrapSpawn,limit=1] positioned 2012 72 2026 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=ScrapSpawn,limit=1] positioned 2003 70 2084 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=ScrapSpawn,limit=1] positioned 2002 65 1921 run function mcm:util/alloc_entity
 
 #> Sound markers
-summon marker 1972 74 2034 {Tags:["MapEntity","PlantSoundMarker"]}
-summon marker 2046 75 1948 {Tags:["MapEntity","PlantSoundMarker"]}
-summon marker 2054 73 1925 {Tags:["MapEntity","PlantSoundMarker"]}
-summon marker 2047 73 1934 {Tags:["MapEntity","PlantSoundMarker"]}
-summon marker 1974 75 2002 {Tags:["MapEntity","PlantSoundMarker"]}
-summon marker 2086 76 1949 {Tags:["MapEntity","PlantSoundMarker"]}
-summon marker 1984 75 2001 {Tags:["MapEntity","PlantSoundMarker"]}
-summon marker 2066 73 1926 {Tags:["MapEntity","PlantSoundMarker"]}
-summon marker 2039 73 1931 {Tags:["MapEntity","PlantSoundMarker"]}
-summon marker 1972 74 2012 {Tags:["MapEntity","PlantSoundMarker"]}
-summon marker 2033 75 1944 {Tags:["MapEntity","PlantSoundMarker"]}
-summon marker 1997 78 2033 {Tags:["MapEntity","PlantSoundMarker"]}
-summon marker 1974 75 2053 {Tags:["MapEntity","PlantSoundMarker"]}
-summon marker 2052 76 1947 {Tags:["MapEntity","PlantSoundMarker"]}
-summon marker 1972 74 2044 {Tags:["MapEntity","PlantSoundMarker"]}
-summon marker 2033 72 1924 {Tags:["MapEntity","PlantSoundMarker"]}
-summon marker 2071 75 1939 {Tags:["MapEntity","PlantSoundMarker"]}
-summon marker 2057 74 1937 {Tags:["MapEntity","PlantSoundMarker"]}
-summon marker 1986 76 2036 {Tags:["MapEntity","PlantSoundMarker"]}
-summon marker 1993 77 2050 {Tags:["MapEntity","PlantSoundMarker"]}
-summon marker 1978 75 2028 {Tags:["MapEntity","PlantSoundMarker"]}
-summon marker 1993 77 2026 {Tags:["MapEntity","PlantSoundMarker"]}
-summon marker 1982 75 2010 {Tags:["MapEntity","PlantSoundMarker"]}
-summon marker 2082 74 1940 {Tags:["MapEntity","PlantSoundMarker"]}
-summon marker 1992 77 2007 {Tags:["MapEntity","PlantSoundMarker"]}
-summon marker 2065 75 1948 {Tags:["MapEntity","PlantSoundMarker"]}
-summon marker 2080 73 1925 {Tags:["MapEntity","PlantSoundMarker"]}
-summon marker 1981 75 2046 {Tags:["MapEntity","PlantSoundMarker"]}
-
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 1972 74 2034 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 2046 75 1948 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 2054 73 1925 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 2047 73 1934 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 1974 75 2002 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 2086 76 1949 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 1984 75 2001 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 2066 73 1926 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 2039 73 1931 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 1972 74 2012 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 2033 75 1944 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 1997 78 2033 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 1974 75 2053 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 2052 76 1947 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 1972 74 2044 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 2033 72 1924 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 2071 75 1939 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 2057 74 1937 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 1986 76 2036 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 1993 77 2050 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 1978 75 2028 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 1993 77 2026 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 1982 75 2010 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 2082 74 1940 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 1992 77 2007 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 2065 75 1948 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 2080 73 1925 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 1981 75 2046 run function mcm:util/alloc_entity
 
 #> Spectator spawnpoint
-summon marker 1983 96 1932 {Tags:["MapEntity","SpectatorSpawn"]}
+execute as @e[type=marker,tag=available,tag=SpectatorSpawn,limit=1] positioned 1983 96 1932 run function mcm:util/alloc_entity
 
-#> Chandelier entity
-#summon marker 975 139 1000 {Tags:["MapEntity","Chandelier"]}
+execute at @e[type=marker,tag=available,tag=SpectatorSpawn,limit=1] as @e[type=marker,tag=available,tag=sound_marker,limit=28,sort=nearest] run tag @s add PlantSoundMarker
 
 tellraw @a ["","\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"The game is ready to play!","underlined":true,"color":"green"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Selected Map: ","color":"gray"},{"text":"Vineyard","color":"dark_green","hoverEvent":{"action":"show_text","value":{"text":"A deal you can't refuse","color":"aqua"}}},"\n"]

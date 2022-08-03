@@ -11,10 +11,10 @@ fill 27 5 104 27 1 107 warped_trapdoor[open=true,facing=west] replace crimson_tr
 summon glow_squid -1016 48 -1097 {PersistenceRequired:1b,Tags:["MapEntity","Squid"],Invulnerable:1b,CustomName:"{\"text\":\"Radioactive Squid\"}",CustomNameVisible:1b,Persistent:1}
 
 #> John's spawnpoint
-summon marker -1029 53 -1268 {Tags:["MapEntity","JohnSpawn"]}
+execute as @e[type=marker,tag=available,tag=JohnSpawn,limit=1] positioned -1029 53 -1268 run function mcm:util/alloc_entity
 
 #> Blocky's spawnpoint
-summon marker -1000 57 -1113 {Tags:["MapEntity","BlockySpawn"]}
+execute as @e[type=marker,tag=available,tag=BlockySpawn,limit=1] positioned -1000 57 -1113 run function mcm:util/alloc_entity
 
 #> spawnpoints
 execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -1112 50 -1129 run function mcm:util/alloc_entity
@@ -56,6 +56,6 @@ execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -936
 execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -920 50 -1109 run function mcm:util/alloc_entity
 
 #> Spectator spawnpoint
-summon marker -1016 82 -1160 {"Tags":["MapEntity","SpectatorSpawn"]}
+execute as @e[type=marker,tag=available,tag=SpectatorSpawn,limit=1] positioned -1016 82 -1160 run function mcm:util/alloc_entity
 
 tellraw @a ["","\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"The game is ready to play!","underlined":true,"color":"green"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Selected Map: ","color":"gray"},{"text":"Launch Complex","color":"dark_green","hoverEvent":{"action":"show_text","value":{"text":"Launch \"Complex?\" I find it quite simple really.","color":"aqua"}}},"\n"]

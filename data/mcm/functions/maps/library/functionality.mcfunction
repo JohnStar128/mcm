@@ -47,7 +47,7 @@ execute if score $flippingmap CmdData matches 1 run function mcm:maps/library/fl
 
 #> Teleport players out of bounds back inbounds (escape prevention)
 execute as @a[tag=queued,tag=!spectating,predicate=!mcm:bounding_boxes/library_escapeprevention] if score $library_flip CmdData matches 0 at @s run tp @s @e[tag=PlayerSpawn,limit=1,sort=random]
-execute as @a[tag=queued,tag=!spectating,predicate=!mcm:bounding_boxes/library_flipped_escapeprevention] if score $library_flip CmdData matches 1 at @s run tp @s @e[tag=LibraryFlip,limit=1,sort=random]
+execute as @a[tag=queued,tag=!spectating,predicate=!mcm:bounding_boxes/library_flipped_escapeprevention] if score $library_flip CmdData matches 1 at @s run tp @s @e[tag=PlayerSpawn,limit=1,sort=random]
 
 
 #> LIBRARY FLIPPING WORLD BORDER VALUE NOTES

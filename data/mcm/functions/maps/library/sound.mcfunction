@@ -1,3 +1,3 @@
 execute as @e[type=marker,tag=PageSoundMarker,limit=1,sort=random] at @s run playsound minecraft:item.book.page_turn block @a[tag=queued] ~ ~ ~ 1 1
-execute as @e[type=marker,tag=SpookySoundMarker,limit=1,sort=random] at @s run playsound minecraft:entity.allay.hurt block @a[tag=queued] ~ ~ ~ 2 0.1
+execute as @e[type=marker,tag=SpookySoundMarker,limit=1,sort=random] at @s run playsound minecraft:entity.allay.hurt block @a[tag=queued] ~ ~ ~ 1 0.1
 execute if predicate mcm:5050chance as @e[type=marker,tag=SpookySoundMarker,limit=1,sort=random] at @s run playsound minecraft:ambient.basalt_deltas.mood block @a ~ ~ ~ 1 1 

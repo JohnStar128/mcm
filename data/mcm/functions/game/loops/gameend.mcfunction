@@ -31,7 +31,8 @@ execute if score $gameEndTimer CmdData matches ..1 run kill @e[type=item,nbt={It
 execute if score $gameEndTimer CmdData matches ..1 run effect clear @a
 
 # kill spawnpoints
-execute if score $gameEndTimer CmdData matches ..1 as @e[type=marker,tag=!available,tag=PlayerSpawn] run function mcm:util/dealloc_entity
+execute if score $gameEndTimer CmdData matches ..1 as @e[type=marker,tag=!available,tag=map_marker] run function mcm:util/dealloc_entity
+execute if score $gameEndTimer CmdData matches ..1 as @e[type=marker,tag=!available,tag=sound_marker] run data merge entity @s {Tags:["available","sound_marker","map_marker"]}
 execute if score $gameEndTimer CmdData matches ..1 run kill @e[tag=MapEntity]
 execute if score $gameEndTimer CmdData matches ..1 run kill @e[type=item,tag=KeyItem]
 

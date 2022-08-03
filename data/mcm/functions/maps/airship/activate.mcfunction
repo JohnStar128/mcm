@@ -26,15 +26,17 @@ execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -605
 execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -600 86 3 run function mcm:util/alloc_entity
 
 #> Sound markers
-summon marker -596 70 15 {Tags:["MapEntity","WindSoundMarker"]}
-summon marker -614 93 -2 {Tags:["MapEntity","WindSoundMarker"]}
-summon marker -688 55 6 {Tags:["MapEntity","WindSoundMarker"]}
-summon marker -619 53 -8 {Tags:["MapEntity","WindSoundMarker"]}
-summon marker -677 64 52 {Tags:["MapEntity","WindSoundMarker"]}
-summon marker -637 59 20 {Tags:["MapEntity","WindSoundMarker"]}
-summon marker -651 64 28 {Tags:["MapEntity","WindSoundMarker"]}
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned -596 70 15 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned -614 93 -2 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned -688 55 6 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned -619 53 -8 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned -677 64 52 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned -637 59 20 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned -651 64 28 run function mcm:util/alloc_entity
 
 #> Spectator spawn
-summon marker -688 72 14 {Tags:["MapEntity","SpectatorSpawn"]}
+execute as @e[type=marker,tag=available,tag=SpectatorSpawn,limit=1] positioned -688 72 14 run function mcm:util/alloc_entity
+
+execute at @e[type=marker,tag=available,tag=SpectatorSpawn,limit=1] as @e[type=marker,tag=available,tag=sound_marker,limit=7,sort=nearest] run tag @s add WindSoundMarker
 
 tellraw @a ["","\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"The game is ready to play!","underlined":true,"color":"green"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Selected Map: ","color":"gray"},{"text":"Floating Islands","color":"dark_green","hoverEvent":{"action":"show_text","value":{"text":"Concept by _topaz","color":"aqua"}}},"\n"]
