@@ -8,25 +8,25 @@ kill @e[tag=MapEntity]
 fill 27 5 88 27 1 91 warped_trapdoor[open=true,facing=west] replace crimson_trapdoor
 
 #> Set Player Spawnpoints
-summon marker 937 110 1000 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker 976 110 1019 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker 977 110 981 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker 1011 110 1000 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker 974 122 1018 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker 996 122 1019 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker 996 122 981 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker 974 122 982 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker 974 132 979 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker 997 132 974 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker 938 132 1000 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker 973 132 1016 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker 997 143 1021 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker 933 143 1005 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker 961 143 969 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker 938 143 1030 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker 942 121 1031 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker 943 132 971 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker 961 143 969 {Tags:["MapEntity","PlayerSpawn"]}
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 937 110 1000 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 976 110 1019 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 977 110 981 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 1011 110 1000 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 974 122 1018 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 996 122 1019 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 996 122 981 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 974 122 982 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 974 132 979 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 997 132 974 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 938 132 1000 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 973 132 1016 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 997 143 1021 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 933 143 1005 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 961 143 969 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 938 143 1030 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 942 121 1031 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 943 132 971 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 961 143 969 run function mcm:util/alloc_entity
 
 #> Spectator spawnpoint
 summon marker 933 150 1000 {"Tags":["MapEntity","SpectatorSpawn"]}

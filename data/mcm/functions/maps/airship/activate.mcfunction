@@ -8,22 +8,22 @@ kill @e[tag=MapEntity]
 fill 27 5 93 27 1 96 warped_trapdoor[open=true,facing=west] replace crimson_trapdoor
 
 #> Set Player Spawnpoints
-summon marker -636 56 42 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker -636 61 -1 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker -636 52 26 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker -639 56 -8 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker -665 59 26 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker -661 46 31 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker -688 45 12 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker -717 44 23 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker -703 62 25 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker -685 47 33 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker -616 50 7 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker -603 64 21 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker -600 74 4 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker -597 59 -1 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker -605 50 -8 {Tags:["MapEntity","PlayerSpawn"]}
-summon marker -600 86 3 {Tags:["MapEntity","PlayerSpawn"]}
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -636 56 42 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -636 61 -1 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -636 52 26 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -639 56 -8 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -665 59 26 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -661 46 31 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -688 45 12 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -717 44 23 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -703 62 25 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -685 47 33 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -616 50 7 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -603 64 21 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -600 74 4 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -597 59 -1 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -605 50 -8 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -600 86 3 run function mcm:util/alloc_entity
 
 #> Sound markers
 summon marker -596 70 15 {Tags:["MapEntity","WindSoundMarker"]}
