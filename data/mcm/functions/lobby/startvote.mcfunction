@@ -43,6 +43,7 @@ execute as @e[type=armor_stand,tag=available,tag=map2,limit=1] positioned 27.5 5
 execute as @e[type=armor_stand,tag=available,tag=map3,limit=1] positioned 27.5 5 100.0 run function mcm:util/alloc_entity
 execute as @e[type=armor_stand,tag=available,tag=map4,limit=1] positioned 27.5 5 106.0 run function mcm:util/alloc_entity
 execute as @e[type=armor_stand,tag=available,tag=map_random,limit=1] positioned 26.5 5 84.0 run function mcm:util/alloc_entity
+execute as @e[type=armor_stand,tag=MapVoteEntity] run data merge entity @s {CustomNameVisible:1b}
 
 team join posters @e[tag=MapVoteEntity]
 

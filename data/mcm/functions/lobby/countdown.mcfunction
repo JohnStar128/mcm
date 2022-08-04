@@ -34,6 +34,7 @@ execute if score $countSec CmdData matches 20.. if score $countdown CmdData matc
 #> Change gamestate to 0 (Players can now join, game has not started yet)
 execute if score $countSec CmdData matches 20.. if score $countdown CmdData matches 1 as @e[type=villager,tag=!available,tag=MapVoteEntity] run function mcm:util/dealloc_entity
 execute if score $countSec CmdData matches 20.. if score $countdown CmdData matches 1 as @e[type=armor_stand,tag=!available,tag=MapVoteEntity] run function mcm:util/dealloc_entity
+execute if score $countSec CmdData matches 20.. if score $countdown CmdData matches 1 as @e[type=armor_stand,tag=MapVoteEntity] run data merge entity @s {CustomNameVisible:0b}
 execute if score $countSec CmdData matches 20.. if score $countdown CmdData matches 1 run bossbar remove lobbybar
 execute if score $countSec CmdData matches 20.. if score $countdown CmdData matches 1 run scoreboard players set $gamestate CmdData 0
 
