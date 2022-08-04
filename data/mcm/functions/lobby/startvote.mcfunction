@@ -1,6 +1,6 @@
-#> Remove old MapVote entities
-execute as @e[tag=MapVote] at @s run tp @s ~ -2000 ~
-execute as @e[tag=MapVoteEntity] at @s run tp @s ~ ~-2000 ~
+#> Reset old MapVote entities
+execute as @e[type=marker,tag=MapVote] run scoreboard players set @s CmdData 0
+execute as @e[type=marker,tag=MapVote] run tag @s remove SelectedMap
 
 #> Remove voted tag
 tag @a remove Voted
@@ -13,50 +13,36 @@ execute store result score $gameID CmdData run data get entity @e[tag=gameID,lim
 scoreboard players operation @a gameID = $gameID CmdData
 kill @e[tag=gameID]
 
-#> Kill potential old entities
-kill @e[type=marker,tag=MapVote]
-
 #> Reset lobby poster visual
 fill 27 5 88 27 1 117 crimson_trapdoor[open=true,facing=west] replace warped_trapdoor
 
-#> Summon mapvote markers
-summon marker 0 0 0 {Tags:["MapVote","Library"]}
-summon marker 0 0 0 {Tags:["MapVote","Airship"]}
-summon marker 0 0 0 {Tags:["MapVote","Vineyard"]}
-summon marker 0 0 0 {Tags:["MapVote","Launchpad"]}
-summon marker 0 0 0 {Tags:["MapVote","Random"]}
-scoreboard players set @e[type=marker,tag=Library] MapValues 1
-scoreboard players set @e[type=marker,tag=Airship] MapValues 2
-scoreboard players set @e[type=marker,tag=Vineyard] MapValues 3
-scoreboard players set @e[type=marker,tag=Launchpad] MapValues 4
-scoreboard players set @e[type=marker,tag=Random] MapValues -1
-scoreboard players set @e[type=marker,tag=MapVote] CmdData 0
+#> MapVote markers moved to be always in the world
 
-summon villager 27.5 2 89.5 {Invisible:1b,Invulnerable:1b,Tags:["map1","MapVoteEntity"],NoAI:1,Silent:1b,ActiveEffects:[{Id:14,Amplifier:100,Duration:999999,ShowParticles:0b}]}
-summon villager 27.5 2 90.0 {Invisible:1b,Invulnerable:1b,Tags:["map1","MapVoteEntity"],NoAI:1,Silent:1b,ActiveEffects:[{Id:14,Amplifier:100,Duration:999999,ShowParticles:0b}]}
-summon villager 27.5 2 90.5 {Invisible:1b,Invulnerable:1b,Tags:["map1","MapVoteEntity"],NoAI:1,Silent:1b,ActiveEffects:[{Id:14,Amplifier:100,Duration:999999,ShowParticles:0b}]}
+execute as @e[type=villager,tag=available,tag=map1,limit=1] positioned 27.5 2 89.5 run function mcm:util/alloc_entity
+execute as @e[type=villager,tag=available,tag=map1,limit=1] positioned 27.5 2 90.0 run function mcm:util/alloc_entity
+execute as @e[type=villager,tag=available,tag=map1,limit=1] positioned 27.5 2 90.5 run function mcm:util/alloc_entity
 
-summon villager 27.5 2 94.5 {Invisible:1b,Invulnerable:1b,Tags:["map2","MapVoteEntity"],NoAI:1,Silent:1b,ActiveEffects:[{Id:14,Amplifier:100,Duration:999999,ShowParticles:0b}]}
-summon villager 27.5 2 95.0 {Invisible:1b,Invulnerable:1b,Tags:["map2","MapVoteEntity"],NoAI:1,Silent:1b,ActiveEffects:[{Id:14,Amplifier:100,Duration:999999,ShowParticles:0b}]}
-summon villager 27.5 2 95.5 {Invisible:1b,Invulnerable:1b,Tags:["map2","MapVoteEntity"],NoAI:1,Silent:1b,ActiveEffects:[{Id:14,Amplifier:100,Duration:999999,ShowParticles:0b}]}
+execute as @e[type=villager,tag=available,tag=map2,limit=1] positioned 27.5 2 94.5 run function mcm:util/alloc_entity
+execute as @e[type=villager,tag=available,tag=map2,limit=1] positioned 27.5 2 95.0 run function mcm:util/alloc_entity
+execute as @e[type=villager,tag=available,tag=map2,limit=1] positioned 27.5 2 95.5 run function mcm:util/alloc_entity
 
-summon villager 27.5 2 99.5 {Invisible:1b,Invulnerable:1b,Tags:["map3","MapVoteEntity"],NoAI:1,Silent:1b,ActiveEffects:[{Id:14,Amplifier:100,Duration:999999,ShowParticles:0b}]}
-summon villager 27.5 2 100.0 {Invisible:1b,Invulnerable:1b,Tags:["map3","MapVoteEntity"],NoAI:1,Silent:1b,ActiveEffects:[{Id:14,Amplifier:100,Duration:999999,ShowParticles:0b}]}
-summon villager 27.5 2 100.5 {Invisible:1b,Invulnerable:1b,Tags:["map3","MapVoteEntity"],NoAI:1,Silent:1b,ActiveEffects:[{Id:14,Amplifier:100,Duration:999999,ShowParticles:0b}]}
+execute as @e[type=villager,tag=available,tag=map3,limit=1] positioned 27.5 2 99.5 run function mcm:util/alloc_entity
+execute as @e[type=villager,tag=available,tag=map3,limit=1] positioned 27.5 2 100.0 run function mcm:util/alloc_entity
+execute as @e[type=villager,tag=available,tag=map3,limit=1] positioned 27.5 2 100.5 run function mcm:util/alloc_entity
 
-summon villager 27.5 2 105.5 {Invisible:1b,Invulnerable:1b,Tags:["map4","MapVoteEntity"],NoAI:1,Silent:1b,ActiveEffects:[{Id:14,Amplifier:100,Duration:999999,ShowParticles:0b}]}
-summon villager 27.5 2 106.0 {Invisible:1b,Invulnerable:1b,Tags:["map4","MapVoteEntity"],NoAI:1,Silent:1b,ActiveEffects:[{Id:14,Amplifier:100,Duration:999999,ShowParticles:0b}]}
-summon villager 27.5 2 106.5 {Invisible:1b,Invulnerable:1b,Tags:["map4","MapVoteEntity"],NoAI:1,Silent:1b,ActiveEffects:[{Id:14,Amplifier:100,Duration:999999,ShowParticles:0b}]}
+execute as @e[type=villager,tag=available,tag=map4,limit=1] positioned 27.5 2 105.5 run function mcm:util/alloc_entity
+execute as @e[type=villager,tag=available,tag=map4,limit=1] positioned 27.5 2 106.0 run function mcm:util/alloc_entity
+execute as @e[type=villager,tag=available,tag=map4,limit=1] positioned 27.5 2 106.5 run function mcm:util/alloc_entity
 
-summon villager 26.5 2 83.5 {Invisible:1b,Invulnerable:1b,Tags:["map_random","MapVoteEntity"],NoAI:1,Silent:1b,ActiveEffects:[{Id:14,Amplifier:100,Duration:999999,ShowParticles:0b}]}
-summon villager 26.5 2 84.0 {Invisible:1b,Invulnerable:1b,Tags:["map_random","MapVoteEntity"],NoAI:1,Silent:1b,ActiveEffects:[{Id:14,Amplifier:100,Duration:999999,ShowParticles:0b}]}
-summon villager 26.5 2 84.5 {Invisible:1b,Invulnerable:1b,Tags:["map_random","MapVoteEntity"],NoAI:1,Silent:1b,ActiveEffects:[{Id:14,Amplifier:100,Duration:999999,ShowParticles:0b}]}
+execute as @e[type=villager,tag=available,tag=map_random,limit=1] positioned 26.5 2 83.5 run function mcm:util/alloc_entity
+execute as @e[type=villager,tag=available,tag=map_random,limit=1] positioned 26.5 2 84.0 run function mcm:util/alloc_entity
+execute as @e[type=villager,tag=available,tag=map_random,limit=1] positioned 26.5 2 84.5 run function mcm:util/alloc_entity
 
-summon armor_stand 27.5 5 90.0 {Invisible:1b,Marker:1b,Tags:["map1","VoteDisplay","MapVoteEntity"],CustomName:"{\"text\":\"Current votes: \",\"extra\":[{\"score\":{\"name\":\"@s\",\"objective\":\"CmdData\"}}]}",CustomNameVisible:1b}
-summon armor_stand 27.5 5 95.0 {Invisible:1b,Marker:1b,Tags:["map2","VoteDisplay","MapVoteEntity"],CustomName:"{\"text\":\"Current votes: \",\"extra\":[{\"score\":{\"name\":\"@s\",\"objective\":\"CmdData\"}}]}",CustomNameVisible:1b}
-summon armor_stand 27.5 5 100.0 {Invisible:1b,Marker:1b,Tags:["map3","VoteDisplay","MapVoteEntity"],CustomName:"{\"text\":\"Current votes: \",\"extra\":[{\"score\":{\"name\":\"@s\",\"objective\":\"CmdData\"}}]}",CustomNameVisible:1b}
-summon armor_stand 27.5 5 106.0 {Invisible:1b,Marker:1b,Tags:["map4","VoteDisplay","MapVoteEntity"],CustomName:"{\"text\":\"Current votes: \",\"extra\":[{\"score\":{\"name\":\"@s\",\"objective\":\"CmdData\"}}]}",CustomNameVisible:1b}
-summon armor_stand 26.5 5 84.0 {Invisible:1b,Marker:1b,Tags:["map_random","VoteDisplay","MapVoteEntity"],CustomName:"{\"text\":\"Current votes: \",\"extra\":[{\"score\":{\"name\":\"@s\",\"objective\":\"CmdData\"}}]}",CustomNameVisible:1b}
+execute as @e[type=armor_stand,tag=available,tag=map1,limit=1] positioned 27.5 5 90.0 run function mcm:util/alloc_entity
+execute as @e[type=armor_stand,tag=available,tag=map2,limit=1] positioned 27.5 5 95.0 run function mcm:util/alloc_entity
+execute as @e[type=armor_stand,tag=available,tag=map3,limit=1] positioned 27.5 5 100.0 run function mcm:util/alloc_entity
+execute as @e[type=armor_stand,tag=available,tag=map4,limit=1] positioned 27.5 5 106.0 run function mcm:util/alloc_entity
+execute as @e[type=armor_stand,tag=available,tag=map_random,limit=1] positioned 26.5 5 84.0 run function mcm:util/alloc_entity
 
 team join posters @e[tag=MapVoteEntity]
 
