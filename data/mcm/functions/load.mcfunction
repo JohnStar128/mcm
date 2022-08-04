@@ -48,6 +48,8 @@ scoreboard objectives add walk minecraft.custom:minecraft.walk_one_cm
 scoreboard objectives add sprint minecraft.custom:minecraft.sprint_one_cm
 scoreboard objectives add crouch minecraft.custom:minecraft.crouch_one_cm
 scoreboard objectives add autoqueue_delay dummy
+scoreboard objectives add available_entities dummy
+scoreboard objectives add current_vote dummy
 
 execute as @e[type=villager,tag=Usher] run data modify entity @s Offers set value {}
 execute as @e[type=villager,tag=credits_usher] run data modify entity @s Offers set value {}
@@ -75,7 +77,8 @@ scoreboard players enable @a player_rule_update
 function mcm:util/recursive_player_spawns
 function mcm:util/recursive_scrap_spawns
 function mcm:util/recursive_sound_markers
-function mcm:util/respawn_map_vote_entities
+execute store result score $map_vote_entities available_entities if entity @e[tag=MapVoteEntity]
+execute unless score $map_vote_entities available_entities matches 20 run function mcm:util/respawn_map_vote_entities
 execute unless entity @e[type=marker,tag=SpectatorSpawn] run summon marker 0 -49 70 {Tags:["available","map_marker","SpectatorSpawn"]}
 execute unless entity @e[type=marker,tag=JohnSpawn] run summon marker 0 -49 70 {Tags:["available","map_marker","JohnSpawn"]}
 execute unless entity @e[type=marker,tag=BlockySpawn] run summon marker 0 -49 70 {Tags:["available","map_marker","BlockySpawn"]}

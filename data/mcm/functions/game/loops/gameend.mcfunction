@@ -108,7 +108,7 @@ execute if score $gameEndTimer CmdData matches ..1 run function mcm:lobby/lobby_
 
 # set $gamestate to 0 (pregame, post vote)
 execute if score $gameEndTimer CmdData matches ..1 run scoreboard players set $gamestate CmdData -1
-execute if score $gameEndTimer CmdData matches ..1 run function mcm:lobby/startvote
+execute if score $gameEndTimer CmdData matches ..1 run function mcm:lobby/voting/start
 execute if score $gameEndTimer CmdData matches ..1 run scoreboard players set $gameEndTimer CmdData 200
 execute if score $gamestate CmdData matches -1 run scoreboard players set $murderWin CmdData 0
 execute if score $gamestate CmdData matches -1 run scoreboard players set $innocentWin CmdData 0

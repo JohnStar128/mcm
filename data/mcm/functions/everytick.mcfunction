@@ -15,7 +15,7 @@ execute if entity @a[predicate=mcm:bounding_boxes/lobby] run function mcm:lobby/
 #> Commands for various stages of gameplay flow will branch into their own directories from this file
 #> Game control
 #Vote countdown
-execute if score $gamestate CmdData matches -1 run function mcm:lobby/countdown
+execute if score $gamestate CmdData matches -1 run function mcm:lobby/voting/voting_period
 #Join game + game start countdown loop
 execute if score $gamestate CmdData matches 0 run function mcm:game/loops/queueing_period
 #Ingame loop
