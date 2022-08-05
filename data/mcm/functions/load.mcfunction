@@ -73,4 +73,4 @@ team modify ingame_players color green
 
 scoreboard players enable @a player_rule_update
 
-execute unless entity @a run function mcm:respawn_entities
+execute if entity @a run function mcm:respawn_entities
