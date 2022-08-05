@@ -56,7 +56,7 @@ execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 966
 execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 944 144 1027 run function mcm:util/alloc_entity
 execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 995 110 1007 run function mcm:util/alloc_entity
 
-execute at @e[type=marker,tag=available,tag=SpectatorSpawn,limit=1] as @e[type=marker,tag=available,tag=sound_marker,limit=15,sort=nearest] run tag @s add PageSoundMarker
+execute at @e[type=marker,tag=available,tag=SpectatorSpawn,limit=1] as @e[type=marker,tag=!available,tag=sound_marker,limit=15,sort=nearest] run tag @s add PageSoundMarker
 
 #> Clear any values the player might somehow have leftover from previous games
 scoreboard players reset @s flipbook

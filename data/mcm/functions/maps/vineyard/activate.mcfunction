@@ -106,6 +106,6 @@ execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned 198
 #> Spectator spawnpoint
 execute as @e[type=marker,tag=available,tag=SpectatorSpawn,limit=1] positioned 1983 96 1932 run function mcm:util/alloc_entity
 
-execute at @e[type=marker,tag=available,tag=SpectatorSpawn,limit=1] as @e[type=marker,tag=available,tag=sound_marker,limit=28,sort=nearest] run tag @s add PlantSoundMarker
+execute at @e[type=marker,tag=available,tag=SpectatorSpawn,limit=1] as @e[type=marker,tag=!available,tag=sound_marker,limit=28,sort=nearest] run tag @s add PlantSoundMarker
 
 tellraw @a ["","\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"The game is ready to play!","underlined":true,"color":"green"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Selected Map: ","color":"gray"},{"text":"Vineyard","color":"dark_green","hoverEvent":{"action":"show_text","value":{"text":"A deal you can't refuse","color":"aqua"}}},"\n"]

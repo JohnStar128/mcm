@@ -37,6 +37,6 @@ execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned -65
 #> Spectator spawn
 execute as @e[type=marker,tag=available,tag=SpectatorSpawn,limit=1] positioned -688 72 14 run function mcm:util/alloc_entity
 
-execute at @e[type=marker,tag=available,tag=SpectatorSpawn,limit=1] as @e[type=marker,tag=available,tag=sound_marker,limit=7,sort=nearest] run tag @s add WindSoundMarker
+execute at @e[type=marker,tag=available,tag=SpectatorSpawn,limit=1] as @e[type=marker,tag=!available,tag=sound_marker,limit=7,sort=nearest] run tag @s add WindSoundMarker
 
 tellraw @a ["","\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"The game is ready to play!","underlined":true,"color":"green"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Selected Map: ","color":"gray"},{"text":"Floating Islands","color":"dark_green","hoverEvent":{"action":"show_text","value":{"text":"Concept by _topaz","color":"aqua"}}},"\n"]
