@@ -13,7 +13,7 @@ execute at @s run playsound minecraft:entity.player.hurt master @a ~ ~ ~ 1 0.8
 execute at @s run particle block redstone_block ~ ~1 ~ 0.2 0.1 0.1 0.1 50 force
 execute at @s run loot spawn ~ ~1.4 ~ loot mcm:playerhead
 execute as @e[type=item,tag=!NBTSet,nbt={Item:{id:"minecraft:player_head"}}] run data merge entity @s {PickupDelay:2000000000,Tags:["KeyItem"]}
-
+execute as @e[type=item,tag=!NBTSet,nbt={Item:{id:"minecraft:player_head"}}] run data modify entity @s Owner set from entity @e[type=marker,tag=gameID] UUID
 #oof ouch my bones
 execute at @s run summon item ~ ~0.5 ~ {Tags:["BoneDeco","1","KeyItem"],PickupDelay:2000000000,Item:{id:"minecraft:bone",Count:1b},Motion:[0.15d,0.2d,0.0d]}
 execute at @s run summon item ~ ~0.5 ~ {Tags:["BoneDeco","2","KeyItem"],PickupDelay:2000000000,Item:{id:"minecraft:bone",Count:1b},Motion:[0.15d,0.2d,0.15d]}
@@ -21,6 +21,8 @@ execute at @s run summon item ~ ~0.5 ~ {Tags:["BoneDeco","3","KeyItem"],PickupDe
 execute at @s run summon item ~ ~0.5 ~ {Tags:["BoneDeco","4","KeyItem"],PickupDelay:2000000000,Item:{id:"minecraft:bone",Count:1b},Motion:[-0.15d,0.4d,0.0d]}
 execute at @s run summon item ~ ~0.5 ~ {Tags:["BoneDeco","5","KeyItem"],PickupDelay:2000000000,Item:{id:"minecraft:bone",Count:1b},Motion:[-0.05d,0.2d,0.0d]}
 execute at @s run summon item ~ ~0.5 ~ {Tags:["BoneDeco","6","KeyItem"],PickupDelay:2000000000,Item:{id:"minecraft:bone",Count:1b},Motion:[0.15d,0.3d,-0.15d]}
+
+data modify entity @e[type=item,tag=BoneDeco] Owner set from entity @e[type=marker,tag=gameID] UUID
 
 #> Drop gun if gunner is killed
 execute at @s[tag=gunner] run loot spawn ~ ~ ~ loot mcm:gun_normal 
