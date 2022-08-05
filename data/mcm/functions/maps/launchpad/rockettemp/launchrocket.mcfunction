@@ -2,7 +2,7 @@ scoreboard players add $launchTime CmdData 1
 execute if score $launchTime CmdData matches 1..55 run particle minecraft:explosion -1015.33 53.00 -1096.691 3 3 3 3 1000 force
 execute if score $launchTime CmdData matches 1..55 run particle minecraft:campfire_signal_smoke -1015.33 48.00 -1096.691 2 2 2 .1 10 force
 execute if score $launchTime CmdData matches 5 run function mcm:maps/launchpad/rockettemp/catwalkaway
-execute if score $launchTime CmdData matches 1 run playsound minecraft:rocketlaunch block @a -1015 56 -1096 10
+execute if score $launchTime CmdData matches 1 run playsound minecraft:rocketlaunch block @a -1015 56 -1096 10 1 1
 
 execute if score $launchTime CmdData matches 1..20 run particle minecraft:lava -1015.33 48.00 -1096.691 2 5 2 1 500 force
 

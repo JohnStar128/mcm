@@ -1,7 +1,7 @@
 scoreboard players add $launchCountdown CmdData 1
 execute if score $launchCountdown CmdData matches 1 run tellraw @a[tag=queued] ["Countdown started! The elevator is now open!"]
 execute if score $launchCountdown CmdData matches 40..1260 run title @a[tag=queued] actionbar ["", {"text":"=-> T-","color":"red"},{"score":{"objective":"CmdData","name":"$launchTitle"},"color":"gold"}, {"text":" <-=","color":"red"}]
-execute if score $launchCountdown CmdData matches 900 run playsound minecraft:launchbuildup block @a -1015 56 -1096 10
+execute if score $launchCountdown CmdData matches 900 run playsound minecraft:launchbuildup block @a -1015 56 -1096 10 1 1
 
 execute if score $launchCountdown CmdData matches 40 run place template minecraft:countdown30 -1061 51 -1061
 execute if score $launchCountdown CmdData matches 40 run scoreboard players set $launchTitle CmdData 30
