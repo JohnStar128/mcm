@@ -8,10 +8,10 @@ scoreboard players reset @a mapvote
 scoreboard players reset $selectedMap CmdData
 
 #> Generate a game ID
+kill @e[tag=gameID]
 summon marker 0 100 0 {Tags:["gameID"]}
 execute store result score $gameID CmdData run data get entity @e[tag=gameID,limit=1,sort=nearest] UUID[0]
 scoreboard players operation @a gameID = $gameID CmdData
-kill @e[tag=gameID]
 
 #> Reset lobby poster visual
 fill 27 5 88 27 1 117 crimson_trapdoor[open=true,facing=west] replace warped_trapdoor
