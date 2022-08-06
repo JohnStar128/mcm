@@ -101,7 +101,7 @@ execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData
 team join nametags @a[tag=queued,team=!nametags]
 
 #> re-autoqueue people
-execute if score $gameEndTimer CmdData matches ..1 as @a[tag=autoqueue] at @s run function mcm:lobby/autoqueue
+execute if score $gameEndTimer CmdData matches ..1 as @a[tag=autoqueue] at @s run function mcm:lobby/queueing/autoqueue
 
 #> Reset the lobby
 execute if score $gameEndTimer CmdData matches ..1 run function mcm:lobby/lobby_reset

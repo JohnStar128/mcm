@@ -13,8 +13,8 @@ execute as @a[tag=!first_join,scores={crouch=1..}] run function mcm:first_join
 
 #> Auto queue
 scoreboard players remove @a[scores={autoqueue_delay=1..}] autoqueue_delay 1
-execute as @a[tag=first_join,tag=!autoqueue_spam_prevention,scores={autoqueue=1..,autoqueue_delay=0},tag=!autoqueue,nbt={SelectedItem:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1234}}}] at @s run function mcm:lobby/autoqueue
-execute as @a[tag=first_join,tag=!autoqueue_spam_prevention,scores={autoqueue=1..,autoqueue_delay=0},tag=autoqueue,nbt={SelectedItem:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1235}}}] at @s run function mcm:lobby/deautoqueue
+execute as @a[tag=first_join,tag=!autoqueue_spam_prevention,scores={autoqueue=1..,autoqueue_delay=0},tag=!autoqueue,nbt={SelectedItem:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1234}}}] at @s run function mcm:lobby/queueing/autoqueue
+execute as @a[tag=first_join,tag=!autoqueue_spam_prevention,scores={autoqueue=1..,autoqueue_delay=0},tag=autoqueue,nbt={SelectedItem:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1235}}}] at @s run function mcm:lobby/queueing/deautoqueue
 
 #> Debug room only accessible to test4
 execute as @a[predicate=mcm:bounding_boxes/debug,team=!test4] at @s run particle minecraft:witch ~ ~ ~ .7 .7 .7 1 100
