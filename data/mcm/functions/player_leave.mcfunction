@@ -9,6 +9,7 @@ tag @s remove shotGun
 tag @s remove retrieved
 tag @s remove queued
 tag @s remove lostGun
+tag @s remove HoldKnife
 # Clearing items
 clear @s warped_fungus_on_a_stick
 clear @s snowball

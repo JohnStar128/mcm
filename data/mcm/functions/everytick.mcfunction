@@ -28,7 +28,7 @@ function mcm:util/nodrop
 
 #> Mark whether someone's holding a knife or not (lets you hit stuff)
 tag @a[tag=murderer,nbt={SelectedItem:{id:"minecraft:snowball",Count:1b}}] add HoldKnife
-tag @a[tag=murderer,nbt=!{SelectedItem:{id:"minecraft:snowball",Count:1b}}] remove HoldKnife
+tag @a[nbt=!{SelectedItem:{id:"minecraft:snowball",Count:1b}}] remove HoldKnife
 
 #> Guns
 function mcm:game/items/gun/shoot
