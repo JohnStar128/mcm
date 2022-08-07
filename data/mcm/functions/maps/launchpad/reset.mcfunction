@@ -12,9 +12,6 @@ setblock -1016 158 -1099 lever[powered=true,face=wall,facing=south]
 scoreboard players reset $launchButton CmdData
 execute as @a[tag=launch_player] run tag @s remove launch_player
 
-# reset rocket
-function mcm:maps/launchpad/rockettemp/firstpos
-
 # reset countdown display
 place template minecraft:countdown0 -1061 51 -1061
 
@@ -25,6 +22,12 @@ fill -983 54 -1098 -983 54 -1098 redstone_block
 fill -982 56 -1100 -981 57 -1100 black_wool
 
 # clear rocket stuff
+function mcm:maps/launchpad/rockettemp/clearrocket
+setblock -1025 52 -1092 stone
+setblock -1007 52 -1092 stone
+setblock -1025 52 -1092 air
+setblock -1007 52 -1092 air
+# replace rocket
 place template minecraft:countdown0 -1061 51 -1061
 function mcm:maps/launchpad/rockettemp/firstpos
 fill -1026 49 -932 -1006 109 -912 air
