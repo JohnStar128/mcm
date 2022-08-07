@@ -1,9 +1,5 @@
 #> Assign roles when grace period is over
 
-#> "Smart" murderer assignment
-execute if score $smart_murderers GameRules matches 1 if score $queued CmdData matches ..7 run scoreboard players set $murderers GameRules 1
-execute if score $smart_murderers GameRules matches 1 if score $queued CmdData matches 8.. run scoreboard players set $murderers GameRules 2
-
 # 1 Murderer
 execute as @a[tag=queued,tag=!prevMurderer,tag=!murderer,sort=random,limit=1] at @s if score $murderers GameRules matches ..1 unless entity @a[tag=murderer] run tag @s add murderer
 execute if score $murderers GameRules matches ..1 run tellraw @a[tag=murderer] {"text":"You are ","color":"gold","extra":[{"text":"the murderer!","color":"red"}]}
