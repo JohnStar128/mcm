@@ -13,6 +13,8 @@ execute unless block 33 3 99 target[power=0] run summon firework_rocket 33 5 99 
 execute unless block 33 3 99 target[power=0] run setblock 33 3 99 target
 
 #> Testing range item frames
+execute as @a[advancements={mcm:lobby/testing_range_knife=true},nbt=!{Inventory:[{id:"minecraft:snowball",Count:1b,tag:{CustomModelData:1111}}]}] run clear @s snowball 
+execute as @a[advancements={mcm:lobby/testing_range_gun=true},nbt=!{Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}]}] run clear @s warped_fungus_on_a_stick{CustomModelData:1111} 
 execute as @a[advancements={mcm:lobby/testing_range_knife=true},nbt=!{Inventory:[{id:"minecraft:snowball",Count:1b,tag:{CustomModelData:1111}}]}] run give @s snowball{NoDrop:0b,Unbreakable:1,CustomModelData:1111,AttributeModifiers:[{AttributeName:"generic.attack_damage",Amount:100,Slot:mainhand,Name:"generic.attack_damage",UUID:[I;-122419,10812,22346,-21624]}],display:{Name:'[{"translate":"mcm.item.knife","italic":false}]',Lore:['[{"translate":"mcm.item.knife.lore","italic":false}]']}} 
 execute as @a[advancements={mcm:lobby/testing_range_gun=true},nbt=!{Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}]}] run give @s warped_fungus_on_a_stick{NoDrop:0b,CustomModelData:1111,display:{Name:'[{"translate":"mcm.item.gun","italic":false}]',Lore:['[{"translate":"mcm.item.gun.lore","italic":false}]']}} 
 
@@ -24,6 +26,8 @@ execute as @a[predicate=mcm:bounding_boxes/test_range_grate] run tp @s 28 1 63
 
 #> Kill knives/guns in the test range
 execute as @e[type=item,predicate=mcm:bounding_boxes/test_range_kill_items,nbt={OnGround:1b,Item:{tag:{CustomModelData:1111}}}] run kill @s
+execute as @e[type=arrow,predicate=mcm:bounding_boxes/test_range_kill_items,nbt={inGround:1b}] at @s run kill @e[type=item,limit=1,sort=nearest]
+execute as @e[type=arrow,predicate=mcm:bounding_boxes/test_range_kill_items,nbt={inGround:1b}] run kill @s
 
 #> Tag players in the test range
 tag @s add test_range
