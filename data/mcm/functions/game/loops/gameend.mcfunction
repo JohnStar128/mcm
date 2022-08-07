@@ -38,15 +38,8 @@ execute if score $gameEndTimer CmdData matches ..1 run kill @e[tag=MapEntity]
 execute if score $gameEndTimer CmdData matches ..1 run kill @e[type=item,tag=KeyItem]
 
 # remove items
-clear @a[tag=queued] snowball
-clear @a[tag=queued] carrot_on_a_stick
-clear @a[tag=queued] netherite_scrap
-clear @a[tag=queued] warped_fungus_on_a_stick
-clear @a[tag=queued] spyglass
-clear @a[tag=queued] stick
-clear @a[tag=queued] book
-clear @a[tag=queued] #mcm:pottable_plants
-clear @a[tag=queued] #mcm:dyes
+execute if score $gameEndTimer CmdData matches 199 as @a[tag=queued] run clear @s
+execute if score $gameEndTimer CmdData matches 199 as @a[tag=queued] run function mcm:cosmetics/change_hat
 
 # AutoQueue items and how to play book
 execute if score $gameEndTimer CmdData matches ..1 run item replace entity @a[tag=queued,tag=autoqueue] hotbar.8 with warped_fungus_on_a_stick{CustomModelData:1235,NoDrop:1b,display:{Name:'[{"translate":"mcm.item.autoqueue.disable","italic":false,"color":"red"}]'}}

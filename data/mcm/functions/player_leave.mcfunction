@@ -11,14 +11,7 @@ tag @s remove queued
 tag @s remove lostGun
 tag @s remove HoldKnife
 # Clearing items
-clear @s warped_fungus_on_a_stick
-clear @s snowball
-clear @s carrot_on_a_stick
-clear @s stick
-clear @s spyglass
-clear @s netherite_scrap
-clear @s book
-clear @s written_book
+clear @s
 # Scores
 scoreboard players reset @s flipmap
 scoreboard players reset @s books

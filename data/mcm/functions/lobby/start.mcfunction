@@ -25,12 +25,7 @@ execute if score $startcountdown CmdData matches 1 if score $queued CmdData matc
 execute if score $startcountdown CmdData matches 1 if score $queued CmdData matches ..2 run scoreboard players set $startcountdown CmdData 200
 
 #> Clear lobby items if game starts
-execute if score $startcountdown CmdData matches 1 run clear @a[tag=queued] warped_fungus_on_a_stick
-execute if score $startcountdown CmdData matches 1 run clear @a[tag=queued] snowball
-execute if score $startcountdown CmdData matches 1 run clear @a[tag=queued] written_book
-execute if score $startcountdown CmdData matches 1 run clear @a #mcm:pottable_plants
-execute if score $startcountdown CmdData matches 1 run clear @a #mcm:dyes
-
+execute if score $startcountdown CmdData matches 1 run clear @a[tag=queued]
 
 #> Start the game
 execute if score $queued CmdData matches 3.. if score $startcountdown CmdData matches 1 run function mcm:maps/start
