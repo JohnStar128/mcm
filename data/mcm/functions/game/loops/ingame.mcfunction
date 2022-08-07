@@ -167,3 +167,8 @@ execute if predicate mcm:soundrng if score $selectedMap CmdData matches 4 run fu
 #> Clear spectator nausea
 execute as @a[tag=spectating] run effect clear @s nausea
 execute as @a[tag=spectating] run effect clear @s slowness
+
+#> Better death message system
+execute if entity @a[advancements={mcm:hit_detection/killed_player=true}] run tellraw @a[scores={dead=1}] {"text":"You were killed by ","color":"gold","extra":[{"selector":"@a[advancements={mcm:hit_detection/killed_player=true},sort=nearest,limit=1]","color":"red"}]}
+execute as @a[scores={dead=1}] run scoreboard players set @s dead 2
+advancement revoke @a[advancements={mcm:hit_detection/killed_player=true}] only mcm:hit_detection/killed_player
