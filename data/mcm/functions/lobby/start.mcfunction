@@ -37,3 +37,5 @@ execute if score $startcountdown CmdData matches 1 as @a[tag=queued] run functio
 execute if score $queued CmdData matches 3.. if score $startcountdown CmdData matches 1 as @a run function mcm:lobby/print_game_rules
 
 execute if score $startcountdown CmdData matches 1 run scoreboard players set @s deferred_queue 0
+
+execute if score $startcountdown CmdData matches 1 as @a store result score @s playerUUID run data get entity @s UUID[0]
