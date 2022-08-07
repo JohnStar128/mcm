@@ -69,10 +69,6 @@ execute if score $graceperiod CmdData matches 0 run scoreboard players add $scra
 execute if score $graceperiod CmdData matches 0 if score $scrapclock CmdData matches 20.. if predicate mcm:scraprng run function mcm:game/loops/spawnscrap
 execute if score $graceperiod CmdData matches 0 if score $scrapclock CmdData matches 20.. run scoreboard players set $scrapclock CmdData 0
 
-#> If a player has 10 scrap, give gun
-execute as @a[tag=innocent,advancements={mcm:item_counts/scrap=true}] at @s run item replace entity @s hotbar.1 with warped_fungus_on_a_stick{NoDrop:1b,Unbreakable:1,CustomModelData:1111,display:{Name:'[{"translate":"mcm.item.gun","italic":false}]',Lore:['[{"translate":"mcm.item.gun.lore","italic":false}]']}}
-execute as @a[tag=innocent,advancements={mcm:item_counts/scrap=true}] run advancement revoke @s only mcm:item_counts/scrap
-
 #> Give every item the KeyItem tag
 tag @e[type=item] add KeyItem
 
@@ -119,15 +115,8 @@ execute unless entity @e[type=item,tag=knifeCosmetic] run kill @e[type=arrow,tag
 execute as @e[type=item,tag=knifeCosmetic] at @s unless entity @a[tag=murderer,limit=1,sort=nearest] run data merge entity @s {PickupDelay:-1s,Age:32768}
 execute as @e[type=item,tag=knifeCosmetic] at @s if entity @a[tag=murderer,limit=1,sort=nearest,nbt={PickupDelay:-1s}] run data merge entity @s {PickupDelay:0s,Age:1}
 
-#> Give the murderer their retrieval ability back if they have 10 scrap
-execute as @a[tag=murderer,advancements={mcm:item_counts/scrap=true}] run tag @s remove retrieved
-execute as @a[tag=murderer,advancements={mcm:item_counts/scrap=true}] run scoreboard players set @s throwKnife 1
-execute as @a[tag=murderer,advancements={mcm:item_counts/scrap=true}] run clear @s netherite_scrap{CustomModelData:1} 10
-execute as @a[tag=murderer,advancements={mcm:item_counts/scrap=true}] run advancement revoke @s only mcm:item_counts/scrap
-
 #> If the murderer threw the knife and hasn't retrieved it before, give them the auto retrieval item TODO use something more efficient to check
-execute as @a[tag=murderer,tag=!retrieved,scores={throwKnife=1..}] if entity @s[nbt=!{Inventory:[{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1111}}]}] if entity @e[type=item,tag=knifeCosmetic] run item replace entity @s weapon.mainhand with minecraft:carrot_on_a_stick{NoDrop:1b,CustomModelData:1111,display:{Name:'[{"translate":"mcm.item.knife_retrieve","italic":false}]',Lore:['[{"translate":"mcm.item.knife_retrieve.lore","italic":false}]']}}
-execute as @a[tag=murderer,tag=!retrieved,scores={throwKnife=1..}] at @s run scoreboard players reset @s throwKnife
+execute as @a[tag=murderer,tag=!retrieved] if entity @s[nbt=!{Inventory:[{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1111}}]}] if entity @e[type=item,tag=knifeCosmetic] run item replace entity @s weapon.mainhand with minecraft:carrot_on_a_stick{NoDrop:1b,CustomModelData:1111,display:{Name:'[{"translate":"mcm.item.knife_retrieve","italic":false}]',Lore:['[{"translate":"mcm.item.knife_retrieve.lore","italic":false}]']}}
 
 #> Remove retrieval item if they pick up the knife and reset scores
 execute as @a[tag=murderer,nbt={Inventory:[{id:"minecraft:snowball",Count:1b,tag:{CustomModelData:1111}}]}] run clear @s carrot_on_a_stick{CustomModelData:1111}
