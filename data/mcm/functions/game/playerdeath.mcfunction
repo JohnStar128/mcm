@@ -15,11 +15,18 @@ execute as @e[type=item,tag=!NBTSet,nbt={Item:{id:"minecraft:player_head"}}] run
 execute as @e[type=item,tag=!NBTSet,nbt={Item:{id:"minecraft:player_head"}}] run data modify entity @s Owner set from entity @e[type=marker,tag=gameID,limit=1] UUID
 #oof ouch my bones
 execute at @s run summon item ~ ~0.5 ~ {Tags:["BoneDeco","1","KeyItem"],PickupDelay:2000000000,Item:{id:"minecraft:bone",Count:1b},Motion:[0.15d,0.2d,0.0d]}
+execute as @e[type=item,tag=BoneDeco,tag=!UUIDConfirmed] run data modify entity @s Item.tag.hash set from entity @s UUID[0]
 execute at @s run summon item ~ ~0.5 ~ {Tags:["BoneDeco","2","KeyItem"],PickupDelay:2000000000,Item:{id:"minecraft:bone",Count:1b},Motion:[0.15d,0.2d,0.15d]}
+execute as @e[type=item,tag=BoneDeco,tag=!UUIDConfirmed] run data modify entity @s Item.tag.hash set from entity @s UUID[0]
 execute at @s run summon item ~ ~0.5 ~ {Tags:["BoneDeco","3","KeyItem"],PickupDelay:2000000000,Item:{id:"minecraft:bone",Count:1b},Motion:[0.1d,0.1d,0.2d]}
+execute as @e[type=item,tag=BoneDeco,tag=!UUIDConfirmed] run data modify entity @s Item.tag.hash set from entity @s UUID[0]
 execute at @s run summon item ~ ~0.5 ~ {Tags:["BoneDeco","4","KeyItem"],PickupDelay:2000000000,Item:{id:"minecraft:bone",Count:1b},Motion:[-0.15d,0.4d,0.0d]}
+execute as @e[type=item,tag=BoneDeco,tag=!UUIDConfirmed] run data modify entity @s Item.tag.hash set from entity @s UUID[0]
 execute at @s run summon item ~ ~0.5 ~ {Tags:["BoneDeco","5","KeyItem"],PickupDelay:2000000000,Item:{id:"minecraft:bone",Count:1b},Motion:[-0.05d,0.2d,0.0d]}
+execute as @e[type=item,tag=BoneDeco,tag=!UUIDConfirmed] run data modify entity @s Item.tag.hash set from entity @s UUID[0]
 execute at @s run summon item ~ ~0.5 ~ {Tags:["BoneDeco","6","KeyItem"],PickupDelay:2000000000,Item:{id:"minecraft:bone",Count:1b},Motion:[0.15d,0.3d,-0.15d]}
+execute as @e[type=item,tag=BoneDeco,tag=!UUIDConfirmed] run data modify entity @s Item.tag.hash set from entity @s UUID[0]
+execute as @e[type=item,tag=BoneDeco,tag=!UUIDConfirmed] run tag @s add UUIDConfirmed
 
 execute as @e[type=item,tag=BoneDeco] run data modify entity @s Owner set from entity @e[type=marker,tag=gameID,limit=1] UUID
 
