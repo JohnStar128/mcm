@@ -1,7 +1,7 @@
 #> "Fake Kills" the player with some fancy effects instead of actual /kill commands.
 
 #> Better death message system (though I think it technically might break if two people die in the same tick)
-execute if entity @a[advancements={mcm:hit_detection/killed_player}] tellraw @s {"text":"You were killed by ","color":"gold","extra":[{"selector":"@a[advancements={mcm:hit_detection/killed_player}]","color":"red"}]}
+execute if entity @a[advancements={mcm:hit_detection/killed_player}] run tellraw @s {"text":"You were killed by ","color":"gold","extra":[{"selector":"@a[advancements={mcm:hit_detection/killed_player}]","color":"red"}]}
 
 execute at @s run scoreboard players set @s dead 1
 tag @s add TempDead
