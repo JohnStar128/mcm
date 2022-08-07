@@ -31,5 +31,5 @@ execute if block -692 52 45 dark_oak_trapdoor[waterlogged=true] run setblock -69
 
 #> Respawn players who fall out of the void during grace period, kill them if grace period has expired
 #also doubles as escape prevention
-execute as @a[tag=queued,predicate=!mcm:bounding_boxes/airship] at @s if score $selectedMap CmdData matches 2 if score $graceperiod CmdData matches 1.. run tp @s @e[tag=PlayerSpawn,limit=1,sort=nearest]
-execute as @a[tag=queued,predicate=!mcm:bounding_boxes/airship] at @s if score $selectedMap CmdData matches 2 if score $graceperiod CmdData matches ..0 run function mcm:game/playerdeath
+execute as @a[tag=queued,predicate=!mcm:bounding_boxes/airship,tag=!spectating] at @s if score $graceperiod CmdData matches 1.. run tp @s @e[tag=PlayerSpawn,limit=1,sort=nearest]
+execute as @a[tag=queued,predicate=!mcm:bounding_boxes/airship,tag=!spectating] at @s if score $selectedMap CmdData matches 2 if score $graceperiod CmdData matches ..0 run function mcm:game/playerdeath
