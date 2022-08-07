@@ -23,10 +23,7 @@ fill -982 56 -1100 -981 57 -1100 black_wool
 
 # clear rocket stuff
 function mcm:maps/launchpad/rockettemp/clearrocket
-setblock -1025 52 -1092 stone
-setblock -1007 52 -1092 stone
-setblock -1025 52 -1092 air
-setblock -1007 52 -1092 air
+fill -1026 50 -1103 -1007 51 -1061 air replace fire
 # replace rocket
 place template minecraft:countdown0 -1061 51 -1061
 function mcm:maps/launchpad/rockettemp/firstpos

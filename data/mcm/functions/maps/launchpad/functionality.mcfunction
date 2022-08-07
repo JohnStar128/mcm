@@ -67,6 +67,7 @@ execute if block -1016 158 -1099 lever[powered=false] if score $launchCountdown 
 execute unless block -1016 158 -1099 lever[powered=false] if score $launchCountdown CmdData matches 1240 run tellraw @a[tag=queued] ["Launch aborted!"]
 execute unless block -1016 158 -1099 lever[powered=false] if score $launchCountdown CmdData matches 1240 run setblock -1016 156 -1099 air replace
 execute unless block -1016 158 -1099 lever[powered=false] if score $launchCountdown CmdData matches 1240 run setblock -1016 157 -1099 air replace
+execute unless block -1016 158 -1099 lever[powered=false] if score $launchCountdown CmdData matches 1240 run setblock -1016 158 -1099 air replace
 execute if block -1016 158 -1099 lever[powered=false] if score $launchCountdown CmdData matches 1240 run tellraw @a[tag=queued] ["Liftoff!"]
 execute if score $launchControl CmdData matches 2 as @a[predicate=mcm:bounding_boxes/rocket] run tag @s add launch_player
 execute if score $launchControl CmdData matches 2 run function mcm:maps/launchpad/rockettemp/launchrocket
