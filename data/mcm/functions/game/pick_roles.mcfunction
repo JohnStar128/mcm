@@ -5,6 +5,7 @@ execute as @a[tag=queued,tag=!prevMurderer,tag=!murderer,sort=random,limit=1] at
 execute if score $murderers GameRules matches ..1 run tellraw @a[tag=murderer] {"text":"You are ","color":"gold","extra":[{"text":"the murderer!","color":"red"}]}
 execute if score $murderers GameRules matches ..1 run title @a[tag=murderer] title {"text":"You are ","color":"gold","extra":[{"text":"the murderer!","color":"red"}]}
 execute if score $murderers GameRules matches ..1 run title @a[tag=murderer] subtitle {"text":"Kill the innocent ","color":"gold"}
+execute if score $murderers GameRules matches ..1 run team join murderers @a[tag=murderer]
 
 # 2 murderers
 execute if score $murderers GameRules matches 2.. run execute as @a[tag=queued,tag=!prevMurderer,tag=!murderer,sort=random,limit=2] at @s run tag @s add murderer
@@ -14,6 +15,7 @@ execute if score $murderers GameRules matches 2.. run tellraw @a[tag=murderer] [
 execute if score $murderers GameRules matches 2.. run title @a[tag=murderer] title {"text":"You are ","color":"gold","extra":[{"text":"the murderer!","color":"red"}]}
 execute if score $murderers GameRules matches 2.. run title @a[tag=murderer1] subtitle ["", {"text":"with ","color":"gold"}, {"selector":"@p[tag=murderer2,limit=1,sort=nearest]","color":"green"}]
 execute if score $murderers GameRules matches 2.. run title @a[tag=murderer2] subtitle ["", {"text":"with ","color":"gold"}, {"selector":"@p[tag=murderer1,limit=1,sort=nearest]","color":"green"}]
+execute if score $murderers GameRules matches ..1 run team join murderers @a[tag=murderer]
 
 # Murderer items
 execute as @a[tag=murderer] run item replace entity @s hotbar.1 with snowball{Unbreakable:1,CustomModelData:1111,AttributeModifiers:[{AttributeName:"generic.attack_damage",Amount:100,Slot:mainhand,Name:"generic.attack_damage",UUID:[I;-122419,10812,22346,-21624]}],display:{Name:'[{"translate":"mcm.item.knife","italic":false}]',Lore:['[{"translate":"mcm.item.knife.lore","italic":false}]']}} 1

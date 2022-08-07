@@ -15,6 +15,7 @@ execute if score $roundtimer GameRules matches 2 run scoreboard players set $gam
 
 #> Make queued players join ingame team (this allows friendly fire)
 team join ingame_players @a[tag=queued]
+team join murderers @a[tag=queued,tag=murderer]
 
 #> Teleport players to spawnpoints within the map
 execute as @a[team=!test4,tag=queued] at @s run function mcm:maps/tptospawn
