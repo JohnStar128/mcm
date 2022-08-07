@@ -22,6 +22,8 @@ execute if score $gamestate CmdData matches 0 run function mcm:lobby/queueing/qu
 execute if score $gamestate CmdData matches 1 run function mcm:game/loops/ingame
 #Game end loop
 execute if score $gamestate CmdData matches 2 run function mcm:game/loops/gameend
+#Ingame Bossbar
+execute if score $gamestate CmdData matches 1..2 run function mcm:game/loops/updatebossbar
 
 #> NoDrop module
 function mcm:util/nodrop
