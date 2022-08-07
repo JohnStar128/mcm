@@ -1,8 +1,7 @@
 #> "Fake Kills" the player with some fancy effects instead of actual /kill commands.
 
-tellraw @s[advancements={mcm:hit_detection/gun_hit=true}] {"text":"You were killed by ","color":"gold","extra":[{"selector":"@a[tag=shotGun,limit=1,sort=nearest]","color":"red"}]}
-tellraw @s[advancements={mcm:hit_detection/knife_hit=true}] {"text":"You were killed by ","color":"gold","extra":[{"selector":"@a[tag=murderer,limit=1,sort=nearest]","color":"red"}]}
-tellraw @s[advancements={mcm:hit_detection/knife_melee_hit=true}] {"text":"You were killed by ","color":"gold","extra":[{"selector":"@a[tag=murderer,limit=1,sort=nearest]","color":"red"}]}
+#> Better death message system (though I think it technically might break if two people die in the same tick)
+execute if entity @a[advancements={mcm:hit_detection/killed_player}] tellraw @s {"text":"You were killed by ","color":"gold","extra":[{"selector":"@a[advancements={mcm:hit_detection/killed_player}]","color":"red"}]}
 
 execute at @s run scoreboard players set @s dead 1
 tag @s add TempDead
@@ -44,5 +43,6 @@ tag @s remove TempDead
 advancement revoke @s only mcm:hit_detection/gun_hit
 advancement revoke @s only mcm:hit_detection/knife_hit
 advancement revoke @s only mcm:hit_detection/knife_melee_hit
+advancement revoke @a only mcm:hit_detection/killed_player
 
 scoreboard players set @s dead 1

@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"queued\"]}"
+        },
+        "entity": {
+          "type": "minecraft:player",
+          "nbt": "{Tags:[\"queued\"]}"
+        }
+      }
+    }
+  }
+}
+  
