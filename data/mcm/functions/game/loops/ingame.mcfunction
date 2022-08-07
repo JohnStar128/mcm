@@ -120,10 +120,10 @@ execute as @e[type=item,tag=knifeCosmetic] at @s unless entity @a[tag=murderer,l
 execute as @e[type=item,tag=knifeCosmetic] at @s if entity @a[tag=murderer,limit=1,sort=nearest,nbt={PickupDelay:-1s}] run data merge entity @s {PickupDelay:0s,Age:1}
 
 #> Give the murderer their retrieval ability back if they have 10 scrap
-execute as @a[tag=murderer,advancements={mcm:item_counts/scrap=true}] at @s run tag @s remove retrieved
-execute as @a[tag=murderer,advancements={mcm:item_counts/scrap=true}] at @s run scoreboard players set @s throwKnife 1
-execute as @a[tag=murderer,advancements={mcm:item_counts/scrap=true}] at @s run clear @s netherite_scrap{CustomModelData:1} 10
-execute as @a[tag=murderer,advancements={mcm:item_counts/scrap=true}] at @s run advancement revoke @s only mcm:item_counts/scrap
+execute as @a[tag=murderer,advancements={mcm:item_counts/scrap=true}] run tag @s remove retrieved
+execute as @a[tag=murderer,advancements={mcm:item_counts/scrap=true}] run scoreboard players set @s throwKnife 1
+execute as @a[tag=murderer,advancements={mcm:item_counts/scrap=true}] run clear @s netherite_scrap{CustomModelData:1} 10
+execute as @a[tag=murderer,advancements={mcm:item_counts/scrap=true}] run advancement revoke @s only mcm:item_counts/scrap
 
 #> If the murderer threw the knife and hasn't retrieved it before, give them the auto retrieval item TODO use something more efficient to check
 execute as @a[tag=murderer,tag=!retrieved,scores={throwKnife=1..}] if entity @s[nbt=!{Inventory:[{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1111}}]}] if entity @e[type=item,tag=knifeCosmetic] run item replace entity @s weapon.mainhand with minecraft:carrot_on_a_stick{NoDrop:1b,CustomModelData:1111,display:{Name:'[{"translate":"mcm.item.knife_retrieve","italic":false}]',Lore:['[{"translate":"mcm.item.knife_retrieve.lore","italic":false}]']}}
