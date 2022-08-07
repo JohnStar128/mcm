@@ -16,5 +16,8 @@
         ]
       }
     }
+  },
+  "rewards": {
+    "function": "mcm:game/scrap_function"
   }
 }
