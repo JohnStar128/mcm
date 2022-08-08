@@ -94,7 +94,7 @@ execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData
 execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 4 run function mcm:maps/launchpad/reset
 
 # disable friendly fire
-execute if score $gameEndTimer CmdData matches 199 team join nametags @a[tag=queued,team=!nametags]
+execute if score $gameEndTimer CmdData matches 199 run team join nametags @a[tag=queued,team=!nametags]
 
 #> re-autoqueue people
 execute if score $gameEndTimer CmdData matches ..1 as @a[tag=autoqueue] at @s run function mcm:lobby/queueing/autoqueue
