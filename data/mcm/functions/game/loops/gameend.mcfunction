@@ -9,8 +9,11 @@ execute if score $gameEndTimer CmdData matches 200 if score $innocentWin CmdData
 execute if score $gameEndTimer CmdData matches 200 if score $innocentWin CmdData matches 1 run title @a title ["", {"text":"Innocents win!","color":"green"}]
 execute if score $gameEndTimer CmdData matches 200 if score $murderWin CmdData matches 1 run tag @a[tag=murderer,gamemode=adventure] add WonLast
 execute if score $gameEndTimer CmdData matches 200 if score $murderWin CmdData matches 1 run title @a title ["", {"text":"Murderer wins!","color":"red"}]
-execute if score $gameEndTimer CmdData matches 200 if score $innocentWin CmdData matches 1 run playsound minecraft:ui.toast.challenge_complete ambient @a ~ ~ ~ 1 1 1
-execute if score $gameEndTimer CmdData matches 200 if score $murderWin CmdData matches 1 run playsound minecraft:entity.wither.spawn ambient @a ~ ~ ~ 1 2 1
+execute if score $gameEndTimer CmdData matches 200 if score $innocentWin CmdData matches 1 run playsound minecraft:ui.toast.challenge_complete ambient @a[tag=!murderer] ~ ~ ~ 1 1 1
+execute if score $gameEndTimer CmdData matches 200 if score $innocentWin CmdData matches 1 run playsound minecraft:entity.wither.spawn ambient @a[tag=murderer] ~ ~ ~ 1 2 1
+execute if score $gameEndTimer CmdData matches 200 if score $murderWin CmdData matches 1 run playsound minecraft:entity.wither.spawn ambient @a[tag=!murderer] ~ ~ ~ 1 2 1
+execute if score $gameEndTimer CmdData matches 200 if score $murderWin CmdData matches 1 run playsound minecraft:ui.toast.challenge_complete ambient @a[tag=murderer] ~ ~ ~ 1 1 1
+execute if score $gameEndTimer CmdData matches 200 run bossbar remove minecraft:gamedisplay
 
 scoreboard players remove $gameEndTimer CmdData 1
 

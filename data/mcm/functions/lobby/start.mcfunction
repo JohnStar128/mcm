@@ -28,6 +28,7 @@ execute if score $startcountdown CmdData matches 1 if score $queued CmdData matc
 execute if score $startcountdown CmdData matches 1 run clear @a[tag=queued]
 
 #> Start the game
+execute if score $queued CmdData matches 3.. if score $startcountdown CmdData matches 1 run function mcm:game/createbossbar
 execute if score $queued CmdData matches 3.. if score $startcountdown CmdData matches 1 run function mcm:maps/start
 
 #> Give players their hats back if they were replaced

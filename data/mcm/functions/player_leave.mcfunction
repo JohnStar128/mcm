@@ -10,6 +10,7 @@ tag @s remove retrieved
 tag @s remove queued
 tag @s remove lostGun
 tag @s remove HoldKnife
+tag @s remove viewbossbar
 # Clearing items
 clear @s
 # Scores
