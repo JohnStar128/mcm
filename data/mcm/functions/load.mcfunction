@@ -77,3 +77,9 @@ team modify murderers nametagVisibility hideForOtherTeams
 scoreboard players enable @a player_rule_update
 
 execute if entity @a run function mcm:respawn_entities
+
+#> Generate a game ID
+kill @e[tag=gameID]
+summon marker 0 100 0 {Tags:["gameID"]}
+execute store result score $gameID CmdData run data get entity @e[tag=gameID,limit=1,sort=nearest] UUID[0]
+scoreboard players operation @a gameID = $gameID CmdData
