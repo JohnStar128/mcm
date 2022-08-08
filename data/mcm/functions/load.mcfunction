@@ -73,9 +73,6 @@ team modify ingame_players friendlyFire true
 team modify ingame_players nametagVisibility never
 team modify nametags color gray
 team modify ingame_players color green 
-team add murderers
-team modify murderers color green
-team modify murderers nametagVisibility hideForOtherTeams
 
 scoreboard players enable @a player_rule_update
 
