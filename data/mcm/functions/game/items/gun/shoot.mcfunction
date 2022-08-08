@@ -1,6 +1,6 @@
 tag @a[nbt={SelectedItem:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}}] add HoldGun
 
-execute as @a[tag=HoldGun,tag=!shotGun,scores={gunclick=1..}] at @s facing ^ ^ ^14 positioned 0.0 0 0.0 run summon arrow ^ ^ ^7 {NoGravity:1b,Tags:["GunShot","NewGunShot"],Passengers:[{id:"minecraft:armor_stand",Invisible:1b,Small:1b,Tags:["BulletDeco","NewBullet"],NoGravity:1b,Small:1b,Marker:1b,ArmorItems:[{},{},{},{id:"minecraft:diamond_hoe",Count:1b,tag:{CustomModelData:420}}]}]}
+execute as @a[tag=HoldGun,tag=!shotGun,scores={gunclick=1..}] at @s facing ^ ^ ^14 positioned 0.0 0 0.0 run summon arrow ^ ^ ^7 {NoGravity:1b,Tags:["GunShot","NewGunShot"],Passengers:[{id:"minecraft:armor_stand",Invisible:1b,Small:1b,Silent:1b,Tags:["BulletDeco","NewBullet"],NoGravity:1b,Small:1b,Marker:1b,ArmorItems:[{},{},{},{id:"minecraft:diamond_hoe",Count:1b,tag:{CustomModelData:420}}]}]}
 execute as @e[type=arrow,tag=NewGunShot] at @s run data modify entity @s Owner set from entity @a[tag=HoldGun,tag=!shotGun,scores={gunclick=1..},limit=1,sort=nearest] UUID
 execute as @e[type=arrow,tag=NewGunShot] at @a[tag=HoldGun,tag=!shotGun,scores={gunclick=1..},limit=1,sort=nearest] positioned ~ ~1.5 ~ run function mcm:game/items/gun/setspeed
 
