@@ -39,7 +39,7 @@ execute if score $gameEndTimer CmdData matches ..1 run kill @e[type=item,tag=Key
 
 # remove items
 execute if score $gameEndTimer CmdData matches 199 as @a[tag=queued] run clear @s
-execute if score $gameEndTimer CmdData matches 199 as @a[tag=queued] run function mcm:cosmetics/change_hat
+execute if score $gameEndTimer CmdData matches 199 as @a[tag=queued] run function mcm:cosmetics/change_cosmetics
 
 # AutoQueue items and how to play book
 execute if score $gameEndTimer CmdData matches ..1 run item replace entity @a[tag=queued,tag=autoqueue] hotbar.8 with warped_fungus_on_a_stick{CustomModelData:1235,NoDrop:1b,display:{Name:'[{"translate":"mcm.item.autoqueue.disable","italic":false,"color":"red"}]'}}

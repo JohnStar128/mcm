@@ -30,8 +30,8 @@ scoreboard players reset @a[scores={autoqueue=1..}] autoqueue
 
 #> Hats
 scoreboard players enable @a hatchange
-execute as @a[scores={hatchange=-1}] run function mcm:cosmetics/change_hat
-execute as @a[scores={hatchange=1..}] run function mcm:cosmetics/change_hat
+execute as @a[scores={hatchange=-1}] run function mcm:cosmetics/change_cosmetics
+execute as @a[scores={hatchange=1..}] run function mcm:cosmetics/change_cosmetics
 
 #> Tp players who use the book to go back to spawnpoint
 scoreboard players enable @a[tag=!queued] stuck

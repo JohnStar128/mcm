@@ -31,7 +31,7 @@ execute if score $startcountdown CmdData matches 1 run clear @a[tag=queued]
 execute if score $queued CmdData matches 3.. if score $startcountdown CmdData matches 1 run function mcm:maps/start
 
 #> Give players their hats back if they were replaced
-execute if score $startcountdown CmdData matches 1 as @a[tag=queued] run function mcm:cosmetics/change_hat
+execute if score $startcountdown CmdData matches 1 as @a[tag=queued] run function mcm:cosmetics/change_cosmetics
 
 #> "Smart" murderer assignment
 execute if score $smart_murderers GameRules matches 1 if score $queued CmdData matches ..7 run scoreboard players set $murderers GameRules 1

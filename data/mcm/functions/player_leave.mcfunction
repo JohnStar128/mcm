@@ -17,7 +17,7 @@ scoreboard players reset @s flipmap
 scoreboard players reset @s books
 # The rest
 effect clear @s
-function mcm:cosmetics/change_hat
+function mcm:cosmetics/change_cosmetics
 tp @s -1 1 69 0 0
 execute as @s[tag=autoqueue] run item replace entity @s hotbar.8 with warped_fungus_on_a_stick{CustomModelData:1235,NoDrop:1b,display:{Name:'[{"translate":"mcm.item.autoqueue.disable","italic":false,"color":"red"}]'}}
 execute as @s[tag=autoqueue] run function mcm:lobby/queueing/autoqueue
