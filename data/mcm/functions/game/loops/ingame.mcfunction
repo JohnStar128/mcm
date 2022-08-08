@@ -139,13 +139,13 @@ execute if score $graceperiod CmdData matches ..0 if score $deadInnocents CmdDat
 execute if score $graceperiod CmdData matches ..0 if score $deadInnocents CmdData = $innocents CmdData run scoreboard players set $gamestate CmdData 2
 
 # Innocents victory
-execute if score $graceperiod CmdData matches ..0 if score $deadMurderers CmdData = $murderers CmdData run tellraw @a ["", "\n", {"text":"The Innocents have won!","color":"green"}, "\n"]
-execute if score $graceperiod CmdData matches ..0 if score $deadMurderers CmdData = $murderers CmdData run scoreboard players set $innocentWin CmdData 1
-execute if score $graceperiod CmdData matches ..0 if score $deadMurderers CmdData = $murderers CmdData run scoreboard players set $gamestate CmdData 2
+execute if score $graceperiod CmdData matches ..0 if score $deadMurderers CmdData = $murderers CmdData unless score $murderWin CmdData matches 1 run tellraw @a ["", "\n", {"text":"The Innocents have won!","color":"green"}, "\n"]
+execute if score $graceperiod CmdData matches ..0 if score $deadMurderers CmdData = $murderers CmdData unless score $murderWin CmdData matches 1 run scoreboard players set $innocentWin CmdData 1
+execute if score $graceperiod CmdData matches ..0 if score $deadMurderers CmdData = $murderers CmdData unless score $murderWin CmdData matches 1 run scoreboard players set $gamestate CmdData 2
 # If the murderer logs out specifically
-execute if score $graceperiod CmdData matches ..0 unless entity @a[tag=murderer] run tellraw @a ["", "\n", {"text":"The Innocents have won!","color":"green"}, "\n"]
-execute if score $graceperiod CmdData matches ..0 unless entity @a[tag=murderer] run scoreboard players set $innocentWin CmdData 1
-execute if score $graceperiod CmdData matches ..0 unless entity @a[tag=murderer] run scoreboard players set $gamestate CmdData 2
+execute if score $graceperiod CmdData matches ..0 unless entity @a[tag=murderer] unless score $murderWin CmdData matches 1 run tellraw @a ["", "\n", {"text":"The Innocents have won!","color":"green"}, "\n"]
+execute if score $graceperiod CmdData matches ..0 unless entity @a[tag=murderer] unless score $murderWin CmdData matches 1 run scoreboard players set $innocentWin CmdData 1
+execute if score $graceperiod CmdData matches ..0 unless entity @a[tag=murderer] unless score $murderWin CmdData matches 1 run scoreboard players set $gamestate CmdData 2
 
 #> Play ambient sounds
 execute if predicate mcm:soundrng if score $selectedMap CmdData matches 1 run function mcm:maps/library/sound
