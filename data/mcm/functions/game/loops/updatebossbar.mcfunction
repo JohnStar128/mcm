@@ -2,9 +2,9 @@ tag @a[tag=queued] add viewbossbar
 tag @a[gamemode=spectator] add viewbossbar
 
 #> Get innocents
-execute store result score $InnocentCount CmdData if entity @a[team=ingame_players,tag=!murderer]
+execute store result score $InnocentCount CmdData if entity @a[team=ingame_players,tag=!murderer,tag=!spectating]
 #> Get murderers
-execute store result score $MurdererCount CmdData if entity @a[team=murderers,tag=murderer]
+execute store result score $MurdererCount CmdData if entity @a[team=murderers,tag=murderer,tag=!spectating]
 
 
 #> calculate remaining minutes and seconds
