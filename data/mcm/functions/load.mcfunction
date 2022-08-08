@@ -50,6 +50,7 @@ scoreboard objectives add crouch minecraft.custom:minecraft.crouch_one_cm
 scoreboard objectives add autoqueue_delay dummy
 scoreboard objectives add available_entities dummy
 scoreboard objectives add current_vote dummy
+scoreboard objectives add player_color dummy
 
 execute as @e[type=villager,tag=Usher] run data modify entity @s Offers set value {}
 execute as @e[type=villager,tag=credits_usher] run data modify entity @s Offers set value {}
