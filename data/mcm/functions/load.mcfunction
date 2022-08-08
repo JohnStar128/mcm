@@ -51,6 +51,8 @@ scoreboard objectives add autoqueue_delay dummy
 scoreboard objectives add available_entities dummy
 scoreboard objectives add current_vote dummy
 scoreboard objectives add player_color dummy
+scoreboard objectives add math dummy
+scoreboard players set $twenty math 20
 
 execute as @e[type=villager,tag=Usher] run data modify entity @s Offers set value {}
 execute as @e[type=villager,tag=credits_usher] run data modify entity @s Offers set value {}
@@ -85,6 +87,7 @@ summon marker 0 100 0 {Tags:["gameID"]}
 execute store result score $gameID CmdData run data get entity @e[tag=gameID,limit=1,sort=nearest] UUID[0]
 scoreboard players operation @a gameID = $gameID CmdData
 
+#> Revoke advancements players shouldn't have but failsafe anyways
 advancement revoke @a[advancements={mcm:hit_detection/gun_hit=true}] only mcm:hit_detection/gun_hit
 advancement revoke @a[advancements={mcm:hit_detection/knife_hit=true}] only mcm:hit_detection/knife_hit
 advancement revoke @a[advancements={mcm:hit_detection/knife_melee_hit=true}] only mcm:hit_detection/knife_melee_hit

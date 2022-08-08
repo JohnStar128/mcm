@@ -116,7 +116,7 @@ execute as @e[type=item,tag=knifeCosmetic] at @s unless entity @a[tag=murderer,l
 execute as @e[type=item,tag=knifeCosmetic] at @s if entity @a[tag=murderer,limit=1,sort=nearest,nbt={PickupDelay:-1s}] run data merge entity @s {PickupDelay:0s,Age:1}
 
 #> If the murderer threw the knife and hasn't retrieved it before, give them the auto retrieval item TODO use something more efficient to check
-execute as @a[tag=murderer,tag=!retrieved,nbt=!{Inventory:[{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1111}},{id:"minecraft:snowball",Count:1b,tag:{CustomModelData:1111}}]}] if entity @e[type=item,tag=knifeCosmetic] run item replace entity @s weapon.mainhand with minecraft:carrot_on_a_stick{NoDrop:1b,CustomModelData:1111,display:{Name:'[{"translate":"mcm.item.knife_retrieve","italic":false}]',Lore:['[{"translate":"mcm.item.knife_retrieve.lore","italic":false}]']}}
+execute as @a[tag=murderer,tag=!retrieved,nbt=!{Inventory:[{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1111}}]},nbt=!{Inventory:[{id:"minecraft:snowball",Count:1b,tag:{CustomModelData:1111}}]}] if entity @e[type=item,tag=knifeCosmetic] run item replace entity @s weapon.mainhand with minecraft:carrot_on_a_stick{NoDrop:1b,CustomModelData:1111,display:{Name:'[{"translate":"mcm.item.knife_retrieve","italic":false}]',Lore:['[{"translate":"mcm.item.knife_retrieve.lore","italic":false}]']}}
 
 #> Remove retrieval item if they pick up the knife and reset scores
 execute as @a[tag=murderer,nbt={Inventory:[{id:"minecraft:snowball",Count:1b,tag:{CustomModelData:1111}}]}] run clear @s carrot_on_a_stick{CustomModelData:1111}
@@ -161,3 +161,8 @@ execute as @a[tag=spectating] run effect clear @s slowness
 execute if entity @a[advancements={mcm:hit_detection/killed_player=true}] run tellraw @a[scores={dead=1}] {"text":"You were killed by ","color":"gold","extra":[{"selector":"@a[advancements={mcm:hit_detection/killed_player=true},sort=nearest,limit=1]","color":"red"}]}
 execute as @a[scores={dead=1}] run scoreboard players set @s dead 2
 advancement revoke @a[advancements={mcm:hit_detection/killed_player=true}] only mcm:hit_detection/killed_player
+
+#> Show particles above murderers to identify their teammates
+scoreboard players operation $murderer_particles math = $gametimer CmdData
+scoreboard players operation $murderer_particles math %= $twenty math
+execute as @a[tag=murderer,tag=!spectating] at @s run particle dust 1.0 0.1 0.1 1.0 ~ ~2.5 ~ 0.1 0.1 0.1 0 1 force @a[tag=murderer]
