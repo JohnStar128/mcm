@@ -37,6 +37,7 @@ function mcm:game/items/gun/shoot
 
 #> Dead players
 scoreboard players add @e[type=item,tag=BoneDeco,nbt={OnGround:1b}] CmdData 1
+execute as @e[type=item,tag=BoneDeco,nbt={OnGround:0b}] at @s if block ~ ~-0.2 ~ water run scoreboard players add @s CmdData 1
 execute as @e[type=item,tag=BoneDeco,scores={CmdData=20..}] at @s run particle item bone ~ ~ ~ 0 0 0 0.1 4 force
 kill @e[type=item,tag=BoneDeco,scores={CmdData=20..}]
 
