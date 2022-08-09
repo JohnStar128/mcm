@@ -39,11 +39,16 @@ execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -201
 execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -2020 72 2071 run function mcm:util/alloc_entity 
 execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -2097 72 2036 run function mcm:util/alloc_entity 
 
-#> Set Scrap spawnpoints
-
 #> Sound markers
+
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned -2049 81 2030 run function mcm:util/alloc_entity 
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned -2049 81 2030 run function mcm:util/alloc_entity 
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned -2074 85 2046 run function mcm:util/alloc_entity 
+execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned -2074 85 2028 run function mcm:util/alloc_entity 
 
 #> Spectator spawnpoint
 execute as @e[type=marker,tag=available,tag=SpectatorSpawn,limit=1] positioned -2070 100 2038 run function mcm:util/alloc_entity
+
+execute at @e[type=marker,tag=available,tag=SpectatorSpawn,limit=1] as @e[type=marker,tag=!available,tag=sound_marker,limit=7,sort=nearest] run tag @s add EngineSoundMarker
 
 tellraw @a ["","\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"The game is ready to play!","underlined":true,"color":"green"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Selected Map: ","color":"gray"},{"text":"Color Filth","color":"dark_green","hoverEvent":{"action":"show_text","value":{"text":"So much better than the game...","color":"aqua"}}},"\n"]

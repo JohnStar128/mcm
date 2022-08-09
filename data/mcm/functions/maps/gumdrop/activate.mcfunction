@@ -45,9 +45,6 @@ execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 949 
 execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 1098 35 -2911 run function mcm:util/alloc_entity 
 execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 1013 31 -3017 run function mcm:util/alloc_entity 
 
-#> Set Scrap spawnpoints TODO
-
-
 #> Sound markers TODO
 
 
