@@ -20,9 +20,10 @@ execute if entity @e[type=marker,tag=SelectedMap,tag=Airship] run function mcm:m
 execute if entity @e[type=marker,tag=SelectedMap,tag=Vineyard] run function mcm:maps/vineyard/activate
 #Launch Complex
 execute if entity @e[type=marker,tag=SelectedMap,tag=Launchpad] run function mcm:maps/launchpad/activate
-
-#> A normal person would want the rules printed here, BEFORE the game starts, but alas, we live in a lazy world
-# execute as @a run function mcm:lobby/print_game_rules
+#Color Filth
+execute if entity @e[type=marker,tag=SelectedMap,tag=Cyberpunk] run function mcm:maps/cyberpunk/activate
+#Gumdrop Plains
+execute if entity @e[type=marker,tag=SelectedMap,tag=Gumdrop] run function mcm:maps/gumdrop/activate
 
 #> Change gamestate to 0 (Players can now join, game has not started yet)
 execute as @e[type=villager,tag=!available,tag=MapVoteEntity] run function mcm:util/dealloc_entity

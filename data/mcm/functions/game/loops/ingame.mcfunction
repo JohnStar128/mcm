@@ -38,6 +38,8 @@ execute if score $selectedMap CmdData matches 1 run function mcm:maps/library/fu
 execute if score $selectedMap CmdData matches 2 run function mcm:maps/airship/functionality
 execute if score $selectedMap CmdData matches 3 run function mcm:maps/vineyard/functionality
 execute if score $selectedMap CmdData matches 4 run function mcm:maps/launchpad/functionality
+execute if score $selectedMap CmdData matches 5 run function mcm:maps/cyberpunk/functionality
+execute if score $selectedMap CmdData matches 6 run function mcm:maps/gumdrop/functionality
 
 #> Allow spectating
 execute as @a[nbt={RootVehicle:{Entity:{Tags:["spectatorchair"]}}}] run tag @s add spectating
@@ -55,6 +57,10 @@ execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 3 unle
 execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 3 unless predicate mcm:bounding_boxes/vineyard run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
 execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 4 unless predicate mcm:bounding_boxes/launchpad run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
 execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 4 unless predicate mcm:bounding_boxes/launchpad run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
+execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 5 unless predicate mcm:bounding_boxes/cyberpunk run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
+execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 5 unless predicate mcm:bounding_boxes/cyberpunk run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
+execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 6 unless predicate mcm:bounding_boxes/gumdrop run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
+execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 6 unless predicate mcm:bounding_boxes/gumdrop run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
 
 #> Track dead innocents
 execute store result score $innocents CmdData if entity @a[tag=innocent]
@@ -152,6 +158,8 @@ execute if predicate mcm:soundrng if score $selectedMap CmdData matches 1 run fu
 execute if predicate mcm:soundrng if score $selectedMap CmdData matches 2 run function mcm:maps/airship/sound
 execute if predicate mcm:soundrng if score $selectedMap CmdData matches 3 run function mcm:maps/vineyard/sound
 execute if predicate mcm:soundrng if score $selectedMap CmdData matches 4 run function mcm:maps/launchpad/sound
+execute if predicate mcm:soundrng if score $selectedMap CmdData matches 5 run function mcm:maps/cyberpunk/sound
+execute if predicate mcm:soundrng if score $selectedMap CmdData matches 6 run function mcm:maps/gumdrop/sound
 
 #> Clear spectator nausea
 execute as @a[tag=spectating] run effect clear @s nausea
