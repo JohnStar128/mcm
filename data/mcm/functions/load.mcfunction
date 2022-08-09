@@ -78,13 +78,16 @@ scoreboard players enable @a player_rule_update
 
 execute if entity @a run function mcm:respawn_entities
 
-#> Generate a game ID
+#> Generate a game ID to force anyone who logs in to be reset to a default state
 kill @e[tag=gameID]
 summon marker 0 100 0 {Tags:["gameID"]}
 execute store result score $gameID CmdData run data get entity @e[tag=gameID,limit=1,sort=nearest] UUID[0]
 scoreboard players operation @a gameID = $gameID CmdData
 
-#> Revoke advancements players shouldn't have but failsafe anyways
-advancement revoke @a[advancements={mcm:hit_detection/gun_hit=true}] only mcm:hit_detection/gun_hit
-advancement revoke @a[advancements={mcm:hit_detection/knife_hit=true}] only mcm:hit_detection/knife_hit
-advancement revoke @a[advancements={mcm:hit_detection/knife_melee_hit=true}] only mcm:hit_detection/knife_melee_hit
+#> Reset players back to a known default state
+execute as @a run function mcm:player_leave
+
+
+#> Temp while maps 5 and 6 are in development
+scoreboard players set @e[type=marker,tag=Cyberpunk] MapValues 1
+scoreboard players set @e[type=marker,tag=Gumdrop] MapValues 2
