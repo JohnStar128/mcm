@@ -16,6 +16,6 @@
     }
   },
   "rewards": {
-    "function": "mcm:game/playerdeath"
+    "function": "mcm:game/player_hit"
   }
 }

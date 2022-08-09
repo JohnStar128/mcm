@@ -18,6 +18,9 @@ execute if score $gamestate CmdData matches -1 if entity @a[scores={player_rule_
 
 execute if score $gamestate CmdData matches -1 if entity @a[scores={player_rule_update=11}] run scoreboard players set $smart_murderers GameRules 1
 
+execute if score $gamestate CmdData matches -1 if entity @a[scores={player_rule_update=12}] run scoreboard players set $murderer_ff GameRules 1
+execute if score $gamestate CmdData matches -1 if entity @a[scores={player_rule_update=13}] run scoreboard players set $murderer_ff GameRules 0
+
 execute unless score $gamestate CmdData matches -1 run tellraw @s ["",{"text":"Game rules can only be updated during the voting period!","color":"red"}]
 
 scoreboard players reset @a player_rule_update

@@ -44,8 +44,4 @@ execute at @s run tag @s add spectating
 
 tag @s remove TempDead
 
-advancement revoke @s only mcm:hit_detection/gun_hit
-advancement revoke @s only mcm:hit_detection/knife_hit
-advancement revoke @s only mcm:hit_detection/knife_melee_hit
-
 scoreboard players set @s dead 1
