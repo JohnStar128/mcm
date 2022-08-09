@@ -134,7 +134,8 @@ execute as @a[tag=murderer,tag=!spectating,scores={teleporterClick=1..},nbt={Sel
 
 #> Win conditions
 # Murderer victory
-execute if score $graceperiod CmdData matches ..0 if score $deadInnocents CmdData = $innocents CmdData run tellraw @a ["", "\n", {"text":"The Murderer has won!","color":"red"}, "\n"]
+execute if score $graceperiod CmdData matches ..0 if score $deadInnocents CmdData = $innocents CmdData if score $murderers GameRules matches ..1 run tellraw @a ["", "\n", {"text":"The Murderer has won!","color":"red"}, "\n"]
+execute if score $graceperiod CmdData matches ..0 if score $deadInnocents CmdData = $innocents CmdData if score $murderers GameRules matches 2.. run tellraw @a ["", "\n", {"text":"The Murderers have won!","color":"red"}, "\n"]
 execute if score $graceperiod CmdData matches ..0 if score $deadInnocents CmdData = $innocents CmdData run scoreboard players set $murderWin CmdData 1
 execute if score $graceperiod CmdData matches ..0 if score $deadInnocents CmdData = $innocents CmdData run scoreboard players set $gamestate CmdData 2
 
