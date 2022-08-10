@@ -30,6 +30,10 @@ execute if score $startcountdown CmdData matches 1 run clear @a[tag=queued]
 #> Update murderer count from queued players if smart murderer selection is on
 execute if score $smart_murderers GameRules matches 1 run function mcm:game/rules/smart_murderer_update
 
+#> Set the game timer
+execute if score $startcountdown CmdData matches 1 run scoreboard players set $gametimer CmdData 1200
+execute if score $startcountdown CmdData matches 1 run scoreboard players operation $gametimer CmdData *= $roundtimer GameRules
+
 #> Start the game
 execute if score $queued CmdData matches 3.. if score $startcountdown CmdData matches 1 run function mcm:game/createbossbar
 execute if score $queued CmdData matches 3.. if score $startcountdown CmdData matches 1 run function mcm:maps/start

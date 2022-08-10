@@ -5,8 +5,6 @@ execute if score $roundtimer GameRules matches ..4 run tellraw @s ["",{"text":"T
 execute if score $roundtimer GameRules matches ..4 run scoreboard players set $roundtimer GameRules 5
 execute if score $roundtimer GameRules matches 11.. run tellraw @s ["",{"text":"The game timer cannot be more than 10 minutes!","color":"red","italic":true}]
 execute if score $roundtimer GameRules matches 11.. run scoreboard players set $roundtimer GameRules 10
-scoreboard players set $gametimer CmdData 1200
-scoreboard players operation $gametimer CmdData *= $roundtimer GameRules
 
 #> Murderer selection
 execute if entity @a[scores={player_rule_update=3}] run scoreboard players add $murderers GameRules 1

@@ -96,6 +96,9 @@ scoreboard players set $smart_murderers GameRules 1
 scoreboard players set $murderer_ff GameRules 0
 scoreboard players set $startscrap GameRules 1
 
+#> Remove bossbar if reloading during game (which you still shouldn't do!)
+bossbar remove minecraft:gamedisplay
+
 #> Temp while maps 5 and 6 are in development
 kill @e[type=marker,tag=Cyberpunk]
 kill @e[type=marker,tag=Gumdrop]
