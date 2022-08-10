@@ -97,7 +97,7 @@ scoreboard players set $murderer_ff GameRules 0
 scoreboard players set $startscrap GameRules 1
 
 #> Temp while maps 5 and 6 are in development
-scoreboard players set @e[type=marker,tag=Cyberpunk] MapValues 1
-scoreboard players set @e[type=marker,tag=Gumdrop] MapValues 2
+kill @e[type=marker,tag=Cyberpunk]
+kill @e[type=marker,tag=Gumdrop]
 
 function mcm:lobby/voting/start
