@@ -78,3 +78,4 @@ function mcm:lobby/remove_items
 
 #> Set the how-to-play lectern back to the front page unless someone's close enough to read it
 execute positioned -1 1 79 unless entity @a[distance=..5] if entity @a[distance=6..10] run data merge block ~ ~ ~ {Page:0}
+execute positioned -1 1 79 if entity @a[distance=..5] run data modify block ~ ~ ~ Book merge from block ~ ~-2 ~ Items[0]
