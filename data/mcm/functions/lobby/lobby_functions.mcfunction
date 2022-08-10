@@ -70,7 +70,8 @@ execute if entity @a[predicate=mcm:bounding_boxes/credits] run function mcm:lobb
 execute unless entity @a[predicate=mcm:bounding_boxes/credits] if score $credit_timer CmdData matches 0.. positioned -30 -38 154 run function mcm:lobby/credits/reset
 
 #> Rule updates
-execute as @a[scores={player_rule_update=1..}] run function mcm:lobby/rule_update
+execute as @a[scores={player_rule_update=1..}] run function mcm:game/rules/try_rule_update
+execute as @a[nbt={SelectedItem:{id:"minecraft:written_book",Count:1b,tag:{HowToPlay:1b}}}] run item modify entity @s weapon.mainhand mcm:refresh_book
 
 #> Remove items players shouldn't have
 function mcm:lobby/remove_items

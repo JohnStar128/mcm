@@ -1,6 +1,10 @@
 #> Clear titles
-execute if score $roundtimer GameRules matches 1 if score $gametimer CmdData matches 4900 run title @a clear
-execute if score $roundtimer GameRules matches 2 if score $gametimer CmdData matches 11900 run title @a clear
+execute if score $roundtimer GameRules matches 10 if score $gametimer CmdData matches 11900 run title @a clear
+execute if score $roundtimer GameRules matches 9 if score $gametimer CmdData matches 10700 run title @a clear
+execute if score $roundtimer GameRules matches 8 if score $gametimer CmdData matches 9500 run title @a clear
+execute if score $roundtimer GameRules matches 7 if score $gametimer CmdData matches 8300 run title @a clear
+execute if score $roundtimer GameRules matches 6 if score $gametimer CmdData matches 7100 run title @a clear
+execute if score $roundtimer GameRules matches 5 if score $gametimer CmdData matches 5900 run title @a clear
 
 #> Make sure items can't be destroyed by lightning or fire
 execute as @e[type=item] run data merge entity @s {Fire:-1s,Invulnerable:1b}
@@ -19,8 +23,7 @@ execute as @e[type=item,tag=gun,nbt={CustomModelData:1111}] at @s if score @a[ta
 execute as @e[type=item,nbt={Item:{id:"minecraft:snowball",Count:1b,tag:{CustomModelData:1111}}}] run data modify entity @s Owner set from entity @s Thrower
 
 #> Minutely reminders
-execute if score $graceperiod CmdData matches ..1 if score $roundtimer GameRules matches 1 run function mcm:game/loops/5minute
-execute if score $graceperiod CmdData matches ..1 if score $roundtimer GameRules matches 2 run function mcm:game/loops/10minute
+execute if score $graceperiod CmdData matches ..1 if score $roundtimer GameRules matches 2 run function mcm:game/loops/game_timer
 
 #> Countdown grace period
 execute if score $graceperiod CmdData matches 1.. run scoreboard players remove $graceperiod CmdData 1

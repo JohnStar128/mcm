@@ -21,9 +21,6 @@ execute if entity @e[type=marker,tag=SelectedMap,tag=Vineyard] run function mcm:
 #Launch Complex
 execute if entity @e[type=marker,tag=SelectedMap,tag=Launchpad] run function mcm:maps/launchpad/activate
 
-#> A normal person would want the rules printed here, BEFORE the game starts, but alas, we live in a lazy world
-# execute as @a run function mcm:lobby/print_game_rules
-
 #> Change gamestate to 0 (Players can now join, game has not started yet)
 execute as @e[type=villager,tag=!available,tag=MapVoteEntity] run function mcm:util/dealloc_entity
 execute as @e[type=armor_stand,tag=!available,tag=MapVoteEntity] run function mcm:util/dealloc_entity

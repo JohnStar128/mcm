@@ -3,7 +3,7 @@
 scoreboard players operation $num_murderers CmdData = $murderers GameRules
 function mcm:game/assign_murderer
 
-run tellraw @a[tag=murderer] {"text":"You are ","color":"gold","extra":[{"text":"the murderer!","color":"red"}]}
+execute if score $murderers GameRules matches ..1 run tellraw @a[tag=murderer] {"text":"You are ","color":"gold","extra":[{"text":"the murderer!","color":"red"}]}
 title @a[tag=murderer] title {"text":"You are ","color":"gold","extra":[{"text":"the murderer!","color":"red"}]}
 execute if score $murderers GameRules matches ..1 run title @a[tag=murderer] subtitle {"text":"Kill the innocents ","color":"gold"}
 execute if score $murderers GameRules matches 2.. as @a[tag=murderer] run title @s subtitle ["", {"text":"with ","color":"gold"}, {"selector":"@p[tag=murderer,distance=0.01..]","color":"green"}]

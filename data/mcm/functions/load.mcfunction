@@ -87,7 +87,17 @@ scoreboard players operation @a gameID = $gameID CmdData
 #> Reset players back to a known default state
 execute as @a run function mcm:player_leave
 
+#> Load default game rules
+scoreboard players set $roundtimer GameRules 10
+scoreboard players set $animate GameRules 1
+scoreboard players set $autostart GameRules 1
+scoreboard players set $murderers GameRules 1
+scoreboard players set $smart_murderers GameRules 1
+scoreboard players set $murderer_ff GameRules 0
+scoreboard players set $startscrap GameRules 1
 
 #> Temp while maps 5 and 6 are in development
 scoreboard players set @e[type=marker,tag=Cyberpunk] MapValues 1
 scoreboard players set @e[type=marker,tag=Gumdrop] MapValues 2
+
+function mcm:lobby/voting/start

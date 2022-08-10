@@ -27,6 +27,9 @@ execute if score $startcountdown CmdData matches 1 if score $queued CmdData matc
 #> Clear lobby items if game starts
 execute if score $startcountdown CmdData matches 1 run clear @a[tag=queued]
 
+#> Update murderer count from queued players if smart murderer selection is on
+execute if score $smart_murderers GameRules matches 1 run function mcm:game/rules/smart_murderer_update
+
 #> Start the game
 execute if score $queued CmdData matches 3.. if score $startcountdown CmdData matches 1 run function mcm:game/createbossbar
 execute if score $queued CmdData matches 3.. if score $startcountdown CmdData matches 1 run function mcm:maps/start
@@ -34,12 +37,8 @@ execute if score $queued CmdData matches 3.. if score $startcountdown CmdData ma
 #> Give players their hats back if they were replaced
 execute if score $startcountdown CmdData matches 1 as @a[tag=queued] run function mcm:cosmetics/change_cosmetics
 
-#> "Smart" murderer assignment
-execute if score $smart_murderers GameRules matches 1 if score $queued CmdData matches ..7 run scoreboard players set $murderers GameRules 1
-execute if score $smart_murderers GameRules matches 1 if score $queued CmdData matches 8.. run scoreboard players set $murderers GameRules 2
-
-#> Re-print rules for idiots who refuse to scroll up
-execute if score $queued CmdData matches 3.. if score $startcountdown CmdData matches 1 as @a run function mcm:lobby/print_game_rules
+#> Print rules
+execute if score $queued CmdData matches 3.. if score $startcountdown CmdData matches 1 as @a run function mcm:game/rules/print_game_rules
 
 execute if score $startcountdown CmdData matches 1 run scoreboard players set @s deferred_queue 0
 
