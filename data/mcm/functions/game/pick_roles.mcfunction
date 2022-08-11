@@ -6,8 +6,8 @@ function mcm:game/assign_murderer
 execute if score $murderers GameRules matches ..1 run tellraw @a[tag=murderer] {"text":"You are ","color":"gold","extra":[{"text":"the murderer!","color":"red"}]}
 title @a[tag=murderer] title {"text":"You are ","color":"gold","extra":[{"text":"the murderer!","color":"red"}]}
 execute if score $murderers GameRules matches ..1 run title @a[tag=murderer] subtitle {"text":"Kill the innocents ","color":"gold"}
-execute if score $murderers GameRules matches 2.. as @a[tag=murderer] run title @s subtitle ["", {"text":"with ","color":"gold"}, {"selector":"@p[tag=murderer,distance=0.01..]","color":"green"}]
-execute if score $murderers GameRules matches 2.. run tellraw @a[tag=murderer] ["" ,{"selector":"@p[tag=murderer,distance=0.01..]","color":"red"}, {"text":" and ","color":"gold"}, {"selector":"@s","color":"red"} ,{"text":" are the ","color":"gold"},{"text":"murderers!","color":"red"}]
+execute if score $murderers GameRules matches 2.. as @a[tag=murderer] at @s run title @s subtitle ["", {"text":"with ","color":"gold"}, {"selector":"@p[tag=murderer,distance=1..]","color":"green"}]
+execute if score $murderers GameRules matches 2.. as @a[tag=murderer] at @s run tellraw @s ["" ,{"selector":"@p[tag=murderer,distance=1..]","color":"red"}, {"text":" and ","color":"gold"}, {"selector":"@s","color":"red"} ,{"text":" are the ","color":"gold"},{"text":"murderers!","color":"red"}]
 
 # Murderer items
 execute as @a[tag=murderer] run item replace entity @s hotbar.1 with snowball{Unbreakable:1,CustomModelData:1111,AttributeModifiers:[{AttributeName:"generic.attack_damage",Amount:100,Slot:mainhand,Name:"generic.attack_damage",UUID:[I;-122419,10812,22346,-21624]}],display:{Name:'[{"translate":"mcm.item.knife","italic":false}]',Lore:['[{"translate":"mcm.item.knife.lore","italic":false}]']}} 1
