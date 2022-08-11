@@ -19,7 +19,7 @@ execute as @a[tag=murderer] run item replace entity @s hotbar.8 with netherite_s
 # Gunner
 execute as @a[tag=queued,tag=!murderer,limit=1,sort=random] at @s run tag @s add gunner
 # Gun gets NoDrop because it's already in an inventory
-execute as @a[tag=gunner] run item replace entity @s hotbar.1 with warped_fungus_on_a_stick{NoDrop:1b,Unbreakable:1,CustomModelData:1111,display:{Name:'[{"translate":"mcm.item.gun","italic":false}]',Lore:['[{"translate":"mcm.item.gun.lore","italic":false}]']}} 1
+execute as @a[tag=gunner] run item replace entity @s hotbar.1 with warped_fungus_on_a_stick{NoDrop:1b,Unbreakable:1,Autoqueue:0b,Deautoqueue:0b,CustomModelData:1111,display:{Name:'[{"translate":"mcm.item.gun","italic":false}]',Lore:['[{"translate":"mcm.item.gun.lore","italic":false}]']}} 1
 execute as @a[tag=gunner] at @s run tellraw @s ["","\n",{"text":"You are ","color":"gold"},{"text":"the gunner","color":"dark_aqua"}]
 execute as @a[tag=gunner] at @s run title @s title ["",{"text":"You are ","color":"gold"},{"text":"the gunner","color":"dark_aqua"}]
 execute as @a[tag=gunner] at @s run title @s subtitle ["",{"text":"Kill the murderer ","color":"dark_gray"}]
