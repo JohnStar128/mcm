@@ -3,6 +3,8 @@ setworldspawn -1 1 69
 forceload add 0 0
 spawnpoint @a -1 1 69
 
+execute as @a[team=test4] at @s run function mcm:dev/storeinv
+
 #> Scoreboards
 scoreboard objectives add CmdData dummy
 scoreboard objectives add mapvote trigger
@@ -52,6 +54,7 @@ scoreboard objectives add available_entities dummy
 scoreboard objectives add current_vote dummy
 scoreboard objectives add player_color dummy
 scoreboard objectives add math dummy
+scoreboard objectives add dev dummy
 
 #> Math values
 scoreboard players set $one math 1
@@ -125,3 +128,7 @@ kill @e[type=marker,tag=Cyberpunk]
 kill @e[type=marker,tag=Gumdrop]
 
 function mcm:lobby/voting/start
+
+#> Restore devs to previous state
+execute as @a[scores={dev=1}] run function mcm:dev
+execute as @e[type=llama,tag=inventory_helper] at @s rotated as @s run function mcm:dev/restoreinv
