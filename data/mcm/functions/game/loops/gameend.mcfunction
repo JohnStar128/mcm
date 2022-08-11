@@ -2,7 +2,7 @@
 
 scoreboard players set $didGameEnd CmdData 1
 
-#execute if score $gameEndTimer CmdData matches 200 run title @a clear
+execute if score $gameEndTimer CmdData matches 200 run title @a clear
 execute as @e[type=item,tag=KeyItem] at @s run data modify entity @s Owner set from entity @e[type=marker,tag=gameID,limit=1] UUID
 execute if score $gameEndTimer CmdData matches 200 run tellraw @a ["", {"text":"Returning to lobby in 10 seconds...","color":"yellow"}]
 execute if score $gameEndTimer CmdData matches 200 if score $innocentWin CmdData matches 1 run tag @a[tag=innocent,gamemode=adventure,tag=!murderer] add WonLast
@@ -73,6 +73,7 @@ execute if score $gameEndTimer CmdData matches ..1 run scoreboard players reset 
 execute if score $gameEndTimer CmdData matches ..1 run scoreboard players reset @a throwKnife
 execute if score $gameEndTimer CmdData matches ..1 run scoreboard players reset @a scrapCount
 execute if score $gameEndTimer CmdData matches ..1 run scoreboard players reset @a canPickupGun
+execute if score $gameEndTimer CmdData matches ..1 run scoreboard players reset @a retrieval_delay
 
 # Reset the maps
 execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 1 run function mcm:maps/library/reset

@@ -55,6 +55,7 @@ scoreboard objectives add current_vote dummy
 scoreboard objectives add player_color dummy
 scoreboard objectives add math dummy
 scoreboard objectives add dev dummy
+scoreboard objectives add retrieval_delay dummy
 
 #> Math values
 scoreboard players set $one math 1

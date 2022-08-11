@@ -123,11 +123,14 @@ execute as @a[tag=murderer,tag=!retrieved,nbt=!{Inventory:[{id:"minecraft:carrot
 
 #> Remove retrieval item if they pick up the knife and reset scores
 execute as @a[tag=murderer,nbt={Inventory:[{id:"minecraft:snowball",Count:1b,tag:{CustomModelData:1111}}]}] run clear @s carrot_on_a_stick{CustomModelData:1111}
-execute as @a[tag=murderer] at @s run scoreboard players reset @s throwKnife
+execute as @a[tag=murderer,scores={throwKnife=1..}] run scoreboard players set @s retrieval_delay 10
+scoreboard players reset @a[tag=murderer] throwKnife
 
 #> Have the auto retrieval item do stuff
+scoreboard players remove @a[tag=murderer] retrieval_delay 1
 execute as @a[tag=murderer,tag=retrieved] run scoreboard players reset @s knifeRetrieval
-execute as @a[tag=murderer,scores={knifeRetrieval=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1111}}}] at @s run function mcm:game/items/knife/retrieve
+execute as @a[tag=murderer,scores={retrieval_delay=1..}] run scoreboard players reset @s knifeRetrieval
+execute as @a[tag=murderer,scores={knifeRetrieval=1..,retrieval_delay=..0},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1111}}}] at @s run function mcm:game/items/knife/retrieve
 
 #> Clicking the adrenaline item gives buffs
 execute as @a[tag=murderer,scores={adrenalineClick=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1113}}}] at @s run function mcm:game/items/adrenaline/use
