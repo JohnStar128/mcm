@@ -52,6 +52,27 @@ scoreboard objectives add available_entities dummy
 scoreboard objectives add current_vote dummy
 scoreboard objectives add player_color dummy
 scoreboard objectives add math dummy
+
+#> Math values
+scoreboard players set $one math 1
+scoreboard players set $two math 2
+scoreboard players set $three math 3
+scoreboard players set $four math 4
+scoreboard players set $five math 5
+scoreboard players set $six math 6
+scoreboard players set $seven math 7
+scoreboard players set $eight math 9
+scoreboard players set $nine math 9
+scoreboard players set $ten math 10
+scoreboard players set $eleven math 11
+scoreboard players set $twelve math 12
+scoreboard players set $thirteen math 13
+scoreboard players set $fourteen math 14
+scoreboard players set $fifteen math 15
+scoreboard players set $sixteen math 16
+scoreboard players set $seventeen math 17
+scoreboard players set $eighteen math 18
+scoreboard players set $nineteen math 19
 scoreboard players set $twenty math 20
 
 execute as @e[type=villager,tag=Usher] run data modify entity @s Offers set value {}

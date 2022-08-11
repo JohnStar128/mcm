@@ -1,0 +1,4 @@
+{
+    "function": "set_nbt",
+    "tag": "{Deautoqueue:1b,CustomModelData:1235,display:{Name:'[{\"text\":\"Disable AutoQueue\",\"italic\":false,\"color\":\"red\"}]'}}"
+}

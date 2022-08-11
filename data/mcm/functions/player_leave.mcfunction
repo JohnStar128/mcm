@@ -25,6 +25,7 @@ tag @s remove Voted
 tag @s remove testing_range
 tag @s remove launch_player
 tag @s remove autoqueue
+tag @s remove autoqueue_spam_prevention
 
 #> Print game rules if voting or queueing
 execute if score $gamestate CmdData matches 0..1 run playsound minecraft:entity.experience_orb.pickup block @s ~ ~ ~
@@ -89,6 +90,6 @@ scoreboard players reset @s current_vote
 #> Items
 clear @s
 function mcm:cosmetics/change_cosmetics
-execute run item replace entity @s hotbar.8 with warped_fungus_on_a_stick{CustomModelData:1234,NoDrop:1b,display:{Name:'[{"translate":"mcm.item.autoqueue.enable","italic":false,"color":"green"}]'}}
+execute run item replace entity @s hotbar.8 with warped_fungus_on_a_stick{CustomModelData:1234,NoDrop:1b,Autoqueue:1b,display:{Name:'[{"translate":"mcm.item.autoqueue.enable","italic":false,"color":"green"}]'}}
 #> How to play book
 item replace entity @s hotbar.4 with written_book{HowToPlay:1b,NoDrop:1b}

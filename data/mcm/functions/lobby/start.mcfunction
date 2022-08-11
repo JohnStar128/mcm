@@ -12,7 +12,7 @@ execute if score $start CmdData matches 1.. run scoreboard players remove $start
 execute if score $startcountdown CmdData matches 199 run tellraw @a {"text":"The game begins in 10.."}
 execute if score $startcountdown CmdData matches 199 run playsound minecraft:entity.villager.yes neutral @s ~ ~ ~ 1 1 0
 execute if score $startcountdown CmdData matches 112 as @a run playsound minecraft:movie_start record @s ~ ~ ~ 1 1 1
-execute if score $startcountdown CmdData matches 0..100 run function mcm:game/loops/screen
+execute if score $startcountdown CmdData matches 0..100 positioned -28 -2 93 run function mcm:game/loops/screen
 execute if score $startcountdown CmdData matches 100 run tellraw @a {"text":"The game begins in 5.."}
 execute if score $startcountdown CmdData matches 80 run tellraw @a {"text":"The game begins in 4.."}
 execute if score $startcountdown CmdData matches 60 run tellraw @a {"text":"The game begins in 3.."}
