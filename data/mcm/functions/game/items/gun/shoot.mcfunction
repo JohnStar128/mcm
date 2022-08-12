@@ -10,6 +10,13 @@ execute as @a[tag=HoldGun,tag=!shotGun,scores={gunclick=1..}] at @s anchored eye
 execute as @a[tag=HoldGun,tag=shotGun,scores={gunclick=1..,gundelay=3..20}] at @s run function mcm:game/items/gun/clicksound
 
 scoreboard players add @a[tag=shotGun] gundelay 1
+
+#> Show delay
+xp set @a[scores={gundelay=25..}] 0 levels
+xp set @a[scores={gundelay=1}] 9 levels
+xp set @a[scores={gundelay=1}] 24 points
+xp add @a[scores={gundelay=2..}] -1 points
+
 execute as @a[tag=shotGun,scores={gundelay=25}] at @s run function mcm:game/items/gun/loadsound
 tag @a[scores={gundelay=25..}] remove shotGun
 scoreboard players reset @a[scores={gundelay=1..},tag=!shotGun] gundelay
