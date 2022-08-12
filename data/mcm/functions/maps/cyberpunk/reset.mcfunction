@@ -9648,3 +9648,5 @@ execute unless block -1971 110 2058 minecraft:dark_oak_trapdoor[waterlogged=fals
 execute unless block -1971 111 2058 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -1971 111 2058 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace 
 execute unless block -1971 112 2058 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=true] run setblock -1971 112 2058 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=true] replace 
 execute unless block -1971 113 2058 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=true] run setblock -1971 113 2058 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=south,open=true] replace 
+
+forceload remove -2178 1968 -1969 2135

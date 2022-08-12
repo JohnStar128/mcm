@@ -104,3 +104,6 @@ execute unless block 1032 30 -3050 minecraft:dark_oak_trapdoor[waterlogged=false
 execute unless block 1028 30 -3049 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock 1028 30 -3049 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace 
 execute unless block 1028 31 -3051 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock 1028 31 -3051 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace 
 execute unless block 1028 31 -3049 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock 1028 31 -3049 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace 
+
+forceload remove 867 -2907 1087 -2864
+forceload remove 915 -3057 1136 -2864
