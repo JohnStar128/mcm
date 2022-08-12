@@ -11,5 +11,3 @@ execute if score @s selected_hat matches 1 run function mcm:cosmetics/rainbowhat
 execute if score @s selected_hat matches 2 run function mcm:cosmetics/lance
 execute if score @s selected_hat matches 3 run function mcm:cosmetics/spacehelmet
 execute if score @s selected_hat matches 4 run function mcm:cosmetics/3dglasses
-
-function mcm:cosmetics/color_boots

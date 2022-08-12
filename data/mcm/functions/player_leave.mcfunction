@@ -24,7 +24,6 @@ tag @s remove viewbossbar
 tag @s remove Voted
 tag @s remove testing_range
 tag @s remove launch_player
-tag @s remove autoqueue
 tag @s remove autoqueue_spam_prevention
 
 #> Print game rules if voting or queueing
@@ -90,6 +89,10 @@ scoreboard players reset @s current_vote
 #> Items
 clear @s
 function mcm:cosmetics/change_cosmetics
-execute run item replace entity @s hotbar.8 with warped_fungus_on_a_stick{CustomModelData:1234,NoDrop:1b,Autoqueue:1b,display:{Name:'[{"translate":"mcm.item.autoqueue.enable","italic":false,"color":"green"}]'}}
+function mcm:cosmetics/color_boots/generate
+execute as @s[tag=autoqueue] run item replace entity @s hotbar.8 with warped_fungus_on_a_stick{CustomModelData:1235,NoDrop:1b,Autoqueue:1b,display:{Name:'[{"translate":"mcm.item.autoqueue.disable","italic":false,"color":"green"}]'}}
+execute as @s[tag=autoqueue] at @s run function mcm:lobby/queueing/autoqueue
+execute as @s[tag=!autoqueue] run item replace entity @s hotbar.8 with warped_fungus_on_a_stick{CustomModelData:1234,NoDrop:1b,Autoqueue:1b,display:{Name:'[{"translate":"mcm.item.autoqueue.enable","italic":false,"color":"green"}]'}}
+
 #> How to play book
 item replace entity @s hotbar.4 with written_book{HowToPlay:1b,NoDrop:1b}

@@ -7,19 +7,19 @@ execute as @e[type=arrow,tag=NewGunShot] at @a[tag=HoldGun,tag=!shotGun,scores={
 execute as @a[tag=HoldGun,tag=!shotGun,scores={gunclick=1..}] at @s run playsound gun_shoot master @a ~ ~ ~ 2 1
 execute as @a[tag=HoldGun,tag=!shotGun,scores={gunclick=1..}] at @s anchored eyes run tp @s ~ ~ ~ ~ ~-3
 execute as @a[tag=HoldGun,tag=!shotGun,scores={gunclick=1..}] at @s anchored eyes run tag @s add shotGun
-execute as @a[tag=HoldGun,tag=shotGun,scores={gunclick=1..,gundelay=3..20}] at @s run function mcm:game/items/gun/clicksound
+execute as @a[tag=HoldGun,tag=shotGun,scores={gunclick=1..,gundelay=3..45}] at @s run function mcm:game/items/gun/clicksound
 
-scoreboard players add @a[tag=shotGun] gundelay 1
+scoreboard players remove @a[tag=shotGun] gundelay 1
 
 #> Show delay
-xp set @a[scores={gundelay=25..}] 0 levels
-xp set @a[scores={gundelay=1}] 9 levels
-xp set @a[scores={gundelay=1}] 24 points
-xp add @a[scores={gundelay=2..}] -1 points
+xp set @a[scores={gundelay=..1}] 0 levels
+xp set @a[scores={gundelay=49}] 18 levels
+xp set @a[scores={gundelay=49}] 50 points
+xp add @a[scores={gundelay=..48}] -1 points
 
-execute as @a[tag=shotGun,scores={gundelay=25}] at @s run function mcm:game/items/gun/loadsound
-tag @a[scores={gundelay=25..}] remove shotGun
-scoreboard players reset @a[scores={gundelay=1..},tag=!shotGun] gundelay
+execute as @a[tag=shotGun,scores={gundelay=0}] at @s run function mcm:game/items/gun/loadsound
+tag @a[scores={gundelay=..0}] remove shotGun
+scoreboard players set @a[scores={gundelay=..0},tag=!shotGun] gundelay 51
 
 tag @a[tag=HoldGun] remove HoldGun
 execute as @e[type=armor_stand,tag=BulletDeco] at @s unless entity @e[type=arrow,tag=GunShot,distance=..200] run kill @s
