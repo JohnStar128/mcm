@@ -4163,3 +4163,6 @@ execute unless block 1095 134 1028 minecraft:dark_oak_trapdoor[waterlogged=false
 execute unless block 1092 134 1029 minecraft:crimson_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock 1092 134 1029 minecraft:crimson_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
 execute unless block 1093 134 1029 minecraft:crimson_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock 1093 134 1029 minecraft:crimson_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace
 execute unless block 1090 134 1030 minecraft:dark_oak_fence_gate[in_wall=false,powered=false,facing=west,open=true] run setblock 1090 134 1030 minecraft:dark_oak_fence_gate[in_wall=false,powered=false,facing=west,open=true] replace
+
+forceload remove 1023 960 912 1039
+forceload remove 1023 960 1108 1039

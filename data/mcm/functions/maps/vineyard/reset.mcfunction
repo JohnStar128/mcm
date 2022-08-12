@@ -3112,3 +3112,5 @@ execute unless block 2084 90 2048 air unless block 2084 90 2048 minecraft:acacia
 execute unless block 2081 96 2048 air unless block 2081 96 2048 minecraft:acacia_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] run setblock 2081 96 2048 minecraft:acacia_trapdoor[waterlogged=false,half=bottom,powered=false,facing=east,open=true] replace
 execute unless block 2081 97 2048 air unless block 2081 97 2048 minecraft:acacia_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] run setblock 2081 97 2048 minecraft:acacia_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] replace
 execute unless block 2084 98 2048 air unless block 2084 98 2048 minecraft:acacia_fence_gate[in_wall=false,powered=false,facing=west,open=false] run setblock 2084 98 2048 minecraft:acacia_fence_gate[in_wall=false,powered=false,facing=west,open=false] replace
+
+forceload remove 2111 2095 1937 1911

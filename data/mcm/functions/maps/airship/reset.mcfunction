@@ -650,3 +650,5 @@ execute unless block -588 58 2 minecraft:dark_oak_trapdoor[waterlogged=false,hal
 execute unless block -589 58 3 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -589 58 3 minecraft:dark_oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace
 execute unless block -587 58 3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] run setblock -587 58 3 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=east,open=true] replace
 execute unless block -586 61 0 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] run setblock -586 61 0 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=false] replace
+
+forceload remove -555 -56 -744 77

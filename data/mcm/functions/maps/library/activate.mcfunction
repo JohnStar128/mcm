@@ -1,5 +1,6 @@
 #> Forceload the library map
 forceload add 1023 960 912 1039
+forceload add 1023 960 1108 1039
 
 #> Kill potential leftover entities
 kill @e[tag=MapEntity]

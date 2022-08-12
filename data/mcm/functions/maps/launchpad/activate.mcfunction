@@ -1,6 +1,7 @@
 #> Forceload the floating islands map
-forceload add -860 -1100 -1170 -1262
+forceload add -860 -1100 -1170 -1280
 forceload add -860 -1100 -1128 -997
+forceload add -961 -881 -1136 -976
 
 #> Kill potential leftover entities
 kill @e[tag=MapEntity]

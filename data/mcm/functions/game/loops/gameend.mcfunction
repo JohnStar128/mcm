@@ -15,6 +15,9 @@ execute if score $gameEndTimer CmdData matches 200 if score $murderWin CmdData m
 execute if score $gameEndTimer CmdData matches 200 if score $murderWin CmdData matches 1 run playsound minecraft:ui.toast.challenge_complete ambient @a[tag=murderer] ~ ~ ~ 1 1 1
 execute if score $gameEndTimer CmdData matches 200 run bossbar remove minecraft:gamedisplay
 
+# disable friendly fire
+execute if score $gameEndTimer CmdData matches 199 run team join nametags @a[tag=queued,team=!nametags]
+
 scoreboard players remove $gameEndTimer CmdData 1
 
 # teleport
@@ -90,9 +93,6 @@ execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData
 execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 2 run function mcm:maps/airship/reset
 execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 3 run function mcm:maps/vineyard/reset
 execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 4 run function mcm:maps/launchpad/reset
-
-# disable friendly fire
-execute if score $gameEndTimer CmdData matches 199 run team join nametags @a[tag=queued,team=!nametags]
 
 #> Count AFK people so they don't autoqueue
 execute if score $gameEndTimer CmdData matches ..1 run tag @a add afk

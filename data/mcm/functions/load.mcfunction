@@ -1,5 +1,6 @@
-#> Make sure 0,0 is loaded, this is where all the ✨ magic ✨ happens
+#> Make sure 0,0 and spawn are loaded, this is where all the ✨ magic ✨ happens
 setworldspawn -1 1 69
+forceload add -64 16 47 184
 forceload add 0 0
 spawnpoint @a -1 1 69
 
