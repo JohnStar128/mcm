@@ -1,22 +1,40 @@
 #> Red offset is 65536, green offset is 256, blue offset is 0
 #> Colors cycles from 0xfc77__, 0xfc__77, 0x__fc77, 0x77fc__, 0x77__fc, 0x__77fc, in that order
-execute if score $color_cycle player_color matches 0 run scoreboard players operation $color_extra player_color = $red player_color
+execute if score $color_cycle player_color matches 0 run scoreboard players operation $color_extra player_color = $color_const_1 player_color
 execute if score $color_cycle player_color matches 0 run scoreboard players operation $color_extra player_color *= $red_offset player_color
 execute if score $color_cycle player_color matches 0 run scoreboard players operation @s player_color = $color_const_2 player_color
 execute if score $color_cycle player_color matches 0 run scoreboard players operation @s player_color *= $green_offset player_color
 execute if score $color_cycle player_color matches 0 run scoreboard players operation @s player_color += $color_variable player_color
 
-execute if score $color_cycle player_color matches 1 run scoreboard players operation $color_extra player_color = $red player_color
+execute if score $color_cycle player_color matches 1 run scoreboard players operation $color_extra player_color = $color_const_1 player_color
 execute if score $color_cycle player_color matches 1 run scoreboard players operation $color_extra player_color *= $red_offset player_color
 execute if score $color_cycle player_color matches 1 run scoreboard players operation @s player_color = $color_variable player_color
 execute if score $color_cycle player_color matches 1 run scoreboard players operation @s player_color *= $green_offset player_color
-execute if score $color_cycle player_color matches 1 run scoreboard players operation @s player_color += $blue player_color
+execute if score $color_cycle player_color matches 1 run scoreboard players operation @s player_color += $color_const_2 player_color
 
 execute if score $color_cycle player_color matches 2 run scoreboard players operation $color_extra player_color = $color_variable player_color
 execute if score $color_cycle player_color matches 2 run scoreboard players operation $color_extra player_color *= $red_offset player_color
-execute if score $color_cycle player_color matches 2 run scoreboard players operation @s player_color = $green player_color
+execute if score $color_cycle player_color matches 2 run scoreboard players operation @s player_color = $color_const_1 player_color
 execute if score $color_cycle player_color matches 2 run scoreboard players operation @s player_color *= $green_offset player_color
-execute if score $color_cycle player_color matches 2 run scoreboard players operation @s player_color += $blue player_color
+execute if score $color_cycle player_color matches 2 run scoreboard players operation @s player_color += $color_const_2 player_color
+
+execute if score $color_cycle player_color matches 3 run scoreboard players operation $color_extra player_color = $color_const_2 player_color
+execute if score $color_cycle player_color matches 3 run scoreboard players operation $color_extra player_color *= $red_offset player_color
+execute if score $color_cycle player_color matches 3 run scoreboard players operation @s player_color = $color_const_1 player_color
+execute if score $color_cycle player_color matches 3 run scoreboard players operation @s player_color *= $green_offset player_color
+execute if score $color_cycle player_color matches 3 run scoreboard players operation @s player_color += $color_variable player_color
+
+execute if score $color_cycle player_color matches 4 run scoreboard players operation $color_extra player_color = $color_const_2 player_color
+execute if score $color_cycle player_color matches 4 run scoreboard players operation $color_extra player_color *= $red_offset player_color
+execute if score $color_cycle player_color matches 4 run scoreboard players operation @s player_color = $color_variable player_color
+execute if score $color_cycle player_color matches 4 run scoreboard players operation @s player_color *= $green_offset player_color
+execute if score $color_cycle player_color matches 4 run scoreboard players operation @s player_color += $color_const_1 player_color
+
+execute if score $color_cycle player_color matches 5 run scoreboard players operation $color_extra player_color = $color_variable player_color
+execute if score $color_cycle player_color matches 5 run scoreboard players operation $color_extra player_color *= $red_offset player_color
+execute if score $color_cycle player_color matches 5 run scoreboard players operation @s player_color = $color_const_2 player_color
+execute if score $color_cycle player_color matches 5 run scoreboard players operation @s player_color *= $green_offset player_color
+execute if score $color_cycle player_color matches 5 run scoreboard players operation @s player_color += $color_const_1 player_color
 
 #> Add the red component
 scoreboard players operation @s player_color += $color_extra player_color
