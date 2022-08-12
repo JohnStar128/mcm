@@ -9,7 +9,7 @@ kill @e[tag=MapEntity]
 #> Lobby poster visual
 fill 27 5 104 27 1 107 warped_trapdoor[open=true,facing=west] replace crimson_trapdoor
 
-summon glow_squid -1016 48 -1097 {PersistenceRequired:1b,Tags:["MapEntity","Squid"],Invulnerable:1b,CustomName:"{\"text\":\"Radioactive Squid\"}",CustomNameVisible:1b,Persistent:1}
+summon glow_squid -1016 48 -1097 {PersistenceRequired:1b,Tags:["MapEntity","Squid"],Invulnerable:1b,CustomName:"{\"text\":\"Radioactive Squid\"}",Persistent:1}
 
 #> John's spawnpoint
 execute as @e[type=marker,tag=available,tag=JohnSpawn,limit=1] positioned -1029 53 -1268 run function mcm:util/alloc_entity
