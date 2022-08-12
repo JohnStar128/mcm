@@ -106,7 +106,7 @@ execute as @a[tag=innocent,nbt={Inventory:[{id:"minecraft:carrot_on_a_stick",Cou
 execute as @a[nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] if entity @s[nbt={Inventory:[{id:"minecraft:netherite_scrap"}]}] run clear @s netherite_scrap
 
 #> Player tracker (Math stuff courtesy of some dude on MCC Discord rx)
-execute as @a[tag=murderer,tag=!spectating,nbt={SelectedItem:{id:"minecraft:stick",Count:1b,tag:{CustomModelData:1111}}}] at @s positioned as @a[tag=innocent,tag=!spectating,limit=1,sort=nearest] run function mcm:game/items/player_tracker/find_player
+execute as @a[tag=murderer,tag=!spectating,predicate=mcm:items/hold_tracker] at @s positioned as @a[tag=innocent,tag=!spectating,limit=1,sort=nearest] run function mcm:game/items/player_tracker/find_player
 
 #> Knife throwing
 execute as @e[type=snowball] at @s run function mcm:game/items/knife/throw

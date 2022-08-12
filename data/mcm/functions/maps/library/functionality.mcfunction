@@ -1,4 +1,4 @@
-execute as @e[type=marker,tag=Chandelier] at @s if entity @a[tag=!spectating,limit=3] if entity @a[tag=!spectating,limit=3,distance=..3] run scoreboard players add $chandelierdroptimer CmdData 1
+execute positioned as @e[type=marker,tag=Chandelier] as @a[tag=!spectating,limit=3,distance=..3] run scoreboard players add $chandelierdroptimer CmdData 1
 execute as @e[type=marker,tag=Chandelier] at @s unless entity @a[tag=!spectating,limit=3,distance=..3] run scoreboard players set $chandelierdroptimer CmdData 0
 
 #> Enable taking books
