@@ -94,8 +94,12 @@ execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData
 # disable friendly fire
 execute if score $gameEndTimer CmdData matches 199 run team join nametags @a[tag=queued,team=!nametags]
 
-#> re-autoqueue people
-execute if score $gameEndTimer CmdData matches ..1 as @a[tag=autoqueue] at @s run function mcm:lobby/queueing/autoqueue
+#> Count AFK people so they don't autoqueue
+execute if score $gameEndTimer CmdData matches ..1 run tag @a add afk
+execute if score $gameEndTimer CmdData matches ..1 run scoreboard players reset @a[tag=afk] walk
+execute if score $gameEndTimer CmdData matches ..1 run scoreboard players reset @a[tag=afk] sprint
+execute if score $gameEndTimer CmdData matches ..1 run scoreboard players reset @a[tag=afk] crouch
+execute if score $gameEndTimer CmdData matches ..1 run scoreboard players reset @a[tag=afk] jump
 
 #> Reset the lobby
 execute if score $gameEndTimer CmdData matches ..1 run function mcm:lobby/lobby_reset
