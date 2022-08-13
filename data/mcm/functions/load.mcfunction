@@ -59,6 +59,7 @@ scoreboard objectives add dev dummy
 scoreboard objectives add retrieval_delay dummy
 
 #> Math values
+scoreboard players set $minus_one math -1
 scoreboard players set $one math 1
 scoreboard players set $two math 2
 scoreboard players set $three math 3
@@ -79,6 +80,13 @@ scoreboard players set $seventeen math 17
 scoreboard players set $eighteen math 18
 scoreboard players set $nineteen math 19
 scoreboard players set $twenty math 20
+scoreboard players set $sixty math 60 
+
+#> Colors
+scoreboard players set $red_offset player_color 65536
+scoreboard players set $green_offset player_color 256
+scoreboard players set $max_rgb player_color 256
+scoreboard players set $max_angle player_color 360
 
 execute as @e[type=villager,tag=Usher] run data modify entity @s Offers set value {}
 execute as @e[type=villager,tag=credits_usher] run data modify entity @s Offers set value {}

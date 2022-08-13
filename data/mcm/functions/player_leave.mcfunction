@@ -89,10 +89,18 @@ scoreboard players reset @s current_vote
 #> Items
 clear @s
 function mcm:cosmetics/change_cosmetics
-function mcm:cosmetics/color_boots/generate
 execute as @s[tag=autoqueue] run item replace entity @s hotbar.8 with warped_fungus_on_a_stick{CustomModelData:1235,NoDrop:1b,Autoqueue:1b,display:{Name:'[{"translate":"mcm.item.autoqueue.disable","italic":false,"color":"green"}]'}}
 execute as @s[tag=autoqueue] at @s run function mcm:lobby/queueing/autoqueue
 execute as @s[tag=!autoqueue] run item replace entity @s hotbar.8 with warped_fungus_on_a_stick{CustomModelData:1234,NoDrop:1b,Autoqueue:1b,display:{Name:'[{"translate":"mcm.item.autoqueue.enable","italic":false,"color":"green"}]'}}
 
 #> How to play book
 item replace entity @s hotbar.4 with written_book{HowToPlay:1b,NoDrop:1b}
+
+#> Update players' colors (Starts at a predefined 0x0077FF light blue color)
+execute store result score $online player_color if entity @e[tag=test]
+scoreboard players operation $angle player_color = $max_angle player_color
+scoreboard players operation $angle player_color /= $online player_color
+scoreboard players set $prev player_color 30719
+scoreboard players set $change_color CmdData 1 
+function mcm:cosmetics/color_boots/get_rgb
+function mcm:cosmetics/color_boots/rgb_to_hsv

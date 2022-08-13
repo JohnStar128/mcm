@@ -86,3 +86,7 @@ execute as @a[tag=afk,scores={walk=1000..}] run function mcm:lobby/manage_afk
 execute as @a[tag=afk,scores={sprint=1..}] run function mcm:lobby/manage_afk
 execute as @a[tag=afk,scores={crouch=1..}] run function mcm:lobby/manage_afk
 execute as @a[tag=afk,scores={jump=1..}] run function mcm:lobby/manage_afk
+
+#> Change boots if more players log on
+execute if score $gamestate CmdData matches -1..0 if score $change_color CmdData matches 1.. as @e[tag=test] run function mcm:cosmetics/color_boots/generate
+execute if score $gamestate CmdData matches -1..0 if score $change_color CmdData matches 1.. run scoreboard players set $change_color CmdData 0
