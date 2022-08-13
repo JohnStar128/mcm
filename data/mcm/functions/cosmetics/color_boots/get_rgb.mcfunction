@@ -1,3 +1,5 @@
+#> Currently unused because it's way easier to just make up HSV values, but does work
+
 #> Get red
 scoreboard players operation $temp player_color = $prev player_color
 scoreboard players operation $temp player_color /= $red_offset player_color

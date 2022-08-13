@@ -1,3 +1,5 @@
+#> Currently unused because it's way easier to just make up HSV values, but does work
+
 #> Value
 scoreboard players operation $value player_color = $max player_color
 
@@ -32,7 +34,6 @@ execute if score $value player_color = $blue player_color run scoreboard players
 execute if score $value player_color = $blue player_color run scoreboard players operation $temp player_color *= $sixty math
 execute if score $value player_color = $blue player_color run scoreboard players operation $hue player_color += $temp player_color
 
-#scoreboard players operation $temp math = $chroma player_color
 scoreboard players operation $hue player_color %= $max_angle player_color
 
 #> We won't actually need saturation because we already have chroma

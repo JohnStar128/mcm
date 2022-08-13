@@ -80,7 +80,11 @@ scoreboard players set $seventeen math 17
 scoreboard players set $eighteen math 18
 scoreboard players set $nineteen math 19
 scoreboard players set $twenty math 20
+scoreboard players set $fifty math 50
 scoreboard players set $sixty math 60 
+scoreboard players set $one_hundred math 100
+scoreboard players set $one_thousand math 1000
+scoreboard players set $pi math 3141
 
 #> Colors
 scoreboard players set $red_offset player_color 65536

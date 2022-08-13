@@ -88,5 +88,10 @@ execute as @a[tag=afk,scores={crouch=1..}] run function mcm:lobby/manage_afk
 execute as @a[tag=afk,scores={jump=1..}] run function mcm:lobby/manage_afk
 
 #> Change boots if more players log on
-execute if score $gamestate CmdData matches -1..0 if score $change_color CmdData matches 1.. as @e[tag=test] run function mcm:cosmetics/color_boots/generate
+execute if score $gamestate CmdData matches -1..0 if score $change_color CmdData matches 1.. run scoreboard players set $chroma player_color 128
+execute if score $gamestate CmdData matches -1..0 if score $change_color CmdData matches 1.. run scoreboard players set $value player_color 192
+execute if score $gamestate CmdData matches -1..0 if score $change_color CmdData matches 1.. as @a[tag=!colored,limit=12] run function mcm:cosmetics/color_boots/generate
+execute if score $gamestate CmdData matches -1..0 if score $change_color CmdData matches 1.. run scoreboard players set $chroma player_color 192
+execute if score $gamestate CmdData matches -1..0 if score $change_color CmdData matches 1.. run scoreboard players set $value player_color 64
+execute if score $gamestate CmdData matches -1..0 if score $change_color CmdData matches 1.. as @a[tag=!colored] run function mcm:cosmetics/color_boots/generate
 execute if score $gamestate CmdData matches -1..0 if score $change_color CmdData matches 1.. run scoreboard players set $change_color CmdData 0

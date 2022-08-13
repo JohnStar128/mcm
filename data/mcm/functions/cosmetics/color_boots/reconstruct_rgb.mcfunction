@@ -5,4 +5,3 @@ scoreboard players operation $green player_color *= $green_offset player_color
 scoreboard players operation $temp player_color = $red player_color
 scoreboard players operation $temp player_color += $green player_color
 scoreboard players operation $temp player_color += $blue player_color
-scoreboard players operation $prev player_color = $temp player_color

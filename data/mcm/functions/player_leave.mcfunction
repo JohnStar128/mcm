@@ -96,11 +96,18 @@ execute as @s[tag=!autoqueue] run item replace entity @s hotbar.8 with warped_fu
 #> How to play book
 item replace entity @s hotbar.4 with written_book{HowToPlay:1b,NoDrop:1b}
 
-#> Update players' colors (Starts at a predefined 0x0077FF light blue color)
+#> Update players' colors
 execute store result score $online player_color if entity @e[tag=test]
 scoreboard players operation $angle player_color = $max_angle player_color
 scoreboard players operation $angle player_color /= $online player_color
-scoreboard players set $prev player_color 30719
+scoreboard players set $sin_step player_color 100
+scoreboard players set $temp math 1
+scoreboard players operation $temp math += $online player_color
+scoreboard players operation $sin_step player_color /= $temp math
+scoreboard players set $temp math 1
+scoreboard players operation $sin_step player_color += $temp math
+scoreboard players set $sin_coord player_color -50
+scoreboard players set $prev player_color 128
 scoreboard players set $change_color CmdData 1 
-function mcm:cosmetics/color_boots/get_rgb
-function mcm:cosmetics/color_boots/rgb_to_hsv
+scoreboard players set $hue player_color 0
+tag @a remove colored
