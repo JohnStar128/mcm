@@ -109,5 +109,4 @@ scoreboard players operation $sin_step player_color += $temp math
 scoreboard players set $sin_coord player_color -50
 scoreboard players set $prev player_color 128
 scoreboard players set $change_color CmdData 1 
-scoreboard players set $hue player_color 0
 tag @a remove colored
