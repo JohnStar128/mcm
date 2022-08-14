@@ -5,6 +5,8 @@ forceload add 915 -3057 1136 -2864
 #> Kill potential leftover entities
 kill @e[tag=MapEntity]
 
+scoreboard players set $gametimer CmdData 12000
+
 #> Lobby poster visual
 fill 27 5 114 27 1 117 warped_trapdoor[open=true,facing=west] replace crimson_trapdoor
 

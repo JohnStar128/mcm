@@ -89,5 +89,5 @@ advancement revoke @a[advancements={mcm:hit_detection/gun_hit=true}] only mcm:hi
 advancement revoke @a[advancements={mcm:hit_detection/knife_hit=true}] only mcm:hit_detection/knife_hit
 advancement revoke @a[advancements={mcm:hit_detection/knife_melee_hit=true}] only mcm:hit_detection/knife_melee_hit
 
-execute unless entity @e[type=marker,tag=Gumdrop] summon marker 0 -49 70 {Tags:["MapVote","Gumdrop"]}
-execute unless entity @e[type=marker,tag=Cyberpunk] summon marker 0 -49 70 {Tags:["MapVote","Cyberpunk"]}
+execute unless entity @e[type=marker,tag=Gumdrop] run summon marker 0 -49 70 {Tags:["MapVote","Gumdrop"]}
+execute unless entity @e[type=marker,tag=Cyberpunk] run summon marker 0 -49 70 {Tags:["MapVote","Cyberpunk"]}

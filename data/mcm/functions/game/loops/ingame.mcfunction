@@ -19,8 +19,7 @@ execute as @e[type=item,tag=gun,nbt={CustomModelData:1111}] at @s if score @a[ta
 execute as @e[type=item,nbt={Item:{id:"minecraft:snowball",Count:1b,tag:{CustomModelData:1111}}}] run data modify entity @s Owner set from entity @s Thrower
 
 #> Minutely reminders
-execute if score $graceperiod CmdData matches ..1 if score $roundtimer GameRules matches 1 run function mcm:game/loops/5minute
-execute if score $graceperiod CmdData matches ..1 if score $roundtimer GameRules matches 2 run function mcm:game/loops/10minute
+execute if score $graceperiod CmdData matches ..1 run function mcm:game/loops/10minute
 
 #> Countdown grace period
 execute if score $graceperiod CmdData matches 1.. run scoreboard players remove $graceperiod CmdData 1

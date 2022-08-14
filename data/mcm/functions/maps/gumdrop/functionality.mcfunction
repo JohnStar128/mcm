@@ -7,7 +7,7 @@ execute as @a[tag=queued] at @s if block ~ ~-3 ~ stone run effect give @s speed 
 execute as @a[tag=queued] at @s if block ~ ~-4 ~ stone run effect give @s speed 1 1
 
 #> Levitation on blue cloud in tower
-execute as @a[predicate=mcm:bounding_boxes/gumdropcottoncloud] run effect give @s levitation 1 13
+execute as @a[predicate=mcm:bounding_boxes/gumdropcottoncloud] run effect give @s levitation 1 13 true
 
 #> Set Cutscene Score & Trigger Cutscene [WIP - Brownie, Kur]
 execute as @a[predicate=mcm:bounding_boxes/gumdrop_cutscene] run function mcm:maps/gumdrop/gumdropcutscene
