@@ -1,3 +1,14 @@
+execute as @a[advancements={mcm:map_functions/cyberpunk_secret_1=true}] run advancement revoke @s only mcm:map_functions/cyberpunk_secret_1
+execute as @a[advancements={mcm:map_functions/cyberpunk_secret_2=true}] run advancement revoke @s only mcm:map_functions/cyberpunk_secret_2
+execute as @a[advancements={mcm:map_functions/cyberpunk_secret_3=true}] run advancement revoke @s only mcm:map_functions/cyberpunk_secret_3
+scoreboard players reset @e cyberpunk
+scoreboard players reset $secret cyberpunk
+scoreboard players reset $message cyberpunk
+
+setblock -1990 73 2044 air
+setblock -1989 73 2044 air
+setblock -1990 76 2046 air
+
 execute unless block -2162 77 2070 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -2162 77 2070 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace 
 execute unless block -2162 77 2071 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -2162 77 2071 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace 
 execute unless block -2162 77 2072 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] run setblock -2162 77 2072 minecraft:dark_oak_trapdoor[waterlogged=false,half=top,powered=false,facing=west,open=false] replace 

@@ -52,6 +52,7 @@ scoreboard objectives add available_entities dummy
 scoreboard objectives add current_vote dummy
 scoreboard objectives add player_color dummy
 scoreboard objectives add math dummy
+scoreboard objectives add cyberpunk dummy
 scoreboard players set $twenty math 20
 
 execute as @e[type=villager,tag=Usher] run data modify entity @s Offers set value {}
@@ -90,4 +91,6 @@ advancement revoke @a[advancements={mcm:hit_detection/knife_hit=true}] only mcm:
 advancement revoke @a[advancements={mcm:hit_detection/knife_melee_hit=true}] only mcm:hit_detection/knife_melee_hit
 
 execute unless entity @e[type=marker,tag=Gumdrop] run summon marker 0 -49 70 {Tags:["MapVote","Gumdrop"]}
+scoreboard players set @e[type=marker,tag=Gumdrop] MapValues 6
 execute unless entity @e[type=marker,tag=Cyberpunk] run summon marker 0 -49 70 {Tags:["MapVote","Cyberpunk"]}
+scoreboard players set @e[type=marker,tag=Gumdrop] MapValues 5
