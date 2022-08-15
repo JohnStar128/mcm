@@ -172,4 +172,4 @@ advancement revoke @a[advancements={mcm:hit_detection/killed_player=true}] only 
 #> Show particles above murderers to identify their teammates
 scoreboard players operation $murderer_particles math = $gametimer CmdData
 scoreboard players operation $murderer_particles math %= $twenty math
-execute as @a[tag=murderer,tag=!spectating] at @s run particle dust 1.0 0.1 0.1 1.0 ~ ~2.5 ~ 0.1 0.1 0.1 0 1 force @a[tag=murderer]
+execute as @a[tag=murderer,tag=!spectating] at @s run particle dust 1.0 0.1 0.1 1.0 ~ ~2.5 ~ 0.1 0.1 0.1 0 1 force @a[tag=murderer,distance=1..]
