@@ -1,3 +1,7 @@
+
+#> Restore original propeller state
+place template mcm:airship_propeller_1 -649 41 -17
+
 execute unless block -632 57 30 flower_pot run setblock -632 57 30 flower_pot
 execute unless block -633 56 29 flower_pot run setblock -633 56 29 flower_pot
 execute unless block -637 56 42 flower_pot run setblock -637 56 42 flower_pot

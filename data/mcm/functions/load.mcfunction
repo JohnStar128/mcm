@@ -85,6 +85,10 @@ scoreboard players set $forty math 40
 scoreboard players set $fifty math 50
 scoreboard players set $sixty math 60 
 scoreboard players set $one_hundred math 100
+scoreboard players set $two_hundred math 200
+scoreboard players set $three_hundred math 300
+scoreboard players set $four_hundred math 400
+scoreboard players set $five_hundred math 500
 scoreboard players set $one_thousand math 1000
 scoreboard players set $pi math 3141
 

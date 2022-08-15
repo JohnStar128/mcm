@@ -33,6 +33,7 @@ execute if score $smart_murderers GameRules matches 1 run function mcm:game/rule
 #> Set the game timer
 execute if score $startcountdown CmdData matches 1 run scoreboard players set $gametimer CmdData 1200
 execute if score $startcountdown CmdData matches 1 run scoreboard players operation $gametimer CmdData *= $roundtimer GameRules
+execute if score $startcountdown CmdData matches 1 run scoreboard players operation $gametimer CmdData += $three_hundred math
 
 #> Start the game
 execute if score $queued CmdData matches 3.. if score $startcountdown CmdData matches 1 run function mcm:game/createbossbar
