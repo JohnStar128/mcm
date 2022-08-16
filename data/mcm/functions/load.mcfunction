@@ -57,6 +57,9 @@ scoreboard objectives add player_color dummy
 scoreboard objectives add math dummy
 scoreboard objectives add dev dummy
 scoreboard objectives add retrieval_delay dummy
+scoreboard objectives add motion_x dummy
+scoreboard objectives add motion_y dummy
+scoreboard objectives add motion_z dummy
 
 #> Math values
 scoreboard players set $minus_one math -1
@@ -129,7 +132,7 @@ execute store result score $gameID CmdData run data get entity @e[tag=gameID,lim
 scoreboard players operation @a gameID = $gameID CmdData
 
 #> Reset players back to a known default state
-execute as @a run function mcm:player_leave
+#execute as @a run function mcm:player_leave
 
 #> Load default game rules
 scoreboard players set $roundtimer GameRules 10
@@ -141,13 +144,13 @@ scoreboard players set $murderer_ff GameRules 0
 scoreboard players set $startscrap GameRules 1
 
 #> Remove bossbar if reloading during game (which you still shouldn't do!)
-bossbar remove minecraft:gamedisplay
+#bossbar remove minecraft:gamedisplay
 
 #> Temp while maps 5 and 6 are in development
 kill @e[type=marker,tag=Cyberpunk]
 kill @e[type=marker,tag=Gumdrop]
 
-function mcm:lobby/voting/start
+#function mcm:lobby/voting/start
 
 #> Restore devs to previous state
 execute as @a[scores={dev=1}] run function mcm:dev

@@ -32,6 +32,8 @@ function mcm:util/nodrop
 tag @a[tag=murderer,nbt={SelectedItem:{id:"minecraft:snowball",Count:1b}}] add HoldKnife
 tag @a[nbt=!{SelectedItem:{id:"minecraft:snowball",Count:1b}}] remove HoldKnife
 
+#> Knife throwing
+execute as @e[type=snowball] at @s run function mcm:game/items/knife/throw
 #> Guns
 function mcm:game/items/gun/shoot
 

@@ -108,11 +108,15 @@ execute as @a[nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}
 #> Player tracker (Math stuff courtesy of some dude on MCC Discord rx)
 execute as @a[tag=murderer,tag=!spectating,predicate=mcm:items/hold_tracker] at @s positioned as @a[tag=innocent,tag=!spectating,limit=1,sort=nearest] run function mcm:game/items/player_tracker/find_player
 
-#> Knife throwing
-execute as @e[type=snowball] at @s run function mcm:game/items/knife/throw
-
 #> If the knife item isn't in the world, kill the arrow it was riding
 execute unless entity @e[type=item,tag=knifeCosmetic] run kill @e[type=arrow,tag=knife]
+execute unless entity @e[type=item,tag=knifeCosmetic] run kill @e[type=marker,tag=knife_restore_point]
+
+#> If the knife gets stuck in a block, teleport it slightly towards its owner
+execute as @e[type=item,tag=knifeCosmetic] at @s unless block ~ ~ ~ air run function mcm:game/items/knife/stuck
+
+execute store success score $toggle CmdData if score $toggle CmdData matches 0
+execute as @e[type=item,tag=knifeCosmetic] store result entity @s Air short 1 run scoreboard players get $toggle CmdData
 
 #> Make sure knife can only be picked up by murderer
 execute as @e[type=item,tag=knifeCosmetic] at @s unless entity @a[tag=murderer,limit=1,sort=nearest] run data merge entity @s {PickupDelay:-1s,Age:32768}
