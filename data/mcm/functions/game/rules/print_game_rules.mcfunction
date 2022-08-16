@@ -18,5 +18,5 @@ execute if score $startscrap GameRules matches 0 run tellraw @s ["", {"text":"| 
 execute if score $smart_murderers GameRules matches 1 run tellraw @s ["", {"text":"| ","bold":true,"color":"dark_gray"}, {"text":"Smart murderer selection : ", "color":"gray"}, {"text":"On", "color":"green"}]
 execute if score $smart_murderers GameRules matches 0 run tellraw @s ["", {"text":"| ","bold":true,"color":"dark_gray"}, {"text":"Smart murderer selection : ", "color":"gray"}, {"text":"Off", "color":"green"}]
 #> Murderer friendly fire
-execute if score $smart_murderers GameRules matches 1 run tellraw @s ["", {"text":"| ","bold":true,"color":"dark_gray"}, {"text":"Murderer friendly fire : ", "color":"gray"}, {"text":"On", "color":"green"}]
-execute if score $smart_murderers GameRules matches 0 run tellraw @s ["", {"text":"| ","bold":true,"color":"dark_gray"}, {"text":"Murderer friendly fire : ", "color":"gray"}, {"text":"Off", "color":"green"}]
+execute if score $murderer_ff GameRules matches 1 run tellraw @s ["", {"text":"| ","bold":true,"color":"dark_gray"}, {"text":"Murderer friendly fire : ", "color":"gray"}, {"text":"On", "color":"green"}]
+execute if score $murderer_ff GameRules matches 0 run tellraw @s ["", {"text":"| ","bold":true,"color":"dark_gray"}, {"text":"Murderer friendly fire : ", "color":"gray"}, {"text":"Off", "color":"green"}]
