@@ -140,7 +140,8 @@ execute as @a[tag=murderer,scores={knifeRetrieval=1..,retrieval_delay=..0},nbt={
 execute as @a[tag=murderer,scores={adrenalineClick=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1113}}}] at @s run function mcm:game/items/adrenaline/use
 
 #> Clicking random teleporter teleports everyone except murderer and spectators //@TODO add option to teleport murderer too
-execute as @a[tag=murderer,tag=!spectating,scores={teleporterClick=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1112}}}] run function mcm:game/items/teleporter/use
+execute as @a[tag=murderer,tag=!spectating,scores={teleporterClick=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1112}}}] unless score $launchTime CmdData matches 1..720 run function mcm:game/items/teleporter/use
+execute if score $launchTime CmdData matches 1..720 run scoreboard players reset @a teleporterClick
 
 #> Win conditions
 # Murderer victory
