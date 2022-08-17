@@ -1,6 +1,7 @@
 #>Floating Island Telepads
-execute positioned -707 62 26 if block -707 62 26 minecraft:crimson_pressure_plate[powered=true] run tp @a[distance=..2,limit=1,sort=nearest] -695 76 46
-execute positioned -636 52 46 if block -636 52 46 minecraft:crimson_pressure_plate[powered=true] run tp @a[distance=..2,limit=1,sort=nearest] -695 76 46
+execute positioned -707 62 26 if block ~ ~ ~ minecraft:crimson_pressure_plate[powered=true] run tp @a[distance=..2,limit=1,sort=nearest] -695 76 46
+execute positioned -636 52 46 if block ~ ~ ~ minecraft:crimson_pressure_plate[powered=true] run tp @a[distance=..2,limit=1,sort=nearest] -692 76 46
+execute positioned -591 59 5 if block ~ ~ ~ minecraft:crimson_pressure_plate[powered=true] run tp @a[distance=..2,limit=1,sort=nearest] -694 77 50
 
 execute if score $animate GameRules matches 1.. run function mcm:maps/airship/animate
 
