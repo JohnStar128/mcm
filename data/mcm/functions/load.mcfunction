@@ -1,7 +1,10 @@
-#> Make sure 0,0 is loaded, this is where all the ✨ magic ✨ happens
+#> Make sure 0,0 and spawn are loaded, this is where all the ✨ magic ✨ happens
 setworldspawn -1 1 69
+forceload add -64 16 47 184
 forceload add 0 0
 spawnpoint @a -1 1 69
+
+execute as @a[team=test4] at @s run function mcm:dev/storeinv
 
 #> Scoreboards
 scoreboard objectives add CmdData dummy
@@ -53,7 +56,51 @@ scoreboard objectives add current_vote dummy
 scoreboard objectives add player_color dummy
 scoreboard objectives add math dummy
 scoreboard objectives add cyberpunk dummy
+scoreboard objectives add dev dummy
+scoreboard objectives add retrieval_delay dummy
+scoreboard objectives add motion_x dummy
+scoreboard objectives add motion_y dummy
+scoreboard objectives add motion_z dummy
+
+#> Math values
+scoreboard players set $minus_one math -1
+scoreboard players set $one math 1
+scoreboard players set $two math 2
+scoreboard players set $three math 3
+scoreboard players set $four math 4
+scoreboard players set $five math 5
+scoreboard players set $six math 6
+scoreboard players set $seven math 7
+scoreboard players set $eight math 9
+scoreboard players set $nine math 9
+scoreboard players set $ten math 10
+scoreboard players set $eleven math 11
+scoreboard players set $twelve math 12
+scoreboard players set $thirteen math 13
+scoreboard players set $fourteen math 14
+scoreboard players set $fifteen math 15
+scoreboard players set $sixteen math 16
+scoreboard players set $seventeen math 17
+scoreboard players set $eighteen math 18
+scoreboard players set $nineteen math 19
 scoreboard players set $twenty math 20
+scoreboard players set $thirty math 30
+scoreboard players set $forty math 40 
+scoreboard players set $fifty math 50
+scoreboard players set $sixty math 60 
+scoreboard players set $one_hundred math 100
+scoreboard players set $two_hundred math 200
+scoreboard players set $three_hundred math 300
+scoreboard players set $four_hundred math 400
+scoreboard players set $five_hundred math 500
+scoreboard players set $one_thousand math 1000
+scoreboard players set $pi math 3141
+
+#> Colors
+scoreboard players set $red_offset player_color 65536
+scoreboard players set $green_offset player_color 256
+scoreboard players set $max_rgb player_color 256
+scoreboard players set $max_angle player_color 360
 
 execute as @e[type=villager,tag=Usher] run data modify entity @s Offers set value {}
 execute as @e[type=villager,tag=credits_usher] run data modify entity @s Offers set value {}
@@ -79,7 +126,7 @@ scoreboard players enable @a player_rule_update
 
 execute if entity @a run function mcm:respawn_entities
 
-#> Generate a game ID
+#> Generate a game ID to force anyone who logs in to be reset to a default state
 kill @e[tag=gameID]
 summon marker 0 100 0 {Tags:["gameID"]}
 execute store result score $gameID CmdData run data get entity @e[tag=gameID,limit=1,sort=nearest] UUID[0]
@@ -89,8 +136,32 @@ scoreboard players operation @a gameID = $gameID CmdData
 advancement revoke @a[advancements={mcm:hit_detection/gun_hit=true}] only mcm:hit_detection/gun_hit
 advancement revoke @a[advancements={mcm:hit_detection/knife_hit=true}] only mcm:hit_detection/knife_hit
 advancement revoke @a[advancements={mcm:hit_detection/knife_melee_hit=true}] only mcm:hit_detection/knife_melee_hit
+advancement revoke @a[advancements={mcm:map_functions/cyberpunk_secret_1=true}] only mcm:map_functions/cyberpunk_secret_1
+advancement revoke @a[advancements={mcm:map_functions/cyberpunk_secret_2=true}] only mcm:map_functions/cyberpunk_secret_2
+advancement revoke @a[advancements={mcm:map_functions/cyberpunk_secret_3=true}] only mcm:map_functions/cyberpunk_secret_3
 
 execute unless entity @e[type=marker,tag=Gumdrop] run summon marker 0 -49 70 {Tags:["MapVote","Gumdrop"]}
 scoreboard players set @e[type=marker,tag=Gumdrop] MapValues 6
 execute unless entity @e[type=marker,tag=Cyberpunk] run summon marker 0 -49 70 {Tags:["MapVote","Cyberpunk"]}
 scoreboard players set @e[type=marker,tag=Gumdrop] MapValues 5
+
+#> Reset players back to a known default state
+execute as @a run function mcm:player_leave
+
+#> Load default game rules
+scoreboard players set $roundtimer GameRules 10
+scoreboard players set $animate GameRules 1
+scoreboard players set $autostart GameRules 1
+scoreboard players set $murderers GameRules 1
+scoreboard players set $smart_murderers GameRules 1
+scoreboard players set $murderer_ff GameRules 0
+scoreboard players set $startscrap GameRules 1
+
+#> Remove bossbar if reloading during game (which you still shouldn't do!)
+bossbar remove minecraft:gamedisplay
+
+function mcm:lobby/voting/start
+
+#> Restore devs to previous state
+execute as @a[scores={dev=1}] run function mcm:dev
+execute as @e[type=llama,tag=inventory_helper] at @s rotated as @s run function mcm:dev/restoreinv

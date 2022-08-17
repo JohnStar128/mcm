@@ -1,6 +1,10 @@
 #> Clear titles
-execute if score $roundtimer GameRules matches 1 if score $gametimer CmdData matches 4900 run title @a clear
-execute if score $roundtimer GameRules matches 2 if score $gametimer CmdData matches 11900 run title @a clear
+execute if score $roundtimer GameRules matches 10 if score $gametimer CmdData matches 11900 run title @a clear
+execute if score $roundtimer GameRules matches 9 if score $gametimer CmdData matches 10700 run title @a clear
+execute if score $roundtimer GameRules matches 8 if score $gametimer CmdData matches 9500 run title @a clear
+execute if score $roundtimer GameRules matches 7 if score $gametimer CmdData matches 8300 run title @a clear
+execute if score $roundtimer GameRules matches 6 if score $gametimer CmdData matches 7100 run title @a clear
+execute if score $roundtimer GameRules matches 5 if score $gametimer CmdData matches 5900 run title @a clear
 
 #> Make sure items can't be destroyed by lightning or fire
 execute as @e[type=item] run data merge entity @s {Fire:-1s,Invulnerable:1b}
@@ -19,7 +23,7 @@ execute as @e[type=item,tag=gun,nbt={CustomModelData:1111}] at @s if score @a[ta
 execute as @e[type=item,nbt={Item:{id:"minecraft:snowball",Count:1b,tag:{CustomModelData:1111}}}] run data modify entity @s Owner set from entity @s Thrower
 
 #> Minutely reminders
-execute if score $graceperiod CmdData matches ..1 run function mcm:game/loops/10minute
+function mcm:game/loops/game_timer
 
 #> Countdown grace period
 execute if score $graceperiod CmdData matches 1.. run scoreboard players remove $graceperiod CmdData 1
@@ -108,38 +112,47 @@ execute as @a[tag=innocent,nbt={Inventory:[{id:"minecraft:carrot_on_a_stick",Cou
 execute as @a[nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] if entity @s[nbt={Inventory:[{id:"minecraft:netherite_scrap"}]}] run clear @s netherite_scrap
 
 #> Player tracker (Math stuff courtesy of some dude on MCC Discord rx)
-execute as @a[tag=murderer,tag=!spectating,nbt={SelectedItem:{id:"minecraft:stick",Count:1b,tag:{CustomModelData:1111}}}] at @s positioned as @a[tag=innocent,tag=!spectating,limit=1,sort=nearest] run function mcm:game/items/player_tracker/find_player
-
-#> Knife throwing
-execute as @e[type=snowball] at @s run function mcm:game/items/knife/throw
+execute as @a[tag=murderer,tag=!spectating,predicate=mcm:items/hold_tracker] at @s positioned as @a[tag=innocent,tag=!spectating,limit=1,sort=nearest] run function mcm:game/items/player_tracker/find_player
 
 #> If the knife item isn't in the world, kill the arrow it was riding
 execute unless entity @e[type=item,tag=knifeCosmetic] run kill @e[type=arrow,tag=knife]
+execute unless entity @e[type=item,tag=knifeCosmetic] run kill @e[type=marker,tag=knife_restore_point]
+
+#> If the knife gets stuck in a block, teleport it slightly towards its owner
+execute as @e[type=item,tag=knifeCosmetic] at @s unless block ~ ~ ~ air run function mcm:game/items/knife/stuck
+
+execute store success score $toggle CmdData if score $toggle CmdData matches 0
+execute as @e[type=item,tag=knifeCosmetic] store result entity @s Air short 1 run scoreboard players get $toggle CmdData
 
 #> Make sure knife can only be picked up by murderer
 execute as @e[type=item,tag=knifeCosmetic] at @s unless entity @a[tag=murderer,limit=1,sort=nearest] run data merge entity @s {PickupDelay:-1s,Age:32768}
 execute as @e[type=item,tag=knifeCosmetic] at @s if entity @a[tag=murderer,limit=1,sort=nearest,nbt={PickupDelay:-1s}] run data merge entity @s {PickupDelay:0s,Age:1}
 
 #> If the murderer threw the knife and hasn't retrieved it before, give them the auto retrieval item TODO use something more efficient to check
-execute as @a[tag=murderer,tag=!retrieved,nbt=!{Inventory:[{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1111}}]},nbt=!{Inventory:[{id:"minecraft:snowball",Count:1b,tag:{CustomModelData:1111}}]}] if entity @e[type=item,tag=knifeCosmetic] run item replace entity @s weapon.mainhand with minecraft:carrot_on_a_stick{NoDrop:1b,CustomModelData:1111,display:{Name:'[{"translate":"mcm.item.knife_retrieve","italic":false}]',Lore:['[{"translate":"mcm.item.knife_retrieve.lore","italic":false}]']}}
+execute as @a[tag=murderer,tag=!retrieved,nbt=!{Inventory:[{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1111}}]},nbt=!{Inventory:[{id:"minecraft:snowball",Count:1b,tag:{CustomModelData:1111}}]}] run item replace entity @s weapon.mainhand with minecraft:carrot_on_a_stick{NoDrop:1b,CustomModelData:1111,display:{Name:'[{"translate":"mcm.item.knife_retrieve","italic":false}]',Lore:['[{"translate":"mcm.item.knife_retrieve.lore","italic":false}]']}}
 
 #> Remove retrieval item if they pick up the knife and reset scores
 execute as @a[tag=murderer,nbt={Inventory:[{id:"minecraft:snowball",Count:1b,tag:{CustomModelData:1111}}]}] run clear @s carrot_on_a_stick{CustomModelData:1111}
-execute as @a[tag=murderer] at @s run scoreboard players reset @s throwKnife
+execute as @a[tag=murderer,scores={throwKnife=1..}] run scoreboard players set @s retrieval_delay 10
+scoreboard players reset @a[tag=murderer] throwKnife
 
 #> Have the auto retrieval item do stuff
+scoreboard players remove @a[tag=murderer] retrieval_delay 1
 execute as @a[tag=murderer,tag=retrieved] run scoreboard players reset @s knifeRetrieval
-execute as @a[tag=murderer,scores={knifeRetrieval=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1111}}}] at @s run function mcm:game/items/knife/retrieve
+execute as @a[tag=murderer,scores={retrieval_delay=1..}] run scoreboard players reset @s knifeRetrieval
+execute as @a[tag=murderer,scores={knifeRetrieval=1..,retrieval_delay=..0},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1111}}}] at @s run function mcm:game/items/knife/retrieve
 
 #> Clicking the adrenaline item gives buffs
 execute as @a[tag=murderer,scores={adrenalineClick=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1113}}}] at @s run function mcm:game/items/adrenaline/use
 
 #> Clicking random teleporter teleports everyone except murderer and spectators //@TODO add option to teleport murderer too
-execute as @a[tag=murderer,tag=!spectating,scores={teleporterClick=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1112}}}] run function mcm:game/items/teleporter/use
+execute as @a[tag=murderer,tag=!spectating,scores={teleporterClick=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1112}}}] unless score $launchTime CmdData matches 1..720 run function mcm:game/items/teleporter/use
+execute if score $launchTime CmdData matches 1..720 run scoreboard players reset @a teleporterClick
 
 #> Win conditions
 # Murderer victory
-execute if score $graceperiod CmdData matches ..0 if score $deadInnocents CmdData = $innocents CmdData run tellraw @a ["", "\n", {"text":"The Murderer has won!","color":"red"}, "\n"]
+execute if score $graceperiod CmdData matches ..0 if score $deadInnocents CmdData = $innocents CmdData if score $murderers GameRules matches ..1 run tellraw @a ["", "\n", {"text":"The Murderer has won!","color":"red"}, "\n"]
+execute if score $graceperiod CmdData matches ..0 if score $deadInnocents CmdData = $innocents CmdData if score $murderers GameRules matches 2.. run tellraw @a ["", "\n", {"text":"The Murderers have won!","color":"red"}, "\n"]
 execute if score $graceperiod CmdData matches ..0 if score $deadInnocents CmdData = $innocents CmdData run scoreboard players set $murderWin CmdData 1
 execute if score $graceperiod CmdData matches ..0 if score $deadInnocents CmdData = $innocents CmdData run scoreboard players set $gamestate CmdData 2
 
@@ -172,4 +185,4 @@ advancement revoke @a[advancements={mcm:hit_detection/killed_player=true}] only 
 #> Show particles above murderers to identify their teammates
 scoreboard players operation $murderer_particles math = $gametimer CmdData
 scoreboard players operation $murderer_particles math %= $twenty math
-execute as @a[tag=murderer,tag=!spectating] at @s run particle dust 1.0 0.1 0.1 1.0 ~ ~2.5 ~ 0.1 0.1 0.1 0 1 force @a[tag=murderer]
+execute as @a[tag=murderer,tag=!spectating] at @s run particle dust 1.0 0.1 0.1 1.0 ~ ~2.5 ~ 0.1 0.1 0.1 0 1 force @a[tag=murderer,distance=1..]

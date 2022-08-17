@@ -32,11 +32,14 @@ function mcm:util/nodrop
 tag @a[tag=murderer,nbt={SelectedItem:{id:"minecraft:snowball",Count:1b}}] add HoldKnife
 tag @a[nbt=!{SelectedItem:{id:"minecraft:snowball",Count:1b}}] remove HoldKnife
 
+#> Knife throwing
+execute as @e[type=snowball] at @s run function mcm:game/items/knife/throw
 #> Guns
 function mcm:game/items/gun/shoot
 
 #> Dead players
 scoreboard players add @e[type=item,tag=BoneDeco,nbt={OnGround:1b}] CmdData 1
+execute as @e[type=item,tag=BoneDeco,nbt={OnGround:0b}] at @s if block ~ ~-0.2 ~ water run scoreboard players add @s CmdData 1
 execute as @e[type=item,tag=BoneDeco,scores={CmdData=20..}] at @s run particle item bone ~ ~ ~ 0 0 0 0.1 4 force
 kill @e[type=item,tag=BoneDeco,scores={CmdData=20..}]
 

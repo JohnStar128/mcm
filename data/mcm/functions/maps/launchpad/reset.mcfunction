@@ -29,7 +29,14 @@ place template minecraft:countdown0 -1061 51 -1061
 function mcm:maps/launchpad/rockettemp/firstpos
 fill -1026 49 -932 -1006 109 -912 air
 fill -1026 109 -932 -1006 160 -912 air
-fill -1122 46 -963 -1096 72 -933 air
+fill -1122 46 -963 -1096 83 -933 air
+fill -1122 84 -963 -1096 119 -933 air
+fill -1122 120 -963 -1096 155 -933 air
+fill -1122 156 -963 -1096 191 -933 air
+fill -1122 192 -963 -1096 227 -933 air
+fill -1122 228 -963 -1096 263 -933 air
+fill -1122 264 -963 -1096 299 -933 air
+fill -1122 300 -963 -1096 320 -933 air
 fill -1122 46 -963 -1096 47 -933 water
 
 # reset launch variables
@@ -466,3 +473,7 @@ execute unless block -921 59 -1112 minecraft:lever[face=ceiling,powered=false,fa
 execute unless block -921 59 -1106 minecraft:lever[face=ceiling,powered=false,facing=west] run setblock -921 59 -1106 minecraft:lever[face=ceiling,powered=false,facing=west] replace
 execute unless block -921 59 -1073 minecraft:lever[face=ceiling,powered=false,facing=west] run setblock -921 59 -1073 minecraft:lever[face=ceiling,powered=false,facing=west] replace
 execute unless block -921 59 -1049 minecraft:lever[face=ceiling,powered=false,facing=west] run setblock -921 59 -1049 minecraft:lever[face=ceiling,powered=false,facing=west] replace
+
+forceload remove -860 -1100 -1170 -1280
+forceload remove -860 -1100 -1128 -997
+forceload remove -961 -881 -1136 -976

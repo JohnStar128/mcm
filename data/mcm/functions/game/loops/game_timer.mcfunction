@@ -1,7 +1,11 @@
 scoreboard players remove $gametimer CmdData 1
 
-execute if score $gametimer CmdData matches 11999 run tellraw @a ["","\n",{"text":"10 minutes remaining!","color":"dark_green"},"\n"]
-execute if score $gametimer CmdData matches 5999 run tellraw @a ["","\n",{"text":"5 minutes remaining!","color":"dark_green"},"\n"]
+execute if score $gametimer CmdData matches 12000 run tellraw @a ["","\n",{"text":"10 minutes remaining!","color":"dark_green"},"\n"]
+execute if score $gametimer CmdData matches 10800 run tellraw @a ["","\n",{"text":"9 minutes remaining!","color":"dark_green"},"\n"]
+execute if score $gametimer CmdData matches 9600 run tellraw @a ["","\n",{"text":"8 minutes remaining!","color":"dark_green"},"\n"]
+execute if score $gametimer CmdData matches 8400 run tellraw @a ["","\n",{"text":"7 minutes remaining!","color":"dark_green"},"\n"]
+execute if score $gametimer CmdData matches 7200 run tellraw @a ["","\n",{"text":"6 minutes remaining!","color":"dark_green"},"\n"]
+execute if score $gametimer CmdData matches 6000 run tellraw @a ["","\n",{"text":"5 minutes remaining!","color":"dark_green"},"\n"]
 execute if score $gametimer CmdData matches 4800 run tellraw @a ["","\n",{"text":"4 minutes remaining!","color":"dark_green"},"\n"]
 execute if score $gametimer CmdData matches 3600 run tellraw @a ["","\n",{"text":"3 minutes remaining!","color":"dark_green"},"\n"]
 execute if score $gametimer CmdData matches 2400 run tellraw @a ["","\n",{"text":"2 minutes remaining!","color":"dark_green"},"\n"]

@@ -1,4 +1,4 @@
-execute as @e[type=marker,tag=Chandelier] at @s if entity @a[tag=!spectating,limit=3] if entity @a[tag=!spectating,limit=3,distance=..3] run scoreboard players add $chandelierdroptimer CmdData 1
+execute positioned as @e[type=marker,tag=Chandelier] as @a[tag=!spectating,limit=3,distance=..3] run scoreboard players add $chandelierdroptimer CmdData 1
 execute as @e[type=marker,tag=Chandelier] at @s unless entity @a[tag=!spectating,limit=3,distance=..3] run scoreboard players set $chandelierdroptimer CmdData 0
 
 #> Enable taking books
@@ -14,9 +14,6 @@ execute as @a[scores={droppedBook=1..}] store result score @s books run clear @s
 execute as @a[scores={droppedBook=1..}] run scoreboard players reset @s droppedBook
 
 #>Book Return Basement Unlock
-#execute store result score $books CmdData run data get block 945 104 996 Items[0].Count
-#execute if score $books CmdData matches 5 run place template minecraft:library_basementwall_empty 981 110 979 none none
-#> ^
 execute unless score $stairsopen CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:2b}]} run place template minecraft:library_basementwall_empty 981 110 979 none none
 execute unless score $stairsopen CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:2b}]} run particle minecraft:electric_spark 980.52 112.00 980.48 1.5 1 1.5 0 40 force
 execute unless score $stairsopen CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:2b}]} run particle minecraft:electric_spark 980.56 112.00 1020.61 1.5 1 1.5 0 40 force
@@ -27,7 +24,7 @@ execute unless score $stairsopen CmdData matches 1.. if block 945 104 996 chest{
 execute unless score $stairsopen CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:2b}]} run scoreboard players set $stairsopen CmdData 1
 
 #> When you have all 5 books, open the book in the basement
-execute unless score $flipbook CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:5b}]} run tellraw @a ["\n", {"text":"You hear an evil presence call from the basement...","color":"red","italic":"true"}, "\n"]
+execute unless score $flipbook CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:5b}]} run tellraw @a[tag=queued] ["\n", {"text":"You hear an evil presence call from the basement...","color":"red","italic":"true"}, "\n"]
 execute unless score $flipbook CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:5b}]} run playsound minecraft:block.end_portal.spawn block @a[tag=queued] ~ ~ ~ 1 0 1
 execute unless score $flipbook CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:5b}]} run place template minecraft:librarysecret 961 100 996
 execute unless score $flipbook CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:5b}]} run scoreboard players set $flipbook CmdData 1

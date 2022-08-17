@@ -1,19 +1,15 @@
 #> Assign roles when grace period is over
 
-# 1 Murderer
-execute as @a[tag=queued,tag=!prevMurderer,tag=!murderer,sort=random,limit=1] at @s if score $murderers GameRules matches ..1 unless entity @a[tag=murderer] run tag @s add murderer
-execute if score $murderers GameRules matches ..1 run tellraw @a[tag=murderer] {"text":"You are ","color":"gold","extra":[{"text":"the murderer!","color":"red"}]}
-execute if score $murderers GameRules matches ..1 run title @a[tag=murderer] title {"text":"You are ","color":"gold","extra":[{"text":"the murderer!","color":"red"}]}
-execute if score $murderers GameRules matches ..1 run title @a[tag=murderer] subtitle {"text":"Kill the innocent ","color":"gold"}
+scoreboard players operation $num_murderers CmdData = $murderers GameRules
+function mcm:game/assign_murderer
 
-# 2 murderers
-execute if score $murderers GameRules matches 2.. run execute as @a[tag=queued,tag=!prevMurderer,tag=!murderer,sort=random,limit=2] at @s run tag @s add murderer
-execute if score $murderers GameRules matches 2.. run execute as @a[tag=queued,tag=!prevMurderer,tag=murderer,tag=!murderer2,sort=random,limit=1] at @s run tag @s add murderer1
-execute if score $murderers GameRules matches 2.. run execute as @a[tag=queued,tag=!prevMurderer,tag=murderer,tag=!murderer1,sort=random,limit=1] at @s run tag @s add murderer2
-execute if score $murderers GameRules matches 2.. run tellraw @a[tag=murderer] ["" ,{"selector":"@p[tag=murderer1,limit=1,sort=nearest]","color":"red"}, {"text":" and ","color":"gold"}, {"selector":"@p[tag=murderer2,limit=1,sort=nearest]","color":"red"} ,{"text":" are the ","color":"gold"},{"text":"murderers!","color":"red"}]
-execute if score $murderers GameRules matches 2.. run title @a[tag=murderer] title {"text":"You are ","color":"gold","extra":[{"text":"the murderer!","color":"red"}]}
-execute if score $murderers GameRules matches 2.. run title @a[tag=murderer1] subtitle ["", {"text":"with ","color":"gold"}, {"selector":"@p[tag=murderer2,limit=1,sort=nearest]","color":"green"}]
-execute if score $murderers GameRules matches 2.. run title @a[tag=murderer2] subtitle ["", {"text":"with ","color":"gold"}, {"selector":"@p[tag=murderer1,limit=1,sort=nearest]","color":"green"}]
+execute if score $murderers GameRules matches ..1 run tellraw @a[tag=murderer] {"text":"You are ","color":"gold","extra":[{"text":"the murderer!","color":"red"}]}
+title @a[tag=murderer] title {"text":"You are ","color":"gold","extra":[{"text":"the murderer!","color":"red"}]}
+execute if score $murderers GameRules matches ..1 run title @a[tag=murderer] subtitle {"text":"Kill the innocents ","color":"gold"}
+execute if score $murderers GameRules matches 2 as @a[tag=murderer] at @s run title @s subtitle ["", {"text":"with ","color":"gold"}, {"selector":"@p[tag=murderer,distance=1..]","color":"green"}]
+execute if score $murderers GameRules matches 2 as @a[tag=murderer] at @s run tellraw @s ["" ,{"selector":"@p[tag=murderer,distance=1..]","color":"red"}, {"text":" and ","color":"gold"}, {"selector":"@s","color":"red"} ,{"text":" are the ","color":"gold"},{"text":"murderers!","color":"red"}]
+execute if score $murderers GameRules matches 3.. as @a[tag=murderer] at @s run title @s subtitle ["", {"text":"with ","color":"gold"}, {"selector":"@p[tag=murderer,distance=1..,sort=nearest]","color":"green"}, {"text":" and ","color":"gold"}, {"selector":"@p[tag=murderer,distance=1..,sort=furthest]","color":"green"}]
+execute if score $murderers GameRules matches 3.. as @a[tag=murderer] at @s run tellraw @s ["" ,{"selector":"@p[tag=murderer,distance=1..,sort=nearest]","color":"red"}, {"text":", ","color":"gold"}, {"selector":"@p[tag=murderer,distance=1..,sort=furthest]","color":"red"}, {"text":" and ","color":"gold"}, {"selector":"@s","color":"red"} ,{"text":" are the ","color":"gold"},{"text":"murderers!","color":"red"}]
 
 # Murderer items
 execute as @a[tag=murderer] run item replace entity @s hotbar.1 with snowball{Unbreakable:1,CustomModelData:1111,AttributeModifiers:[{AttributeName:"generic.attack_damage",Amount:100,Slot:mainhand,Name:"generic.attack_damage",UUID:[I;-122419,10812,22346,-21624]}],display:{Name:'[{"translate":"mcm.item.knife","italic":false}]',Lore:['[{"translate":"mcm.item.knife.lore","italic":false}]']}} 1
@@ -25,7 +21,7 @@ execute as @a[tag=murderer] run item replace entity @s hotbar.8 with netherite_s
 # Gunner
 execute as @a[tag=queued,tag=!murderer,limit=1,sort=random] at @s run tag @s add gunner
 # Gun gets NoDrop because it's already in an inventory
-execute as @a[tag=gunner] run item replace entity @s hotbar.1 with warped_fungus_on_a_stick{NoDrop:1b,Unbreakable:1,CustomModelData:1111,display:{Name:'[{"translate":"mcm.item.gun","italic":false}]',Lore:['[{"translate":"mcm.item.gun.lore","italic":false}]']}} 1
+execute as @a[tag=gunner] run item replace entity @s hotbar.1 with warped_fungus_on_a_stick{NoDrop:1b,Unbreakable:1,Autoqueue:0b,CustomModelData:1111,display:{Name:'[{"translate":"mcm.item.gun","italic":false}]',Lore:['[{"translate":"mcm.item.gun.lore","italic":false}]']}} 1
 execute as @a[tag=gunner] at @s run tellraw @s ["","\n",{"text":"You are ","color":"gold"},{"text":"the gunner","color":"dark_aqua"}]
 execute as @a[tag=gunner] at @s run title @s title ["",{"text":"You are ","color":"gold"},{"text":"the gunner","color":"dark_aqua"}]
 execute as @a[tag=gunner] at @s run title @s subtitle ["",{"text":"Kill the murderer ","color":"dark_gray"}]

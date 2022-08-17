@@ -2,14 +2,13 @@
 
 execute at @s run scoreboard players set @s dead 1
 tag @s add TempDead
-execute at @s run tp @s @s
 execute at @s run gamemode spectator @s
-execute at @s run spectate 
 execute at @s run playsound minecraft:entity.player.hurt master @a ~ ~ ~ 1 0.8
 execute at @s run particle block redstone_block ~ ~1 ~ 0.2 0.1 0.1 0.1 50 force
 execute at @s run loot spawn ~ ~1.4 ~ loot mcm:playerhead
 execute as @e[type=item,tag=!NBTSet,nbt={Item:{id:"minecraft:player_head"}}] run data merge entity @s {PickupDelay:2000000000,Tags:["KeyItem"]}
 execute as @e[type=item,tag=!NBTSet,nbt={Item:{id:"minecraft:player_head"}}] run data modify entity @s Owner set from entity @e[type=marker,tag=gameID,limit=1] UUID
+
 #oof ouch my bones
 execute at @s run summon item ~ ~0.5 ~ {Tags:["BoneDeco","1","KeyItem"],PickupDelay:2000000000,Item:{id:"minecraft:bone",Count:1b},Motion:[0.15d,0.2d,0.0d]}
 execute as @e[type=item,tag=BoneDeco,tag=!UUIDConfirmed] run data modify entity @s Item.tag.hash set from entity @s UUID[0]
@@ -43,9 +42,5 @@ execute at @s run tag @s remove gunner
 execute at @s run tag @s add spectating
 
 tag @s remove TempDead
-
-advancement revoke @s only mcm:hit_detection/gun_hit
-advancement revoke @s only mcm:hit_detection/knife_hit
-advancement revoke @s only mcm:hit_detection/knife_melee_hit
 
 scoreboard players set @s dead 1

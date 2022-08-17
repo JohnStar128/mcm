@@ -13,8 +13,8 @@ execute as @a[tag=!first_join,scores={crouch=1..}] run function mcm:first_join
 
 #> Auto queue
 scoreboard players remove @a[scores={autoqueue_delay=1..}] autoqueue_delay 1
-execute as @a[tag=first_join,tag=!autoqueue_spam_prevention,scores={autoqueue=1..,autoqueue_delay=0},tag=!autoqueue,nbt={SelectedItem:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1234}}}] at @s run function mcm:lobby/queueing/autoqueue
-execute as @a[tag=first_join,tag=!autoqueue_spam_prevention,scores={autoqueue=1..,autoqueue_delay=0},tag=autoqueue,nbt={SelectedItem:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1235}}}] at @s run function mcm:lobby/queueing/deautoqueue
+execute as @a[tag=first_join,tag=!autoqueue_spam_prevention,scores={autoqueue=1..,autoqueue_delay=0},tag=!autoqueue,nbt={SelectedItem:{id:"minecraft:warped_fungus_on_a_stick",tag:{Autoqueue:1b}}}] at @s run function mcm:lobby/queueing/autoqueue
+execute as @a[tag=first_join,tag=!autoqueue_spam_prevention,scores={autoqueue=1..,autoqueue_delay=0},tag=autoqueue,nbt={SelectedItem:{id:"minecraft:warped_fungus_on_a_stick",tag:{Autoqueue:1b}}}] at @s run function mcm:lobby/queueing/deautoqueue
 
 #> Debug room only accessible to test4
 execute as @a[predicate=mcm:bounding_boxes/debug,team=!test4] at @s run particle minecraft:witch ~ ~ ~ .7 .7 .7 1 100
@@ -70,10 +70,22 @@ execute if entity @a[predicate=mcm:bounding_boxes/credits] run function mcm:lobb
 execute unless entity @a[predicate=mcm:bounding_boxes/credits] if score $credit_timer CmdData matches 0.. positioned -30 -38 154 run function mcm:lobby/credits/reset
 
 #> Rule updates
-execute as @a[scores={player_rule_update=1..}] run function mcm:lobby/rule_update
+execute as @a[scores={player_rule_update=1..}] run function mcm:game/rules/try_rule_update
+execute as @a[nbt={SelectedItem:{id:"minecraft:written_book",Count:1b,tag:{HowToPlay:1b}}}] run item modify entity @s weapon.mainhand mcm:refresh_book
 
 #> Remove items players shouldn't have
 function mcm:lobby/remove_items
 
 #> Set the how-to-play lectern back to the front page unless someone's close enough to read it
 execute positioned -1 1 79 unless entity @a[distance=..5] if entity @a[distance=6..10] run data merge block ~ ~ ~ {Page:0}
+execute positioned -1 1 79 if entity @a[distance=..5] run data modify block ~ ~ ~ Book merge from block ~ ~-2 ~ Items[0]
+
+#> Manage AFK players
+execute if entity @a[tag=afk] function mcm:lobby/afk_loop
+execute as @a[tag=afk,scores={walk=1000..}] run function mcm:lobby/manage_afk
+execute as @a[tag=afk,scores={sprint=1..}] run function mcm:lobby/manage_afk
+execute as @a[tag=afk,scores={crouch=1..}] run function mcm:lobby/manage_afk
+execute as @a[tag=afk,scores={jump=1..}] run function mcm:lobby/manage_afk
+
+#> Change boots if more players log on
+execute if score $gamestate CmdData matches -1..0 if score $change_color CmdData matches 1.. run function mcm:cosmetics/color_boots/update
