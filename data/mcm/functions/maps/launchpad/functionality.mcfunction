@@ -73,6 +73,10 @@ execute if score $launchCountdown CmdData matches 1240 if score $launchControl C
 execute if score $launchControl CmdData matches 2 as @a[predicate=mcm:bounding_boxes/rocket] run tag @s add launch_player
 execute if score $launchControl CmdData matches 2 run function mcm:maps/launchpad/rockettemp/launchrocket
 
+#Remove launch button if "Go for Launch" is already activated
+execute if score $launchCountdown CmdData matches 1241 if score $launchControl CmdData matches 0 unless block -1016 156 -1095 air run setblock -1016 156 -1095 air
+execute if score $launchCountdown CmdData matches 1241 if score $launchControl CmdData matches 0 unless block -1016 157 -1095 air run setblock -1016 157 -1095 air
+
 #> Landing
 execute if score $launchControl CmdData matches 2 run function mcm:maps/launchpad/rockettemp/boosterland
 execute if score $launchControl CmdData matches 2 run function mcm:maps/launchpad/rockettemp/capsuleland

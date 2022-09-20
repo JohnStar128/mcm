@@ -10,7 +10,7 @@ execute if score $selectedMap CmdData matches 4 run gamerule doDaylightCycle tru
 tellraw @a ["\n",{"text":"Assigning roles in 15 seconds...","color":"yellow"},"\n"]
 
 #> Make queued players join ingame team (this allows friendly fire)
-team join ingame_players @a[tag=queued]
+team join ingame_players @a[team=nametags,tag=queued]
 
 #> Teleport players to spawnpoints within the map
 execute as @a[team=!test4,tag=queued] at @s run function mcm:maps/tptospawn

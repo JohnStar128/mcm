@@ -45,6 +45,10 @@ scoreboard players set $launchCountdown CmdData 0
 scoreboard players set $launchControl CmdData 0
 scoreboard players set $launchTime CmdData 0
 
+#Replace go for launch button and sign in rocket
+execute unless block -1016 156 -1095 stone_button run setblock -1016 156 -1095 stone_button[face=wall,facing=north]
+execute unless block -1016 157 -1095 oak_wall_sign run setblock -1016 157 -1095 minecraft:oak_wall_sign{GlowingText:1b,Color:"white",Text2:'{"text":"Initiate Launch"}'}
+
 # other blocks
 execute unless block -1096 62 -1087 flower_pot run setblock -1096 62 -1087 flower_pot
 execute unless block -1096 62 -1093 flower_pot run setblock -1096 62 -1093 flower_pot
