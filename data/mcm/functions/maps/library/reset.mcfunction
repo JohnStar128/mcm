@@ -19,6 +19,7 @@ setblock 945 104 996 minecraft:chest destroy
 scoreboard players set $stairsopen CmdData 0
 scoreboard players set $flipbook CmdData 0
 scoreboard players reset @a flipmap
+scoreboard players reset @a dontfliplibrary
 scoreboard players set $library_flip CmdData 0
 
 #> Reset worldborder

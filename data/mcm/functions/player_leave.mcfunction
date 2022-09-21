@@ -55,6 +55,7 @@ advancement revoke @s only mcm:map_votes/map6
 
 # Scores
 scoreboard players reset @s flipmap
+scoreboard players reset @s dontfliplibrary
 scoreboard players reset @s books
 scoreboard players reset @s leave
 scoreboard players set @s autoqueue_delay 0

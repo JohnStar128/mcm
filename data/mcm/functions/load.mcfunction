@@ -30,6 +30,7 @@ scoreboard objectives add RainbowHat dummy
 scoreboard objectives add gameID dummy
 scoreboard objectives add hatchange trigger
 scoreboard objectives add flipmap trigger
+scoreboard objectives add dontfliplibrary trigger
 scoreboard objectives add leave minecraft.custom:minecraft.leave_game
 scoreboard objectives add droppedGun minecraft.dropped:minecraft.warped_fungus_on_a_stick
 scoreboard objectives add droppedKnife minecraft.dropped:minecraft.snowball

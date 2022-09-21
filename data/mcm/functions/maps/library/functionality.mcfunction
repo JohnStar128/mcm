@@ -42,6 +42,11 @@ execute if score $mapflipeffect CmdData matches 1 run scoreboard players set $ma
 scoreboard players reset @a[scores={flipmap=1..}] flipmap
 execute if score $flippingmap CmdData matches 1 run function mcm:maps/library/flipmap
 
+# Enable and run trigger if player chooses not to flip map
+execute if score $flipbook CmdData matches 1.. run scoreboard players enable @a[predicate=mcm:bounding_boxes/flipbook] dontfliplibrary
+execute if score $flipbook CmdData matches 1.. if score @a[predicate=mcm:bounding_boxes/flipbook,limit=1] dontfliplibrary matches 1.. run tellraw @p {"text":"No...I shouldn't...","italic":true,"color":"yellow"}
+scoreboard players reset @a[scores={dontfliplibrary=1..}] dontfliplibrary
+
 #> Teleport players out of bounds back inbounds (escape prevention)
 execute as @a[tag=queued,tag=!spectating,predicate=!mcm:bounding_boxes/library_escapeprevention] if score $library_flip CmdData matches 0 at @s run tp @s @e[tag=PlayerSpawn,limit=1,sort=random]
 execute as @a[tag=queued,tag=!spectating,predicate=!mcm:bounding_boxes/library_flipped_escapeprevention] if score $library_flip CmdData matches 1 at @s run tp @s @e[tag=PlayerSpawn,limit=1,sort=random]
