@@ -23,7 +23,9 @@ execute if entity @e[type=marker,tag=SelectedMap,tag=Launchpad] run function mcm
 #Color Filth
 execute if entity @e[type=marker,tag=SelectedMap,tag=Cyberpunk] run function mcm:maps/cyberpunk/activate
 #Gumdrop Plains
-execute if entity @e[type=marker,tag=SelectedMap,tag=Gumdrop] run function mcm:maps/gumdrop/activate
+#execute if entity @e[type=marker,tag=SelectedMap,tag=Gumdrop] run function mcm:maps/gumdrop/activate
+#Riverboat
+execute if entity @e[type=marker,tag=SelectedMap,tag=Riverboat] run function mcm:maps/riverboat/activate
 
 #> Change gamestate to 0 (Players can now join, game has not started yet)
 execute as @e[type=villager,tag=!available,tag=MapVoteEntity] run function mcm:util/dealloc_entity

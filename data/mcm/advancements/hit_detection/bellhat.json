@@ -1,0 +1,11 @@
+{
+  "criteria": {
+    "example": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "entity": {
+        "type": "minecraft:player",
+        "nbt": "{Inventory:[{Slot:103b,id:\"minecraft:diamond_hoe\",Count:1b,tag:{CustomModelData:1117}]}"
+      }
+    }
+  }
+}

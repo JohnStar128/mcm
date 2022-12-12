@@ -81,7 +81,7 @@ execute positioned -1 1 79 unless entity @a[distance=..5] if entity @a[distance=
 execute positioned -1 1 79 if entity @a[distance=..5] run data modify block ~ ~ ~ Book merge from block ~ ~-2 ~ Items[0]
 
 #> Manage AFK players
-execute if entity @a[tag=afk] function mcm:lobby/afk_loop
+execute if entity @a[tag=afk] run function mcm:lobby/afk_loop
 execute as @a[tag=afk,scores={walk=1000..}] run function mcm:lobby/manage_afk
 execute as @a[tag=afk,scores={sprint=1..}] run function mcm:lobby/manage_afk
 execute as @a[tag=afk,scores={crouch=1..}] run function mcm:lobby/manage_afk

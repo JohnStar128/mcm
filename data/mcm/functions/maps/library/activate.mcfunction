@@ -35,7 +35,7 @@ execute as @e[type=marker,tag=available,tag=SpectatorSpawn,limit=1] positioned 9
 #> Chandelier entity
 summon marker 975 139 1000 {Tags:["MapEntity","Chandelier"]}
 
-tellraw @a ["","\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"The game is ready to play!","underlined":true,"color":"green"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Selected Map: ","color":"gray"},{"text":"Library","color":"dark_green","hoverEvent":{"action":"show_text","value":{"text":"Shhhh...","color":"aqua"}}},"\n"]
+tellraw @a ["","\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"The game is ready to play!","underlined":true,"color":"green"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Selected Map: ","color":"gray"},{"text":"Library","color":"dark_green","hoverEvent":{"action":"show_text","value":[{"text":"Having fun isn't hard when you have a library card","color":"aqua"},{"text":"\n    --------","color":"dark_gray"},{"text":"\nConcept by: ","color":"dark_aqua"},{"text":"_topaz","color":"green"}]}},"\n"]
 
 #>Spawn the Overdue Books for Basement Stairs Unlock
 function mcm:maps/library/bookspawns

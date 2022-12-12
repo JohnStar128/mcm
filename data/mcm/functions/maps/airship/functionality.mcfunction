@@ -26,3 +26,7 @@ execute if block -692 52 45 dark_oak_trapdoor[waterlogged=true] run setblock -69
 #also doubles as escape prevention
 execute as @a[tag=queued,predicate=!mcm:bounding_boxes/airship,tag=!spectating] at @s if score $graceperiod CmdData matches 1.. run tp @s @e[tag=PlayerSpawn,limit=1,sort=nearest]
 execute as @a[tag=queued,predicate=!mcm:bounding_boxes/airship,tag=!spectating] at @s if score $selectedMap CmdData matches 2 if score $graceperiod CmdData matches ..0 run function mcm:game/playerdeath
+
+#> Keep spectators inbounds
+execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 2 unless predicate mcm:bounding_boxes/airship run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
+execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 2 unless predicate mcm:bounding_boxes/airship run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
