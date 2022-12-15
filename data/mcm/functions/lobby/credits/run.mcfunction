@@ -30,9 +30,13 @@ execute if score $credit_timer CmdData matches 900..999 run function mcm:lobby/c
 execute if score $credit_timer CmdData matches 1000..1099 run function mcm:lobby/credits/slides/lekro
 #> Zombie
 execute if score $credit_timer CmdData matches 1100..1199 run function mcm:lobby/credits/slides/zombie
+#> Jacob
+execute if score $credit_timer CmdData matches 1200..1299 run function mcm:lobby/credits/slides/jacob
+#> Map Contributors
+execute if score $credit_timer CmdData matches 1300..1399 run function mcm:lobby/credits/slides/contrib
 #> Special Thanks
-execute if score $credit_timer CmdData matches 1200..1699 run function mcm:lobby/credits/slides/thanks
+execute if score $credit_timer CmdData matches 1400..1899 run function mcm:lobby/credits/slides/thanks
 #> Thanks for playing
-execute if score $credit_timer CmdData matches 1700 run place template mcm:credits_slides/thanks_for_playing ~ ~ ~
+execute if score $credit_timer CmdData matches 1900 run place template mcm:credits_slides/thanks_for_playing ~ ~ ~
 #> Reset screen and allow replay
 execute if score $credit_timer CmdData matches 2040 run function mcm:lobby/credits/reset
