@@ -97,5 +97,5 @@ execute as @e[type=cat,tag=cyberpunk_secret_2] at @s if entity @a[distance=..1] 
 
 execute as @a[advancements={mcm:map_functions/cyberpunk_secret_1=true}] run advancement revoke @s only mcm:map_functions/cyberpunk_secret_1
 
-execute as @a[scores={cyberpunk=2,RingBell=1..}] run advancement grant @s only mcm:secrets/cyberpunk
+execute as @a[scores={cyberpunk=2,RingBell=1..},advancements={mcm:secrets/cyberpunk/cyberpunk=false}] run advancement grant @s only mcm:secrets/cyberpunk/cyberpunk
 scoreboard players reset @a RingBell

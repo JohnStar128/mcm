@@ -4,7 +4,7 @@
 execute as @a[predicate=mcm:bounding_boxes/gumdrop_cutscene] if score $gumdropcutscene CmdData matches 0..387 run tp @s 775.5 -19 -3018 0 0
 
 #Grant Secret Advancement
-execute as @a[tag=!spectating,predicate=mcm:bounding_boxes/gumdrop_cutscene,advancements={mcm:secrets/gumdrop=false}] at @s run advancement grant @s only mcm:secrets/gumdrop
+execute as @a[tag=!spectating,predicate=mcm:bounding_boxes/gumdrop_cutscene,advancements={mcm:secrets/gumdrop/gumdrop=false}] at @s run advancement grant @s only mcm:secrets/gumdrop/gumdrop
 
 #Like the whole entire animation, like all of it
 execute if score $gumdropcutscene CmdData matches 60 run place template minecraft:gumdrop_cutscene1 773 -19 -3017

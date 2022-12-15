@@ -1,5 +1,8 @@
 #> Red offset is 65536, green offset is 256, blue offset is 0
 
+#> Seed prng per-player
+execute store result score $x pseudorandom run data get entity @s UUID[0]
+
 #> Update to next color
 function mcm:cosmetics/color_boots/rotate_color
 function mcm:cosmetics/color_boots/hsv_to_rgb

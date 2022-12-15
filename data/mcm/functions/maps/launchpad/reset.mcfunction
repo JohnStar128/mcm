@@ -46,6 +46,29 @@ scoreboard players set $launchCountdown CmdData 0
 scoreboard players set $launchControl CmdData 0
 scoreboard players set $launchTime CmdData 0
 
+#remove water
+setblock -1025 52 -1066 stone_slab[type=top,waterlogged=false] replace
+setblock -1024 52 -1069 stone_slab[type=top,waterlogged=false] replace
+setblock -1023 52 -1072 stone_slab[type=top,waterlogged=false] replace
+setblock -1023 52 -1075 stone_slab[type=top,waterlogged=false] replace
+setblock -1023 52 -1078 stone_slab[type=top,waterlogged=false] replace
+setblock -1023 52 -1081 stone_slab[type=top,waterlogged=false] replace
+setblock -1023 52 -1084 stone_slab[type=top,waterlogged=false] replace
+setblock -1007 52 -1066 stone_slab[type=top,waterlogged=false] replace
+setblock -1008 52 -1069 stone_slab[type=top,waterlogged=false] replace
+setblock -1009 52 -1072 stone_slab[type=top,waterlogged=false] replace
+setblock -1009 52 -1075 stone_slab[type=top,waterlogged=false] replace
+setblock -1009 52 -1078 stone_slab[type=top,waterlogged=false] replace
+setblock -1009 52 -1081 stone_slab[type=top,waterlogged=false] replace
+setblock -1009 52 -1084 stone_slab[type=top,waterlogged=false] replace
+setblock -1023 52 -1087 smooth_stone_slab[type=top,waterlogged=false] replace
+setblock -1009 52 -1087 smooth_stone_slab[type=top,waterlogged=false] replace
+setblock -1023 52 -1090 waxed_exposed_cut_copper_slab[type=top,waterlogged=false] replace
+setblock -1022 52 -1097 waxed_exposed_cut_copper_slab[type=top,waterlogged=false] replace
+setblock -1016 52 -1103 waxed_exposed_cut_copper_slab[type=top,waterlogged=false] replace
+setblock -1010 52 -1097 waxed_exposed_cut_copper_slab[type=top,waterlogged=false] replace
+setblock -1009 52 -1090 waxed_exposed_cut_copper_slab[type=top,waterlogged=false] replace
+
 execute unless block -1111 59 -1145 minecraft:lever[face=ceiling,powered=false,facing=east] run setblock -1111 59 -1145 minecraft:lever[face=ceiling,powered=false,facing=east] replace 
 execute unless block -1111 59 -1049 minecraft:lever[face=ceiling,powered=false,facing=east] run setblock -1111 59 -1049 minecraft:lever[face=ceiling,powered=false,facing=east] replace 
 execute unless block -1093 60 -1121 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -1093 60 -1121 minecraft:spruce_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace 

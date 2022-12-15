@@ -13,7 +13,6 @@ scoreboard players set $saturation player_color 224
 
 scoreboard players set $a pseudorandom 1103515245
 scoreboard players set $c pseudorandom 12345
-scoreboard players set $x pseudorandom 1234567
 
 execute as @a[tag=!colored] run function mcm:cosmetics/color_boots/generate
 execute as @e[type=armor_stand, tag=fakeplayer] run function mcm:cosmetics/color_boots/generate

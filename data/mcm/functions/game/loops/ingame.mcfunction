@@ -6,11 +6,16 @@ execute if score $roundtimer GameRules matches 7 if score $gametimer CmdData mat
 execute if score $roundtimer GameRules matches 6 if score $gametimer CmdData matches 7100 run title @a clear
 execute if score $roundtimer GameRules matches 5 if score $gametimer CmdData matches 5900 run title @a clear
 
+#> Keep track of alive players for stats
+execute if score $graceperiod CmdData matches 1.. as @a[tag=queued] run scoreboard players set @s game_stats 0
+execute if score $graceperiod CmdData matches ..0 as @a[tag=queued,tag=!spectating] run scoreboard players add @s time_alive 1
+execute as @a[tag=gunner, tag=!gunner_stat] run tag @s add gunner_stat
+
 #> Make sure items can't be destroyed by lightning or fire
 execute as @e[type=item] run data merge entity @s {Fire:-1s,Invulnerable:1b}
 
 #> Tag all gunners TODO change this to advancement
-tag @a[tag=innocent,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] add gunner
+tag @a[tag=innocent,tag=!gunner,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] add gunner
 tag @a[nbt=!{Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] remove gunner
 
 #> Murderers and people who dropped their gun can't pick up guns anymore
@@ -60,7 +65,7 @@ execute store result score $deadMurderers CmdData if entity @a[tag=murderer,scor
 
 #> Scrap spawning timer
 execute if score $graceperiod CmdData matches 0 run scoreboard players add $scrapclock CmdData 1
-execute if score $graceperiod CmdData matches 0 if score $scrapclock CmdData matches 20.. if predicate mcm:scraprng run function mcm:game/loops/spawnscrap
+execute if score $graceperiod CmdData matches 0 if score $scrapclock CmdData matches 20.. as @a[tag=queued, tag=!spectating, predicate=mcm:scraprng] run function mcm:game/loops/spawnscrap
 execute if score $graceperiod CmdData matches 0 if score $scrapclock CmdData matches 20.. run scoreboard players set $scrapclock CmdData 0
 
 #> Give every item the KeyItem tag
@@ -166,6 +171,7 @@ execute as @a[tag=spectating] run effect clear @s slowness
 #> Better death message system
 execute if entity @a[advancements={mcm:hit_detection/killed_player=true}] run tellraw @a[scores={dead=1}] {"text":"You were killed by ","color":"gold","extra":[{"selector":"@a[advancements={mcm:hit_detection/killed_player=true},sort=nearest,limit=1]","color":"red"}]}
 execute as @a[scores={dead=1}] run scoreboard players set @s dead 2
+execute as @a[advancements={mcm:hit_detection/killed_player=true}] run scoreboard players add @s game_stats 1
 advancement revoke @a[advancements={mcm:hit_detection/killed_player=true}] only mcm:hit_detection/killed_player
 
 #> Show particles above murderers to identify their teammates

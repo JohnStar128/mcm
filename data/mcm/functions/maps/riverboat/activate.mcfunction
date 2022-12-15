@@ -19,7 +19,7 @@ execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 2060
 execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 2080 66 -2010 run function mcm:util/alloc_entity
 execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 2103 68 -2010 run function mcm:util/alloc_entity
 execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 2046 64 -2000 run function mcm:util/alloc_entity
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 2098 73 -2000 run function mcm:util/alloc_entity
+execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 2097 73 -2000 run function mcm:util/alloc_entity
 execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 2078 72 -1989 run function mcm:util/alloc_entity
 execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 2057 71 -1989 run function mcm:util/alloc_entity
 execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned 2037 72 -1991 run function mcm:util/alloc_entity

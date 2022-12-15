@@ -4,6 +4,9 @@ scoreboard players set $didGameEnd CmdData 1
 
 execute if score $gameEndTimer CmdData matches 200 run title @a clear
 execute as @e[type=item,tag=KeyItem] at @s run data modify entity @s Owner set from entity @e[type=marker,tag=gameID,limit=1] UUID
+execute if score $gameEndTimer CmdData matches 200 run function mcm:game/game_end_stats
+execute if score $gameEndTimer CmdData matches 200 as @a[tag=queued] run scoreboard players reset @s game_stats
+execute if score $gameEndTimer CmdData matches 200 as @a[tag=queued] run scoreboard players reset @s time_alive
 execute if score $gameEndTimer CmdData matches 200 run tellraw @a ["", {"text":"Returning to lobby in 10 seconds...","color":"yellow"}]
 execute if score $gameEndTimer CmdData matches 200 if score $innocentWin CmdData matches 1 run tag @a[tag=innocent,gamemode=adventure,tag=!murderer] add WonLast
 execute if score $gameEndTimer CmdData matches 200 if score $innocentWin CmdData matches 1 run title @a title ["", {"text":"Innocents win!","color":"green"}]
@@ -64,6 +67,7 @@ execute if score $gameEndTimer CmdData matches ..1 run tag @a remove queued
 execute if score $gameEndTimer CmdData matches ..1 run tag @a remove retrieved
 execute if score $gameEndTimer CmdData matches ..1 run tag @a remove shotGun
 execute if score $gameEndTimer CmdData matches ..1 run tag @a remove lostGun
+execute if score $gameEndTimer CmdData matches ..1 run tag @a remove gunner_stat
 
 # remove death related scores
 execute if score $gameEndTimer CmdData matches ..1 run scoreboard players reset @a dead

@@ -61,6 +61,9 @@ scoreboard objectives add retrieval_delay dummy
 scoreboard objectives add motion_x dummy
 scoreboard objectives add motion_y dummy
 scoreboard objectives add motion_z dummy
+scoreboard objectives add game_stats dummy
+scoreboard objectives add time_alive dummy
+scoreboard objectives add vineyard_secret dummy
 
 #> Math values
 scoreboard players set $minus_one math -1
