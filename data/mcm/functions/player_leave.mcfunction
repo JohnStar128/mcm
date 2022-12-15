@@ -52,6 +52,9 @@ advancement revoke @s only mcm:map_votes/map3
 advancement revoke @s only mcm:map_votes/map4
 advancement revoke @s only mcm:map_votes/map5
 advancement revoke @s only mcm:map_votes/map6
+advancement revoke @s only mcm:map_functions/cyberpunk_secret_1
+advancement revoke @s only mcm:map_functions/cyberpunk_secret_2
+advancement revoke @s only mcm:map_functions/cyberpunk_secret_3
 
 # Scores
 scoreboard players reset @s flipmap

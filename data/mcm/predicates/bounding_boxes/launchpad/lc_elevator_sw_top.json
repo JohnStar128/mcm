@@ -1,0 +1,93 @@
+{
+    "condition": "minecraft:alternative",
+    "terms": [
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "location": {
+            "position": {
+              "x": {
+                "min": -1083,
+                "max": -1081
+              },
+              "y": {
+                "min": 49,
+                "max": 51
+              },
+              "z": {
+                "min": -1146,
+                "max": -1144
+              }
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "location": {
+            "position": {
+              "x": {
+                "min": -1080,
+                "max": -1078
+              },
+              "y": {
+                "min": 49,
+                "max": 51
+              },
+              "z": {
+                "min": -1143,
+                "max": -1141
+              }
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "location": {
+            "position": {
+              "x": {
+                "min": -1083,
+                "max": -1081
+              },
+              "y": {
+                "min": 49,
+                "max": 51
+              },
+              "z": {
+                "min": -1140,
+                "max": -1138
+              }
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "location": {
+            "position": {
+              "x": {
+                "min": -1086,
+                "max": -1084
+              },
+              "y": {
+                "min": 49,
+                "max": 51
+              },
+              "z": {
+                "min": -1143,
+                "max": -1141
+              }
+            }
+          }
+        }
+      }
+    ]
+  }

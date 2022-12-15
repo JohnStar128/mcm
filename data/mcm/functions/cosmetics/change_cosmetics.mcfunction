@@ -3,6 +3,10 @@ execute if score @s hatchange matches 1 run scoreboard players set @s selected_h
 execute if score @s hatchange matches 2 run scoreboard players set @s selected_hat 2
 execute if score @s hatchange matches 3 run scoreboard players set @s selected_hat 3
 execute if score @s hatchange matches 4 run scoreboard players set @s selected_hat 4
+execute if score @s hatchange matches 5 run scoreboard players set @s selected_hat 5
+execute if score @s hatchange matches 6 run scoreboard players set @s selected_hat 6
+execute if score @s hatchange matches 7 run scoreboard players set @s selected_hat 7
+
 
 scoreboard players reset @s hatchange
 
@@ -11,8 +15,9 @@ execute if score @s selected_hat matches 1 run function mcm:cosmetics/rainbowhat
 execute if score @s selected_hat matches 2 run function mcm:cosmetics/lance
 execute if score @s selected_hat matches 3 run function mcm:cosmetics/spacehelmet
 execute if score @s selected_hat matches 4 run function mcm:cosmetics/3dglasses
+execute if score @s selected_hat matches 5 run function mcm:cosmetics/bellhat
+execute if score @s selected_hat matches 6 run function mcm:cosmetics/bowlerhat
+execute if score @s selected_hat matches 7 run function mcm:cosmetics/skipperhat
 
 #> Give boots
-execute store result entity @e[type=armor_stand,tag=color_boots,limit=1] ArmorItems[0].tag.display.color int 1 run scoreboard players add @s player_color 0
-item replace entity @s armor.feet from entity @e[type=armor_stand,tag=color_boots,limit=1] armor.feet
-tag @s add colored
+function mcm:cosmetics/color_boots/generate

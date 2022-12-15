@@ -48,7 +48,7 @@ execute if score $gamestate CmdData matches -1..0 as @e[type=villager,tag=arcade
 function mcm:lobby/elevator
 
 #> Secret related stuff
-execute as @a[scores={RingBell=1..},advancements={mcm:secrets/ring_bell=false},predicate=mcm:secrets/lobby_bell] at @s run advancement grant @s only mcm:secrets/ring_bell
+execute as @a[scores={RingBell=1..},advancements={mcm:secrets/lobby/ring_bell=false},predicate=mcm:secrets/lobby_bell] at @s run advancement grant @s only mcm:secrets/lobby/ring_bell
 execute as @a[scores={RingBell=1..}] at @s run scoreboard players reset @s RingBell
 
 #> Guessing this is for that one store in the lobby with the hglllhshglgl - Topaz
@@ -81,7 +81,7 @@ execute positioned -1 1 79 unless entity @a[distance=..5] if entity @a[distance=
 execute positioned -1 1 79 if entity @a[distance=..5] run data modify block ~ ~ ~ Book merge from block ~ ~-2 ~ Items[0]
 
 #> Manage AFK players
-function mcm:lobby/afk_loop
+execute if entity @a[tag=afk] run function mcm:lobby/afk_loop
 execute as @a[tag=afk,scores={walk=1000..}] run function mcm:lobby/manage_afk
 execute as @a[tag=afk,scores={sprint=1..}] run function mcm:lobby/manage_afk
 execute as @a[tag=afk,scores={crouch=1..}] run function mcm:lobby/manage_afk
@@ -89,3 +89,12 @@ execute as @a[tag=afk,scores={jump=1..}] run function mcm:lobby/manage_afk
 
 #> Change boots if more players log on
 execute if score $gamestate CmdData matches -1..0 if score $change_color CmdData matches 1.. run function mcm:cosmetics/color_boots/update
+
+#> Respawn chairs if they become sentient and walk off
+execute as @e[tag=chair_marker] at @s store result score @s nearby_pigs if entity @e[type=pig,distance=..0.1]
+execute as @e[tag=spectator_chair_marker] at @s store result score @s nearby_pigs if entity @e[type=pig,distance=..0.1]
+execute as @e[type=marker,tag=chair_marker] at @s if score @s nearby_pigs matches 0 run summon pig ~ ~ ~ {NoAI:1b,Rotation:[90.f,0.0f],Saddle:1b,Silent:1b,Tags:["chair"]}
+execute as @e[type=marker,tag=spectator_chair_marker] at @s if score @s nearby_pigs matches 0 run summon pig ~ ~ ~ {NoAI:1b,Rotation:[90.f,0.0f],Saddle:1b,Silent:1b,Tags:["spectatorchair"]}
+#> If people start duplicating chairs, get rid of them
+execute as @e[type=marker,tag=chair_marker] at @s if score @s nearby_pigs matches 2.. run tp @e[type=pig,limit=1,sort=nearest] ~ ~-300 ~
+execute as @e[type=marker,tag=spectator_chair_marker] at @s if score @s nearby_pigs matches 2.. run tp @e[type=pig,limit=1,sort=nearest] ~ ~-300 ~

@@ -9,8 +9,12 @@ scoreboard players set $temp math 1
 scoreboard players operation $sin_step player_color += $temp math
 scoreboard players set $sin_coord player_color -30
 scoreboard players set $hue player_color 120
-scoreboard players set $chroma player_color 128
-scoreboard players set $value player_color 128
+scoreboard players set $saturation player_color 224
+
+scoreboard players set $a pseudorandom 1103515245
+scoreboard players set $c pseudorandom 12345
+
 execute as @a[tag=!colored] run function mcm:cosmetics/color_boots/generate
+execute as @e[type=armor_stand, tag=fakeplayer] run function mcm:cosmetics/color_boots/generate
 
 scoreboard players set $change_color CmdData 0

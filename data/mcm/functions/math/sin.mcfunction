@@ -31,8 +31,3 @@ scoreboard players operation $x_fifth math /= $five_fact math
 scoreboard players operation $out math = $x math
 scoreboard players operation $out math -= $x_cubed math
 scoreboard players operation $out math += $x_fifth math
-
-#> This should really be moved somewhere else, it's unrelated but it works because this is only used in one place
-scoreboard players set $temp math 127
-scoreboard players operation $out math *= $temp math
-scoreboard players operation $out math /= $one_thousand math

@@ -76,7 +76,7 @@ execute if score $launchTime CmdData matches 211..220 run particle minecraft:lav
 
 execute if score $launchTime CmdData matches 220 run function mcm:maps/launchpad/rockettemp/clearrocket
 execute if score $launchTime CmdData matches 221 as @a[tag=launch_player] at @s run tp @s ~ ~-281 ~
-execute if score $launchTime CmdData matches 220 as @a[tag=launch_player,tag=!spectating,advancements={mcm:secrets/spaceship=false}] at @s run advancement grant @s only mcm:secrets/spaceship
+execute if score $launchTime CmdData matches 220 as @a[tag=launch_player,tag=!spectating,advancements={mcm:secrets/launchpad/spaceship=false}] at @s run advancement grant @s only mcm:secrets/launchpad/spaceship
 
 # fire
 execute if score $launchTime CmdData matches 5 run fill -1022 50 -1091 -1010 50 -1091 fire
@@ -126,8 +126,47 @@ execute if score $launchTime CmdData matches 61 run fill -1024 50 -1063 -1020 50
 execute if score $launchTime CmdData matches 61 run fill -1012 50 -1063 -1008 50 -1063 fire
 
 # water
-execute if score $launchTime CmdData matches 220 run setblock -1025 52 -1092 stone
-execute if score $launchTime CmdData matches 220 run setblock -1007 52 -1092 stone
+execute if score $launchTime CmdData matches 220 run setblock -1025 52 -1066 stone_slab[type=top,waterlogged=true] replace
+execute if score $launchTime CmdData matches 220 run setblock -1024 52 -1069 stone_slab[type=top,waterlogged=true] replace
+execute if score $launchTime CmdData matches 220 run setblock -1023 52 -1072 stone_slab[type=top,waterlogged=true] replace
+execute if score $launchTime CmdData matches 220 run setblock -1023 52 -1075 stone_slab[type=top,waterlogged=true] replace
+execute if score $launchTime CmdData matches 220 run setblock -1023 52 -1078 stone_slab[type=top,waterlogged=true] replace
+execute if score $launchTime CmdData matches 220 run setblock -1023 52 -1081 stone_slab[type=top,waterlogged=true] replace
+execute if score $launchTime CmdData matches 220 run setblock -1023 52 -1084 stone_slab[type=top,waterlogged=true] replace
+execute if score $launchTime CmdData matches 220 run setblock -1007 52 -1066 stone_slab[type=top,waterlogged=true] replace
+execute if score $launchTime CmdData matches 220 run setblock -1008 52 -1069 stone_slab[type=top,waterlogged=true] replace
+execute if score $launchTime CmdData matches 220 run setblock -1009 52 -1072 stone_slab[type=top,waterlogged=true] replace
+execute if score $launchTime CmdData matches 220 run setblock -1009 52 -1075 stone_slab[type=top,waterlogged=true] replace
+execute if score $launchTime CmdData matches 220 run setblock -1009 52 -1078 stone_slab[type=top,waterlogged=true] replace
+execute if score $launchTime CmdData matches 220 run setblock -1009 52 -1081 stone_slab[type=top,waterlogged=true] replace
+execute if score $launchTime CmdData matches 220 run setblock -1009 52 -1084 stone_slab[type=top,waterlogged=true] replace
+execute if score $launchTime CmdData matches 220 run setblock -1023 52 -1087 smooth_stone_slab[type=top,waterlogged=true] replace
+execute if score $launchTime CmdData matches 220 run setblock -1009 52 -1087 smooth_stone_slab[type=top,waterlogged=true] replace
+execute if score $launchTime CmdData matches 220 run setblock -1023 52 -1090 waxed_exposed_cut_copper_slab[type=top,waterlogged=true] replace
+execute if score $launchTime CmdData matches 220 run setblock -1022 52 -1097 waxed_exposed_cut_copper_slab[type=top,waterlogged=true] replace
+execute if score $launchTime CmdData matches 220 run setblock -1016 52 -1103 waxed_exposed_cut_copper_slab[type=top,waterlogged=true] replace
+execute if score $launchTime CmdData matches 220 run setblock -1010 52 -1097 waxed_exposed_cut_copper_slab[type=top,waterlogged=true] replace
+execute if score $launchTime CmdData matches 220 run setblock -1009 52 -1090 waxed_exposed_cut_copper_slab[type=top,waterlogged=true] replace
 
-execute if score $launchTime CmdData matches 260 run setblock -1025 52 -1092 air
-execute if score $launchTime CmdData matches 260 run setblock -1007 52 -1092 air
+# remove water
+execute if score $launchTime CmdData matches 260 run setblock -1025 52 -1066 stone_slab[type=top,waterlogged=false] replace
+execute if score $launchTime CmdData matches 260 run setblock -1024 52 -1069 stone_slab[type=top,waterlogged=false] replace
+execute if score $launchTime CmdData matches 260 run setblock -1023 52 -1072 stone_slab[type=top,waterlogged=false] replace
+execute if score $launchTime CmdData matches 260 run setblock -1023 52 -1075 stone_slab[type=top,waterlogged=false] replace
+execute if score $launchTime CmdData matches 260 run setblock -1023 52 -1078 stone_slab[type=top,waterlogged=false] replace
+execute if score $launchTime CmdData matches 260 run setblock -1023 52 -1081 stone_slab[type=top,waterlogged=false] replace
+execute if score $launchTime CmdData matches 260 run setblock -1023 52 -1084 stone_slab[type=top,waterlogged=false] replace
+execute if score $launchTime CmdData matches 260 run setblock -1007 52 -1066 stone_slab[type=top,waterlogged=false] replace
+execute if score $launchTime CmdData matches 260 run setblock -1008 52 -1069 stone_slab[type=top,waterlogged=false] replace
+execute if score $launchTime CmdData matches 260 run setblock -1009 52 -1072 stone_slab[type=top,waterlogged=false] replace
+execute if score $launchTime CmdData matches 260 run setblock -1009 52 -1075 stone_slab[type=top,waterlogged=false] replace
+execute if score $launchTime CmdData matches 260 run setblock -1009 52 -1078 stone_slab[type=top,waterlogged=false] replace
+execute if score $launchTime CmdData matches 260 run setblock -1009 52 -1081 stone_slab[type=top,waterlogged=false] replace
+execute if score $launchTime CmdData matches 260 run setblock -1009 52 -1084 stone_slab[type=top,waterlogged=false] replace
+execute if score $launchTime CmdData matches 260 run setblock -1023 52 -1087 smooth_stone_slab[type=top,waterlogged=false] replace
+execute if score $launchTime CmdData matches 260 run setblock -1009 52 -1087 smooth_stone_slab[type=top,waterlogged=false] replace
+execute if score $launchTime CmdData matches 260 run setblock -1023 52 -1090 waxed_exposed_cut_copper_slab[type=top,waterlogged=false] replace
+execute if score $launchTime CmdData matches 260 run setblock -1022 52 -1097 waxed_exposed_cut_copper_slab[type=top,waterlogged=false] replace
+execute if score $launchTime CmdData matches 260 run setblock -1016 52 -1103 waxed_exposed_cut_copper_slab[type=top,waterlogged=false] replace
+execute if score $launchTime CmdData matches 260 run setblock -1010 52 -1097 waxed_exposed_cut_copper_slab[type=top,waterlogged=false] replace
+execute if score $launchTime CmdData matches 260 run setblock -1009 52 -1090 waxed_exposed_cut_copper_slab[type=top,waterlogged=false] replace

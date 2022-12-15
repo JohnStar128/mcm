@@ -56,11 +56,15 @@ scoreboard objectives add available_entities dummy
 scoreboard objectives add current_vote dummy
 scoreboard objectives add player_color dummy
 scoreboard objectives add math dummy
+scoreboard objectives add cyberpunk dummy
 scoreboard objectives add dev dummy
 scoreboard objectives add retrieval_delay dummy
 scoreboard objectives add motion_x dummy
 scoreboard objectives add motion_y dummy
 scoreboard objectives add motion_z dummy
+scoreboard objectives add game_stats dummy
+scoreboard objectives add time_alive dummy
+scoreboard objectives add vineyard_secret dummy
 
 #> Math values
 scoreboard players set $minus_one math -1
@@ -132,6 +136,19 @@ summon marker 0 100 0 {Tags:["gameID"]}
 execute store result score $gameID CmdData run data get entity @e[tag=gameID,limit=1,sort=nearest] UUID[0]
 scoreboard players operation @a gameID = $gameID CmdData
 
+#> Revoke advancements players shouldn't have but failsafe anyways
+advancement revoke @a[advancements={mcm:hit_detection/gun_hit=true}] only mcm:hit_detection/gun_hit
+advancement revoke @a[advancements={mcm:hit_detection/knife_hit=true}] only mcm:hit_detection/knife_hit
+advancement revoke @a[advancements={mcm:hit_detection/knife_melee_hit=true}] only mcm:hit_detection/knife_melee_hit
+advancement revoke @a[advancements={mcm:map_functions/cyberpunk_secret_1=true}] only mcm:map_functions/cyberpunk_secret_1
+advancement revoke @a[advancements={mcm:map_functions/cyberpunk_secret_2=true}] only mcm:map_functions/cyberpunk_secret_2
+advancement revoke @a[advancements={mcm:map_functions/cyberpunk_secret_3=true}] only mcm:map_functions/cyberpunk_secret_3
+
+execute unless entity @e[type=marker,tag=Gumdrop] run summon marker 0 -49 70 {Tags:["MapVote","Gumdrop"]}
+scoreboard players set @e[type=marker,tag=Gumdrop] MapValues 6
+execute unless entity @e[type=marker,tag=Cyberpunk] run summon marker 0 -49 70 {Tags:["MapVote","Cyberpunk"]}
+scoreboard players set @e[type=marker,tag=Gumdrop] MapValues 5
+
 #> Reset players back to a known default state
 execute as @a run function mcm:player_leave
 
@@ -146,10 +163,6 @@ scoreboard players set $startscrap GameRules 1
 
 #> Remove bossbar if reloading during game (which you still shouldn't do!)
 bossbar remove minecraft:gamedisplay
-
-#> Temp while maps 5 and 6 are in development
-kill @e[type=marker,tag=Cyberpunk]
-kill @e[type=marker,tag=Gumdrop]
 
 function mcm:lobby/voting/start
 

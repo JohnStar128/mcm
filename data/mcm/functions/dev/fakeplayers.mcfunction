@@ -20,3 +20,4 @@ summon armor_stand -3 1 75 {Tags:["fakeplayer"]}
 summon armor_stand -4 1 75 {Tags:["fakeplayer"]}
 summon armor_stand -5 1 75 {Tags:["fakeplayer"]}
 summon armor_stand -6 1 75 {Tags:["fakeplayer"]}
+tag @e[type=armor_stand,tag=fakeplayer] add queued

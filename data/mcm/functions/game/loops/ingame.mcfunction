@@ -6,11 +6,16 @@ execute if score $roundtimer GameRules matches 7 if score $gametimer CmdData mat
 execute if score $roundtimer GameRules matches 6 if score $gametimer CmdData matches 7100 run title @a clear
 execute if score $roundtimer GameRules matches 5 if score $gametimer CmdData matches 5900 run title @a clear
 
+#> Keep track of alive players for stats
+execute if score $graceperiod CmdData matches 1.. as @a[tag=queued] run scoreboard players set @s game_stats 0
+execute if score $graceperiod CmdData matches ..0 as @a[tag=queued,tag=!spectating] run scoreboard players add @s time_alive 1
+execute as @a[tag=gunner, tag=!gunner_stat] run tag @s add gunner_stat
+
 #> Make sure items can't be destroyed by lightning or fire
 execute as @e[type=item] run data merge entity @s {Fire:-1s,Invulnerable:1b}
 
 #> Tag all gunners TODO change this to advancement
-tag @a[tag=innocent,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] add gunner
+tag @a[tag=innocent,tag=!gunner,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] add gunner
 tag @a[nbt=!{Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] remove gunner
 
 #> Murderers and people who dropped their gun can't pick up guns anymore
@@ -41,23 +46,14 @@ execute if score $selectedMap CmdData matches 1 run function mcm:maps/library/fu
 execute if score $selectedMap CmdData matches 2 run function mcm:maps/airship/functionality
 execute if score $selectedMap CmdData matches 3 run function mcm:maps/vineyard/functionality
 execute if score $selectedMap CmdData matches 4 run function mcm:maps/launchpad/functionality
+execute if score $selectedMap CmdData matches 5 run function mcm:maps/cyberpunk/functionality
+#gumdrop - execute if score $selectedMap CmdData matches 6 run function mcm:maps/gumdrop/functionality
+execute if score $selectedMap CmdData matches 6 run function mcm:maps/riverboat/functionality
 
 #> Allow spectating
 execute as @a[nbt={RootVehicle:{Entity:{Tags:["spectatorchair"]}}}] run tag @s add spectating
 execute as @a[nbt={RootVehicle:{Entity:{Tags:["spectatorchair"]}}}] run tellraw @s ["", {"text":"You are now spectating the game","color":"green","italic":true}]
 execute as @a[nbt={RootVehicle:{Entity:{Tags:["spectatorchair"]}}}] at @s run gamemode spectator @s
-
-#> Keep spectators inbounds
-execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 1 if score $library_flip CmdData matches 0 unless predicate mcm:bounding_boxes/library run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
-execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 1 if score $library_flip CmdData matches 0 unless predicate mcm:bounding_boxes/library run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
-execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 1 if score $library_flip CmdData matches 1 unless predicate mcm:bounding_boxes/library_flipped run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
-execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 1 if score $library_flip CmdData matches 1 unless predicate mcm:bounding_boxes/library_flipped run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
-execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 2 unless predicate mcm:bounding_boxes/airship run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
-execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 2 unless predicate mcm:bounding_boxes/airship run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
-execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 3 unless predicate mcm:bounding_boxes/vineyard run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
-execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 3 unless predicate mcm:bounding_boxes/vineyard run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
-execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 4 unless predicate mcm:bounding_boxes/launchpad run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
-execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 4 unless predicate mcm:bounding_boxes/launchpad run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
 
 #> Track dead innocents
 execute store result score $innocents CmdData if entity @a[tag=innocent]
@@ -69,7 +65,7 @@ execute store result score $deadMurderers CmdData if entity @a[tag=murderer,scor
 
 #> Scrap spawning timer
 execute if score $graceperiod CmdData matches 0 run scoreboard players add $scrapclock CmdData 1
-execute if score $graceperiod CmdData matches 0 if score $scrapclock CmdData matches 20.. if predicate mcm:scraprng run function mcm:game/loops/spawnscrap
+execute if score $graceperiod CmdData matches 0 if score $scrapclock CmdData matches 20.. as @a[tag=queued, tag=!spectating, predicate=mcm:scraprng] run function mcm:game/loops/spawnscrap
 execute if score $graceperiod CmdData matches 0 if score $scrapclock CmdData matches 20.. run scoreboard players set $scrapclock CmdData 0
 
 #> Give every item the KeyItem tag
@@ -164,6 +160,9 @@ execute if predicate mcm:soundrng if score $selectedMap CmdData matches 1 run fu
 execute if predicate mcm:soundrng if score $selectedMap CmdData matches 2 run function mcm:maps/airship/sound
 execute if predicate mcm:soundrng if score $selectedMap CmdData matches 3 run function mcm:maps/vineyard/sound
 execute if predicate mcm:soundrng if score $selectedMap CmdData matches 4 run function mcm:maps/launchpad/sound
+execute if predicate mcm:soundrng if score $selectedMap CmdData matches 5 run function mcm:maps/cyberpunk/sound
+#gumdrop - execute if predicate mcm:soundrng if score $selectedMap CmdData matches 6 run function mcm:maps/gumdrop/sound
+execute if predicate mcm:soundrng if score $selectedMap CmdData matches 6 run function mcm:maps/riverboat/sound
 
 #> Clear spectator nausea
 execute as @a[tag=spectating] run effect clear @s nausea
@@ -172,6 +171,7 @@ execute as @a[tag=spectating] run effect clear @s slowness
 #> Better death message system
 execute if entity @a[advancements={mcm:hit_detection/killed_player=true}] run tellraw @a[scores={dead=1}] {"text":"You were killed by ","color":"gold","extra":[{"selector":"@a[advancements={mcm:hit_detection/killed_player=true},sort=nearest,limit=1]","color":"red"}]}
 execute as @a[scores={dead=1}] run scoreboard players set @s dead 2
+execute as @a[advancements={mcm:hit_detection/killed_player=true}] run scoreboard players add @s game_stats 1
 advancement revoke @a[advancements={mcm:hit_detection/killed_player=true}] only mcm:hit_detection/killed_player
 
 #> Show particles above murderers to identify their teammates

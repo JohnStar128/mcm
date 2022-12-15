@@ -1,4 +1,9 @@
 #> Find intermediate point
+scoreboard players operation $chroma player_color = $saturation player_color
+scoreboard players operation $chroma player_color *= $value player_color
+scoreboard players set $temp math 256
+scoreboard players operation $chroma player_color /= $temp math
+
 scoreboard players operation $hue_prime player_color = $hue player_color
 scoreboard players operation $hue_prime player_color /= $sixty math
 

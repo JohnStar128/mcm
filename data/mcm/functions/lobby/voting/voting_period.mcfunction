@@ -14,6 +14,12 @@ execute as @a[advancements={mcm:map_votes/map3=true}] at @s run advancement revo
 execute as @a[advancements={mcm:map_votes/map4=true}] at @s run trigger mapvote set 4
 execute as @a[advancements={mcm:map_votes/map4=true}] at @s run advancement revoke @s only mcm:map_votes/map4
 
+execute as @a[advancements={mcm:map_votes/map5=true}] at @s run trigger mapvote set 5
+execute as @a[advancements={mcm:map_votes/map5=true}] at @s run advancement revoke @s only mcm:map_votes/map5
+
+execute as @a[advancements={mcm:map_votes/map6=true}] at @s run trigger mapvote set 6
+execute as @a[advancements={mcm:map_votes/map6=true}] at @s run advancement revoke @s only mcm:map_votes/map6
+
 execute as @a[advancements={mcm:map_votes/map_random=true}] at @s run trigger mapvote set -1
 execute as @a[advancements={mcm:map_votes/map_random=true}] at @s run advancement revoke @s only mcm:map_votes/map_random
 

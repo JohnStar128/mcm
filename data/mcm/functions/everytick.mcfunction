@@ -1,5 +1,6 @@
 #> What to do if a player disconnects and rejoins
 execute as @a[scores={leave=1..}] unless score @s gameID = $gameID CmdData run function mcm:player_leave
+execute as @a[scores={leave=1..}] run schedule function mcm:lobby/lobby_cosmetic_signs 10t
 scoreboard players reset @a[scores={leave=1..}] leave
 
 #> Give everyone saturation because "Murder isn't peaceful"

@@ -4,6 +4,9 @@ scoreboard players set $didGameEnd CmdData 1
 
 execute if score $gameEndTimer CmdData matches 200 run title @a clear
 execute as @e[type=item,tag=KeyItem] at @s run data modify entity @s Owner set from entity @e[type=marker,tag=gameID,limit=1] UUID
+execute if score $gameEndTimer CmdData matches 200 run function mcm:game/game_end_stats
+execute if score $gameEndTimer CmdData matches 200 as @a[tag=queued] run scoreboard players reset @s game_stats
+execute if score $gameEndTimer CmdData matches 200 as @a[tag=queued] run scoreboard players reset @s time_alive
 execute if score $gameEndTimer CmdData matches 200 run tellraw @a ["", {"text":"Returning to lobby in 10 seconds...","color":"yellow"}]
 execute if score $gameEndTimer CmdData matches 200 if score $innocentWin CmdData matches 1 run tag @a[tag=innocent,gamemode=adventure,tag=!murderer] add WonLast
 execute if score $gameEndTimer CmdData matches 200 if score $innocentWin CmdData matches 1 run title @a title ["", {"text":"Innocents win!","color":"green"}]
@@ -64,6 +67,7 @@ execute if score $gameEndTimer CmdData matches ..1 run tag @a remove queued
 execute if score $gameEndTimer CmdData matches ..1 run tag @a remove retrieved
 execute if score $gameEndTimer CmdData matches ..1 run tag @a remove shotGun
 execute if score $gameEndTimer CmdData matches ..1 run tag @a remove lostGun
+execute if score $gameEndTimer CmdData matches ..1 run tag @a remove gunner_stat
 
 # remove death related scores
 execute if score $gameEndTimer CmdData matches ..1 run scoreboard players reset @a dead
@@ -85,16 +89,16 @@ execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData
 execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 2 run function mcm:maps/airship/reset
 execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 3 run function mcm:maps/vineyard/reset
 execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 4 run function mcm:maps/launchpad/reset
+execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 5 run function mcm:maps/cyberpunk/reset
+#gumdrop - execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 6 run function mcm:maps/gumdrop/reset
+execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 6 run function mcm:maps/riverboat/reset
 
 #give popcorn
 execute if score $gameEndTimer CmdData matches ..1 run item replace entity @a[tag=WonLast] hotbar.0 with warped_fungus_on_a_stick{NoDrop:1b,CustomModelData:1114,display:{Name:'[{"text":"Victory Popcorn","italic":false,"color":"yellow"}]',Lore:['[{"text":"","italic":false}]','[{"text":"The snack that\'s worth dying for!","italic":true,"color":"dark_gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]']},HideFlags:3,HideFlags:3}
 execute if score $gameEndTimer CmdData matches ..1 run tag @a[tag=WonLast] remove WonLast
 
-# reset map specific stuff that changes during the game
-execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 1 run function mcm:maps/library/reset
-execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 2 run function mcm:maps/airship/reset
-execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 3 run function mcm:maps/vineyard/reset
-execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 4 run function mcm:maps/launchpad/reset
+# disable friendly fire
+execute if score $gameEndTimer CmdData matches 199 run team join nametags @a[tag=queued,team=!nametags]
 
 #> Count AFK people so they don't autoqueue
 execute if score $gameEndTimer CmdData matches ..1 run tag @a add afk
@@ -106,7 +110,7 @@ execute if score $gameEndTimer CmdData matches ..1 run scoreboard players reset 
 #> Reset the lobby
 execute if score $gameEndTimer CmdData matches ..1 run function mcm:lobby/lobby_reset
 
-# set $gamestate to 0 (pregame, post vote)
+# set $gamestate to -1 (voting period)
 execute if score $gameEndTimer CmdData matches ..1 run scoreboard players set $gamestate CmdData -1
 execute if score $gameEndTimer CmdData matches ..1 run function mcm:lobby/voting/start
 execute if score $gameEndTimer CmdData matches ..1 run scoreboard players set $gameEndTimer CmdData 200
@@ -125,3 +129,9 @@ execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 3 unle
 execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 3 unless predicate mcm:bounding_boxes/vineyard run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
 execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 4 unless predicate mcm:bounding_boxes/launchpad run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
 execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 4 unless predicate mcm:bounding_boxes/launchpad run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
+execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 5 unless predicate mcm:bounding_boxes/cyberpunk run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
+execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 5 unless predicate mcm:bounding_boxes/cyberpunk run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
+# gumdrop - execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 6 unless predicate mcm:bounding_boxes/gumdrop run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
+# gumdrop - execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 6 unless predicate mcm:bounding_boxes/gumdrop run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
+execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 6 unless predicate mcm:bounding_boxes/riverboat run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
+execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 6 unless predicate mcm:bounding_boxes/riverboat run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0

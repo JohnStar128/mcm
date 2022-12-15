@@ -1,9 +1,21 @@
-scoreboard players operation $hue player_color += $angle player_color
+scoreboard players operation $x pseudorandom *= $a pseudorandom
+scoreboard players operation $x pseudorandom += $c pseudorandom
+scoreboard players operation $hue player_color = $x pseudorandom
 scoreboard players operation $hue player_color %= $max_angle player_color
 
-scoreboard players operation $sin_coord player_color += $sin_step player_color
-scoreboard players operation $temp math = $sin_coord player_color
-execute if score $sin_coord player_color matches 30.. run scoreboard players remove $sin_coord player_color 60
-function mcm:math/sin
-scoreboard players operation $noise player_color = $out math
+function mcm:cosmetics/color_boots/gradient_step
+function mcm:cosmetics/color_boots/gradient_step
+#function mcm:cosmetics/color_boots/gradient_step
+#function mcm:cosmetics/color_boots/gradient_step
+#function mcm:cosmetics/color_boots/gradient_step
 
+scoreboard players operation $hue player_color %= $max_angle player_color
+
+scoreboard players set $value player_color 128
+scoreboard players set $temp2 math 128
+scoreboard players operation $x pseudorandom *= $a pseudorandom
+scoreboard players operation $x pseudorandom += $c pseudorandom
+scoreboard players operation $temp math = $x pseudorandom
+scoreboard players operation $temp math %= $temp2 math
+
+scoreboard players operation $value player_color += $temp math
