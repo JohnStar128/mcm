@@ -46,18 +46,6 @@ scoreboard players set $launchCountdown CmdData 0
 scoreboard players set $launchControl CmdData 0
 scoreboard players set $launchTime CmdData 0
 
-<<<<<<< HEAD
-#Replace go for launch button and sign in rocket
-execute unless block -1016 156 -1095 stone_button run setblock -1016 156 -1095 stone_button[face=wall,facing=north]
-execute unless block -1016 157 -1095 oak_wall_sign run setblock -1016 157 -1095 minecraft:oak_wall_sign{GlowingText:1b,Color:"white",Text2:'{"text":"Initiate Launch"}'}
-
-# other blocks
-execute unless block -1096 62 -1087 flower_pot run setblock -1096 62 -1087 flower_pot
-execute unless block -1096 62 -1093 flower_pot run setblock -1096 62 -1093 flower_pot
-execute unless block -1096 62 -1099 flower_pot run setblock -1096 62 -1099 flower_pot
-execute unless block -1096 62 -1105 flower_pot run setblock -1096 62 -1105 flower_pot
-execute unless block -1096 62 -1111 flower_pot run setblock -1096 62 -1111 flower_pot
-=======
 #remove water
 setblock -1025 52 -1066 stone_slab[type=top,waterlogged=false] replace
 setblock -1024 52 -1069 stone_slab[type=top,waterlogged=false] replace
@@ -80,7 +68,6 @@ setblock -1022 52 -1097 waxed_exposed_cut_copper_slab[type=top,waterlogged=false
 setblock -1016 52 -1103 waxed_exposed_cut_copper_slab[type=top,waterlogged=false] replace
 setblock -1010 52 -1097 waxed_exposed_cut_copper_slab[type=top,waterlogged=false] replace
 setblock -1009 52 -1090 waxed_exposed_cut_copper_slab[type=top,waterlogged=false] replace
->>>>>>> new_maps
 
 execute unless block -1111 59 -1145 minecraft:lever[face=ceiling,powered=false,facing=east] run setblock -1111 59 -1145 minecraft:lever[face=ceiling,powered=false,facing=east] replace 
 execute unless block -1111 59 -1049 minecraft:lever[face=ceiling,powered=false,facing=east] run setblock -1111 59 -1049 minecraft:lever[face=ceiling,powered=false,facing=east] replace 
