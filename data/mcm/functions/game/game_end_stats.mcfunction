@@ -18,14 +18,15 @@ tellraw @a ["", {"text":"|","color":"gray","bold":true}]
 
 #> Survivors
 tellraw @a ["", {"text":"|","color":"gray","bold":true}, {"text":" Survivors:","color":"green"}]
-execute as @a[tag=queued,tag=!spectating] run tellraw @a ["", {"text":"| ","color":"gray","bold":true}, {"selector":"@s","color":"green"}]
+#execute as @a[tag=queued,tag=!spectating] run tellraw @a ["", {"text":"| ","color":"gray","bold":true}, {"selector":"@s","color":"green"}]
+execute as @a[tag=queued,tag=!spectating] run function mcm:game/display_time_alive
 
 #> Separator
 tellraw @a ["", {"text":"|","color":"gray","bold":true}]
 
 #> Time alive
 tellraw @a ["", {"text":"|","color":"gray","bold":true}, {"text":" Time alive:","color":"dark_purple"}]
-execute as @a[tag=queued] run function mcm:game/display_time_alive
+execute as @a[tag=queued,tag=spectating] run function mcm:game/display_time_alive
 
 #> Footer
 tellraw @a ["", {"text":"|","color":"gray","bold":true},{"text":" ------------------------------- ","color":"green"}]

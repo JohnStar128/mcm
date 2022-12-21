@@ -8,6 +8,7 @@ execute if score $selectedMap CmdData matches 4 run time set 9000
 execute if score $selectedMap CmdData matches 4 run gamerule doDaylightCycle true
 execute if score $selectedMap CmdData matches 5 run time set midnight
 execute if score $selectedMap CmdData matches 6 run time set 6000
+execute if score $selectedMap CmdData matches 7 run time set 12500
 
 tellraw @a ["\n",{"text":"Assigning roles in 15 seconds...","color":"yellow"},"\n"]
 

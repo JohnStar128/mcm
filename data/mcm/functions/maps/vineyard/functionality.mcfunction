@@ -13,8 +13,9 @@ execute if block 1953 60 1978 comparator[powered=true] as @a[scores={vineyard_se
 execute if entity @a[scores={vineyard_secret=3}] run scoreboard players set @a[tag=queued] vineyard_secret 0 
 
 execute if block 1958 55 2012 polished_blackstone_button[powered=true] as @a[predicate=mcm:bounding_boxes/vineyard_secret, advancements={mcm:secrets/vineyard/vineyard=false}] run advancement grant @s only mcm:secrets/vineyard/vineyard
-execute if score $timer vineyard_secret matches ..0 if block 1958 55 2012 polished_blackstone_button[powered=true] as @a[predicate=mcm:bounding_boxes/vineyard_secret,scores={vineyard_secret=0}] run playsound minecraft:credits block @s ~ ~ ~ 1 0.6
-execute if score $timer vineyard_secret matches ..0 if block 1958 55 2012 polished_blackstone_button[powered=true] run scoreboard players set $timer vineyard_secret 600
+execute if score $timer vineyard_secret matches ..0 if block 1958 55 2012 polished_blackstone_button[powered=true] as @a[predicate=mcm:bounding_boxes/vineyard_secret] positioned 1944 57 2008 run stopsound @a block
+execute if score $timer vineyard_secret matches ..0 if block 1958 55 2012 polished_blackstone_button[powered=true] as @a[predicate=mcm:bounding_boxes/vineyard_secret] positioned 1944 57 2008 run playsound minecraft:credits block @s ~ ~ ~ 0.7 0.6
+execute if score $timer vineyard_secret matches ..0 if block 1958 55 2012 polished_blackstone_button[powered=true] run scoreboard players set $timer vineyard_secret 100
 scoreboard players remove $timer vineyard_secret 1
 
 #> Make sure Lance stays a baby turtle

@@ -5,7 +5,7 @@ scoreboard players operation $hue player_color %= $max_angle player_color
 
 function mcm:cosmetics/color_boots/gradient_step
 function mcm:cosmetics/color_boots/gradient_step
-#function mcm:cosmetics/color_boots/gradient_step
+function mcm:cosmetics/color_boots/gradient_step
 #function mcm:cosmetics/color_boots/gradient_step
 #function mcm:cosmetics/color_boots/gradient_step
 

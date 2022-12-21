@@ -7,75 +7,75 @@ execute if score $launchTime CmdData matches 1 run playsound minecraft:rocketlau
 execute if score $launchTime CmdData matches 1..20 run particle minecraft:lava -1015.33 48.00 -1096.691 2 5 2 1 500 force
 
 execute if score $launchTime CmdData matches 20 run function mcm:maps/launchpad/rockettemp/secondpos
-execute if score $launchTime CmdData matches 21 as @a[tag=launch_player] at @s run tp @s ~ ~5.1 ~
+execute if score $launchTime CmdData matches 21 as @a[tag=launch_player,tag=!spectating] at @s run tp @s ~ ~5.1 ~
 execute if score $launchTime CmdData matches 21..36 run particle minecraft:lava -1015.33 53.00 -1096.691 2 5 2 1 500 force
 
 execute if score $launchTime CmdData matches 35 run function mcm:maps/launchpad/rockettemp/thirdpos
-execute if score $launchTime CmdData matches 36 as @a[tag=launch_player] at @s run tp @s ~ ~5.1 ~
+execute if score $launchTime CmdData matches 36 as @a[tag=launch_player,tag=!spectating] at @s run tp @s ~ ~5.1 ~
 execute if score $launchTime CmdData matches 36..50 run particle minecraft:lava -1015.33 58.00 -1096.691 2 5 2 1 500 force
 
 execute if score $launchTime CmdData matches 50 run function mcm:maps/launchpad/rockettemp/fourthpos
-execute if score $launchTime CmdData matches 51 as @a[tag=launch_player] at @s run tp @s ~ ~5.1 ~
+execute if score $launchTime CmdData matches 51 as @a[tag=launch_player,tag=!spectating] at @s run tp @s ~ ~5.1 ~
 execute if score $launchTime CmdData matches 51..65 run particle minecraft:lava -1015.33 63.00 -1096.691 2 5 2 1 500 force
 
 execute if score $launchTime CmdData matches 65 run function mcm:maps/launchpad/rockettemp/fifthpos
-execute if score $launchTime CmdData matches 66 as @a[tag=launch_player] at @s run tp @s ~ ~10.1 ~
+execute if score $launchTime CmdData matches 66 as @a[tag=launch_player,tag=!spectating] at @s run tp @s ~ ~10.1 ~
 execute if score $launchTime CmdData matches 66..80 run particle minecraft:lava -1015.33 73.00 -1096.691 2 5 2 1 500 force
 
 execute if score $launchTime CmdData matches 80 run function mcm:maps/launchpad/rockettemp/sixthpos
-execute if score $launchTime CmdData matches 81 as @a[tag=launch_player] at @s run tp @s ~ ~10.1 ~
+execute if score $launchTime CmdData matches 81 as @a[tag=launch_player,tag=!spectating] at @s run tp @s ~ ~10.1 ~
 execute if score $launchTime CmdData matches 81..95 run particle minecraft:lava -1015.33 83.00 -1096.691 2 5 2 1 500 force
 
 execute if score $launchTime CmdData matches 95 run function mcm:maps/launchpad/rockettemp/seventhpos
-execute if score $launchTime CmdData matches 96 as @a[tag=launch_player] at @s run tp @s ~ ~10.1 ~
+execute if score $launchTime CmdData matches 96 as @a[tag=launch_player,tag=!spectating] at @s run tp @s ~ ~10.1 ~
 execute if score $launchTime CmdData matches 96..110 run particle minecraft:lava -1015.33 93.00 -1096.691 2 5 2 1 500 force
 
 execute if score $launchTime CmdData matches 110 run function mcm:maps/launchpad/rockettemp/eighthpos
-execute if score $launchTime CmdData matches 111 as @a[tag=launch_player] at @s run tp @s ~ ~10.1 ~
+execute if score $launchTime CmdData matches 111 as @a[tag=launch_player,tag=!spectating] at @s run tp @s ~ ~10.1 ~
 execute if score $launchTime CmdData matches 111..120 run particle minecraft:lava -1015.33 103.00 -1096.691 2 5 2 1 500 force
 
 execute if score $launchTime CmdData matches 120 run function mcm:maps/launchpad/rockettemp/ninthpos
-execute if score $launchTime CmdData matches 121 as @a[tag=launch_player] at @s run tp @s ~ ~10.1 ~
+execute if score $launchTime CmdData matches 121 as @a[tag=launch_player,tag=!spectating] at @s run tp @s ~ ~10.1 ~
 execute if score $launchTime CmdData matches 121..130 run particle minecraft:lava -1015.33 113.00 -1096.691 2 5 2 1 500 force
 
 execute if score $launchTime CmdData matches 130 run function mcm:maps/launchpad/rockettemp/tenthpos
-execute if score $launchTime CmdData matches 131 as @a[tag=launch_player] at @s run tp @s ~ ~10.1 ~
+execute if score $launchTime CmdData matches 131 as @a[tag=launch_player,tag=!spectating] at @s run tp @s ~ ~10.1 ~
 execute if score $launchTime CmdData matches 131..140 run particle minecraft:lava -1015.33 123.00 -1096.691 2 5 2 1 500 force
 
 execute if score $launchTime CmdData matches 140 run function mcm:maps/launchpad/rockettemp/eleventhpos
-execute if score $launchTime CmdData matches 141 as @a[tag=launch_player] at @s run tp @s ~ ~10.1 ~
+execute if score $launchTime CmdData matches 141 as @a[tag=launch_player,tag=!spectating] at @s run tp @s ~ ~10.1 ~
 execute if score $launchTime CmdData matches 141..150 run particle minecraft:lava -1015.33 133.00 -1096.691 2 5 2 1 500 force
 
 execute if score $launchTime CmdData matches 150 run function mcm:maps/launchpad/rockettemp/twelfthpos
-execute if score $launchTime CmdData matches 151 as @a[tag=launch_player] at @s run tp @s ~ ~10.1 ~
+execute if score $launchTime CmdData matches 151 as @a[tag=launch_player,tag=!spectating] at @s run tp @s ~ ~10.1 ~
 execute if score $launchTime CmdData matches 151..160 run particle minecraft:lava -1015.33 143.00 -1096.691 2 5 2 1 500 force
 
 execute if score $launchTime CmdData matches 160 run function mcm:maps/launchpad/rockettemp/thirteenthpos
-execute if score $launchTime CmdData matches 161 as @a[tag=launch_player] at @s run tp @s ~ ~10.1 ~
+execute if score $launchTime CmdData matches 161 as @a[tag=launch_player,tag=!spectating] at @s run tp @s ~ ~10.1 ~
 execute if score $launchTime CmdData matches 161..170 run particle minecraft:lava -1015.33 153.00 -1096.691 2 5 2 1 500 force
 
 execute if score $launchTime CmdData matches 170 run function mcm:maps/launchpad/rockettemp/fourteenthpos
-execute if score $launchTime CmdData matches 171 as @a[tag=launch_player] at @s run tp @s ~ ~10.1 ~
+execute if score $launchTime CmdData matches 171 as @a[tag=launch_player,tag=!spectating] at @s run tp @s ~ ~10.1 ~
 execute if score $launchTime CmdData matches 171..180 run particle minecraft:lava -1015.33 163.00 -1096.691 2 5 2 1 500 force
 
 execute if score $launchTime CmdData matches 180 run function mcm:maps/launchpad/rockettemp/fifteenthpos
-execute if score $launchTime CmdData matches 181 as @a[tag=launch_player] at @s run tp @s ~ ~10.1 ~
+execute if score $launchTime CmdData matches 181 as @a[tag=launch_player,tag=!spectating] at @s run tp @s ~ ~10.1 ~
 execute if score $launchTime CmdData matches 181..190 run particle minecraft:lava -1015.33 173.00 -1096.691 2 5 2 1 500 force
 
 execute if score $launchTime CmdData matches 190 run function mcm:maps/launchpad/rockettemp/sixteenthpos
-execute if score $launchTime CmdData matches 191 as @a[tag=launch_player] at @s run tp @s ~ ~10.1 ~
+execute if score $launchTime CmdData matches 191 as @a[tag=launch_player,tag=!spectating] at @s run tp @s ~ ~10.1 ~
 execute if score $launchTime CmdData matches 191..200 run particle minecraft:lava -1015.33 183.00 -1096.691 2 5 2 1 500 force
 
 execute if score $launchTime CmdData matches 200 run function mcm:maps/launchpad/rockettemp/seventeenthpos
-execute if score $launchTime CmdData matches 201 as @a[tag=launch_player] at @s run tp @s ~ ~10.1 ~
+execute if score $launchTime CmdData matches 201 as @a[tag=launch_player,tag=!spectating] at @s run tp @s ~ ~10.1 ~
 execute if score $launchTime CmdData matches 201..210 run particle minecraft:lava -1015.33 193.00 -1096.691 2 5 2 1 500 force
 
 execute if score $launchTime CmdData matches 210 run function mcm:maps/launchpad/rockettemp/eighteenthpos
-execute if score $launchTime CmdData matches 211 as @a[tag=launch_player] at @s run tp @s ~ ~10.1 ~
+execute if score $launchTime CmdData matches 211 as @a[tag=launch_player,tag=!spectating] at @s run tp @s ~ ~10.1 ~
 execute if score $launchTime CmdData matches 211..220 run particle minecraft:lava -1015.33 203.00 -1096.691 2 5 2 1 500 force
 
 execute if score $launchTime CmdData matches 220 run function mcm:maps/launchpad/rockettemp/clearrocket
-execute if score $launchTime CmdData matches 221 as @a[tag=launch_player] at @s run tp @s ~ ~-281 ~
+execute if score $launchTime CmdData matches 221 as @a[tag=launch_player,tag=!spectating] at @s run tp @s ~ ~-281 ~
 execute if score $launchTime CmdData matches 220 as @a[tag=launch_player,tag=!spectating,advancements={mcm:secrets/launchpad/spaceship=false}] at @s run advancement grant @s only mcm:secrets/launchpad/spaceship
 
 # fire

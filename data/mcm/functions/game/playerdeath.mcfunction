@@ -34,6 +34,12 @@ execute at @s run clear @s warped_fungus_on_a_stick
 execute if score $selectedMap CmdData matches 1 at @s run loot spawn ~ ~ ~ loot mcm:books
 execute if score $selectedMap CmdData matches 1 at @s run clear @s book
 
+#> RIVERBOAT: Drop cards if they have any
+execute if score $selectedMap CmdData matches 6 at @s run loot spawn ~ ~ ~ loot mcm:card1
+execute if score $selectedMap CmdData matches 6 at @s run loot spawn ~ ~ ~ loot mcm:card8
+execute if score $selectedMap CmdData matches 6 at @s run clear @s stick{CustomModelData:1116}
+execute if score $selectedMap CmdData matches 6 at @s run clear @s stick{CustomModelData:1117}
+
 #> Spectate (temporary)
 execute at @s run gamemode spectator @s
 execute at @s run spectate @a[tag=murderer,limit=1,sort=nearest]

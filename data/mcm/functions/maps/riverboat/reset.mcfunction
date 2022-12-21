@@ -1,3 +1,22 @@
+#> door 
+fill 2035 79 -1997 2036 81 -1997 mangrove_wood
+setblock 2035 80 -1996 stone_button[face=wall,facing=south] replace
+
+#> Card table
+item replace entity @e[type=armor_stand,tag=card1] armor.head with air
+item replace entity @e[type=armor_stand,tag=card2] armor.head with air
+item replace entity @e[type=armor_stand,tag=card3] armor.head with air
+item replace entity @e[type=armor_stand,tag=card4] armor.head with air
+item replace entity @e[type=armor_stand,tag=card5] armor.head with air
+execute as @e[type=armor_stand,tag=riverboat_secret,tag=take] run data merge entity @s {HandItems:[{},{}],DisabledSlots:16383}
+scoreboard players set $timer riverboat 0
+scoreboard players set $cards riverboat 0
+scoreboard players set $verify riverboat 0
+scoreboard players set $hornPulled riverboat 0
+execute as @a[scores={dropped_card=1..}] run scoreboard players reset @s dropped_card
+execute as @a[scores={card1=1..}] run scoreboard players reset @s card1
+execute as @a[scores={card8=1..}] run scoreboard players reset @s card8
+
 execute unless block 1948 66 -1988 minecraft:jungle_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock 1948 66 -1988 minecraft:jungle_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace 
 execute unless block 1950 66 -1988 minecraft:jungle_fence_gate[in_wall=false,powered=false,facing=west,open=true] run setblock 1950 66 -1988 minecraft:jungle_fence_gate[in_wall=false,powered=false,facing=west,open=true] replace 
 execute unless block 1946 66 -1987 minecraft:jungle_fence_gate[in_wall=false,powered=false,facing=east,open=true] run setblock 1946 66 -1987 minecraft:jungle_fence_gate[in_wall=false,powered=false,facing=east,open=true] replace 

@@ -1,1 +1,1 @@
-execute as @e[type=marker,tag=EngineSoundMarker,limit=1,sort=random] at @s run playsound minecraft:block.conduit.ambient block @a[tag=queued] ~ ~ ~ 4 2
+execute as @e[type=marker,tag=sound_marker,tag=!available,limit=1,sort=random] at @s run playsound minecraft:block.conduit.ambient block @a[tag=queued] ~ ~ ~ 4 2

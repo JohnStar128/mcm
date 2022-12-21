@@ -32,11 +32,11 @@ execute if score $flipbook CmdData matches 1.. if block 945 104 996 chest{Items:
 
 #> When people interact with the book, flip the map
 # Enable the trigger for that
-execute if score $flipbook CmdData matches 1.. run scoreboard players enable @a[predicate=mcm:bounding_boxes/flipbook] flipmap
+execute if score $flipbook CmdData matches 1.. run scoreboard players enable @a[tag=!spectating,predicate=mcm:bounding_boxes/flipbook] flipmap
 execute if score $flippingmap CmdData matches 1 as @a run trigger flipmap set 0
 
-execute if score $flipbook CmdData matches 1.. if score @a[predicate=mcm:bounding_boxes/flipbook,limit=1] flipmap matches 1.. run scoreboard players set $flippingmap CmdData 1
-execute if score $flipbook CmdData matches 1.. if score @a[predicate=mcm:bounding_boxes/flipbook,limit=1] flipmap matches 1.. run scoreboard players set $mapflipeffect CmdData 1
+execute if score $flipbook CmdData matches 1.. if score @a[tag=!spectating,predicate=mcm:bounding_boxes/flipbook,limit=1] flipmap matches 1.. run scoreboard players set $flippingmap CmdData 1
+execute if score $flipbook CmdData matches 1.. if score @a[tag=!spectating,predicate=mcm:bounding_boxes/flipbook,limit=1] flipmap matches 1.. run scoreboard players set $mapflipeffect CmdData 1
 execute if score $mapflipeffect CmdData matches 1 run function mcm:maps/library/mapflipeffect
 execute if score $mapflipeffect CmdData matches 1 run scoreboard players set $mapflipeffect CmdData 0
 scoreboard players reset @a[scores={flipmap=1..}] flipmap

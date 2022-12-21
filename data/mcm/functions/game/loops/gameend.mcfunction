@@ -52,6 +52,9 @@ execute if score $gameEndTimer CmdData matches ..1 as @a[tag=queued] run functio
 execute if score $gameEndTimer CmdData matches ..1 run scoreboard players set $change_color CmdData 1
 execute if score $gameEndTimer CmdData matches ..1 run tag @a remove colored
 
+# Stop leftover sound effects
+execute if score $gameEndTimer CmdData matches ..1 as @a[tag=empty_hand] run stopsound @a[tag=queued]
+
 # AutoQueue items and how to play book
 execute if score $gameEndTimer CmdData matches ..1 run item replace entity @a[tag=queued,tag=autoqueue] hotbar.8 with warped_fungus_on_a_stick{CustomModelData:1235,NoDrop:1b,Autoqueue:1b,display:{Name:'[{"translate":"mcm.item.autoqueue.disable","italic":false,"color":"red"}]'}}
 execute if score $gameEndTimer CmdData matches ..1 run item replace entity @a[tag=queued,tag=!autoqueue] hotbar.8 with warped_fungus_on_a_stick{CustomModelData:1234,NoDrop:1b,Autoqueue:1b,display:{Name:'[{"translate":"mcm.item.autoqueue.enable","italic":false,"color":"green"}]'}}
@@ -68,6 +71,10 @@ execute if score $gameEndTimer CmdData matches ..1 run tag @a remove retrieved
 execute if score $gameEndTimer CmdData matches ..1 run tag @a remove shotGun
 execute if score $gameEndTimer CmdData matches ..1 run tag @a remove lostGun
 execute if score $gameEndTimer CmdData matches ..1 run tag @a remove gunner_stat
+execute if score $gameEndTimer CmdData matches ..1 as @a[tag=hold_card1] run tag @s remove hold_card1
+execute if score $gameEndTimer CmdData matches ..1 as @a[tag=hold_card2] run tag @s remove hold_card2
+execute if score $gameEndTimer CmdData matches ..1 as @a[tag=empty_hand] run tag @s remove empty_hand
+
 
 # remove death related scores
 execute if score $gameEndTimer CmdData matches ..1 run scoreboard players reset @a dead

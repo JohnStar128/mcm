@@ -65,6 +65,7 @@ scoreboard objectives add motion_z dummy
 scoreboard objectives add game_stats dummy
 scoreboard objectives add time_alive dummy
 scoreboard objectives add vineyard_secret dummy
+scoreboard objectives add riverboat dummy
 
 #> Math values
 scoreboard players set $minus_one math -1
@@ -92,6 +93,9 @@ scoreboard players set $thirty math 30
 scoreboard players set $forty math 40 
 scoreboard players set $fifty math 50
 scoreboard players set $sixty math 60 
+scoreboard players set $seventy math 70 
+scoreboard players set $eighty math 80 
+scoreboard players set $ninety math 90 
 scoreboard players set $one_hundred math 100
 scoreboard players set $two_hundred math 200
 scoreboard players set $three_hundred math 300
@@ -144,10 +148,10 @@ advancement revoke @a[advancements={mcm:map_functions/cyberpunk_secret_1=true}] 
 advancement revoke @a[advancements={mcm:map_functions/cyberpunk_secret_2=true}] only mcm:map_functions/cyberpunk_secret_2
 advancement revoke @a[advancements={mcm:map_functions/cyberpunk_secret_3=true}] only mcm:map_functions/cyberpunk_secret_3
 
-execute unless entity @e[type=marker,tag=Gumdrop] run summon marker 0 -49 70 {Tags:["MapVote","Gumdrop"]}
-scoreboard players set @e[type=marker,tag=Gumdrop] MapValues 6
+#execute unless entity @e[type=marker,tag=Gumdrop] run summon marker 0 -49 70 {Tags:["MapVote","Gumdrop"]}
+#scoreboard players set @e[type=marker,tag=Gumdrop] MapValues 6
 execute unless entity @e[type=marker,tag=Cyberpunk] run summon marker 0 -49 70 {Tags:["MapVote","Cyberpunk"]}
-scoreboard players set @e[type=marker,tag=Gumdrop] MapValues 5
+scoreboard players set @e[type=marker,tag=Cyberpunk] MapValues 5
 
 #> Reset players back to a known default state
 execute as @a run function mcm:player_leave

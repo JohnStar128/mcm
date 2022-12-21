@@ -1,6 +1,11 @@
 #> [WIP]
-#> Forceload the floating islands map
+#> Forceload the riverboat map
 forceload add 2130 -2015 2000 -1975
+
+#> Give secret armor stands their cards
+execute as @e[type=armor_stand,tag=riverboat_secret,tag=take,limit=3,sort=random] run data merge entity @s {HandItems:[{id:"minecraft:stick",Count:1b,tag:{CustomModelData:1116,display:{Name:"{\"translate\":\"mcm.item.card\",\"color\":\"gray\",\"italic\":\"false\"}"}}},{}],DisabledSlots:16383}
+execute as @e[type=armor_stand,tag=riverboat_secret,tag=take,limit=2,sort=random,nbt=!{HandItems:[{id:"minecraft:stick",Count:1b,tag:{CustomModelData:1116}},{}]}] run data merge entity @s {HandItems:[{id:"minecraft:stick",Count:1b,tag:{CustomModelData:1117,display:{Name:"{\"translate\":\"mcm.item.card\",\"color\":\"gray\",\"italic\":\"false\"}"}}},{}],DisabledSlots:16383}
+execute as @e[type=villager,tag=riverboat_secret] run effect give @s invisibility 999999 1 true
 
 #> Kill potential leftover entities
 #kill @e[tag=MapEntity]

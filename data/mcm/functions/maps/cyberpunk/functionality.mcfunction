@@ -99,3 +99,9 @@ execute as @a[advancements={mcm:map_functions/cyberpunk_secret_1=true}] run adva
 
 execute as @a[scores={cyberpunk=2,RingBell=1..},advancements={mcm:secrets/cyberpunk/cyberpunk=false}] run advancement grant @s only mcm:secrets/cyberpunk/cyberpunk
 scoreboard players reset @a RingBell
+
+#> Propellers
+execute as @a[predicate=mcm:bounding_boxes/cf_propeller1] at @s run effect give @s levitation 1 2 true
+execute as @a[predicate=mcm:bounding_boxes/cf_propeller2] at @s run effect give @s levitation 1 2 true
+execute as @a[predicate=mcm:bounding_boxes/cf_propeller3] at @s run effect give @s slowness 1 2 true
+execute as @a[predicate=mcm:bounding_boxes/cf_propeller4] at @s run effect give @s slowness 1 2 true

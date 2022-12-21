@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:score",
+                "target": "this",
+                "score": "card1"
+              }
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{CustomModelData:1116,display:{Name:'[{\"translate\":\"mcm.item.card\",\"color\":\"gray\",\"italic\":\"false\"}]'}}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

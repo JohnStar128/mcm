@@ -9,9 +9,9 @@
             "mainhand": {
               "items": [
                 "minecraft:stick"
-              ]
-            },
-            "nbt": "{tag:{CustomModelData:1111}}"
+              ],
+              "nbt": "{CustomModelData:1111}"
+            }
           }
         }
       },
@@ -23,9 +23,9 @@
             "offhand": {
               "items": [
                 "minecraft:stick"
-              ]
-            },
-            "nbt": "{tag:{CustomModelData:1111}}"
+              ],
+              "nbt": "{CustomModelData:1111}"
+            }
           }
         }
       }
