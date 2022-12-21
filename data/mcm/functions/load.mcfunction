@@ -66,6 +66,9 @@ scoreboard objectives add game_stats dummy
 scoreboard objectives add time_alive dummy
 scoreboard objectives add vineyard_secret dummy
 scoreboard objectives add riverboat dummy
+scoreboard objectives add card1 dummy
+scoreboard objectives add card8 dummy
+scoreboard objectives add dropped_card minecraft.dropped:minecraft.stick
 
 #> Math values
 scoreboard players set $minus_one math -1
