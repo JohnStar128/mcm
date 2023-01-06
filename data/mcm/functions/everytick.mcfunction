@@ -52,3 +52,10 @@ execute store result score $queued CmdData if entity @a[tag=queued]
 
 #> Teleport players not in match & outside of lobby bounding box back to lobby unless on Developer Team (escape prevention)
 execute as @a[tag=!queued,tag=!spectating,predicate=!mcm:bounding_boxes/lobby,team=!test4] run tp @s -1 1 70
+
+#> Remove the Ushers trades when they come back
+execute as @e[type=villager,tag=Usher] store result score $usheroffers CmdData run data get entity @s Offers.Recipes
+execute as @e[type=villager,tag=credits_usher] store result score $creditsusheroffers CmdData run data get entity @s Offers.Recipes
+
+execute as @e[type=villager,tag=Usher] if score $usheroffers CmdData matches 1.. run data modify entity @s Offers set value {}
+execute as @e[type=villager,tag=credits_usher] if score $creditsusheroffers CmdData matches 1.. run data modify entity @s Offers set value {}

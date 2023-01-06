@@ -64,7 +64,7 @@ scoreboard objectives add motion_y dummy
 scoreboard objectives add motion_z dummy
 scoreboard objectives add game_stats dummy
 scoreboard objectives add time_alive dummy
-scoreboard objectives add vineyard_secret dummy
+scoreboard objectives add vineyard_secret minecraft.used:minecraft.bone_meal
 scoreboard objectives add riverboat dummy
 scoreboard objectives add card1 dummy
 scoreboard objectives add card8 dummy

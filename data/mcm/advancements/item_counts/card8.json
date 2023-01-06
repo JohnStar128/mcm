@@ -1,18 +1,18 @@
 {
-    "criteria": {
-      "requirement": {
-        "trigger": "minecraft:inventory_changed",
-        "conditions": {
-          "items": [
-            {
-              "items": [
-                "minecraft:stick"
-              ],
-              "nbt": "{CustomModelData:1117}"
-            }
-          ]
-        }
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:stick"
+            ],
+            "nbt": "{CustomModelData:1117}"
+          }
+        ]
       }
     }
   }
+}
   

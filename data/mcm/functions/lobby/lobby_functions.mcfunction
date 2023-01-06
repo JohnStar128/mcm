@@ -79,6 +79,15 @@ function mcm:lobby/remove_items
 #> Set the how-to-play lectern back to the front page unless someone's close enough to read it
 execute positioned -1 1 79 unless entity @a[distance=..5] if entity @a[distance=6..10] run data merge block ~ ~ ~ {Page:0}
 execute positioned -1 1 79 if entity @a[distance=..5] run data modify block ~ ~ ~ Book merge from block ~ ~-2 ~ Items[0]
+#> Unresolve signs for translatable text to show up
+execute positioned -1 1 79 if entity @a[distance=..12] run data merge block 7 1 84 {Resolved:0b}
+execute positioned -1 1 79 if entity @a[distance=..12] run data merge block 5 1 83 {Resolved:0b}
+execute positioned -1 1 79 if entity @a[distance=..12] run data merge block 3 1 82 {Resolved:0b}
+execute positioned -1 1 79 if entity @a[distance=..12] run data merge block 1 1 81 {Resolved:0b}
+execute positioned -1 1 79 if entity @a[distance=..12] run data merge block -1 1 81 {Resolved:0b}
+execute positioned -1 1 79 if entity @a[distance=..12] run data merge block -5 1 82 {Resolved:0b}
+execute positioned -1 1 79 if entity @a[distance=..12] run data merge block -7 1 83 {Resolved:0b}
+execute positioned -1 1 79 if entity @a[distance=..12] run data merge block -9 1 84 {Resolved:0b}
 
 #> Manage AFK players
 execute if entity @a[tag=afk] run function mcm:lobby/afk_loop
