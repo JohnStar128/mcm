@@ -7,7 +7,7 @@ execute as @a at @s run playsound minecraft:entity.experience_orb.pickup master 
 scoreboard players add @e[type=marker,tag=MapVote] CmdData 1
 execute if entity @e[type=marker,tag=MapVote,scores={CmdData=1..}] run function mcm:lobby/map_poggercalculation
 tag @e[type=marker,tag=MapVote,scores={CmdData=0},sort=random,limit=1] add SelectedMap
-execute if entity @e[type=marker,tag=SelectedMap,tag=Random] run tag @e[type=marker,tag=MapVote,tag=!SelectedMap,limit=1,sort=random] add SelectedMap
+execute if entity @e[type=marker,tag=SelectedMap,tag=Random] run tag @e[type=marker,tag=MapVote,tag=!SelectedMap,tag=selected,limit=1,sort=random] add SelectedMap
 execute as @e[type=marker,tag=SelectedMap,tag=Random] run tag @s remove SelectedMap
 scoreboard players operation $selectedMap CmdData = @e[type=marker,tag=SelectedMap] MapValues
 

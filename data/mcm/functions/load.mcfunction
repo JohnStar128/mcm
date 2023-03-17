@@ -69,6 +69,8 @@ scoreboard objectives add riverboat dummy
 scoreboard objectives add card1 dummy
 scoreboard objectives add card8 dummy
 scoreboard objectives add dropped_card minecraft.dropped:minecraft.stick
+scoreboard objectives add vote_position dummy
+scoreboard objectives add vote_map_id dummy
 
 #> Math values
 scoreboard players set $minus_one math -1
@@ -151,10 +153,31 @@ advancement revoke @a[advancements={mcm:map_functions/cyberpunk_secret_1=true}] 
 advancement revoke @a[advancements={mcm:map_functions/cyberpunk_secret_2=true}] only mcm:map_functions/cyberpunk_secret_2
 advancement revoke @a[advancements={mcm:map_functions/cyberpunk_secret_3=true}] only mcm:map_functions/cyberpunk_secret_3
 
-#execute unless entity @e[type=marker,tag=Gumdrop] run summon marker 0 -49 70 {Tags:["MapVote","Gumdrop"]}
-#scoreboard players set @e[type=marker,tag=Gumdrop] MapValues 6
+execute unless entity @e[type=marker,tag=Random] run summon marker 0 -49 70 {Tags:["MapVote","Random"]}
+scoreboard players set @e[type=marker,tag=Random] MapValues -1
+
+execute unless entity @e[type=marker,tag=Library] run summon marker 0 -49 70 {Tags:["MapVote","Library"]}
+scoreboard players set @e[type=marker,tag=Library] MapValues 1
+
+execute unless entity @e[type=marker,tag=Airship] run summon marker 0 -49 70 {Tags:["MapVote","Airship"]}
+scoreboard players set @e[type=marker,tag=Airship] MapValues 2
+
+execute unless entity @e[type=marker,tag=Vineyard] run summon marker 0 -49 70 {Tags:["MapVote","Vineyard"]}
+scoreboard players set @e[type=marker,tag=Vineyard] MapValues 3
+
+execute unless entity @e[type=marker,tag=Launchpad] run summon marker 0 -49 70 {Tags:["MapVote","Launchpad"]}
+scoreboard players set @e[type=marker,tag=Launchpad] MapValues 4
+
 execute unless entity @e[type=marker,tag=Cyberpunk] run summon marker 0 -49 70 {Tags:["MapVote","Cyberpunk"]}
 scoreboard players set @e[type=marker,tag=Cyberpunk] MapValues 5
+
+execute unless entity @e[type=marker,tag=Riverboat] run summon marker 0 -49 70 {Tags:["MapVote","Riverboat"]}
+scoreboard players set @e[type=marker,tag=Riverboat] MapValues 6
+
+#execute unless entity @e[type=marker,tag=Gumdrop] run summon marker 0 -49 70 {Tags:["MapVote","Gumdrop"]}
+#scoreboard players set @e[type=marker,tag=Gumdrop] MapValues 7
+
+execute as @e[type=marker,tag=MapVote] run tag @s remove selected
 
 #> Reset players back to a known default state
 execute as @a run function mcm:player_leave
