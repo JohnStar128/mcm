@@ -1,12 +1,6 @@
+scoreboard players operation @s selected_hat = @s hatchange
+#> -1 is no hat
 execute if score @s hatchange matches -1 run scoreboard players set @s selected_hat 0
-execute if score @s hatchange matches 1 run scoreboard players set @s selected_hat 1
-execute if score @s hatchange matches 2 run scoreboard players set @s selected_hat 2
-execute if score @s hatchange matches 3 run scoreboard players set @s selected_hat 3
-execute if score @s hatchange matches 4 run scoreboard players set @s selected_hat 4
-execute if score @s hatchange matches 5 run scoreboard players set @s selected_hat 5
-execute if score @s hatchange matches 6 run scoreboard players set @s selected_hat 6
-execute if score @s hatchange matches 7 run scoreboard players set @s selected_hat 7
-
 
 scoreboard players reset @s hatchange
 

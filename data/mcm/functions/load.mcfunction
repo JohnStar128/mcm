@@ -8,7 +8,7 @@ execute as @a[team=test4] at @s run function mcm:dev/storeinv
 
 #> Scoreboards
 scoreboard objectives add CmdData dummy
-scoreboard objectives add mapvote trigger
+scoreboard objectives add mapvote dummy
 scoreboard objectives add MapValues dummy
 scoreboard objectives add throwKnife minecraft.used:minecraft.snowball
 scoreboard objectives add dead deathCount
@@ -71,6 +71,12 @@ scoreboard objectives add card8 dummy
 scoreboard objectives add dropped_card minecraft.dropped:minecraft.stick
 scoreboard objectives add vote_position dummy
 scoreboard objectives add vote_map_id dummy
+scoreboard objectives add vote_count dummy
+scoreboard objectives add map_id dummy
+scoreboard objectives add display_scrolling dummy
+scoreboard objectives add display_scaling dummy
+scoreboard objectives add display_coord dummy
+scoreboard objectives add facing dummy
 
 #> Math values
 scoreboard players set $minus_one math -1
@@ -137,7 +143,7 @@ team modify ingame_players color green
 
 scoreboard players enable @a player_rule_update
 
-execute if entity @a run function mcm:respawn_entities
+execute if entity @e run function mcm:respawn_entities
 
 #> Generate a game ID to force anyone who logs in to be reset to a default state
 kill @e[tag=gameID]
@@ -152,30 +158,6 @@ advancement revoke @a[advancements={mcm:hit_detection/knife_melee_hit=true}] onl
 advancement revoke @a[advancements={mcm:map_functions/cyberpunk_secret_1=true}] only mcm:map_functions/cyberpunk_secret_1
 advancement revoke @a[advancements={mcm:map_functions/cyberpunk_secret_2=true}] only mcm:map_functions/cyberpunk_secret_2
 advancement revoke @a[advancements={mcm:map_functions/cyberpunk_secret_3=true}] only mcm:map_functions/cyberpunk_secret_3
-
-execute unless entity @e[type=marker,tag=Random] run summon marker 0 -49 70 {Tags:["MapVote","Random"]}
-scoreboard players set @e[type=marker,tag=Random] MapValues -1
-
-execute unless entity @e[type=marker,tag=Library] run summon marker 0 -49 70 {Tags:["MapVote","Library"]}
-scoreboard players set @e[type=marker,tag=Library] MapValues 1
-
-execute unless entity @e[type=marker,tag=Airship] run summon marker 0 -49 70 {Tags:["MapVote","Airship"]}
-scoreboard players set @e[type=marker,tag=Airship] MapValues 2
-
-execute unless entity @e[type=marker,tag=Vineyard] run summon marker 0 -49 70 {Tags:["MapVote","Vineyard"]}
-scoreboard players set @e[type=marker,tag=Vineyard] MapValues 3
-
-execute unless entity @e[type=marker,tag=Launchpad] run summon marker 0 -49 70 {Tags:["MapVote","Launchpad"]}
-scoreboard players set @e[type=marker,tag=Launchpad] MapValues 4
-
-execute unless entity @e[type=marker,tag=Cyberpunk] run summon marker 0 -49 70 {Tags:["MapVote","Cyberpunk"]}
-scoreboard players set @e[type=marker,tag=Cyberpunk] MapValues 5
-
-execute unless entity @e[type=marker,tag=Riverboat] run summon marker 0 -49 70 {Tags:["MapVote","Riverboat"]}
-scoreboard players set @e[type=marker,tag=Riverboat] MapValues 6
-
-#execute unless entity @e[type=marker,tag=Gumdrop] run summon marker 0 -49 70 {Tags:["MapVote","Gumdrop"]}
-#scoreboard players set @e[type=marker,tag=Gumdrop] MapValues 7
 
 execute as @e[type=marker,tag=MapVote] run tag @s remove selected
 

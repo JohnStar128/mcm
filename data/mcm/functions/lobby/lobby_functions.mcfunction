@@ -57,6 +57,7 @@ particle block minecraft:light_blue_concrete 32.5 2.3 29.5 0 0.3 0 1 1
 particle block minecraft:lime_concrete 32.5 2.3 28.5 0 0.3 0 1 1
 
 #> Let people use the test range in the lobby
+execute as @a[predicate=mcm:bounding_boxes/lobby_grate] run tag @s add came_from_grate
 execute as @a[predicate=mcm:bounding_boxes/lobby_grate] run tp @s 33 1 121 180 0
 execute as @a[predicate=mcm:bounding_boxes/test_range_kill_items] run function mcm:lobby/test_range
 execute as @a[tag=test_range,predicate=!mcm:bounding_boxes/test_range_kill_items] run function mcm:lobby/test_range_leave
@@ -107,3 +108,8 @@ execute as @e[type=marker,tag=spectator_chair_marker] at @s if score @s nearby_p
 #> If people start duplicating chairs, get rid of them
 execute as @e[type=marker,tag=chair_marker] at @s if score @s nearby_pigs matches 2.. run tp @e[type=pig,limit=1,sort=nearest] ~ ~-300 ~
 execute as @e[type=marker,tag=spectator_chair_marker] at @s if score @s nearby_pigs matches 2.. run tp @e[type=pig,limit=1,sort=nearest] ~ ~-300 ~
+
+#> Update cosmetic displays if someone's trying to equip one
+execute as @a[predicate=mcm:bounding_boxes/lobby_cosmetic_zone,limit=1,sort=random] unless entity @a[tag=display_scroll_lock] run tag @s add display_scroll_lock
+execute as @a[tag=display_scroll_lock] run function mcm:lobby/displays/control
+execute as @a[tag=display_scroll_lock,predicate=!mcm:bounding_boxes/lobby_cosmetic_zone] run tag @s remove display_scroll_lock
