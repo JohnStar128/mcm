@@ -1,32 +1,32 @@
 #> Header
-execute if score $innocentWin CmdData matches 1 run tellraw @a ["", {"text":"|","color":"gray","bold":true},{"text":" ----- ","color":"green"},{"text":"Winning team: ","color":"gold"},{"text":"Innocents","color":"dark_aqua"},{"text":" ----- ","color":"green"}]
-execute if score $murderWin CmdData matches 1 run tellraw @a ["", {"text":"|","color":"gray","bold":true},{"text":" ----- ","color":"green"},{"text":"Winning team: ","color":"gold"},{"text":"Murderers","color":"red"},{"text":" ----- ","color":"green"}]
+execute if score $innocentWin CmdData matches 1 run tellraw @a [{"text":"|","color":"gray","bold":true},{"text":" ----- ","color":"green"},{"translate":"mcm.game.stats.won","color":"gold","with":[{"translate":"mcm.game.stats.won.innocent","color":"dark_aqua"}]},{"text":" ----- ","color":"green"}]
+execute if score $murderWin CmdData matches 1 run tellraw @a [{"text":"|","color":"gray","bold":true},{"text":" ----- ","color":"green"},{"translate":"mcm.game.stats.won","color":"gold","with":[{"translate":"mcm.game.stats.won.murderers","color":"red"}]},{"text":" ----- ","color":"green"}]
 
 #> Print murderers
-tellraw @a ["", {"text":"|","color":"gray","bold":true}, {"text":" Murderers this round:","color":"red"}]
-execute as @a[tag=murderer] run tellraw @a ["", {"text":"| ","color":"gray","bold":true}, {"selector":"@s","color":"red"}, {"text":" - kills: ", "color":"gold"}, {"score":{"objective":"game_stats", "name":"@s"}, "color":"gold"}]
+tellraw @a [{"text":"|","color":"gray","bold":true},{"translate":"mcm.game.stats.murderers","color":"red"}]
+execute as @a[tag=murderer] run tellraw @a [{"text":"| ","color":"gray","bold":true}, {"translate":"mcm.game.stats.kills","color":"gold","with":[{"selector":"@s","color":"red"},{"score":{"objective":"game_stats", "name":"@s"}, "color":"gold"}]}]
 
 #> Separator
-tellraw @a ["", {"text":"|","color":"gray","bold":true}]
+tellraw @a [{"text":"|","color":"gray","bold":true}]
 
 #> Gunner kills
-tellraw @a ["", {"text":"|","color":"gray","bold":true}, {"text":" Gunners this round:","color":"dark_aqua"}]
-execute as @a[tag=gunner_stat] run tellraw @a ["", {"text":"| ","color":"gray","bold":true}, {"selector":"@s","color":"dark_aqua"}, {"text":" - kills: ", "color":"gold"}, {"score":{"objective":"game_stats", "name":"@s"}, "color":"gold"}]
+tellraw @a [{"text":"|","color":"gray","bold":true},{"translate":"mcm.game.stats.gunners","color":"dark_aqua"}]
+execute as @a[tag=gunner_stat] run tellraw @a [{"text":"| ","color":"gray","bold":true}, {"translate":"mcm.game.stats.kills","color":"gold","with":[{"selector":"@s","color":"dark_aqua"},{"score":{"objective":"game_stats", "name":"@s"}, "color":"gold"}]}]
 
 #> Separator
-tellraw @a ["", {"text":"|","color":"gray","bold":true}]
+tellraw @a [{"text":"|","color":"gray","bold":true}]
 
 #> Survivors
-tellraw @a ["", {"text":"|","color":"gray","bold":true}, {"text":" Survivors:","color":"green"}]
+tellraw @a [{"text":"|","color":"gray","bold":true}, {"translate":"mcm.game.stats.survivors","color":"green"}]
 #execute as @a[tag=queued,tag=!spectating] run tellraw @a ["", {"text":"| ","color":"gray","bold":true}, {"selector":"@s","color":"green"}]
 execute as @a[tag=queued,tag=!spectating] run function mcm:game/display_time_alive
 
 #> Separator
-tellraw @a ["", {"text":"|","color":"gray","bold":true}]
+tellraw @a [{"text":"|","color":"gray","bold":true}]
 
 #> Time alive
-tellraw @a ["", {"text":"|","color":"gray","bold":true}, {"text":" Time alive:","color":"dark_purple"}]
+tellraw @a [{"text":"|","color":"gray","bold":true}, {"translate":"mcm.game.stats.timealive","color":"dark_purple"}]
 execute as @a[tag=queued,tag=spectating] run function mcm:game/display_time_alive
 
 #> Footer
-tellraw @a ["", {"text":"|","color":"gray","bold":true},{"text":" ------------------------------- ","color":"green"}]
+tellraw @a [{"text":"|","color":"gray","bold":true},{"text":" ------------------------------- ","color":"green"}]

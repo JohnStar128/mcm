@@ -10,5 +10,6 @@ scoreboard players operation $temp math /= $twenty math
 execute store result score $min math run scoreboard players operation $temp math /= $sixty math
 
 #> Print time
-execute if score $sec math < $ten math run tellraw @a ["", {"text":"| ","color":"gray","bold":true}, {"selector":"@s","color":"green"}, {"text":" - time: ", "color":"gold"}, {"score":{"objective":"math", "name":"$min"}, "color":"gold"}, {"text":":0", "color":"gold"}, {"score":{"objective":"math", "name":"$sec"}, "color":"gold"}]
-execute if score $sec math >= $ten math run tellraw @a ["", {"text":"| ","color":"gray","bold":true}, {"selector":"@s","color":"green"}, {"text":" - time: ", "color":"gold"}, {"score":{"objective":"math", "name":"$min"}, "color":"gold"}, {"text":":", "color":"gold"}, {"score":{"objective":"math", "name":"$sec"}, "color":"gold"}]
+
+execute if score $sec math < $10 math run tellraw @a [{"text":"| ","color":"gray","bold":true}, {"translate":"mcm.game.stats.time","color":"gold", "with":[{"selector":"@s","color":"green"}, {"translate":"mcm.game.stats.time.display","color":"gold","with":[{"score":{"objective":"math", "name":"$min"}, "color":"gold"},{"score":{"objective":"math", "name":"$sec"}, "color":"gold"} ] } ]}]
+execute if score $sec math >= $10 math run tellraw @a [{"text":"| ","color":"gray","bold":true}, {"translate":"mcm.game.stats.time","color":"gold", "with":[{"selector":"@s","color":"green"}, {"translate":"mcm.game.stats.time.display0","color":"gold","with":[{"score":{"objective":"math", "name":"$min"}, "color":"gold"}, {"translate":"mcm.game.stats.time.0", "color":"gold"}, {"score":{"objective":"math", "name":"$sec"}, "color":"gold"} ] } ]}]

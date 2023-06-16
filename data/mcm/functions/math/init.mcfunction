@@ -55,6 +55,7 @@ scoreboard players set $2^15 math 32768
 scoreboard players set $2^19 math 524288
 scoreboard players set $2^25 math 33554432
 
+scoreboard players set $10 math 10
 scoreboard players set $50 math 50
 scoreboard players set $100 math 100
 scoreboard players set $200 math 200
