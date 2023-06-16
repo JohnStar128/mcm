@@ -30,3 +30,17 @@ execute as @a[tag=queued,predicate=!mcm:bounding_boxes/airship,tag=!spectating] 
 #> Keep spectators inbounds
 execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 2 unless predicate mcm:bounding_boxes/airship run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
 execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 2 unless predicate mcm:bounding_boxes/airship run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
+
+#> Crystal code
+function mcm:maps/airship/crystals/control
+#> Particles when holding the crystal
+execute as @a[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1114}}}] at @s run particle minecraft:portal ~ ~1 ~ 0 0.5 0 1 1
+
+# Activate Captain's Room
+execute if block -633 53 -6 lever[powered=true] if score $captain_room CmdData matches 0 run summon marker -636 56 -5 {Tags:["airship_teleport_beacon","captains_room"]}
+execute if block -633 53 -6 lever[powered=true] if score $captain_room CmdData matches 0 positioned -633 53 -6 run playsound minecraft:block.conduit.activate block @a[distance=..3] ~ ~ ~ 3 2 1
+execute if block -633 53 -6 lever[powered=true] if score $captain_room CmdData matches 0 run scoreboard players set $captain_room CmdData 1
+
+#> Fans
+execute as @a at @s if entity @e[type=marker,tag=airship_fan,distance=..1.5] run effect give @s jump_boost 1 15 true
+execute as @a at @s if entity @e[type=marker,tag=airship_fan,distance=..1.5] run effect give @s slow_falling 1 1 true

@@ -27,6 +27,9 @@ execute if score $startcountdown CmdData matches 1 if score $queued CmdData matc
 #> Clear lobby items if game starts
 execute if score $startcountdown CmdData matches 1 run clear @a[tag=queued]
 
+#> Kill any items to stop lobby items being smuggled into a game
+execute if score $startcountdown CmdData matches 1 run kill @e[type=item]
+
 #> Update murderer count from queued players if smart murderer selection is on
 execute if score $smart_murderers GameRules matches 1 run function mcm:game/rules/smart_murderer_update
 
@@ -48,3 +51,6 @@ execute if score $queued CmdData matches 3.. if score $startcountdown CmdData ma
 execute if score $startcountdown CmdData matches 1 run scoreboard players set @s deferred_queue 0
 
 execute if score $startcountdown CmdData matches 1 as @a store result score @s playerUUID run data get entity @s UUID[0]
+
+#> Regive lobby items to not ingame players
+execute if score $startcountdown CmdData matches 1 as @a[tag=!queued] run function mcm:lobby/give_lobby_items

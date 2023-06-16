@@ -12,16 +12,5 @@ execute as @e[type=item_display,tag=lobby_cosmetic_displays] if score @s display
 execute as @e[type=item_display,tag=lobby_cosmetic_displays] if score @s display_scrolling >= $vis_low display_scrolling if score @s display_coord < $vis_low display_scrolling at @s run tp @s ~ ~5 ~
 
 #> Update scaling
-execute as @e[type=item_display,tag=lobby_cosmetic_displays] run scoreboard players operation @s display_scaling = @s display_scrolling
-execute as @e[type=item_display,tag=lobby_cosmetic_displays] run scoreboard players operation @s display_scaling -= $low display_scrolling
-scoreboard players operation $temp display_scaling = $range display_scrolling
-scoreboard players operation $temp display_scaling /= $two math
-execute as @e[type=item_display,tag=lobby_cosmetic_displays] run scoreboard players operation @s display_scaling -= $temp display_scaling
-execute as @e[type=item_display,tag=lobby_cosmetic_displays] if score @s display_scaling matches 0.. run scoreboard players operation @s display_scaling *= $minus_one math
-execute as @e[type=item_display,tag=lobby_cosmetic_displays] run scoreboard players operation @s display_scaling += $range display_scrolling
-scoreboard players operation $temp display_scaling = $range display_scrolling
-scoreboard players operation $temp display_scaling /= $one_hundred math
+execute as @e[type=item_display,tag=lobby_cosmetic_displays] run function mcm:lobby/displays/update_scaling
 
-execute as @e[type=item_display,tag=lobby_cosmetic_displays] store result entity @s transformation.scale[0] float 0.01 run scoreboard players operation @s display_scaling /= $temp display_scaling
-execute as @e[type=item_display,tag=lobby_cosmetic_displays] store result entity @s transformation.scale[1] float 0.01 run scoreboard players get @s display_scaling 
-execute as @e[type=item_display,tag=lobby_cosmetic_displays] store result entity @s transformation.scale[2] float 0.01 run scoreboard players get @s display_scaling

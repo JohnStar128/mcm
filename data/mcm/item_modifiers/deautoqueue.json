@@ -1,4 +1,4 @@
 {
     "function": "set_nbt",
-    "tag": "{Autoqueue:1b,CustomModelData:1234,display:{Name:'[{\"text\":\"Enable AutoQueue\",\"italic\":false,\"color\":\"green\"}]'}}"
+    "tag": "{Autoqueue:1b,CustomModelData:1234,display:{Name:'[{\"translate\":\"mcm.item.autoqueue.enable\",\"italic\":false,\"color\":\"green\"}]'}}"
 }

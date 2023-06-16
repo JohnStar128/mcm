@@ -45,4 +45,4 @@ execute if score $gumdropcutscene CmdData matches 388 run kill @e[type=glow_item
 #Teleport players back to random player spawns when cutscene ends and set to adventure
 
 execute if score $gumdropcutscene CmdData matches 387 as @a[predicate=mcm:bounding_boxes/gumdrop_cutscene] run gamemode adventure
-execute if score $gumdropcutscene CmdData matches 388 as @a[predicate=mcm:bounding_boxes/gumdrop_cutscene] run tp @s @e[tag=PlayerSpawn,tag=!available,limit=1,sort=random]
+execute if score $gumdropcutscene CmdData matches 388 as @a[predicate=mcm:bounding_boxes/gumdrop_cutscene] run tp @s @e[tag=PlayerSpawn,limit=1,sort=random]

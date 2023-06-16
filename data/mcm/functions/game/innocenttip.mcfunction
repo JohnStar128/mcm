@@ -1,0 +1,2 @@
+execute as @a[tag=innocent,tag=!gunner,tag=!NoTip] run title @s subtitle {"translate" : "mcm.tip.innocent", "color" : "dark_gray"}
+execute as @a[tag=innocent,tag=!gunner,tag=!NoTip] run title @s title ""

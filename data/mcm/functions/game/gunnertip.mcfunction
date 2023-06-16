@@ -1,0 +1,2 @@
+execute as @a[tag=gunner,tag=!NoTip] run title @s subtitle {"translate" : "mcm.tip.gunner", "color" : "dark_gray", "with" : [{"keybind":"key.use","color":"dark_aqua"}]}
+execute as @a[tag=gunner,tag=!NoTip] run title @s title ""

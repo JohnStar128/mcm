@@ -20,6 +20,8 @@ scoreboard players remove $temp math 0
 execute as @s[tag=murderer] run clear @s netherite_scrap{CustomModelData:1} 10
 
 #> If a player has 10 scrap, give gun
-execute as @s[tag=innocent] at @s run item replace entity @s hotbar.1 with warped_fungus_on_a_stick{NoDrop:1b,Unbreakable:1,CustomModelData:1111,display:{Name:'[{"translate":"mcm.item.gun","italic":false}]',Lore:['[{"translate":"mcm.item.gun.lore","italic":false}]']}}
+execute if entity @s[tag=innocent,tag=!NoTip] run title @s subtitle {"translate" : "mcm.tip.gunner", "color" : "dark_gray", "with" : [{"keybind":"key.use","color":"dark_aqua"}]}
+execute if entity @s[tag=innocent,tag=!NoTip] run title @s title ""
+execute if entity @s[tag=innocent] run function mcm:game/items/gun/give
 
 advancement revoke @s only mcm:item_counts/scrap

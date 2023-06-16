@@ -47,6 +47,9 @@ execute at @s run spectate @a[tag=murderer,limit=1,sort=nearest]
 execute at @s run tag @s remove gunner
 execute at @s run tag @s add spectating
 
+# Clear any remaining items
+clear
+
 tag @s remove TempDead
 
 scoreboard players set @s dead 1

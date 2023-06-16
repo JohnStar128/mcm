@@ -19,7 +19,7 @@ execute if score $credit_timer CmdData matches 400..499 run function mcm:lobby/c
 #> Yzero
 execute if score $credit_timer CmdData matches 500..599 run function mcm:lobby/credits/slides/yzero
 #> Evtema
-execute if score $credit_timer CmdData matches 600..699 run function mcm:lobby/credits/slides/evtema
+execute if score $credit_timer CmdData matches 600..699 run function mcm:lobby/credits/slides/muksterz
 #> Kur
 execute if score $credit_timer CmdData matches 700..799 run function mcm:lobby/credits/slides/kurusa
 #> Chronos
@@ -29,7 +29,7 @@ execute if score $credit_timer CmdData matches 900..999 run function mcm:lobby/c
 #> Lekro
 execute if score $credit_timer CmdData matches 1000..1099 run function mcm:lobby/credits/slides/lekro
 #> Zombie
-execute if score $credit_timer CmdData matches 1100..1199 run function mcm:lobby/credits/slides/zombie
+execute if score $credit_timer CmdData matches 1100..1199 run function mcm:lobby/credits/slides/zombie_evtema
 #> Jacob
 execute if score $credit_timer CmdData matches 1200..1299 run function mcm:lobby/credits/slides/jacob
 #> Map Contributors

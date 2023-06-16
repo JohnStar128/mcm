@@ -78,9 +78,8 @@ execute if score $temp math matches 3 run setblock -2049 78 2042 air replace
 execute if score $temp math matches 3 run setblock -2050 78 2042 air replace
 
 #> Secret stuff
-effect give @e[type=villager,tag=cyberpunk_secret] invisibility 999999 1 true
-execute as @a[advancements={mcm:map_functions/cyberpunk_secret_1=true}] at @s run scoreboard players set @e[type=villager,tag=cyberpunk_secret,limit=1,sort=nearest] cyberpunk 1
-execute if entity @a[advancements={mcm:map_functions/cyberpunk_secret_1=true}] store result score $secret cyberpunk if entity @e[type=villager,tag=cyberpunk_secret,scores={cyberpunk=1..}]
+execute as @a[advancements={mcm:map_functions/cyberpunk_secret_1=true}] at @s run scoreboard players set @e[type=interaction,tag=cyberpunk_secret,limit=1,sort=nearest] cyberpunk 1
+execute if entity @a[advancements={mcm:map_functions/cyberpunk_secret_1=true}] store result score $secret cyberpunk if entity @e[type=interaction,tag=cyberpunk_secret,scores={cyberpunk=1..}]
 
 execute if score $secret cyberpunk matches 9 run setblock -1990 73 2044 redstone_torch
 execute if score $secret cyberpunk matches 9 run setblock -1989 73 2044 redstone_torch
@@ -92,8 +91,8 @@ execute if score $secret cyberpunk matches 9 run setblock -1994 189 2061 warped_
 execute if score $secret cyberpunk matches 9 run scoreboard players add $message cyberpunk 1
 execute if score $secret cyberpunk matches 9 if score $message cyberpunk matches 1 run tellraw @a ["",{"text":"The garden is open for visitors!","italic":true,"color":"green"}]
 
-execute as @e[type=cat,tag=cyberpunk_secret_1] at @s if entity @a[distance=..1] run advancement grant @a[distance=..1] only mcm:map_functions/cyberpunk_secret_2
-execute as @e[type=cat,tag=cyberpunk_secret_2] at @s if entity @a[distance=..1] run advancement grant @a[distance=..1] only mcm:map_functions/cyberpunk_secret_3
+execute as @e[type=cat,tag=cyberpunk_secret_1] at @s if entity @a[distance=..2] run advancement grant @a[distance=..2] only mcm:map_functions/cyberpunk_secret_2
+execute as @e[type=cat,tag=cyberpunk_secret_2] at @s if entity @a[distance=..2] run advancement grant @a[distance=..2] only mcm:map_functions/cyberpunk_secret_3
 
 execute as @a[advancements={mcm:map_functions/cyberpunk_secret_1=true}] run advancement revoke @s only mcm:map_functions/cyberpunk_secret_1
 
@@ -102,6 +101,19 @@ scoreboard players reset @a RingBell
 
 #> Propellers
 execute as @a[predicate=mcm:bounding_boxes/cf_propeller1] at @s run effect give @s levitation 1 2 true
+execute as @a[predicate=mcm:bounding_boxes/cf_propeller1] at @s run effect give @s slow_falling 2 2 true
 execute as @a[predicate=mcm:bounding_boxes/cf_propeller2] at @s run effect give @s levitation 1 2 true
+execute as @a[predicate=mcm:bounding_boxes/cf_propeller2] at @s run effect give @s slow_falling 2 2 true
+
 execute as @a[predicate=mcm:bounding_boxes/cf_propeller3] at @s run effect give @s slowness 1 2 true
 execute as @a[predicate=mcm:bounding_boxes/cf_propeller4] at @s run effect give @s slowness 1 2 true
+
+execute as @e[type=marker,tag=propeller] at @s run tp @s ~ ~ ~ ~7 0
+execute as @e[type=marker,tag=propeller_up] at @s positioned ^4 ^ ^ run particle cloud ~ ~ ~ 0 .7 0 .7 0
+execute as @e[type=marker,tag=propeller_up] at @s positioned ^-4 ^ ^ run particle cloud ~ ~ ~ 0 .7 0 .7 0
+execute as @e[type=marker,tag=propeller_up] at @s positioned ^ ^ ^4 run particle cloud ~ ~ ~ 0 .7 0 .7 0
+execute as @e[type=marker,tag=propeller_up] at @s positioned ^ ^ ^-4 run particle cloud ~ ~ ~ 0 .7 0 .7 0 
+execute as @e[type=marker,tag=propeller_down] at @s positioned ^4 ^ ^ run particle cloud ~ ~ ~ 0 -.7 0 .7 0
+execute as @e[type=marker,tag=propeller_down] at @s positioned ^-4 ^ ^ run particle cloud ~ ~ ~ 0 -.7 0 .7 0
+execute as @e[type=marker,tag=propeller_down] at @s positioned ^ ^ ^4 run particle cloud ~ ~ ~ 0 -.7 0 .7 0
+execute as @e[type=marker,tag=propeller_down] at @s positioned ^ ^ ^-4 run particle cloud ~ ~ ~ 0 -.7 0 .7 0 

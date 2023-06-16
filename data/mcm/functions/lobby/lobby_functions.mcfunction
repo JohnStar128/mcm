@@ -113,3 +113,7 @@ execute as @e[type=marker,tag=spectator_chair_marker] at @s if score @s nearby_p
 execute as @a[predicate=mcm:bounding_boxes/lobby_cosmetic_zone,limit=1,sort=random] unless entity @a[tag=display_scroll_lock] run tag @s add display_scroll_lock
 execute as @a[tag=display_scroll_lock] run function mcm:lobby/displays/control
 execute as @a[tag=display_scroll_lock,predicate=!mcm:bounding_boxes/lobby_cosmetic_zone] run tag @s remove display_scroll_lock
+
+#> Spectate item
+execute if score $gamestate CmdData matches 1.. as @a[tag=!queued] if score @s spyglass matches 1.. as @s[nbt={SelectedItem:{id:"minecraft:spyglass",tag:{Spectate:1b}}}] run function mcm:game/spectate
+scoreboard players set @a spyglass 0

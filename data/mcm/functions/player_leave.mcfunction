@@ -20,7 +20,6 @@ tag @s remove retrieved
 tag @s remove queued
 tag @s remove lostGun
 tag @s remove HoldKnife
-tag @s remove viewbossbar
 tag @s remove Voted
 tag @s remove testing_range
 tag @s remove launch_player
@@ -82,20 +81,18 @@ scoreboard players reset @s deferred_queue
 scoreboard players reset @s gundist
 scoreboard players reset @s gunclick
 scoreboard players reset @s canGetRetrieval
-scoreboard players reset @s carrotClick
 scoreboard players reset @s RainbowHat
 execute store result score @s playerUUID run data get entity @s UUID[0]
 scoreboard players reset @s droppedSpyglass
-scoreboard players reset @s adrenalineClick
 scoreboard players reset @s RingBell
 scoreboard players reset @s current_vote
+scoreboard players reset @s game_stats
+scoreboard players reset @s time_alive
+function mcm:util/reset_carrot_on_stick
 
 #> Items
-clear @s
-function mcm:cosmetics/change_cosmetics
-execute as @s[tag=autoqueue] run item replace entity @s hotbar.8 with warped_fungus_on_a_stick{CustomModelData:1235,NoDrop:1b,Autoqueue:1b,display:{Name:'[{"translate":"mcm.item.autoqueue.disable","italic":false,"color":"green"}]'}}
 execute as @s[tag=autoqueue] at @s run function mcm:lobby/queueing/autoqueue
-execute as @s[tag=!autoqueue] run item replace entity @s hotbar.8 with warped_fungus_on_a_stick{CustomModelData:1234,NoDrop:1b,Autoqueue:1b,display:{Name:'[{"translate":"mcm.item.autoqueue.enable","italic":false,"color":"green"}]'}}
+function mcm:lobby/give_lobby_items
 
 #> How to play book
 item replace entity @s hotbar.4 with written_book{HowToPlay:1b,NoDrop:1b}

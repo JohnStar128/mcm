@@ -1,0 +1,25 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:interaction",
+          "nbt": "{Tags:[\"riverboat_card\", \"eight\"],response:true}"
+        },
+        "player" : {
+          "equipment": {
+            "mainhand": {
+              "items": [
+                "minecraft:air"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards" : {
+    "function" : "mcm:maps/riverboat/pickup_eight"
+  }
+}

@@ -2,6 +2,8 @@
 
 scoreboard players set $didGameEnd CmdData 1
 
+execute if score $gameEndTimer CmdData matches 200 run tag @a remove WonLast
+
 execute if score $gameEndTimer CmdData matches 200 run title @a clear
 execute as @e[type=item,tag=KeyItem] at @s run data modify entity @s Owner set from entity @e[type=marker,tag=gameID,limit=1] UUID
 execute if score $gameEndTimer CmdData matches 200 run function mcm:game/game_end_stats
@@ -9,9 +11,9 @@ execute if score $gameEndTimer CmdData matches 200 as @a[tag=queued] run scorebo
 execute if score $gameEndTimer CmdData matches 200 as @a[tag=queued] run scoreboard players reset @s time_alive
 execute if score $gameEndTimer CmdData matches 200 run tellraw @a ["", {"text":"Returning to lobby in 10 seconds...","color":"yellow"}]
 execute if score $gameEndTimer CmdData matches 200 if score $innocentWin CmdData matches 1 run tag @a[tag=innocent,gamemode=adventure,tag=!murderer] add WonLast
-execute if score $gameEndTimer CmdData matches 200 if score $innocentWin CmdData matches 1 run title @a title ["", {"text":"Innocents win!","color":"green"}]
+execute if score $gameEndTimer CmdData matches 200 if score $innocentWin CmdData matches 1 run title @a[tag=queued] title ["", {"text":"Innocents win!","color":"green"}]
 execute if score $gameEndTimer CmdData matches 200 if score $murderWin CmdData matches 1 run tag @a[tag=murderer,gamemode=adventure] add WonLast
-execute if score $gameEndTimer CmdData matches 200 if score $murderWin CmdData matches 1 run title @a title ["", {"text":"Murderer wins!","color":"red"}]
+execute if score $gameEndTimer CmdData matches 200 if score $murderWin CmdData matches 1 run title @a[tag=queued] title ["", {"text":"Murderer wins!","color":"red"}]
 execute if score $gameEndTimer CmdData matches 200 if score $innocentWin CmdData matches 1 run playsound minecraft:ui.toast.challenge_complete ambient @a[tag=!murderer] ~ ~ ~ 1 1 1
 execute if score $gameEndTimer CmdData matches 200 if score $innocentWin CmdData matches 1 run playsound minecraft:entity.wither.spawn ambient @a[tag=murderer] ~ ~ ~ 1 2 1
 execute if score $gameEndTimer CmdData matches 200 if score $murderWin CmdData matches 1 run playsound minecraft:entity.wither.spawn ambient @a[tag=!murderer] ~ ~ ~ 1 2 1
@@ -34,15 +36,18 @@ execute if score $gameEndTimer CmdData matches ..1 run gamerule doDaylightCycle 
 execute if score $gameEndTimer CmdData matches ..1 run gamemode adventure @a[team=!test4,tag=queued]
 execute if score $gameEndTimer CmdData matches ..1 run gamemode adventure @a[team=!test4,tag=spectating]
 
+# Reset the maps
+execute if score $gameEndTimer CmdData matches ..1 run function mcm:maps/reset
+
 # kill player skulls
 execute if score $gameEndTimer CmdData matches ..1 run kill @e[type=item,nbt={Item:{id:"minecraft:player_head"}}]
 
 execute if score $gameEndTimer CmdData matches ..1 run effect clear @a
 
 # remove spawnpoints
-execute if score $gameEndTimer CmdData matches ..1 as @e[type=marker,tag=!available,tag=map_marker] run function mcm:util/dealloc_entity
-execute if score $gameEndTimer CmdData matches ..1 as @e[type=marker,tag=PlayerSpawn] run tag @s remove Occupied
-execute if score $gameEndTimer CmdData matches ..1 as @e[type=marker,tag=sound_marker] run data merge entity @s {Tags:["available","sound_marker","map_marker"]}
+#execute if score $gameEndTimer CmdData matches ..1 as @e[type=marker,tag=!available,tag=map_marker] run function mcm:util/dealloc_entity
+#execute if score $gameEndTimer CmdData matches ..1 as @e[type=marker,tag=PlayerSpawn] run tag @s remove Occupied
+#execute if score $gameEndTimer CmdData matches ..1 as @e[type=marker,tag=sound_marker] run data merge entity @s {Tags:["available","sound_marker","map_marker"]}
 execute if score $gameEndTimer CmdData matches ..1 run kill @e[tag=MapEntity]
 execute if score $gameEndTimer CmdData matches ..1 run kill @e[type=item,tag=KeyItem]
 
@@ -56,9 +61,10 @@ execute if score $gameEndTimer CmdData matches ..1 run tag @a remove colored
 execute if score $gameEndTimer CmdData matches ..1 as @a[tag=empty_hand] run stopsound @a[tag=queued]
 
 # AutoQueue items and how to play book
-execute if score $gameEndTimer CmdData matches ..1 run item replace entity @a[tag=queued,tag=autoqueue] hotbar.8 with warped_fungus_on_a_stick{CustomModelData:1235,NoDrop:1b,Autoqueue:1b,display:{Name:'[{"translate":"mcm.item.autoqueue.disable","italic":false,"color":"red"}]'}}
-execute if score $gameEndTimer CmdData matches ..1 run item replace entity @a[tag=queued,tag=!autoqueue] hotbar.8 with warped_fungus_on_a_stick{CustomModelData:1234,NoDrop:1b,Autoqueue:1b,display:{Name:'[{"translate":"mcm.item.autoqueue.enable","italic":false,"color":"green"}]'}}
-execute if score $gameEndTimer CmdData matches ..1 run item replace entity @a[tag=queued] hotbar.4 with written_book{HowToPlay:1b,NoDrop:1b}
+clear @a[team=!test4] spyglass
+execute if score $gameEndTimer CmdData matches ..1 as @a[tag=queued] run function mcm:lobby/give_lobby_items
+execute if score $gameEndTimer CmdData matches ..1 as @a[tag=spectating] run function mcm:lobby/give_lobby_items
+
 # clear old tags
 execute if score $gameEndTimer CmdData matches ..1 run tag @a remove murderer
 execute if score $gameEndTimer CmdData matches ..1 run tag @a remove innocent
@@ -91,21 +97,11 @@ execute if score $gameEndTimer CmdData matches ..1 run scoreboard players reset 
 execute if score $gameEndTimer CmdData matches ..1 run scoreboard players reset @a canPickupGun
 execute if score $gameEndTimer CmdData matches ..1 run scoreboard players reset @a retrieval_delay
 
-# Reset the maps
-execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 1 run function mcm:maps/library/reset
-execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 2 run function mcm:maps/airship/reset
-execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 3 run function mcm:maps/vineyard/reset
-execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 4 run function mcm:maps/launchpad/reset
-execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 5 run function mcm:maps/cyberpunk/reset
-#gumdrop - execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 6 run function mcm:maps/gumdrop/reset
-execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 6 run function mcm:maps/riverboat/reset
-
-#give popcorn
-execute if score $gameEndTimer CmdData matches ..1 run item replace entity @a[tag=WonLast] hotbar.0 with warped_fungus_on_a_stick{NoDrop:1b,CustomModelData:1114,display:{Name:'[{"text":"Victory Popcorn","italic":false,"color":"yellow"}]',Lore:['[{"text":"","italic":false}]','[{"text":"The snack that\'s worth dying for!","italic":true,"color":"dark_gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]']},HideFlags:3,HideFlags:3}
-execute if score $gameEndTimer CmdData matches ..1 run tag @a[tag=WonLast] remove WonLast
-
-# disable friendly fire
+#> disable friendly fire
 execute if score $gameEndTimer CmdData matches 199 run team join nametags @a[tag=queued,team=!nametags]
+
+#> Send disable tips message
+execute if score $gameEndTimer CmdData matches ..1 run tellraw @a[tag=!NoTip] ["", {"text":"Click here","color":"dark_aqua","bold":"true","clickEvent":{"action":"run_command","value":"/trigger disableTips"}},{"text":" to disable tips","color":"dark_gray"}]
 
 #> Count AFK people so they don't autoqueue
 execute if score $gameEndTimer CmdData matches ..1 run tag @a add afk

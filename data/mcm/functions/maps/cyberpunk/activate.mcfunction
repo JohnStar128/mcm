@@ -6,51 +6,46 @@ kill @e[tag=MapEntity]
 
 scoreboard players set $gametimer CmdData 12000
 
-#> Lobby poster visual
-fill 27 5 109 27 1 112 warped_trapdoor[open=true,facing=west] replace crimson_trapdoor
-
 #> Set Player Spawnpoints
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -2054 72 2028 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -2025 72 2007 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -1997 72 2011 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -2098 72 2077 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -2030 72 2037 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -2116 72 2039 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -2099 72 2025 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -2069 81 2037 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -2076 72 2009 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -2119 72 2015 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -1989 75 2055 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -2041 75 2056 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -2047 74 2015 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -2103 72 2064 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -2067 76 2037 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -1999 73 2082 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -2137 72 2076 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -2035 72 2077 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -2091 72 1997 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -2020 78 2071 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -2041 72 1984 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -2081 72 2070 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -2128 74 2052 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -2081 72 2047 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -1998 75 2037 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -2067 72 2089 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -2101 72 2013 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -2012 72 2054 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -2020 72 2071 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=PlayerSpawn,limit=1] positioned -2097 72 2036 run function mcm:util/alloc_entity 
+execute positioned -2054 72 2028 run function mcm:game/markers/playerspawn 
+execute positioned -2025 72 2007 run function mcm:game/markers/playerspawn 
+execute positioned -1997 72 2011 run function mcm:game/markers/playerspawn 
+execute positioned -2098 72 2077 run function mcm:game/markers/playerspawn 
+execute positioned -2030 72 2037 run function mcm:game/markers/playerspawn 
+execute positioned -2116 72 2039 run function mcm:game/markers/playerspawn 
+execute positioned -2099 72 2025 run function mcm:game/markers/playerspawn 
+execute positioned -2069 81 2037 run function mcm:game/markers/playerspawn 
+execute positioned -2076 72 2009 run function mcm:game/markers/playerspawn 
+execute positioned -2119 72 2015 run function mcm:game/markers/playerspawn 
+execute positioned -1989 75 2055 run function mcm:game/markers/playerspawn 
+execute positioned -2041 75 2056 run function mcm:game/markers/playerspawn 
+execute positioned -2047 74 2015 run function mcm:game/markers/playerspawn 
+execute positioned -2103 72 2064 run function mcm:game/markers/playerspawn 
+execute positioned -2067 76 2037 run function mcm:game/markers/playerspawn 
+execute positioned -1999 73 2082 run function mcm:game/markers/playerspawn 
+execute positioned -2137 72 2076 run function mcm:game/markers/playerspawn 
+execute positioned -2035 72 2077 run function mcm:game/markers/playerspawn 
+execute positioned -2091 72 1997 run function mcm:game/markers/playerspawn 
+execute positioned -2020 78 2071 run function mcm:game/markers/playerspawn 
+execute positioned -2041 72 1984 run function mcm:game/markers/playerspawn 
+execute positioned -2081 72 2070 run function mcm:game/markers/playerspawn 
+execute positioned -2128 74 2052 run function mcm:game/markers/playerspawn 
+execute positioned -2081 72 2047 run function mcm:game/markers/playerspawn 
+execute positioned -1998 75 2037 run function mcm:game/markers/playerspawn 
+execute positioned -2067 72 2089 run function mcm:game/markers/playerspawn 
+execute positioned -2101 72 2013 run function mcm:game/markers/playerspawn 
+execute positioned -2012 72 2054 run function mcm:game/markers/playerspawn 
+execute positioned -2020 72 2071 run function mcm:game/markers/playerspawn 
+execute positioned -2097 72 2036 run function mcm:game/markers/playerspawn 
 
 #> Sound markers
 
-execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned -2049 81 2030 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned -2049 81 2030 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned -2074 85 2046 run function mcm:util/alloc_entity 
-execute as @e[type=marker,tag=available,tag=sound_marker,limit=1] positioned -2074 85 2028 run function mcm:util/alloc_entity 
+execute positioned -2049 81 2030 run function mcm:game/markers/soundmarker 
+execute positioned -2049 81 2030 run function mcm:game/markers/soundmarker 
+execute positioned -2074 85 2046 run function mcm:game/markers/soundmarker 
+execute positioned -2074 85 2028 run function mcm:game/markers/soundmarker 
 
 #> Spectator spawnpoint
-execute as @e[type=marker,tag=available,tag=SpectatorSpawn,limit=1] positioned -2070 100 2038 run function mcm:util/alloc_entity
+execute positioned -2070 100 2038 run function mcm:game/markers/spectatorspawn
 
-execute at @e[type=marker,tag=available,tag=SpectatorSpawn,limit=1] as @e[type=marker,tag=!available,tag=sound_marker,limit=7,sort=nearest] run tag @s add EngineSoundMarker
-
-tellraw @a ["","\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"The game is ready to play!","underlined":true,"color":"green"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Selected Map: ","color":"gray"},{"text":"Color Filth","color":"dark_green","hoverEvent":{"action":"show_text","value":[{"text":"Lost in a city of stars...","color":"aqua"},{"text":"\n    --------","color":"dark_gray"},{"text":"\nConcept by: ","color":"dark_aqua"},{"text":"TacoSquad, TheLastOreo","color":"green"}]}},"\n"]
+tellraw @a ["","\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"The game is ready to play!","underlined":true,"color":"green"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Selected Map: ","color":"gray"},{"text":"Color Filth","color":"dark_green","hoverEvent":{"action":"show_text","value":[{"text":"Lost in a city of stars...","color":"aqua"},{"text":"\n    --------","color":"dark_gray"},{"text":"\nConcept by: ","color":"dark_aqua"},{"text":"TacoSquad, TheLastOreo","color":"green"}]}},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Directed by: ","color":"gray"},{"text":"TacoSquad, TheLastOreo\n","color":"dark_green"}]

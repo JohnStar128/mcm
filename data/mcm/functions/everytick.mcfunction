@@ -1,13 +1,25 @@
+#> Versioning system
+execute as @a unless score @s version = $current_version version run function mcm:first_join
+execute as @a unless score @s version = $current_version version run scoreboard players operation @s version = $current_version version
+
 #> What to do if a player disconnects and rejoins
 execute as @a[scores={leave=1..}] unless score @s gameID = $gameID CmdData run function mcm:player_leave
-execute as @a[scores={leave=1..}] run schedule function mcm:lobby/lobby_cosmetic_signs 10t
+
+#> Reset voting if no one is on the server
+execute as @a[scores={leave=1..}] run tag @a[limit=1] add one_player
+
+execute as @a[scores={leave=1..}] unless entity @a[tag=!one_player] if score $gamestate CmdData matches -1 run function mcm:lobby/voting/reset_voting_period
+execute as @a[scores={leave=1..}] unless entity @a[tag=!one_player] if score $gamestate CmdData matches 0 run function mcm:lobby/voting/reset_voting_period
+
+execute as @a[scores={leave=1..}] run tag @a remove one_player
+
 scoreboard players reset @a[scores={leave=1..}] leave
 
 #> Give everyone saturation because "Murder isn't peaceful"
 #And resistance because arrows hurt :(
-effect give @a saturation 1000000 100 true
-effect give @a resistance 1000000 100 true
-effect give @a weakness 1000000 100 true
+effect give @a saturation infinite 100 true
+effect give @a resistance infinite 100 true
+effect give @a weakness infinite 100 true
 effect clear @a[tag=HoldKnife] weakness
 
 #> Run lobby-related code only if people are actually there
@@ -49,6 +61,14 @@ scoreboard players reset @a[scores={gunclick=1..}] gunclick
 
 #> Update queued players constantly
 execute store result score $queued CmdData if entity @a[tag=queued]
+
+#> Disable tips
+scoreboard players enable @a disableTips
+execute as @a[scores={disableTips=1..},tag=!NoTip] run tellraw @s ["", {"text":"You will no longer receive tips.","color":"green"}]
+execute as @a[scores={disableTips=1..},tag=!NoTip] run tellraw @s ["", {"text":"Re-enable tips in the How To Play book","color":"green"}]
+execute as @a[scores={disableTips=1..},tag=!NoTip] run tag @s add NoTip
+execute as @a[scores={disableTips=0},tag=NoTip] run tellraw @s ["", {"text":"You will now receive tips.","color":"green"}]
+execute as @a[scores={disableTips=0},tag=NoTip] run tag @s remove NoTip
 
 #> Teleport players not in match & outside of lobby bounding box back to lobby unless on Developer Team (escape prevention)
 execute as @a[tag=!queued,tag=!spectating,predicate=!mcm:bounding_boxes/lobby,team=!test4] run tp @s -1 1 70

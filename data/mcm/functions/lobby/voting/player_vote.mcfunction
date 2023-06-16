@@ -1,35 +1,43 @@
-#> Map voting
-execute store result score $current_vote vote_position run scoreboard players add @s mapvote 0
-execute as @e[type=villager,scores={vote_position=1..}] if score @s vote_position = $current_vote vote_position store result score $current_vote vote_map_id run add @s vote_map_id 0
-execute as @e[type=villager,scores={vote_position=-1}] if score @s vote_position = $current_vote vote_position store result score $current_vote vote_map_id run add @s vote_map_id 0
-execute as @e[type=marker,tag=MapVote] if score @s MapValues = $current_vote vote_map_id run scoreboard players add @s CmdData 1
+# Takes position vote in as @s vote_position
+# Takes map_id vote in as @s vote_map_id
 
 playsound block.note_block.bit master @s ~ ~ ~ 1 1.4
 tag @s add Voted
 
-#> Remove previous vote
-execute store result score $current_vote vote_position run scoreboard players add @s current_vote 0
-execute as @e[type=villager,scores={vote_position=1..}] if score @s vote_position = $current_vote vote_position store result score $current_vote vote_map_id run add @s vote_map_id 0
-execute as @e[type=villager,scores={vote_position=-1}] if score @s vote_position = $current_vote vote_position store result score $current_vote vote_map_id run add @s vote_map_id 0
-execute as @e[type=marker,tag=MapVote] if score @s MapValues = $current_vote vote_map_id run scoreboard players remove @s CmdData 1
-
-#> Update current vote and reset so they can vote again
-scoreboard players operation @s current_vote = @s mapvote
-scoreboard players reset @s mapvote
-
 #> Update visible counts
-execute positioned 29 3 89 as @e[type=marker,tag=MapVote] if score @s MapValues = @e[type=villager,limit=1,sort=nearest] vote_map_id run data merge block ~ ~ ~ {Text1:'{"text":"","clickEvent":{"action":"run_command","value":"trigger mapvote set 1"}}',Text2:'{"text":"","underlined":true,"color":"dark_green"}',Text3:'{"text":""}',Text4:'{"translate":"mcm.lobby.vote","extra":[{"score":{"name":"@s","objective":"CmdData"},"color":"#FFE700"}]}'}
-execute positioned 29 3 94 as @e[type=marker,tag=MapVote] if score @s MapValues = @e[type=villager,limit=1,sort=nearest] vote_map_id run data merge block ~ ~ ~ {Text1:'{"text":"","clickEvent":{"action":"run_command","value":"trigger mapvote set 1"}}',Text2:'{"text":"","underlined":true,"color":"dark_green"}',Text3:'{"text":""}',Text4:'{"translate":"mcm.lobby.vote","extra":[{"score":{"name":"@s","objective":"CmdData"},"color":"#FFE700"}]}'}
-execute positioned 29 3 99 as @e[type=marker,tag=MapVote] if score @s MapValues = @e[type=villager,limit=1,sort=nearest] vote_map_id run data merge block ~ ~ ~ {Text1:'{"text":"","clickEvent":{"action":"run_command","value":"trigger mapvote set 1"}}',Text2:'{"text":"","underlined":true,"color":"dark_green"}',Text3:'{"text":""}',Text4:'{"translate":"mcm.lobby.vote","extra":[{"score":{"name":"@s","objective":"CmdData"},"color":"#FFE700"}]}'}
-execute positioned 29 3 104 as @e[type=marker,tag=MapVote] if score @s MapValues = @e[type=villager,limit=1,sort=nearest] vote_map_id run data merge block ~ ~ ~ {Text1:'{"text":"","clickEvent":{"action":"run_command","value":"trigger mapvote set 1"}}',Text2:'{"text":"","underlined":true,"color":"dark_green"}',Text3:'{"text":""}',Text4:'{"translate":"mcm.lobby.vote","extra":[{"score":{"name":"@s","objective":"CmdData"},"color":"#FFE700"}]}'}
-execute positioned 29 3 109 as @e[type=marker,tag=MapVote] if score @s MapValues = @e[type=villager,limit=1,sort=nearest] vote_map_id run data merge block ~ ~ ~ {Text1:'{"text":"","clickEvent":{"action":"run_command","value":"trigger mapvote set 1"}}',Text2:'{"text":"","underlined":true,"color":"dark_green"}',Text3:'{"text":""}',Text4:'{"translate":"mcm.lobby.vote","extra":[{"score":{"name":"@s","objective":"CmdData"},"color":"#FFE700"}]}'}
-execute positioned 29 3 114 as @e[type=marker,tag=MapVote] if score @s MapValues = @e[type=villager,limit=1,sort=nearest] vote_map_id run data merge block ~ ~ ~ {Text1:'{"text":"","clickEvent":{"action":"run_command","value":"trigger mapvote set 1"}}',Text2:'{"text":"","underlined":true,"color":"dark_green"}',Text3:'{"text":""}',Text4:'{"translate":"mcm.lobby.vote","extra":[{"score":{"name":"@s","objective":"CmdData"},"color":"#FFE700"}]}'}
-execute positioned 29 3 83 as @e[type=marker,tag=MapVote] if score @s MapValues = @e[type=villager,limit=1,sort=nearest] vote_map_id run data merge block ~ ~ ~ {Text1:'{"text":"","clickEvent":{"action":"run_command","value":"trigger mapvote set 1"}}',Text2:'{"text":"","underlined":true,"color":"dark_green"}',Text3:'{"text":""}',Text4:'{"translate":"mcm.lobby.vote","extra":[{"score":{"name":"@s","objective":"CmdData"},"color":"#FFE700"}]}'}
 
-execute as @e[type=armor_stand,tag=map1,tag=VoteDisplay] at @s run data modify entity @s CustomName set from block 29 3 89 Text4
-execute as @e[type=armor_stand,tag=map2,tag=VoteDisplay] at @s run data modify entity @s CustomName set from block 29 3 94 Text4
-execute as @e[type=armor_stand,tag=map3,tag=VoteDisplay] at @s run data modify entity @s CustomName set from block 29 3 99 Text4
-execute as @e[type=armor_stand,tag=map4,tag=VoteDisplay] at @s run data modify entity @s CustomName set from block 29 3 104 Text4
-execute as @e[type=armor_stand,tag=map5,tag=VoteDisplay] at @s run data modify entity @s CustomName set from block 29 3 109 Text4
-execute as @e[type=armor_stand,tag=map6,tag=VoteDisplay] at @s run data modify entity @s CustomName set from block 29 3 114 Text4
-execute as @e[type=armor_stand,tag=map_random,tag=VoteDisplay] at @s run data modify entity @s CustomName set from block 29 3 83 Text4
+scoreboard players set random vote_count 0
+scoreboard players set map1 vote_count 0
+scoreboard players set map2 vote_count 0
+scoreboard players set map3 vote_count 0
+scoreboard players set map4 vote_count 0
+scoreboard players set map5 vote_count 0
+scoreboard players set map6 vote_count 0
+
+execute as @a[scores={vote_position=-1}] run scoreboard players add random vote_count 1
+execute as @a[scores={vote_position=1}] run scoreboard players add map1 vote_count 1
+execute as @a[scores={vote_position=2}] run scoreboard players add map2 vote_count 1
+execute as @a[scores={vote_position=3}] run scoreboard players add map3 vote_count 1
+execute as @a[scores={vote_position=4}] run scoreboard players add map4 vote_count 1
+execute as @a[scores={vote_position=5}] run scoreboard players add map5 vote_count 1
+execute as @a[scores={vote_position=6}] run scoreboard players add map6 vote_count 1
+
+execute as @e[type=text_display,tag=map_random] run data merge entity @s {text:'[{"translate":"mcm.lobby.vote"},{"score":{"objective":"vote_count","name":"random"},"color":"#FFE700"}]'}
+execute as @e[type=text_display,tag=map1,tag=!disabled] run data merge entity @s {text:'[{"translate":"mcm.lobby.vote"},{"score":{"objective":"vote_count","name":"map1"},"color":"#FFE700"}]'}
+execute as @e[type=text_display,tag=map2,tag=!disabled] run data merge entity @s {text:'[{"translate":"mcm.lobby.vote"},{"score":{"objective":"vote_count","name":"map2"},"color":"#FFE700"}]'}
+execute as @e[type=text_display,tag=map3,tag=!disabled] run data merge entity @s {text:'[{"translate":"mcm.lobby.vote"},{"score":{"objective":"vote_count","name":"map3"},"color":"#FFE700"}]'}
+execute as @e[type=text_display,tag=map4,tag=!disabled] run data merge entity @s {text:'[{"translate":"mcm.lobby.vote"},{"score":{"objective":"vote_count","name":"map4"},"color":"#FFE700"}]'}
+execute as @e[type=text_display,tag=map5,tag=!disabled] run data merge entity @s {text:'[{"translate":"mcm.lobby.vote"},{"score":{"objective":"vote_count","name":"map5"},"color":"#FFE700"}]'}
+execute as @e[type=text_display,tag=map6,tag=!disabled] run data merge entity @s {text:'[{"translate":"mcm.lobby.vote"},{"score":{"objective":"vote_count","name":"map6"},"color":"#FFE700"}]'}
+
+
+tellraw @s[scores={vote_map_id=-1}] [{"text":"| ","color":"gray","bold":true}, {"text":"You voted for: ","color":"gray"},{"text":"a random map","color":"green"}]
+tellraw @s[scores={vote_map_id=1}] [{"text":"| ","color":"gray","bold":true}, {"text":"You voted for: ","color":"gray"},{"text":"Library","color":"green"}]
+tellraw @s[scores={vote_map_id=2}] [{"text":"| ","color":"gray","bold":true}, {"text":"You voted for: ","color":"gray"},{"text":"Floating Islands","color":"green"}]
+tellraw @s[scores={vote_map_id=3}] [{"text":"| ","color":"gray","bold":true}, {"text":"You voted for: ","color":"gray"},{"text":"Vineyard","color":"green"}]
+tellraw @s[scores={vote_map_id=4}] [{"text":"| ","color":"gray","bold":true}, {"text":"You voted for: ","color":"gray"},{"text":"Launch Complex","color":"green"}]
+tellraw @s[scores={vote_map_id=5}] [{"text":"| ","color":"gray","bold":true}, {"text":"You voted for: ","color":"gray"},{"text":"Color Filth","color":"green"}]
+tellraw @s[scores={vote_map_id=6}] [{"text":"| ","color":"gray","bold":true}, {"text":"You voted for: ","color":"gray"},{"text":"Murder on the Mississippi","color":"green"}]
+tellraw @s[scores={vote_map_id=7}] [{"text":"| ","color":"gray","bold":true}, {"text":"You voted for: ","color":"gray"},{"text":"Industry","color":"green"}]
+tellraw @s[scores={vote_map_id=8}] [{"text":"| ","color":"gray","bold":true}, {"text":"You voted for: ","color":"gray"},{"text":"Tragedy on the Boreal Express","color":"green"}]
+tellraw @s[scores={vote_map_id=9}] [{"text":"| ","color":"gray","bold":true}, {"text":"You voted for: ","color":"gray"},{"text":"Snowed Inn","color":"green"}]

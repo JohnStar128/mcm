@@ -1,5 +1,3 @@
-tag @a[tag=queued] add viewbossbar
-tag @a[gamemode=spectator] add viewbossbar
 
 #> Get innocents
 execute store result score $InnocentCount CmdData if entity @a[tag=innocent,tag=!spectating]
@@ -19,7 +17,7 @@ scoreboard players operation $gameseconds CmdData = $gametimer CmdData
 scoreboard players operation $gameseconds CmdData /= $20 CmdData
 scoreboard players operation $gameseconds CmdData %= $60 CmdData
 
-bossbar set gamedisplay players @a[tag=viewbossbar]
+bossbar set gamedisplay players @a
 execute store result bossbar gamedisplay value run scoreboard players get $gametimer CmdData
 
 
@@ -29,5 +27,3 @@ execute if score $gameminutes CmdData matches 10.. if score $gameseconds CmdData
 execute if score $gameminutes CmdData matches ..9 if score $gameseconds CmdData matches 10.. run bossbar set gamedisplay name ["",{"text":"Murderers: ","color":"#ff5f79"},{"score":{"name":"$MurdererCount","objective":"CmdData"},"color":"white"},"  ",{"text":"| ","color":"#253b48"},{"text":"0","color":"#ffcf66"},{"score":{"name":"$gameminutes","objective":"CmdData"},"color":"#ffcf66"},{"text":":","color":"#ffcf66"},{"score":{"name":"$gameseconds","objective":"CmdData"},"color":"#ffcf66"},{"text":" |","color":"#253b48"},"  ",{"text":"Innocents: ","color":"#6dc6ff"},{"score":{"name":"$InnocentCount","objective":"CmdData"},"color":"white"}]
 execute if score $gameminutes CmdData matches 10.. if score $gameseconds CmdData matches ..9 run bossbar set gamedisplay name ["",{"text":"Murderers: ","color":"#ff5f79"},{"score":{"name":"$MurdererCount","objective":"CmdData"},"color":"white"},"  ",{"text":"| ","color":"#253b48"},{"score":{"name":"$gameminutes","objective":"CmdData"},"color":"#ffcf66"},{"text":":","color":"#ffcf66"},{"text":"0","color":"#ffcf66"},{"score":{"name":"$gameseconds","objective":"CmdData"},"color":"#ffcf66"},{"text":" |","color":"#253b48"},"  ",{"text":"Innocents: ","color":"#6dc6ff"},{"score":{"name":"$InnocentCount","objective":"CmdData"},"color":"white"}]
 execute if score $gameminutes CmdData matches ..9 if score $gameseconds CmdData matches ..9 run bossbar set gamedisplay name ["",{"text":"Murderers: ","color":"#ff5f79"},{"score":{"name":"$MurdererCount","objective":"CmdData"},"color":"white"},"  ",{"text":"| ","color":"#253b48"},{"text":"0","color":"#ffcf66"},{"score":{"name":"$gameminutes","objective":"CmdData"},"color":"#ffcf66"},{"text":":","color":"#ffcf66"},{"text":"0","color":"#ffcf66"},{"score":{"name":"$gameseconds","objective":"CmdData"},"color":"#ffcf66"},{"text":" |","color":"#253b48"},"  ",{"text":"Innocents: ","color":"#6dc6ff"},{"score":{"name":"$InnocentCount","objective":"CmdData"},"color":"white"}]
-
-tag @a[tag=viewbossbar] remove viewbossbar

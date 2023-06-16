@@ -1,0 +1,1 @@
+summon marker ~ ~ ~ {Tags:["sound_marker","MapEntity"]}

@@ -6,8 +6,8 @@ execute if score $timer riverboat matches 50 run place template mcm:riverboat/wh
 execute if score $timer riverboat matches 100 run place template mcm:riverboat/wheel/3 2096 61 -2007
 execute if score $timer riverboat matches 150 run place template mcm:riverboat/wheel/4 2096 61 -2007
 
-#> Make card armor stands accessible
-execute if score $graceperiod CmdData matches 0 as @e[type=armor_stand,tag=riverboat_secret,tag=take] run data merge entity @s {DisabledSlots:63}
+#> Enable card pickup
+execute if score $graceperiod CmdData matches 0 as @e[type=interaction,tag=riverboat_card] run data merge entity @s {response:1b}
 
 #> Item frame rotation
 execute as @e[type=item_frame,tag=riverboat_secret] run data merge entity @s {ItemRotation:1b,Fixed:0b}
@@ -50,6 +50,7 @@ execute as @a[tag=queued,tag=!spectating,predicate=mcm:bounding_boxes/riverboat_
 
 #> Kill out of bounds players (escape prevention)
 execute as @a[tag=queued,tag=!spectating,predicate=!mcm:bounding_boxes/riverboat] at @s if score $graceperiod CmdData matches 0 run playsound minecraft:entity.evoker_fangs.attack block @a ~ ~ ~ 1 1 0
+execute as @a[tag=queued,tag=!spectating,predicate=!mcm:bounding_boxes/riverboat] at @s if score $graceperiod CmdData matches 0 run tellraw @s {"text":"You were killed by the river shark!","color":"red"}
 execute as @a[tag=queued,tag=!spectating,predicate=!mcm:bounding_boxes/riverboat] at @s if score $graceperiod CmdData matches 0 run function mcm:game/playerdeath
 
 #> Keep spectators inbounds

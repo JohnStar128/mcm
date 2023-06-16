@@ -1,7 +1,0 @@
-data modify block 7 1 84 Text1 set value '{"translate":"mcm.item.rainbow_hat","color":"green","clickEvent":{"action":"run_command","value":"/trigger hatchange set 1"}}'
-data modify block 5 1 83 Text1 set value '{"translate":"mcm.item.lance_hat","color":"green","clickEvent":{"action":"run_command","value":"/trigger hatchange set 2"}}'
-data modify block -7 1 83 Text1 set value '{"translate":"mcm.item.space_helmet","color":"green","clickEvent":{"action":"run_command","value":"/trigger hatchange set 3"}}'
-data modify block -9 1 84 Text1 set value '{"translate":"mcm.item.dark3dglasses","color":"green","clickEvent":{"action":"run_command","value":"/trigger hatchange set 4"}}'
-data modify block -5 1 82 Text1 set value '{"translate":"mcm.item.bell","color":"green","clickEvent":{"action":"run_command","value":"/trigger hatchange set 5"}}'
-data modify block 3 1 82 Text1 set value '{"translate":"mcm.item.bowlerhat","color":"green","clickEvent":{"action":"run_command","value":"/trigger hatchange set 6"}}'
-data modify block -1 1 81 Text1 set value '{"translate":"mcm.cosmetic.removehat","color":"green","clickEvent":{"action":"run_command","value":"/trigger hatchange set -1"}}'

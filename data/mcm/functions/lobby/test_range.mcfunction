@@ -22,7 +22,9 @@ execute as @e[tag=kniferange,nbt=!{ItemRotation:2b}] run data merge entity @s {I
 execute as @e[tag=gunrange,nbt=!{ItemRotation:0b}] run data merge entity @s {ItemRotation:0b}
 
 #> Return to main lobby
-execute as @a[predicate=mcm:bounding_boxes/test_range_grate] run tp @s 28 1 63
+execute as @a[predicate=mcm:bounding_boxes/test_range_grate,tag=!came_from_grate] run tp @s -25.5 1 79.5 90 0
+execute as @a[predicate=mcm:bounding_boxes/test_range_grate,tag=came_from_grate] run tp @s 28 1 63
+execute as @a[predicate=!mcm:bounding_boxes/test_range_kill_items,tag=came_from_grate] run tag @s remove came_from_grate
 
 #> Kill knives/guns in the test range
 execute as @e[type=item,predicate=mcm:bounding_boxes/test_range_kill_items,nbt={OnGround:1b,Item:{tag:{CustomModelData:1111}}}] run kill @s

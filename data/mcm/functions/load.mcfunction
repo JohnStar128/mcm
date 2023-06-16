@@ -6,6 +6,18 @@ spawnpoint @a -1 1 69
 
 execute as @a[team=test4] at @s run function mcm:dev/storeinv
 
+# Reset the maps
+execute if score $selectedMap CmdData matches 1 run function mcm:maps/library/reset
+execute if score $selectedMap CmdData matches 2 run function mcm:maps/airship/reset
+execute if score $selectedMap CmdData matches 3 run function mcm:maps/vineyard/reset
+execute if score $selectedMap CmdData matches 4 run function mcm:maps/launchpad/reset
+execute if score $selectedMap CmdData matches 5 run function mcm:maps/cyberpunk/reset
+#gumdrop - execute if score $selectedMap CmdData matches 6 run function mcm:maps/gumdrop/reset
+execute if score $selectedMap CmdData matches 6 run function mcm:maps/riverboat/reset
+execute if score $selectedMap CmdData matches 7 run function mcm:maps/industry/reset
+execute if score $selectedMap CmdData matches 8 run function mcm:maps/train/reset
+execute if score $selectedMap CmdData matches 9 run function mcm:maps/cabin/reset
+
 #> Scoreboards
 scoreboard objectives add CmdData dummy
 scoreboard objectives add mapvote dummy
@@ -72,48 +84,22 @@ scoreboard objectives add dropped_card minecraft.dropped:minecraft.stick
 scoreboard objectives add vote_position dummy
 scoreboard objectives add vote_map_id dummy
 scoreboard objectives add vote_count dummy
-scoreboard objectives add map_id dummy
 scoreboard objectives add display_scrolling dummy
 scoreboard objectives add display_scaling dummy
 scoreboard objectives add display_coord dummy
 scoreboard objectives add facing dummy
+scoreboard objectives add targetUUID dummy
+scoreboard objectives add crystalClick minecraft.used:minecraft.carrot_on_a_stick
+scoreboard objectives add airship_crystal_growth dummy
+scoreboard objectives add item_management dummy
+scoreboard objectives add airship dummy
+scoreboard objectives add disableTips trigger
+scoreboard objectives add spyglass minecraft.used:minecraft.spyglass
+scoreboard objectives add player_count dummy
 
-#> Math values
-scoreboard players set $minus_one math -1
-scoreboard players set $one math 1
-scoreboard players set $two math 2
-scoreboard players set $three math 3
-scoreboard players set $four math 4
-scoreboard players set $five math 5
-scoreboard players set $six math 6
-scoreboard players set $seven math 7
-scoreboard players set $eight math 9
-scoreboard players set $nine math 9
-scoreboard players set $ten math 10
-scoreboard players set $eleven math 11
-scoreboard players set $twelve math 12
-scoreboard players set $thirteen math 13
-scoreboard players set $fourteen math 14
-scoreboard players set $fifteen math 15
-scoreboard players set $sixteen math 16
-scoreboard players set $seventeen math 17
-scoreboard players set $eighteen math 18
-scoreboard players set $nineteen math 19
-scoreboard players set $twenty math 20
-scoreboard players set $thirty math 30
-scoreboard players set $forty math 40 
-scoreboard players set $fifty math 50
-scoreboard players set $sixty math 60 
-scoreboard players set $seventy math 70 
-scoreboard players set $eighty math 80 
-scoreboard players set $ninety math 90 
-scoreboard players set $one_hundred math 100
-scoreboard players set $two_hundred math 200
-scoreboard players set $three_hundred math 300
-scoreboard players set $four_hundred math 400
-scoreboard players set $five_hundred math 500
-scoreboard players set $one_thousand math 1000
-scoreboard players set $pi math 3141
+schedule function mcm:lobby/update_lobby_displays_loop 5s replace
+
+function mcm:math/init
 
 #> Colors
 scoreboard players set $red_offset player_color 65536
@@ -173,6 +159,9 @@ scoreboard players set $smart_murderers GameRules 1
 scoreboard players set $murderer_ff GameRules 0
 scoreboard players set $startscrap GameRules 1
 
+#> Load current version (hardcoded)
+scoreboard players set $current_version version 2
+
 #> Remove bossbar if reloading during game (which you still shouldn't do!)
 bossbar remove minecraft:gamedisplay
 
@@ -181,3 +170,9 @@ function mcm:lobby/voting/start
 #> Restore devs to previous state
 execute as @a[scores={dev=1}] run function mcm:dev
 execute as @e[type=llama,tag=inventory_helper] at @s rotated as @s run function mcm:dev/restoreinv
+
+#> Refresh lobby lectern book
+item modify block -1 -1 79 container.0 mcm:refresh_book 
+
+#> Set weather
+weather clear

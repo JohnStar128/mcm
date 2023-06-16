@@ -35,6 +35,12 @@ execute if score $graceperiod CmdData matches 1.. run scoreboard players remove 
 execute if score $graceperiod CmdData matches 1 if score $pickedroles CmdData matches 0 run function mcm:game/pick_roles
 execute if score $graceperiod CmdData matches 1 run playsound minecraft:entity.experience_orb.pickup player @a ~ ~ ~ 1 1 0
 
+#> Remove players from the game who leave during grace period and rejoin after roles have been picked
+execute if score $pickedroles CmdData matches 1 as @a[tag=queued,tag=!innocent,tag=!murderer,tag=!gunner] run tag @s add spectator
+execute if score $pickedroles CmdData matches 1 as @a[tag=queued,tag=!innocent,tag=!murderer,tag=!gunner] run team join nametags @s
+execute if score $pickedroles CmdData matches 1 as @a[tag=queued,tag=!innocent,tag=!murderer,tag=!gunner] run gamemode spectator
+execute if score $pickedroles CmdData matches 1 as @a[tag=queued,tag=!innocent,tag=!murderer,tag=!gunner] run tag @s remove queued
+
 #> Set scores needed for item pickup related stuffs //NOTE The score value is backwards from the seemingly obvious way it should work. 1 means they can't, 0 means they can
 scoreboard players set @a[tag=murderer] canPickupGun 1
 scoreboard players set @a[tag=lostGun] canPickupGun 1
@@ -49,8 +55,12 @@ execute if score $selectedMap CmdData matches 4 run function mcm:maps/launchpad/
 execute if score $selectedMap CmdData matches 5 run function mcm:maps/cyberpunk/functionality
 #gumdrop - execute if score $selectedMap CmdData matches 6 run function mcm:maps/gumdrop/functionality
 execute if score $selectedMap CmdData matches 6 run function mcm:maps/riverboat/functionality
+execute if score $selectedMap CmdData matches 7 run function mcm:maps/industry/functionality
+execute if score $selectedMap CmdData matches 8 run function mcm:maps/train/functionality
+execute if score $selectedMap CmdData matches 9 run function mcm:maps/cabin/functionality
 
 #> Allow spectating
+execute as @a[nbt={RootVehicle:{Entity:{Tags:["spectatorchair"]}}}] run function mcm:game/spectate
 execute as @a[nbt={RootVehicle:{Entity:{Tags:["spectatorchair"]}}}] run tag @s add spectating
 execute as @a[nbt={RootVehicle:{Entity:{Tags:["spectatorchair"]}}}] run tellraw @s ["", {"text":"You are now spectating the game","color":"green","italic":true}]
 execute as @a[nbt={RootVehicle:{Entity:{Tags:["spectatorchair"]}}}] at @s run gamemode spectator @s
@@ -77,7 +87,7 @@ tag @e[type=item,nbt={Item:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag
 tag @e[type=item,nbt={Item:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}}] add gun
 
 #> Replace NoDrop-less guns in inventories with NoDrop guns
-execute as @a[nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{NoDrop:0b}}]}] run item replace entity @s hotbar.1 with warped_fungus_on_a_stick{NoDrop:1b,Unbreakable:1,CustomModelData:1111,display:{Name:'[{"translate":"mcm.item.gun","italic":false}]',Lore:['[{"translate":"mcm.item.gun.lore","italic":false}]']}}
+execute as @a[nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{NoDrop:0b}}]}] run function mcm:game/items/gun/give
 execute as @a[nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{NoDrop:0b}}]}] run clear @s warped_fungus_on_a_stick{NoDrop:0b}
 
 #> Murderer drops gun if they somehow pick it up
@@ -119,8 +129,8 @@ execute as @e[type=item,tag=knifeCosmetic] at @s unless entity @a[tag=murderer,l
 execute as @e[type=item,tag=knifeCosmetic] at @s if entity @a[tag=murderer,limit=1,sort=nearest,nbt={PickupDelay:-1s}] run data merge entity @s {PickupDelay:0s,Age:1}
 
 #> If the murderer threw the knife and hasn't retrieved it before, give them the auto retrieval item
-execute as @a[tag=murderer,tag=!retrieved,scores={throwKnife=1..}] run item replace entity @s weapon.mainhand with minecraft:carrot_on_a_stick{NoDrop:1b,CustomModelData:1111,display:{Name:'[{"translate":"mcm.item.knife_retrieve","italic":false}]',Lore:['[{"translate":"mcm.item.knife_retrieve.lore","italic":false}]']}}
-execute as @a[tag=murderer,tag=!retrieved,scores={droppedKnife=1..}] run give @s minecraft:carrot_on_a_stick{NoDrop:1b,CustomModelData:1111,display:{Name:'[{"translate":"mcm.item.knife_retrieve","italic":false}]',Lore:['[{"translate":"mcm.item.knife_retrieve.lore","italic":false}]']}}
+execute as @a[tag=murderer,tag=!retrieved,scores={throwKnife=1..}] run function mcm:game/items/knife/give_retrieve_mainhand
+execute as @a[tag=murderer,tag=!retrieved,scores={droppedKnife=1..}] run function mcm:game/items/knife/give_retrieve
 
 #> Remove retrieval item if they pick up the knife and reset scores
 execute as @a[tag=murderer,nbt={Inventory:[{id:"minecraft:snowball",Count:1b,tag:{CustomModelData:1111}}]}] run clear @s carrot_on_a_stick{CustomModelData:1111}
@@ -140,6 +150,15 @@ execute as @a[tag=murderer,scores={adrenalineClick=1..},nbt={SelectedItem:{id:"m
 #> Clicking random teleporter teleports everyone except murderer and spectators //@TODO add option to teleport murderer too
 execute as @a[tag=murderer,tag=!spectating,scores={teleporterClick=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1112}}}] unless score $launchTime CmdData matches 1..720 run function mcm:game/items/teleporter/use
 execute if score $launchTime CmdData matches 1..720 run scoreboard players reset @a teleporterClick
+
+
+#> Better death message system
+execute if entity @a[advancements={mcm:hit_detection/killed_player=true}] run tellraw @a[scores={dead=1}] {"text":"You were killed by ","color":"gold","extra":[{"selector":"@a[advancements={mcm:hit_detection/killed_player=true},sort=nearest,limit=1]","color":"red"}]}
+execute if entity @a[advancements={mcm:hit_detection/gun_hit=true}] run tellraw @a[scores={dead=1}] {"text":"You were killed by ","color":"gold","extra":[{"selector":"@a[advancements={mcm:hit_detection/killed_player=true},sort=nearest,limit=1]","color":"red"}]}
+execute as @a[scores={dead=1}] on attacker run scoreboard players add @s game_stats 1
+execute as @a[scores={dead=1}] run scoreboard players set @s dead 2
+advancement revoke @a[advancements={mcm:hit_detection/killed_player=true}] only mcm:hit_detection/killed_player
+
 
 #> Win conditions
 # Murderer victory
@@ -165,16 +184,13 @@ execute if predicate mcm:soundrng if score $selectedMap CmdData matches 4 run fu
 execute if predicate mcm:soundrng if score $selectedMap CmdData matches 5 run function mcm:maps/cyberpunk/sound
 #gumdrop - execute if predicate mcm:soundrng if score $selectedMap CmdData matches 6 run function mcm:maps/gumdrop/sound
 execute if predicate mcm:soundrng if score $selectedMap CmdData matches 6 run function mcm:maps/riverboat/sound
+execute if predicate mcm:soundrng if score $selectedMap CmdData matches 7 run function mcm:maps/industry/sound
+execute if predicate mcm:soundrng if score $selectedMap CmdData matches 8 run function mcm:maps/train/sound
+execute if predicate mcm:soundrng if score $selectedMap CmdData matches 9 run function mcm:maps/cabin/sound
 
 #> Clear spectator nausea
 execute as @a[tag=spectating] run effect clear @s nausea
 execute as @a[tag=spectating] run effect clear @s slowness
-
-#> Better death message system
-execute if entity @a[advancements={mcm:hit_detection/killed_player=true}] run tellraw @a[scores={dead=1}] {"text":"You were killed by ","color":"gold","extra":[{"selector":"@a[advancements={mcm:hit_detection/killed_player=true},sort=nearest,limit=1]","color":"red"}]}
-execute as @a[scores={dead=1}] run scoreboard players set @s dead 2
-execute as @a[advancements={mcm:hit_detection/killed_player=true}] run scoreboard players add @s game_stats 1
-advancement revoke @a[advancements={mcm:hit_detection/killed_player=true}] only mcm:hit_detection/killed_player
 
 #> Show particles above murderers to identify their teammates
 scoreboard players operation $murderer_particles math = $gametimer CmdData

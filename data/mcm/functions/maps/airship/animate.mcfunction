@@ -14,3 +14,12 @@ scoreboard players operation $temp math %= $two_hundred math
 
 execute if score $temp math matches 0 run place template mcm:airship_propeller_1 -649 41 -17
 execute if score $temp math matches 100 run place template mcm:airship_propeller_2 -649 41 -17
+
+#> Fan (under air vent) animations
+scoreboard players operation $temp math %= $forty math
+execute if score $temp math matches 0 run place template minecraft:airship_fan1 -702 39 10
+execute if score $temp math matches 0 run place template minecraft:airship_fan1 -677 25 24
+execute if score $temp math matches 0 run place template minecraft:airship_fan1 -697 25 9
+execute if score $temp math matches 20 run place template minecraft:airship_fan2 -702 39 10
+execute if score $temp math matches 20 run place template minecraft:airship_fan2 -677 25 24
+execute if score $temp math matches 20 run place template minecraft:airship_fan2 -697 25 9
