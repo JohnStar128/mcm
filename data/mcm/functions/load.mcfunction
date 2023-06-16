@@ -4,7 +4,6 @@ forceload add -64 16 47 184
 forceload add 0 0
 spawnpoint @a -1 1 69
 
-execute as @a[team=test4] at @s run function mcm:dev/storeinv
 
 # Reset the maps
 execute if score $selectedMap CmdData matches 1 run function mcm:maps/library/reset
@@ -129,7 +128,7 @@ team modify ingame_players color green
 
 scoreboard players enable @a player_rule_update
 
-execute if entity @e run function mcm:respawn_entities
+function mcm:respawn_entities
 
 #> Generate a game ID to force anyone who logs in to be reset to a default state
 kill @e[tag=gameID]
@@ -148,7 +147,7 @@ advancement revoke @a[advancements={mcm:map_functions/cyberpunk_secret_3=true}] 
 execute as @e[type=marker,tag=MapVote] run tag @s remove selected
 
 #> Reset players back to a known default state
-execute as @a run function mcm:player_leave
+execute as @a[team=!test4] run function mcm:player_leave
 
 #> Load default game rules
 scoreboard players set $roundtimer GameRules 10
@@ -168,8 +167,7 @@ bossbar remove minecraft:gamedisplay
 function mcm:lobby/voting/start
 
 #> Restore devs to previous state
-execute as @a[scores={dev=1}] run function mcm:dev
-execute as @e[type=llama,tag=inventory_helper] at @s rotated as @s run function mcm:dev/restoreinv
+
 
 #> Refresh lobby lectern book
 item modify block -1 -1 79 container.0 mcm:refresh_book 
