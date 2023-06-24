@@ -16,12 +16,6 @@ scoreboard players remove @a[scores={autoqueue_delay=1..}] autoqueue_delay 1
 execute as @a[tag=first_join,tag=!autoqueue_spam_prevention,scores={autoqueue=1..,autoqueue_delay=0},tag=!autoqueue,nbt={SelectedItem:{id:"minecraft:warped_fungus_on_a_stick",tag:{Autoqueue:1b}}}] at @s run function mcm:lobby/queueing/autoqueue
 execute as @a[tag=first_join,tag=!autoqueue_spam_prevention,scores={autoqueue=1..,autoqueue_delay=0},tag=autoqueue,nbt={SelectedItem:{id:"minecraft:warped_fungus_on_a_stick",tag:{Autoqueue:1b}}}] at @s run function mcm:lobby/queueing/deautoqueue
 
-#> Debug room only accessible to test4
-execute as @a[predicate=mcm:bounding_boxes/debug,team=!test4] at @s run particle minecraft:witch ~ ~ ~ .7 .7 .7 1 100
-execute as @a[predicate=mcm:bounding_boxes/debug,team=!test4] at @s run tellraw @s ["", {"text":"<Bouncer> You're not on "}, {"text":"[","color":"gold"}, {"text":"The","color":"white"}, {"text":"]","color":"gold"}, {"text":" list.","color":"white"}]
-execute as @a[predicate=mcm:bounding_boxes/debug,team=!test4] at @s run playsound minecraft:entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
-execute as @a[predicate=mcm:bounding_boxes/debug,team=!test4] at @s run tp @s 15 8 103 0 0
-
 #> Popcorn
 execute if score $gamestate CmdData matches -1..0 run function mcm:lobby/popcorn
 
@@ -38,12 +32,6 @@ scoreboard players enable @a[tag=!queued] stuck
 execute as @a[scores={stuck=1..},tag=!queued] run tp @s -1 1 69
 execute as @a[scores={stuck=1..},tag=!queued] run scoreboard players reset @s stuck
 
-#> A chair is a piece of furniture with a raised surface supported by legs, commonly used to seat a single person. Chairs are supported most often by four legs and have a back;[1][2] however, a chair can have three legs or can have a different shape.[3]
-execute if score $gamestate CmdData matches -1..0 as @e[type=pig,tag=chair] run effect give @s invisibility 999999 1 true
-execute if score $gamestate CmdData matches -1..0 as @e[type=pig,tag=spectatorchair] run effect give @s invisibility 999999 1 true
-execute if score $gamestate CmdData matches -1..0 as @e[type=villager,tag=MapVoteEntity] run effect give @s invisibility 999999 1 true
-execute if score $gamestate CmdData matches -1..0 as @e[type=villager,tag=arcade] run effect give @s invisibility 999999 1 true
-
 #> Lobby elevator
 function mcm:lobby/elevator
 
@@ -52,9 +40,9 @@ execute as @a[scores={RingBell=1..},advancements={mcm:secrets/lobby/ring_bell=fa
 execute as @a[scores={RingBell=1..}] at @s run scoreboard players reset @s RingBell
 
 #> Guessing this is for that one store in the lobby with the hglllhshglgl - Topaz
-particle block minecraft:red_concrete 32.5 2.3 30.5 0 0.3 0 1 1
-particle block minecraft:light_blue_concrete 32.5 2.3 29.5 0 0.3 0 1 1
-particle block minecraft:lime_concrete 32.5 2.3 28.5 0 0.3 0 1 1
+execute positioned 32.5 2.3 29.5 if entity @a[distance=..7] run particle block minecraft:red_concrete 32.5 2.3 30.5 0 0.3 0 1 1
+execute positioned 32.5 2.3 29.5 if entity @a[distance=..7] run particle block minecraft:light_blue_concrete 32.5 2.3 29.5 0 0.3 0 1 1
+execute positioned 32.5 2.3 29.5 if entity @a[distance=..7] run particle block minecraft:lime_concrete 32.5 2.3 28.5 0 0.3 0 1 1
 
 #> Let people use the test range in the lobby
 execute as @a[predicate=mcm:bounding_boxes/lobby_grate] run tag @s add came_from_grate
@@ -96,18 +84,6 @@ execute as @a[tag=afk,scores={walk=1000..}] run function mcm:lobby/manage_afk
 execute as @a[tag=afk,scores={sprint=1..}] run function mcm:lobby/manage_afk
 execute as @a[tag=afk,scores={crouch=1..}] run function mcm:lobby/manage_afk
 execute as @a[tag=afk,scores={jump=1..}] run function mcm:lobby/manage_afk
-
-#> Change boots if more players log on
-execute if score $gamestate CmdData matches -1..0 if score $change_color CmdData matches 1.. run function mcm:cosmetics/color_boots/update
-
-#> Respawn chairs if they become sentient and walk off
-execute as @e[tag=chair_marker] at @s store result score @s nearby_pigs if entity @e[type=pig,distance=..0.1]
-execute as @e[tag=spectator_chair_marker] at @s store result score @s nearby_pigs if entity @e[type=pig,distance=..0.1]
-execute as @e[type=marker,tag=chair_marker] at @s if score @s nearby_pigs matches 0 run summon pig ~ ~ ~ {NoAI:1b,Rotation:[90.f,0.0f],Saddle:1b,Silent:1b,Tags:["chair"]}
-execute as @e[type=marker,tag=spectator_chair_marker] at @s if score @s nearby_pigs matches 0 run summon pig ~ ~ ~ {NoAI:1b,Rotation:[90.f,0.0f],Saddle:1b,Silent:1b,Tags:["spectatorchair"]}
-#> If people start duplicating chairs, get rid of them
-execute as @e[type=marker,tag=chair_marker] at @s if score @s nearby_pigs matches 2.. run tp @e[type=pig,limit=1,sort=nearest] ~ ~-300 ~
-execute as @e[type=marker,tag=spectator_chair_marker] at @s if score @s nearby_pigs matches 2.. run tp @e[type=pig,limit=1,sort=nearest] ~ ~-300 ~
 
 #> Update cosmetic displays if someone's trying to equip one
 execute as @a[predicate=mcm:bounding_boxes/lobby_cosmetic_zone,limit=1,sort=random] unless entity @a[tag=display_scroll_lock] run tag @s add display_scroll_lock

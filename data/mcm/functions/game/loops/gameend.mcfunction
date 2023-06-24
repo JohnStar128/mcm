@@ -9,11 +9,11 @@ execute as @e[type=item,tag=KeyItem] at @s run data modify entity @s Owner set f
 execute if score $gameEndTimer CmdData matches 200 run function mcm:game/game_end_stats
 execute if score $gameEndTimer CmdData matches 200 as @a[tag=queued] run scoreboard players reset @s game_stats
 execute if score $gameEndTimer CmdData matches 200 as @a[tag=queued] run scoreboard players reset @s time_alive
-execute if score $gameEndTimer CmdData matches 200 run tellraw @a ["", {"text":"Returning to lobby in 10 seconds...","color":"yellow"}]
+execute if score $gameEndTimer CmdData matches 200 run tellraw @a {"translate":"mcm.game.lobby.return","color":"yellow"}
 execute if score $gameEndTimer CmdData matches 200 if score $innocentWin CmdData matches 1 run tag @a[tag=innocent,gamemode=adventure,tag=!murderer] add WonLast
-execute if score $gameEndTimer CmdData matches 200 if score $innocentWin CmdData matches 1 run title @a[tag=queued] title ["", {"text":"Innocents win!","color":"green"}]
+execute if score $gameEndTimer CmdData matches 200 if score $innocentWin CmdData matches 1 run title @a[tag=queued] title {"translate":"mcm.game.innocent.win","color":"green"}
 execute if score $gameEndTimer CmdData matches 200 if score $murderWin CmdData matches 1 run tag @a[tag=murderer,gamemode=adventure] add WonLast
-execute if score $gameEndTimer CmdData matches 200 if score $murderWin CmdData matches 1 run title @a[tag=queued] title ["", {"text":"Murderer wins!","color":"red"}]
+execute if score $gameEndTimer CmdData matches 200 if score $murderWin CmdData matches 1 run title @a[tag=queued] title {"translate":"mcm.game.murderer.win","color":"red"}
 execute if score $gameEndTimer CmdData matches 200 if score $innocentWin CmdData matches 1 run playsound minecraft:ui.toast.challenge_complete ambient @a[tag=!murderer] ~ ~ ~ 1 1 1
 execute if score $gameEndTimer CmdData matches 200 if score $innocentWin CmdData matches 1 run playsound minecraft:entity.wither.spawn ambient @a[tag=murderer] ~ ~ ~ 1 2 1
 execute if score $gameEndTimer CmdData matches 200 if score $murderWin CmdData matches 1 run playsound minecraft:entity.wither.spawn ambient @a[tag=!murderer] ~ ~ ~ 1 2 1
@@ -101,7 +101,7 @@ execute if score $gameEndTimer CmdData matches ..1 run scoreboard players reset 
 execute if score $gameEndTimer CmdData matches 199 run team join nametags @a[tag=queued,team=!nametags]
 
 #> Send disable tips message
-execute if score $gameEndTimer CmdData matches ..1 run tellraw @a[tag=!NoTip] ["", {"text":"Click here","color":"dark_aqua","bold":"true","clickEvent":{"action":"run_command","value":"/trigger disableTips"}},{"text":" to disable tips","color":"dark_gray"}]
+execute if score $gameEndTimer CmdData matches ..1 run tellraw @a[tag=!NoTip] {"translate":"mcm.tip.disable.option", "color":"dark_gray", "with":[{"translate":"mcm.tip.click.here","color":"dark_aqua","bold":"true","clickEvent":{"action":"run_command","value":"/trigger disableTips"}}]}
 
 #> Count AFK people so they don't autoqueue
 execute if score $gameEndTimer CmdData matches ..1 run tag @a add afk

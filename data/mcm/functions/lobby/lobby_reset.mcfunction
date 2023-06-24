@@ -1,6 +1,8 @@
 weather clear
 
 function mcm:lobby/respawn_villagers
+function mcm:lobby/lobby_text_displays
+
 execute unless block -83 1 15 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] run setblock -83 1 15 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=west,open=true] replace 
 execute unless block -88 1 20 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock -88 1 20 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace 
 execute unless block -88 1 24 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] run setblock -88 1 24 minecraft:oak_trapdoor[waterlogged=false,half=bottom,powered=false,facing=south,open=true] replace 

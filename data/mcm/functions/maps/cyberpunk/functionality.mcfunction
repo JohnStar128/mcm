@@ -89,7 +89,7 @@ execute if score $secret cyberpunk matches 9 run setblock -1990 76 2046 stone_bu
 execute if score $secret cyberpunk matches 9 run setblock -1994 189 2061 warped_button[face=wall,facing=east,powered=false]
 
 execute if score $secret cyberpunk matches 9 run scoreboard players add $message cyberpunk 1
-execute if score $secret cyberpunk matches 9 if score $message cyberpunk matches 1 run tellraw @a ["",{"text":"The garden is open for visitors!","italic":true,"color":"green"}]
+execute if score $secret cyberpunk matches 9 if score $message cyberpunk matches 1 run tellraw @a {"translate":"mcm.cyberpunk.garden","italic":true,"color":"green"}
 
 execute as @e[type=cat,tag=cyberpunk_secret_1] at @s if entity @a[distance=..2] run advancement grant @a[distance=..2] only mcm:map_functions/cyberpunk_secret_2
 execute as @e[type=cat,tag=cyberpunk_secret_2] at @s if entity @a[distance=..2] run advancement grant @a[distance=..2] only mcm:map_functions/cyberpunk_secret_3

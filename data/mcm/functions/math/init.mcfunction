@@ -55,11 +55,14 @@ scoreboard players set $2^15 math 32768
 scoreboard players set $2^19 math 524288
 scoreboard players set $2^25 math 33554432
 
+scoreboard players set $5 math 5
 scoreboard players set $10 math 10
+scoreboard players set $20 math 20
 scoreboard players set $50 math 50
 scoreboard players set $100 math 100
 scoreboard players set $200 math 200
 scoreboard players set $1000 math 1000
+scoreboard players set $1200 math 1200
 
 # Sin Constants
 scoreboard players set $A1 math 1685472549

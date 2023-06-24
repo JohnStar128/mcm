@@ -1,5 +1,5 @@
 #> Forceload the floating islands map
-forceload add -555 -56 -744 77
+#forceload add -555 -56 -744 77
 
 #> Kill potential leftover entities
 kill @e[tag=MapEntity]
@@ -50,7 +50,10 @@ execute positioned -651 64 28 run function mcm:game/markers/soundmarker
 #> Spectator spawn
 execute positioned -688 72 14 run function mcm:game/markers/spectatorspawn
 
-tellraw @a ["","\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"The game is ready to play!","underlined":true,"color":"green"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Selected Map: ","color":"gray"},{"text":"Floating Islands","color":"dark_green","hoverEvent":{"action":"show_text","value":[{"text":"You flatter me, Captain","color":"aqua"},{"text":"\n    --------","color":"dark_gray"},{"text":"\nConcept by: ","color":"dark_aqua"},{"text":"_topaz, Brownie1111","color":"green"}]}},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Directed by: ","color":"gray"},{"text":"_topaz, Brownie1111\n","color":"dark_green"}]
+tellraw @a ["\n",{"text":"| ","bold":true,"color":"dark_gray"},{"translate":"mcm.map.ready","underlined":true,"color":"green","bold":false}]
+tellraw @a [{"text":"| ","bold":true,"color":"dark_gray"}]
+tellraw @a [{"text":"| ","bold":true,"color":"dark_gray"},{"translate":"mcm.map.selected","color":"gray","bold":false,"with":[{"translate":"mcm.airship.name","color":"dark_green","hoverEvent":{"action":"show_text","value":[{"translate":"mcm.airship.hover","color":"aqua"},{"text":"\n    --------\n","color":"dark_gray"},{"translate":"mcm.map.concept","color":"dark_aqua", "with":[ {"translate":"mcm.map.list.2", "color":"green", "with":[ "_topaz", "Brownie1111" ]} ]}]}}]}]
+tellraw @a [{"text":"| ","bold":true,"color":"dark_gray"},{"translate":"mcm.map.directed","color":"gray","bold":false, "with":[ {"translate":"mcm.map.list.2", "color":"dark_green", "with": ["_topaz", "Brownie1111"]} ]}, "\n"]
 
 #> Crystals
 summon interaction -685 69 36 {Tags:["airship_crystal_spawn"]}

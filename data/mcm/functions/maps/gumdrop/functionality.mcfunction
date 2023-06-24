@@ -6,12 +6,18 @@ execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 6 unle
 execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 6 unless predicate mcm:bounding_boxes/gumdrop run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
 
 #> Speed on path
-execute as @a[tag=queued] at @s if block ~ ~-2 ~ stone run effect give @s speed 1 1
-execute as @a[tag=queued] at @s if block ~ ~-3 ~ stone run effect give @s speed 1 1
-execute as @a[tag=queued] at @s if block ~ ~-4 ~ stone run effect give @s speed 1 1
+execute as @a[tag=queued,tag=!spectating] at @s if block ~ ~-2 ~ stone run effect give @s speed 1 1
+execute as @a[tag=queued,tag=!spectating] at @s if block ~ ~-3 ~ stone run effect give @s speed 1 1
+execute as @a[tag=queued,tag=!spectating] at @s if block ~ ~-4 ~ stone run effect give @s speed 1 1
 
-#> Levitation on blue cloud in tower
-execute as @a[predicate=mcm:bounding_boxes/gumdropcottoncloud] run effect give @s levitation 1 13 true
+#> Levitation Clouds
+#Gumdrop Tower
+execute as @a[predicate=mcm:bounding_boxes/gumdropcottoncloudtower] run effect give @s levitation 1 13 true
+#Large Donut
+execute as @a[predicate=mcm:bounding_boxes/gumdropcottonclouddonutbig1] run effect give @s jump_boost 1 17 true
+execute as @a[predicate=mcm:bounding_boxes/gumdropcottonclouddonutbig2] run effect give @s jump_boost 1 13 true
+#Small Donut
+execute as @a[predicate=mcm:bounding_boxes/gumdropcottonclouddonutsmall] run effect give @s jump_boost 1 8 true
 
 #> Set Cutscene Score & Trigger Cutscene [WIP - Brownie, Kur]
 execute as @a[predicate=mcm:bounding_boxes/gumdrop_cutscene] run function mcm:maps/gumdrop/gumdropcutscene

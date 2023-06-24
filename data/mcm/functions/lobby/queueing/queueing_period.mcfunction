@@ -1,5 +1,5 @@
 # Handle queueing and de-queueing players
-execute as @a[nbt={RootVehicle:{Entity:{Tags:["chair"]}}},tag=!queued,tag=!autoqueue,sort=random] run function mcm:lobby/queueing/try_queue
+execute as @a[nbt={RootVehicle:{Entity:{Tags:["queue_chair"]}}},tag=!queued,tag=!autoqueue,sort=random] run function mcm:lobby/queueing/try_queue
 execute as @a[predicate=!mcm:bounding_boxes/queue_area,tag=queued,tag=!autoqueue] run function mcm:lobby/queueing/dequeue
 
 # Queue any auto-queued players who clicked their ticket before the queueing period started

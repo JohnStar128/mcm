@@ -1,6 +1,6 @@
 #> Forceload the library map
-forceload add 1023 960 912 1039
-forceload add 1023 960 1108 1039
+#forceload add 1023 960 912 1039
+#forceload add 1023 960 1108 1039
 
 #> Kill potential leftover entities
 kill @e[tag=MapEntity]
@@ -32,7 +32,11 @@ execute positioned 933 150 1000 run function mcm:game/markers/spectatorspawn
 #> Chandelier entity
 summon marker 975 139 1000 {Tags:["MapEntity","Chandelier"]}
 
-tellraw @a ["","\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"The game is ready to play!","underlined":true,"color":"green"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Selected Map: ","color":"gray"},{"text":"Library","color":"dark_green","hoverEvent":{"action":"show_text","value":[{"text":"Having fun isn't hard when you have a library card","color":"aqua"},{"text":"\n    --------","color":"dark_gray"},{"text":"\nConcept by: ","color":"dark_aqua"},{"text":"_topaz","color":"green"}]}},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Directed by: ","color":"gray"},{"text":"_topaz\n","color":"dark_green"}]
+tellraw @a ["\n",{"text":"| ","bold":true,"color":"dark_gray"},{"translate":"mcm.map.ready","underlined":true,"color":"green","bold":false}]
+tellraw @a [{"text":"| ","bold":true,"color":"dark_gray"}]
+tellraw @a [{"text":"| ","bold":true,"color":"dark_gray"},{"translate":"mcm.map.selected","color":"gray","bold":false,"with":[{"translate":"mcm.library.name","color":"dark_green","hoverEvent":{"action":"show_text","value":[{"translate":"mcm.library.hover","color":"aqua"},{"text":"\n    --------\n","color":"dark_gray"},{"translate":"mcm.map.concept","color":"dark_aqua", "with":[ {"translate":"mcm.map.list.1", "color":"green", "with":[ "_topaz" ]} ]}]}}]}]
+tellraw @a [{"text":"| ","bold":true,"color":"dark_gray"},{"translate":"mcm.map.directed","color":"gray","bold":false, "with":[ {"translate":"mcm.map.list.1", "color":"dark_green", "with": ["_topaz"]} ]}, "\n"]
+
 
 #>Spawn the Overdue Books for Basement Stairs Unlock
 function mcm:maps/library/bookspawns

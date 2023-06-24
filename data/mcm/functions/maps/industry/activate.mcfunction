@@ -1,5 +1,5 @@
 #> Forceload the Industrial map
-forceload add -1926 -2938 -2067 -3063
+#forceload add -1926 -2938 -2067 -3063
 
 #> Kill potential leftover entities
 kill @e[tag=MapEntity]
@@ -36,4 +36,7 @@ execute positioned -1981 80 -2943 run function mcm:game/markers/playerspawn
 #> Spectator spawnpoint
 execute positioned -1986 95 -3045 run function mcm:game/markers/spectatorspawn
 
-tellraw @a ["","\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"The game is ready to play!","underlined":true,"color":"green"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Selected Map: ","color":"gray"},{"text":"Industry","color":"dark_green","hoverEvent":{"action":"show_text","value":[{"text":"OSHA Approved (not really please don't cease and desist us)","color":"aqua"},{"text":"\n    --------","color":"dark_gray"},{"text":"\nConcept by: ","color":"dark_aqua"},{"text":"SuperCoxylac","color":"green"}]}},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Directed by: ","color":"gray"},{"text":"SuperCoxylac\n","color":"dark_green"}]
+tellraw @a ["\n",{"text":"| ","bold":true,"color":"dark_gray"},{"translate":"mcm.map.ready","underlined":true,"color":"green","bold":false}]
+tellraw @a [{"text":"| ","bold":true,"color":"dark_gray"}]
+tellraw @a [{"text":"| ","bold":true,"color":"dark_gray"},{"translate":"mcm.map.selected","color":"gray","bold":false,"with":[{"translate":"mcm.industry.name","color":"dark_green","hoverEvent":{"action":"show_text","value":[{"translate":"mcm.industry.hover","color":"aqua"},{"text":"\n    --------\n","color":"dark_gray"},{"translate":"mcm.map.concept","color":"dark_aqua", "with":[ {"translate":"mcm.map.list.1", "color":"green", "with":[ "SuperCoxylac" ]} ]}]}}]}]
+tellraw @a [{"text":"| ","bold":true,"color":"dark_gray"},{"translate":"mcm.map.directed","color":"gray","bold":false, "with":[ {"translate":"mcm.map.list.1", "color":"dark_green", "with": ["SuperCoxylac"]} ]}, "\n"]

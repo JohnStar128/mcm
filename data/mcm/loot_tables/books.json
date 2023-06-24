@@ -18,7 +18,7 @@
             },
             {
               "function": "minecraft:set_nbt",
-              "tag": "{CustomModelData:1111,display:{Lore:['[{\"text\":\"You should probably return this\",\"italic\":false}]'],Name:'[{\"text\":\"Overdue Book\",\"italic\":false,\"color\":\"red\"}]'}}"
+              "tag": "{CustomModelData:1111,display:{Lore:['[{\"translate\":\"mcm.library.book.lore\",\"italic\":false}]'],Name:'[{\"translate\":\"mcm.library.book\",\"italic\":false,\"color\":\"red\"}]'}}"
             }
           ]
         }

@@ -95,8 +95,11 @@ scoreboard objectives add airship dummy
 scoreboard objectives add disableTips trigger
 scoreboard objectives add spyglass minecraft.used:minecraft.spyglass
 scoreboard objectives add player_count dummy
+scoreboard objectives add freezing dummy
+scoreboard objectives add chair_entityUUID dummy
 
-schedule function mcm:lobby/update_lobby_displays_loop 5s replace
+#schedule function mcm:lobby/update_lobby_displays_loop 5s replace
+function mcm:lobby/update_lobby_displays_loop
 
 function mcm:math/init
 
@@ -128,7 +131,7 @@ team modify ingame_players color green
 
 scoreboard players enable @a player_rule_update
 
-function mcm:respawn_entities
+schedule function mcm:respawn_entities 1s
 
 #> Generate a game ID to force anyone who logs in to be reset to a default state
 kill @e[tag=gameID]
@@ -164,7 +167,7 @@ scoreboard players set $current_version version 2
 #> Remove bossbar if reloading during game (which you still shouldn't do!)
 bossbar remove minecraft:gamedisplay
 
-function mcm:lobby/voting/start
+schedule function mcm:lobby/voting/start 21t
 
 #> Restore devs to previous state
 

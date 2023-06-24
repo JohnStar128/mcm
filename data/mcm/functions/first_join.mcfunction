@@ -1,6 +1,6 @@
 effect give @s slowness 2 20 true
-title @s title {"text":"Welcome!","color":"green"}
-title @s subtitle {"text":"The show\'s about to begin!","color":"green"}
+title @s title {"translate":"mcm.lobby.welcome","color":"green"}
+title @s subtitle {"translate":"mcm.lobby.about.begin","color":"green"}
 tp @s -1 1 69 0 0
 tag @s add first_join
 scoreboard players set @s selected_hat 0
@@ -17,6 +17,9 @@ advancement grant @s only mcm:secrets/riverboat/root
 advancement grant @s only mcm:secrets/industry/root
 advancement grant @s only mcm:secrets/train/root
 advancement grant @s only mcm:secrets/cabin/root
+
+#> Enable autoqueue for new players by default
+tag @s add autoqueue
 
 function mcm:player_leave
 function mcm:lobby/lobby_cosmetic_signs

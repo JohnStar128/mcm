@@ -9,6 +9,7 @@
 # 7: Industry
 # 8: A Tragedy on the Boreal Express (train)
 # 9: Snowed Inn (cabin)
+# 10: Gumdrop Plains
 
 #> Set interaction response tag to 1 because apparently you can't vote when it's 0
 execute as @e[type=interaction,tag=MapVoteEntity] run data merge entity @s {response:1b}
@@ -40,7 +41,8 @@ team join posters @e[tag=MapVoteEntity]
 scoreboard players set $countdown CmdData 20
 
 #> Modify lobby bossbar to display the vote countdown
-bossbar add lobbybar ["",{"text":"Vote for a map! ","color":"gold"},{"text":"[","color":"gray"},{"score":{"name":"$countdown","objective":"CmdData"},"bold":true,"color":"yellow"},{"text":"]","color":"gray"}]
+bossbar add lobbybar ""
+bossbar set lobbybar name {"translate":"mcm.lobby.voteformap","color":"gold", "with":[ {"translate":"mcm.lobby.voteformap.time", "color":"gray", "with":[ {"score":{"name":"$countdown","objective":"CmdData"},"bold":true,"color":"yellow"} ] } ]}
 bossbar set lobbybar max 20
 bossbar set lobbybar value 20
 bossbar set lobbybar color yellow

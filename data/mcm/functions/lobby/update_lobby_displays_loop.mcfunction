@@ -1,5 +1,5 @@
 
-schedule function mcm:lobby/update_lobby_displays_loop 5s replace
+#schedule function mcm:lobby/update_lobby_displays_loop 5s replace
 
 scoreboard players operation $old player_count = $current player_count
 scoreboard players set $current player_count 0

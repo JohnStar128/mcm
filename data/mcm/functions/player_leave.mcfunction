@@ -59,7 +59,6 @@ advancement revoke @s only mcm:map_functions/cyberpunk_secret_3
 scoreboard players reset @s flipmap
 scoreboard players reset @s dontfliplibrary
 scoreboard players reset @s books
-scoreboard players reset @s leave
 scoreboard players set @s autoqueue_delay 0
 scoreboard players operation @s gameID = $gameID CmdData
 scoreboard players reset @s droppedGun
@@ -100,3 +99,6 @@ item replace entity @s hotbar.4 with written_book{HowToPlay:1b,NoDrop:1b}
 #> Update players' colors
 scoreboard players set $change_color CmdData 1 
 tag @a remove colored
+
+#> Remove leave state
+scoreboard players reset @s leave

@@ -85,6 +85,7 @@ execute if score $launchControl CmdData matches 2 run function mcm:maps/launchpa
 execute if score $launchControl CmdData matches 2 run function mcm:maps/launchpad/rockettemp/capsuleland
 
 #> Kill all players near rocket flames when active
+execute if score $launchTime CmdData matches 1..220 as @a[predicate=mcm:bounding_boxes/launchpad_kill,tag=!spectating] at @s run tellraw @s {"translate":"mcm.launchpad.rocket.death","color":"red"}
 execute if score $launchTime CmdData matches 1..220 as @a[predicate=mcm:bounding_boxes/launchpad_kill,tag=!spectating] at @s run function mcm:game/playerdeath
 execute if score $launchTime CmdData matches 1..220 as @e[type=glow_squid,predicate=mcm:bounding_boxes/launchpad_kill] at @s run kill @s
 

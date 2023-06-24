@@ -5,6 +5,9 @@ execute if score $timer riverboat matches 0 run place template mcm:riverboat/whe
 execute if score $timer riverboat matches 50 run place template mcm:riverboat/wheel/2 2096 61 -2007
 execute if score $timer riverboat matches 100 run place template mcm:riverboat/wheel/3 2096 61 -2007
 execute if score $timer riverboat matches 150 run place template mcm:riverboat/wheel/4 2096 61 -2007
+scoreboard players operation $temp math = $timer riverboat
+scoreboard players operation $temp math %= $fifty math
+execute if score $temp math matches 0 run playsound minecraft:block.chest.open block @a 2103 68 -2000 2 0.5 0.0
 
 #> Enable card pickup
 execute if score $graceperiod CmdData matches 0 as @e[type=interaction,tag=riverboat_card] run data merge entity @s {response:1b}
@@ -46,11 +49,12 @@ execute as @a[predicate=mcm:bounding_boxes/riverboat_secret, advancements={mcm:m
 execute if score $timer riverboat matches 0 run scoreboard players set $hornPulled riverboat 0
 
 #> Kill players in the waterwheel
+execute as @a[tag=queued,tag=!spectating,predicate=mcm:bounding_boxes/riverboat_wheel_kill] at @s if score $graceperiod CmdData matches 0 run tellraw @s {"translate":"mcm.riverboat.wheel","color":"red"}
 execute as @a[tag=queued,tag=!spectating,predicate=mcm:bounding_boxes/riverboat_wheel_kill] at @s if score $graceperiod CmdData matches 0 run function mcm:game/playerdeath
 
 #> Kill out of bounds players (escape prevention)
 execute as @a[tag=queued,tag=!spectating,predicate=!mcm:bounding_boxes/riverboat] at @s if score $graceperiod CmdData matches 0 run playsound minecraft:entity.evoker_fangs.attack block @a ~ ~ ~ 1 1 0
-execute as @a[tag=queued,tag=!spectating,predicate=!mcm:bounding_boxes/riverboat] at @s if score $graceperiod CmdData matches 0 run tellraw @s {"text":"You were killed by the river shark!","color":"red"}
+execute as @a[tag=queued,tag=!spectating,predicate=!mcm:bounding_boxes/riverboat] at @s if score $graceperiod CmdData matches 0 run tellraw @s {"translate":"mcm.riverboat.shark","color":"red"}
 execute as @a[tag=queued,tag=!spectating,predicate=!mcm:bounding_boxes/riverboat] at @s if score $graceperiod CmdData matches 0 run function mcm:game/playerdeath
 
 #> Keep spectators inbounds

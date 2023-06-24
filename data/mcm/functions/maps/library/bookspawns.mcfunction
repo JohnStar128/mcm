@@ -1,5 +1,5 @@
 #>Selects (currently) 5 of the bookspawn armorstands to have an Overdue book in their Helmet slot for the Basement Unlock
-execute as @e[type=minecraft:armor_stand,tag=bookspawn,tag=!hasbook,limit=5,sort=random] at @s run data merge entity @s {ArmorItems:[{},{},{},{id: "minecraft:book", Count: 1b, tag: {CustomModelData:1111, display: {Lore: ['[{"text":"You should probably return this","italic":false}]'],Name:'[{"text":"Overdue Book","italic":false,"color":"red"}]'}}}]}
+execute as @e[type=minecraft:armor_stand,tag=bookspawn,tag=!hasbook,limit=5,sort=random] at @s run data merge entity @s {ArmorItems:[{},{},{},{id: "minecraft:book", Count: 1b, tag: {CustomModelData:1111, display: {Lore: ['[{"translate":"mcm.library.book.lore","italic":false}]'],Name:'[{"translate":"mcm.library.book","italic":false,"color":"red"}]'}}}]}
 execute as @e[type=armor_stand,tag=bookspawn,nbt={ArmorItems:[{},{},{},{id:"minecraft:book",Count:1b}]}] at @s run tag @s add hasbook
 #> Prevent taking books until game starts
 execute as @e[type=armor_stand,tag=bookspawn,nbt={ArmorItems:[{},{},{},{id:"minecraft:book",Count:1b}]}] run data merge entity @s {DisabledSlots:4096}

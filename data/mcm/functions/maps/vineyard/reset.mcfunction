@@ -2,7 +2,7 @@ execute positioned 1943 56 2007 run kill @e[type=armor_stand,distance=..5]
 execute positioned 1943 56 2007 run kill @e[type=item_frame,distance=..5]
 place template mcm:vineyard_secret_closed 1935 54 1980
 execute as @a[scores={vineyard_secret=1..}] run scoreboard players reset @s vineyard_secret
-data merge block 1966 68 1954 {Items:[{slot:0b, id:"minecraft:potion", Count:1b, tag:{CustomPotionColor:9705041,display:{Name:'[{"text":"Bottle of Wine","italic":false,"color":"dark_purple"}]',Lore:['[{"text":"I wonder what I should do with this...","italic":true,"color":"light_purple"}]']},CustomPotionEffects:[{Id:9,Duration:600}],HideFlags:32}}]}
+data merge block 1966 68 1954 {Items:[{slot:0b, id:"minecraft:potion", Count:1b, tag:{CustomPotionColor:9705041,display:{Name:'[{"translate":"mcm.vineyard.wine","italic":false,"color":"dark_purple"}]',Lore:['[{"translate":"mcm.vineyard.wine.lore","italic":true,"color":"light_purple"}]']},CustomPotionEffects:[{Id:9,Duration:600}],HideFlags:32}}]}
 data merge block 1955 60 1978 {Items:[]}
 scoreboard players set $on vineyard_secret
 

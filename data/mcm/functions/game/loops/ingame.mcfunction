@@ -53,17 +53,14 @@ execute if score $selectedMap CmdData matches 2 run function mcm:maps/airship/fu
 execute if score $selectedMap CmdData matches 3 run function mcm:maps/vineyard/functionality
 execute if score $selectedMap CmdData matches 4 run function mcm:maps/launchpad/functionality
 execute if score $selectedMap CmdData matches 5 run function mcm:maps/cyberpunk/functionality
-#gumdrop - execute if score $selectedMap CmdData matches 6 run function mcm:maps/gumdrop/functionality
 execute if score $selectedMap CmdData matches 6 run function mcm:maps/riverboat/functionality
 execute if score $selectedMap CmdData matches 7 run function mcm:maps/industry/functionality
 execute if score $selectedMap CmdData matches 8 run function mcm:maps/train/functionality
 execute if score $selectedMap CmdData matches 9 run function mcm:maps/cabin/functionality
+execute if score $selectedMap CmdData matches 10 run function mcm:maps/gumdrop/functionality
 
 #> Allow spectating
 execute as @a[nbt={RootVehicle:{Entity:{Tags:["spectatorchair"]}}}] run function mcm:game/spectate
-execute as @a[nbt={RootVehicle:{Entity:{Tags:["spectatorchair"]}}}] run tag @s add spectating
-execute as @a[nbt={RootVehicle:{Entity:{Tags:["spectatorchair"]}}}] run tellraw @s ["", {"text":"You are now spectating the game","color":"green","italic":true}]
-execute as @a[nbt={RootVehicle:{Entity:{Tags:["spectatorchair"]}}}] at @s run gamemode spectator @s
 
 #> Track dead innocents
 execute store result score $innocents CmdData if entity @a[tag=innocent]
@@ -153,8 +150,8 @@ execute if score $launchTime CmdData matches 1..720 run scoreboard players reset
 
 
 #> Better death message system
-execute if entity @a[advancements={mcm:hit_detection/killed_player=true}] run tellraw @a[scores={dead=1}] {"text":"You were killed by ","color":"gold","extra":[{"selector":"@a[advancements={mcm:hit_detection/killed_player=true},sort=nearest,limit=1]","color":"red"}]}
-execute if entity @a[advancements={mcm:hit_detection/gun_hit=true}] run tellraw @a[scores={dead=1}] {"text":"You were killed by ","color":"gold","extra":[{"selector":"@a[advancements={mcm:hit_detection/killed_player=true},sort=nearest,limit=1]","color":"red"}]}
+execute if entity @a[advancements={mcm:hit_detection/killed_player=true}] run tellraw @a[scores={dead=1}] {"translate":"mcm.game.killedby","color":"gold","with":[{"selector":"@a[advancements={mcm:hit_detection/killed_player=true},sort=nearest,limit=1]","color":"red"}]}
+execute if entity @a[advancements={mcm:hit_detection/gun_hit=true}] run tellraw @a[scores={dead=1}] {"translate":"mcm.game.killedby","color":"gold","with":[{"selector":"@a[advancements={mcm:hit_detection/killed_player=true},sort=nearest,limit=1]","color":"red"}]}
 execute as @a[scores={dead=1}] on attacker run scoreboard players add @s game_stats 1
 execute as @a[scores={dead=1}] run scoreboard players set @s dead 2
 advancement revoke @a[advancements={mcm:hit_detection/killed_player=true}] only mcm:hit_detection/killed_player
@@ -162,17 +159,17 @@ advancement revoke @a[advancements={mcm:hit_detection/killed_player=true}] only 
 
 #> Win conditions
 # Murderer victory
-execute if score $graceperiod CmdData matches ..0 if score $deadInnocents CmdData = $innocents CmdData if score $murderers GameRules matches ..1 run tellraw @a ["", "\n", {"text":"The Murderer has won!","color":"red"}, "\n"]
-execute if score $graceperiod CmdData matches ..0 if score $deadInnocents CmdData = $innocents CmdData if score $murderers GameRules matches 2.. run tellraw @a ["", "\n", {"text":"The Murderers have won!","color":"red"}, "\n"]
+execute if score $graceperiod CmdData matches ..0 if score $deadInnocents CmdData = $innocents CmdData if score $murderers GameRules matches ..1 run tellraw @a ["\n", {"translate":"mcm.game.murderer.win.chat","color":"red"}, "\n"]
+execute if score $graceperiod CmdData matches ..0 if score $deadInnocents CmdData = $innocents CmdData if score $murderers GameRules matches 2.. run tellraw @a ["\n", {"translate":"mcm.game.murderer.win.chat","color":"red"}, "\n"]
 execute if score $graceperiod CmdData matches ..0 if score $deadInnocents CmdData = $innocents CmdData run scoreboard players set $murderWin CmdData 1
 execute if score $graceperiod CmdData matches ..0 if score $deadInnocents CmdData = $innocents CmdData run scoreboard players set $gamestate CmdData 2
 
 # Innocents victory
-execute if score $graceperiod CmdData matches ..0 if score $deadMurderers CmdData = $murderers CmdData unless score $murderWin CmdData matches 1 run tellraw @a ["", "\n", {"text":"The Innocents have won!","color":"green"}, "\n"]
+execute if score $graceperiod CmdData matches ..0 if score $deadMurderers CmdData = $murderers CmdData unless score $murderWin CmdData matches 1 run tellraw @a ["\n", {"translate":"mcm.game.innocent.win.chat","color":"green"}, "\n"]
 execute if score $graceperiod CmdData matches ..0 if score $deadMurderers CmdData = $murderers CmdData unless score $murderWin CmdData matches 1 run scoreboard players set $innocentWin CmdData 1
 execute if score $graceperiod CmdData matches ..0 if score $deadMurderers CmdData = $murderers CmdData unless score $murderWin CmdData matches 1 run scoreboard players set $gamestate CmdData 2
 # If the murderer logs out specifically
-execute if score $graceperiod CmdData matches ..0 unless entity @a[tag=murderer] unless score $murderWin CmdData matches 1 run tellraw @a ["", "\n", {"text":"The Innocents have won!","color":"green"}, "\n"]
+execute if score $graceperiod CmdData matches ..0 unless entity @a[tag=murderer] unless score $murderWin CmdData matches 1 run tellraw @a ["\n", {"translate":"mcm.game.innocent.win.chat","color":"green"}, "\n"]
 execute if score $graceperiod CmdData matches ..0 unless entity @a[tag=murderer] unless score $murderWin CmdData matches 1 run scoreboard players set $innocentWin CmdData 1
 execute if score $graceperiod CmdData matches ..0 unless entity @a[tag=murderer] unless score $murderWin CmdData matches 1 run scoreboard players set $gamestate CmdData 2
 

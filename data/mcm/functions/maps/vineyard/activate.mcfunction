@@ -1,5 +1,5 @@
 #> Forceload the Vineyard map
-forceload add 2111 2095 1937 1911
+#forceload add 2111 2095 1937 1911
 
 #> Kill potential leftover entities
 kill @e[tag=MapEntity]
@@ -103,4 +103,9 @@ execute positioned 1981 75 2046 run function mcm:game/markers/soundmarker
 #> Spectator spawnpoint
 execute positioned 1983 96 1932 run function mcm:game/markers/spectatorspawn
 
-tellraw @a ["","\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"The game is ready to play!","underlined":true,"color":"green"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Selected Map: ","color":"gray"},{"text":"Vineyard","color":"dark_green","hoverEvent":{"action":"show_text","value":[{"text":"Well, ","color":"aqua"},{"text":"that","color":"aqua","italic":true},{"text":" aged like fine wine","color":"aqua"},{"text":"\n    --------","color":"dark_gray"},{"text":"\nConcept by: ","color":"dark_aqua"},{"text":"_topaz, Brownie1111","color":"green"}]}},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Directed by: ","color":"gray"},{"text":"_topaz, Brownie1111\n","color":"dark_green"}]
+#tellraw @a ["","\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"The game is ready to play!","underlined":true,"color":"green"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Selected Map: ","color":"gray"},{"text":"Vineyard","color":"dark_green","hoverEvent":{"action":"show_text","value":[{"text":"Well, ","color":"aqua"},{"text":"that","color":"aqua","italic":true},{"text":" aged like fine wine","color":"aqua"},{"text":"\n    --------","color":"dark_gray"},{"text":"\nConcept by: ","color":"dark_aqua"},{"text":"_topaz, Brownie1111","color":"green"}]}},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Directed by: ","color":"gray"},{"text":"_topaz, Brownie1111\n","color":"dark_green"}]
+
+tellraw @a ["\n",{"text":"| ","bold":true,"color":"dark_gray"},{"translate":"mcm.map.ready","underlined":true,"color":"green","bold":false}]
+tellraw @a [{"text":"| ","bold":true,"color":"dark_gray"}]
+tellraw @a [{"text":"| ","bold":true,"color":"dark_gray"},{"translate":"mcm.map.selected","color":"gray","bold":false,"with":[{"translate":"mcm.vineyard.name","color":"dark_green","hoverEvent":{"action":"show_text","value":[{"translate":"mcm.vineyard.hover","color":"aqua", "italic":false, "with":[{"translate":"mcm.vineyard.hover.italic", "italic":true}]},{"text":"\n    --------\n","color":"dark_gray"},{"translate":"mcm.map.concept","color":"dark_aqua", "with":[ {"translate":"mcm.map.list.2", "color":"green", "with":[ "_topaz", "Brownie1111" ]} ]}]}}]}]
+tellraw @a [{"text":"| ","bold":true,"color":"dark_gray"},{"translate":"mcm.map.directed","color":"gray","bold":false, "with":[ {"translate":"mcm.map.list.2", "color":"dark_green", "with": ["_topaz", "Brownie1111"]} ]}, "\n"]

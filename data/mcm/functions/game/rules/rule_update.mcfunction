@@ -1,9 +1,9 @@
 #> Game timer
 execute if entity @a[scores={player_rule_update=1}] run scoreboard players add $roundtimer GameRules 1
 execute if entity @a[scores={player_rule_update=2}] run scoreboard players remove $roundtimer GameRules 1
-execute if score $roundtimer GameRules matches ..4 run tellraw @s ["",{"text":"The game timer cannot be less than 5 minutes!","color":"red","italic":true}]
+execute if score $roundtimer GameRules matches ..4 run tellraw @s {"translate":"mcm.game.rules.timer.min","color":"red","italic":true}
 execute if score $roundtimer GameRules matches ..4 run scoreboard players set $roundtimer GameRules 5
-execute if score $roundtimer GameRules matches 11.. run tellraw @s ["",{"text":"The game timer cannot be more than 10 minutes!","color":"red","italic":true}]
+execute if score $roundtimer GameRules matches 11.. run tellraw @s {"translate":"mcm.game.rules.timer.max","color":"red","italic":true}
 execute if score $roundtimer GameRules matches 11.. run scoreboard players set $roundtimer GameRules 10
 
 #> Murderer selection
@@ -11,9 +11,9 @@ execute if entity @a[scores={player_rule_update=3}] run scoreboard players add $
 execute if entity @a[scores={player_rule_update=4}] run scoreboard players remove $murderers GameRules 1
 execute if entity @a[scores={player_rule_update=3..4}] run scoreboard players set $smart_murderers GameRules 0
 execute if entity @a[scores={player_rule_update=11}] run scoreboard players set $smart_murderers GameRules 1
-execute if score $murderers GameRules matches ..0 run tellraw @s ["",{"text":"There needs to be at least one murderer!","color":"red","italic":true}]
+execute if score $murderers GameRules matches ..0 run tellraw @s {"translate":"mcm.game.rules.murderers.min","color":"red","italic":true}
 execute if score $murderers GameRules matches ..0 run scoreboard players set $murderers GameRules 1
-execute if score $murderers GameRules matches 4.. run tellraw @s ["",{"text":"Game currently capped at 3 murderers!","color":"red","italic":true}]
+execute if score $murderers GameRules matches 4.. run tellraw @s {"translate":"mcm.game.rules.murderers.max","color":"red","italic":true}
 execute if score $murderers GameRules matches 4.. run scoreboard players set $murderers GameRules 3
 
 #> Start with scrap

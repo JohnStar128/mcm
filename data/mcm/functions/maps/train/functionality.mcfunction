@@ -23,7 +23,7 @@ execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 8 unle
 execute as @a[tag=queued,predicate=!mcm:bounding_boxes/train,tag=!spectating] at @s if score $selectedMap CmdData matches 8 if score $graceperiod CmdData matches 1.. run tp @s @e[tag=PlayerSpawn,limit=1,sort=nearest]
 
 #> Kill players that jump off train after grace period
-execute as @a[tag=queued,tag=!spectating,predicate=!mcm:bounding_boxes/train] at @s if score $selectedMap CmdData matches 8 if score $graceperiod CmdData matches 0 run tellraw @s {"text":"You fell off the train!","color":"red"}
+execute as @a[tag=queued,tag=!spectating,predicate=!mcm:bounding_boxes/train] at @s if score $selectedMap CmdData matches 8 if score $graceperiod CmdData matches 0 run tellraw @s {"translate":"mcm.train.fell.off","color":"red"}
 execute as @a[tag=queued,tag=!spectating,predicate=!mcm:bounding_boxes/train] at @s if score $selectedMap CmdData matches 8 if score $graceperiod CmdData matches 0 run function mcm:game/playerdeath
 
 #> Bell sounds

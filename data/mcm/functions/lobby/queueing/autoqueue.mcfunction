@@ -1,5 +1,5 @@
-#>Handle autoqueueing players
-tellraw @s ["", {"text":"You will now automatically join every game","color":"green"}]
+#>Handle autoqueueing players - the leave clause is to prevent rejoining players getting the message since resource pack hasn't loaded yet
+execute unless score @s leave matches 1.. run tellraw @s {"translate":"mcm.lobby.autoqueued","color":"green"}
 tag @s add autoqueue
 
 execute if entity @s[nbt={SelectedItem:{tag:{Autoqueue:1b}}}] run item modify entity @s weapon.mainhand mcm:autoqueue

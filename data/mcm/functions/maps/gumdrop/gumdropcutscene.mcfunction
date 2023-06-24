@@ -33,11 +33,7 @@ execute if score $gumdropcutscene CmdData matches 286 run place template minecra
 execute if score $gumdropcutscene CmdData matches 290 run playsound minecraft:block.pointed_dripstone.drip_water master @a[predicate=mcm:bounding_boxes/gumdrop_cutscene] 775.5 -19 -3017.5 0.2 1
 execute if score $gumdropcutscene CmdData matches 300 run playsound minecraft:block.pointed_dripstone.drip_water master @a[predicate=mcm:bounding_boxes/gumdrop_cutscene] 775.5 -19 -3017.5 0.2 1
 execute if score $gumdropcutscene CmdData matches 315 run playsound minecraft:block.pointed_dripstone.drip_water master @a[predicate=mcm:bounding_boxes/gumdrop_cutscene] 775.5 -19 -3017.5 0.2 1
-execute if score $gumdropcutscene CmdData matches 326 run kill @e[type=glow_item_frame,tag=gumdrop_cutscene]
-execute if score $gumdropcutscene CmdData matches 326 run stopsound @a[predicate=mcm:bounding_boxes/gumdrop_cutscene]
-execute if score $gumdropcutscene CmdData matches 326 run playsound minecraft:entity.player.hurt master @a[predicate=mcm:bounding_boxes/gumdrop_cutscene] 775.5 -19 -3017.5 1 1
-execute if score $gumdropcutscene CmdData matches 326 run playsound minecraft:entity.blaze.death master @a[predicate=mcm:bounding_boxes/gumdrop_cutscene] 775.5 -19 -3017.5 0.5 0.1
-execute if score $gumdropcutscene CmdData matches 326 run place template minecraft:gumdrop_cutscene9 773 -19 -3017
+execute if score $gumdropcutscene CmdData matches 319 run playsound minecraft:block.chest.close master @a[predicate=mcm:bounding_boxes/gumdrop_cutscene] 775.5 -19 -3017.5 1 0.7
 execute if score $gumdropcutscene CmdData matches 329 run kill @e[type=glow_item_frame,tag=gumdrop_cutscene]
 execute if score $gumdropcutscene CmdData matches 329 run place template minecraft:gumdrop_cutscene10 773 -19 -3017
 execute if score $gumdropcutscene CmdData matches 388 run kill @e[type=glow_item_frame,tag=gumdrop_cutscene]

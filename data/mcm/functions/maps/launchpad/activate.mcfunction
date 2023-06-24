@@ -1,7 +1,7 @@
 #> Forceload the map
-forceload add -860 -1100 -1170 -1280
-forceload add -860 -1100 -1128 -997
-forceload add -961 -881 -1136 -976
+#forceload add -860 -1100 -1170 -1280
+#forceload add -860 -1100 -1128 -997
+#forceload add -961 -881 -1136 -976
 
 #> Kill potential leftover entities
 kill @e[tag=MapEntity]
@@ -71,4 +71,7 @@ execute positioned -1046 43 -1134 run function mcm:game/markers/scrapspawn
 #> Spectator spawnpoint
 execute positioned -1016 82 -1160 run function mcm:game/markers/spectatorspawn
 
-tellraw @a ["","\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"The game is ready to play!","underlined":true,"color":"green"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Selected Map: ","color":"gray"},{"text":"Launch Complex","color":"dark_green","hoverEvent":{"action":"show_text","value":[{"text":"Launch \"Complex?\" I find it quite simple really.","color":"aqua"},{"text":"\n    --------","color":"dark_gray"},{"text":"\nConcept by: ","color":"dark_aqua"},{"text":"BlockyM_","color":"green"}]}},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Directed by: ","color":"gray"},{"text":"BlockyM_\n","color":"dark_green"}]
+tellraw @a ["\n",{"text":"| ","bold":true,"color":"dark_gray"},{"translate":"mcm.map.ready","underlined":true,"color":"green","bold":false}]
+tellraw @a [{"text":"| ","bold":true,"color":"dark_gray"}]
+tellraw @a [{"text":"| ","bold":true,"color":"dark_gray"},{"translate":"mcm.map.selected","color":"gray","bold":false,"with":[{"translate":"mcm.launchpad.name","color":"dark_green","hoverEvent":{"action":"show_text","value":[{"translate":"mcm.launchpad.hover","color":"aqua"},{"text":"\n    --------\n","color":"dark_gray"},{"translate":"mcm.map.concept","color":"dark_aqua", "with":[ {"translate":"mcm.map.list.1", "color":"green", "with":[ "BlockyM_" ]} ]}]}}]}]
+tellraw @a [{"text":"| ","bold":true,"color":"dark_gray"},{"translate":"mcm.map.directed","color":"gray","bold":false, "with":[ {"translate":"mcm.map.list.1", "color":"dark_green", "with": ["BlockyM_"]} ]}, "\n"]

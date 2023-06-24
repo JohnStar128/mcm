@@ -1,5 +1,5 @@
 #> Forceload the cabin map
-forceload add -1938 3000 -2030 3048
+#forceload add -1938 3000 -2030 3048
 
 #> Kill potential leftover entities
 kill @e[tag=MapEntity]
@@ -39,4 +39,7 @@ weather rain
 #> Spectator spawnpoint
 execute positioned -2000 112 3022 run function mcm:game/markers/spectatorspawn
 
-tellraw @a ["","\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"The game is ready to play!","underlined":true,"color":"green"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Selected Map: ","color":"gray"},{"text":"Snowed Inn","color":"dark_green","hoverEvent":{"action":"show_text","value":[{"text":"","color":"aqua"},{"text":"\n    --------","color":"dark_gray"},{"text":"\nConcept by: ","color":"dark_aqua"},{"text":"TacoSquad, TheLastOreo","color":"green"}]}},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Directed by: ","color":"gray"},{"text":"TacoSquad, TheLastOreo\n","color":"dark_green"}]
+tellraw @a ["\n",{"text":"| ","bold":true,"color":"dark_gray"},{"translate":"mcm.map.ready","underlined":true,"color":"green","bold":false}]
+tellraw @a [{"text":"| ","bold":true,"color":"dark_gray"}]
+tellraw @a [{"text":"| ","bold":true,"color":"dark_gray"},{"translate":"mcm.map.selected","color":"gray","bold":false,"with":[{"translate":"mcm.cabin.name","color":"dark_green","hoverEvent":{"action":"show_text","value":[{"translate":"mcm.cabin.hover","color":"aqua"},{"text":"\n    --------\n","color":"dark_gray"},{"translate":"mcm.map.concept","color":"dark_aqua", "with":[ {"translate":"mcm.map.list.2", "color":"green", "with":[ "TacoSquad", "TheLastOreo" ]} ]}]}}]}]
+tellraw @a [{"text":"| ","bold":true,"color":"dark_gray"},{"translate":"mcm.map.directed","color":"gray","bold":false, "with":[ {"translate":"mcm.map.list.2", "color":"dark_green", "with": ["TacoSquad", "TheLastOreo"]} ]}, "\n"]

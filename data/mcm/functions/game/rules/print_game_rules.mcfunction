@@ -1,22 +1,22 @@
 #> Title message
-tellraw @s ["", {"text":"| ","bold":true,"color":"dark_gray"},{"text":"Game Rules:","underlined":true,"color":"green"}]
+tellraw @s ["", {"text":"| ","bold":true,"color":"dark_gray"},{"translate":"mcm.game.rules","underlined":true,"color":"green", "bold":false}]
 #> Number of murderers
-tellraw @s ["", {"text":"| ","bold":true,"color":"dark_gray"}, {"text":"Number of murderers : ", "color":"gray"}, {"score":{"name":"$murderers","objective":"GameRules"}, "color":"green"}]
+tellraw @s [{"text":"| ","bold":true,"color":"dark_gray"}, {"translate":"mcm.game.rules.murderers", "color":"gray","bold":false, "with":[{"score":{"name":"$murderers","objective":"GameRules"}, "color":"green"}]}]
 #> Game length
-execute if score $roundtimer GameRules matches 1 run tellraw @s ["", {"text":"| ","bold":true,"color":"dark_gray"}, {"text":"Game length : ", "color":"gray"}, {"text":"5", "color":"green"}, {"text":" minutes","color":"green"}]
-execute if score $roundtimer GameRules matches 2 run tellraw @s ["", {"text":"| ","bold":true,"color":"dark_gray"}, {"text":"Game length : ", "color":"gray"}, {"text":"10", "color":"green"}, {"text":" minutes","color":"green"}]
+tellraw @s [{"text":"| ","bold":true,"color":"dark_gray"}, {"translate":"mcm.game.rules.length", "color":"gray", "bold":false, "with":[{"translate":"mcm.game.rules.length.minutes", "color":"green", "with":[ {"score":{"name":"$roundtimer","objective":"GameRules"},"color":"green"} ]} ]}]
+
 #> Animated game features
-execute if score $animate GameRules matches 1 run tellraw @s ["", {"text":"| ","bold":true,"color":"dark_gray"}, {"text":"Animated maps : ", "color":"gray"}, {"text":"On", "color":"green"}]
-execute if score $animate GameRules matches 0 run tellraw @s ["", {"text":"| ","bold":true,"color":"dark_gray"}, {"text":"Animated maps : ", "color":"gray"}, {"text":"Off", "color":"green"}]
+execute if score $animate GameRules matches 1 run tellraw @s [{"text":"| ","bold":true,"color":"dark_gray"}, {"translate":"mcm.game.rules.animated", "color":"gray", "bold":false, "with":[ {"translate":"mcm.game.rules.on", "color":"green"} ]}]
+execute if score $animate GameRules matches 0 run tellraw @s [{"text":"| ","bold":true,"color":"dark_gray"}, {"translate":"mcm.game.rules.animated", "color":"gray", "bold":false, "with":[ {"translate":"mcm.game.rules.off", "color":"green"} ]}]
 #> Autostart
-execute if score $autostart GameRules matches 1 run tellraw @s ["", {"text":"| ","bold":true,"color":"dark_gray"}, {"text":"Automatically start the game : ", "color":"gray"}, {"text":"On", "color":"green"}]
-execute if score $autostart GameRules matches 0 run tellraw @s ["", {"text":"| ","bold":true,"color":"dark_gray"}, {"text":"Automatically start the game : ", "color":"gray"}, {"text":"Off", "color":"green"}]
+execute if score $autostart GameRules matches 1 run tellraw @s [{"text":"| ","bold":true,"color":"dark_gray"}, {"translate":"mcm.game.rules.auto", "color":"gray", "bold":false, "with":[ {"translate":"mcm.game.rules.on", "color":"green"} ]}]
+execute if score $autostart GameRules matches 0 run tellraw @s [{"text":"| ","bold":true,"color":"dark_gray"}, {"translate":"mcm.game.rules.auto", "color":"gray", "bold":false, "with":[ {"translate":"mcm.game.rules.off", "color":"green"} ]}]
 #> Start with scrap
-execute if score $startscrap GameRules matches 1 run tellraw @s ["", {"text":"| ","bold":true,"color":"dark_gray"}, {"text":"Players start with scrap : ", "color":"gray"}, {"text":"On", "color":"green"}]
-execute if score $startscrap GameRules matches 0 run tellraw @s ["", {"text":"| ","bold":true,"color":"dark_gray"}, {"text":"Players start with scrap : ", "color":"gray"}, {"text":"Off", "color":"green"}]
+execute if score $startscrap GameRules matches 1 run tellraw @s [{"text":"| ","bold":true,"color":"dark_gray"}, {"translate":"mcm.game.rules.scrap", "color":"gray", "bold":false, "with":[ {"translate":"mcm.game.rules.on", "color":"green"} ]}]
+execute if score $startscrap GameRules matches 0 run tellraw @s [{"text":"| ","bold":true,"color":"dark_gray"}, {"translate":"mcm.game.rules.scrap", "color":"gray", "bold":false, "with":[ {"translate":"mcm.game.rules.off", "color":"green"} ]}]
 #> Smart murderers
-execute if score $smart_murderers GameRules matches 1 run tellraw @s ["", {"text":"| ","bold":true,"color":"dark_gray"}, {"text":"Smart murderer selection : ", "color":"gray"}, {"text":"On", "color":"green"}]
-execute if score $smart_murderers GameRules matches 0 run tellraw @s ["", {"text":"| ","bold":true,"color":"dark_gray"}, {"text":"Smart murderer selection : ", "color":"gray"}, {"text":"Off", "color":"green"}]
+execute if score $smart_murderers GameRules matches 1 run tellraw @s [{"text":"| ","bold":true,"color":"dark_gray"}, {"translate":"mcm.game.rules.smart", "color":"gray", "bold":false, "with":[ {"translate":"mcm.game.rules.on", "color":"green"} ]}]
+execute if score $smart_murderers GameRules matches 0 run tellraw @s [{"text":"| ","bold":true,"color":"dark_gray"}, {"translate":"mcm.game.rules.smart", "color":"gray", "bold":false, "with":[ {"translate":"mcm.game.rules.off", "color":"green"} ]}]
 #> Murderer friendly fire
-execute if score $murderer_ff GameRules matches 1 run tellraw @s ["", {"text":"| ","bold":true,"color":"dark_gray"}, {"text":"Murderer friendly fire : ", "color":"gray"}, {"text":"On", "color":"green"}]
-execute if score $murderer_ff GameRules matches 0 run tellraw @s ["", {"text":"| ","bold":true,"color":"dark_gray"}, {"text":"Murderer friendly fire : ", "color":"gray"}, {"text":"Off", "color":"green"}]
+execute if score $murderer_ff GameRules matches 1 run tellraw @s [{"text":"| ","bold":true,"color":"dark_gray"}, {"translate":"mcm.game.rules.friendly.fire", "color":"gray", "bold":false, "with":[ {"translate":"mcm.game.rules.on", "color":"green"} ]}]
+execute if score $murderer_ff GameRules matches 0 run tellraw @s [{"text":"| ","bold":true,"color":"dark_gray"}, {"translate":"mcm.game.rules.friendly.fire", "color":"gray", "bold":false, "with":[ {"translate":"mcm.game.rules.off", "color":"green"} ]}]

@@ -5,7 +5,12 @@ execute as @e[type=arrow,tag=NewGunShot] at @s run data modify entity @s Owner s
 execute as @e[type=arrow,tag=NewGunShot] at @a[tag=HoldGun,tag=!shotGun,scores={gunclick=1..},limit=1,sort=nearest] positioned ~ ~1.5 ~ run function mcm:game/items/gun/setspeed
 
 execute as @a[tag=HoldGun,tag=!shotGun,scores={gunclick=1..}] at @s run playsound gun_shoot master @a ~ ~ ~ 2 1
-execute as @a[tag=HoldGun,tag=!shotGun,scores={gunclick=1..}] at @s anchored eyes run tp @s ~ ~ ~ ~ ~-3
+
+execute as @a[tag=HoldGun,tag=!shotGun,scores={gunclick=1..}] on vehicle on passengers run tag @s add no_recoil
+execute as @a[tag=HoldGun,tag=!shotGun,scores={gunclick=1..},tag=!no_recoil] at @s run tp @s ~ ~ ~ ~ ~-3
+tag @a remove no_recoil
+
+
 execute as @a[tag=HoldGun,tag=!shotGun,scores={gunclick=1..}] at @s anchored eyes run tag @s add shotGun
 execute as @a[tag=HoldGun,tag=shotGun,scores={gunclick=1..,gundelay=3..35}] at @s run function mcm:game/items/gun/clicksound
 

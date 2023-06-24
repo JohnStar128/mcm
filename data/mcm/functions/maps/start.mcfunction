@@ -1,6 +1,9 @@
 #> Set the start game grace period to 15 seconds
 scoreboard players set $graceperiod CmdData 300
 
+#> Clear credits music if players are still there but autoqueue
+stopsound @a master
+
 execute if score $selectedMap CmdData matches 1 run time set 6000
 execute if score $selectedMap CmdData matches 2 run time set 6000
 execute if score $selectedMap CmdData matches 3 run time set 12500
@@ -12,7 +15,7 @@ execute if score $selectedMap CmdData matches 7 run time set 12500
 execute if score $selectedMap CmdData matches 8 run time set 6000
 execute if score $selectedMap CmdData matches 9 run time set 12500
 
-tellraw @a ["\n",{"text":"Assigning roles in 15 seconds...","color":"yellow"},"\n"]
+tellraw @a ["\n",{"translate":"mcm.game.role.assign","color":"yellow"},"\n"]
 
 #> Make queued players join ingame team (this allows friendly fire)
 team join ingame_players @a[team=nametags,tag=queued]

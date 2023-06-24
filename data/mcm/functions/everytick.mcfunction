@@ -3,6 +3,7 @@ execute as @a unless score @s version = $current_version version run function mc
 execute as @a unless score @s version = $current_version version run scoreboard players operation @s version = $current_version version
 
 #> What to do if a player disconnects and rejoins
+execute if entity @a[scores={leave=1..}] run schedule function mcm:lobby/lobby_text_displays 5s
 execute as @a[scores={leave=1..}] unless score @s gameID = $gameID CmdData run function mcm:player_leave
 
 #> Reset voting if no one is on the server
@@ -64,10 +65,10 @@ execute store result score $queued CmdData if entity @a[tag=queued]
 
 #> Disable tips
 scoreboard players enable @a disableTips
-execute as @a[scores={disableTips=1..},tag=!NoTip] run tellraw @s ["", {"text":"You will no longer receive tips.","color":"green"}]
-execute as @a[scores={disableTips=1..},tag=!NoTip] run tellraw @s ["", {"text":"Re-enable tips in the How To Play book","color":"green"}]
+execute as @a[scores={disableTips=1..},tag=!NoTip] run tellraw @s {"translate":"mcm.tip.disable","color":"green"}
+execute as @a[scores={disableTips=1..},tag=!NoTip] run tellraw @s {"translate":"mcm.tip.reminder","color":"green"}
 execute as @a[scores={disableTips=1..},tag=!NoTip] run tag @s add NoTip
-execute as @a[scores={disableTips=0},tag=NoTip] run tellraw @s ["", {"text":"You will now receive tips.","color":"green"}]
+execute as @a[scores={disableTips=0},tag=NoTip] run tellraw @s {"translate":"mcm.tip.enable","color":"green"}
 execute as @a[scores={disableTips=0},tag=NoTip] run tag @s remove NoTip
 
 #> Teleport players not in match & outside of lobby bounding box back to lobby unless on Developer Team (escape prevention)
@@ -79,3 +80,6 @@ execute as @e[type=villager,tag=credits_usher] store result score $creditsushero
 
 execute as @e[type=villager,tag=Usher] if score $usheroffers CmdData matches 1.. run data modify entity @s Offers set value {}
 execute as @e[type=villager,tag=credits_usher] if score $creditsusheroffers CmdData matches 1.. run data modify entity @s Offers set value {}
+
+#> Chair controls
+function mcm:util/chair/control

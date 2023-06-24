@@ -1,5 +1,5 @@
 #> Handle de-autoqueueing players
-tellraw @s ["", {"text":"You will no longer automatically join every game","color":"red"}]
+tellraw @s {"translate":"mcm.lobby.deautoqueue","color":"red"}
 tag @s remove autoqueue
 
 item modify entity @s weapon.mainhand mcm:deautoqueue

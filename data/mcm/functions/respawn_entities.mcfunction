@@ -10,7 +10,10 @@ function mcm:lobby/respawn_villagers
 # Respawn the hat displays
 function mcm:lobby/displays/init
 
-# kill @e[type=marker,tag=MapVote]
+# Respawn lobby chairs
+function mcm:util/chair/lobby_chairs
+
+kill @e[type=marker,tag=MapVote]
 scoreboard players reset @e MapValues
 
 execute unless entity @e[type=marker,tag=Random] run summon marker 0 -49 70 {Tags:["MapVote","Random"]}
@@ -43,5 +46,5 @@ scoreboard players set @e[type=marker,tag=Train] MapValues 8
 execute unless entity @e[type=marker,tag=Cabin] run summon marker 0 -49 70 {Tags:["MapVote","Cabin"]}
 scoreboard players set @e[type=marker,tag=Cabin] MapValues 9
 
-#execute unless entity @e[type=marker,tag=Gumdrop] run summon marker 0 -49 70 {Tags:["MapVote","Gumdrop"]}
-#scoreboard players set @e[type=marker,tag=Gumdrop] MapValues 7
+execute unless entity @e[type=marker,tag=Gumdrop] run summon marker 0 -49 70 {Tags:["MapVote","Gumdrop"]}
+scoreboard players set @e[type=marker,tag=Gumdrop] MapValues 10

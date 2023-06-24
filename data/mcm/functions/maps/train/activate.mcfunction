@@ -1,5 +1,5 @@
 #> Forceload the Train map
-forceload add 2000 3040 1585 2945
+#forceload add 2000 3040 1585 2945
 
 #> Kill potential leftover entities
 kill @e[tag=MapEntity]
@@ -64,4 +64,7 @@ scoreboard players set $dinner_timer CmdData 600
 #> Spectator spawnpoint
 execute positioned 1980 117 3000 run function mcm:game/markers/spectatorspawn
 
-tellraw @a ["","\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"The game is ready to play!","underlined":true,"color":"green"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Selected Map: ","color":"gray"},{"text":"A Tragedy On The Boreal Express","color":"dark_green","hoverEvent":{"action":"show_text","value":[{"text":"And Then There Were None","color":"aqua"},{"text":"\n    --------","color":"dark_gray"},{"text":"\nConcept by: ","color":"dark_aqua"},{"text":"TheLastOreo","color":"green"}]}},"\n",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Directed by: ","color":"gray"},{"text":"TheLastOreo\n","color":"dark_green"}]
+tellraw @a ["\n",{"text":"| ","bold":true,"color":"dark_gray"},{"translate":"mcm.map.ready","underlined":true,"color":"green","bold":false}]
+tellraw @a [{"text":"| ","bold":true,"color":"dark_gray"}]
+tellraw @a [{"text":"| ","bold":true,"color":"dark_gray"},{"translate":"mcm.map.selected","color":"gray","bold":false,"with":[{"translate":"mcm.train.name","color":"dark_green","hoverEvent":{"action":"show_text","value":[{"translate":"mcm.train.hover","color":"aqua"},{"text":"\n    --------\n","color":"dark_gray"},{"translate":"mcm.map.concept","color":"dark_aqua", "with":[ {"translate":"mcm.map.list.1", "color":"green", "with":[ "TheLastOreo" ]} ]}]}}]}]
+tellraw @a [{"text":"| ","bold":true,"color":"dark_gray"},{"translate":"mcm.map.directed","color":"gray","bold":false, "with":[ {"translate":"mcm.map.list.1", "color":"dark_green", "with": ["TheLastOreo"]} ]}, "\n"]

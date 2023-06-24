@@ -6,6 +6,7 @@ execute if score $chandelierTime CmdData matches 50 run place template minecraft
 
 #> kill players under the chandelier when it hits the ground
 execute if score $chandelierTime CmdData matches 50 as @a[predicate=mcm:bounding_boxes/chandelier_kill] at @s run playsound minecraft:wilhelm_scream ambient @a[tag=queued] ~ ~ ~ 1 1 1
+execute as @a[predicate=mcm:bounding_boxes/chandelier_kill] at @s if score $chandelierTime CmdData matches 50 run tellraw @s {"translate":"mcm.library.chandelier","color":"red"}
 execute as @a[predicate=mcm:bounding_boxes/chandelier_kill] at @s if score $chandelierTime CmdData matches 50 run function mcm:game/playerdeath
 
 execute positioned as @e[type=marker,tag=chandelierDropSound] if score $chandelierTime CmdData matches 50 run playsound minecraft:entity.wither.break_block block @a[tag=queued,distance=..150] ~ ~ ~ 1 1 1

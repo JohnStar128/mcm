@@ -24,7 +24,7 @@ execute unless score $stairsopen CmdData matches 1.. if block 945 104 996 chest{
 execute unless score $stairsopen CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:2b}]} run scoreboard players set $stairsopen CmdData 1
 
 #> When you have all 5 books, open the book in the basement
-execute unless score $flipbook CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:5b}]} run tellraw @a[tag=queued] ["\n", {"text":"You hear an evil presence call from the basement...","color":"red","italic":"true"}, "\n"]
+execute unless score $flipbook CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:5b}]} run tellraw @a[tag=queued] ["\n", {"translate":"mcm.library.evil","color":"red","italic":"true"}, "\n"]
 execute unless score $flipbook CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:5b}]} run playsound minecraft:block.end_portal.spawn block @a[tag=queued] ~ ~ ~ 1 0 1
 execute unless score $flipbook CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:5b}]} run place template minecraft:librarysecret 961 100 996
 execute unless score $flipbook CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:5b}]} run scoreboard players set $flipbook CmdData 1
@@ -44,7 +44,7 @@ execute if score $flippingmap CmdData matches 1 run function mcm:maps/library/fl
 
 # Enable and run trigger if player chooses not to flip map
 execute if score $flipbook CmdData matches 1.. run scoreboard players enable @a[predicate=mcm:bounding_boxes/flipbook] dontfliplibrary
-execute if score $flipbook CmdData matches 1.. if score @a[predicate=mcm:bounding_boxes/flipbook,limit=1] dontfliplibrary matches 1.. run tellraw @p {"text":"No...I shouldn't...","italic":true,"color":"yellow"}
+execute if score $flipbook CmdData matches 1.. if score @a[predicate=mcm:bounding_boxes/flipbook,limit=1] dontfliplibrary matches 1.. run tellraw @p {"translate":"mcm.library.coward","italic":true,"color":"yellow"}
 scoreboard players reset @a[scores={dontfliplibrary=1..}] dontfliplibrary
 
 #> Teleport players out of bounds back inbounds (escape prevention)
