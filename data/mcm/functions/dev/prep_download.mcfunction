@@ -7,3 +7,6 @@ gamerule sendCommandFeedback false
 tag @e[type=marker,tag=MapVote] remove disabled
 #> Shuffle maps so disabled slots don't show
 function mcm:dev/shuffle_maps
+
+#> Update version counter to make sure players who update get any new root advancements
+scoreboard players add $current_version version 1
