@@ -7,3 +7,6 @@ gamerule sendCommandFeedback false
 tag @e[type=marker,tag=MapVote] remove disabled
 #> Shuffle maps so disabled slots don't show
 function mcm:dev/shuffle_maps
+
+#> 1.2.xx - remove unreleased map markers
+kill @e[type=marker,tag=Gumdrop]

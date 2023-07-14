@@ -5,7 +5,6 @@ execute if score $selectedMap CmdData matches 2 run function mcm:maps/airship/re
 execute if score $selectedMap CmdData matches 3 run function mcm:maps/vineyard/reset
 execute if score $selectedMap CmdData matches 4 run function mcm:maps/launchpad/reset
 execute if score $selectedMap CmdData matches 5 run function mcm:maps/cyberpunk/reset
-#gumdrop - execute if score $gameEndTimer CmdData matches ..1 if score $selectedMap CmdData matches 6 run function mcm:maps/gumdrop/reset
 execute if score $selectedMap CmdData matches 6 run function mcm:maps/riverboat/reset
 execute if score $selectedMap CmdData matches 7 run function mcm:maps/industry/reset
 execute if score $selectedMap CmdData matches 8 run function mcm:maps/train/reset
@@ -33,5 +32,3 @@ execute if score $selectedMap CmdData matches 7 run forceload remove -1926 -2938
 execute if score $selectedMap CmdData matches 8 run forceload remove 2000 3040 1585 2945
 # Cabin
 execute if score $selectedMap CmdData matches 9 run forceload remove -1938 3000 -2030 3048
-#Gumdrop Plains TODO - map 10?
-#execute if score $selectedMap CmdData matches 10 run forceload remove 780 -3187 1194 -2795

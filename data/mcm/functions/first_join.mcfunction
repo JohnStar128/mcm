@@ -9,7 +9,6 @@ advancement grant @s only mcm:root
 advancement grant @s only mcm:secrets/lobby/root
 advancement grant @s only mcm:secrets/airship/root
 advancement grant @s only mcm:secrets/cyberpunk/root
-#advancement grant @s only mcm:secrets/gumdrop/root
 advancement grant @s only mcm:secrets/library/root
 advancement grant @s only mcm:secrets/vineyard/root
 advancement grant @s only mcm:secrets/launchpad/root

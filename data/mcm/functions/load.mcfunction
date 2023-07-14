@@ -11,7 +11,6 @@ execute if score $selectedMap CmdData matches 2 run function mcm:maps/airship/re
 execute if score $selectedMap CmdData matches 3 run function mcm:maps/vineyard/reset
 execute if score $selectedMap CmdData matches 4 run function mcm:maps/launchpad/reset
 execute if score $selectedMap CmdData matches 5 run function mcm:maps/cyberpunk/reset
-#gumdrop - execute if score $selectedMap CmdData matches 6 run function mcm:maps/gumdrop/reset
 execute if score $selectedMap CmdData matches 6 run function mcm:maps/riverboat/reset
 execute if score $selectedMap CmdData matches 7 run function mcm:maps/industry/reset
 execute if score $selectedMap CmdData matches 8 run function mcm:maps/train/reset

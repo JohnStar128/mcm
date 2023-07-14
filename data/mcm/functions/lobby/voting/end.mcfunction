@@ -33,8 +33,6 @@ execute if entity @e[type=marker,tag=SelectedMap,tag=Launchpad] run forceload ad
 execute if entity @e[type=marker,tag=SelectedMap,tag=Launchpad] run forceload add -961 -881 -1136 -976
 #Color Filth
 execute if entity @e[type=marker,tag=SelectedMap,tag=Cyberpunk] run forceload add -2178 1968 -1969 2135
-#Gumdrop Plains
-execute if entity @e[type=marker,tag=SelectedMap,tag=Gumdrop] run forceload add 780 -3187 1194 -2795
 #Riverboat
 execute if entity @e[type=marker,tag=SelectedMap,tag=Riverboat] run forceload add 2130 -2015 2000 -1975
 # Industry
@@ -55,8 +53,6 @@ execute if entity @e[type=marker,tag=SelectedMap,tag=Vineyard] run schedule func
 execute if entity @e[type=marker,tag=SelectedMap,tag=Launchpad] run schedule function mcm:maps/launchpad/activate 1s
 #Color Filth
 execute if entity @e[type=marker,tag=SelectedMap,tag=Cyberpunk] run schedule function mcm:maps/cyberpunk/activate 1s
-#Gumdrop Plains
-execute if entity @e[type=marker,tag=SelectedMap,tag=Gumdrop] run schedule function mcm:maps/gumdrop/activate 1s
 #Riverboat
 execute if entity @e[type=marker,tag=SelectedMap,tag=Riverboat] run schedule function mcm:maps/riverboat/activate 1s
 # Industry

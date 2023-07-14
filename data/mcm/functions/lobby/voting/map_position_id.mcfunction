@@ -76,11 +76,3 @@ execute if score @s MapValues matches 9 positioned ~0.5 ~1.5 ~-0.5 as @e[type=gl
 execute if score @s MapValues matches 9 positioned ~0.5 ~1.5 ~1.5 as @e[type=glow_item_frame,limit=1,sort=nearest] run data merge entity @s {Item:{id:"minecraft:filled_map",Count:1b,tag:{map:1174}}}
 execute if score @s MapValues matches 9 positioned ~0.5 ~0.5 ~-0.5 as @e[type=glow_item_frame,limit=1,sort=nearest] run data merge entity @s {Item:{id:"minecraft:filled_map",Count:1b,tag:{map:1175}}}
 execute if score @s MapValues matches 9 positioned ~0.5 ~0.5 ~1.5 as @e[type=glow_item_frame,limit=1,sort=nearest] run data merge entity @s {Item:{id:"minecraft:filled_map",Count:1b,tag:{map:1176}}}
-
-#Gumdrop Plains
-execute if score @s MapValues matches 10 positioned ~0.5 ~2.5 ~-0.5 as @e[type=glow_item_frame,limit=1,sort=nearest] run data merge entity @s {Item:{id:"minecraft:filled_map",Count:1b,tag:{map:1141}}}
-execute if score @s MapValues matches 10 positioned ~0.5 ~2.5 ~1.5 as @e[type=glow_item_frame,limit=1,sort=nearest] run data merge entity @s {Item:{id:"minecraft:filled_map",Count:1b,tag:{map:1142}}}
-execute if score @s MapValues matches 10 positioned ~0.5 ~1.5 ~-0.5 as @e[type=glow_item_frame,limit=1,sort=nearest] run data merge entity @s {Item:{id:"minecraft:filled_map",Count:1b,tag:{map:1143}}}
-execute if score @s MapValues matches 10 positioned ~0.5 ~1.5 ~1.5 as @e[type=glow_item_frame,limit=1,sort=nearest] run data merge entity @s {Item:{id:"minecraft:filled_map",Count:1b,tag:{map:1144}}}
-execute if score @s MapValues matches 10 positioned ~0.5 ~0.5 ~-0.5 as @e[type=glow_item_frame,limit=1,sort=nearest] run data merge entity @s {Item:{id:"minecraft:filled_map",Count:1b,tag:{map:1145}}}
-execute if score @s MapValues matches 10 positioned ~0.5 ~0.5 ~1.5 as @e[type=glow_item_frame,limit=1,sort=nearest] run data merge entity @s {Item:{id:"minecraft:filled_map",Count:1b,tag:{map:1146}}}

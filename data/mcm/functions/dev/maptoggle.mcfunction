@@ -6,7 +6,7 @@ tellraw @s ""
 tellraw @s ""
 tellraw @s ""
 
-#> Libraru
+#> Library
 execute if entity @e[type=marker,tag=Library,tag=!disabled] run tellraw @s [{"text":"[✔]","color":"dark_green"}," ",{"text":"[✖]","color":"dark_gray","clickEvent":{"action":"run_command","value":"/function mcm:dev/toggle/library"},"hoverEvent":{"action":"show_text","contents":["Click to Disable"]}}, {"text":"  Library","color":"white"}]
 execute if entity @e[type=marker,tag=Library,tag=disabled] run tellraw @s [{"text":"[✔]","color":"dark_gray","clickEvent":{"action":"run_command","value":"/function mcm:dev/toggle/library"},"hoverEvent":{"action":"show_text","contents":["Click to Enable"]}}," ",{"text":"[✖]","color":"dark_red"}, {"text":"  Library","color":"white"}]
 
@@ -41,9 +41,5 @@ execute if entity @e[type=marker,tag=Train,tag=disabled] run tellraw @s [{"text"
 #> Cabin
 execute if entity @e[type=marker,tag=Cabin,tag=!disabled] run tellraw @s [{"text":"[✔]","color":"dark_green"}," ",{"text":"[✖]","color":"dark_gray","clickEvent":{"action":"run_command","value":"/function mcm:dev/toggle/cabin"},"hoverEvent":{"action":"show_text","contents":["Click to Disable"]}}, {"text":"  Cabin","color":"white"}]
 execute if entity @e[type=marker,tag=Cabin,tag=disabled] run tellraw @s [{"text":"[✔]","color":"dark_gray","clickEvent":{"action":"run_command","value":"/function mcm:dev/toggle/cabin"},"hoverEvent":{"action":"show_text","contents":["Click to Enable"]}}," ",{"text":"[✖]","color":"dark_red"}, {"text":"  Cabin","color":"white"}]
-
-#> Gumdrop
-execute if entity @e[type=marker,tag=Gumdrop,tag=!disabled] run tellraw @s [{"text":"[✔]","color":"dark_green"}," ",{"text":"[✖]","color":"dark_gray","clickEvent":{"action":"run_command","value":"/function mcm:dev/toggle/gumdrop"},"hoverEvent":{"action":"show_text","contents":["Click to Disable"]}}, {"text":"  Gumdrop","color":"white"}]
-execute if entity @e[type=marker,tag=Gumdrop,tag=disabled] run tellraw @s [{"text":"[✔]","color":"dark_gray","clickEvent":{"action":"run_command","value":"/function mcm:dev/toggle/gumdrop"},"hoverEvent":{"action":"show_text","contents":["Click to Enable"]}}," ",{"text":"[✖]","color":"dark_red"}, {"text":"  Gumdrop","color":"white"}]
 
 tellraw @s ["",{"text":"[Enable All]","color":"dark_green","clickEvent":{"action":"run_command","value":"/function mcm:dev/toggle/enable_all"},"hoverEvent":{"action":"show_text","contents":["Enable All"]}}," ",{"text":"[Disable All]","color":"dark_red","insertion":"Disable All","clickEvent":{"action":"run_command","value":"/function mcm:dev/toggle/disable_all"},"hoverEvent":{"action":"show_text","contents":[]}}]
