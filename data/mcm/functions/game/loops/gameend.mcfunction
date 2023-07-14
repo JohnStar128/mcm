@@ -136,3 +136,9 @@ execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 5 unle
 execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 5 unless predicate mcm:bounding_boxes/cyberpunk run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
 execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 6 unless predicate mcm:bounding_boxes/riverboat run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
 execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 6 unless predicate mcm:bounding_boxes/riverboat run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
+execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 7 unless predicate mcm:bounding_boxes/industry run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
+execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 7 unless predicate mcm:bounding_boxes/industry run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
+execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 8 unless predicate mcm:bounding_boxes/train run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
+execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 8 unless predicate mcm:bounding_boxes/train run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
+execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 9 unless predicate mcm:bounding_boxes/cabin run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
+execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 9 unless predicate mcm:bounding_boxes/cabin run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
