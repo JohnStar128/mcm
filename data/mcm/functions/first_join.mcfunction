@@ -22,8 +22,6 @@ advancement grant @s only mcm:secrets/cabin/root
 tag @s add autoqueue
 
 function mcm:player_leave
-function mcm:lobby/lobby_cosmetic_signs
-function mcm:lobby/lobby_text_displays
 
 function mcm:lobby/give_lobby_items
 

@@ -3,7 +3,6 @@ execute as @a unless score @s version = $current_version version run function mc
 execute as @a unless score @s version = $current_version version run scoreboard players operation @s version = $current_version version
 
 #> What to do if a player disconnects and rejoins
-execute if entity @a[scores={leave=1..}] run schedule function mcm:lobby/lobby_text_displays 5s
 execute as @a[scores={leave=1..}] unless score @s gameID = $gameID CmdData run function mcm:player_leave
 
 #> Reset voting if no one is on the server
