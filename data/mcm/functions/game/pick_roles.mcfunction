@@ -11,8 +11,8 @@ schedule function mcm:game/murderertip 6s
 execute if score $murderers GameRules matches 2 as @a[tag=murderer] at @s run title @s subtitle {"translate":"mcm.game.murderer2.subtitle", "color":"gold", "with" :[{"selector" : "@p[tag=murderer,distance=0.01..]", "color":"green"}]}
 execute if score $murderers GameRules matches 2 as @a[tag=murderer] at @s run tellraw @s {"translate":"mcm.game.murderer2.msg","color":"gold","with":[{"selector":"@p[tag=murderer,distance=0.01..]", "color":"green"}, {"selector":"@s","color":"green"}, {"translate":"mcm.game.murderers","color":"gold"}]}
 
-execute if score $murderers GameRules matches 2 as @a[tag=murderer] at @s run title @s subtitle {"translate":"mcm.game.murderer3.subtitle", "color":"gold", "with" :[{"selector" :"@p[tag=murderer,distance=0.01..]", "color":"green"},{"selector" :"@p[tag=murderer,distance=0.01..,sort=furthest]", "color":"green"}]}
-execute if score $murderers GameRules matches 2 as @a[tag=murderer] at @s run tellraw @s {"translate":"mcm.game.murderer3.msg","color":"gold","with":[{"selector":"@p[tag=murderer,distance=0.01..]", "color":"green"}, {"selector":"@p[tag=murderer,distance=0.01..,sort=furthest]", "color":"green"}, {"selector":"@s","color":"green"}, {"translate":"mcm.game.murderers","color":"gold"}]}
+execute if score $murderers GameRules matches 3 as @a[tag=murderer] at @s run title @s subtitle {"translate":"mcm.game.murderer3.subtitle", "color":"gold", "with" :[{"selector" :"@p[tag=murderer,distance=0.01..]", "color":"green"},{"selector" :"@p[tag=murderer,distance=0.01..,sort=furthest]", "color":"green"}]}
+execute if score $murderers GameRules matches 3 as @a[tag=murderer] at @s run tellraw @s {"translate":"mcm.game.murderer3.msg","color":"gold","with":[{"selector":"@p[tag=murderer,distance=0.01..]", "color":"green"}, {"selector":"@p[tag=murderer,distance=0.01..,sort=furthest]", "color":"green"}, {"selector":"@s","color":"green"}, {"translate":"mcm.game.murderers","color":"gold"}]}
 
 # Murderer items
 execute as @a[tag=murderer] run function mcm:game/items/knife/give
