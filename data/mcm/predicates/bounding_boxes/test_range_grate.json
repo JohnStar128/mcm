@@ -8,13 +8,13 @@
         "location": {
           "position": {
             "x": {
-              "min": 31,
-              "max": 34
+              "min": 32,
+              "max": 36
             },
             "y": 0,
             "z": {
-              "min": 123,
-              "max": 125
+              "min": -17,
+              "max": -14
             }
           }
         }

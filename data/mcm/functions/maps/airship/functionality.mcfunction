@@ -21,6 +21,8 @@ execute if block -692 52 45 dark_oak_trapdoor[waterlogged=true] run setblock -69
 #also doubles as escape prevention
 execute as @a[tag=queued,predicate=!mcm:bounding_boxes/airship,tag=!spectating] at @s if score $graceperiod CmdData matches 1.. run tp @s @e[tag=PlayerSpawn,limit=1,sort=nearest]
 execute as @a[tag=queued,predicate=!mcm:bounding_boxes/airship,tag=!spectating] at @s if score $selectedMap CmdData matches 2 if score $graceperiod CmdData matches ..0 run tellraw @s {"translate":"mcm.airship.fell","color":"red"}
+execute as @a[tag=queued,predicate=!mcm:bounding_boxes/airship,tag=!spectating] run scoreboard players set $event_type temp 1
+execute as @a[tag=queued,predicate=!mcm:bounding_boxes/airship,tag=!spectating] if score $graceperiod CmdData matches ..0 run function mcm:game/summary/add_event {translate:"mcm.game.events.killed_by_void", color: "green"}
 execute as @a[tag=queued,predicate=!mcm:bounding_boxes/airship,tag=!spectating] at @s if score $selectedMap CmdData matches 2 if score $graceperiod CmdData matches ..0 run function mcm:game/playerdeath
 
 #> Keep spectators inbounds

@@ -36,8 +36,9 @@ scoreboard players operation $scale_diff display_scaling -= $scale_min display_s
 kill @e[tag=lobby_cosmetic_displays]
 
 #> Remove hat
-summon item_display 0.0 2.375 81 {Tags:["cosmetic", "lobby_cosmetic_displays", "empty"]}
+summon item_display 0.0 2.875 81 {Tags:["cosmetic", "lobby_cosmetic_displays", "empty"],item:{id:barrier,Count:1b,Rotation:[180f]}}
 summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","empty"],response:true,width:1,height:1}
+summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","empty"],response:true,width:1,height:-1}
 scoreboard players set @e[type=interaction,tag=empty,tag=lobby_cosmetic_displays] cosmetic_ids -1
 execute as @e[type=interaction,tag=empty,tag=lobby_cosmetic_displays] run ride @s mount @e[type=item_display,tag=lobby_cosmetic_displays,tag=empty,limit=1]
 
@@ -102,6 +103,34 @@ summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","fancy_hat"],response:
 summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","fancy_hat"],response:true,width:1,height:-1.5}
 scoreboard players set @e[type=interaction,tag=fancy_hat,tag=lobby_cosmetic_displays] cosmetic_ids 9
 execute as @e[type=interaction,tag=fancy_hat,tag=lobby_cosmetic_displays] run ride @s mount @e[type=item_display,tag=lobby_cosmetic_displays,tag=fancy_hat,limit=1]
+
+#> Miner Hat
+summon item_display 15.0 2.875 81 {Tags:["cosmetic", "lobby_cosmetic_displays", "miner_hat"],item:{id:"diamond_hoe",Count:1b,tag:{CustomModelData:1120}},item_display:"head",Rotation:[180f]}
+summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","miner_hat"],response:true,width:1,height:0.5}
+summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","miner_hat"],response:true,width:1,height:-1.5}
+scoreboard players set @e[type=interaction,tag=miner_hat,tag=lobby_cosmetic_displays] cosmetic_ids 10
+execute as @e[type=interaction,tag=miner_hat,tag=lobby_cosmetic_displays] run ride @s mount @e[type=item_display,tag=lobby_cosmetic_displays,tag=miner_hat,limit=1]
+
+#> Winter Hat
+summon item_display 16.5 2.875 81 {Tags:["cosmetic", "lobby_cosmetic_displays", "winter_hat"],item:{id:"diamond_hoe",Count:1b,tag:{CustomModelData:1121}},item_display:"head",Rotation:[180f]}
+summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","winter_hat"],response:true,width:1,height:0.5}
+summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","winter_hat"],response:true,width:1,height:-1.5}
+scoreboard players set @e[type=interaction,tag=winter_hat,tag=lobby_cosmetic_displays] cosmetic_ids 11
+execute as @e[type=interaction,tag=winter_hat,tag=lobby_cosmetic_displays] run ride @s mount @e[type=item_display,tag=lobby_cosmetic_displays,tag=winter_hat,limit=1]
+
+#> Hard Hat
+summon item_display 18.0 2.875 81 {Tags:["cosmetic", "lobby_cosmetic_displays", "hard_hat"],item:{id:"diamond_hoe",Count:1b,tag:{CustomModelData:1122}},item_display:"head",Rotation:[180f]}
+summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","hard_hat"],response:true,width:1,height:0.5}
+summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","hard_hat"],response:true,width:1,height:-1.5}
+scoreboard players set @e[type=interaction,tag=hard_hat,tag=lobby_cosmetic_displays] cosmetic_ids 12
+execute as @e[type=interaction,tag=hard_hat,tag=lobby_cosmetic_displays] run ride @s mount @e[type=item_display,tag=lobby_cosmetic_displays,tag=hard_hat,limit=1]
+
+#> Warden Ears
+summon item_display 19.5 2.875 81 {Tags:["cosmetic", "lobby_cosmetic_displays", "warden_ears"],item:{id:"diamond_hoe",Count:1b,tag:{CustomModelData:1123}},item_display:"head",Rotation:[180f]}
+summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","warden_ears"],response:true,width:1,height:0.5}
+summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","warden_ears"],response:true,width:1,height:-1.5}
+scoreboard players set @e[type=interaction,tag=warden_ears,tag=lobby_cosmetic_displays] cosmetic_ids 13
+execute as @e[type=interaction,tag=warden_ears,tag=lobby_cosmetic_displays] run ride @s mount @e[type=item_display,tag=lobby_cosmetic_displays,tag=warden_ears,limit=1]
 
 
 #> Calculate the high bound based of number of displays

@@ -89,6 +89,8 @@ scoreboard players reset @s game_stats
 scoreboard players reset @s time_alive
 function mcm:util/reset_carrot_on_stick
 
+scoreboard players enable @s player_rule_update
+
 #> Items
 execute as @s[tag=autoqueue] at @s run function mcm:lobby/queueing/autoqueue
 function mcm:lobby/give_lobby_items

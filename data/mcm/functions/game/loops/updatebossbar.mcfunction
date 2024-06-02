@@ -1,8 +1,8 @@
 
-#> Get innocents
-execute store result score $InnocentCount CmdData if entity @a[tag=innocent,tag=!spectating]
-#> Get murderers
-execute store result score $MurdererCount CmdData if entity @a[tag=murderer,tag=!spectating]
+#> Get innocents (unless updating is off)
+execute unless score $updatebossbar GameRules matches 0 store result score $InnocentCount CmdData if entity @a[tag=innocent,tag=!spectating]
+#> Get murderers (unless updating is off)
+execute unless score $updatebossbar GameRules matches 0 store result score $MurdererCount CmdData if entity @a[tag=murderer,tag=!spectating]
 
 
 #> calculate remaining minutes and seconds

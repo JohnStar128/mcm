@@ -9,7 +9,7 @@
               "minecraft:netherite_scrap"
             ],
             "count": {
-              "min": 10,
+              "min": 1,
               "max": 100
             }
           }
@@ -18,6 +18,6 @@
     }
   },
   "rewards": {
-    "function": "mcm:game/scrap_function"
+    "function": "mcm:game/items/scrap_function"
   }
 }

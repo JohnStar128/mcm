@@ -1,0 +1,26 @@
+
+scoreboard players enable @s forkliftresponse
+
+#> Mark which computer they're using
+execute at @e[type=interaction,tag=forklifttest] if data entity @e[type=interaction,tag=forklifttest,sort=nearest,limit=1] interaction store result score @s forklift_interact run function mcm:maps/industry/set_computer_user
+execute as @e[type=interaction,tag=forklifttest] run data remove entity @s interaction
+
+#> Check if they've completed this computer already
+data merge storage mcm:industry {computer_player_idx:0}
+scoreboard players operation $tempuuid playerUUID = @s forklift_interact
+execute as @e[type=interaction,tag=forklifttest,predicate=mcm:matches_uuid] at @s as @e[type=marker,tag=forklifttest,limit=1,sort=nearest] run tag @s add active_computer
+execute store result score $temp temp run function mcm:maps/industry/check_completed with storage mcm:industry
+tag @e[type=marker,tag=active_computer] remove active_computer
+execute if score $temp temp matches 0 run advancement revoke @s only mcm:map_functions/industry_forklift_test
+execute if score $temp temp matches 0 run return fail
+
+#> Question 1
+execute if score @s forklifttest matches 0 run tellraw @s ["", {"translate":"mcm.industry.forklift_test.header","color":"green"}, {"text":"\n"},{"translate":"mcm.industry.forklift_test.question_one","color":"gold"}, {"text":"\n   "},{"translate":"mcm.industry.forklift_test.question_one.answer_one","color":"gray","clickEvent":{"action":"run_command","value":"/trigger forkliftresponse set 1"}},{"text":"\n   "},{"translate":"mcm.industry.forklift_test.question_one.answer_two","color":"gray","clickEvent":{"action":"run_command","value":"/trigger forkliftresponse set 2"}},{"text":"\n   "},{"translate":"mcm.industry.forklift_test.question_one.answer_three","color":"gray","clickEvent":{"action":"run_command","value":"/trigger forkliftresponse set 2"}}]
+#> Question 2
+execute if score @s forklifttest matches 1 run tellraw @s ["", {"translate":"mcm.industry.forklift_test.header","color":"green"}, {"text":"\n"},{"translate":"mcm.industry.forklift_test.question_two","color":"gold"}, {"text":"\n   "},{"translate":"mcm.industry.forklift_test.question_two.answer_one","color":"gray","clickEvent":{"action":"run_command","value":"/trigger forkliftresponse set 2"}},{"text":"\n   "},{"translate":"mcm.industry.forklift_test.question_two.answer_two","color":"gray","clickEvent":{"action":"run_command","value":"/trigger forkliftresponse set 2"}},{"text":"\n   "},{"translate":"mcm.industry.forklift_test.question_two.answer_three","color":"gray","clickEvent":{"action":"run_command","value":"/trigger forkliftresponse set 2"}},{"text":"\n   "},{"translate":"mcm.industry.forklift_test.question_two.answer_four","color":"gray","clickEvent":{"action":"run_command","value":"/trigger forkliftresponse set 1"}}]
+#> Question 3
+execute if score @s forklifttest matches 2 run tellraw @s ["", {"translate":"mcm.industry.forklift_test.header","color":"green"}, {"text":"\n"},{"translate":"mcm.industry.forklift_test.question_three","color":"gold"}, {"text":"\n   "},{"translate":"mcm.industry.forklift_test.question_three.answer_one","color":"gray","clickEvent":{"action":"run_command","value":"/trigger forkliftresponse set 1"}},{"text":"\n   "},{"translate":"mcm.industry.forklift_test.question_three.answer_two","color":"gray","clickEvent":{"action":"run_command","value":"/trigger forkliftresponse set 2"}},{"text":"\n   "},{"translate":"mcm.industry.forklift_test.question_three.answer_three","color":"gray","clickEvent":{"action":"run_command","value":"/trigger forkliftresponse set 2"}}]
+#> Question 4
+execute if score @s forklifttest matches 3 run tellraw @s ["", {"translate":"mcm.industry.forklift_test.header","color":"green"}, {"text":"\n"},{"translate":"mcm.industry.forklift_test.question_four","color":"gold"}, {"text":"\n   "},{"translate":"mcm.industry.forklift_test.question_four.answer_one","color":"gray","clickEvent":{"action":"run_command","value":"/trigger forkliftresponse set 2"}},{"text":"\n   "},{"translate":"mcm.industry.forklift_test.question_four.answer_two","color":"gray","clickEvent":{"action":"run_command","value":"/trigger forkliftresponse set 2"}},{"text":"\n   "},{"translate":"mcm.industry.forklift_test.question_four.answer_three","color":"gray","clickEvent":{"action":"run_command","value":"/trigger forkliftresponse set 1"}}]
+#> Question 5
+execute if score @s forklifttest matches 4 run tellraw @s ["", {"translate":"mcm.industry.forklift_test.header","color":"green"}, {"text":"\n"},{"translate":"mcm.industry.forklift_test.question_five","color":"gold"}, {"text":"\n   "},{"translate":"mcm.industry.forklift_test.question_five.answer_one","color":"gray","clickEvent":{"action":"run_command","value":"/trigger forkliftresponse set 2"}},{"text":"\n   "},{"translate":"mcm.industry.forklift_test.question_five.answer_two","color":"gray","clickEvent":{"action":"run_command","value":"/trigger forkliftresponse set 1"}},{"text":"\n   "},{"translate":"mcm.industry.forklift_test.question_five.answer_three","color":"gray","clickEvent":{"action":"run_command","value":"/trigger forkliftresponse set 2"}}]

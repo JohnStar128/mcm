@@ -48,3 +48,9 @@ scoreboard players set @e[type=marker,tag=Cabin] MapValues 9
 
 execute unless entity @e[type=marker,tag=Gumdrop] run summon marker 0 -49 70 {Tags:["MapVote","Gumdrop"]}
 scoreboard players set @e[type=marker,tag=Gumdrop] MapValues 10
+
+execute unless entity @e[type=marker,tag=Canyon] run summon marker 0 -49 70 {Tags:["MapVote","Canyon"]}
+scoreboard players set @e[type=marker,tag=Canyon] MapValues 11
+
+execute unless entity @e[type=marker,tag=Sculk] run summon marker 0 -49 70 {Tags:["MapVote","Sculk"]}
+scoreboard players set @e[type=marker,tag=Sculk] MapValues 12

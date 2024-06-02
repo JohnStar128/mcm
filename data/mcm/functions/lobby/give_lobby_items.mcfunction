@@ -6,4 +6,5 @@ item replace entity @s[tag=!autoqueue] hotbar.8 with warped_fungus_on_a_stick{Cu
 item replace entity @s hotbar.4 with written_book{HowToPlay:1b,NoDrop:1b}
 
 #> Only get a spyglass when a game is running
-execute if score $gamestate CmdData matches 1 run item replace entity @s hotbar.7 with spyglass{Spectate:1b,NoDrop:1b,display:{Name:'{"translate":"mcm.item.spectate","color":"blue","italic":false}'}}
+execute if score $gamestate CmdData matches 1 if score $graceperiod CmdData matches 1.. run item replace entity @s hotbar.7 with spyglass{Spectate:1b,NoDrop:1b,display:{Name:'{"translate":"mcm.item.latejoin","color":"blue","italic":false}'}}
+execute if score $gamestate CmdData matches 1 unless score $graceperiod CmdData matches 1.. run item replace entity @s hotbar.7 with spyglass{Spectate:1b,NoDrop:1b,display:{Name:'{"translate":"mcm.item.spectate","color":"blue","italic":false}'}}

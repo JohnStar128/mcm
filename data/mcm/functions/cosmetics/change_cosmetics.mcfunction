@@ -15,6 +15,11 @@ execute if score @s selected_hat matches 6 run function mcm:cosmetics/bowlerhat
 execute if score @s selected_hat matches 7 run function mcm:cosmetics/skipperhat
 execute if score @s selected_hat matches 8 run function mcm:cosmetics/aviatorcap
 execute if score @s selected_hat matches 9 run function mcm:cosmetics/fancy
+execute if score @s selected_hat matches 10 run function mcm:cosmetics/minerhat
+execute if score @s selected_hat matches 11 run function mcm:cosmetics/winterhat
+execute if score @s selected_hat matches 12 run function mcm:cosmetics/hardhat
+execute if score @s selected_hat matches 13 run function mcm:cosmetics/warden_ears
+
 
 #> Give boots
 function mcm:cosmetics/color_boots/generate

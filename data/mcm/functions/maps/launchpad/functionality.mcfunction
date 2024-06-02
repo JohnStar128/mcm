@@ -23,45 +23,65 @@ execute if block -984 57 -1102 stone_button[powered=true] run fill -983 54 -1098
 execute if block -984 57 -1102 stone_button[powered=true] run setblock -984 57 -1102 stone_button[powered=false]
 
 #> Rocket launch sequence buttons
-execute if block -1035 55 -1266 stone_button[powered=true] run scoreboard players add $launchButton CmdData 1
-execute if block -1035 55 -1266 stone_button[powered=true] run tellraw @a[tag=queued] ["",{"score":{"objective":"CmdData","name":"$launchButton"},"color":"gold"},"/10"]
-execute if block -1035 55 -1266 stone_button[powered=true] run setblock -1035 55 -1266 air
+execute if score $graceperiod CmdData matches ..0 if block -1035 55 -1266 stone_button[powered=true] run scoreboard players add $launchButton CmdData 1
+execute if score $graceperiod CmdData matches ..0 if block -1035 55 -1266 stone_button[powered=true] run tellraw @a[tag=queued] ["",{"score":{"objective":"CmdData","name":"$launchButton"},"color":"gold"},"/10"]
+execute if score $graceperiod CmdData matches ..0 positioned -1035 55 -1266 if block ~ ~ ~ stone_button[powered=true] as @a[limit=1,sort=nearest] run scoreboard players set $event_type temp 1
+execute if score $graceperiod CmdData matches ..0 positioned -1035 55 -1266 if block ~ ~ ~ stone_button[powered=true] as @a[limit=1,sort=nearest] run function mcm:game/summary/add_event {translate:"mcm.game.events.launchpad_pushed_launch_button", color: "green"}
+execute if score $graceperiod CmdData matches ..0 if block -1035 55 -1266 stone_button[powered=true] run setblock -1035 55 -1266 air
 
-execute if block -997 52 -1209 stone_button[powered=true] run scoreboard players add $launchButton CmdData 1
-execute if block -997 52 -1209 stone_button[powered=true] run tellraw @a[tag=queued] ["",{"score":{"objective":"CmdData","name":"$launchButton"},"color":"gold"},"/10"]
-execute if block -997 52 -1209 stone_button[powered=true] run setblock -997 52 -1209 air
+execute if score $graceperiod CmdData matches ..0 if block -997 52 -1209 stone_button[powered=true] run scoreboard players add $launchButton CmdData 1
+execute if score $graceperiod CmdData matches ..0 if block -997 52 -1209 stone_button[powered=true] run tellraw @a[tag=queued] ["",{"score":{"objective":"CmdData","name":"$launchButton"},"color":"gold"},"/10"]
+execute if score $graceperiod CmdData matches ..0 positioned -997 52 -1209 if block ~ ~ ~ stone_button[powered=true] as @a[limit=1,sort=nearest] run scoreboard players set $event_type temp 1
+execute if score $graceperiod CmdData matches ..0 positioned -997 52 -1209 if block ~ ~ ~ stone_button[powered=true] as @a[limit=1,sort=nearest] run function mcm:game/summary/add_event {translate:"mcm.game.events.launchpad_pushed_launch_button", color: "green"}
+execute if score $graceperiod CmdData matches ..0 if block -997 52 -1209 stone_button[powered=true] run setblock -997 52 -1209 air
 
-execute if block -954 55 -1142 stone_button[powered=true] run scoreboard players add $launchButton CmdData 1
-execute if block -954 55 -1142 stone_button[powered=true] run tellraw @a[tag=queued] ["",{"score":{"objective":"CmdData","name":"$launchButton"},"color":"gold"},"/10"]
-execute if block -954 55 -1142 stone_button[powered=true] run setblock -954 55 -1142 air
+execute if score $graceperiod CmdData matches ..0 if block -954 55 -1142 stone_button[powered=true] run scoreboard players add $launchButton CmdData 1
+execute if score $graceperiod CmdData matches ..0 if block -954 55 -1142 stone_button[powered=true] run tellraw @a[tag=queued] ["",{"score":{"objective":"CmdData","name":"$launchButton"},"color":"gold"},"/10"]
+execute if score $graceperiod CmdData matches ..0 positioned -954 55 -1142 if block ~ ~ ~ stone_button[powered=true] as @a[limit=1,sort=nearest] run scoreboard players set $event_type temp 1
+execute if score $graceperiod CmdData matches ..0 positioned -954 55 -1142 if block ~ ~ ~ stone_button[powered=true] as @a[limit=1,sort=nearest] run function mcm:game/summary/add_event {translate:"mcm.game.events.launchpad_pushed_launch_button", color: "green"}
+execute if score $graceperiod CmdData matches ..0 if block -954 55 -1142 stone_button[powered=true] run setblock -954 55 -1142 air
 
-execute if block -933 61 -1055 stone_button[powered=true] run scoreboard players add $launchButton CmdData 1
-execute if block -933 61 -1055 stone_button[powered=true] run tellraw @a[tag=queued] ["",{"score":{"objective":"CmdData","name":"$launchButton"},"color":"gold"},"/10"]
-execute if block -933 61 -1055 stone_button[powered=true] run setblock -933 61 -1055 air
+execute if score $graceperiod CmdData matches ..0 if block -933 61 -1055 stone_button[powered=true] run scoreboard players add $launchButton CmdData 1
+execute if score $graceperiod CmdData matches ..0 if block -933 61 -1055 stone_button[powered=true] run tellraw @a[tag=queued] ["",{"score":{"objective":"CmdData","name":"$launchButton"},"color":"gold"},"/10"]
+execute if score $graceperiod CmdData matches ..0 positioned -933 61 -1055 if block ~ ~ ~ stone_button[powered=true] as @a[limit=1,sort=nearest] run scoreboard players set $event_type temp 1
+execute if score $graceperiod CmdData matches ..0 positioned -933 61 -1055 if block ~ ~ ~ stone_button[powered=true] as @a[limit=1,sort=nearest] run function mcm:game/summary/add_event {translate:"mcm.game.events.launchpad_pushed_launch_button", color: "green"}
+execute if score $graceperiod CmdData matches ..0 if block -933 61 -1055 stone_button[powered=true] run setblock -933 61 -1055 air
 
-execute if block -1018 47 -1099 stone_button[powered=true] run scoreboard players add $launchButton CmdData 1
-execute if block -1018 47 -1099 stone_button[powered=true] run tellraw @a[tag=queued] ["",{"score":{"objective":"CmdData","name":"$launchButton"},"color":"gold"},"/10"]
-execute if block -1018 47 -1099 stone_button[powered=true] run setblock -1018 47 -1099 air
+execute if score $graceperiod CmdData matches ..0 if block -1018 47 -1099 stone_button[powered=true] run scoreboard players add $launchButton CmdData 1
+execute if score $graceperiod CmdData matches ..0 if block -1018 47 -1099 stone_button[powered=true] run tellraw @a[tag=queued] ["",{"score":{"objective":"CmdData","name":"$launchButton"},"color":"gold"},"/10"]
+execute if score $graceperiod CmdData matches ..0 positioned -1018 47 -1099 if block ~ ~ ~ stone_button[powered=true] as @a[limit=1,sort=nearest] run scoreboard players set $event_type temp 1
+execute if score $graceperiod CmdData matches ..0 positioned -1018 47 -1099 if block ~ ~ ~ stone_button[powered=true] as @a[limit=1,sort=nearest] run function mcm:game/summary/add_event {translate:"mcm.game.events.launchpad_pushed_launch_button", color: "green"}
+execute if score $graceperiod CmdData matches ..0 if block -1018 47 -1099 stone_button[powered=true] run setblock -1018 47 -1099 air
 
-execute if block -1074 60 -1096 stone_button[powered=true] run scoreboard players add $launchButton CmdData 1
-execute if block -1074 60 -1096 stone_button[powered=true] run tellraw @a[tag=queued] ["",{"score":{"objective":"CmdData","name":"$launchButton"},"color":"gold"},"/10"]
-execute if block -1074 60 -1096 stone_button[powered=true] run setblock -1074 60 -1096 air
+execute if score $graceperiod CmdData matches ..0 if block -1074 60 -1096 stone_button[powered=true] run scoreboard players add $launchButton CmdData 1
+execute if score $graceperiod CmdData matches ..0 if block -1074 60 -1096 stone_button[powered=true] run tellraw @a[tag=queued] ["",{"score":{"objective":"CmdData","name":"$launchButton"},"color":"gold"},"/10"]
+execute if score $graceperiod CmdData matches ..0 positioned -1074 60 -1096 if block ~ ~ ~ stone_button[powered=true] as @a[limit=1,sort=nearest] run scoreboard players set $event_type temp 1
+execute if score $graceperiod CmdData matches ..0 positioned -1074 60 -1096 if block ~ ~ ~ stone_button[powered=true] as @a[limit=1,sort=nearest] run function mcm:game/summary/add_event {translate:"mcm.game.events.launchpad_pushed_launch_button", color: "green"}
+execute if score $graceperiod CmdData matches ..0 if block -1074 60 -1096 stone_button[powered=true] run setblock -1074 60 -1096 air
 
-execute if block -999 57 -1114 stone_button[powered=true] run scoreboard players add $launchButton CmdData 1
-execute if block -999 57 -1114 stone_button[powered=true] run tellraw @a[tag=queued] ["",{"score":{"objective":"CmdData","name":"$launchButton"},"color":"gold"},"/10"]
-execute if block -999 57 -1114 stone_button[powered=true] run setblock -999 57 -1114 air
+execute if score $graceperiod CmdData matches ..0 if block -999 57 -1114 stone_button[powered=true] run scoreboard players add $launchButton CmdData 1
+execute if score $graceperiod CmdData matches ..0 if block -999 57 -1114 stone_button[powered=true] run tellraw @a[tag=queued] ["",{"score":{"objective":"CmdData","name":"$launchButton"},"color":"gold"},"/10"]
+execute if score $graceperiod CmdData matches ..0 positioned -999 57 -1114 if block ~ ~ ~ stone_button[powered=true] as @a[limit=1,sort=nearest] run scoreboard players set $event_type temp 1
+execute if score $graceperiod CmdData matches ..0 positioned -999 57 -1114 if block ~ ~ ~ stone_button[powered=true] as @a[limit=1,sort=nearest] run function mcm:game/summary/add_event {translate:"mcm.game.events.launchpad_pushed_launch_button", color: "green"}
+execute if score $graceperiod CmdData matches ..0 if block -999 57 -1114 stone_button[powered=true] run setblock -999 57 -1114 air
 
-execute if block -1045 50 -1020 stone_button[powered=true] run scoreboard players add $launchButton CmdData 1
-execute if block -1045 50 -1020 stone_button[powered=true] run tellraw @a[tag=queued] ["",{"score":{"objective":"CmdData","name":"$launchButton"},"color":"gold"},"/10"]
-execute if block -1045 50 -1020 stone_button[powered=true] run setblock -1045 50 -1020 air
+execute if score $graceperiod CmdData matches ..0 if block -1045 50 -1020 stone_button[powered=true] run scoreboard players add $launchButton CmdData 1
+execute if score $graceperiod CmdData matches ..0 if block -1045 50 -1020 stone_button[powered=true] run tellraw @a[tag=queued] ["",{"score":{"objective":"CmdData","name":"$launchButton"},"color":"gold"},"/10"]
+execute if score $graceperiod CmdData matches ..0 positioned -1045 50 -1020 if block ~ ~ ~ stone_button[powered=true] as @a[limit=1,sort=nearest] run scoreboard players set $event_type temp 1
+execute if score $graceperiod CmdData matches ..0 positioned -1045 50 -1020 if block ~ ~ ~ stone_button[powered=true] as @a[limit=1,sort=nearest] run function mcm:game/summary/add_event {translate:"mcm.game.events.launchpad_pushed_launch_button", color: "green"}
+execute if score $graceperiod CmdData matches ..0 if block -1045 50 -1020 stone_button[powered=true] run setblock -1045 50 -1020 air
 
-execute if block -1081 49 -1104 stone_button[powered=true] run scoreboard players add $launchButton CmdData 1
-execute if block -1081 49 -1104 stone_button[powered=true] run tellraw @a[tag=queued] ["",{"score":{"objective":"CmdData","name":"$launchButton"},"color":"gold"},"/10"]
-execute if block -1081 49 -1104 stone_button[powered=true] run setblock -1081 49 -1104 air
+execute if score $graceperiod CmdData matches ..0 if block -1081 49 -1104 stone_button[powered=true] run scoreboard players add $launchButton CmdData 1
+execute if score $graceperiod CmdData matches ..0 if block -1081 49 -1104 stone_button[powered=true] run tellraw @a[tag=queued] ["",{"score":{"objective":"CmdData","name":"$launchButton"},"color":"gold"},"/10"]
+execute if score $graceperiod CmdData matches ..0 positioned -1081 49 -1104 if block ~ ~ ~ stone_button[powered=true] as @a[limit=1,sort=nearest] run scoreboard players set $event_type temp 1
+execute if score $graceperiod CmdData matches ..0 positioned -1081 49 -1104 if block ~ ~ ~ stone_button[powered=true] as @a[limit=1,sort=nearest] run function mcm:game/summary/add_event {translate:"mcm.game.events.launchpad_pushed_launch_button", color: "green"}
+execute if score $graceperiod CmdData matches ..0 if block -1081 49 -1104 stone_button[powered=true] run setblock -1081 49 -1104 air
 
-execute if block -965 51 -1097 stone_button[powered=true] run scoreboard players add $launchButton CmdData 1
-execute if block -965 51 -1097 stone_button[powered=true] run tellraw @a[tag=queued] ["",{"score":{"objective":"CmdData","name":"$launchButton"},"color":"gold"},"/10"]
-execute if block -965 51 -1097 stone_button[powered=true] run setblock -965 51 -1097 air
+execute if score $graceperiod CmdData matches ..0 if block -965 51 -1097 stone_button[powered=true] run scoreboard players add $launchButton CmdData 1
+execute if score $graceperiod CmdData matches ..0 if block -965 51 -1097 stone_button[powered=true] run tellraw @a[tag=queued] ["",{"score":{"objective":"CmdData","name":"$launchButton"},"color":"gold"},"/10"]
+execute if score $graceperiod CmdData matches ..0 positioned -965 51 -1097 if block ~ ~ ~ stone_button[powered=true] as @a[limit=1,sort=nearest] run scoreboard players set $event_type temp 1
+execute if score $graceperiod CmdData matches ..0 positioned -965 51 -1097 if block ~ ~ ~ stone_button[powered=true] as @a[limit=1,sort=nearest] run function mcm:game/summary/add_event {translate:"mcm.game.events.launchpad_pushed_launch_button", color: "green"}
+execute if score $graceperiod CmdData matches ..0 if block -965 51 -1097 stone_button[powered=true] run setblock -965 51 -1097 air
 
 # If all buttons have been pressed, place a button to unlock the tower and start the countdown
 execute if score $launchButton CmdData matches 10 run function mcm:maps/launchpad/rockettemp/launchcountdown
@@ -69,6 +89,8 @@ execute if score $launchButton CmdData matches 10 run setblock -984 57 -1102 sto
 
 #> Start launch
 execute if block -1016 156 -1095 stone_button[powered=true] if score $launchControl CmdData matches 0 run tellraw @a[tag=queued] ["Go for launch!"]
+execute positioned -1016 156 -1095 if block ~ ~ ~ stone_button[powered=true] if score $launchControl CmdData matches 0 as @a[limit=1,sort=nearest] run scoreboard players set $event_type temp 1
+execute positioned -1016 156 -1095 if block ~ ~ ~ stone_button[powered=true] if score $launchControl CmdData matches 0 as @a[limit=1,sort=nearest] run function mcm:game/summary/add_event {translate:"mcm.game.events.launchpad_confirmed_launch", color: "green"}
 execute if block -1016 156 -1095 stone_button[powered=true] if score $launchCountdown CmdData matches 1..1239 run scoreboard players set $launchControl CmdData 1
 execute if score $launchCountdown CmdData matches 1240 if score $launchControl CmdData matches 1.. run scoreboard players set $launchControl CmdData 2
 execute if score $launchCountdown CmdData matches 1240 if score $launchControl CmdData matches 0 run tellraw @a[tag=queued] ["Launch aborted!"]
@@ -86,6 +108,8 @@ execute if score $launchControl CmdData matches 2 run function mcm:maps/launchpa
 
 #> Kill all players near rocket flames when active
 execute if score $launchTime CmdData matches 1..220 as @a[predicate=mcm:bounding_boxes/launchpad_kill,tag=!spectating] at @s run tellraw @s {"translate":"mcm.launchpad.rocket.death","color":"red"}
+execute if score $launchTime CmdData matches 1..220 as @a[predicate=mcm:bounding_boxes/launchpad_kill,tag=!spectating] run scoreboard players set $event_type temp 1
+execute if score $launchTime CmdData matches 1..220 as @a[predicate=mcm:bounding_boxes/launchpad_kill,tag=!spectating] run function mcm:game/summary/add_event {translate:"mcm.game.events.killed_by_rocket",color:"red"}
 execute if score $launchTime CmdData matches 1..220 as @a[predicate=mcm:bounding_boxes/launchpad_kill,tag=!spectating] at @s run function mcm:game/playerdeath
 execute if score $launchTime CmdData matches 1..220 as @e[type=glow_squid,predicate=mcm:bounding_boxes/launchpad_kill] at @s run kill @s
 
@@ -104,9 +128,14 @@ execute as @a[tag=forkliftlicense] if predicate mcm:bounding_boxes/forklift if b
 execute as @a[tag=forkliftlicense] at @s if predicate mcm:bounding_boxes/forklift if block -1029 53 -1267 lever[powered=true] if score $forkliftup CmdData matches 0..1 run playsound minecraft:block.piston.extend block @a ~ ~ ~ 1 0.8 0
 execute as @a[tag=forkliftlicense] at @s if predicate mcm:bounding_boxes/forklift if block -1029 53 -1267 lever[powered=true] if score $forkliftup CmdData matches 0..1 run playsound minecraft:entity.iron_golem.attack block @a ~ ~ ~ 1 0 0
 execute as @a[tag=forkliftlicense] if predicate mcm:bounding_boxes/forklift if block -1029 53 -1267 lever[powered=true] if score $forkliftup CmdData matches 1 run place template mcm:forklift_up -1030 51 -1270
-execute as @a[tag=queued,tag=!spectating,predicate=mcm:bounding_boxes/forklift_kill] if block -1029 53 -1267 lever[powered=true] if score $forkliftup CmdData matches 1 run scoreboard players set @s dead 1
+execute if score $graceperiod CmdData matches ..0 as @a[tag=queued,tag=!spectating,predicate=mcm:bounding_boxes/forklift_kill] if block -1029 53 -1267 lever[powered=false] if score $forkliftup CmdData matches 1 run scoreboard players set $event_type temp 1
+execute if score $graceperiod CmdData matches ..0 as @a[tag=queued,tag=!spectating,predicate=mcm:bounding_boxes/forklift_kill] if block -1029 53 -1267 lever[powered=false] if score $forkliftup CmdData matches 1 run function mcm:game/summary/add_event {translate:"mcm.game.events.killed_by_forklift", color: "green"}
+execute if score $graceperiod CmdData matches ..0 as @a[tag=queued,tag=!spectating,predicate=mcm:bounding_boxes/forklift_kill] if block -1029 53 -1267 lever[powered=false] if score $forkliftup CmdData matches 1 run function mcm:game/playerdeath
+
 execute as @a[tag=forkliftlicense] if predicate mcm:bounding_boxes/forklift if block -1029 53 -1267 lever[powered=false] if score $forkliftup CmdData matches 1..2 run scoreboard players remove $forkliftup CmdData 1
 execute as @a[tag=forkliftlicense] at @s if predicate mcm:bounding_boxes/forklift if block -1029 53 -1267 lever[powered=false] if score $forkliftup CmdData matches 1..2 run playsound minecraft:block.piston.contract block @a ~ ~ ~ 1 0.8 0
 execute as @a[tag=forkliftlicense] at @s if predicate mcm:bounding_boxes/forklift if block -1029 53 -1267 lever[powered=false] if score $forkliftup CmdData matches 1..2 run playsound minecraft:entity.iron_golem.attack block @a ~ ~ ~ 1 0 0
 execute as @a[tag=forkliftlicense] if predicate mcm:bounding_boxes/forklift if block -1029 53 -1267 lever[powered=false] if score $forkliftup CmdData matches 1 run place template mcm:forklift_down -1030 51 -1270
-execute as @a[tag=queued,tag=!spectating,predicate=mcm:bounding_boxes/forklift_kill] if block -1029 53 -1267 lever[powered=false] if score $forkliftup CmdData matches 1 run scoreboard players set @s dead 1
+execute if score $graceperiod CmdData matches ..0 as @a[tag=queued,tag=!spectating,predicate=mcm:bounding_boxes/forklift_kill] if block -1029 53 -1267 lever[powered=false] if score $forkliftup CmdData matches 1 run scoreboard players set $event_type temp 1
+execute if score $graceperiod CmdData matches ..0 as @a[tag=queued,tag=!spectating,predicate=mcm:bounding_boxes/forklift_kill] if block -1029 53 -1267 lever[powered=false] if score $forkliftup CmdData matches 1 run function mcm:game/summary/add_event {translate:"mcm.game.events.killed_by_forklift", color: "green"}
+execute if score $graceperiod CmdData matches ..0 as @a[tag=queued,tag=!spectating,predicate=mcm:bounding_boxes/forklift_kill] if block -1029 53 -1267 lever[powered=false] if score $forkliftup CmdData matches 1 run function mcm:game/playerdeath

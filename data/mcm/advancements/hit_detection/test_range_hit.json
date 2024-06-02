@@ -1,0 +1,14 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:zombie",
+          "nbt": "{Tags:[\"test_range_target\"]}"
+        }
+      }
+    }
+  }
+}
+  

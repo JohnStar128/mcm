@@ -25,6 +25,7 @@ effect clear @a[tag=HoldKnife] weakness
 #> Run lobby-related code only if people are actually there
 execute if entity @a[predicate=mcm:bounding_boxes/lobby] run function mcm:lobby/lobby_functions
 
+
 #> Commands for various stages of gameplay flow will branch into their own directories from this file
 #> Game control
 #Vote countdown
@@ -38,6 +39,8 @@ execute if score $gamestate CmdData matches 2 run function mcm:game/loops/gameen
 #Ingame Bossbar
 execute if score $gamestate CmdData matches 1..2 run function mcm:game/loops/updatebossbar
 
+function mcm:items/item_handling_loop
+
 #> NoDrop module
 function mcm:util/nodrop
 
@@ -45,8 +48,11 @@ function mcm:util/nodrop
 tag @a[tag=murderer,nbt={SelectedItem:{id:"minecraft:snowball",Count:1b}}] add HoldKnife
 tag @a[nbt=!{SelectedItem:{id:"minecraft:snowball",Count:1b}}] remove HoldKnife
 
+#> Handle knife throwing
+execute as @a[scores={throwKnife=1..}] run function mcm:game/items/knife/throw
+
 #> Knife throwing
-execute as @e[type=snowball] at @s run function mcm:game/items/knife/throw
+#execute as @e[type=snowball] at @s run function mcm:game/items/knife/throw
 #> Guns
 function mcm:game/items/gun/shoot
 
@@ -82,3 +88,12 @@ execute as @e[type=villager,tag=credits_usher] if score $creditsusheroffers CmdD
 
 #> Chair controls
 function mcm:util/chair/control
+
+#> Printing game events
+execute unless score $gamestate CmdData matches 1 run scoreboard players enable @a display_events
+execute if score $gamestate CmdData matches 1 run scoreboard players set @a display_events 0
+execute as @a[scores={display_events=1}] run function mcm:game/summary/print_events
+execute as @a[scores={display_events=1}] run scoreboard players set @s display_events 0
+
+#> Reset carrot on a stick if it somehow doesn't get reset yet
+execute as @a run function mcm:util/reset_carrot_on_stick

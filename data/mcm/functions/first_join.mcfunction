@@ -9,7 +9,7 @@ advancement grant @s only mcm:root
 advancement grant @s only mcm:secrets/lobby/root
 advancement grant @s only mcm:secrets/airship/root
 advancement grant @s only mcm:secrets/cyberpunk/root
-#advancement grant @s only mcm:secrets/gumdrop/root
+advancement grant @s only mcm:secrets/gumdrop/root
 advancement grant @s only mcm:secrets/library/root
 advancement grant @s only mcm:secrets/vineyard/root
 advancement grant @s only mcm:secrets/launchpad/root
@@ -17,6 +17,8 @@ advancement grant @s only mcm:secrets/riverboat/root
 advancement grant @s only mcm:secrets/industry/root
 advancement grant @s only mcm:secrets/train/root
 advancement grant @s only mcm:secrets/cabin/root
+advancement grant @s only mcm:secrets/canyon/root
+advancement grant @s only mcm:secrets/sculk/root
 
 #> Enable autoqueue for new players by default
 tag @s add autoqueue
@@ -24,6 +26,7 @@ tag @s add autoqueue
 function mcm:player_leave
 
 function mcm:lobby/give_lobby_items
+function mcm:items/set_loadout_default
 
 #> Get Player UUID
 execute store result score @s playerUUID run data get entity @s UUID[0]

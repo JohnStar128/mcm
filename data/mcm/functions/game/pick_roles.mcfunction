@@ -1,7 +1,14 @@
 #> Assign roles when grace period is over
 
+#> Force murder assign for dubug reasons
+tag @a[tag=force_murderer] add murderer
+
+execute if entity @a[tag=force_murderer,tag=queued] run tellraw @a [{"text":"Murderer override is currently active!","color":"red","bold":true}]
+execute if entity @a[tag=force_murderer,tag=queued] run tellraw @a [{"text":"Murderers: ","color":"red"},{"selector":"@a[tag=queued,tag=force_murderer]"}]
+
+
 scoreboard players operation $num_murderers CmdData = $murderers GameRules
-function mcm:game/assign_murderer
+execute unless entity @a[tag=queued,tag=force_murderer] run function mcm:game/assign_murderer
 
 execute if score $murderers GameRules matches ..1 run tellraw @a[tag=murderer] {"translate":"mcm.game.role","color":"gold","with":[{"translate":"mcm.game.murderer","color":"red"}]}
 title @a[tag=murderer] title {"translate":"mcm.game.role","color":"gold","with":[{"translate":"mcm.game.murderer","color":"red"}]}
@@ -15,25 +22,25 @@ execute if score $murderers GameRules matches 3 as @a[tag=murderer] at @s run ti
 execute if score $murderers GameRules matches 3 as @a[tag=murderer] at @s run tellraw @s {"translate":"mcm.game.murderer3.msg","color":"gold","with":[{"selector":"@p[tag=murderer,distance=0.01..]", "color":"green"}, {"selector":"@p[tag=murderer,distance=0.01..,sort=furthest]", "color":"green"}, {"selector":"@s","color":"green"}, {"translate":"mcm.game.murderers","color":"gold"}]}
 
 # Murderer items
-execute as @a[tag=murderer] run function mcm:game/items/knife/give
-execute as @a[tag=murderer] run function mcm:game/items/player_tracker/give
-execute as @a[tag=murderer] run function mcm:game/items/teleporter/give
-execute as @a[tag=murderer] run function mcm:game/items/adrenaline/give
-execute as @a[tag=murderer] run item replace entity @s hotbar.8 with netherite_scrap{CustomModelData:1, Tags: ["KeyItem"], display:{Name:'{"translate":"mcm.item.scrap","italic":"false"}',Lore: ['[{"translate":"mcm.item.scrap.lore","italic":false}]']}}
+execute as @a[tag=murderer] run function mcm:items/loadouts/murderer
+execute as @a[tag=murderer] run item replace entity @s hotbar.8 with netherite_scrap{CustomModelData:1, no_drop_on_death:1b, Tags: ["KeyItem"], display:{Name:'{"translate":"mcm.item.scrap","italic":false}',Lore: ['[{"translate":"mcm.item.scrap.lore","italic":false}]']}}
+# Give murderers their 1 free recall
+tag @a[tag=murderer] add free_knife
+
 
 # Gunner
 execute as @a[tag=queued,tag=!murderer,limit=1,sort=random] at @s run tag @s add gunner
 # Gun gets NoDrop because it's already in an inventory
-execute as @a[tag=gunner] run function mcm:game/items/gun/give
+execute as @a[tag=gunner] run function mcm:items/give {item: gun}
 execute as @a[tag=gunner] at @s run tellraw @s {"translate":"mcm.game.role","color":"gold","with":[{"translate":"mcm.game.gunner","color":"dark_aqua"}]}
 execute as @a[tag=gunner] at @s run title @s title {"translate":"mcm.game.role","color":"gold","with":[{"translate":"mcm.game.gunner","color":"dark_aqua"}]}
 execute as @a[tag=gunner] at @s run title @s subtitle {"translate":"mcm.game.gunner.subtitle","color":"dark_gray"}
 schedule function mcm:game/gunnertip 6s
-execute as @a[tag=gunner] at @s run item replace entity @s hotbar.8 with netherite_scrap{Item:{NoDrop:1b,display:{Name:"{\"translate\":\"mcm.item.scrap\",\"italic\":\"false\"}"},Lore:['[{"translate":"mcm.item.scrap.lore","italic":false}]']}}
+#execute as @a[tag=gunner] at @s run item replace entity @s hotbar.8 with netherite_scrap{Item:{NoDrop:1b,display:{Name:"{\"translate\":\"mcm.item.scrap\",\"italic\":\"false\"}"},Lore:['[{"translate":"mcm.item.scrap.lore","italic":false}]']}}
 
 # Innocent
 execute as @a[tag=queued,tag=!murderer,tag=!gunner] at @s run tag @s add innocent
-execute if score $startscrap GameRules matches 1.. run item replace entity @a[tag=innocent] hotbar.8 with netherite_scrap{CustomModelData:1, Tags: ["KeyItem"], display:{Name:'{"translate":"mcm.item.scrap","italic":"false"}',Lore: ['[{"translate":"mcm.item.scrap.lore","italic":false}]']}}
+execute if score $startscrap GameRules matches 1.. run item replace entity @a[tag=innocent] hotbar.8 with netherite_scrap{CustomModelData:1, no_drop_on_death:1b, Tags: ["KeyItem"], display:{Name:'{"translate":"mcm.item.scrap","italic":false}',Lore: ['[{"translate":"mcm.item.scrap.lore","italic":false}]']}}
 tellraw @a[tag=innocent] {"translate":"mcm.game.role","color":"gold","with":[{"translate":"mcm.game.innocent","color":"light_purple"}]}
 title @a[tag=innocent] title {"translate":"mcm.game.role","color":"gold","with":[{"translate":"mcm.game.innocent","color":"light_purple"}]}
 title @a[tag=innocent] subtitle {"translate":"mcm.game.innocent.subtitle","color":"gold"}
@@ -42,8 +49,10 @@ schedule function mcm:game/innocenttip 6s
 execute as @a[tag=queued,tag=gunner] at @s run tag @s add innocent
 
 # Give everyone a spyglass in their 8th slot
-item replace entity @a[tag=murderer] hotbar.7 with spyglass{NoDrop:1b}
-item replace entity @a[tag=innocent] hotbar.7 with spyglass{NoDrop:1b}
+item replace entity @a[tag=queued] hotbar.7 with spyglass{NoDrop:1b,no_drop_on_death:1b}
 
 scoreboard players set $pickedroles CmdData 1
 playsound minecraft:block.beehive.enter ambient @a ~ ~ ~ 1 0 1
+
+execute store result score $InnocentCount CmdData if entity @a[tag=innocent,tag=!spectating]
+execute store result score $MurdererCount CmdData if entity @a[tag=murderer,tag=!spectating]

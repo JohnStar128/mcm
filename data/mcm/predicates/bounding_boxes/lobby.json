@@ -8,16 +8,16 @@
           "location": {
             "position": {
               "x": {
-                "max": 120,
-                "min": -112
+                "max": 40,
+                "min": -40
               },
               "y": {
                 "max": 55,
-                "min": -7
+                "min": -10
               },
               "z": {
-                "max": 128,
-                "min": -34
+                "max": 152,
+                "min": -2
               }
             }
           }
@@ -30,16 +30,16 @@
           "location": {
             "position": {
               "x": {
-                "max": -2,
-                "min": -29
+                "max": 58,
+                "min": 4
               },
               "y": {
-                "max": -14,
-                "min": -44
+                "max": 55,
+                "min": -10
               },
               "z": {
-                "max": 180,
-                "min": 148
+                "max": 18,
+                "min": -32
               }
             }
           }

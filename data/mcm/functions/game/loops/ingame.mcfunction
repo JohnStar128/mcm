@@ -11,12 +11,30 @@ execute if score $graceperiod CmdData matches 1.. as @a[tag=queued] run scoreboa
 execute if score $graceperiod CmdData matches ..0 as @a[tag=queued,tag=!spectating] run scoreboard players add @s time_alive 1
 execute as @a[tag=gunner, tag=!gunner_stat] run tag @s add gunner_stat
 
-#> Make sure items can't be destroyed by lightning or fire
-execute as @e[type=item] run data merge entity @s {Fire:-1s,Invulnerable:1b}
+#> Give every item the KeyItem tag
+tag @e[type=item] add KeyItem
+
+#> Force guns to have the important tags they need
+tag @e[type=item,nbt={Item:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}}] add deadDrop
+tag @e[type=item,nbt={Item:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}}] add KeyItem
+tag @e[type=item,nbt={Item:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}}] add gun
+
+#> Make sure items can't be destroyed by lightning or fire (unless Destroy Guns is on)
+execute as @e[type=item,tag=!gun] run data merge entity @s {Fire:-1s,Invulnerable:1b}
+#execute unless score $destroyguns GameRules matches 1 as @e[type=item,tag=gun] run data merge entity @s {Fire:-1s,Invulnerable:1b}
+execute if score $destroyguns GameRules matches 1 as @e[type=item,tag=gun] run data merge entity @s {Invulnerable:0b}
+
+#> Set initial player counts in bossbar
+execute if score $graceperiod CmdData matches 300 run scoreboard players operation $InnocentCount CmdData = $queued CmdData
+execute if score $graceperiod CmdData matches 300 run scoreboard players operation $InnocentCount CmdData -= $murderers GameRules
+execute if score $graceperiod CmdData matches 300 run scoreboard players operation $MurdererCount CmdData = $murderers GameRules
 
 #> Tag all gunners TODO change this to advancement
+execute as @a[tag=innocent,tag=!gunner,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] run scoreboard players set $event_type temp 3
+execute as @a[tag=innocent,tag=!gunner,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] run function mcm:items/find_item_and_copy_data {path:"tag.owner",storage:"mcm:game_summary",storage_path:"temp.player2_text"}
+execute as @a[tag=innocent,tag=!gunner,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] run data merge storage mcm:game_summary {temp:{player2_color:"dark_aqua"}}
+execute as @a[tag=innocent,tag=!gunner,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] run function mcm:game/summary/add_event {translate:"mcm.game.events.picked_up_gun",color:"green"}
 tag @a[tag=innocent,tag=!gunner,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] add gunner
-tag @a[nbt=!{Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] remove gunner
 
 #> Murderers and people who dropped their gun can't pick up guns anymore
 execute as @e[type=item,nbt={Item:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}}] at @s run data modify entity @s Owner set from entity @a[tag=innocent,limit=1,sort=nearest,scores={canPickupGun=..0}] UUID
@@ -31,9 +49,13 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:snowball",Count:1b,tag:{CustomM
 function mcm:game/loops/game_timer
 
 #> Countdown grace period
-execute if score $graceperiod CmdData matches 1.. run scoreboard players remove $graceperiod CmdData 1
+execute if score $graceperiod CmdData matches 0.. run scoreboard players remove $graceperiod CmdData 1
 execute if score $graceperiod CmdData matches 1 if score $pickedroles CmdData matches 0 run function mcm:game/pick_roles
 execute if score $graceperiod CmdData matches 1 run playsound minecraft:entity.experience_orb.pickup player @a ~ ~ ~ 1 1 0
+
+#> Give Darkness effect if gamerule is set, and remove it if they die
+execute if score $graceperiod CmdData matches 1 if score $darkness GameRules matches 1 run effect give @a[tag=queued,tag=!spectating] minecraft:darkness 600 0 true
+execute if score $darkness GameRules matches 1 run effect clear @a[tag=queued,tag=spectating] minecraft:darkness
 
 #> Remove players from the game who leave during grace period and rejoin after roles have been picked
 execute if score $pickedroles CmdData matches 1 as @a[tag=queued,tag=!innocent,tag=!murderer,tag=!gunner] run tag @s add spectator
@@ -48,9 +70,11 @@ scoreboard players set @a[nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stic
 scoreboard players set @a[tag=innocent,tag=!lostGun,nbt=!{Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] canPickupGun 0
 
 #> Map specific functionality
-execute if score $selectedMap CmdData matches 1 run function mcm:maps/library/functionality
+#execute if score $selectedMap CmdData matches 1 run function mcm:maps/library/functionality
+execute if score $selectedMap CmdData matches 1 run function mcm:maps/library2/functionality
 execute if score $selectedMap CmdData matches 2 run function mcm:maps/airship/functionality
-execute if score $selectedMap CmdData matches 3 run function mcm:maps/vineyard/functionality
+#execute if score $selectedMap CmdData matches 3 run function mcm:maps/vineyard/functionality
+execute if score $selectedMap CmdData matches 3 run function mcm:maps/vineyard2/functionality
 execute if score $selectedMap CmdData matches 4 run function mcm:maps/launchpad/functionality
 execute if score $selectedMap CmdData matches 5 run function mcm:maps/cyberpunk/functionality
 execute if score $selectedMap CmdData matches 6 run function mcm:maps/riverboat/functionality
@@ -58,6 +82,8 @@ execute if score $selectedMap CmdData matches 7 run function mcm:maps/industry/f
 execute if score $selectedMap CmdData matches 8 run function mcm:maps/train/functionality
 execute if score $selectedMap CmdData matches 9 run function mcm:maps/cabin/functionality
 execute if score $selectedMap CmdData matches 10 run function mcm:maps/gumdrop/functionality
+execute if score $selectedMap CmdData matches 11 run function mcm:maps/canyon/functionality
+execute if score $selectedMap CmdData matches 12 run function mcm:maps/sculk/functionality
 
 #> Allow spectating
 execute as @a[nbt={RootVehicle:{Entity:{Tags:["spectatorchair"]}}}] run function mcm:game/spectate
@@ -71,21 +97,13 @@ execute store result score $murderers CmdData if entity @a[tag=murderer]
 execute store result score $deadMurderers CmdData if entity @a[tag=murderer,scores={dead=1..}]
 
 #> Scrap spawning timer
-execute if score $graceperiod CmdData matches 0 run scoreboard players add $scrapclock CmdData 1
-execute if score $graceperiod CmdData matches 0 if score $scrapclock CmdData matches 20.. as @a[tag=queued, tag=!spectating, predicate=mcm:scraprng] run function mcm:game/loops/spawnscrap
-execute if score $graceperiod CmdData matches 0 if score $scrapclock CmdData matches 20.. run scoreboard players set $scrapclock CmdData 0
-
-#> Give every item the KeyItem tag
-tag @e[type=item] add KeyItem
-
-#> Force guns to have the important tags they need
-tag @e[type=item,nbt={Item:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}}] add deadDrop
-tag @e[type=item,nbt={Item:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}}] add KeyItem
-tag @e[type=item,nbt={Item:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}}] add gun
+execute if score $graceperiod CmdData matches ..0 run scoreboard players add $scrapclock CmdData 1
+execute if score $graceperiod CmdData matches ..0 if score $scrapclock CmdData matches 20.. as @a[tag=queued, tag=!spectating, predicate=mcm:scraprng] run function mcm:game/loops/spawnscrap
+execute if score $graceperiod CmdData matches ..0 if score $scrapclock CmdData matches 20.. run scoreboard players set $scrapclock CmdData 0
 
 #> Replace NoDrop-less guns in inventories with NoDrop guns
-execute as @a[nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{NoDrop:0b}}]}] run function mcm:game/items/gun/give
-execute as @a[nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{NoDrop:0b}}]}] run clear @s warped_fungus_on_a_stick{NoDrop:0b}
+#execute as @a[nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{NoDrop:0b}}]}] run function mcm:game/items/gun/give
+#execute as @a[nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{NoDrop:0b}}]}] run clear @s warped_fungus_on_a_stick{NoDrop:0b}
 
 #> Murderer drops gun if they somehow pick it up
 execute as @a[tag=murderer,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}]}] at @s run loot spawn ~ ~ ~ loot mcm:gun_normal
@@ -126,23 +144,27 @@ execute as @e[type=item,tag=knifeCosmetic] at @s unless entity @a[tag=murderer,l
 execute as @e[type=item,tag=knifeCosmetic] at @s if entity @a[tag=murderer,limit=1,sort=nearest,nbt={PickupDelay:-1s}] run data merge entity @s {PickupDelay:0s,Age:1}
 
 #> If the murderer threw the knife and hasn't retrieved it before, give them the auto retrieval item
-execute as @a[tag=murderer,tag=!retrieved,scores={throwKnife=1..}] run function mcm:game/items/knife/give_retrieve_mainhand
-execute as @a[tag=murderer,tag=!retrieved,scores={droppedKnife=1..}] run function mcm:game/items/knife/give_retrieve
+execute as @a[tag=murderer,tag=!retrieved,scores={throwKnife=1..}] run function mcm:items/retrieve/knife_use
+execute as @a[tag=murderer,tag=!retrieved,scores={droppedKnife=1..}] run function mcm:items/give {item: "knife_retrieve"}
 
 #> Remove retrieval item if they pick up the knife and reset scores
 execute as @a[tag=murderer,nbt={Inventory:[{id:"minecraft:snowball",Count:1b,tag:{CustomModelData:1111}}]}] run clear @s carrot_on_a_stick{CustomModelData:1111}
 execute as @a[tag=murderer,scores={throwKnife=1..}] run scoreboard players set @s retrieval_delay 10
-scoreboard players reset @a[tag=murderer] throwKnife
 scoreboard players reset @a[tag=murderer] droppedKnife
+# We don't reset the throwKnife here because it is done later
 
 #> Have the auto retrieval item do stuff
 scoreboard players remove @a[tag=murderer] retrieval_delay 1
-execute as @a[tag=murderer,tag=retrieved] run scoreboard players reset @s knifeRetrieval
-execute as @a[tag=murderer,scores={retrieval_delay=1..}] run scoreboard players reset @s knifeRetrieval
-execute as @a[tag=murderer,scores={knifeRetrieval=1..,retrieval_delay=..0},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1111}}}] at @s run function mcm:game/items/knife/retrieve
+
+execute as @a[tag=murderer,scores={carrot=1..,retrieval_delay=..0}] if data entity @s SelectedItem.tag.retrieve run function mcm:game/items/retrieve with entity @s SelectedItem.tag
+#execute as @a[tag=murderer,tag=retrieved] run scoreboard players reset @s knifeRetrieval
+#execute as @a[tag=murderer,scores={retrieval_delay=1..}] run scoreboard players reset @s knifeRetrieval
+#execute as @a[tag=murderer,scores={knifeRetrieval=1..,retrieval_delay=..0}] if data entity @s SelectedItem.tag.retrieve at @s run function mcm:game/items/retrieve with entity @s SelectedItem.tag
+
+#> Run murderer items
+execute as @a[tag=murderer,scores={carrot=1..},nbt={SelectedItem:{murderer:1b}}] at @s run function mcm:game/items/murderer_items
 
 #> Clicking the adrenaline item gives buffs
-execute as @a[tag=murderer,scores={adrenalineClick=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1113}}}] at @s run function mcm:game/items/adrenaline/use
 
 #> Clicking random teleporter teleports everyone except murderer and spectators //@TODO add option to teleport murderer too
 execute as @a[tag=murderer,tag=!spectating,scores={teleporterClick=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1112}}}] unless score $launchTime CmdData matches 1..720 run function mcm:game/items/teleporter/use
@@ -153,6 +175,9 @@ execute if score $launchTime CmdData matches 1..720 run scoreboard players reset
 execute if entity @a[advancements={mcm:hit_detection/killed_player=true}] run tellraw @a[scores={dead=1}] {"translate":"mcm.game.killedby","color":"gold","with":[{"selector":"@a[advancements={mcm:hit_detection/killed_player=true},sort=nearest,limit=1]","color":"red"}]}
 execute if entity @a[advancements={mcm:hit_detection/gun_hit=true}] run tellraw @a[scores={dead=1}] {"translate":"mcm.game.killedby","color":"gold","with":[{"selector":"@a[advancements={mcm:hit_detection/killed_player=true},sort=nearest,limit=1]","color":"red"}]}
 execute as @a[scores={dead=1}] on attacker run scoreboard players add @s game_stats 1
+execute as @a[scores={dead=1}] run scoreboard players set $event_type temp 2
+execute as @a[scores={dead=1}] if entity @a[advancements={mcm:hit_detection/killed_player=true},tag=murderer] run function mcm:game/summary/add_event {translate:"mcm.game.events.killed_by_murderer", color:"green"}
+execute as @a[scores={dead=1}] if entity @a[advancements={mcm:hit_detection/killed_player=true},tag=gunner_stat] run function mcm:game/summary/add_event {translate:"mcm.game.events.killed_by_gunner", color:"green"}
 execute as @a[scores={dead=1}] run scoreboard players set @s dead 2
 advancement revoke @a[advancements={mcm:hit_detection/killed_player=true}] only mcm:hit_detection/killed_player
 
@@ -174,16 +199,20 @@ execute if score $graceperiod CmdData matches ..0 unless entity @a[tag=murderer]
 execute if score $graceperiod CmdData matches ..0 unless entity @a[tag=murderer] unless score $murderWin CmdData matches 1 run scoreboard players set $gamestate CmdData 2
 
 #> Play ambient sounds
-execute if predicate mcm:soundrng if score $selectedMap CmdData matches 1 run function mcm:maps/library/sound
+#execute if predicate mcm:soundrng if score $selectedMap CmdData matches 1 run function mcm:maps/library/sound
+execute if predicate mcm:soundrng if score $selectedMap CmdData matches 1 run function mcm:maps/library2/sound
 execute if predicate mcm:soundrng if score $selectedMap CmdData matches 2 run function mcm:maps/airship/sound
-execute if predicate mcm:soundrng if score $selectedMap CmdData matches 3 run function mcm:maps/vineyard/sound
+#execute if predicate mcm:soundrng if score $selectedMap CmdData matches 3 run function mcm:maps/vineyard/sound
+execute if predicate mcm:soundrng if score $selectedMap CmdData matches 3 run function mcm:maps/vineyard2/sound
 execute if predicate mcm:soundrng if score $selectedMap CmdData matches 4 run function mcm:maps/launchpad/sound
 execute if predicate mcm:soundrng if score $selectedMap CmdData matches 5 run function mcm:maps/cyberpunk/sound
-#gumdrop - execute if predicate mcm:soundrng if score $selectedMap CmdData matches 6 run function mcm:maps/gumdrop/sound
 execute if predicate mcm:soundrng if score $selectedMap CmdData matches 6 run function mcm:maps/riverboat/sound
 execute if predicate mcm:soundrng if score $selectedMap CmdData matches 7 run function mcm:maps/industry/sound
 execute if predicate mcm:soundrng if score $selectedMap CmdData matches 8 run function mcm:maps/train/sound
 execute if predicate mcm:soundrng if score $selectedMap CmdData matches 9 run function mcm:maps/cabin/sound
+execute if predicate mcm:soundrng if score $selectedMap CmdData matches 10 run function mcm:maps/gumdrop/sound
+execute if predicate mcm:soundrng if score $selectedMap CmdData matches 11 run function mcm:maps/canyon/sound
+execute if predicate mcm:soundrng if score $selectedMap CmdData matches 12 run function mcm:maps/sculk/sound
 
 #> Clear spectator nausea
 execute as @a[tag=spectating] run effect clear @s nausea
@@ -193,3 +222,25 @@ execute as @a[tag=spectating] run effect clear @s slowness
 scoreboard players operation $murderer_particles math = $gametimer CmdData
 scoreboard players operation $murderer_particles math %= $twenty math
 execute as @a[tag=murderer,tag=!spectating] at @s run particle dust 1.0 0.1 0.1 1.0 ~ ~2.5 ~ 0.1 0.1 0.1 0 1 force @a[tag=murderer,distance=1..]
+
+#> Give lobby players spectate item when grace period ends
+execute if score $graceperiod CmdData matches 0 as @a[tag=!queued] run function mcm:lobby/give_lobby_items
+
+#> Update registry when the grace period ends
+execute if score $graceperiod CmdData matches 0 run function registry:update_registry {filter:"sort=arbitrary,tag=queued"}
+
+#> Use registry to allow spectator teleporting if vanilla method is obscured
+execute if score $graceperiod CmdData matches ..0 as @a run scoreboard players enable @s registry_print
+execute if score $graceperiod CmdData matches ..0 as @a[tag=spectating] run scoreboard players enable @s registry_action
+execute if score $graceperiod CmdData matches ..0 as @a[scores={registry_print=1..}] run function registry:print/print_registry \
+    {exclude:"tag=!spectating",\
+    denial_function:"tellraw @s {\"translate\":\"mcm.game.registry.no\",\"color\":\"red\",\"italic\":false,\"bold\":false}",\
+    header:"\"translate\":\"mcm.game.registry.use\"",\
+    format_string:"%s",\
+    format_color:"green",\
+    format_italic:false,\
+    format_bold:false,\
+    footer:"\"text\":\"-----------------------------------------\""}
+execute as @a[tag=spectating,scores={registry_action=1..}] run function registry:action/action {function:"function mcm:util/tp_from_registry"}
+execute as @a[scores={registry_print=1..}] run scoreboard players set @s registry_print 0
+execute as @a[scores={registry_action=1..}] run scoreboard players set @s registry_action 0

@@ -34,7 +34,37 @@ execute positioned -1977 93 3021 run function mcm:game/markers/playerspawn
 weather rain
 
 #> Sound markers
-#none
+execute positioned -1990 114 3037 run function mcm:game/markers/soundmarker {tag:"cabin_upstairs"}
+execute positioned -1994 117 3018 run function mcm:game/markers/soundmarker {tag:"cabin_upstairs"}
+execute positioned -1989 123 3032 run function mcm:game/markers/soundmarker {tag:"cabin_upstairs"}
+execute positioned -1981 125 3024 run function mcm:game/markers/soundmarker {tag:"cabin_upstairs"}
+execute positioned -2000 124 3033 run function mcm:game/markers/soundmarker {tag:"cabin_upstairs"}
+execute positioned -2014 123 3030 run function mcm:game/markers/soundmarker {tag:"cabin_upstairs"}
+execute positioned -2009 120 3021 run function mcm:game/markers/soundmarker {tag:"cabin_upstairs"}
+execute positioned -2016 116 3033 run function mcm:game/markers/soundmarker {tag:"cabin_upstairs"}
+execute positioned -2023 108 3035 run function mcm:game/markers/soundmarker {tag:"cabin_library"}
+execute positioned -2004 96 3039 run function mcm:game/markers/soundmarker {tag:"cabin_bar"}
+execute positioned -1982 106 3013 run function mcm:game/markers/soundmarker {tag:"cabin_outside"}
+execute positioned -2017 116 3013 run function mcm:game/markers/soundmarker {tag:"cabin_outside"}
+execute positioned -2020 117 3017 run function mcm:game/markers/soundmarker {tag:"cabin_window"}
+execute positioned -2024 117 3025 run function mcm:game/markers/soundmarker {tag:"cabin_window"}
+execute positioned -2018 116 3038 run function mcm:game/markers/soundmarker {tag:"cabin_window"}
+execute positioned -2000 106 3043 run function mcm:game/markers/soundmarker {tag:"cabin_window"}
+execute positioned -2003 108 3010 run function mcm:game/markers/soundmarker {tag:"cabin_window"}
+execute positioned -1997 108 3010 run function mcm:game/markers/soundmarker {tag:"cabin_window"}
+execute positioned -1982 107 3017 run function mcm:game/markers/soundmarker {tag:"cabin_window"}
+execute positioned -1987 108 3039 run function mcm:game/markers/soundmarker {tag:"cabin_window"}
+execute positioned -1966 107 3034 run function mcm:game/markers/soundmarker {tag:"cabin_window"}
+execute positioned -1958 106 3034 run function mcm:game/markers/soundmarker {tag:"cabin_window"}
+execute positioned -1950 106 3034 run function mcm:game/markers/soundmarker {tag:"cabin_window"}
+execute positioned -1959 109 3024 run function mcm:game/markers/soundmarker {tag:"cabin_window"}
+execute positioned -1953 109 3024 run function mcm:game/markers/soundmarker {tag:"cabin_window"}
+execute positioned -1947 109 3024 run function mcm:game/markers/soundmarker {tag:"cabin_window"}
+execute positioned -1965 109 3024 run function mcm:game/markers/soundmarker {tag:"cabin_window"}
+execute positioned -2019 108 3038 run function mcm:game/markers/soundmarker {tag:"cabin_window"}
+execute positioned -1980 115 3025 run function mcm:game/markers/soundmarker {tag:"cabin_bathroom"}
+execute positioned -2024 105 3025 run function mcm:game/markers/soundmarker {tag:"cabin_bathroom"}
+execute positioned -2024 116 3038 run function mcm:game/markers/soundmarker {tag:"cabin_bathroom"}
 
 #> Spectator spawnpoint
 execute positioned -2000 112 3022 run function mcm:game/markers/spectatorspawn

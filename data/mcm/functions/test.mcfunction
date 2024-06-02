@@ -1,3 +1,12 @@
-
-summon minecraft:block_display ~ ~ ~ {block_state:{Name:"red_wool"}, Rotation:[90.0f, 0.0f],transformation:[0.875, 0.0, 0.0, -0.4375, 0.0, 1.0, 0.0, -0.984375, 0.0, 0.0, 0.9375, -0.46875, 0.0, 0.0, 0.0, 1.0]}
-summon interaction ~-0.05 ~-0.1 ~ {Tags:["chair"],response:1b,width:0.9,height:0.15}
+summon block_display ~ ~ ~ {Tags:[btest],block_state:{Name:iron_block}, transformation:[0.008660254f,0f,-0.4f,0.19566987f,-0.0035355338f,2.1213202f,-0.48989794f,0.6709808f,0.0035355338f,2.1213202f,0.48989794f,0.17754732f,0f,0f,0f,1f] }
+summon block_display ~ ~ ~ {Tags:[btest],block_state:{Name:iron_block}, transformation:[0.008660254f,0f,-0.4f,0.19566987f,-0.0048296293f,0.77645713f,-0.66921306f,0.49231276f,0.0012940952f,2.8977776f,0.17931509f,0.4892509f,0f,0f,0f,1f] }
+summon block_display ~ ~ ~ {Tags:[btest],block_state:{Name:iron_block}, transformation:[0.008660254f,0f,-0.4f,0.19566987f,-0.0048296293f,-0.77645713f,-0.66921306f,0.18172991f,-0.0012940952f,2.8977776f,-0.17931509f,0.66986006f,0f,0f,0f,1f] }
+summon block_display ~ ~ ~ {Tags:[btest],block_state:{Name:iron_block}, transformation:[0.008660254f,0f,-0.4f,0.19566987f,-0.0035355338f,-2.1213202f,-0.48989794f,-0.17754732f,-0.0035355338f,2.1213202f,-0.48989794f,0.6709808f,0f,0f,0f,1f] }
+summon block_display ~ ~ ~ {Tags:[btest],block_state:{Name:iron_block}, transformation:[0.008660254f,0f,-0.4f,0.19566987f,-0.0012940952f,-2.8977776f,-0.17931509f,-0.4892509f,-0.0048296293f,0.77645713f,-0.66921306f,0.49231276f,0f,0f,0f,1f] }
+summon block_display ~ ~ ~ {Tags:[btest],block_state:{Name:iron_block}, transformation:[0.008660254f,0f,-0.4f,0.19566987f,0.0012940952f,-2.8977776f,0.17931509f,-0.66986006f,-0.0048296293f,-0.77645713f,-0.66921306f,0.18172991f,0f,0f,0f,1f] }
+summon block_display ~ ~ ~ {Tags:[btest],block_state:{Name:iron_block}, transformation:[0.008660254f,0f,-0.4f,0.19566987f,0.0035355338f,-2.1213202f,0.48989794f,-0.6709808f,-0.0035355338f,-2.1213202f,-0.48989794f,-0.17754732f,0f,0f,0f,1f] }
+summon block_display ~ ~ ~ {Tags:[btest],block_state:{Name:iron_block}, transformation:[0.008660254f,0f,-0.4f,0.19566987f,0.0048296293f,-0.77645713f,0.66921306f,-0.49231276f,-0.0012940952f,-2.8977776f,-0.17931509f,-0.4892509f,0f,0f,0f,1f] }
+summon block_display ~ ~ ~ {Tags:[btest],block_state:{Name:iron_block}, transformation:[0.008660254f,0f,-0.4f,0.19566987f,0.0048296293f,0.77645713f,0.66921306f,-0.18172991f,0.0012940952f,-2.8977776f,0.17931509f,-0.66986006f,0f,0f,0f,1f] }
+summon block_display ~ ~ ~ {Tags:[btest],block_state:{Name:iron_block}, transformation:[0.008660254f,0f,-0.4f,0.19566987f,0.0035355338f,2.1213202f,0.48989794f,0.17754732f,0.0035355338f,-2.1213202f,0.48989794f,-0.6709808f,0f,0f,0f,1f] }
+summon block_display ~ ~ ~ {Tags:[btest],block_state:{Name:iron_block}, transformation:[0.008660254f,0f,-0.4f,0.19566987f,0.0012940952f,2.8977776f,0.17931509f,0.4892509f,0.0048296293f,-0.77645713f,0.66921306f,-0.49231276f,0f,0f,0f,1f] }
+summon block_display ~ ~ ~ {Tags:[btest],block_state:{Name:iron_block}, transformation:[0.008660254f,0f,-0.4f,0.19566987f,-0.0012940952f,2.8977776f,-0.17931509f,0.66986006f,0.0048296293f,0.77645713f,0.66921306f,-0.18172991f,0f,0f,0f,1f] }

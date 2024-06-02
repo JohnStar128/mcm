@@ -20,3 +20,12 @@ execute if score $smart_murderers GameRules matches 0 run tellraw @s [{"text":"|
 #> Murderer friendly fire
 execute if score $murderer_ff GameRules matches 1 run tellraw @s [{"text":"| ","bold":true,"color":"dark_gray"}, {"translate":"mcm.game.rules.friendly.fire", "color":"gray", "bold":false, "with":[ {"translate":"mcm.game.rules.on", "color":"green"} ]}]
 execute if score $murderer_ff GameRules matches 0 run tellraw @s [{"text":"| ","bold":true,"color":"dark_gray"}, {"translate":"mcm.game.rules.friendly.fire", "color":"gray", "bold":false, "with":[ {"translate":"mcm.game.rules.off", "color":"green"} ]}]
+#> Darkness
+execute if score $darkness GameRules matches 1 run tellraw @s [{"text":"| ","bold":true,"color":"dark_gray"}, {"translate":"mcm.game.rules.darkness", "color":"gray", "bold":false, "with":[ {"translate":"mcm.game.rules.on", "color":"green"} ]}]
+execute if score $darkness GameRules matches 0 run tellraw @s [{"text":"| ","bold":true,"color":"dark_gray"}, {"translate":"mcm.game.rules.darkness", "color":"gray", "bold":false, "with":[ {"translate":"mcm.game.rules.off", "color":"green"} ]}]
+#> Knife recall destroys guns
+execute if score $destroyguns GameRules matches 1 run tellraw @s [{"text":"| ","bold":true,"color":"dark_gray"}, {"translate":"mcm.game.rules.destroyguns", "color":"gray", "bold":false, "with":[ {"translate":"mcm.game.rules.on", "color":"green"} ]}]
+execute if score $destroyguns GameRules matches 0 run tellraw @s [{"text":"| ","bold":true,"color":"dark_gray"}, {"translate":"mcm.game.rules.destroyguns", "color":"gray", "bold":false, "with":[ {"translate":"mcm.game.rules.off", "color":"green"} ]}]
+#> Update bossbar player count
+execute if score $updatebossbar GameRules matches 1 run tellraw @s [{"text":"| ","bold":true,"color":"dark_gray"}, {"translate":"mcm.game.rules.update.bossbar", "color":"gray", "bold":false, "with":[ {"translate":"mcm.game.rules.on", "color":"green"} ]}]
+execute if score $updatebossbar GameRules matches 0 run tellraw @s [{"text":"| ","bold":true,"color":"dark_gray"}, {"translate":"mcm.game.rules.update.bossbar", "color":"gray", "bold":false, "with":[ {"translate":"mcm.game.rules.off", "color":"green"} ]}]

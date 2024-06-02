@@ -1,8 +1,8 @@
 #> "Fake Kills" the player with some fancy effects instead of actual /kill commands.
 
-execute at @s run scoreboard players set @s dead 1
-tag @s add TempDead
-execute at @s run gamemode spectator @s
+scoreboard players set @s dead 1
+gamemode spectator @s
+
 execute at @s run playsound minecraft:entity.player.hurt master @a ~ ~ ~ 1 0.8
 execute at @s run particle block redstone_block ~ ~1 ~ 0.2 0.1 0.1 0.1 50 force
 execute at @s run loot spawn ~ ~1.4 ~ loot mcm:playerhead
@@ -27,29 +27,32 @@ execute as @e[type=item,tag=BoneDeco,tag=!UUIDConfirmed] run tag @s add UUIDConf
 execute as @e[type=item,tag=BoneDeco] run data modify entity @s Owner set from entity @e[type=marker,tag=gameID,limit=1] UUID
 
 #> Drop gun if gunner is killed
-execute at @s[tag=gunner] run loot spawn ~ ~ ~ loot mcm:gun_normal 
-execute at @s run clear @s warped_fungus_on_a_stick 
+#execute at @s[tag=gunner] run loot spawn ~ ~ ~ loot mcm:gun_normal
+#execute at @s run clear @s warped_fungus_on_a_stick
+
+
+# Drop items that aren't blacklisted
+scoreboard players set $player_drop_inv_idx CmdData 0
+data merge storage mcm:player_inv_drop {idx:0}
+execute at @s run function mcm:game/drop_items_on_death with storage mcm:player_inv_drop
+
+# Update the gun's owner if gunner dies
+execute if entity @s[tag=gunner] at @s run function mcm:util/get_player_name {out:"entity @e[type=item,sort=nearest,nbt={Item:{tag:{gun:1b}}},limit=1] Item.tag.owner"}
+
 
 #> LIBRARY: Drop books if they have any
-execute if score $selectedMap CmdData matches 1 at @s run loot spawn ~ ~ ~ loot mcm:books
-execute if score $selectedMap CmdData matches 1 at @s run clear @s book
+#execute if score $selectedMap CmdData matches 1 at @s run loot spawn ~ ~ ~ loot mcm:books
+#execute if score $selectedMap CmdData matches 1 at @s run clear @s book
 
 #> RIVERBOAT: Drop cards if they have any
-execute if score $selectedMap CmdData matches 6 at @s run loot spawn ~ ~ ~ loot mcm:card1
-execute if score $selectedMap CmdData matches 6 at @s run loot spawn ~ ~ ~ loot mcm:card8
-execute if score $selectedMap CmdData matches 6 at @s run clear @s stick{CustomModelData:1116}
-execute if score $selectedMap CmdData matches 6 at @s run clear @s stick{CustomModelData:1117}
+#execute if score $selectedMap CmdData matches 6 at @s run loot spawn ~ ~ ~ loot mcm:card1
+#execute if score $selectedMap CmdData matches 6 at @s run loot spawn ~ ~ ~ loot mcm:card8
+#execute if score $selectedMap CmdData matches 6 at @s run clear @s stick{CustomModelData:1116}
+#execute if score $selectedMap CmdData matches 6 at @s run clear @s stick{CustomModelData:1117}
 
-#> Spectate (temporary)
-execute at @s run gamemode spectator @s
+#> Spectate
 execute at @s run spectate @a[tag=murderer,limit=1,sort=nearest]
-#execute at @s run tag @s remove innocent
-execute at @s run tag @s remove gunner
 execute at @s run tag @s add spectating
 
 # Clear any remaining items
-clear
-
-tag @s remove TempDead
-
-scoreboard players set @s dead 1
+#clear

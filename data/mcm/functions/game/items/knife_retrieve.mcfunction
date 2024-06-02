@@ -1,0 +1,25 @@
+
+scoreboard players set $event_type temp 1
+function mcm:game/summary/add_event {translate:"mcm.game.events.recalled_knife",color:"green"}
+
+execute if data entity @s[tag=free_knife] SelectedItem.tag.knife_retrieve run tag @s add temp_free_knife
+$execute if entity @s[tag=temp_free_knife] run function mcm:items/give_mainhand {item:$(retrieve)}
+execute if entity @s[tag=temp_free_knife] as @e[type=arrow,tag=knife] run function mcm:game/items/knife/kill_owned_entity
+execute if entity @s[tag=temp_free_knife] as @e[type=item,tag=knifeCosmetic] run function mcm:game/items/knife/kill_owned_entity
+
+tag @s[tag=temp_free_knife] remove free_knife
+execute at @s[tag=temp_free_knife] run summon lightning_bolt   
+execute if entity @s[tag=temp_free_knife] run return run tag @s remove temp_free_knife
+
+# Scrap count
+execute store result score scrap temp run clear @s netherite_scrap 0
+
+$execute if score scrap temp matches $(cost).. run function mcm:items/give_mainhand {item:$(retrieve)}
+$execute if score scrap temp matches $(cost).. run clear @s netherite_scrap $(cost)
+$execute if score scrap temp matches $(cost).. as @e[type=arrow,tag=knife] run function mcm:game/items/knife/kill_owned_entity
+$execute if score scrap temp matches $(cost).. as @e[type=item,tag=knifeCosmetic] run function mcm:game/items/knife/kill_owned_entity
+$execute if score scrap temp matches $(cost).. at @s run summon lightning_bolt
+
+execute store result score scrap temp run clear @s netherite_scrap 0
+
+execute unless score scrap temp matches 1.. run function mcm:items/retrieve/all_loadout_retrieves
