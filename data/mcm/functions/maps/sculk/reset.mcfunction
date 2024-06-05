@@ -1,9 +1,9 @@
 #> Reset Glass Bottle and Paper if removed
 execute positioned 2977 109 979 as @e[type=minecraft:glow_item_frame,distance=..1,limit=1,sort=nearest] run item replace entity @s container.0 with minecraft:globe_banner_pattern
-execute positioned 2977 109 979 as @e[type=minecraft:glow_item_frame,distance=..1,limit=1,sort=nearest] run data merge entity @s {ItemRotation:2b,Invulnerable:0b}
+execute positioned 2977 109 979 as @e[type=minecraft:glow_item_frame,distance=..1,limit=1,sort=nearest] run data merge entity @s {ItemRotation:2b,Invulnerable:0b,Fixed:0b}
 
 execute positioned 2978 109 979 as @e[type=minecraft:glow_item_frame,distance=..1,limit=1,sort=nearest] run item replace entity @s container.0 with minecraft:glass_bottle
-execute positioned 2978 109 979 as @e[type=minecraft:glow_item_frame,distance=..1,limit=1,sort=nearest] run data merge entity @s {ItemRotation:5b,Invulnerable:0b}
+execute positioned 2978 109 979 as @e[type=minecraft:glow_item_frame,distance=..1,limit=1,sort=nearest] run data merge entity @s {ItemRotation:5b,Invulnerable:0b,Fixed:0b}
 
 #> Kill any leftover bottles
 execute positioned 3001 100 960 run kill @e[type=item,distance=..100,nbt={Item:{Count:1b,id:"minecraft:stick",tag:{CustomModelData:1118}}}]

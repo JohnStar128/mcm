@@ -19,8 +19,8 @@ execute as @a[tag=spectating,predicate=!mcm:bounding_boxes/sculk_spectator] if s
 execute as @a[tag=queued,predicate=!mcm:bounding_boxes/sculk,tag=!spectating] at @s if score $graceperiod CmdData matches 1.. run tp @s @e[tag=PlayerSpawn,limit=1,sort=nearest]
 
 #> Make the secret item frames invulnerable if they're empty
-execute positioned 2977 109 979 as @e[type=minecraft:glow_item_frame,distance=..1,limit=1,sort=nearest] unless entity @s[nbt={Item:{id:"minecraft:globe_banner_pattern"}}] run data merge entity @s {Invulnerable:1b}
-execute positioned 2978 109 979 as @e[type=minecraft:glow_item_frame,distance=..1,limit=1,sort=nearest] unless entity @s[nbt={Item:{id:"minecraft:glass_bottle"}}] run data merge entity @s {Invulnerable:1b}
+execute positioned 2977 109 979 as @e[type=minecraft:glow_item_frame,distance=..1,limit=1,sort=nearest] unless entity @s[nbt={Item:{id:"minecraft:globe_banner_pattern"}}] run data merge entity @s {Invulnerable:1b,Fixed:1b}
+execute positioned 2978 109 979 as @e[type=minecraft:glow_item_frame,distance=..1,limit=1,sort=nearest] unless entity @s[nbt={Item:{id:"minecraft:glass_bottle"}}] run data merge entity @s {Invulnerable:1b,Fixed:1b}
 
 #> Craft the secret item
 execute positioned 2980 105 979 if entity @e[type=item,distance=..1,nbt={Item:{Count:1b,id:"minecraft:globe_banner_pattern"}}] if entity @e[type=item,distance=..1,nbt={Item:{Count:1b,id:"minecraft:glass_bottle"}}] unless entity @e[type=item,distance=..5,nbt={Item:{Count:1b,id:"minecraft:stick",tag:{CustomModelData:1118}}}] run playsound minecraft:item.bottle.fill_dragonbreath block @a[distance=..5]
