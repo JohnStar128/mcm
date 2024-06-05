@@ -8,6 +8,13 @@ execute positioned 2978 109 979 as @e[type=minecraft:glow_item_frame,distance=..
 #> Kill any leftover bottles
 execute positioned 3001 100 960 run kill @e[type=item,distance=..100,nbt={Item:{Count:1b,id:"minecraft:stick",tag:{CustomModelData:1118}}}]
 
+#manual changes to fix that one crate
+execute positioned 2999 105 983 unless block ~ ~ ~ spruce_trapdoor[open=true] run setblock ~ ~ ~ spruce_trapdoor[open=true,facing=north,half=top,powered=false,waterlogged=false]
+execute positioned 3000 105 983 unless block ~ ~ ~ spruce_trapdoor[open=true] run setblock ~ ~ ~ spruce_trapdoor[open=true,facing=north,half=top,powered=false,waterlogged=false]
+execute positioned 3001 105 983 unless block ~ ~ ~ spruce_trapdoor[open=true] run setblock ~ ~ ~ spruce_trapdoor[open=true,facing=north,half=top,powered=false,waterlogged=false]
+execute positioned 2999 105 986 unless block ~ ~ ~ spruce_trapdoor[open=true] run setblock ~ ~ ~ spruce_trapdoor[open=true,facing=south,half=top,powered=false,waterlogged=false]
+execute positioned 3000 105 986 unless block ~ ~ ~ spruce_trapdoor[open=true] run setblock ~ ~ ~ spruce_trapdoor[open=true,facing=south,half=top,powered=false,waterlogged=false]
+execute positioned 3001 105 986 unless block ~ ~ ~ spruce_trapdoor[open=true] run setblock ~ ~ ~ spruce_trapdoor[open=true,facing=south,half=top,powered=false,waterlogged=false]
 
 execute unless block 2975 104 975 minecraft:spruce_trapdoor[powered=false,open=true,facing=north,waterlogged=false,half=bottom] run setblock 2975 104 975 minecraft:spruce_trapdoor[powered=false,open=true,facing=north,waterlogged=false,half=bottom] replace
 execute unless block 2975 106 975 minecraft:spruce_trapdoor[powered=false,open=true,facing=west,waterlogged=false,half=top] run setblock 2975 106 975 minecraft:spruce_trapdoor[powered=false,open=true,facing=west,waterlogged=false,half=top] replace
@@ -362,14 +369,8 @@ execute unless block 3007 104 988 minecraft:spruce_trapdoor[powered=false,open=t
 execute unless block 3007 104 989 minecraft:spruce_trapdoor[powered=false,open=true,facing=west,waterlogged=false,half=bottom] run setblock 3007 104 989 minecraft:spruce_trapdoor[powered=false,open=true,facing=west,waterlogged=false,half=bottom] replace
 execute unless block 3007 104 990 minecraft:spruce_trapdoor[powered=false,open=true,facing=west,waterlogged=false,half=bottom] run setblock 3007 104 990 minecraft:spruce_trapdoor[powered=false,open=true,facing=west,waterlogged=false,half=bottom] replace
 execute unless block 2993 105 977 minecraft:spruce_trapdoor[powered=false,open=true,facing=east,waterlogged=false,half=bottom] run setblock 2993 105 977 minecraft:spruce_trapdoor[powered=false,open=true,facing=east,waterlogged=false,half=bottom] replace
-execute unless block 3000 105 983 minecraft:spruce_trapdoor[powered=false,open=true,facing=north,waterlogged=false,half=top] run setblock 3000 105 983 minecraft:spruce_trapdoor[powered=false,open=true,facing=north,waterlogged=false,half=top] replace
-execute unless block 3000 105 986 minecraft:spruce_trapdoor[powered=false,open=true,facing=south,waterlogged=false,half=top] run setblock 3000 105 986 minecraft:spruce_trapdoor[powered=false,open=true,facing=south,waterlogged=false,half=top] replace
-execute unless block 3000 106 983 minecraft:spruce_trapdoor[powered=false,open=true,facing=north,waterlogged=false,half=bottom] run setblock 3000 106 983 minecraft:spruce_trapdoor[powered=false,open=true,facing=north,waterlogged=false,half=bottom] replace
-execute unless block 3000 106 986 minecraft:spruce_trapdoor[powered=false,open=true,facing=south,waterlogged=false,half=top] run setblock 3000 106 986 minecraft:spruce_trapdoor[powered=false,open=true,facing=south,waterlogged=false,half=top] replace
 execute unless block 2993 107 980 minecraft:soul_lantern[hanging=true,waterlogged=false] run setblock 2993 107 980 minecraft:soul_lantern[hanging=true,waterlogged=false] replace
 execute unless block 3001 107 980 minecraft:soul_lantern[hanging=true,waterlogged=false] run setblock 3001 107 980 minecraft:soul_lantern[hanging=true,waterlogged=false] replace
-execute unless block 3000 107 984 minecraft:spruce_trapdoor[powered=false,open=false,facing=north,waterlogged=false,half=bottom] run setblock 3000 107 984 minecraft:spruce_trapdoor[powered=false,open=false,facing=north,waterlogged=false,half=bottom] replace
-execute unless block 3000 107 985 minecraft:spruce_trapdoor[powered=false,open=false,facing=north,waterlogged=false,half=bottom] run setblock 3000 107 985 minecraft:spruce_trapdoor[powered=false,open=false,facing=north,waterlogged=false,half=bottom] replace
 execute unless block 2993 107 986 minecraft:soul_lantern[hanging=true,waterlogged=false] run setblock 2993 107 986 minecraft:soul_lantern[hanging=true,waterlogged=false] replace
 execute unless block 3006 107 993 minecraft:soul_lantern[hanging=true,waterlogged=false] run setblock 3006 107 993 minecraft:soul_lantern[hanging=true,waterlogged=false] replace
 execute unless block 2992 100 1008 minecraft:spruce_trapdoor[powered=false,open=true,facing=north,waterlogged=false,half=bottom] run setblock 2992 100 1008 minecraft:spruce_trapdoor[powered=false,open=true,facing=north,waterlogged=false,half=bottom] replace
