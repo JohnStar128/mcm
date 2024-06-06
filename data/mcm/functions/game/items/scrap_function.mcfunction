@@ -13,5 +13,4 @@ execute if entity @s[tag=innocent,tag=!NoTip] run title @s title ""
 execute if entity @s[tag=innocent] run scoreboard players set $event_type temp 1
 execute if entity @s[tag=innocent] run function mcm:game/summary/add_event {translate:"mcm.game.events.crafted_gun", color: "green"}
 execute if entity @s[tag=innocent] run function mcm:items/give {item:"gun"}
-execute if entity @s[tag=innocent] run clear @s netherite_scrap
 execute if entity @s[tag=innocent] run tag @s add gunner
