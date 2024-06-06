@@ -1,5 +1,6 @@
 clear @s warped_fungus_on_a_stick
-execute as @s at @s run loot spawn ~ ~ ~ loot mcm:gun_innocent_shot
+execute at @s run loot spawn ~ ~ ~ loot mcm:gun_innocent_shot
+execute at @s as @e[type=item,sort=nearest,limit=1] run data merge entity @s {PickupDelay:5s}
 execute at @s run function mcm:util/get_player_name {out:"entity @e[type=item,sort=nearest,nbt={Item:{tag:{gun:1b}}},limit=1] Item.tag.owner"}
 tellraw @s {"translate":"mcm.gunner.innocentkill.ohno","color":"red","italic":true}
 tellraw @s ["\n", {"translate":"mcm.gunner.innocentkill.sins","color":"yellow","italic":true}]

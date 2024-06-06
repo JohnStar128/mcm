@@ -13,6 +13,7 @@ effect clear @s
 tag @s remove WonLast
 tag @s remove innocent
 tag @s remove gunner
+tag @s remove gunner_stat
 tag @s remove murderer
 tag @s remove spectating
 tag @s remove shotGun
