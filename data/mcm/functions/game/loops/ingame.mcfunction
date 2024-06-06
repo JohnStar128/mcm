@@ -37,10 +37,9 @@ execute as @a[tag=innocent,tag=!gunner,nbt={Inventory:[{id:"minecraft:warped_fun
 tag @a[tag=innocent,tag=!gunner,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] add gunner
 
 #> Murderers and people who dropped their gun can't pick up guns anymore
-execute as @e[type=item,nbt={Item:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}}] at @s run data modify entity @s Owner set from entity @a[tag=innocent,limit=1,sort=nearest,scores={canPickupGun=..0}] UUID
-execute as @e[type=item,tag=gun,nbt={CustomModelData:1111}] at @s if score @a[tag=innocent,limit=1,sort=nearest] canPickupGun matches 1.. run data merge entity @s {PickupDelay:-1s,Age:32768}
-execute as @e[type=item,tag=gun,nbt={CustomModelData:1111}] at @s if score @a[tag=innocent,limit=1,sort=nearest] canPickupGun matches 1.. run data merge entity @s {PickupDelay:-1s,Age:32768}
-execute as @e[type=item,tag=gun,nbt={CustomModelData:1111}] at @s if score @a[tag=innocent,limit=1,sort=nearest] canPickupGun matches ..0 run data merge entity @s {PickupDelay:0s,Age:1}
+execute as @e[type=item,tag=gun] at @s run data modify entity @s Owner set from entity @a[tag=innocent,tag=!spectating,limit=1,sort=nearest,scores={canPickupGun=0}] UUID
+execute as @e[type=item,tag=gun] at @s if score @a[tag=!spectating,limit=1,sort=nearest] canPickupGun matches 0 run data merge entity @s {PickupDelay:0s,Age:1}
+execute as @e[type=item,tag=gun] at @s unless score @a[tag=!spectating,limit=1,sort=nearest] canPickupGun matches 0 run data merge entity @s {PickupDelay:-1s,Age:32768}
 
 #> Multiple murderers can't pick up eachother's knives
 execute as @e[type=item,nbt={Item:{id:"minecraft:snowball",Count:1b,tag:{CustomModelData:1111}}}] run data modify entity @s Owner set from entity @s Thrower
@@ -107,6 +106,8 @@ execute if score $graceperiod CmdData matches ..0 if score $scrapclock CmdData m
 
 #> Murderer drops gun if they somehow pick it up
 execute as @a[tag=murderer,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}]}] at @s run loot spawn ~ ~ ~ loot mcm:gun_normal
+execute as @a[tag=murderer,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}]}] at @s run data merge entity @e[type=item,nbt={Item:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}},sort=nearest,limit=1] {Item:{tag:{owner:""}}}
+execute as @a[tag=murderer,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}]}] at @s run data modify entity @e[type=item,nbt={Item:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}},sort=nearest,limit=1] Item.tag.owner set from entity @s Inventory[].tag.owner
 execute as @a[tag=murderer,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}]}] run clear @s warped_fungus_on_a_stick{CustomModelData:1111}
 
 #> Innocents drop murderer items if they somehow pick them up
