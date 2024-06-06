@@ -5,7 +5,7 @@
       "conditions": {
         "entity": {
           "type": "minecraft:interaction",
-          "nbt": "{Tags:[\"arcade_out_of_order\"]}"
+          "nbt": "{Tags:[\"arcade_options\"]}"
         }
       }
     }

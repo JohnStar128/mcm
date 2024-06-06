@@ -38,7 +38,7 @@ advancement revoke @s only mcm:hit_detection/killed_player
 advancement revoke @s only mcm:item_counts/books
 advancement revoke @s only mcm:item_counts/scrap
 advancement revoke @s only mcm:lobby/arcade_credits
-advancement revoke @s only mcm:lobby/arcade_out_of_order
+advancement revoke @s only mcm:lobby/arcade_options
 advancement revoke @s only mcm:lobby/arcade_parkour
 advancement revoke @s only mcm:lobby/arcade_tutorial
 advancement revoke @s only mcm:lobby/start_credits
