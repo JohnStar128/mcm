@@ -49,10 +49,10 @@ tag @a[tag=murderer,nbt={SelectedItem:{id:"minecraft:snowball",Count:1b}}] add H
 tag @a[nbt=!{SelectedItem:{id:"minecraft:snowball",Count:1b}}] remove HoldKnife
 
 #> Handle knife throwing
-execute as @a[scores={throwKnife=1..}] run function mcm:game/items/knife/throw
+#execute as @a[scores={throwKnife=1..}] run function mcm:game/items/knife/throw
+advancement revoke @a[advancements={mcm:test=true}] only mcm:test
+advancement revoke @a[advancements={mcm:test2=true}] only mcm:test2
 
-#> Knife throwing
-#execute as @e[type=snowball] at @s run function mcm:game/items/knife/throw
 #> Guns
 function mcm:game/items/gun/shoot
 

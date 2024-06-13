@@ -131,31 +131,33 @@ execute as @a[nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}
 execute as @a[tag=murderer,tag=!spectating,predicate=mcm:items/hold_tracker] at @s positioned as @a[tag=innocent,tag=!spectating,limit=1,sort=nearest] run function mcm:game/items/player_tracker/find_player
 
 #> If the knife item isn't in the world, kill the arrow it was riding
-execute unless entity @e[type=item,tag=knifeCosmetic] run kill @e[type=arrow,tag=knife]
-execute unless entity @e[type=item,tag=knifeCosmetic] run kill @e[type=marker,tag=knife_restore_point]
+#execute unless entity @e[type=item,tag=knifeCosmetic] run kill @e[type=arrow,tag=knife]
 
 #> If the knife gets stuck in a block, teleport it slightly towards its owner
 execute as @e[type=item,tag=knifeCosmetic] at @s unless block ~ ~ ~ air run function mcm:game/items/knife/stuck
 
 execute store success score $toggle CmdData if score $toggle CmdData matches 0
-execute as @e[type=item,tag=knifeCosmetic] store result entity @s Air short 1 run scoreboard players get $toggle CmdData
+execute as @e[type=arrow,tag=knife] store result entity @s Air short 1 run scoreboard players get $toggle CmdData
+execute as @e[type=item,nbt={Item:{tag:{knife:1b}}}] store result entity @s Air short 1 run scoreboard players get $toggle CmdData
 
 #> Make sure knife can only be picked up by murderer
 execute as @e[type=item,tag=knifeCosmetic] at @s unless entity @a[tag=murderer,limit=1,sort=nearest] run data merge entity @s {PickupDelay:-1s,Age:32768}
 execute as @e[type=item,tag=knifeCosmetic] at @s if entity @a[tag=murderer,limit=1,sort=nearest,nbt={PickupDelay:-1s}] run data merge entity @s {PickupDelay:0s,Age:1}
 
 #> If the murderer threw the knife and hasn't retrieved it before, give them the auto retrieval item
-execute as @a[tag=murderer,tag=!retrieved,scores={throwKnife=1..}] run function mcm:items/retrieve/knife_use
-execute as @a[tag=murderer,tag=!retrieved,scores={droppedKnife=1..}] run function mcm:items/give {item: "knife_retrieve"}
+#execute as @a[tag=murderer,tag=!retrieved,scores={throwKnife=1..}] run function mcm:items/retrieve/knife_use
+#execute as @a[tag=murderer,tag=!retrieved,scores={droppedKnife=1..}] run function mcm:items/give {item: "knife_retrieve"}
+#execute as @a[tag=murderer,tag=!retrieved,scores={droppedKnife=1..}] run function mcm:items/retrieve/knife_use
 
 #> Remove retrieval item if they pick up the knife and reset scores
 execute as @a[tag=murderer,nbt={Inventory:[{id:"minecraft:snowball",Count:1b,tag:{CustomModelData:1111}}]}] run clear @s carrot_on_a_stick{CustomModelData:1111}
-execute as @a[tag=murderer,scores={throwKnife=1..}] run scoreboard players set @s retrieval_delay 10
-scoreboard players reset @a[tag=murderer] droppedKnife
+#execute as @a[tag=murderer,scores={throwKnife=1..}] run scoreboard players set @s retrieval_delay 5
+#scoreboard players reset @a[tag=murderer] droppedKnife
 # We don't reset the throwKnife here because it is done later
 
 #> Have the auto retrieval item do stuff
 scoreboard players remove @a[tag=murderer] retrieval_delay 1
+scoreboard players remove @a[tag=murderer] throw_delay 1
 
 execute as @a[tag=murderer,scores={carrot=1..,retrieval_delay=..0}] if data entity @s SelectedItem.tag.retrieve run function mcm:game/items/retrieve with entity @s SelectedItem.tag
 #execute as @a[tag=murderer,tag=retrieved] run scoreboard players reset @s knifeRetrieval

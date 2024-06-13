@@ -64,6 +64,7 @@ scoreboard objectives add math dummy
 scoreboard objectives add cyberpunk dummy
 scoreboard objectives add dev dummy
 scoreboard objectives add retrieval_delay dummy
+scoreboard objectives add throw_delay dummy
 scoreboard objectives add motion_x dummy
 scoreboard objectives add motion_y dummy
 scoreboard objectives add motion_z dummy
