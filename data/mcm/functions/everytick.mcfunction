@@ -50,8 +50,8 @@ tag @a[nbt=!{SelectedItem:{id:"minecraft:snowball",Count:1b}}] remove HoldKnife
 
 #> Handle knife throwing
 #execute as @a[scores={throwKnife=1..}] run function mcm:game/items/knife/throw
-advancement revoke @a[advancements={mcm:test=true}] only mcm:test
-advancement revoke @a[advancements={mcm:test2=true}] only mcm:test2
+advancement revoke @a[advancements={mcm:items/lose_knife=true}] only mcm:items/lose_knife
+advancement revoke @a[advancements={mcm:items/pickup_knife=true}] only mcm:items/pickup_knife
 
 #> Guns
 function mcm:game/items/gun/shoot
