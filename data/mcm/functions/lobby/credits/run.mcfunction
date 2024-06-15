@@ -6,6 +6,8 @@ execute if score $credit_timer CmdData matches 100 as @a[predicate=mcm:bounding_
 #> Increment the timer
 scoreboard players add $credit_timer CmdData 1
 
+execute as @e[type=item,predicate=mcm:bounding_boxes/credits] unless data entity @s Item.tag.NoDrop run kill @s
+
 #> Run screen countdown
 execute if score $credit_timer CmdData matches 0..99 run function mcm:lobby/credits/slides/countdown
 #> Topaz
