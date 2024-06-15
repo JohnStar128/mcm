@@ -17,9 +17,9 @@ execute as @a[tag=queued,tag=!spectating,predicate=mcm:gumdrop_cant_jump_on,scor
 execute as @a[tag=queued,tag=!spectating,predicate=mcm:gumdrop_cant_jump_on,scores={jump=1..}] run scoreboard players set @s jump 0
 
 #> Slowness in magenta marshes
-execute as @a[tag=queued,tag=innocent,tag=!spectating] at @s if block ~ ~-1 ~ magenta_concrete_powder if block ~ ~-2 ~ diamond_block run effect give @s slowness 1 1 true
-execute as @a[tag=queued,tag=innocent,tag=!spectating] at @s if block ~ ~-1 ~ magenta_wool if block ~ ~-2 ~ diamond_block run effect give @s slowness 1 1 true
-execute as @a[tag=queued,tag=innocent,tag=!spectating] at @s if block ~ ~-1 ~ bubble_coral_block if block ~ ~-2 ~ diamond_block run effect give @s slowness 1 1 true
+execute as @a[tag=queued,tag=innocent,tag=!spectating] at @s if block ~ ~-1 ~ magenta_concrete_powder if block ~ ~-3 ~ diamond_block run effect give @s slowness 1 1 true
+execute as @a[tag=queued,tag=innocent,tag=!spectating] at @s if block ~ ~-1 ~ magenta_wool if block ~ ~-3 ~ diamond_block run effect give @s slowness 1 1 true
+execute as @a[tag=queued,tag=innocent,tag=!spectating] at @s if block ~ ~-1 ~ bubble_coral_block if block ~ ~-3 ~ diamond_block run effect give @s slowness 1 1 true
 
 #> Levitation Clouds
 #Gumdrop Tower
