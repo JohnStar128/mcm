@@ -9,3 +9,5 @@ execute store result score $startscrap GameRules run data get storage mcm:option
 execute store result score $smart_murderers GameRules run data get storage mcm:options options.murderers.smart
 execute store result score $murderer_ff GameRules run data get storage mcm:options options.murderer_ff
 execute store result score $updatebossbar GameRules run data get storage mcm:options options.update_ingame_counts
+execute store result score $darkness GameRules run data get storage mcm:options options.darkness
+execute store result score $destroyguns GameRules run data get storage mcm:options options.recall_destroy_guns

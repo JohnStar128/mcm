@@ -29,6 +29,10 @@ execute positioned 27.9 10.5 106.5 run \
 execute positioned 27.9 9.25 106.5 run \
     function mcm:lobby/options/summon_toggle {option: "update_ingame_counts", text: "mcm.options.update_ingame_counts", value: 1}
 
+execute positioned 27.9 10.5 108.5 run \
+    function mcm:lobby/options/summon_toggle {option: "darkness", text: "mcm.options.darkness", value: 0}
+execute positioned 27.9 9.25 108.5 run \
+    function mcm:lobby/options/summon_toggle {option: "recall_destroy_guns", text: "mcm.options.knife_recall_can_destroy_guns", value: 0}
 
 # text displays for the first time
 function mcm:lobby/options/backend/update_displays
