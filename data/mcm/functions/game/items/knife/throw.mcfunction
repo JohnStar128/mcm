@@ -1,5 +1,5 @@
 #> Cancel throw if throw delay isn't up
-execute as @e[type=snowball,sort=nearest,limit=1] store result score @s playerUUID run data get entity @s Owner[0]
+execute at @s as @e[type=snowball,sort=nearest,limit=1] store result score @s playerUUID run data get entity @s Owner[0]
 scoreboard players operation $tempuuid playerUUID = @s playerUUID
 execute if score @s throw_delay matches 1.. as @e[type=snowball,predicate=mcm:matches_uuid] run kill @s
 execute unless entity @e[type=snowball,predicate=mcm:matches_uuid] store result score scrap temp run clear @s netherite_scrap 0
