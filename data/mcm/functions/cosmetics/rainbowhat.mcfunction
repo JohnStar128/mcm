@@ -1,5 +1,5 @@
 execute if entity @s[advancements={mcm:secrets/lobby/ring_bell=true}] at @s run playsound minecraft:block.glass.place block @s ~ ~ ~ 2 1
-execute if entity @s[advancements={mcm:secrets/lobby/ring_bell=true}] run item replace entity @s armor.head with diamond_hoe{CustomModelData:1114,no_drop_on_death:1b,HideFlags:7,display:{Name:"{\"translate\":\"mcm.item.rainbow_hat\",\"color\":\"light_purple\"}"},Enchantments:[{id:"minecraft:binding_curse",lvl:1}]}
+execute if entity @s[advancements={mcm:secrets/lobby/ring_bell=true}] run item replace entity @s armor.head with diamond_hoe[custom_data={no_drop_on_death:1b},custom_model_data=1114,custom_name="{\"translate\":\"mcm.item.rainbow_hat\",\"color\":\"light_purple\"}",enchantments={levels:{binding_curse:1},show_in_tooltip:false}]
 
 execute if entity @s[advancements={mcm:secrets/lobby/ring_bell=false}] run tellraw @s {"translate":"mcm.cosmetic.cannot.equip","color":"red"}
 execute if entity @s[advancements={mcm:secrets/lobby/ring_bell=false}] at @s run playsound minecraft:entity.villager.no neutral @s ~ ~ ~ 1 1 0

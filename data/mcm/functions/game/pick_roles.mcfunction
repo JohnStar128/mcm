@@ -23,7 +23,7 @@ execute if score $murderers GameRules matches 3 as @a[tag=murderer] at @s run te
 
 # Murderer items
 execute as @a[tag=murderer] run function mcm:items/loadouts/murderer
-execute as @a[tag=murderer] run item replace entity @s hotbar.8 with netherite_scrap{CustomModelData:1, no_drop_on_death:1b, Tags: ["KeyItem"], display:{Name:'{"translate":"mcm.item.scrap","italic":false}',Lore: ['[{"translate":"mcm.item.scrap.lore","italic":false}]']}}
+execute as @a[tag=murderer] run item replace entity @s hotbar.8 with netherite_scrap{CustomModelData:1, no_drop_on_death:1b, Tags: ["KeyItem"], display:{Name:'{"translate":"mcm.item.scrap","italic":false}',Lore: ['[[custom_data={"translate":"mcm.item.scrap.lore","italic":false}]']}}]
 # Give murderers their 1 free recall
 tag @a[tag=murderer] add free_knife
 
@@ -40,7 +40,7 @@ schedule function mcm:game/gunnertip 6s
 
 # Innocent
 execute as @a[tag=queued,tag=!murderer,tag=!gunner] at @s run tag @s add innocent
-execute if score $startscrap GameRules matches 1.. run item replace entity @a[tag=innocent] hotbar.8 with netherite_scrap{CustomModelData:1, no_drop_on_death:1b, Tags: ["KeyItem"], display:{Name:'{"translate":"mcm.item.scrap","italic":false}',Lore: ['[{"translate":"mcm.item.scrap.lore","italic":false}]']}}
+execute if score $startscrap GameRules matches 1.. run item replace entity @a[tag=innocent] hotbar.8 with netherite_scrap{CustomModelData:1, no_drop_on_death:1b, Tags: ["KeyItem"], display:{Name:'{"translate":"mcm.item.scrap","italic":false}',Lore: ['[[custom_data={"translate":"mcm.item.scrap.lore","italic":false}]']}}]
 tellraw @a[tag=innocent] {"translate":"mcm.game.role","color":"gold","with":[{"translate":"mcm.game.innocent","color":"light_purple"}]}
 title @a[tag=innocent] title {"translate":"mcm.game.role","color":"gold","with":[{"translate":"mcm.game.innocent","color":"light_purple"}]}
 title @a[tag=innocent] subtitle {"translate":"mcm.game.innocent.subtitle","color":"gold"}
@@ -49,7 +49,7 @@ schedule function mcm:game/innocenttip 6s
 execute as @a[tag=queued,tag=gunner] at @s run tag @s add innocent
 
 # Give everyone a spyglass in their 8th slot
-item replace entity @a[tag=queued] hotbar.7 with spyglass{NoDrop:1b,no_drop_on_death:1b}
+item replace entity @a[tag=queued] hotbar.7 with spyglass[custom_data={NoDrop:1b,no_drop_on_death:1b}]
 
 scoreboard players set $pickedroles CmdData 1
 playsound minecraft:block.beehive.enter ambient @a ~ ~ ~ 1 0 1

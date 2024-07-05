@@ -97,7 +97,7 @@ execute as @s[tag=autoqueue] at @s run function mcm:lobby/queueing/autoqueue
 function mcm:lobby/give_lobby_items
 
 #> How to play book
-item replace entity @s hotbar.4 with written_book{HowToPlay:1b,NoDrop:1b}
+item replace entity @s hotbar.4 with written_book[custom_data={HowToPlay:1b,NoDrop:1b}]
 
 #> Update players' colors
 scoreboard players set $change_color CmdData 1 
