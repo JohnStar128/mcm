@@ -1,4 +1,4 @@
 {
-    "function": "set_nbt",
+    "function": "set_custom_data",
     "tag": "{Autoqueue:1b,CustomModelData:1234,display:{Name:'[{\"translate\":\"mcm.item.autoqueue.enable\",\"italic\":false,\"color\":\"green\"}]'}}"
 }
