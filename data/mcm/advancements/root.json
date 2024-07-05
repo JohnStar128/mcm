@@ -1,8 +1,11 @@
 {
   "display": {
     "icon": {
-      "item": "minecraft:snowball",
-      "nbt": "{CustomModelData:1111}"
+      "id": "minecraft:snowball",
+      "count": 1,
+      "components": {
+        "minecraft:custom_model_data": 1111
+      }
     },
     "title": {
       "translate": "mcm.secret.root.title"
