@@ -1,4 +1,4 @@
 .vscode
 temp_scripts
 .ignore
-.py
+*.py

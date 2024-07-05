@@ -59,7 +59,7 @@ function mcm:game/items/gun/shoot
 #> Dead players
 scoreboard players add @e[type=item,tag=BoneDeco,nbt={OnGround:1b}] CmdData 1
 execute as @e[type=item,tag=BoneDeco,nbt={OnGround:0b}] at @s if block ~ ~-0.2 ~ water run scoreboard players add @s CmdData 1
-execute as @e[type=item,tag=BoneDeco,scores={CmdData=20..}] at @s run particle item bone ~ ~ ~ 0 0 0 0.1 4 force
+execute as @e[type=item,tag=BoneDeco,scores={CmdData=20..}] at @s run particle item{'item': {'id': 'bone'}} ~ ~ ~ 0 0 0 0.1 4 force
 kill @e[type=item,tag=BoneDeco,scores={CmdData=20..}]
 
 #> Scoreboards
@@ -83,8 +83,8 @@ execute as @a[tag=!queued,tag=!spectating,predicate=!mcm:bounding_boxes/lobby,te
 execute as @e[type=villager,tag=Usher] store result score $usheroffers CmdData run data get entity @s Offers.Recipes
 execute as @e[type=villager,tag=credits_usher] store result score $creditsusheroffers CmdData run data get entity @s Offers.Recipes
 
-execute as @e[type=villager,tag=Usher] if score $usheroffers CmdData matches 1.. run data modify entity @s Offers set value {}
-execute as @e[type=villager,tag=credits_usher] if score $creditsusheroffers CmdData matches 1.. run data modify entity @s Offers set value {}
+execute as @e[type=villager,tag=Usher] if score $usheroffers CmdData matches 1.. run data modify entity @s Offers.Recipes set value []
+execute as @e[type=villager,tag=credits_usher] if score $creditsusheroffers CmdData matches 1.. run data modify entity @s Offers.Recipes set value []
 
 #> Chair controls
 function mcm:util/chair/control

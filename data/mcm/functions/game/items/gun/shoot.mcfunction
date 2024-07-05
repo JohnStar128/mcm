@@ -32,8 +32,8 @@ execute as @e[type=armor_stand,tag=BulletDeco] at @s unless entity @e[type=arrow
 #Range
 execute as @e[type=arrow,tag=GunShot,nbt={inGround:1b}] run scoreboard players set @s gundelay 8
 scoreboard players add @e[type=arrow,tag=GunShot] gundelay 1
-execute as @e[type=arrow,tag=GunShot,scores={gundelay=7}] at @s run particle minecraft:smoke ~ ~ ~ 0 0 0 0.05 10 force
+execute as @e[type=arrow,tag=GunShot,scores={gundelay=7}] at @s run particle smoke ~ ~ ~ 0 0 0 0.05 10 force
 execute as @e[type=arrow,tag=GunShot,scores={gundelay=8..}] at @s run kill @e[type=armor_stand,tag=BulletDeco,limit=1,sort=nearest,distance=..4]
-execute as @e[type=arrow,tag=GunShot,scores={gundelay=8..}] at @s run particle block gold_block ~ ~ ~ 0 0 0 0.1 4 force
+execute as @e[type=arrow,tag=GunShot,scores={gundelay=8..}] at @s run particle block{'block_state': {'Name': 'gold_block'}} ~ ~ ~ 0 0 0 0.1 4 force
 execute as @e[type=arrow,tag=GunShot,scores={gundelay=8..}] at @s run playsound block.stone.break master @a ~ ~ ~ 1 2
 kill @e[type=arrow,scores={gundelay=8..}]

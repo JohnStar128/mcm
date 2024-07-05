@@ -121,8 +121,8 @@ scoreboard players set $green_offset player_color 256
 scoreboard players set $max_rgb player_color 256
 scoreboard players set $max_angle player_color 360
 
-execute as @e[type=villager,tag=Usher] run data modify entity @s Offers set value {}
-execute as @e[type=villager,tag=credits_usher] run data modify entity @s Offers set value {}
+execute as @e[type=villager,tag=Usher] run data modify entity @s Offers.Recipes set value []
+execute as @e[type=villager,tag=credits_usher] run data modify entity @s Offers.Recipes set value []
 
 #> Add the team which hides nametags
 team add nametags

@@ -13,8 +13,8 @@ execute if score $graceperiod CmdData matches ..1 as @e[type=interaction,tag=boo
 #> Book Return Basement Unlock
 execute unless score $stairsopen CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",Count:2b}]} run fill 940 140 1083 940 142 1085 air replace
 execute unless score $stairsopen CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",Count:2b}]} run fill 940 140 1123 940 142 1125 air replace
-execute unless score $stairsopen CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",Count:2b}]} run particle minecraft:electric_spark 940 141 1084 1.5 1 1.5 0 40 force
-execute unless score $stairsopen CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",Count:2b}]} run particle minecraft:electric_spark 940 141 1123 1.5 1 1.5 0 40 force
+execute unless score $stairsopen CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",Count:2b}]} run particle electric_spark 940 141 1084 1.5 1 1.5 0 40 force
+execute unless score $stairsopen CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",Count:2b}]} run particle electric_spark 940 141 1123 1.5 1 1.5 0 40 force
 execute unless score $stairsopen CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",Count:2b}]} run playsound minecraft:block.wooden_door.open block @a 940 141 1084 3 1 0.0
 execute unless score $stairsopen CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",Count:2b}]} run playsound minecraft:block.chest.open block @a 940 141 1084 3 0.8 0.0
 execute unless score $stairsopen CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",Count:2b}]} run playsound minecraft:block.wooden_door.open block @a 940 141 1123 3 1 0.0

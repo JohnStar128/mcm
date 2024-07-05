@@ -25,8 +25,8 @@ playsound minecraft:item.axe.wax_off block @a -2010 84 -2948 2 2
 playsound minecraft:item.axe.wax_off block @a -1955 85 -2949 2 2
 
 execute positioned -2038 80 -3010 if block ~ ~ ~ dropper run playsound minecraft:entity.bee.loop_aggressive block @a ~ ~ ~ 1 0.7
-execute positioned -2038 80 -3010 if block ~ ~ ~ dropper run particle minecraft:dust 0.5 0.5 0.5 1 ~ ~1 ~ 0.25 0 0.25 .25 5 force
-execute positioned -2004 80 -2948 if block ~ ~ ~ piston run particle minecraft:campfire_cosy_smoke ~ ~ ~ 0.25 0.01 0.25 0.01 15 force
+execute positioned -2038 80 -3010 if block ~ ~ ~ dropper run particle dust{'color': [0.5, 0.5, 0.5], 'scale': 1.0} ~ ~1 ~ 0.25 0 0.25 .25 5 force
+execute positioned -2004 80 -2948 if block ~ ~ ~ piston run particle campfire_cosy_smoke ~ ~ ~ 0.25 0.01 0.25 0.01 15 force
 execute positioned -2004 80 -2948 if block ~ ~ ~ piston run playsound minecraft:block.fire.extinguish block @a ~ ~ ~ 1 0.8
 execute positioned -1955 80 -2948 if block ~ ~ ~ piston run playsound minecraft:block.wood.place block @a ~ ~ ~ 2 0.5
 execute positioned -1949 80 -3004 if block ~ ~ ~ piston run playsound minecraft:block.piston.extend block @a ~ ~ ~ 1 1

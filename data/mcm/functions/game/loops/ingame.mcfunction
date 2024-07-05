@@ -224,7 +224,7 @@ execute as @a[tag=spectating] run effect clear @s slowness
 #> Show particles above murderers to identify their teammates
 scoreboard players operation $murderer_particles math = $gametimer CmdData
 scoreboard players operation $murderer_particles math %= $twenty math
-execute as @a[tag=murderer,tag=!spectating] at @s run particle dust 1.0 0.1 0.1 1.0 ~ ~2.5 ~ 0.1 0.1 0.1 0 1 force @a[tag=murderer,distance=1..]
+execute as @a[tag=murderer,tag=!spectating] at @s run particle dust{'color': [1.0, 0.1, 0.1], 'scale': 1.0} ~ ~2.5 ~ 0.1 0.1 0.1 0 1 force @a[tag=murderer,distance=1..]
 
 #> Give lobby players spectate item when grace period ends
 execute if score $graceperiod CmdData matches 0 as @a[tag=!queued] run function mcm:lobby/give_lobby_items

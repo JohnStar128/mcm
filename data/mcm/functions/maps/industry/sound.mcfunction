@@ -1,7 +1,7 @@
 #> Pipes
 execute as @e[type=marker,tag=sound_marker,tag=pipe,limit=1,sort=random] run tag @s add active_sound
 execute as @e[type=marker,tag=sound_marker,tag=active_sound] at @s run playsound minecraft:block.fire.extinguish block @a -2004 80 -2948 1 0.8 
-execute as @e[type=marker,tag=sound_marker,tag=active_sound] at @s run particle minecraft:campfire_cosy_smoke ~ ~ ~ 0.25 0.01 0.25 0.01 15 force
+execute as @e[type=marker,tag=sound_marker,tag=active_sound] at @s run particle campfire_cosy_smoke ~ ~ ~ 0.25 0.01 0.25 0.01 15 force
 execute as @e[type=marker,tag=sound_marker,tag=active_sound] run tag @s remove active_sound
 
 #> Keyboard clacking in office areas

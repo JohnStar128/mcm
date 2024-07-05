@@ -40,9 +40,9 @@ execute as @a[scores={RingBell=1..},advancements={mcm:secrets/lobby/ring_bell=fa
 execute as @a[scores={RingBell=1..}] at @s run scoreboard players reset @s RingBell
 
 #> Guessing this is for that one store in the lobby with the hglllhshglgl - Topaz
-execute positioned -37.5 2.3 7.5 if entity @a[distance=..17] run particle block red_concrete -36.5 2.3 7.5 0 0.3 0 1 1
-execute positioned -37.5 2.3 6.5 if entity @a[distance=..17] run particle block light_blue_concrete -36.5 2.3 6.5 0 0.3 0 1 1
-execute positioned -37.5 2.3 5.5 if entity @a[distance=..17] run particle block lime_concrete -36.5 2.3 5.5 0 0.3 0 1 1
+execute positioned -37.5 2.3 7.5 if entity @a[distance=..17] run particle block{'block_state': {'Name': 'red_concrete'}} -36.5 2.3 7.5 0 0.3 0 1 1
+execute positioned -37.5 2.3 6.5 if entity @a[distance=..17] run particle block{'block_state': {'Name': 'light_blue_concrete'}} -36.5 2.3 6.5 0 0.3 0 1 1
+execute positioned -37.5 2.3 5.5 if entity @a[distance=..17] run particle block{'block_state': {'Name': 'lime_concrete'}} -36.5 2.3 5.5 0 0.3 0 1 1
 
 #> Let people use the test range in the lobby
 execute as @a[predicate=mcm:bounding_boxes/lobby_grate] run tag @s add came_from_grate

@@ -17,8 +17,8 @@ execute as @a[scores={droppedBook=1..}] run scoreboard players reset @s droppedB
 
 #> Book Return Basement Unlock
 execute unless score $stairsopen CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:2b}]} run place template minecraft:library_basementwall_empty 981 110 979 none none
-execute unless score $stairsopen CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:2b}]} run particle minecraft:electric_spark 980.52 112.00 980.48 1.5 1 1.5 0 40 force
-execute unless score $stairsopen CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:2b}]} run particle minecraft:electric_spark 980.56 112.00 1020.61 1.5 1 1.5 0 40 force
+execute unless score $stairsopen CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:2b}]} run particle electric_spark 980.52 112.00 980.48 1.5 1 1.5 0 40 force
+execute unless score $stairsopen CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:2b}]} run particle electric_spark 980.56 112.00 1020.61 1.5 1 1.5 0 40 force
 execute unless score $stairsopen CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:2b}]} run playsound minecraft:block.wooden_door.open block @a 980 110 1020 3 1 0.0
 execute unless score $stairsopen CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:2b}]} run playsound minecraft:block.chest.open block @a 980 110 1020 3 0.8 0.0
 execute unless score $stairsopen CmdData matches 1.. if block 945 104 996 chest{Items:[{id:"minecraft:book",Count:2b}]} run playsound minecraft:block.wooden_door.open block @a 980 110 980 3 1 0.0
