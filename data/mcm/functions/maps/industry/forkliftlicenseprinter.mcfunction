@@ -1,5 +1,5 @@
 #> If they passed the test
-execute if score @s forklifttest matches 5 run give @s paper{display:{Name:'{"translate":"mcm.industry.forklift_license","color":"gold","italic":false,"bold":true}'}}
+execute if score @s forklifttest matches 5 run give @s paper[custom_name='{"translate":"mcm.industry.forklift_license","color":"gold","italic":false,"bold":true}']
 execute as @a[tag=!forkliftlicense] if score @s forklifttest matches 5 run tag @s add forkliftlicense
 execute as @a[tag=forkliftlicense] if score @s forklifttest matches 5 run scoreboard players reset @s forklifttest
 execute as @a[tag=forkliftlicense,advancements={mcm:secrets/industry/forklift=false}] run advancement grant @s only mcm:secrets/industry/forklift
