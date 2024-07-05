@@ -9,7 +9,7 @@
           "name": "minecraft:stick",
           "functions": [
             {
-              "function": "set_nbt",
+              "function": "set_custom_data",
               "tag": "{CustomModelData:1111,no_drop_on_death:1b,display:{Name:'[{\"translate\":\"mcm.item.player_tracker\",\"italic\":false}]',Lore:['[{\"translate\":\"mcm.item.player_tracker.lore\",\"italic\":false}]']}}"
             }
           ]

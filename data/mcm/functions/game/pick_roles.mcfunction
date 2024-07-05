@@ -23,7 +23,7 @@ execute if score $murderers GameRules matches 3 as @a[tag=murderer] at @s run te
 
 # Murderer items
 execute as @a[tag=murderer] run function mcm:items/loadouts/murderer
-execute as @a[tag=murderer] run item replace entity @s hotbar.8 with netherite_scrap{CustomModelData:1, no_drop_on_death:1b, Tags: ["KeyItem"], display:{Name:'{"translate":"mcm.item.scrap","italic":false}',Lore: ['[[custom_data={"translate":"mcm.item.scrap.lore","italic":false}]']}}]
+execute as @a[tag=murderer] run item replace entity @s hotbar.8 with netherite_scrap[custom_model_data=1,custom_data={no_drop_on_death:1b,Tags:["KeyItem"]},custom_name='{"translate":"mcm.item.scrap","italic":false}',lore=['[{"translate":"mcm.item.scrap.lore","italic":false}]']]
 # Give murderers their 1 free recall
 tag @a[tag=murderer] add free_knife
 
@@ -36,11 +36,11 @@ execute as @a[tag=gunner] at @s run tellraw @s {"translate":"mcm.game.role","col
 execute as @a[tag=gunner] at @s run title @s title {"translate":"mcm.game.role","color":"gold","with":[{"translate":"mcm.game.gunner","color":"dark_aqua"}]}
 execute as @a[tag=gunner] at @s run title @s subtitle {"translate":"mcm.game.gunner.subtitle","color":"dark_gray"}
 schedule function mcm:game/gunnertip 6s
-#execute as @a[tag=gunner] at @s run item replace entity @s hotbar.8 with netherite_scrap{Item:{NoDrop:1b,display:{Name:"{\"translate\":\"mcm.item.scrap\",\"italic\":\"false\"}"},Lore:['[{"translate":"mcm.item.scrap.lore","italic":false}]']}}
+#execute as @a[tag=gunner] at @s run item replace entity @s hotbar.8 with netherite_scrap[custom_model_data=1,custom_data={no_drop_on_death:1b,Tags:["KeyItem"]},custom_name='{"translate":"mcm.item.scrap","italic":false}',lore=['[{"translate":"mcm.item.scrap.lore","italic":false}]']]
 
 # Innocent
 execute as @a[tag=queued,tag=!murderer,tag=!gunner] at @s run tag @s add innocent
-execute if score $startscrap GameRules matches 1.. run item replace entity @a[tag=innocent] hotbar.8 with netherite_scrap{CustomModelData:1, no_drop_on_death:1b, Tags: ["KeyItem"], display:{Name:'{"translate":"mcm.item.scrap","italic":false}',Lore: ['[[custom_data={"translate":"mcm.item.scrap.lore","italic":false}]']}}]
+execute if score $startscrap GameRules matches 1.. run item replace entity @a[tag=innocent] hotbar.8 with netherite_scrap[custom_model_data=1,custom_data={no_drop_on_death:1b,Tags:["KeyItem"]},custom_name='{"translate":"mcm.item.scrap","italic":false}',lore=['[{"translate":"mcm.item.scrap.lore","italic":false}]']]
 tellraw @a[tag=innocent] {"translate":"mcm.game.role","color":"gold","with":[{"translate":"mcm.game.innocent","color":"light_purple"}]}
 title @a[tag=innocent] title {"translate":"mcm.game.role","color":"gold","with":[{"translate":"mcm.game.innocent","color":"light_purple"}]}
 title @a[tag=innocent] subtitle {"translate":"mcm.game.innocent.subtitle","color":"gold"}

@@ -9,7 +9,7 @@
           "name": "minecraft:carrot_on_a_stick",
           "functions": [
             {
-              "function": "set_nbt",
+              "function": "set_custom_data",
               "tag": "{NoDrop:1b,no_drop_on_death:1b,CustomModelData:1113,display:{Name:'[{\"translate\":\"mcm.item.adrenaline\",\"italic\":false}]',Lore:['[{\"translate\":\"mcm.item.adrenaline.lore\",\"italic\":false}]']}}"
             }
           ]
