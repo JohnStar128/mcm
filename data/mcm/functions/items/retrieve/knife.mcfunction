@@ -20,7 +20,7 @@ execute unless data storage mcm:args item run return fail
 execute store result score cost temp run function mcm:items/get_retrieval_cost with storage mcm:args
 
 # If the player has less scrap then needed to use the retrieve remove it
-execute if entity @s[tag=!free_knife] if score scrap temp < cost temp run return run clear @s carrot_on_a_stick{retrieve_loadout:knife}
+execute if entity @s[tag=!free_knife] if score scrap temp < cost temp run return run clear @s carrot_on_a_stick[custom_data={retrieve_loadout:knife}]
 
 # Don't regive the retrieve if they already have it
 execute if entity @s[nbt={Inventory:[{tag:{retrieve_loadout:"knife"}}]}] run return 0

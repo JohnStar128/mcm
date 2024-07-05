@@ -16,12 +16,12 @@ execute if score $graceperiod CmdData matches 0 as @e[type=interaction,tag=river
 execute as @e[type=item_frame,tag=riverboat_secret] run data merge entity @s {ItemRotation:1b,Fixed:0b}
 
 #> Track players holding cards
-execute as @a[advancements={mcm:item_counts/card1=true}] store result score @s card1 run clear @s stick{CustomModelData:1116} 0
+execute as @a[advancements={mcm:item_counts/card1=true}] store result score @s card1 run clear @s stick[custom_data={},custom_model_data=1116] 0
 execute as @a[advancements={mcm:item_counts/card1=true}] run advancement revoke @s only mcm:item_counts/card1
-execute as @a[scores={dropped_card=1..}] store result score @s card1 run clear @s stick{CustomModelData:1116} 0 
-execute as @a[advancements={mcm:item_counts/card8=true}] store result score @s card8 run clear @s stick{CustomModelData:1117} 0
+execute as @a[scores={dropped_card=1..}] store result score @s card1 run clear @s stick[custom_data={},custom_model_data=1116] 0
+execute as @a[advancements={mcm:item_counts/card8=true}] store result score @s card8 run clear @s stick[custom_data={},custom_model_data=1117] 0
 execute as @a[advancements={mcm:item_counts/card8=true}] run advancement revoke @s only mcm:item_counts/card8
-execute as @a[scores={dropped_card=1..}] store result score @s card8 run clear @s stick{CustomModelData:1117} 0 
+execute as @a[scores={dropped_card=1..}] store result score @s card8 run clear @s stick[custom_data={},custom_model_data=1117] 0
 execute as @a[scores={dropped_card=1..}] run scoreboard players reset @s dropped_card
 
 #> Card table interactions (Ace)

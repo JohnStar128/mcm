@@ -12,7 +12,7 @@ execute as @e[type=marker,tag=canDropChandelier] at @s run function mcm:maps/lib
 #> Track how many books players have
 execute as @a[advancements={mcm:item_counts/books=true}] store result score @s books run clear @s book 0
 execute as @a[advancements={mcm:item_counts/books=true}] run advancement revoke @s only mcm:item_counts/books
-execute as @a[scores={droppedBook=1..}] store result score @s books run clear @s book 0 
+execute as @a[scores={droppedBook=1..}] store result score @s books run clear @s book 0
 execute as @a[scores={droppedBook=1..}] run scoreboard players reset @s droppedBook
 
 #> Book Return Basement Unlock
