@@ -150,7 +150,7 @@ execute as @e[type=item,tag=knifeCosmetic] at @s if entity @a[tag=murderer,limit
 #execute as @a[tag=murderer,tag=!retrieved,scores={droppedKnife=1..}] run function mcm:items/retrieve/knife_use
 
 #> Remove retrieval item if they pick up the knife and reset scores
-execute as @a[tag=murderer,nbt={Inventory:[{id:"minecraft:snowball",Count:1b,tag:{CustomModelData:1111}}]}] run clear @s carrot_on_a_stick[custom_data={},custom_model_data=1111]
+execute as @a[tag=murderer,nbt={Inventory:[{components:{"minecraft:custom_data":{knife:1b}}}]}] run clear @s carrot_on_a_stick[custom_model_data=1111]
 #execute as @a[tag=murderer,scores={throwKnife=1..}] run scoreboard players set @s retrieval_delay 5
 #scoreboard players reset @a[tag=murderer] droppedKnife
 # We don't reset the throwKnife here because it is done later
@@ -165,7 +165,7 @@ execute as @a[tag=murderer,scores={carrot=1..,retrieval_delay=..0}] if data enti
 #execute as @a[tag=murderer,scores={knifeRetrieval=1..,retrieval_delay=..0}] if data entity @s SelectedItem.tag.retrieve at @s run function mcm:game/items/retrieve with entity @s SelectedItem.tag
 
 #> Run murderer items
-execute as @a[tag=murderer,scores={carrot=1..},nbt={SelectedItem:{murderer:1b}}] at @s run function mcm:game/items/murderer_items
+execute as @a[tag=murderer,scores={carrot=1..},nbt={SelectedItem:{components:{"minecraft:custom_data":{murderer:1b}}}}] at @s run function mcm:game/items/murderer_items
 
 #> Clicking the adrenaline item gives buffs
 
