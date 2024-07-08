@@ -45,8 +45,8 @@ function mcm:items/item_handling_loop
 function mcm:util/nodrop
 
 #> Mark whether someone's holding a knife or not (lets you hit stuff)
-tag @a[tag=murderer,nbt={SelectedItem:{id:"minecraft:snowball",Count:1b}}] add HoldKnife
-tag @a[nbt=!{SelectedItem:{id:"minecraft:snowball",Count:1b}}] remove HoldKnife
+tag @a[tag=murderer,nbt={SelectedItem:{components:{"minecraft:custom_data":{knife:1b}}}}] add HoldKnife
+tag @a[nbt=!{SelectedItem:{components:{"minecraft:custom_data":{knife:1b}}}}] remove HoldKnife
 
 #> Handle knife throwing
 #execute as @a[scores={throwKnife=1..}] run function mcm:game/items/knife/throw

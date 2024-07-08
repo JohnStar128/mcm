@@ -6,7 +6,7 @@ $execute if entity @s run summon arrow ~ ~ ~ {life:1100s,Fire:-12000s,Invulnerab
     Passengers:[\
         {id:"minecraft:item",PickupDelay:5s,Tags:["knifeCosmetic","MapEntity","KeyItem","new"],\
             Item:{id:"$(mc_id)",Count:1b,Fire:-12000s,Invulnerable:1b,\
-                tag:$(nbt)}}]}
+                components:$(nbt)}}]}
 
 execute store result score @s motion_x run data get entity @s Motion[0] 1000
 execute store result score @s motion_y run data get entity @s Motion[1] 1000

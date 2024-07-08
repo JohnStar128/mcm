@@ -13,7 +13,7 @@ execute if data storage mcm:args replace run tag @s add item_replace
 execute if entity @s[tag=murderer] run data modify storage mcm:args nbt merge from storage mcm:items murderer_extra_nbt
 
 $data modify storage mcm:args nbt merge value {item:$(item)}
-$data modify storage mcm:args nbt merge from storage mcm:items $(item).nbt
+$data modify storage mcm:args nbt set from storage mcm:items $(item).components
 $data modify storage mcm:args id set from storage mcm:items $(item).id
 
 

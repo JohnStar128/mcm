@@ -4,7 +4,7 @@ scoreboard players set $event_type temp 1
 execute if data entity @s[tag=free_knife] SelectedItem.tag.knife_retrieve run tag @s add temp_free_knife
 $execute if entity @s[tag=temp_free_knife] run function mcm:items/give_mainhand {item:$(retrieve)}
 execute if entity @s[tag=temp_free_knife] as @e[type=arrow,tag=knife] run function mcm:game/items/knife/kill_owned_entity
-execute if entity @s[tag=temp_free_knife] as @e[type=item,nbt={Item:{tag:{knife:1b}}}] run function mcm:game/items/knife/kill_owned_entity
+execute if entity @s[tag=temp_free_knife] as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{knife:1b}}}}] run function mcm:game/items/knife/kill_owned_entity
 execute if entity @s[tag=temp_free_knife] run function mcm:game/summary/add_event {translate:"mcm.game.events.recalled_knife",color:"green"}
 
 tag @s[tag=temp_free_knife] remove free_knife

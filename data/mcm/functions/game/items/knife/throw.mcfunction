@@ -1,4 +1,5 @@
 #> Cancel throw if throw delay isn't up
+
 execute at @s as @e[type=snowball,sort=nearest,limit=1] store result score @s playerUUID run data get entity @s Owner[0]
 scoreboard players operation $tempuuid playerUUID = @s playerUUID
 execute if score @s throw_delay matches 1.. as @e[type=snowball,predicate=mcm:matches_uuid] run kill @s
@@ -14,7 +15,7 @@ function mcm:items/id with storage mcm:args
 function mcm:items/mc_id with storage mcm:args
 function mcm:items/get_item_nbt with storage mcm:args
 
-data merge storage mcm:args {nbt:{loadout:knife}}
+#data merge storage mcm:args {nbt:{loadout:knife}}
 
 execute as @e[type=snowball,sort=nearest,limit=1] at @s run function mcm:game/items/knife/throw_inner with storage mcm:args
 
