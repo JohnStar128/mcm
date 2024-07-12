@@ -11,24 +11,24 @@ execute unless score $graceperiod CmdData matches ..1 as @e[type=interaction,tag
 execute if score $graceperiod CmdData matches ..1 as @e[type=interaction,tag=book_interaction] if data entity @s interaction at @s run function mcm:maps/library2/give_book
 
 #> Book Return Basement Unlock
-execute unless score $stairsopen CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",Count:2b}]} run fill 940 140 1083 940 142 1085 air replace
-execute unless score $stairsopen CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",Count:2b}]} run fill 940 140 1123 940 142 1125 air replace
-execute unless score $stairsopen CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",Count:2b}]} run particle electric_spark 940 141 1084 1.5 1 1.5 0 40 force
-execute unless score $stairsopen CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",Count:2b}]} run particle electric_spark 940 141 1123 1.5 1 1.5 0 40 force
-execute unless score $stairsopen CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",Count:2b}]} run playsound minecraft:block.wooden_door.open block @a 940 141 1084 3 1 0.0
-execute unless score $stairsopen CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",Count:2b}]} run playsound minecraft:block.chest.open block @a 940 141 1084 3 0.8 0.0
-execute unless score $stairsopen CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",Count:2b}]} run playsound minecraft:block.wooden_door.open block @a 940 141 1123 3 1 0.0
-execute unless score $stairsopen CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",Count:2b}]} run playsound minecraft:block.chest.open block @a 940 141 1123 3 0.8 0.0
-execute unless score $stairsopen CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",Count:2b}]} run scoreboard players set $stairsopen CmdData 1
+execute unless score $stairsopen CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",count:2}]} run fill 940 140 1083 940 142 1085 air replace
+execute unless score $stairsopen CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",count:2}]} run fill 940 140 1123 940 142 1125 air replace
+execute unless score $stairsopen CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",count:2}]} run particle electric_spark 940 141 1084 1.5 1 1.5 0 40 force
+execute unless score $stairsopen CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",count:2}]} run particle electric_spark 940 141 1123 1.5 1 1.5 0 40 force
+execute unless score $stairsopen CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",count:2}]} run playsound minecraft:block.wooden_door.open block @a 940 141 1084 3 1 0.0
+execute unless score $stairsopen CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",count:2}]} run playsound minecraft:block.chest.open block @a 940 141 1084 3 0.8 0.0
+execute unless score $stairsopen CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",count:2}]} run playsound minecraft:block.wooden_door.open block @a 940 141 1123 3 1 0.0
+execute unless score $stairsopen CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",count:2}]} run playsound minecraft:block.chest.open block @a 940 141 1123 3 0.8 0.0
+execute unless score $stairsopen CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",count:2}]} run scoreboard players set $stairsopen CmdData 1
 
 #> When you have all 5 books, open the book in the basement
-execute unless score $flipbook CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",Count:5b}]} run tellraw @a[tag=queued] ["\n", {"translate":"mcm.library.evil","color":"red","italic":true}, "\n"]
-execute unless score $flipbook CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",Count:5b}]} run playsound minecraft:block.end_portal.spawn block @a[tag=queued] ~ ~ ~ 1 0 1
-execute unless score $flipbook CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",Count:5b}]} run fill 922 130 1107 920 130 1101 air
-execute unless score $flipbook CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",Count:5b}]} run fill 922 130 1108 920 130 1108 dark_oak_stairs[facing=south,half=bottom,shape=straight]
-execute unless score $flipbook CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",Count:5b}]} run fill 922 130 1100 920 130 1100 dark_oak_stairs[facing=north,half=bottom,shape=straight]
-execute unless score $flipbook CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",Count:5b}]} run scoreboard players set $flipbook CmdData 1
-execute if score $flipbook CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",Count:5b}]} run setblock 976 134 1099 minecraft:chest destroy
+execute unless score $flipbook CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",count:5}]} run tellraw @a[tag=queued] ["\n", {"translate":"mcm.library.evil","color":"red","italic":true}, "\n"]
+execute unless score $flipbook CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",count:5}]} run playsound minecraft:block.end_portal.spawn block @a[tag=queued] ~ ~ ~ 1 0 1
+execute unless score $flipbook CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",count:5}]} run fill 922 130 1107 920 130 1101 air
+execute unless score $flipbook CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",count:5}]} run fill 922 130 1108 920 130 1108 dark_oak_stairs[facing=south,half=bottom,shape=straight]
+execute unless score $flipbook CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",count:5}]} run fill 922 130 1100 920 130 1100 dark_oak_stairs[facing=north,half=bottom,shape=straight]
+execute unless score $flipbook CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",count:5}]} run scoreboard players set $flipbook CmdData 1
+execute if score $flipbook CmdData matches 1.. if block 976 134 1099 chest{Items:[{id:"minecraft:book",count:5}]} run setblock 976 134 1099 minecraft:chest destroy
 
 #> When people interact with the book, flip the map
 # Enable the trigger for that

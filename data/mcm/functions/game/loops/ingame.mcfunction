@@ -159,10 +159,10 @@ execute as @a[tag=murderer,nbt={Inventory:[{components:{"minecraft:custom_data":
 scoreboard players remove @a[tag=murderer] retrieval_delay 1
 scoreboard players remove @a[tag=murderer] throw_delay 1
 
-execute as @a[tag=murderer,scores={carrot=1..,retrieval_delay=..0}] if data entity @s SelectedItem.tag.retrieve run function mcm:game/items/retrieve with entity @s SelectedItem.tag
+execute as @a[tag=murderer,scores={carrot=1..,retrieval_delay=..0}] if data entity @s SelectedItem.components.custom_data.retrieve run function mcm:game/items/retrieve with entity @s SelectedItem.components
 #execute as @a[tag=murderer,tag=retrieved] run scoreboard players reset @s knifeRetrieval
 #execute as @a[tag=murderer,scores={retrieval_delay=1..}] run scoreboard players reset @s knifeRetrieval
-#execute as @a[tag=murderer,scores={knifeRetrieval=1..,retrieval_delay=..0}] if data entity @s SelectedItem.tag.retrieve at @s run function mcm:game/items/retrieve with entity @s SelectedItem.tag
+#execute as @a[tag=murderer,scores={knifeRetrieval=1..,retrieval_delay=..0}] if data entity @s SelectedItem.components.custom_data.retrieve at @s run function mcm:game/items/retrieve with entity @s SelectedItem.components
 
 #> Run murderer items
 execute as @a[tag=murderer,scores={carrot=1..},nbt={SelectedItem:{components:{"minecraft:custom_data":{murderer:1b}}}}] at @s run function mcm:game/items/murderer_items
