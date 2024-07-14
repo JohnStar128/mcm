@@ -6,7 +6,8 @@ execute positioned 2978 109 979 as @e[type=minecraft:glow_item_frame,distance=..
 execute positioned 2978 109 979 as @e[type=minecraft:glow_item_frame,distance=..1,limit=1,sort=nearest] run data merge entity @s {ItemRotation:5b,Invulnerable:0b,Fixed:0b}
 
 #> Kill any leftover bottles
-execute positioned 3001 100 960 run kill @e[type=item,distance=..100,nbt={Item:{Count:1b,id:"minecraft:stick",tag:{CustomModelData:1118}}}]
+#execute positioned 3001 100 960 run kill @e[type=item,distance=..100,nbt={Item:{Count:1b,id:"minecraft:stick",tag:{CustomModelData:1118}}}]
+execute positioned 3001 100 960 run kill @e[type=item,distance=..100,nbt={Item:{components:{"minecraft:custom_model_data":1118},count:1,id:"minecraft:stick"}}]
 
 #manual changes to fix that one crate
 execute positioned 2999 105 983 unless block ~ ~ ~ spruce_trapdoor[open=true] run setblock ~ ~ ~ spruce_trapdoor[open=true,facing=north,half=top,powered=false,waterlogged=false]

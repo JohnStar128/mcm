@@ -6,5 +6,5 @@
 
 loot replace block -2 -50 72 container.0 loot mcm:playerhead
 
-$data modify $(out) set from block -2 -50 72 Items[0].tag.SkullOwner.Name
+$data modify $(out) set from block -2 -50 72 Items[0].components.minecraft:profile.name
 

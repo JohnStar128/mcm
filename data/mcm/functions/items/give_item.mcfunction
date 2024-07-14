@@ -16,7 +16,6 @@ $data modify storage mcm:args nbt merge value {item:$(item)}
 $data modify storage mcm:args nbt set from storage mcm:items $(item).components
 $data modify storage mcm:args id set from storage mcm:items $(item).id
 
-
 function mcm:items/give_item_inner with storage mcm:args
 
 function mcm:items/give_item_cleanup

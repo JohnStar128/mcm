@@ -1,6 +1,6 @@
 
 # Exit early if the player still has the knife
-execute if entity @s[nbt={Inventory:[{tag:{loadout:"knife"}}]}] run return fail
+execute if items entity @s container.* snowball[custom_data~{knife:1b}] run return fail
 
 
 execute store result storage mcm:args id int 1 run scoreboard players get @s loadout_knife
@@ -20,10 +20,10 @@ execute unless data storage mcm:args item run return fail
 execute store result score cost temp run function mcm:items/get_retrieval_cost with storage mcm:args
 
 # If the player has less scrap then needed to use the retrieve remove it
-execute if entity @s[tag=!free_knife] if score scrap temp < cost temp run return run clear @s carrot_on_a_stick[custom_data={retrieve_loadout:knife}]
+execute if entity @s[tag=!free_knife] if score scrap temp < cost temp run return run clear @s carrot_on_a_stick[custom_data={retrieve:"knife"}]
 
 # Don't regive the retrieve if they already have it
-execute if entity @s[nbt={Inventory:[{tag:{retrieve_loadout:"knife"}}]}] run return 0
+execute if items entity @s container.* carrot_on_a_stick[custom_data~{knife_retrieve:1}] run return 0
 
 # Load default retrieval nbt
 data merge storage mcm:args {nbt:{is_retrieve:1b,retrieve_loadout:knife}}

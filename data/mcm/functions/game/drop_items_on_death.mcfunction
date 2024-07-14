@@ -3,7 +3,7 @@
 # base case
 $execute unless data entity @s Inventory[$(idx)] run return fail
 
-$execute unless data entity @s Inventory[$(idx)].tag.no_drop_on_death run summon item ~ ~0.5 ~ {Tags:["temp_drop"],Item:{id:"minecraft:stick",Count:1b}}
+$execute unless data entity @s Inventory[$(idx)].components.minecraft:custom_data.no_drop_on_death run summon item ~ ~0.5 ~ {Tags:["temp_drop"],Item:{id:"minecraft:stick",count:1b}}
 $data modify entity @e[type=item,tag=temp_drop,limit=1] Item set from entity @s Inventory[$(idx)]
 execute as @e[type=item,tag=temp_drop,limit=1] run data merge entity @s {PickupDelay:5}
 tag @e[type=item,tag=temp_drop,limit=1] remove temp_drop

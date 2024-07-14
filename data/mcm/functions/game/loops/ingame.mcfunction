@@ -15,13 +15,12 @@ execute as @a[tag=gunner, tag=!gunner_stat] run tag @s add gunner_stat
 tag @e[type=item] add KeyItem
 
 #> Force guns to have the important tags they need
-tag @e[type=item,nbt={Item:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}}] add deadDrop
-tag @e[type=item,nbt={Item:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}}] add KeyItem
-tag @e[type=item,nbt={Item:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}}] add gun
+execute as @e[type=item] if items entity @s contents warped_fungus_on_a_stick[custom_data~{gun:1b}] run tag @s add deadDrop
+execute as @e[type=item] if items entity @s contents warped_fungus_on_a_stick[custom_data~{gun:1b}] run tag @s add KeyItem
+execute as @e[type=item] if items entity @s contents warped_fungus_on_a_stick[custom_data~{gun:1b}] run tag @s add gun
 
 #> Make sure items can't be destroyed by lightning or fire (unless Destroy Guns is on)
 execute as @e[type=item,tag=!gun] run data merge entity @s {Fire:-1s,Invulnerable:1b}
-#execute unless score $destroyguns GameRules matches 1 as @e[type=item,tag=gun] run data merge entity @s {Fire:-1s,Invulnerable:1b}
 execute if score $destroyguns GameRules matches 1 as @e[type=item,tag=gun] run data merge entity @s {Invulnerable:0b}
 
 #> Set initial player counts in bossbar
@@ -30,11 +29,11 @@ execute if score $graceperiod CmdData matches 300 run scoreboard players operati
 execute if score $graceperiod CmdData matches 300 run scoreboard players operation $MurdererCount CmdData = $murderers GameRules
 
 #> Tag all gunners TODO change this to advancement
-execute as @a[tag=innocent,tag=!gunner,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] run scoreboard players set $event_type temp 3
-execute as @a[tag=innocent,tag=!gunner,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] run function mcm:items/find_item_and_copy_data {path:"tag.owner",storage:"mcm:game_summary",storage_path:"temp.player2_text"}
-execute as @a[tag=innocent,tag=!gunner,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] run data merge storage mcm:game_summary {temp:{player2_color:"dark_aqua"}}
-execute as @a[tag=innocent,tag=!gunner,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] run function mcm:game/summary/add_event {translate:"mcm.game.events.picked_up_gun",color:"green"}
-tag @a[tag=innocent,tag=!gunner,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] add gunner
+execute as @a[tag=innocent,tag=!gunner] if items entity @s container.* warped_fungus_on_a_stick run scoreboard players set $event_type temp 3
+execute as @a[tag=innocent,tag=!gunner] if items entity @s container.* warped_fungus_on_a_stick run function mcm:items/find_item_and_copy_data {path:'components."minecraft:custom_data".owner',storage:"mcm:game_summary",storage_path:"temp.player2_text"}
+execute as @a[tag=innocent,tag=!gunner] if items entity @s container.* warped_fungus_on_a_stick run data merge storage mcm:game_summary {temp:{player2_color:"dark_aqua"}}
+execute as @a[tag=innocent,tag=!gunner] if items entity @s container.* warped_fungus_on_a_stick run function mcm:game/summary/add_event {translate:"mcm.game.events.picked_up_gun",color:"green"}
+execute as @a[tag=innocent,tag=!gunner] if items entity @s container.* warped_fungus_on_a_stick run tag @s add gunner
 
 #> Murderers and people who dropped their gun can't pick up guns anymore
 execute as @e[type=item,tag=gun] at @s run data modify entity @s Owner set from entity @a[tag=innocent,tag=!spectating,limit=1,sort=nearest,scores={canPickupGun=0}] UUID
@@ -42,7 +41,7 @@ execute as @e[type=item,tag=gun] at @s if score @a[tag=!spectating,limit=1,sort=
 execute as @e[type=item,tag=gun] at @s unless score @a[tag=!spectating,limit=1,sort=nearest] canPickupGun matches 0 run data merge entity @s {PickupDelay:-1s,Age:32768}
 
 #> Multiple murderers can't pick up eachother's knives
-execute as @e[type=item,nbt={Item:{id:"minecraft:snowball",Count:1b,tag:{CustomModelData:1111}}}] run data modify entity @s Owner set from entity @s Thrower
+execute as @e[type=item] if items entity @s contents snowball[custom_data~{knife:1b}] run data modify entity @s Owner set from entity @s Thrower
 
 #> Minutely reminders
 function mcm:game/loops/game_timer
@@ -65,8 +64,8 @@ execute if score $pickedroles CmdData matches 1 as @a[tag=queued,tag=!innocent,t
 #> Set scores needed for item pickup related stuffs //NOTE The score value is backwards from the seemingly obvious way it should work. 1 means they can't, 0 means they can
 scoreboard players set @a[tag=murderer] canPickupGun 1
 scoreboard players set @a[tag=lostGun] canPickupGun 1
-scoreboard players set @a[nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] canPickupGun 1
-scoreboard players set @a[tag=innocent,tag=!lostGun,nbt=!{Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] canPickupGun 0
+execute as @a if items entity @s container.* warped_fungus_on_a_stick run scoreboard players set @s canPickupGun 1
+execute as @a[tag=innocent,tag=!lostGun] unless items entity @s container.* warped_fungus_on_a_stick run scoreboard players set @s canPickupGun 0
 
 #> Map specific functionality
 #execute if score $selectedMap CmdData matches 1 run function mcm:maps/library/functionality
@@ -100,32 +99,26 @@ execute if score $graceperiod CmdData matches ..0 run scoreboard players add $sc
 execute if score $graceperiod CmdData matches ..0 if score $scrapclock CmdData matches 20.. as @a[tag=queued, tag=!spectating, predicate=mcm:scraprng] run function mcm:game/loops/spawnscrap
 execute if score $graceperiod CmdData matches ..0 if score $scrapclock CmdData matches 20.. run scoreboard players set $scrapclock CmdData 0
 
-#> Replace NoDrop-less guns in inventories with NoDrop guns
-#execute as @a[nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{NoDrop:0b}}]}] run function mcm:game/items/gun/give
-#execute as @a[nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{NoDrop:0b}}]}] run clear @s warped_fungus_on_a_stick{NoDrop:0b}
-
 #> Murderer drops gun if they somehow pick it up
-execute as @a[tag=murderer,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}]}] at @s run loot spawn ~ ~ ~ loot mcm:gun_normal
-#execute as @a[tag=murderer,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}]}] at @s run data merge entity @e[type=item,nbt={Item:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}},sort=nearest,limit=1] {Item:{tag:{owner:""}}}
-#execute as @a[tag=murderer,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}]}] at @s run data modify entity @e[type=item,nbt={Item:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}},sort=nearest,limit=1] Item.tag.owner set from entity @s Inventory[].tag.owner
-execute as @a[tag=murderer,nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{CustomModelData:1111}}]}] run clear @s warped_fungus_on_a_stick[custom_data={},custom_model_data=1111]
+execute as @a[tag=murderer] if items entity @s container.* warped_fungus_on_a_stick[custom_data~{gun:1b}] at @s run loot spawn ~ ~ ~ loot mcm:gun_normal
+execute as @a[tag=murderer] if items entity @s container.* warped_fungus_on_a_stick[custom_data~{gun:1b}] run clear @s warped_fungus_on_a_stick[custom_data~{gun:1b}]
 
 #> Innocents drop murderer items if they somehow pick them up
 # Knife
-execute as @a[tag=innocent,nbt={Inventory:[{id:"minecraft:snowball",Count:1b,tag:{CustomModelData:1111}}]}] at @s run loot spawn ~ ~ ~ loot mcm:knife
-execute as @a[tag=innocent,nbt={Inventory:[{id:"minecraft:snowball",Count:1b,tag:{CustomModelData:1111}}]}] at @s run clear @s snowball
+execute as @a[tag=innocent] if items entity @s container.* snowball[custom_data~{knife:1b}] at @s run loot spawn ~ ~ ~ loot mcm:knife
+execute as @a[tag=innocent] if items entity @s container.* snowball[custom_data~{knife:1b}] at @s run clear @s snowball[custom_data~{knife:1b}]
 # Player tracker
-execute as @a[tag=innocent,nbt={Inventory:[{id:"minecraft:stick",Count:1b,tag:{CustomModelData:1111}}]}] at @s run loot spawn ~ ~ ~ loot mcm:player_tracker
-execute as @a[tag=innocent,nbt={Inventory:[{id:"minecraft:stick",Count:1b,tag:{CustomModelData:1111}}]}] at @s run clear @s stick
+execute as @a[tag=innocent] if items entity @s container.* stick[custom_data~{player_tracker:1b}] at @s run loot spawn ~ ~ ~ loot mcm:player_tracker
+execute as @a[tag=innocent] if items entity @s container.* stick[custom_data~{player_tracker:1b}] at @s run clear @s stick[custom_data~{player_tracker:1b}]
 # Teleporter
-execute as @a[tag=innocent,nbt={Inventory:[{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1112}}]}] at @s run loot spawn ~ ~ ~ loot mcm:teleporter
-execute as @a[tag=innocent,nbt={Inventory:[{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1112}}]}] at @s run clear @s carrot_on_a_stick[custom_data={},custom_model_data=1112]
+execute as @a[tag=innocent] if items entity @s container.* carrot_on_a_stick[custom_data~{teleporter:1b}] at @s run loot spawn ~ ~ ~ loot mcm:teleporter
+execute as @a[tag=innocent] if items entity @s container.* carrot_on_a_stick[custom_data~{teleporter:1b}] at @s run clear @s carrot_on_a_stick[custom_data~{teleporter:1b}]
 # Adrenaline
-execute as @a[tag=innocent,nbt={Inventory:[{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1113}}]}] at @s run loot spawn ~ ~ ~ loot mcm:adrenaline
-execute as @a[tag=innocent,nbt={Inventory:[{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1113}}]}] at @s run clear @s carrot_on_a_stick[custom_data={},custom_model_data=1113]
+execute as @a[tag=innocent] if items entity @s container.* carrot_on_a_stick[custom_data~{adrenaline:1b}] at @s run loot spawn ~ ~ ~ loot mcm:adrenaline
+execute as @a[tag=innocent] if items entity @s container.* carrot_on_a_stick[custom_data~{adrenaline:1b}] at @s run clear @s carrot_on_a_stick[custom_data~{adrenaline:1b}]
 
 #> Clear scrap from players with a gun
-execute as @a[nbt={Inventory:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b}]}] if entity @s[nbt={Inventory:[{id:"minecraft:netherite_scrap"}]}] run clear @s netherite_scrap
+execute as @a[tag=gunner] if entity @s[nbt={Inventory:[{id:"minecraft:netherite_scrap"}]}] run clear @s netherite_scrap
 
 #> Player tracker (Math stuff courtesy of some dude on MCC Discord rx)
 execute as @a[tag=murderer,tag=!spectating,predicate=mcm:items/hold_tracker] at @s positioned as @a[tag=innocent,tag=!spectating,limit=1,sort=nearest] run function mcm:game/items/player_tracker/find_player
@@ -138,41 +131,27 @@ execute as @e[type=item,tag=knifeCosmetic] at @s unless block ~ ~ ~ air run func
 
 execute store success score $toggle CmdData if score $toggle CmdData matches 0
 execute as @e[type=arrow,tag=knife] store result entity @s Air short 1 run scoreboard players get $toggle CmdData
-execute as @e[type=item,nbt={Item:{tag:{knife:1b}}}] store result entity @s Air short 1 run scoreboard players get $toggle CmdData
+execute as @e[type=item] if items entity @s contents snowball[custom_data~{knife:1b}] store result entity @s Air short 1 run scoreboard players get $toggle CmdData
 
 #> Make sure knife can only be picked up by murderer
 execute as @e[type=item,tag=knifeCosmetic] at @s unless entity @a[tag=murderer,limit=1,sort=nearest] run data merge entity @s {PickupDelay:-1s,Age:32768}
 execute as @e[type=item,tag=knifeCosmetic] at @s if entity @a[tag=murderer,limit=1,sort=nearest,nbt={PickupDelay:-1s}] run data merge entity @s {PickupDelay:0s,Age:1}
 
-#> If the murderer threw the knife and hasn't retrieved it before, give them the auto retrieval item
-#execute as @a[tag=murderer,tag=!retrieved,scores={throwKnife=1..}] run function mcm:items/retrieve/knife_use
-#execute as @a[tag=murderer,tag=!retrieved,scores={droppedKnife=1..}] run function mcm:items/give {item: "knife_retrieve"}
-#execute as @a[tag=murderer,tag=!retrieved,scores={droppedKnife=1..}] run function mcm:items/retrieve/knife_use
-
 #> Remove retrieval item if they pick up the knife and reset scores
-execute as @a[tag=murderer,nbt={Inventory:[{components:{"minecraft:custom_data":{knife:1b}}}]}] run clear @s carrot_on_a_stick[custom_model_data=1111]
-#execute as @a[tag=murderer,scores={throwKnife=1..}] run scoreboard players set @s retrieval_delay 5
-#scoreboard players reset @a[tag=murderer] droppedKnife
-# We don't reset the throwKnife here because it is done later
+execute as @a[tag=murderer] if items entity @s container.* snowball[custom_data~{knife:1b}] run clear @s carrot_on_a_stick[custom_data~{knife_retrieve:1b}]
 
 #> Have the auto retrieval item do stuff
 scoreboard players remove @a[tag=murderer] retrieval_delay 1
 scoreboard players remove @a[tag=murderer] throw_delay 1
 
-execute as @a[tag=murderer,scores={carrot=1..,retrieval_delay=..0}] if data entity @s SelectedItem.components.custom_data.retrieve run function mcm:game/items/retrieve with entity @s SelectedItem.components
-#execute as @a[tag=murderer,tag=retrieved] run scoreboard players reset @s knifeRetrieval
-#execute as @a[tag=murderer,scores={retrieval_delay=1..}] run scoreboard players reset @s knifeRetrieval
-#execute as @a[tag=murderer,scores={knifeRetrieval=1..,retrieval_delay=..0}] if data entity @s SelectedItem.components.custom_data.retrieve at @s run function mcm:game/items/retrieve with entity @s SelectedItem.components
+execute as @a[tag=murderer,scores={carrot=1..,retrieval_delay=..0}] if items entity @s weapon.mainhand carrot_on_a_stick[custom_data~{retrieve:1b}] run function mcm:game/items/retrieve with entity @s SelectedItem.components
 
 #> Run murderer items
-execute as @a[tag=murderer,scores={carrot=1..},nbt={SelectedItem:{components:{"minecraft:custom_data":{murderer:1b}}}}] at @s run function mcm:game/items/murderer_items
-
-#> Clicking the adrenaline item gives buffs
+execute as @a[tag=murderer,scores={carrot=1..}] if items entity @s weapon.mainhand carrot_on_a_stick[custom_data~{murderer:1b}] at @s run function mcm:game/items/murderer_items
 
 #> Clicking random teleporter teleports everyone except murderer and spectators //@TODO add option to teleport murderer too
-execute as @a[tag=murderer,tag=!spectating,scores={teleporterClick=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1112}}}] unless score $launchTime CmdData matches 1..720 run function mcm:game/items/teleporter/use
-execute if score $launchTime CmdData matches 1..720 run scoreboard players reset @a teleporterClick
-
+#execute as @a[tag=murderer,tag=!spectating,scores={teleporterClick=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",count:1b,tag:{CustomModelData:1112}}}] unless score $launchTime CmdData matches 1..720 run function mcm:game/items/teleporter/use
+#execute if score $launchTime CmdData matches 1..720 run scoreboard players reset @a teleporterClick
 
 #> Better death message system
 execute if entity @a[advancements={mcm:hit_detection/killed_player=true}] run tellraw @a[scores={dead=1}] {"translate":"mcm.game.killedby","color":"gold","with":[{"selector":"@a[advancements={mcm:hit_detection/killed_player=true},sort=nearest,limit=1]","color":"red"}]}

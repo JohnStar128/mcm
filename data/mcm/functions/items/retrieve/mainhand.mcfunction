@@ -8,7 +8,7 @@
 
 # Read the item type directly from the player `item` tag in their mainhand
 # This won't return anything if the loadout item has no retrieval
-function mcm:items/get_retrieval_id with entity @s SelectedItem.tag
+function mcm:items/get_retrieval_id with entity @s SelectedItem.components.minecraft:custom_data
 
 # Exit early if no retrieval exists
 # This shouldn't ever run becuase this function should only be called
@@ -17,7 +17,7 @@ execute unless data storage mcm:args item run return fail
 
 # Setup the recal item nbt
 data merge storage mcm:args {nbt:{is_retrieve:1b}}
-data modify storage mcm:args nbt.retrieve_loadout set from entity @s SelectedItem.tag.loadout
+data modify storage mcm:args nbt.retrieve_loadout set from entity @s SelectedItem.components.minecraft:custom_data.loadout
 
 # Calculate cost
 execute store result score cost temp run function mcm:items/get_retrieval_cost with storage mcm:args

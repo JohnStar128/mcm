@@ -26,10 +26,10 @@ execute as @a[scores={dropped_card=1..}] run scoreboard players reset @s dropped
 
 #> Card table interactions (Ace)
 execute as @a[tag=queued,tag=!empty_hand] unless data entity @s SelectedItem run tag @s add empty_hand
-execute as @a[tag=queued,tag=!hold_card1,nbt={SelectedItem:{id:"minecraft:stick", Count:1b, tag:{CustomModelData:1116}}}] run tag @s add hold_card1
+execute if items entity @a[tag=queued,tag=!hold_card1] weapon.mainhand minecraft:stick[custom_model_data=1116] run tag @s add hold_card1
 execute as @a[tag=hold_card1,advancements={mcm:map_functions/riverboat_card_table=true}] run function mcm:maps/riverboat/add_card
 #> Card table interactions (8)
-execute as @a[tag=queued,tag=!hold_card,nbt={SelectedItem:{id:"minecraft:stick", Count:1b, tag:{CustomModelData:1117}}}] run tag @s add hold_card2
+execute if items entity @a[tag=queued,tag=!hold_card] weapon.mainhand minecraft:stick[custom_model_data=1117] run tag @s add hold_card2
 execute as @a[tag=hold_card2,advancements={mcm:map_functions/riverboat_card_table=true}] run function mcm:maps/riverboat/add_card
 #> Card table interactions (remove a card)
 execute as @a[tag=queued,tag=empty_hand] if data entity @s SelectedItem run tag @s remove empty_hand
@@ -39,8 +39,8 @@ execute as @a[advancements={mcm:map_functions/riverboat_card_table=true}] run ad
 #> Check the card combination
 execute if score $cards riverboat matches 5 run function mcm:maps/riverboat/check_card_table
 
-execute as @a[tag=hold_card1] unless data entity @s SelectedItem{id:"minecraft:stick", Count:1b, tag:{CustomModelData:1116}} run tag @s remove hold_card1
-execute as @a[tag=hold_card2] unless data entity @s SelectedItem{id:"minecraft:stick", Count:1b, tag:{CustomModelData:1117}} run tag @s remove hold_card2
+execute as @a[tag=hold_card1] unless data entity @s SelectedItem{id:"minecraft:stick", count:1b, components:{"custom_model_data":1116}} run tag @s remove hold_card1
+execute as @a[tag=hold_card2] unless data entity @s SelectedItem{id:"minecraft:stick", count:1b, components:{"custom_model_data":1117}} run tag @s remove hold_card2
 
 #> Boat horn
 execute as @a[predicate=mcm:bounding_boxes/riverboat_secret, advancements={mcm:map_functions/riverboat_secret=true}] if score $hornPulled riverboat matches 0 positioned 2019 83 -2001 run playsound minecraft:item.goat_horn.sound.6 block @a[tag=queued] ~ ~ ~ 3 1
