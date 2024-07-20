@@ -2,6 +2,9 @@
 execute as @a unless score @s version = $current_version version run function mcm:first_join
 execute as @a unless score @s version = $current_version version run scoreboard players operation @s version = $current_version version
 
+#> Add branding (credit us pretty please!!!!)
+function mcm:branding
+
 #> What to do if a player disconnects and rejoins
 execute as @a[scores={leave=1..}] unless score @s gameID = $gameID CmdData run function mcm:player_leave
 
