@@ -1,4 +1,4 @@
-tag @a[nbt={SelectedItem:{id:"minecraft:warped_fungus_on_a_stick",components:{custom_model_data:1114}}}] add HoldPopcorn
+execute as @a if items entity @s weapon.* warped_fungus_on_a_stick[custom_model_data=1114] run tag @s add HoldPopcorn
 
 execute as @a[tag=!PopcornDelay,tag=HoldPopcorn,scores={popcornClick=1..}] at @s run playsound minecraft:entity.generic.eat master @a ~ ~ ~ 0.4 1.1
 execute as @a[tag=!PopcornDelay,tag=HoldPopcorn,scores={popcornClick=1..}] at @s anchored eyes run particle item{'item': {'id': 'warped_fungus_on_a_stick', 'components': {'minecraft:custom_model_data': 1114}}} ^ ^-0.1 ^0.3 0.1 0.1 0.1 0.1 2 force @a
