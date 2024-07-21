@@ -88,6 +88,13 @@ scoreboard players reset @s RingBell
 scoreboard players reset @s current_vote
 scoreboard players reset @s game_stats
 scoreboard players reset @s time_alive
+scoreboard players reset @s vineyard_secret
+scoreboard players reset @s cyberpunk_secret
+scoreboard players reset @s cyberpunk
+scoreboard players reset @s card1
+scoreboard players reset @s card8
+scoreboard players reset @s dropped_card
+
 function mcm:util/reset_carrot_on_stick
 
 scoreboard players enable @s player_rule_update
