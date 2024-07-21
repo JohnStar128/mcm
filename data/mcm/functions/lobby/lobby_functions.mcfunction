@@ -13,8 +13,8 @@ execute as @a[tag=!first_join,scores={crouch=1..}] run function mcm:first_join
 
 #> Auto queue
 scoreboard players remove @a[scores={autoqueue_delay=1..}] autoqueue_delay 1
-execute as @a[tag=first_join,tag=!autoqueue_spam_prevention,scores={autoqueue=1..,autoqueue_delay=0},tag=!autoqueue,nbt={SelectedItem:{id:"minecraft:warped_fungus_on_a_stick",tag:{Autoqueue:1b}}}] at @s run function mcm:lobby/queueing/autoqueue
-execute as @a[tag=first_join,tag=!autoqueue_spam_prevention,scores={autoqueue=1..,autoqueue_delay=0},tag=autoqueue,nbt={SelectedItem:{id:"minecraft:warped_fungus_on_a_stick",tag:{Autoqueue:1b}}}] at @s run function mcm:lobby/queueing/deautoqueue
+execute as @a[tag=first_join,tag=!autoqueue_spam_prevention,scores={autoqueue=1..,autoqueue_delay=0},tag=!autoqueue] if items entity @s weapon.* *[custom_data~{Autoqueue:1b}] at @s run function mcm:lobby/queueing/autoqueue
+execute as @a[tag=first_join,tag=!autoqueue_spam_prevention,scores={autoqueue=1..,autoqueue_delay=0},tag=autoqueue] if items entity @s weapon.* *[custom_data~{Autoqueue:1b}] at @s run function mcm:lobby/queueing/deautoqueue
 
 #> Popcorn
 execute if score $gamestate CmdData matches -1..0 run function mcm:lobby/popcorn
@@ -62,7 +62,7 @@ execute unless entity @a[predicate=mcm:bounding_boxes/credits] if score $credit_
 
 #> Rule updates
 execute as @a[scores={player_rule_update=1..}] run function mcm:game/rules/try_rule_update
-execute as @a[nbt={SelectedItem:{id:"minecraft:written_book",Count:1b,tag:{HowToPlay:1b}}}] run item modify entity @s weapon.mainhand mcm:refresh_book
+execute as @a if items entity @s weapon.* written_book[custom_data~{HowToPlay:1b}] run item modify entity @s weapon.mainhand mcm:refresh_book
 
 #> Remove items players shouldn't have
 #function mcm:lobby/remove_items
