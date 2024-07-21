@@ -4,8 +4,8 @@
 #> Response checking
 # Correct
 execute if score @s forkliftresponse matches 1 run tellraw @s ["", {"translate":"mcm.industry.forklift_test.correct"}]
-execute if score @s forkliftresponse matches 1 run scoreboard players set $event_type temp 1
-execute if score @s forkliftresponse matches 1 run function mcm:game/summary/add_event {translate:"mcm.game.events.industry_forklift_test_event",color:"green"}
+#execute if score @s forkliftresponse matches 1 run scoreboard players set $event_type temp 1
+#execute if score @s forkliftresponse matches 1 run function mcm:game/summary/add_event {translate:"mcm.game.events.industry_forklift_test_event",color:"green"}
 execute if score @s forkliftresponse matches 1 run function mcm:maps/industry/add_player_to_computer
 execute if score @s forkliftresponse matches 1 run scoreboard players add @s forklifttest 1
 
