@@ -17,7 +17,7 @@ execute as @e[type=item_display,tag=riverboat_card] run data merge entity @s {tr
 #> Change two to eights
 tag @e[type=item_display,tag=riverboat_card,tag=ace,limit=2,sort=random] add eight
 tag @e[type=item_display,tag=riverboat_card,tag=eight] remove ace
-execute as @e[type=item_display,tag=riverboat_card,tag=eight] run data merge entity @s {item:{components:{custom_model_data:1117}}}
+execute as @e[type=item_display,tag=riverboat_card,tag=eight] run data merge entity @s {item:{components:{"minecraft:custom_model_data":1117}}}
 
 #> Summon interactions
 execute at @e[type=item_display,tag=riverboat_card,tag=ace] run summon interaction ~ ~ ~ {width:0.5,height:0.1,Tags:["riverboat_card", "ace"],response:false}
