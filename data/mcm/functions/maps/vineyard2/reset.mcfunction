@@ -2,7 +2,8 @@ kill @e[type=armor_stand,tag=vineyard_secret]
 kill @e[type=item_frame,tag=vineyard_secret]
 place template mcm:vineyard_secret_2_closed 1677 72 2070
 execute as @a[scores={vineyard_secret=1..}] run scoreboard players reset @s vineyard_secret
-data merge block 1690 75 2059 {Items:[{slot:0b, id:"minecraft:potion", Count:1b, tag:{CustomPotionColor:9705041,display:{Name:'[{"translate":"mcm.vineyard.wine","italic":false,"color":"dark_purple"}]',Lore:['[{"translate":"mcm.vineyard.wine.lore","italic":true,"color":"light_purple"}]']},custom_potion_effects:[{id:"minecraft:nausea",duration:600}],HideFlags:32}}]}
+data merge block 1690 75 2059 {Items:[{slot:0b, id:"minecraft:potion", count:1, components:{"minecraft:hide_additional_tooltip":{},potion_contents:{custom_color:9705041,custom_effects:[{id:"minecraft:nausea",duration:600}]},"minecraft:custom_name":'{"translate":"mcm.vineyard.wine","italic":false,"color":"dark_purple"}',"minecraft:lore":['[{"translate":"mcm.vineyard.wine.lore","italic":true,"color":"light_purple"}]']}}]}
+#data merge block 1690 75 2059 {Items:[{slot:0b, id:"minecraft:potion", count:1, tag:{CustomPotionColor:9705041,display:{Name:'[{"translate":"mcm.vineyard.wine","italic":false,"color":"dark_purple"}]',Lore:['[{"translate":"mcm.vineyard.wine.lore","italic":true,"color":"light_purple"}]']},custom_potion_effects:[{id:"minecraft:nausea",duration:600}],HideFlags:32}}]}
 data merge block 1754 84 2091 {Items:[]}
 scoreboard players set $on vineyard_secret 0
 
