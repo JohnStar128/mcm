@@ -1,4 +1,10 @@
-{
-    "function": "set_custom_data",
-    "tag": "{Autoqueue:1b,CustomModelData:1235,display:{Name:'[{\"translate\":\"mcm.item.autoqueue.disable\",\"italic\":false,\"color\":\"red\"}]'}}"
-}
+[
+    {
+        "function": "set_custom_model_data",
+        "value": 1235
+    },
+    {
+        "function": "set_name",
+        "tag": "[{\"translate\":\"mcm.item.autoqueue.disable\",\"italic\":false,\"color\":\"red\"}]"
+    }
+]
