@@ -30,7 +30,7 @@ execute if score $graceperiod CmdData matches 300 run scoreboard players operati
 
 #> Tag all gunners TODO change this to advancement
 execute as @a[tag=innocent,tag=!gunner] if items entity @s container.* warped_fungus_on_a_stick run scoreboard players set $event_type temp 3
-execute as @a[tag=innocent,tag=!gunner] if items entity @s container.* warped_fungus_on_a_stick run function mcm:items/find_item_and_copy_data {path:'components."minecraft:custom_data".owner',storage:"mcm:game_summary",storage_path:"temp.player2_text"}
+execute as @a[tag=innocent,tag=!gunner] if items entity @s container.* warped_fungus_on_a_stick run function mcm:items/find_item_and_copy_data {path:"components.minecraft:custom_data.owner",storage:"mcm:game_summary",storage_path:"temp.player2_text"}
 execute as @a[tag=innocent,tag=!gunner] if items entity @s container.* warped_fungus_on_a_stick run data merge storage mcm:game_summary {temp:{player2_color:"dark_aqua"}}
 execute as @a[tag=innocent,tag=!gunner] if items entity @s container.* warped_fungus_on_a_stick run function mcm:game/summary/add_event {translate:"mcm.game.events.picked_up_gun",color:"green"}
 execute as @a[tag=innocent,tag=!gunner] if items entity @s container.* warped_fungus_on_a_stick run tag @s add gunner
@@ -153,8 +153,8 @@ execute if entity @a[advancements={mcm:hit_detection/killed_player=true}] run te
 execute if entity @a[advancements={mcm:hit_detection/gun_hit=true}] run tellraw @a[scores={dead=1}] {"translate":"mcm.game.killedby","color":"gold","with":[{"selector":"@a[advancements={mcm:hit_detection/killed_player=true},sort=nearest,limit=1]","color":"red"}]}
 execute as @a[scores={dead=1}] on attacker run scoreboard players add @s game_stats 1
 execute as @a[scores={dead=1}] run scoreboard players set $event_type temp 2
-execute as @a[scores={dead=1}] if entity @s[advancements={mcm:hit_detection/killed_player=true},tag=murderer] run function mcm:game/summary/add_event {translate:"mcm.game.events.killed_by_murderer", color:"green"}
-execute as @a[scores={dead=1}] if entity @s[advancements={mcm:hit_detection/killed_player=true},tag=gunner_stat] run function mcm:game/summary/add_event {translate:"mcm.game.events.killed_by_gunner", color:"green"}
+execute as @a[scores={dead=1}] if entity @a[advancements={mcm:hit_detection/killed_player=true},tag=murderer] run function mcm:game/summary/add_event {translate:"mcm.game.events.killed_by_murderer", color:"green"}
+execute as @a[scores={dead=1}] if entity @a[advancements={mcm:hit_detection/killed_player=true},tag=gunner_stat] run function mcm:game/summary/add_event {translate:"mcm.game.events.killed_by_gunner", color:"green"}
 execute as @a[scores={dead=1}] run scoreboard players set @s dead 2
 advancement revoke @a[advancements={mcm:hit_detection/killed_player=true}] only mcm:hit_detection/killed_player
 

@@ -22,7 +22,7 @@ execute store result storage mcm:game_summary temp.event_type int 1 run scoreboa
 
 # type 2: get player 2
 execute if score $event_type temp matches 2 as @a[advancements={mcm:hit_detection/killed_player=true},sort=nearest,limit=1] run loot replace block -2 -50 72 container.0 loot mcm:playerhead
-execute if score $event_type temp matches 2 run data modify storage mcm:game_summary temp.player2_text set from block -2 -50 72 Items[0].tag.SkullOwner.Name
+execute if score $event_type temp matches 2 run data modify storage mcm:game_summary temp.player2_text set from block -2 -50 72 Items[0].components.minecraft:profile.name
 execute if score $event_type temp matches 2 if entity @a[advancements={mcm:hit_detection/killed_player=true},sort=nearest,limit=1,tag=murderer] run data modify storage mcm:game_summary temp.player2_color set value "red"
 execute if score $event_type temp matches 2 if entity @a[advancements={mcm:hit_detection/killed_player=true},sort=nearest,limit=1,tag=gunner_stat] run data modify storage mcm:game_summary temp.player2_color set value "dark_aqua"
 execute if score $event_type temp matches 2 if entity @a[advancements={mcm:hit_detection/killed_player=true},sort=nearest,limit=1,tag=innocent,tag=!gunner_stat] run data modify storage mcm:game_summary temp.player2_color set value "light_purple"
