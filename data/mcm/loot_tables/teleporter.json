@@ -10,7 +10,22 @@
           "functions": [
             {
               "function": "set_custom_data",
-              "tag": "{CustomModelData:1112,no_drop_on_death:1b,display:{Name:'[{\"translate\":\"mcm.item.teleporter\",\"italic\":false}]',Lore:['[{\"translate\":\"mcm.item.teleporter.lore\",\"italic\":false}]']}}"
+              "tag": "{murderer:1b,item:\"teleporter\",teleporter:1b,NoDrop:1b,no_drop_on_death:1b}"
+            },
+            {
+              "function": "set_name",
+              "name": {"translate":"mcm.item.teleporter","italic":false}
+            },
+            {
+              "function": "set_lore",
+              "lore": [
+                {"translate":"mcm.item.teleporter.lore","italic":false}
+              ],
+              "mode" : "replace_all"
+            },
+            {
+              "function": "set_custom_model_data",
+              "value": 1112
             }
           ]
         }
