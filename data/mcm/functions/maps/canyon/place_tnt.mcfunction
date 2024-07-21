@@ -3,8 +3,8 @@ execute store result score $tempuuid playerUUID run data get entity @s interacti
 data remove entity @s interaction
 
 #> Fail case
-execute as @a[predicate=mcm:matches_uuid,nbt=!{SelectedItem:{"id":"minecraft:tnt"}}] run tellraw @s ["",{"translate":"mcm.canyon.place_tnt.fail","italics":false,"bold":false,"color":"red"}]
-execute as @a[predicate=mcm:matches_uuid,nbt=!{SelectedItem:{"id":"minecraft:tnt"}}] run return fail
+execute as @a[predicate=mcm:matches_uuid] unless items entity @s weapon.* tnt run tellraw @s ["",{"translate":"mcm.canyon.place_tnt.fail","italics":false,"bold":false,"color":"red"}]
+execute as @a[predicate=mcm:matches_uuid] unless items entity @s weapon.* tnt run return fail
 
 execute as @a[predicate=mcm:matches_uuid] store result score $temp math run clear @s tnt
 scoreboard players operation $canyon_tnt CmdData += $temp math
