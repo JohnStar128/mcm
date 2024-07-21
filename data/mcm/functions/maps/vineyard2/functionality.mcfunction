@@ -9,7 +9,8 @@ execute as @a[scores={drankPotion=1}] run function mcm:game/summary/add_event {t
 execute as @a[scores={drankPotion=1}] run scoreboard players reset @s drankPotion
 
 #> Secret stuff
-execute as @a[tag=queued,tag=!spectating,nbt={SelectedItem:{id:"minecraft:bone_meal"}}] run item modify entity @s weapon.mainhand mcm:vineyard_secret
+execute as @e[type=item] if items entity @s contents bone_meal run item modify entity @s contents mcm:vineyard_secret
+#execute as @a[tag=queued,tag=!spectating,nbt={SelectedItem:{id:"minecraft:bone_meal"}}] run item modify entity @s weapon.mainhand mcm:vineyard_secret
 execute as @a[tag=queued,scores={vineyard_secret=1}] at @s run loot spawn ~ ~ ~ loot mcm:grapes
 execute as @a[tag=queued,scores={vineyard_secret=1}] run scoreboard players set $event_type temp 1
 execute as @a[tag=queued,scores={vineyard_secret=1}] run function mcm:game/summary/add_event {translate:"mcm.game.events.vineyard_used_fertilizer", color: "green"}
