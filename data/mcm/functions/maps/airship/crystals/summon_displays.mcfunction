@@ -4,7 +4,7 @@ execute at @s anchored eyes run summon armor_stand ~ ~ ~ {Tags:["tp_beacon_displ
 execute at @s store result score @e[type=armor_stand,tag=tp_beacon_display_mount,tag=spawned,limit=1] playerUUID run data get entity @s UUID[0]
 tag @s add hold_crystal
 
-execute at @e[type=marker,tag=airship_teleport_beacon] run summon item_display ~ ~ ~ {item:{id:"minecraft:amethyst_block",Count:1b,tag:{}},Tags:["tp_beacon_display", "spawned"],transformation:[0.25, 0.0, 0.0, 0.0, 0.0, 0.25, 0.0, 0.0, 0.0, 0.0, 0.25, 1.0, 0.0, 0.0, 0.0, 1.0]}
+execute at @e[type=marker,tag=airship_teleport_beacon] run summon item_display ~ ~ ~ {item:{id:"minecraft:amethyst_block",count:1b},Tags:["tp_beacon_display", "spawned"],transformation:[0.25, 0.0, 0.0, 0.0, 0.0, 0.25, 0.0, 0.0, 0.0, 0.0, 0.25, 1.0, 0.0, 0.0, 0.0, 1.0]}
 execute as @e[type=item_display,tag=tp_beacon_display,tag=spawned] at @s run scoreboard players operation @s targetUUID = @e[type=marker,tag=airship_teleport_beacon,sort=nearest,limit=1] playerUUID
 scoreboard players operation @e[type=item_display,tag=tp_beacon_display,tag=spawned] playerUUID = @s playerUUID
 

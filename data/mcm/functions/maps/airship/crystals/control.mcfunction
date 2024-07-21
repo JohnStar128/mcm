@@ -1,7 +1,7 @@
 #> Tag players when they hold a crystal
-execute as @a[tag=!hold_crystal,nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{CustomModelData:1114}}}] run function mcm:maps/airship/crystals/summon_displays
+execute as @a[tag=!hold_crystal] if items entity @s weapon.* carrot_on_a_stick[custom_model_data=1114] run function mcm:maps/airship/crystals/summon_displays
 execute as @a[tag=hold_crystal] at @s run function mcm:maps/airship/crystals/player_hold
-execute as @a[tag=hold_crystal,nbt=!{SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{CustomModelData:1114}}}] at @s run function mcm:maps/airship/crystals/kill_displays
+execute as @a[tag=!hold_crystal] unless items entity @s weapon.* carrot_on_a_stick[custom_model_data=1114] at @s run function mcm:maps/airship/crystals/kill_displays
 
 execute as @e[type=item_display,tag=tp_beacon_display] at @s run function mcm:maps/airship/crystals/update_display
 

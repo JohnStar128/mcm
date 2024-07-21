@@ -7,7 +7,7 @@ execute at @e[type=marker,tag=airship_teleport_beacon,tag=valid,limit=1,sort=nea
 execute if entity @e[type=marker,tag=airship_teleport_beacon,tag=valid] run playsound minecraft:block.amethyst_block.break block @a ~ ~ ~ 1 0
 execute if entity @e[type=marker,tag=airship_teleport_beacon,tag=valid] at @s run playsound minecraft:block.amethyst_block.break block @a ~ ~ ~ 1 0
 #> Remove crystal
-execute if entity @e[type=marker,tag=airship_teleport_beacon,tag=valid] run clear @s carrot_on_a_stick[custom_data={},custom_model_data=1114]
+execute if entity @e[type=marker,tag=airship_teleport_beacon,tag=valid] run clear @s carrot_on_a_stick[custom_model_data=1114]
 execute if entity @e[type=marker,tag=airship_teleport_beacon,tag=valid] run scoreboard players set $event_type temp 1
 execute if entity @e[type=marker,tag=airship_teleport_beacon,tag=valid] run function mcm:game/summary/add_event {translate:"mcm.game.events.airship_used_tp_crystal", color: "green"}
 
