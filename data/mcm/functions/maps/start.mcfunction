@@ -31,3 +31,6 @@ gamemode adventure @a[team=!test4,tag=queued]
 
 #> Set gamestate to playing ($gamestate CmdData=1)
 scoreboard players set $gamestate CmdData 1
+
+#> Disable branding
+execute as @a[tag=queued] bossbar set mcm:branding visible false

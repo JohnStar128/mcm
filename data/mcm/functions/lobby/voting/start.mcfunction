@@ -50,6 +50,10 @@ bossbar set lobbybar value 20
 bossbar set lobbybar color yellow
 bossbar set lobbybar style notched_20
 
+#> Add branding (credit us pretty please!!!!)
+function mcm:branding
+#function mcm:reset_branding
+
 #> Change gamestate to -1 (Map vote status)
 scoreboard players set $gamestate CmdData -1
 

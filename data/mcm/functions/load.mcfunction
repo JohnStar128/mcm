@@ -217,3 +217,6 @@ item modify block -1 -1 79 container.0 mcm:refresh_book
 
 #> Set weather
 weather clear
+
+#> Branding
+function mcm:reset_branding
