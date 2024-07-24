@@ -1,5 +1,10 @@
 #> Cancel throw if throw delay isn't up
 
+execute if score @s droppedKnife matches 1.. run function mcm:items/retrieve/knife_use
+execute if score @s droppedKnife matches 1.. run scoreboard players set @s retrieval_delay 5
+execute if score @s droppedKnife matches 1.. run tag @s remove has_knife
+execute if score @s droppedKnife matches 1.. run return run scoreboard players reset @s droppedKnife
+
 execute at @s as @e[type=snowball,sort=nearest,limit=1] store result score @s playerUUID run data get entity @s Owner[0]
 scoreboard players operation $tempuuid playerUUID = @s playerUUID
 execute if score @s throw_delay matches 1.. as @e[type=snowball,predicate=mcm:matches_uuid] run kill @s

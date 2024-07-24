@@ -10,5 +10,6 @@ execute as @a[tag=queued] at @s run playsound minecraft:entity.enderman.teleport
 execute as @a[tag=queued] at @s run playsound minecraft:block.beacon.deactivate ambient @s ~ ~ ~ 1 2 1 
 
 tag @s add usedTeleport
-function mcm:items/retrieve/mainhand
+execute if items entity @s weapon.mainhand carrot_on_a_stick[custom_data~{teleporter:1b}] run function mcm:items/retrieve/mainhand
+execute if items entity @s weapon.offhand carrot_on_a_stick[custom_data~{teleporter:1b}] run function mcm:items/retrieve/offhand
 function mcm:util/reset_carrot_on_stick
