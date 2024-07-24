@@ -28,22 +28,19 @@ execute as @e[type=interaction,tag=test_range_entity] if data entity @s interact
 # tracker
 execute as @a[predicate=mcm:bounding_boxes/test_range,predicate=mcm:items/hold_tracker] at @s positioned as @e[type=armor_stand,tag=test_range_target,limit=1,sort=nearest] run function mcm:game/items/player_tracker/find_player
 # teleporter
-execute as @a[predicate=mcm:bounding_boxes/test_range,scores={carrot=1..},nbt={SelectedItem:{components:{"minecraft:custom_data":{teleporter:1b}}}}] at @s run function mcm:lobby/test_range/tp_target
+execute as @a[predicate=mcm:bounding_boxes/test_range,scores={carrot=1..}] if items entity @s weapon.* carrot_on_a_stick[custom_data~{teleporter:1b}] at @s run function mcm:lobby/test_range/tp_target
 # adrenaline
-execute as @a[predicate=mcm:bounding_boxes/test_range,scores={carrot=1..},nbt={SelectedItem:{components:{"minecraft:custom_data":{adrenaline:1b}}}}] at @s run effect give @s speed 5 3 true
-execute as @a[predicate=mcm:bounding_boxes/test_range,scores={carrot=1..},nbt={SelectedItem:{components:{"minecraft:custom_data":{adrenaline:1b}}}}] at @s run effect give @s jump_boost 5 2 true
-execute as @a[predicate=mcm:bounding_boxes/test_range,scores={carrot=1..},nbt={SelectedItem:{components:{"minecraft:custom_data":{adrenaline:1b}}}}] at @s run playsound minecraft:entity.generic.drink block @a ~ ~ ~ 1 1 0
-execute as @a[predicate=mcm:bounding_boxes/test_range,scores={carrot=1..}] run item replace entity @s weapon.mainhand with air
+execute as @a[predicate=mcm:bounding_boxes/test_range,scores={carrot=1..}] if items entity @s weapon.* carrot_on_a_stick[custom_data~{adrenaline:1b}] at @s run effect give @s speed 5 3 true
+execute as @a[predicate=mcm:bounding_boxes/test_range,scores={carrot=1..}] if items entity @s weapon.* carrot_on_a_stick[custom_data~{adrenaline:1b}] at @s run effect give @s jump_boost 5 2 true
+execute as @a[predicate=mcm:bounding_boxes/test_range,scores={carrot=1..}] if items entity @s weapon.* carrot_on_a_stick[custom_data~{adrenaline:1b}] at @s run playsound minecraft:entity.generic.drink block @a ~ ~ ~ 1 1 0
+
+execute as @a[predicate=mcm:bounding_boxes/test_range,scores={carrot=1..}] if items entity @s weapon.mainhand carrot_on_a_stick run item replace entity @s weapon.mainhand with air
+execute as @a[predicate=mcm:bounding_boxes/test_range,scores={carrot=1..}] if items entity @s weapon.offhand carrot_on_a_stick run item replace entity @s weapon.offhand with air
 execute as @a[predicate=mcm:bounding_boxes/test_range,scores={carrot=1..}] at @s run function mcm:util/reset_carrot_on_stick
 
 #> Return to main lobby
 execute as @a[predicate=mcm:bounding_boxes/test_range_grate,tag=!came_from_grate] run tp @s -25.5 1 79.5 90 0
 execute as @a[predicate=mcm:bounding_boxes/test_range_grate,tag=came_from_grate] run tp @s -17 1 64 90 45
-
-#> Kill knives/guns in the test range
-#execute as @e[type=item,predicate=mcm:bounding_boxes/test_range,nbt={OnGround:1b,Item:{tag:{CustomModelData:1111}}}] run kill @s
-#execute as @e[type=arrow,predicate=mcm:bounding_boxes/test_range,nbt={inGround:1b}] at @s run kill @e[type=item,limit=1,sort=nearest]
-#execute as @e[type=arrow,predicate=mcm:bounding_boxes/test_range,nbt={inGround:1b}] run kill @s
 
 #> Tag players in the test range
 tag @s add test_range
