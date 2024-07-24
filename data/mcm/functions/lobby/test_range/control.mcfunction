@@ -22,7 +22,7 @@ execute as @a[advancements={mcm:hit_detection/test_range_hit=true}] run advancem
 
 #> Test range items
 execute as @e[type=interaction,tag=test_range_clear_interaction] if data entity @s interaction on target run function mcm:lobby/give_lobby_items
-execute as @e[type=interaction,tag=test_range_interaction] if data entity @s interaction at @s on target run function mcm:lobby/test_range/give with entity @e[type=item_display,limit=1,sort=nearest]
+execute as @e[type=interaction,tag=test_range_interaction] if data entity @s interaction at @s on target run function mcm:lobby/test_range/give with entity @e[type=item_display,limit=1,sort=nearest] item.components.minecraft:custom_data
 execute as @e[type=interaction,tag=test_range_entity] if data entity @s interaction run data remove entity @s interaction
 
 # tracker
