@@ -117,6 +117,9 @@ execute if score $gameEndTimer CmdData matches ..1 run scoreboard players reset 
 execute if score $gameEndTimer CmdData matches ..1 run scoreboard players reset @a[tag=afk] crouch
 execute if score $gameEndTimer CmdData matches ..1 run scoreboard players reset @a[tag=afk] jump
 
+#> Remove any tags that might mess up lobby stuff
+execute if score $gameEndTimer CmdData matches ..1 run tag @a remove free_knife
+
 #> Reset the lobby
 execute if score $gameEndTimer CmdData matches ..1 run function mcm:lobby/lobby_reset
 

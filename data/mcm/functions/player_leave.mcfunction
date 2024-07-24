@@ -26,6 +26,7 @@ tag @s remove Voted
 tag @s remove testing_range
 tag @s remove launch_player
 tag @s remove autoqueue_spam_prevention
+tag @s remove free_knife
 
 #> Print game rules if voting or queueing
 execute if score $gamestate CmdData matches 0..1 run playsound minecraft:entity.experience_orb.pickup block @s ~ ~ ~
