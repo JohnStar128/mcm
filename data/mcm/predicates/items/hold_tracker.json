@@ -10,7 +10,9 @@
               "items": [
                 "minecraft:stick"
               ],
-              "nbt": "{CustomModelData:1111}"
+              "components": {
+                "minecraft:custom_model_data" : 1111
+              }
             }
           }
         }
@@ -24,7 +26,9 @@
               "items": [
                 "minecraft:stick"
               ],
-              "nbt": "{CustomModelData:1111}"
+              "components": {
+                "minecraft:custom_model_data" : 1111
+              }
             }
           }
         }
