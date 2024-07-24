@@ -25,5 +25,5 @@ execute as @a[tag=queued,predicate=!mcm:bounding_boxes/train,tag=!spectating] at
 #> Kill players that jump off train after grace period
 execute as @a[tag=queued,tag=!spectating,predicate=!mcm:bounding_boxes/train] at @s if score $selectedMap CmdData matches 8 if score $graceperiod CmdData matches ..0 run tellraw @s {"translate":"mcm.train.fell.off","color":"red"}
 execute as @a[tag=queued,tag=!spectating,predicate=!mcm:bounding_boxes/train] at @s if score $selectedMap CmdData matches 8 if score $graceperiod CmdData matches ..0 run scoreboard players set $eventtype temp 1
-execute as @a[tag=queued,tag=!spectating,predicate=!mcm:bounding_boxes/train] at @s if score $selectedMap CmdData matches 8 if score $graceperiod CmdData matches ..0 run function mcm:game/summary/add_event {translate:"mcm.game.events.killed_by_train_fell",color:"green"}
+execute as @a[tag=queued,tag=!spectating,predicate=!mcm:bounding_boxes/train] at @s if score $selectedMap CmdData matches 8 if score $graceperiod CmdData matches ..0 run function mcm:game/summary/add_event {translate:"mcm.game.events.killed_by_train_fall",color:"green"}
 execute as @a[tag=queued,tag=!spectating,predicate=!mcm:bounding_boxes/train] at @s if score $selectedMap CmdData matches 8 if score $graceperiod CmdData matches ..0 run function mcm:game/playerdeath
