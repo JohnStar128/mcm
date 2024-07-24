@@ -1,1 +1,0 @@
-data modify storage mcm:temp name set from block -206 59 298 Items[0].components.minecraft:profile.name
