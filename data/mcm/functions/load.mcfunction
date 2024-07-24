@@ -101,6 +101,7 @@ scoreboard objectives add forklifttest dummy
 scoreboard objectives add forkliftresponse trigger
 scoreboard objectives add forklift_interact dummy
 scoreboard objectives add test_range dummy
+scoreboard objectives add nojump dummy
 
 scoreboard objectives add loadout_knife dummy
 scoreboard objectives add loadout_1 dummy
