@@ -8,6 +8,7 @@ gamemode adventure @s
 tp @s -1 1 69 0 0
 #> Clear any game effects (normal ones get re-applied)
 effect clear @s
+attribute @s generic.jump_strength base set 0.41
 
 # Tags
 tag @s remove WonLast

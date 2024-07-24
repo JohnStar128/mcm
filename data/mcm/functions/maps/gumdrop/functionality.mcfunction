@@ -11,8 +11,9 @@ execute as @a[tag=queued,tag=!spectating] at @s if block ~ ~-3 ~ stone run effec
 execute as @a[tag=queued,tag=!spectating] at @s if block ~ ~-4 ~ stone run effect give @s speed 1 1
 
 #> Sticky stepping on gumdrops
-execute as @a[tag=queued,tag=!spectating,predicate=mcm:gumdrop_cant_jump_on] run effect give @s jump_boost 3 254 true 
-execute as @a[tag=queued,tag=!spectating,predicate=mcm:gumdrop_cant_jump_on] run effect give @s slowness 3 4 true 
+execute as @a[tag=queued,tag=!spectating,predicate=mcm:gumdrop_cant_jump_on] run attribute @s minecraft:generic.jump_strength base set 0
+execute as @a[tag=queued,tag=!spectating,predicate=!mcm:gumdrop_cant_jump_on] run attribute @s minecraft:generic.jump_strength base set 0.412
+execute as @a[tag=queued,tag=!spectating,predicate=mcm:gumdrop_cant_jump_on] run effect give @s slowness 2 4 true 
 execute as @a[tag=queued,tag=!spectating,predicate=mcm:gumdrop_cant_jump_on,scores={jump=1..}] at @s run playsound minecraft:block.honey_block.fall block @s ~ ~ ~ 3 0.8 1
 execute as @a[tag=queued,tag=!spectating,predicate=mcm:gumdrop_cant_jump_on,scores={jump=1..}] run scoreboard players set @s jump 0
 

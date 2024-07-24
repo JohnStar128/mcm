@@ -47,6 +47,8 @@ execute if score $gameEndTimer CmdData matches ..1 run kill @e[type=item,nbt={It
 
 execute if score $gameEndTimer CmdData matches ..1 run effect clear @a
 
+execute if score $gameEndTimer CmdData matches 200 as @a run attribute @s generic.jump_strength base set 0.41
+
 # remove spawnpoints
 #execute if score $gameEndTimer CmdData matches ..1 as @e[type=marker,tag=!available,tag=map_marker] run function mcm:util/dealloc_entity
 #execute if score $gameEndTimer CmdData matches ..1 as @e[type=marker,tag=PlayerSpawn] run tag @s remove Occupied
