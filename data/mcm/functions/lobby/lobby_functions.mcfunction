@@ -81,8 +81,8 @@ execute as @a[tag=display_scroll_lock] run function mcm:lobby/displays/control
 execute as @a[tag=display_scroll_lock,predicate=!mcm:bounding_boxes/lobby_cosmetic_zone] run tag @s remove display_scroll_lock
 
 #> Spectate item
-execute if score $gamestate CmdData matches 1.. if score $graceperiod CmdData matches 1.. as @a[tag=!queued] if score @s spyglass matches 1.. as @s[nbt={SelectedItem:{id:"minecraft:spyglass",tag:{Spectate:1b}}}] run function mcm:game/latejoin
-execute if score $gamestate CmdData matches 1.. unless score $graceperiod CmdData matches 1.. as @a[tag=!queued] if score @s spyglass matches 1.. as @s[nbt={SelectedItem:{id:"minecraft:spyglass",tag:{Spectate:1b}}}] run function mcm:game/spectate
+execute if score $gamestate CmdData matches 1.. if score $graceperiod CmdData matches 1.. as @a[tag=!queued] if score @s spyglass matches 1.. if items entity @s weapon.* spyglass[custom_data~{Spectate:1b}] run function mcm:game/latejoin
+execute if score $gamestate CmdData matches 1.. unless score $graceperiod CmdData matches 1.. as @a[tag=!queued] if score @s spyglass matches 1.. if items entity @s weapon.* spyglass[custom_data~{Spectate:1b}] run function mcm:game/spectate
 scoreboard players set @a spyglass 0
 
 #> Scroll the credits
