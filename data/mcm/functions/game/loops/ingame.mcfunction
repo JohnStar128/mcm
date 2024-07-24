@@ -36,7 +36,7 @@ execute as @a[tag=innocent,tag=!gunner] if items entity @s container.* warped_fu
 execute as @a[tag=innocent,tag=!gunner] if items entity @s container.* warped_fungus_on_a_stick run tag @s add gunner
 
 #> Murderers and people who dropped their gun can't pick up guns anymore
-execute as @e[type=item,tag=gun] at @s run data modify entity @s Owner set from entity @a[tag=innocent,tag=!spectating,limit=1,sort=nearest,scores={canPickupGun=0}] UUID
+execute as @e[type=item,tag=gun] at @s run data modify entity @s Owner set from entity @a[tag=!murderer,tag=!spectating,limit=1,sort=nearest,scores={canPickupGun=0}] UUID
 execute as @e[type=item,tag=gun] at @s if score @a[tag=!spectating,limit=1,sort=nearest] canPickupGun matches 0 run data merge entity @s {PickupDelay:0s,Age:1}
 execute as @e[type=item,tag=gun] at @s unless score @a[tag=!spectating,limit=1,sort=nearest] canPickupGun matches 0 run data merge entity @s {PickupDelay:-1s,Age:32768}
 
@@ -139,14 +139,17 @@ execute as @e[type=item,tag=knifeCosmetic] at @s if entity @a[tag=murderer,limit
 
 #> Remove retrieval item if they pick up the knife and reset scores
 execute as @a[tag=murderer] if items entity @s container.* snowball[custom_data~{knife:1b}] run clear @s carrot_on_a_stick[custom_data~{knife_retrieve:1}]
+execute as @a[tag=murderer] if items entity @s weapon.* snowball[custom_data~{knife:1b}] run clear @s carrot_on_a_stick[custom_data~{knife_retrieve:1}]
 
 #> Have the auto retrieval item do stuff
 scoreboard players remove @a[tag=murderer] retrieval_delay 1
 scoreboard players remove @a[tag=murderer] throw_delay 1
 execute as @a[tag=murderer,scores={carrot=1..,retrieval_delay=..0}] if data entity @s SelectedItem.components.minecraft:custom_data.retrieve run function mcm:game/items/retrieve with entity @s SelectedItem.components.minecraft:custom_data
+execute as @a[tag=murderer,scores={carrot=1..,retrieval_delay=..0}] if data entity @s Inventory[{Slot:-106b}].components.minecraft:custom_data.retrieve run function mcm:game/items/retrieve with entity @s Inventory[{Slot:-106b}].components.minecraft:custom_data
 
 #> Run murderer items
-execute as @a[tag=murderer,scores={carrot=1..}] if items entity @s weapon.mainhand carrot_on_a_stick[custom_data~{murderer:1b}] unless data entity @s SelectedItem.components.minecraft:custom_data.retrieve at @s run function mcm:game/items/murderer_items
+execute as @a[tag=murderer,scores={carrot=1..}] if items entity @s weapon.mainhand carrot_on_a_stick[custom_data~{murderer:1b}] at @s run function mcm:game/items/murderer_items with entity @s SelectedItem.components.minecraft:custom_data
+execute as @a[tag=murderer,scores={carrot=1..}] if items entity @s weapon.offhand carrot_on_a_stick[custom_data~{murderer:1b}] at @s run function mcm:game/items/murderer_items with entity @s Inventory[{Slot:-106b}].components.minecraft:custom_data
 
 #> Better death message system
 execute if entity @a[advancements={mcm:hit_detection/killed_player=true}] run tellraw @a[scores={dead=1}] {"translate":"mcm.game.killedby","color":"gold","with":[{"selector":"@a[advancements={mcm:hit_detection/killed_player=true},sort=nearest,limit=1]","color":"red"}]}
