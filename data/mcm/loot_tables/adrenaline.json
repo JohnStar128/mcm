@@ -9,8 +9,23 @@
           "name": "minecraft:carrot_on_a_stick",
           "functions": [
             {
-              "function": "set_nbt",
-              "tag": "{NoDrop:1b,CustomModelData:1113,display:{Name:'[{\"translate\":\"mcm.item.adrenaline\",\"italic\":false}]',Lore:['[{\"translate\":\"mcm.item.adrenaline.lore\",\"italic\":false}]']}}"
+              "function": "set_custom_data",
+              "tag": "{murderer:1b,item:\"adrenaline\",adrenaline:1b,NoDrop:1b,no_drop_on_death:1b}"
+            },
+            {
+              "function": "set_name",
+              "name": {"translate":"mcm.item.adrenaline","italic":false}
+            },
+            {
+              "function": "set_lore",
+              "lore": [
+                {"translate":"mcm.item.adrenaline.lore","italic":false}
+              ],
+              "mode" : "replace_all"
+            },
+            {
+              "function": "set_custom_model_data",
+              "value": 1113
             }
           ]
         }

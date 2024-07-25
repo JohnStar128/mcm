@@ -8,12 +8,12 @@
         "location": {
           "position": {
             "x": {
-              "min": 27,
-              "max": 29
+              "min": -20,
+              "max": -17
             },
             "y": 0,
             "z": {
-              "min": 65,
+              "min": 63,
               "max": 67
             }
           }

@@ -4,7 +4,7 @@ place template mcm:vineyard_secret_closed 1935 54 1980
 execute as @a[scores={vineyard_secret=1..}] run scoreboard players reset @s vineyard_secret
 data merge block 1966 68 1954 {Items:[{slot:0b, id:"minecraft:potion", Count:1b, tag:{CustomPotionColor:9705041,display:{Name:'[{"translate":"mcm.vineyard.wine","italic":false,"color":"dark_purple"}]',Lore:['[{"translate":"mcm.vineyard.wine.lore","italic":true,"color":"light_purple"}]']},CustomPotionEffects:[{Id:9,Duration:600}],HideFlags:32}}]}
 data merge block 1955 60 1978 {Items:[]}
-scoreboard players set $on vineyard_secret
+scoreboard players set $on vineyard_secret 0
 
 execute unless block 1950 68 1925 minecraft:cocoa[facing=west,age=0] run setblock 1950 68 1925 minecraft:cocoa[facing=west,age=0] replace 
 execute unless block 1961 67 1935 minecraft:jungle_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] run setblock 1961 67 1935 minecraft:jungle_trapdoor[waterlogged=false,half=bottom,powered=false,facing=north,open=true] replace 

@@ -65,12 +65,12 @@ execute as @a[gamemode=!spectator,predicate=mcm:bounding_boxes/launchpad/lc_elev
 
 
 
-#>Below stairwell elevator (SW)
-#place template mcm:lc_elevator_up -1081 43 -1143 clockwise_90 none
-#place template mcm:lc_elevator_mid -1081 43 -1143 clockwise_90 none
-#place template mcm:lc_elevator_down -1081 43 -1143 clockwise_90 none
+#>Below stairwell elevator (SW) [Being removed in later update]
+##place template mcm:lc_elevator_up -1081 43 -1143 clockwise_90 none
+##place template mcm:lc_elevator_mid -1081 43 -1143 clockwise_90 none
+##place template mcm:lc_elevator_down -1081 43 -1143 clockwise_90 none
 
-#Summon platform to top level if player is there
+##Summon platform to top level if player is there
 execute as @a[gamemode=!spectator,predicate=mcm:bounding_boxes/launchpad/lc_elevator_sw_top,limit=1] unless entity @a[gamemode=!spectator,predicate=mcm:bounding_boxes/launchpad/lc_elevator_sw_inside] unless entity @a[gamemode=!spectator,predicate=mcm:bounding_boxes/launchpad/lc_elevator_sw_bottom] at @s if score $lc_elevator_sw_top CmdData matches ..9 unless block -1082 50 -1142 minecraft:iron_trapdoor run scoreboard players add $lc_elevator_sw_top CmdData 1
 
 execute as @a[gamemode=!spectator,predicate=mcm:bounding_boxes/launchpad/lc_elevator_sw_top,limit=1] unless entity @a[gamemode=!spectator,predicate=mcm:bounding_boxes/launchpad/lc_elevator_sw_inside] unless entity @a[gamemode=!spectator,predicate=mcm:bounding_boxes/launchpad/lc_elevator_sw_bottom] at @s if score $lc_elevator_sw_top CmdData matches 1 run place template mcm:lc_elevator_mid -1081 43 -1143 clockwise_90 none
@@ -80,7 +80,7 @@ execute as @a[gamemode=!spectator,predicate=mcm:bounding_boxes/launchpad/lc_elev
 
 execute as @a[gamemode=!spectator,predicate=mcm:bounding_boxes/launchpad/lc_elevator_sw_top,limit=1] at @s if score $lc_elevator_sw_top CmdData matches 10 if block -1082 50 -1142 minecraft:iron_trapdoor run scoreboard players set $lc_elevator_sw_top CmdData 0
 
-#Summon platform to bottom level if player is there
+##Summon platform to bottom level if player is there
 execute as @a[gamemode=!spectator,predicate=mcm:bounding_boxes/launchpad/lc_elevator_sw_bottom,limit=1] unless entity @a[gamemode=!spectator,predicate=mcm:bounding_boxes/launchpad/lc_elevator_sw_inside] at @s if score $lc_elevator_sw_bottom CmdData matches ..9 unless block -1082 43 -1142 minecraft:iron_trapdoor run scoreboard players add $lc_elevator_sw_bottom CmdData 1
 
 execute as @a[gamemode=!spectator,predicate=mcm:bounding_boxes/launchpad/lc_elevator_sw_bottom,limit=1] unless entity @a[gamemode=!spectator,predicate=mcm:bounding_boxes/launchpad/lc_elevator_sw_inside] at @s if score $lc_elevator_sw_bottom CmdData matches 1 run place template mcm:lc_elevator_mid -1081 43 -1143 clockwise_90 none
@@ -91,7 +91,7 @@ execute as @a[gamemode=!spectator,predicate=mcm:bounding_boxes/launchpad/lc_elev
 execute as @a[gamemode=!spectator,predicate=mcm:bounding_boxes/launchpad/lc_elevator_sw_bottom,limit=1] at @s if score $lc_elevator_sw_bottom CmdData matches 10 if block -1082 43 -1142 minecraft:iron_trapdoor run scoreboard players set $lc_elevator_sw_bottom CmdData 0
 
 #############
-#Going Down
+##Going Down
 execute as @a[gamemode=!spectator,predicate=mcm:bounding_boxes/launchpad/lc_elevator_sw_inside,limit=1] if block -1083 51 -1140 minecraft:polished_blackstone_button[powered=true] unless block -1082 43 -1142 minecraft:iron_trapdoor run scoreboard players set $lc_elevator_sw_goingdown CmdData 1
 execute as @a[gamemode=!spectator,predicate=mcm:bounding_boxes/launchpad/lc_elevator_sw_inside,limit=1] if block -1083 51 -1140 minecraft:polished_blackstone_button[powered=true] run setblock -1083 51 -1140 minecraft:polished_blackstone_button[facing=east,face=wall]
 execute as @a[gamemode=!spectator,predicate=mcm:bounding_boxes/launchpad/lc_elevator_sw_inside,limit=1] if score $lc_elevator_sw_goingdown CmdData matches 1 run scoreboard players add $lc_elevator_sw_goingdown_timer CmdData 1
@@ -110,7 +110,7 @@ execute as @a[gamemode=!spectator,predicate=mcm:bounding_boxes/launchpad/lc_elev
 execute as @a[gamemode=!spectator,predicate=mcm:bounding_boxes/launchpad/lc_elevator_sw_inside,limit=1] if score $lc_elevator_sw_goingdown_timer CmdData matches 10.. if block -1082 43 -1142 minecraft:iron_trapdoor if score $lc_elevator_sw_goingdown CmdData matches 0 run scoreboard players set $lc_elevator_sw_goingdown_timer CmdData 0
 
 
-#Going up
+##Going up
 execute as @a[gamemode=!spectator,predicate=mcm:bounding_boxes/launchpad/lc_elevator_sw_inside,limit=1] if block -1083 44 -1140 minecraft:polished_blackstone_button[powered=true] unless block -1082 50 -1142 minecraft:iron_trapdoor run scoreboard players set $lc_elevator_sw_goingup CmdData 1
 execute as @a[gamemode=!spectator,predicate=mcm:bounding_boxes/launchpad/lc_elevator_sw_inside,limit=1] if block -1083 44 -1140 minecraft:polished_blackstone_button[powered=true] run setblock -1083 44 -1140 minecraft:polished_blackstone_button[facing=east,face=wall]
 execute as @a[gamemode=!spectator,predicate=mcm:bounding_boxes/launchpad/lc_elevator_sw_inside,limit=1] if score $lc_elevator_sw_goingup CmdData matches 1 run scoreboard players add $lc_elevator_sw_goingup_timer CmdData 1

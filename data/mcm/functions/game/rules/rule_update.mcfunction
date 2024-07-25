@@ -3,8 +3,8 @@ execute if entity @a[scores={player_rule_update=1}] run scoreboard players add $
 execute if entity @a[scores={player_rule_update=2}] run scoreboard players remove $roundtimer GameRules 1
 execute if score $roundtimer GameRules matches ..4 run tellraw @s {"translate":"mcm.game.rules.timer.min","color":"red","italic":true}
 execute if score $roundtimer GameRules matches ..4 run scoreboard players set $roundtimer GameRules 5
-execute if score $roundtimer GameRules matches 11.. run tellraw @s {"translate":"mcm.game.rules.timer.max","color":"red","italic":true}
-execute if score $roundtimer GameRules matches 11.. run scoreboard players set $roundtimer GameRules 10
+execute if score $roundtimer GameRules matches 21.. run tellraw @s {"translate":"mcm.game.rules.timer.max","color":"red","italic":true}
+execute if score $roundtimer GameRules matches 21.. run scoreboard players set $roundtimer GameRules 20
 
 #> Murderer selection
 execute if entity @a[scores={player_rule_update=3}] run scoreboard players add $murderers GameRules 1
@@ -31,3 +31,15 @@ execute if entity @a[scores={player_rule_update=10}] run scoreboard players set 
 #> Murderer friendly fire
 execute if entity @a[scores={player_rule_update=12}] run scoreboard players set $murderer_ff GameRules 1
 execute if entity @a[scores={player_rule_update=13}] run scoreboard players set $murderer_ff GameRules 0
+
+#> Darkness
+execute if entity @a[scores={player_rule_update=14}] run scoreboard players set $darkness GameRules 1
+execute if entity @a[scores={player_rule_update=15}] run scoreboard players set $darkness GameRules 0
+
+#> Knife recall destroys guns
+execute if entity @a[scores={player_rule_update=16}] run scoreboard players set $destroyguns GameRules 1
+execute if entity @a[scores={player_rule_update=17}] run scoreboard players set $destroyguns GameRules 0
+
+#> Update bossbar player count
+execute if entity @a[scores={player_rule_update=18}] run scoreboard players set $updatebossbar GameRules 1
+execute if entity @a[scores={player_rule_update=19}] run scoreboard players set $updatebossbar GameRules 0

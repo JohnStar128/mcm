@@ -1,5 +1,6 @@
 
 scoreboard players set $minus_one math -1
+scoreboard players set $zero math 0
 scoreboard players set $one math 1
 scoreboard players set $two math 2
 scoreboard players set $three math 3

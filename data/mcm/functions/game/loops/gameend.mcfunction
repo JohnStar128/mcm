@@ -20,6 +20,9 @@ execute if score $gameEndTimer CmdData matches 200 if score $murderWin CmdData m
 execute if score $gameEndTimer CmdData matches 200 if score $murderWin CmdData matches 1 run playsound minecraft:ui.toast.challenge_complete ambient @a[tag=murderer] ~ ~ ~ 1 1 1
 execute if score $gameEndTimer CmdData matches 200 run bossbar remove minecraft:gamedisplay
 
+# remove darkness effect if present
+execute if score $darkness GameRules matches 1 if score $didGameEnd CmdData matches 1 run effect clear @a[tag=queued,tag=!spectating] minecraft:darkness
+
 # disable friendly fire
 execute if score $gameEndTimer CmdData matches 199 run team join nametags @a[tag=queued,team=!nametags]
 
@@ -44,6 +47,8 @@ execute if score $gameEndTimer CmdData matches ..1 run kill @e[type=item,nbt={It
 
 execute if score $gameEndTimer CmdData matches ..1 run effect clear @a
 
+execute if score $gameEndTimer CmdData matches 200 as @a run attribute @s generic.jump_strength base set 0.41
+
 # remove spawnpoints
 #execute if score $gameEndTimer CmdData matches ..1 as @e[type=marker,tag=!available,tag=map_marker] run function mcm:util/dealloc_entity
 #execute if score $gameEndTimer CmdData matches ..1 as @e[type=marker,tag=PlayerSpawn] run tag @s remove Occupied
@@ -58,7 +63,7 @@ execute if score $gameEndTimer CmdData matches ..1 run scoreboard players set $c
 execute if score $gameEndTimer CmdData matches ..1 run tag @a remove colored
 
 # Stop leftover sound effects
-execute if score $gameEndTimer CmdData matches ..1 as @a[tag=empty_hand] run stopsound @a[tag=queued]
+execute if score $gameEndTimer CmdData matches ..1 run stopsound @a[tag=queued]
 
 # AutoQueue items and how to play book
 clear @a[team=!test4] spyglass
@@ -80,6 +85,8 @@ execute if score $gameEndTimer CmdData matches ..1 run tag @a remove gunner_stat
 execute if score $gameEndTimer CmdData matches ..1 as @a[tag=hold_card1] run tag @s remove hold_card1
 execute if score $gameEndTimer CmdData matches ..1 as @a[tag=hold_card2] run tag @s remove hold_card2
 execute if score $gameEndTimer CmdData matches ..1 as @a[tag=empty_hand] run tag @s remove empty_hand
+execute if score $gameEndTimer CmdData matches ..1 as @a[tag=free_knife] run tag @s remove free_knife
+execute if score $gameEndTimer CmdData matches ..1 as @a[tag=temp_free_knife] run tag @s remove temp_free_knife
 
 
 # remove death related scores
@@ -101,7 +108,7 @@ execute if score $gameEndTimer CmdData matches ..1 run scoreboard players reset 
 execute if score $gameEndTimer CmdData matches 199 run team join nametags @a[tag=queued,team=!nametags]
 
 #> Send disable tips message
-execute if score $gameEndTimer CmdData matches ..1 run tellraw @a[tag=!NoTip] {"translate":"mcm.tip.disable.option", "color":"dark_gray", "with":[{"translate":"mcm.tip.click.here","color":"dark_aqua","bold":"true","clickEvent":{"action":"run_command","value":"/trigger disableTips"}}]}
+execute if score $gameEndTimer CmdData matches ..1 run tellraw @a[tag=!NoTip] {"translate":"mcm.tip.disable.option", "color":"dark_gray", "with":[{"translate":"mcm.tip.click.here","color":"dark_aqua","bold":true,"clickEvent":{"action":"run_command","value":"/trigger disableTips"}}]}
 
 #> Count AFK people so they don't autoqueue
 execute if score $gameEndTimer CmdData matches ..1 run tag @a add afk
@@ -109,6 +116,9 @@ execute if score $gameEndTimer CmdData matches ..1 run scoreboard players reset 
 execute if score $gameEndTimer CmdData matches ..1 run scoreboard players reset @a[tag=afk] sprint
 execute if score $gameEndTimer CmdData matches ..1 run scoreboard players reset @a[tag=afk] crouch
 execute if score $gameEndTimer CmdData matches ..1 run scoreboard players reset @a[tag=afk] jump
+
+#> Remove any tags that might mess up lobby stuff
+execute if score $gameEndTimer CmdData matches ..1 run tag @a remove free_knife
 
 #> Reset the lobby
 execute if score $gameEndTimer CmdData matches ..1 run function mcm:lobby/lobby_reset
@@ -120,16 +130,23 @@ execute if score $gameEndTimer CmdData matches ..1 run scoreboard players set $g
 execute if score $gamestate CmdData matches -1 run scoreboard players set $murderWin CmdData 0
 execute if score $gamestate CmdData matches -1 run scoreboard players set $innocentWin CmdData 0
 execute if score $gamestate CmdData matches -1 run scoreboard players set $didGameEnd CmdData 0
+execute if score $gamestate CmdData matches -1 run function mcm:game/summary/summon_credits
 
 #> Keep spectators inbounds
-execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 1 if score $library_flip CmdData matches 0 unless predicate mcm:bounding_boxes/library run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
-execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 1 if score $library_flip CmdData matches 0 unless predicate mcm:bounding_boxes/library run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
-execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 1 if score $library_flip CmdData matches 1 unless predicate mcm:bounding_boxes/library_flipped run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
-execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 1 if score $library_flip CmdData matches 1 unless predicate mcm:bounding_boxes/library_flipped run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
+#execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 1 if score $library_flip CmdData matches 0 unless predicate mcm:bounding_boxes/library run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
+#execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 1 if score $library_flip CmdData matches 0 unless predicate mcm:bounding_boxes/library run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
+#execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 1 if score $library_flip CmdData matches 1 unless predicate mcm:bounding_boxes/library_flipped run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
+#execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 1 if score $library_flip CmdData matches 1 unless predicate mcm:bounding_boxes/library_flipped run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
+execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 1 if score $library_flip CmdData matches 0 unless predicate mcm:bounding_boxes/library2 run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
+execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 1 if score $library_flip CmdData matches 0 unless predicate mcm:bounding_boxes/library2 run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
+execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 1 if score $library_flip CmdData matches 1 unless predicate mcm:bounding_boxes/library2_flipped run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
+execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 1 if score $library_flip CmdData matches 1 unless predicate mcm:bounding_boxes/library2_flipped run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
 execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 2 unless predicate mcm:bounding_boxes/airship run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
 execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 2 unless predicate mcm:bounding_boxes/airship run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
-execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 3 unless predicate mcm:bounding_boxes/vineyard run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
-execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 3 unless predicate mcm:bounding_boxes/vineyard run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
+#execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 3 unless predicate mcm:bounding_boxes/vineyard run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
+#execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 3 unless predicate mcm:bounding_boxes/vineyard run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
+execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 3 unless predicate mcm:bounding_boxes/vineyard2 run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
+execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 3 unless predicate mcm:bounding_boxes/vineyard2 run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
 execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 4 unless predicate mcm:bounding_boxes/launchpad run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
 execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 4 unless predicate mcm:bounding_boxes/launchpad run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
 execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 5 unless predicate mcm:bounding_boxes/cyberpunk run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
@@ -142,3 +159,10 @@ execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 8 unle
 execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 8 unless predicate mcm:bounding_boxes/train run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
 execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 9 unless predicate mcm:bounding_boxes/cabin run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
 execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 9 unless predicate mcm:bounding_boxes/cabin run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
+<<<<<<< HEAD
+=======
+execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 10 unless predicate mcm:bounding_boxes/gumdrop run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
+execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 10 unless predicate mcm:bounding_boxes/gumdrop run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
+execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 11 unless predicate mcm:bounding_boxes/canyon run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
+execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 11 unless predicate mcm:bounding_boxes/canyon run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
+>>>>>>> dev

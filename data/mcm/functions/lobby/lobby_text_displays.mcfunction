@@ -1,7 +1,7 @@
 
 tag @e[type=text_display,tag=instruction] add remove
 
-execute at @e[type=text_display,tag=instruction] run summon text_display ~ ~ ~ {Tags:["instruction"]}
+execute at @e[type=text_display,tag=instruction] run summon text_display ~ ~ ~ {Tags:["instruction"],alignment:"center"}
 
 execute as @e[type=text_display,tag=instruction] at @s run data modify entity @e[type=text_display,tag=instruction,tag=!remove,distance=..1,limit=1] text set from entity @s text
 execute as @e[type=text_display,tag=instruction] at @s run data modify entity @e[type=text_display,tag=instruction,tag=!remove,distance=..1,limit=1] Rotation set from entity @s Rotation

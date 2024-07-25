@@ -3,7 +3,6 @@ execute as @a unless score @s version = $current_version version run function mc
 execute as @a unless score @s version = $current_version version run scoreboard players operation @s version = $current_version version
 
 #> What to do if a player disconnects and rejoins
-execute if entity @a[scores={leave=1..}] run schedule function mcm:lobby/lobby_text_displays 5s
 execute as @a[scores={leave=1..}] unless score @s gameID = $gameID CmdData run function mcm:player_leave
 
 #> Reset voting if no one is on the server
@@ -26,6 +25,7 @@ effect clear @a[tag=HoldKnife] weakness
 #> Run lobby-related code only if people are actually there
 execute if entity @a[predicate=mcm:bounding_boxes/lobby] run function mcm:lobby/lobby_functions
 
+
 #> Commands for various stages of gameplay flow will branch into their own directories from this file
 #> Game control
 #Vote countdown
@@ -39,22 +39,27 @@ execute if score $gamestate CmdData matches 2 run function mcm:game/loops/gameen
 #Ingame Bossbar
 execute if score $gamestate CmdData matches 1..2 run function mcm:game/loops/updatebossbar
 
+function mcm:items/item_handling_loop
+
 #> NoDrop module
 function mcm:util/nodrop
 
 #> Mark whether someone's holding a knife or not (lets you hit stuff)
-tag @a[tag=murderer,nbt={SelectedItem:{id:"minecraft:snowball",Count:1b}}] add HoldKnife
-tag @a[nbt=!{SelectedItem:{id:"minecraft:snowball",Count:1b}}] remove HoldKnife
+tag @a[tag=murderer,nbt={SelectedItem:{components:{"minecraft:custom_data":{knife:1b}}}}] add HoldKnife
+tag @a[nbt=!{SelectedItem:{components:{"minecraft:custom_data":{knife:1b}}}}] remove HoldKnife
 
-#> Knife throwing
-execute as @e[type=snowball] at @s run function mcm:game/items/knife/throw
+#> Handle knife throwing
+#execute as @a[scores={throwKnife=1..}] run function mcm:game/items/knife/throw
+advancement revoke @a[advancements={mcm:items/lose_knife=true}] only mcm:items/lose_knife
+advancement revoke @a[advancements={mcm:items/pickup_knife=true}] only mcm:items/pickup_knife
+
 #> Guns
 function mcm:game/items/gun/shoot
 
 #> Dead players
 scoreboard players add @e[type=item,tag=BoneDeco,nbt={OnGround:1b}] CmdData 1
 execute as @e[type=item,tag=BoneDeco,nbt={OnGround:0b}] at @s if block ~ ~-0.2 ~ water run scoreboard players add @s CmdData 1
-execute as @e[type=item,tag=BoneDeco,scores={CmdData=20..}] at @s run particle item bone ~ ~ ~ 0 0 0 0.1 4 force
+execute as @e[type=item,tag=BoneDeco,scores={CmdData=20..}] at @s run particle item{'item': {'id': 'bone'}} ~ ~ ~ 0 0 0 0.1 4 force
 kill @e[type=item,tag=BoneDeco,scores={CmdData=20..}]
 
 #> Scoreboards
@@ -78,8 +83,17 @@ execute as @a[tag=!queued,tag=!spectating,predicate=!mcm:bounding_boxes/lobby,te
 execute as @e[type=villager,tag=Usher] store result score $usheroffers CmdData run data get entity @s Offers.Recipes
 execute as @e[type=villager,tag=credits_usher] store result score $creditsusheroffers CmdData run data get entity @s Offers.Recipes
 
-execute as @e[type=villager,tag=Usher] if score $usheroffers CmdData matches 1.. run data modify entity @s Offers set value {}
-execute as @e[type=villager,tag=credits_usher] if score $creditsusheroffers CmdData matches 1.. run data modify entity @s Offers set value {}
+execute as @e[type=villager,tag=Usher] if score $usheroffers CmdData matches 1.. run data modify entity @s Offers.Recipes set value []
+execute as @e[type=villager,tag=credits_usher] if score $creditsusheroffers CmdData matches 1.. run data modify entity @s Offers.Recipes set value []
 
 #> Chair controls
 function mcm:util/chair/control
+
+#> Printing game events
+execute unless score $gamestate CmdData matches 1 run scoreboard players enable @a display_events
+execute if score $gamestate CmdData matches 1 run scoreboard players set @a display_events 0
+execute as @a[scores={display_events=1}] run function mcm:game/summary/print_events
+execute as @a[scores={display_events=1}] run scoreboard players set @s display_events 0
+
+#> Reset carrot on a stick if it somehow doesn't get reset yet
+execute as @a run function mcm:util/reset_carrot_on_stick

@@ -19,7 +19,8 @@ execute if score $timer vineyard_secret matches ..0 if block 1958 55 2012 polish
 scoreboard players remove $timer vineyard_secret 1
 
 #> Make sure Lance stays a baby turtle
-execute positioned 2000 100 2000 as @e[type=turtle,limit=1,sort=nearest] run data merge entity @s {Age:-2147483648}
+execute as @e[type=turtle,tag=lance] run data merge entity @s {Age:-2147483648}
+execute at @e[type=turtle,tag=lance] as @a[distance=..3,advancements={mcm:secrets/vineyard/lance=false}] run advancement grant @s only mcm:secrets/vineyard/lance
 
 #> Keep spectators inbounds
 execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 3 unless predicate mcm:bounding_boxes/vineyard run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]

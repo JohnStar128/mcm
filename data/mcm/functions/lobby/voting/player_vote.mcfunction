@@ -22,15 +22,7 @@ execute as @a[scores={vote_position=4}] run scoreboard players add map4 vote_cou
 execute as @a[scores={vote_position=5}] run scoreboard players add map5 vote_count 1
 execute as @a[scores={vote_position=6}] run scoreboard players add map6 vote_count 1
 
-#execute as @e[type=text_display,tag=map_random] run data merge entity @s {text:'{"translate":"mcm.lobby.vote","with":[{"score":{"objective":"vote_count","name":"random"},"color":"#FFE700"}]}'}
-#execute as @e[type=text_display,tag=map1,tag=!disabled] run data merge entity @s {text:'{"translate":"mcm.lobby.vote","with":[{"score":{"objective":"vote_count","name":"map1"},"color":"#FFE700"}]}'}
-#execute as @e[type=text_display,tag=map2,tag=!disabled] run data merge entity @s {text:'{"translate":"mcm.lobby.vote","with":[{"score":{"objective":"vote_count","name":"map2"},"color":"#FFE700"}]}'}
-#execute as @e[type=text_display,tag=map3,tag=!disabled] run data merge entity @s {text:'{"translate":"mcm.lobby.vote","with":[{"score":{"objective":"vote_count","name":"map3"},"color":"#FFE700"}]}'}
-#execute as @e[type=text_display,tag=map4,tag=!disabled] run data merge entity @s {text:'{"translate":"mcm.lobby.vote","with":[{"score":{"objective":"vote_count","name":"map4"},"color":"#FFE700"}]}'}
-#execute as @e[type=text_display,tag=map5,tag=!disabled] run data merge entity @s {text:'{"translate":"mcm.lobby.vote","with":[{"score":{"objective":"vote_count","name":"map5"},"color":"#FFE700"}]}'}
-#execute as @e[type=text_display,tag=map6,tag=!disabled] run data merge entity @s {text:'{"translate":"mcm.lobby.vote","with":[{"score":{"objective":"vote_count","name":"map6"},"color":"#FFE700"}]}'}
-
-function mcm:lobby/voting/vote_displays
+function mcm:lobby/voting/refresh_votes
 
 tellraw @s[scores={vote_map_id=-1}] [{"text":"| ","color":"gray","bold":true}, {"translate":"mcm.lobby.voted.for","color":"gray", "with": [{"translate":"mcm.random.name", "color":"green"}]}]
 tellraw @s[scores={vote_map_id=1}] [{"text":"| ","color":"gray","bold":true}, {"translate":"mcm.lobby.voted.for","color":"gray", "with": [{"translate":"mcm.library.name", "color":"green"}]}]
@@ -42,3 +34,9 @@ tellraw @s[scores={vote_map_id=6}] [{"text":"| ","color":"gray","bold":true}, {"
 tellraw @s[scores={vote_map_id=7}] [{"text":"| ","color":"gray","bold":true}, {"translate":"mcm.lobby.voted.for","color":"gray", "with": [{"translate":"mcm.industry.name", "color":"green"}]}]
 tellraw @s[scores={vote_map_id=8}] [{"text":"| ","color":"gray","bold":true}, {"translate":"mcm.lobby.voted.for","color":"gray", "with": [{"translate":"mcm.train.name", "color":"green"}]}]
 tellraw @s[scores={vote_map_id=9}] [{"text":"| ","color":"gray","bold":true}, {"translate":"mcm.lobby.voted.for","color":"gray", "with": [{"translate":"mcm.cabin.name", "color":"green"}]}]
+<<<<<<< HEAD
+=======
+tellraw @s[scores={vote_map_id=10}] [{"text":"| ","color":"gray","bold":true}, {"translate":"mcm.lobby.voted.for","color":"gray", "with": [{"translate":"mcm.gumdrop.name", "color":"green"}]}]
+tellraw @s[scores={vote_map_id=11}] [{"text":"| ","color":"gray","bold":true}, {"translate":"mcm.lobby.voted.for","color":"gray", "with": [{"translate":"mcm.canyon.name", "color":"green"}]}]
+tellraw @s[scores={vote_map_id=12}] [{"text":"| ","color":"gray","bold":true}, {"translate":"mcm.lobby.voted.for","color":"gray", "with": [{"translate":"mcm.sculk.name", "color":"green"}]}]
+>>>>>>> dev

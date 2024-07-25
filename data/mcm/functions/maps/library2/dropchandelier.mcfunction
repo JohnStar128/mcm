@@ -1,0 +1,24 @@
+scoreboard players add $chandelierTime CmdData 1
+execute if score $chandelierTime CmdData matches 20 run place template mcm:library2_chandelier_1 951 130 1101
+execute if score $chandelierTime CmdData matches 30 run place template mcm:library2_chandelier_2 951 130 1101
+execute if score $chandelierTime CmdData matches 40 run place template mcm:library2_chandelier_3 951 130 1101
+execute if score $chandelierTime CmdData matches 50 run place template mcm:library2_chandelier_4 951 130 1101
+
+execute if score $chandelierTime CmdData matches 20 run place template mcm:library2_chandelier_flip_1 951 66 1101
+execute if score $chandelierTime CmdData matches 30 run place template mcm:library2_chandelier_flip_2 951 66 1101
+execute if score $chandelierTime CmdData matches 40 run place template mcm:library2_chandelier_flip_3 951 66 1101
+execute if score $chandelierTime CmdData matches 50 run place template mcm:library2_chandelier_flip_4 951 66 1101
+
+#> kill players under the chandelier when it hits the ground
+execute if score $chandelierTime CmdData matches 50 as @a[predicate=mcm:bounding_boxes/chandelier_kill] at @s run playsound minecraft:wilhelm_scream ambient @a[tag=queued] ~ ~ ~ 1 1 1
+execute if score $chandelierTime CmdData matches 50 as @a[predicate=mcm:bounding_boxes/chandelier_kill,tag=!spectating] at @s if score $chandelierTime CmdData matches 50 run tellraw @s {"translate":"mcm.library.chandelier","color":"red"}
+execute if score $chandelierTime CmdData matches 50 as @a[predicate=mcm:bounding_boxes/chandelier_kill,tag=!spectating] run scoreboard players set $event_type temp 1
+execute if score $chandelierTime CmdData matches 50 as @a[predicate=mcm:bounding_boxes/chandelier_kill,tag=!spectating] run function mcm:game/summary/add_event {translate:"mcm.game.events.killed_by_chandelier", color:"green"}
+execute as @a[predicate=mcm:bounding_boxes/chandelier_kill,tag=!spectating] at @s if score $chandelierTime CmdData matches 50 run function mcm:game/playerdeath
+
+execute positioned as @e[type=marker,tag=chandelierDropSound] if score $chandelierTime CmdData matches 50 run playsound minecraft:entity.wither.break_block block @a[tag=queued,distance=..150] ~ ~ ~ 1 1 1
+execute positioned as @e[type=marker,tag=chandelierDropSound] if score $chandelierTime CmdData matches 50 run playsound minecraft:entity.player.levelup block @a[tag=queued,distance=..150] ~ ~ ~ 1 0 1
+#execute if score $chandelierTime CmdData matches 60 run setblock 977 111 992 air
+#execute if score $chandelierTime CmdData matches 60 run tag @e[type=marker,tag=canDropChandelier] remove canDropChandelier
+#execute if score $chandelierTime CmdData matches 60 run scoreboard players set $chandelierTime CmdData 0
+execute if score $chandelierTime CmdData matches 60 run kill @s

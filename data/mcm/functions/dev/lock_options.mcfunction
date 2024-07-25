@@ -1,0 +1,1 @@
+function mcm:lobby/options/lock_options

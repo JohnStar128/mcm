@@ -4,7 +4,7 @@
 scoreboard players operation $temp math = @s time_alive
 scoreboard players operation $temp math /= $twenty math
 execute store result score $sec math run scoreboard players operation $temp math %= $sixty math
-#> seconds = time alive / ticks per second / seconds per minute
+#> minutes = time alive / ticks per second / seconds per minute
 scoreboard players operation $temp math = @s time_alive
 scoreboard players operation $temp math /= $twenty math
 execute store result score $min math run scoreboard players operation $temp math /= $sixty math

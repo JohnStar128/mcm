@@ -34,6 +34,8 @@ execute if score $fliptimer CmdData matches 156 positioned 1074 129 999 run func
 #> Teleport people
 execute as @a[tag=queued] at @s if score $fliptimer CmdData matches 156 run function mcm:maps/tptospawn
 
+execute if score $fliptimer CmdData matches 156 as @a[tag=queued,advancements={mcm:secrets/library/library=false}] run scoreboard players set $event_type temp 1
+execute if score $fliptimer CmdData matches 156 as @a[tag=queued,advancements={mcm:secrets/library/library=false}] run function mcm:game/summary/add_event {translate:"mcm.game.events.library_flip_secret", color:"green"}
 execute if score $fliptimer CmdData matches 156 run advancement grant @a[tag=queued,advancements={mcm:secrets/library/library=false}] only mcm:secrets/library/library
 
 execute if score $fliptimer CmdData matches 156 run scoreboard players set $flippingmap CmdData 0

@@ -2,6 +2,9 @@
 #> Can also be used to shuffle maps before voting starts via mcm:dev/shuffle_maps
 #> Don't use this function to shuffle maps
 
+# Sync enabled maps from the options
+function mcm:lobby/options/sync_maps
+
 
 execute as @e[type=interaction,tag=MapVoteEntity] run data merge entity @s {response:1b}
 tag @e[type=text_display,tag=MapVoteEntity] remove disabled
@@ -17,26 +20,27 @@ scoreboard players set @e[type=interaction,tag=MapVoteEntity] vote_map_id -2
 
 #> MapVote markers moved to be always in the world
 #> TODO: code for setting item frame maps
+kill @e[type=item_display,tag=vote_display]
 execute positioned 28 2 90.0 as @e[type=interaction,limit=1,sort=nearest] run scoreboard players set @s vote_position 1
-execute positioned 28 2 90.0 as @e[type=marker,tag=!selected,tag=MapVote,tag=!Random,tag=!disabled,limit=1,sort=random] run function mcm:lobby/voting/map_position_id
+execute positioned 28.0 2.0 89.0 as @e[type=marker,tag=!selected,tag=MapVote,tag=!Random,tag=!disabled,limit=1,sort=random] run function mcm:lobby/voting/map_position_id
 
 execute positioned 28 2 95.0 as @e[type=interaction,limit=1,sort=nearest] run scoreboard players set @s vote_position 2
-execute positioned 28 2 95.0 as @e[type=marker,tag=!selected,tag=MapVote,tag=!Random,tag=!disabled,limit=1,sort=random] run function mcm:lobby/voting/map_position_id
+execute positioned 28.0 2.0 94.0 as @e[type=marker,tag=!selected,tag=MapVote,tag=!Random,tag=!disabled,limit=1,sort=random] run function mcm:lobby/voting/map_position_id
 
 execute positioned 28 2 100.0 as @e[type=interaction,limit=1,sort=nearest] run scoreboard players set @s vote_position 3
-execute positioned 28 2 100.0 as @e[type=marker,tag=!selected,tag=MapVote,tag=!Random,tag=!disabled,limit=1,sort=random] run function mcm:lobby/voting/map_position_id
+execute positioned 28.0 2.0 99.0 as @e[type=marker,tag=!selected,tag=MapVote,tag=!Random,tag=!disabled,limit=1,sort=random] run function mcm:lobby/voting/map_position_id
 
 execute positioned 28 2 106.0 as @e[type=interaction,limit=1,sort=nearest] run scoreboard players set @s vote_position 4
-execute positioned 28 2 106.0 as @e[type=marker,tag=!selected,tag=MapVote,tag=!Random,tag=!disabled,limit=1,sort=random] run function mcm:lobby/voting/map_position_id
+execute positioned 28.0 2.0 105.0 as @e[type=marker,tag=!selected,tag=MapVote,tag=!Random,tag=!disabled,limit=1,sort=random] run function mcm:lobby/voting/map_position_id
 
 execute positioned 28 2 111.0 as @e[type=interaction,limit=1,sort=nearest] run scoreboard players set @s vote_position 5
-execute positioned 28 2 111.0 as @e[type=marker,tag=!selected,tag=MapVote,tag=!Random,tag=!disabled,limit=1,sort=random] run function mcm:lobby/voting/map_position_id
+execute positioned 28.0 2.0 110.0 as @e[type=marker,tag=!selected,tag=MapVote,tag=!Random,tag=!disabled,limit=1,sort=random] run function mcm:lobby/voting/map_position_id
 
 execute positioned 28 2 116.0 as @e[type=interaction,limit=1,sort=nearest] run scoreboard players set @s vote_position 6
-execute positioned 28 2 116.0 as @e[type=marker,tag=!selected,tag=MapVote,tag=!Random,tag=!disabled,limit=1,sort=random] run function mcm:lobby/voting/map_position_id
+execute positioned 28.0 2.0 115.0 as @e[type=marker,tag=!selected,tag=MapVote,tag=!Random,tag=!disabled,limit=1,sort=random] run function mcm:lobby/voting/map_position_id
 
 execute positioned 28 2 84.0 as @e[type=interaction,limit=1,sort=nearest] run scoreboard players set @s vote_position -1
-execute positioned 28 2 84.0 as @e[type=marker,tag=!selected,tag=MapVote,tag=Random,limit=1,sort=random] run function mcm:lobby/voting/map_position_id
+execute positioned 27.0 2.0 83.0 as @e[type=marker,tag=!selected,tag=MapVote,tag=Random,limit=1,sort=random] run function mcm:lobby/voting/map_position_id
 
 execute positioned 28 2 90.0 as @e[type=interaction,tag=MapVoteEntity,sort=nearest,limit=1] if score @s vote_map_id matches -2 run function mcm:lobby/voting/disabled_slot
 execute positioned 28 2 95.0 as @e[type=interaction,tag=MapVoteEntity,sort=nearest,limit=1] if score @s vote_map_id matches -2 run function mcm:lobby/voting/disabled_slot
@@ -47,7 +51,7 @@ execute positioned 28 2 116.0 as @e[type=interaction,tag=MapVoteEntity,sort=near
 
 execute as @e[type=interaction,tag=MapVoteEntity] if score @s vote_map_id matches -2 run data merge entity @s {response:false}
 execute as @e[type=interaction,tag=MapVoteEntity] if score @s vote_map_id matches -2 run tag @s add disabled
-execute as @e[type=text_display,tag=VoteDisplay,tag=disabled] run data merge entity @s {text:''}
+execute as @e[type=text_display,tag=VoteDisplay,tag=disabled] run data merge entity @s {text:'""'}
 
 
 execute as @e[type=text_display,tag=map_random] run data merge entity @s {text:'[{"translate":"mcm.lobby.vote"},{"score":{"objective":"vote_count","name":"random"},"color":"#FFE700"}]'}

@@ -15,6 +15,9 @@ execute if score $selectedMap CmdData matches 7 run time set 12500
 execute if score $selectedMap CmdData matches 8 run time set 6000
 execute if score $selectedMap CmdData matches 9 run time set 12500
 
+execute if score $selectedMap CmdData matches 11 run time set 13000
+execute if score $selectedMap CmdData matches 12 run time set 18000
+
 tellraw @a ["\n",{"translate":"mcm.game.role.assign","color":"yellow"},"\n"]
 
 #> Make queued players join ingame team (this allows friendly fire)
@@ -28,3 +31,6 @@ gamemode adventure @a[team=!test4,tag=queued]
 
 #> Set gamestate to playing ($gamestate CmdData=1)
 scoreboard players set $gamestate CmdData 1
+
+#> Disable branding
+execute as @a[tag=queued] run bossbar set mcm:branding visible false

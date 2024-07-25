@@ -30,6 +30,9 @@ execute if score $startcountdown CmdData matches 1 run clear @a[tag=queued]
 #> Kill any items to stop lobby items being smuggled into a game
 execute if score $startcountdown CmdData matches 1 run kill @e[type=item]
 
+#> Reset last game's events
+execute if score $startcountdown CmdData matches 1 run function mcm:game/summary/reset
+
 #> Update murderer count from queued players if smart murderer selection is on
 execute if score $smart_murderers GameRules matches 1 run function mcm:game/rules/smart_murderer_update
 

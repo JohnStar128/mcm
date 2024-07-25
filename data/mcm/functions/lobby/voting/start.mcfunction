@@ -9,6 +9,12 @@
 # 7: Industry
 # 8: A Tragedy on the Boreal Express (train)
 # 9: Snowed Inn (cabin)
+<<<<<<< HEAD
+=======
+# 10: Gumdrop Plains
+# 11: Canyon
+# 12: Stagnant Sanctuary (sculk)
+>>>>>>> dev
 
 #> Set interaction response tag to 1 because apparently you can't vote when it's 0
 execute as @e[type=interaction,tag=MapVoteEntity] run data merge entity @s {response:1b}
@@ -47,6 +53,10 @@ bossbar set lobbybar value 20
 bossbar set lobbybar color yellow
 bossbar set lobbybar style notched_20
 
+#> Add branding (credit us pretty please!!!!)
+function mcm:branding
+#function mcm:reset_branding
+
 #> Change gamestate to -1 (Map vote status)
 scoreboard players set $gamestate CmdData -1
 
@@ -63,3 +73,5 @@ scoreboard players set map5 vote_count 0
 scoreboard players set map6 vote_count 0
 
 function mcm:lobby/voting/set_maps
+
+function mcm:lobby/voting/refresh_votes

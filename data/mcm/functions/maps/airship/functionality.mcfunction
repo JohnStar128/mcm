@@ -21,6 +21,8 @@ execute if block -692 52 45 dark_oak_trapdoor[waterlogged=true] run setblock -69
 #also doubles as escape prevention
 execute as @a[tag=queued,predicate=!mcm:bounding_boxes/airship,tag=!spectating] at @s if score $graceperiod CmdData matches 1.. run tp @s @e[tag=PlayerSpawn,limit=1,sort=nearest]
 execute as @a[tag=queued,predicate=!mcm:bounding_boxes/airship,tag=!spectating] at @s if score $selectedMap CmdData matches 2 if score $graceperiod CmdData matches ..0 run tellraw @s {"translate":"mcm.airship.fell","color":"red"}
+execute as @a[tag=queued,predicate=!mcm:bounding_boxes/airship,tag=!spectating] run scoreboard players set $event_type temp 1
+execute as @a[tag=queued,predicate=!mcm:bounding_boxes/airship,tag=!spectating] if score $graceperiod CmdData matches ..0 run function mcm:game/summary/add_event {translate:"mcm.game.events.killed_by_void", color: "green"}
 execute as @a[tag=queued,predicate=!mcm:bounding_boxes/airship,tag=!spectating] at @s if score $selectedMap CmdData matches 2 if score $graceperiod CmdData matches ..0 run function mcm:game/playerdeath
 
 #> Keep spectators inbounds
@@ -30,7 +32,7 @@ execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 2 unle
 #> Crystal code
 function mcm:maps/airship/crystals/control
 #> Particles when holding the crystal
-execute as @a[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:1114}}}] at @s run particle minecraft:portal ~ ~1 ~ 0 0.5 0 1 1
+execute as @a if items entity @s weapon.* carrot_on_a_stick[custom_model_data=1114] at @s run particle portal ~ ~1 ~ 0 0.5 0 1 1
 
 # Activate Captain's Room
 execute if block -633 53 -6 lever[powered=true] if score $captain_room CmdData matches 0 run summon marker -636 56 -5 {Tags:["airship_teleport_beacon","captains_room"]}

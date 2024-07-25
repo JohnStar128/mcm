@@ -15,25 +15,32 @@ function mcm:lobby/voting/select_map
 
 #> Teardown interaction entities
 execute as @e[type=minecraft:interaction,tag=MapVoteEntity] run data merge entity @s {response:false}
+#> Hide vote counts
+execute as @e[type=text_display,tag=VoteDisplay] run data remove entity @s text
 
-execute as @e[type=text_display,tag=VoteDisplay] run data merge entity @s {text:''}
 tag @e[type=text_display,tag=VoteDisplay] remove disabled
 
 #> Load correct map
-#Library
-execute if entity @e[type=marker,tag=SelectedMap,tag=Library] run forceload add 1023 960 912 1039
-execute if entity @e[type=marker,tag=SelectedMap,tag=Library] run forceload add 1023 960 1108 1039
-#Airship
+# Library
+#execute if entity @e[type=marker,tag=SelectedMap,tag=Library] run forceload add 1023 960 912 1039
+#execute if entity @e[type=marker,tag=SelectedMap,tag=Library] run forceload add 1023 960 1108 1039
+execute if entity @e[type=marker,tag=SelectedMap,tag=Library] run forceload add 1028 1040 890 1155
+# Airship
 execute if entity @e[type=marker,tag=SelectedMap,tag=Airship] run forceload add -555 -56 -744 77
-#Vineyard
-execute if entity @e[type=marker,tag=SelectedMap,tag=Vineyard] run forceload add 2111 2095 1937 1911
-#Launch Complex
+# Vineyard
+#execute if entity @e[type=marker,tag=SelectedMap,tag=Vineyard] run forceload add 2111 2095 1937 1911
+execute if entity @e[type=marker,tag=SelectedMap,tag=Vineyard] run forceload add 1675 2155 1780 2020
+# Launch Complex
 execute if entity @e[type=marker,tag=SelectedMap,tag=Launchpad] run forceload add -860 -1100 -1170 -1280
 execute if entity @e[type=marker,tag=SelectedMap,tag=Launchpad] run forceload add -860 -1100 -1128 -997
 execute if entity @e[type=marker,tag=SelectedMap,tag=Launchpad] run forceload add -961 -881 -1136 -976
-#Color Filth
+# Color Filth
 execute if entity @e[type=marker,tag=SelectedMap,tag=Cyberpunk] run forceload add -2178 1968 -1969 2135
+<<<<<<< HEAD
 #Riverboat
+=======
+# Riverboat
+>>>>>>> dev
 execute if entity @e[type=marker,tag=SelectedMap,tag=Riverboat] run forceload add 2130 -2015 2000 -1975
 # Industry
 execute if entity @e[type=marker,tag=SelectedMap,tag=Industry] run forceload add -1926 -2938 -2067 -3063
@@ -41,14 +48,23 @@ execute if entity @e[type=marker,tag=SelectedMap,tag=Industry] run forceload add
 execute if entity @e[type=marker,tag=SelectedMap,tag=Train] run forceload add 2000 3040 1585 2945
 # Cabin
 execute if entity @e[type=marker,tag=SelectedMap,tag=Cabin] run forceload add -1938 3000 -2030 3048
+# Gumdrop Plains
+execute if entity @e[type=marker,tag=SelectedMap,tag=Gumdrop] run forceload add 994 -3072 1194 -2795
+execute if entity @e[type=marker,tag=SelectedMap,tag=Gumdrop] run forceload add 832 -3152 1055 -2929
+#Canyon
+execute if entity @e[type=marker,tag=SelectedMap,tag=Canyon] run forceload add 2885 2899 3084 3085
+# Stagnant Sanctuary (Sculk)
+execute if entity @e[type=marker,tag=SelectedMap,tag=Sculk] run forceload add 2920 870 3090 1065
 
 #> Map specific activation
 #Library
-execute if entity @e[type=marker,tag=SelectedMap,tag=Library] run schedule function mcm:maps/library/activate 1s
+#execute if entity @e[type=marker,tag=SelectedMap,tag=Library] run schedule function mcm:maps/library/activate 1s
+execute if entity @e[type=marker,tag=SelectedMap,tag=Library] run schedule function mcm:maps/library2/activate 1s
 #Airship
 execute if entity @e[type=marker,tag=SelectedMap,tag=Airship] run schedule function mcm:maps/airship/activate 1s
 #Vineyard
-execute if entity @e[type=marker,tag=SelectedMap,tag=Vineyard] run schedule function mcm:maps/vineyard/activate 1s
+#execute if entity @e[type=marker,tag=SelectedMap,tag=Vineyard] run schedule function mcm:maps/vineyard/activate 1s
+execute if entity @e[type=marker,tag=SelectedMap,tag=Vineyard] run schedule function mcm:maps/vineyard2/activate 1s
 #Launch Complex
 execute if entity @e[type=marker,tag=SelectedMap,tag=Launchpad] run schedule function mcm:maps/launchpad/activate 1s
 #Color Filth
@@ -61,6 +77,12 @@ execute if entity @e[type=marker,tag=SelectedMap,tag=Industry] run schedule func
 execute if entity @e[type=marker,tag=SelectedMap,tag=Train] run schedule function mcm:maps/train/activate 1s
 # Cabin
 execute if entity @e[type=marker,tag=SelectedMap,tag=Cabin] run schedule function mcm:maps/cabin/activate 1s
+#Gumdrop Plains
+execute if entity @e[type=marker,tag=SelectedMap,tag=Gumdrop] run schedule function mcm:maps/gumdrop/activate 1s
+#Canyon
+execute if entity @e[type=marker,tag=SelectedMap,tag=Canyon] run schedule function mcm:maps/canyon/activate 1s
+#Stagnant Sanctuary (Sculk)
+execute if entity @e[type=marker,tag=SelectedMap,tag=Sculk] run schedule function mcm:maps/sculk/activate 1s
 
 #> Change gamestate to 0 (Players can now join, game has not started yet)
 bossbar remove lobbybar
@@ -68,3 +90,4 @@ scoreboard players set $gamestate CmdData 0
 
 scoreboard players set @a current_vote 0
 
+kill @e[type=text_display,tag=game_summary]

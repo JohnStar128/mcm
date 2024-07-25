@@ -36,13 +36,14 @@ scoreboard players operation $scale_diff display_scaling -= $scale_min display_s
 kill @e[tag=lobby_cosmetic_displays]
 
 #> Remove hat
-summon item_display 0.0 2.375 81 {Tags:["cosmetic", "lobby_cosmetic_displays", "empty"]}
+summon item_display 0.0 2.875 81 {Tags:["cosmetic", "lobby_cosmetic_displays", "empty"],item:{id:barrier,Count:1b,Rotation:[180f]}}
 summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","empty"],response:true,width:1,height:1}
+summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","empty"],response:true,width:1,height:-1}
 scoreboard players set @e[type=interaction,tag=empty,tag=lobby_cosmetic_displays] cosmetic_ids -1
 execute as @e[type=interaction,tag=empty,tag=lobby_cosmetic_displays] run ride @s mount @e[type=item_display,tag=lobby_cosmetic_displays,tag=empty,limit=1]
 
 #> Rainbow Hat
-summon item_display 1.5 2.375 81 {Tags:["cosmetic", "lobby_cosmetic_displays", "rainbow_hat"],item:{id:"diamond_hoe",Count:1b,tag:{CustomModelData:1114}},item_display:"head",transformation:[1f,0f,0f,0f, 0f,1f,0f,0.5f, 0f,0f,1f,0f, 0f,0f,0f,1f],Rotation:[45f, 0f]}
+summon item_display 1.5 2.375 81 {Tags:["cosmetic", "lobby_cosmetic_displays", "rainbow_hat"],item:{id:"diamond_hoe",Count:1b,components:{custom_model_data:1114}},item_display:"head",transformation:[1f,0f,0f,0f, 0f,1f,0f,0.5f, 0f,0f,1f,0f, 0f,0f,0f,1f],Rotation:[45f, 0f]}
 summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","rainbow_hat"],response:true,width:1,height:1}
 summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","rainbow_hat"],response:true,width:1,height:-1}
 scoreboard players set @e[type=interaction,tag=rainbow_hat,tag=lobby_cosmetic_displays] cosmetic_ids 1
@@ -57,51 +58,99 @@ execute as @e[type=interaction,tag=turtle_hat,tag=lobby_cosmetic_displays] run r
 execute as @e[type=armor_stand,tag=turtle_hat,tag=lobby_cosmetic_displays] run ride @s mount @e[type=item_display,tag=lobby_cosmetic_displays,tag=turtle_hat,limit=1]
 
 #> Space Helmet
+<<<<<<< HEAD
 summon item_display 4.5 2.375 81 {Tags:["cosmetic", "lobby_cosmetic_displays", "space_helmet"],item:{id:"diamond_hoe",Count:1b,tag:{CustomModelData:1111}},item_display:"head",transformation:[1f,0f,0f,0f, 0f,1f,0f,0.5f, 0f,0f,1f,0f, 0f,0f,0f,1f],Rotation:[180f]}
+=======
+summon item_display 4.5 2.375 81 {Tags:["cosmetic", "lobby_cosmetic_displays", "space_helmet"],item:{id:"diamond_hoe",Count:1b,components:{custom_model_data:1111}},item_display:"head",transformation:[1f,0f,0f,0f, 0f,1f,0f,0.5f, 0f,0f,1f,0f, 0f,0f,0f,1f],Rotation:[180f]}
+>>>>>>> dev
 summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","space_helmet"],response:true,width:1,height:1}
 summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","space_helmet"],response:true,width:1,height:-1}
 scoreboard players set @e[type=interaction,tag=space_helmet,tag=lobby_cosmetic_displays] cosmetic_ids 3
 execute as @e[type=interaction,tag=space_helmet,tag=lobby_cosmetic_displays] run ride @s mount @e[type=item_display,tag=lobby_cosmetic_displays,tag=space_helmet,limit=1]
 
 #> 3D glasses
+<<<<<<< HEAD
 summon item_display 6.0 2.375 81 {Tags:["cosmetic", "lobby_cosmetic_displays", "3d_glasses"],item:{id:"diamond_hoe",Count:1b,tag:{CustomModelData:1112}},item_display:"head",transformation:[1f,0f,0f,0f, 0f,1f,0f,0.5f, 0f,0f,1f,0f, 0f,0f,0f,1f],Rotation:[225f, 0f]}
+=======
+summon item_display 6.0 2.375 81 {Tags:["cosmetic", "lobby_cosmetic_displays", "3d_glasses"],item:{id:"diamond_hoe",Count:1b,components:{custom_model_data:1112}},item_display:"head",transformation:[1f,0f,0f,0f, 0f,1f,0f,0.5f, 0f,0f,1f,0f, 0f,0f,0f,1f],Rotation:[225f, 0f]}
+>>>>>>> dev
 summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","3d_glasses"],response:true,width:1,height:1}
 summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","3d_glasses"],response:true,width:1,height:-1}
 scoreboard players set @e[type=interaction,tag=3d_glasses,tag=lobby_cosmetic_displays] cosmetic_ids 4
 execute as @e[type=interaction,tag=3d_glasses,tag=lobby_cosmetic_displays] run ride @s mount @e[type=item_display,tag=lobby_cosmetic_displays,tag=3d_glasses,limit=1]
 
 #> Bell
-summon item_display 7.5 2.375 81 {Tags:["cosmetic", "lobby_cosmetic_displays", "bell"],item:{id:"diamond_hoe",Count:1b,tag:{CustomModelData:1117}},item_display:"head",transformation:[1f,0f,0f,0f, 0f,1f,0f,0f, 0f,0f,1f,0f, 0f,0f,0f,1f],Rotation:[45f, 0f]}
+summon item_display 7.5 2.375 81 {Tags:["cosmetic", "lobby_cosmetic_displays", "bell"],item:{id:"diamond_hoe",Count:1b,components:{custom_model_data:1117}},item_display:"head",transformation:[1f,0f,0f,0f, 0f,1f,0f,0f, 0f,0f,1f,0f, 0f,0f,0f,1f],Rotation:[45f, 0f]}
 summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","bell"],response:true,width:1,height:1}
 summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","bell"],response:true,width:1,height:-1}
 scoreboard players set @e[type=interaction,tag=bell,tag=lobby_cosmetic_displays] cosmetic_ids 5
 execute as @e[type=interaction,tag=bell,tag=lobby_cosmetic_displays] run ride @s mount @e[type=item_display,tag=lobby_cosmetic_displays,tag=bell,limit=1]
 
 #> Bowler Hat
-summon item_display 9.0 2.375 81 {Tags:["cosmetic", "lobby_cosmetic_displays", "bowler_hat"],item:{id:"diamond_hoe",Count:1b,tag:{CustomModelData:1113}},item_display:"head"}
+summon item_display 9.0 2.375 81 {Tags:["cosmetic", "lobby_cosmetic_displays", "bowler_hat"],item:{id:"diamond_hoe",Count:1b,components:{custom_model_data:1113}},item_display:"head"}
 summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","bowler_hat"],response:true,width:1,height:1}
 scoreboard players set @e[type=interaction,tag=bowler_hat,tag=lobby_cosmetic_displays] cosmetic_ids 6
 execute as @e[type=interaction,tag=bowler_hat,tag=lobby_cosmetic_displays] run ride @s mount @e[type=item_display,tag=lobby_cosmetic_displays,tag=bowler_hat,limit=1]
 
 #> Skipper's Hat
+<<<<<<< HEAD
 summon item_display 10.5 2.375 81 {Tags:["cosmetic", "lobby_cosmetic_displays", "captain_hat"],item:{id:"diamond_hoe",Count:1b,tag:{CustomModelData:1115}},item_display:"head",Rotation:[180f]}
+=======
+summon item_display 10.5 2.375 81 {Tags:["cosmetic", "lobby_cosmetic_displays", "captain_hat"],item:{id:"diamond_hoe",Count:1b,components:{custom_model_data:1115}},item_display:"head",Rotation:[180f]}
+>>>>>>> dev
 summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","captain_hat"],response:true,width:1,height:1}
 scoreboard players set @e[type=interaction,tag=captain_hat,tag=lobby_cosmetic_displays] cosmetic_ids 7
 execute as @e[type=interaction,tag=captain_hat,tag=lobby_cosmetic_displays] run ride @s mount @e[type=item_display,tag=lobby_cosmetic_displays,tag=captain_hat,limit=1]
 
 #> Aviator Hat
+<<<<<<< HEAD
 summon item_display 12.0 2.875 81 {Tags:["cosmetic", "lobby_cosmetic_displays", "aviator_hat"],item:{id:"diamond_hoe",Count:1b,tag:{CustomModelData:1118}},item_display:"head",Rotation:[180f]}
+=======
+summon item_display 12.0 2.875 81 {Tags:["cosmetic", "lobby_cosmetic_displays", "aviator_hat"],item:{id:"diamond_hoe",Count:1b,components:{custom_model_data:1118}},item_display:"head",Rotation:[180f]}
+>>>>>>> dev
 summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","aviator_hat"],response:true,width:1,height:0.5}
 summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","aviator_hat"],response:true,width:1,height:-1.5}
 scoreboard players set @e[type=interaction,tag=aviator_hat,tag=lobby_cosmetic_displays] cosmetic_ids 8
 execute as @e[type=interaction,tag=aviator_hat,tag=lobby_cosmetic_displays] run ride @s mount @e[type=item_display,tag=lobby_cosmetic_displays,tag=aviator_hat,limit=1]
 
 #> Fancy "Hat"
+<<<<<<< HEAD
 summon item_display 13.5 2.875 81 {Tags:["cosmetic", "lobby_cosmetic_displays", "fancy_hat"],item:{id:"diamond_hoe",Count:1b,tag:{CustomModelData:1119}},item_display:"head",Rotation:[180f]}
+=======
+summon item_display 13.5 2.875 81 {Tags:["cosmetic", "lobby_cosmetic_displays", "fancy_hat"],item:{id:"diamond_hoe",Count:1b,components:{custom_model_data:1119}},item_display:"head",Rotation:[180f]}
+>>>>>>> dev
 summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","fancy_hat"],response:true,width:1,height:0.5}
 summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","fancy_hat"],response:true,width:1,height:-1.5}
 scoreboard players set @e[type=interaction,tag=fancy_hat,tag=lobby_cosmetic_displays] cosmetic_ids 9
 execute as @e[type=interaction,tag=fancy_hat,tag=lobby_cosmetic_displays] run ride @s mount @e[type=item_display,tag=lobby_cosmetic_displays,tag=fancy_hat,limit=1]
+
+#> Miner Hat
+summon item_display 15.0 2.875 81 {Tags:["cosmetic", "lobby_cosmetic_displays", "miner_hat"],item:{id:"diamond_hoe",Count:1b,components:{custom_model_data:1120}},item_display:"head",Rotation:[180f]}
+summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","miner_hat"],response:true,width:1,height:0.5}
+summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","miner_hat"],response:true,width:1,height:-1.5}
+scoreboard players set @e[type=interaction,tag=miner_hat,tag=lobby_cosmetic_displays] cosmetic_ids 10
+execute as @e[type=interaction,tag=miner_hat,tag=lobby_cosmetic_displays] run ride @s mount @e[type=item_display,tag=lobby_cosmetic_displays,tag=miner_hat,limit=1]
+
+#> Winter Hat
+summon item_display 16.5 2.875 81 {Tags:["cosmetic", "lobby_cosmetic_displays", "winter_hat"],item:{id:"diamond_hoe",Count:1b,components:{custom_model_data:1121}},item_display:"head",Rotation:[180f]}
+summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","winter_hat"],response:true,width:1,height:0.5}
+summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","winter_hat"],response:true,width:1,height:-1.5}
+scoreboard players set @e[type=interaction,tag=winter_hat,tag=lobby_cosmetic_displays] cosmetic_ids 11
+execute as @e[type=interaction,tag=winter_hat,tag=lobby_cosmetic_displays] run ride @s mount @e[type=item_display,tag=lobby_cosmetic_displays,tag=winter_hat,limit=1]
+
+#> Hard Hat
+summon item_display 18.0 2.875 81 {Tags:["cosmetic", "lobby_cosmetic_displays", "hard_hat"],item:{id:"diamond_hoe",Count:1b,components:{custom_model_data:1122}},item_display:"head",Rotation:[180f]}
+summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","hard_hat"],response:true,width:1,height:0.5}
+summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","hard_hat"],response:true,width:1,height:-1.5}
+scoreboard players set @e[type=interaction,tag=hard_hat,tag=lobby_cosmetic_displays] cosmetic_ids 12
+execute as @e[type=interaction,tag=hard_hat,tag=lobby_cosmetic_displays] run ride @s mount @e[type=item_display,tag=lobby_cosmetic_displays,tag=hard_hat,limit=1]
+
+#> Warden Ears
+summon item_display 19.5 2.875 81 {Tags:["cosmetic", "lobby_cosmetic_displays", "warden_ears"],item:{id:"diamond_hoe",Count:1b,components:{custom_model_data:1123}},item_display:"head",Rotation:[180f]}
+summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","warden_ears"],response:true,width:1,height:0.5}
+summon interaction 0 0 0 {Tags:["lobby_cosmetic_displays","warden_ears"],response:true,width:1,height:-1.5}
+scoreboard players set @e[type=interaction,tag=warden_ears,tag=lobby_cosmetic_displays] cosmetic_ids 13
+execute as @e[type=interaction,tag=warden_ears,tag=lobby_cosmetic_displays] run ride @s mount @e[type=item_display,tag=lobby_cosmetic_displays,tag=warden_ears,limit=1]
 
 
 #> Calculate the high bound based of number of displays

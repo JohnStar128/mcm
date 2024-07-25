@@ -1,0 +1,55 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player" : [ 
+          {
+            "condition" : "minecraft:all_of",
+            "terms" : [
+              {
+                "condition" : "minecraft:entity_properties",
+                "entity" : "this",
+                "predicate" : {
+                  "nbt" : "{Tags:[\"has_knife\"]}"
+                }
+              },
+              {
+                "condition" : "minecraft:any_of",
+                "terms" : [
+                  {
+                    "condition" : "minecraft:entity_scores",
+                    "entity" : "this",
+                    "scores" : {
+                      "throwKnife" : {
+                        "min" : 1,
+                        "max" : 100
+                      }
+                    }
+                  },
+                  {
+                    "condition" : "minecraft:entity_scores",
+                    "entity" : "this",
+                    "scores" : {
+                      "droppedKnife" : {
+                        "min" : 1,
+                        "max" : 100
+                      }
+                    }
+                  }
+                ]
+
+
+                
+              }
+            ]
+            
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "mcm:game/items/knife/throw"
+  }
+}

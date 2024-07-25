@@ -28,5 +28,7 @@ tellraw @a [{"text":"|","color":"gray","bold":true}]
 tellraw @a [{"text":"|","color":"gray","bold":true}, " ", {"translate":"mcm.game.stats.timealive","color":"dark_purple","bold":false}]
 execute as @a[tag=queued,tag=spectating] run function mcm:game/display_time_alive
 
+tellraw @a [{"text":"|\n|","color":"gray","bold":true}, " ", {"translate":"mcm.game.events.clickhere","color":"green","bold":false,"clickEvent":{"action":"run_command","value":"/trigger display_events set 1"}}]
+
 #> Footer
 tellraw @a [{"text":"|","color":"gray","bold":true},{"text":" ------------------------------- ","color":"green"}]

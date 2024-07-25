@@ -13,8 +13,8 @@ execute as @a[tag=!first_join,scores={crouch=1..}] run function mcm:first_join
 
 #> Auto queue
 scoreboard players remove @a[scores={autoqueue_delay=1..}] autoqueue_delay 1
-execute as @a[tag=first_join,tag=!autoqueue_spam_prevention,scores={autoqueue=1..,autoqueue_delay=0},tag=!autoqueue,nbt={SelectedItem:{id:"minecraft:warped_fungus_on_a_stick",tag:{Autoqueue:1b}}}] at @s run function mcm:lobby/queueing/autoqueue
-execute as @a[tag=first_join,tag=!autoqueue_spam_prevention,scores={autoqueue=1..,autoqueue_delay=0},tag=autoqueue,nbt={SelectedItem:{id:"minecraft:warped_fungus_on_a_stick",tag:{Autoqueue:1b}}}] at @s run function mcm:lobby/queueing/deautoqueue
+execute as @a[tag=first_join,tag=!autoqueue_spam_prevention,scores={autoqueue=1..,autoqueue_delay=0},tag=!autoqueue] if items entity @s weapon.* *[custom_data~{Autoqueue:1b}] at @s run function mcm:lobby/queueing/autoqueue
+execute as @a[tag=first_join,tag=!autoqueue_spam_prevention,scores={autoqueue=1..,autoqueue_delay=0},tag=autoqueue] if items entity @s weapon.* *[custom_data~{Autoqueue:1b}] at @s run function mcm:lobby/queueing/deautoqueue
 
 #> Popcorn
 execute if score $gamestate CmdData matches -1..0 run function mcm:lobby/popcorn
@@ -40,15 +40,17 @@ execute as @a[scores={RingBell=1..},advancements={mcm:secrets/lobby/ring_bell=fa
 execute as @a[scores={RingBell=1..}] at @s run scoreboard players reset @s RingBell
 
 #> Guessing this is for that one store in the lobby with the hglllhshglgl - Topaz
-execute positioned 32.5 2.3 29.5 if entity @a[distance=..7] run particle block minecraft:red_concrete 32.5 2.3 30.5 0 0.3 0 1 1
-execute positioned 32.5 2.3 29.5 if entity @a[distance=..7] run particle block minecraft:light_blue_concrete 32.5 2.3 29.5 0 0.3 0 1 1
-execute positioned 32.5 2.3 29.5 if entity @a[distance=..7] run particle block minecraft:lime_concrete 32.5 2.3 28.5 0 0.3 0 1 1
+execute positioned -37.5 2.3 7.5 if entity @a[distance=..17] run particle block{'block_state': {'Name': 'red_concrete'}} -36.5 2.3 7.5 0 0.3 0 1 1
+execute positioned -37.5 2.3 6.5 if entity @a[distance=..17] run particle block{'block_state': {'Name': 'light_blue_concrete'}} -36.5 2.3 6.5 0 0.3 0 1 1
+execute positioned -37.5 2.3 5.5 if entity @a[distance=..17] run particle block{'block_state': {'Name': 'lime_concrete'}} -36.5 2.3 5.5 0 0.3 0 1 1
 
 #> Let people use the test range in the lobby
 execute as @a[predicate=mcm:bounding_boxes/lobby_grate] run tag @s add came_from_grate
-execute as @a[predicate=mcm:bounding_boxes/lobby_grate] run tp @s 33 1 121 180 0
-execute as @a[predicate=mcm:bounding_boxes/test_range_kill_items] run function mcm:lobby/test_range
-execute as @a[tag=test_range,predicate=!mcm:bounding_boxes/test_range_kill_items] run function mcm:lobby/test_range_leave
+execute as @a[predicate=mcm:bounding_boxes/lobby_grate] run tp @s 36 1 -11 180 0
+execute as @a[predicate=mcm:bounding_boxes/test_range] run function mcm:lobby/test_range/control
+execute as @a[tag=test_range,predicate=!mcm:bounding_boxes/test_range] run function mcm:lobby/test_range/leave
+execute as @a[predicate=!mcm:bounding_boxes/test_range,tag=came_from_grate] run tag @s remove came_from_grate
+execute if score $active test_range matches 1 unless entity @a[predicate=mcm:bounding_boxes/test_range] run function mcm:lobby/test_range/reset
 
 #> Lobby arcade machines
 function mcm:lobby/arcade
@@ -56,31 +58,19 @@ function mcm:lobby/arcade
 #> Credits room
 execute if entity @a[predicate=mcm:bounding_boxes/credits] run function mcm:lobby/credits/credits
 #> Reset if no one's there
-execute unless entity @a[predicate=mcm:bounding_boxes/credits] if score $credit_timer CmdData matches 0.. positioned -30 -38 154 run function mcm:lobby/credits/reset
+execute unless entity @a[predicate=mcm:bounding_boxes/credits] if score $credit_timer CmdData matches 0.. positioned -7 1 128 run function mcm:lobby/credits/reset
 
 #> Rule updates
 execute as @a[scores={player_rule_update=1..}] run function mcm:game/rules/try_rule_update
-execute as @a[nbt={SelectedItem:{id:"minecraft:written_book",Count:1b,tag:{HowToPlay:1b}}}] run item modify entity @s weapon.mainhand mcm:refresh_book
-
-#> Remove items players shouldn't have
-function mcm:lobby/remove_items
+execute as @a if items entity @s weapon.* written_book[custom_data~{HowToPlay:1b}] run item modify entity @s weapon.mainhand mcm:refresh_book
 
 #> Set the how-to-play lectern back to the front page unless someone's close enough to read it
 execute positioned -1 1 79 unless entity @a[distance=..5] if entity @a[distance=6..10] run data merge block ~ ~ ~ {Page:0}
 execute positioned -1 1 79 if entity @a[distance=..5] run data modify block ~ ~ ~ Book merge from block ~ ~-2 ~ Items[0]
-#> Unresolve signs for translatable text to show up
-execute positioned -1 1 79 if entity @a[distance=..12] run data merge block 7 1 84 {Resolved:0b}
-execute positioned -1 1 79 if entity @a[distance=..12] run data merge block 5 1 83 {Resolved:0b}
-execute positioned -1 1 79 if entity @a[distance=..12] run data merge block 3 1 82 {Resolved:0b}
-execute positioned -1 1 79 if entity @a[distance=..12] run data merge block 1 1 81 {Resolved:0b}
-execute positioned -1 1 79 if entity @a[distance=..12] run data merge block -1 1 81 {Resolved:0b}
-execute positioned -1 1 79 if entity @a[distance=..12] run data merge block -5 1 82 {Resolved:0b}
-execute positioned -1 1 79 if entity @a[distance=..12] run data merge block -7 1 83 {Resolved:0b}
-execute positioned -1 1 79 if entity @a[distance=..12] run data merge block -9 1 84 {Resolved:0b}
 
 #> Manage AFK players
 execute if entity @a[tag=afk] run function mcm:lobby/afk_loop
-execute as @a[tag=afk,scores={walk=1000..}] run function mcm:lobby/manage_afk
+execute as @a[tag=afk,scores={walk=1..}] run function mcm:lobby/manage_afk
 execute as @a[tag=afk,scores={sprint=1..}] run function mcm:lobby/manage_afk
 execute as @a[tag=afk,scores={crouch=1..}] run function mcm:lobby/manage_afk
 execute as @a[tag=afk,scores={jump=1..}] run function mcm:lobby/manage_afk
@@ -91,5 +81,9 @@ execute as @a[tag=display_scroll_lock] run function mcm:lobby/displays/control
 execute as @a[tag=display_scroll_lock,predicate=!mcm:bounding_boxes/lobby_cosmetic_zone] run tag @s remove display_scroll_lock
 
 #> Spectate item
-execute if score $gamestate CmdData matches 1.. as @a[tag=!queued] if score @s spyglass matches 1.. as @s[nbt={SelectedItem:{id:"minecraft:spyglass",tag:{Spectate:1b}}}] run function mcm:game/spectate
+execute if score $gamestate CmdData matches 1.. if score $graceperiod CmdData matches 1.. as @a[tag=!queued] if score @s spyglass matches 1.. if items entity @s weapon.* spyglass[custom_data~{Spectate:1b}] run function mcm:game/latejoin
+execute if score $gamestate CmdData matches 1.. unless score $graceperiod CmdData matches 1.. as @a[tag=!queued] if score @s spyglass matches 1.. if items entity @s weapon.* spyglass[custom_data~{Spectate:1b}] run function mcm:game/spectate
 scoreboard players set @a spyglass 0
+
+#> Scroll the credits
+function mcm:game/summary/scroll_credits

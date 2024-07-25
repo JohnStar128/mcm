@@ -1,20 +1,15 @@
+
+#> Note to add new stuff here make sure to it before the exit 
+#> for stuff that can run before games (i.e. adding scoreboards and other stuff that doesn't change in game)
+#> And add stuff after that for things that can't change in game
+#> If your making large changes don't reload in game anyway but for small stuff this should work
+
+
 #> Make sure 0,0 and spawn are loaded, this is where all the ✨ magic ✨ happens
 setworldspawn -1 1 69
 forceload add -64 16 47 184
 forceload add 0 0
 spawnpoint @a -1 1 69
-
-
-# Reset the maps
-execute if score $selectedMap CmdData matches 1 run function mcm:maps/library/reset
-execute if score $selectedMap CmdData matches 2 run function mcm:maps/airship/reset
-execute if score $selectedMap CmdData matches 3 run function mcm:maps/vineyard/reset
-execute if score $selectedMap CmdData matches 4 run function mcm:maps/launchpad/reset
-execute if score $selectedMap CmdData matches 5 run function mcm:maps/cyberpunk/reset
-execute if score $selectedMap CmdData matches 6 run function mcm:maps/riverboat/reset
-execute if score $selectedMap CmdData matches 7 run function mcm:maps/industry/reset
-execute if score $selectedMap CmdData matches 8 run function mcm:maps/train/reset
-execute if score $selectedMap CmdData matches 9 run function mcm:maps/cabin/reset
 
 #> Scoreboards
 scoreboard objectives add CmdData dummy
@@ -69,6 +64,7 @@ scoreboard objectives add math dummy
 scoreboard objectives add cyberpunk dummy
 scoreboard objectives add dev dummy
 scoreboard objectives add retrieval_delay dummy
+scoreboard objectives add throw_delay dummy
 scoreboard objectives add motion_x dummy
 scoreboard objectives add motion_y dummy
 scoreboard objectives add motion_z dummy
@@ -96,11 +92,29 @@ scoreboard objectives add spyglass minecraft.used:minecraft.spyglass
 scoreboard objectives add player_count dummy
 scoreboard objectives add freezing dummy
 scoreboard objectives add chair_entityUUID dummy
+scoreboard objectives add display_events trigger
+scoreboard objectives add cabin_secret minecraft.used:minecraft.flint_and_steel
+scoreboard objectives add drankPotion minecraft.used:minecraft.potion
+scoreboard objectives add scroll_pos dummy
+scoreboard objectives add invisibility dummy
+scoreboard objectives add forklifttest dummy
+scoreboard objectives add forkliftresponse trigger
+scoreboard objectives add forklift_interact dummy
+scoreboard objectives add test_range dummy
+scoreboard objectives add nojump dummy
 
-#schedule function mcm:lobby/update_lobby_displays_loop 5s replace
-function mcm:lobby/update_lobby_displays_loop
+scoreboard objectives add loadout_knife dummy
+scoreboard objectives add loadout_1 dummy
+scoreboard objectives add loadout_2 dummy
+scoreboard objectives add loadout_3 dummy
+
+scoreboard objectives add carrot minecraft.used:minecraft.carrot_on_a_stick
+
+function mcm:game/rules/init
 
 function mcm:math/init
+
+function mcm:items/init
 
 #> Colors
 scoreboard players set $red_offset player_color 65536
@@ -108,8 +122,8 @@ scoreboard players set $green_offset player_color 256
 scoreboard players set $max_rgb player_color 256
 scoreboard players set $max_angle player_color 360
 
-execute as @e[type=villager,tag=Usher] run data modify entity @s Offers set value {}
-execute as @e[type=villager,tag=credits_usher] run data modify entity @s Offers set value {}
+execute as @e[type=villager,tag=Usher] run data modify entity @s Offers.Recipes set value []
+execute as @e[type=villager,tag=credits_usher] run data modify entity @s Offers.Recipes set value []
 
 #> Add the team which hides nametags
 team add nametags
@@ -129,6 +143,31 @@ team modify nametags color gray
 team modify ingame_players color green 
 
 scoreboard players enable @a player_rule_update
+
+
+#> Put stuff above this line that can be run when a game is in progess
+#> This is to allow hot reloading of functions in game
+
+# Exit early to allow reloading in game
+execute unless score $gamestate CmdData matches ..0 run return 1
+
+
+
+# Reset the maps and test range
+function mcm:lobby/test_range/reset
+execute if score $selectedMap CmdData matches 1 run function mcm:maps/library/reset
+execute if score $selectedMap CmdData matches 2 run function mcm:maps/airship/reset
+#execute if score $selectedMap CmdData matches 3 run function mcm:maps/vineyard/reset
+execute if score $selectedMap CmdData matches 3 run function mcm:maps/vineyard2/reset
+execute if score $selectedMap CmdData matches 4 run function mcm:maps/launchpad/reset
+execute if score $selectedMap CmdData matches 5 run function mcm:maps/cyberpunk/reset
+execute if score $selectedMap CmdData matches 6 run function mcm:maps/riverboat/reset
+execute if score $selectedMap CmdData matches 7 run function mcm:maps/industry/reset
+execute if score $selectedMap CmdData matches 8 run function mcm:maps/train/reset
+execute if score $selectedMap CmdData matches 9 run function mcm:maps/cabin/reset
+execute if score $selectedMap CmdData matches 10 run function mcm:maps/gumdrop/reset
+execute if score $selectedMap CmdData matches 11 run function mcm:maps/gumdrop/reset
+execute if score $selectedMap CmdData matches 12 run function mcm:maps/sculk/reset
 
 schedule function mcm:respawn_entities 1s
 
@@ -159,6 +198,9 @@ scoreboard players set $murderers GameRules 1
 scoreboard players set $smart_murderers GameRules 1
 scoreboard players set $murderer_ff GameRules 0
 scoreboard players set $startscrap GameRules 1
+scoreboard players set $darkness GameRules 0
+scoreboard players set $destroyguns Gamerule 0
+scoreboard players set $updatebossbar GameRules 1
 
 #> Load current version (hardcoded)
 scoreboard players set $current_version version 2
@@ -176,3 +218,6 @@ item modify block -1 -1 79 container.0 mcm:refresh_book
 
 #> Set weather
 weather clear
+
+#> Branding
+function mcm:reset_branding

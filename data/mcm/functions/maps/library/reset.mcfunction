@@ -1,7 +1,7 @@
 #> Reset chandelier
 place template minecraft:chandelier_frame0 971 100 997
 
-#>Remove any books still in armorstands at the end of the game, and reset tags
+#> Remove any books still in armorstands at the end of the game, and reset tags
 execute as @e[type=armor_stand,tag=bookspawn,tag=hasbook] at @s run data merge entity @s {ArmorItems:[{},{},{},{}]}
 tag @e[type=armor_stand,tag=hasbook] remove hasbook
 

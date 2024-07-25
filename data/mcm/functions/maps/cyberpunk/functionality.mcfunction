@@ -78,8 +78,10 @@ execute if score $temp math matches 3 run setblock -2049 78 2042 air replace
 execute if score $temp math matches 3 run setblock -2050 78 2042 air replace
 
 #> Secret stuff
-execute as @a[advancements={mcm:map_functions/cyberpunk_secret_1=true}] at @s run scoreboard players set @e[type=interaction,tag=cyberpunk_secret,limit=1,sort=nearest] cyberpunk 1
-execute if entity @a[advancements={mcm:map_functions/cyberpunk_secret_1=true}] store result score $secret cyberpunk if entity @e[type=interaction,tag=cyberpunk_secret,scores={cyberpunk=1..}]
+execute if score $graceperiod CmdData matches ..0 as @a[advancements={mcm:map_functions/cyberpunk_secret_1=true}] at @s unless score @e[type=interaction,tag=cyberpunk_secret,limit=1,sort=nearest] cyberpunk matches 1 run scoreboard players set $event_type temp 1
+execute if score $graceperiod CmdData matches ..0 as @a[advancements={mcm:map_functions/cyberpunk_secret_1=true}] at @s unless score @e[type=interaction,tag=cyberpunk_secret,limit=1,sort=nearest] cyberpunk matches 1 run function mcm:game/summary/add_event {translate:"mcm.game.events.cyberpunk_cat_statue",color:"green"}
+execute if score $graceperiod CmdData matches ..0 as @a[advancements={mcm:map_functions/cyberpunk_secret_1=true}] at @s run scoreboard players set @e[type=interaction,tag=cyberpunk_secret,limit=1,sort=nearest] cyberpunk 1
+execute if score $graceperiod CmdData matches ..0 if entity @a[advancements={mcm:map_functions/cyberpunk_secret_1=true}] store result score $secret cyberpunk if entity @e[type=interaction,tag=cyberpunk_secret,scores={cyberpunk=1..}]
 
 execute if score $secret cyberpunk matches 9 run setblock -1990 73 2044 redstone_torch
 execute if score $secret cyberpunk matches 9 run setblock -1989 73 2044 redstone_torch
@@ -87,16 +89,17 @@ execute if score $secret cyberpunk matches 9 positioned -1990 76 2046 if block ~
 execute if score $secret cyberpunk matches 9 positioned -1994 189 2061 if block ~ ~ ~ warped_button[powered=true] as @a[tag=!spectating,distance=..5] run tp @s -1990 75 2045
 execute if score $secret cyberpunk matches 9 run setblock -1990 76 2046 stone_button[face=wall,facing=east,powered=false]
 execute if score $secret cyberpunk matches 9 run setblock -1994 189 2061 warped_button[face=wall,facing=east,powered=false]
-
 execute if score $secret cyberpunk matches 9 run scoreboard players add $message cyberpunk 1
 execute if score $secret cyberpunk matches 9 if score $message cyberpunk matches 1 run tellraw @a {"translate":"mcm.cyberpunk.garden","italic":true,"color":"green"}
 
-execute as @e[type=cat,tag=cyberpunk_secret_1] at @s if entity @a[distance=..2] run advancement grant @a[distance=..2] only mcm:map_functions/cyberpunk_secret_2
-execute as @e[type=cat,tag=cyberpunk_secret_2] at @s if entity @a[distance=..2] run advancement grant @a[distance=..2] only mcm:map_functions/cyberpunk_secret_3
+execute if score $graceperiod CmdData matches ..0 as @e[type=cat,tag=cyberpunk_secret_1] at @s if entity @a[distance=..2] run advancement grant @a[distance=..2] only mcm:map_functions/cyberpunk_secret_2
+execute if score $graceperiod CmdData matches ..0 as @e[type=cat,tag=cyberpunk_secret_2] at @s if entity @a[distance=..2] run advancement grant @a[distance=..2] only mcm:map_functions/cyberpunk_secret_3
 
 execute as @a[advancements={mcm:map_functions/cyberpunk_secret_1=true}] run advancement revoke @s only mcm:map_functions/cyberpunk_secret_1
 
-execute as @a[scores={cyberpunk=2,RingBell=1..},advancements={mcm:secrets/cyberpunk/cyberpunk=false}] run advancement grant @s only mcm:secrets/cyberpunk/cyberpunk
+execute as @a[scores={cyberpunk=2..,RingBell=1..},advancements={mcm:secrets/cyberpunk/cyberpunk=false}] run scoreboard players set $event_type temp 1
+execute as @a[scores={cyberpunk=2..,RingBell=1..},advancements={mcm:secrets/cyberpunk/cyberpunk=false}] run function mcm:game/summary/add_event {translate:"mcm.game.events.cyberpunk_bell",color:"green"}
+execute as @a[scores={cyberpunk=2..,RingBell=1..},advancements={mcm:secrets/cyberpunk/cyberpunk=false}] run advancement grant @s only mcm:secrets/cyberpunk/cyberpunk
 scoreboard players reset @a RingBell
 
 #> Propellers

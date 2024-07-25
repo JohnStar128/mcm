@@ -1,3 +1,15 @@
+kill @e[type=interaction,tag=forklifttest]
+kill @e[type=marker,tag=forklifttest]
+kill @e[type=interaction,tag=printer]
+
+fill -2005 88 -3028 -2005 87 -3024 lever[powered=false,facing=west] replace lever[powered=true]
+
+scoreboard players set industry_door_1 CmdData 0 
+scoreboard players set industry_door_2 CmdData 0 
+scoreboard players set industry_door_3 CmdData 0 
+scoreboard players set industry_door_4 CmdData 0 
+scoreboard players set industry_door_5 CmdData 0 
+
 execute unless block -2064 81 -3023 minecraft:lever[face=wall,powered=false,facing=east] run setblock -2064 81 -3023 minecraft:lever[face=wall,powered=false,facing=east] replace 
 execute unless block -2064 81 -3022 minecraft:lever[face=wall,powered=false,facing=east] run setblock -2064 81 -3022 minecraft:lever[face=wall,powered=false,facing=east] replace 
 execute unless block -2064 84 -3023 minecraft:lever[face=wall,powered=true,facing=east] run setblock -2064 84 -3023 minecraft:lever[face=wall,powered=true,facing=east] replace 

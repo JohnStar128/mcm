@@ -5,14 +5,14 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:stick"
-            ],
-            "nbt": "{CustomModelData:1117}"
+            "items": "minecraft:stick",
+            "components": {
+              "minecraft:custom_model_data": 1117
+            }
           }
         ]
       }
     }
   }
 }
-  
+

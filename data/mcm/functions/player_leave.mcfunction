@@ -8,11 +8,13 @@ gamemode adventure @s
 tp @s -1 1 69 0 0
 #> Clear any game effects (normal ones get re-applied)
 effect clear @s
+attribute @s generic.jump_strength base set 0.41
 
 # Tags
 tag @s remove WonLast
 tag @s remove innocent
 tag @s remove gunner
+tag @s remove gunner_stat
 tag @s remove murderer
 tag @s remove spectating
 tag @s remove shotGun
@@ -24,6 +26,7 @@ tag @s remove Voted
 tag @s remove testing_range
 tag @s remove launch_player
 tag @s remove autoqueue_spam_prevention
+tag @s remove free_knife
 
 #> Print game rules if voting or queueing
 execute if score $gamestate CmdData matches 0..1 run playsound minecraft:entity.experience_orb.pickup block @s ~ ~ ~
@@ -38,7 +41,7 @@ advancement revoke @s only mcm:hit_detection/killed_player
 advancement revoke @s only mcm:item_counts/books
 advancement revoke @s only mcm:item_counts/scrap
 advancement revoke @s only mcm:lobby/arcade_credits
-advancement revoke @s only mcm:lobby/arcade_out_of_order
+advancement revoke @s only mcm:lobby/arcade_options
 advancement revoke @s only mcm:lobby/arcade_parkour
 advancement revoke @s only mcm:lobby/arcade_tutorial
 advancement revoke @s only mcm:lobby/start_credits
@@ -87,14 +90,23 @@ scoreboard players reset @s RingBell
 scoreboard players reset @s current_vote
 scoreboard players reset @s game_stats
 scoreboard players reset @s time_alive
+scoreboard players reset @s vineyard_secret
+scoreboard players reset @s cyberpunk_secret
+scoreboard players reset @s cyberpunk
+scoreboard players reset @s card1
+scoreboard players reset @s card8
+scoreboard players reset @s dropped_card
+
 function mcm:util/reset_carrot_on_stick
+
+scoreboard players enable @s player_rule_update
 
 #> Items
 execute as @s[tag=autoqueue] at @s run function mcm:lobby/queueing/autoqueue
 function mcm:lobby/give_lobby_items
 
 #> How to play book
-item replace entity @s hotbar.4 with written_book{HowToPlay:1b,NoDrop:1b}
+item replace entity @s hotbar.4 with written_book[custom_data={HowToPlay:1b,NoDrop:1b}]
 
 #> Update players' colors
 scoreboard players set $change_color CmdData 1 

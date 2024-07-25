@@ -8,16 +8,16 @@
           "location": {
             "position": {
               "x": {
-                "max": -2,
-                "min": -32
+                "max": 21,
+                "min": -9
               },
               "y": {
-                "max": -17,
-                "min": -41
+                "max": 21,
+                "min": -2
               },
               "z": {
-                "max": 177,
-                "min": 153
+                "max": 151,
+                "min": 127
               }
             }
           }
