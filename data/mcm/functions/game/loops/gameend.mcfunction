@@ -159,10 +159,7 @@ execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 8 unle
 execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 8 unless predicate mcm:bounding_boxes/train run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
 execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 9 unless predicate mcm:bounding_boxes/cabin run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
 execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 9 unless predicate mcm:bounding_boxes/cabin run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
-<<<<<<< HEAD
-=======
 execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 10 unless predicate mcm:bounding_boxes/gumdrop run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
 execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 10 unless predicate mcm:bounding_boxes/gumdrop run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
 execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 11 unless predicate mcm:bounding_boxes/canyon run tp @s @e[type=marker,tag=SpectatorSpawn,limit=1,sort=nearest]
 execute as @a[tag=spectating] at @s if score $selectedMap CmdData matches 11 unless predicate mcm:bounding_boxes/canyon run playsound minecraft.entity.shulker.shoot hostile @s ~ ~ ~ 1 1 0
->>>>>>> dev

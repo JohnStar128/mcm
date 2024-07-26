@@ -36,11 +36,7 @@ execute if entity @e[type=marker,tag=SelectedMap,tag=Launchpad] run forceload ad
 execute if entity @e[type=marker,tag=SelectedMap,tag=Launchpad] run forceload add -961 -881 -1136 -976
 # Color Filth
 execute if entity @e[type=marker,tag=SelectedMap,tag=Cyberpunk] run forceload add -2178 1968 -1969 2135
-<<<<<<< HEAD
-#Riverboat
-=======
 # Riverboat
->>>>>>> dev
 execute if entity @e[type=marker,tag=SelectedMap,tag=Riverboat] run forceload add 2130 -2015 2000 -1975
 # Industry
 execute if entity @e[type=marker,tag=SelectedMap,tag=Industry] run forceload add -1926 -2938 -2067 -3063

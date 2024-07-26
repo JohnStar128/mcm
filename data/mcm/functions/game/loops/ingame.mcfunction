@@ -79,12 +79,9 @@ execute if score $selectedMap CmdData matches 6 run function mcm:maps/riverboat/
 execute if score $selectedMap CmdData matches 7 run function mcm:maps/industry/functionality
 execute if score $selectedMap CmdData matches 8 run function mcm:maps/train/functionality
 execute if score $selectedMap CmdData matches 9 run function mcm:maps/cabin/functionality
-<<<<<<< HEAD
-=======
 execute if score $selectedMap CmdData matches 10 run function mcm:maps/gumdrop/functionality
 execute if score $selectedMap CmdData matches 11 run function mcm:maps/canyon/functionality
 execute if score $selectedMap CmdData matches 12 run function mcm:maps/sculk/functionality
->>>>>>> dev
 
 #> Allow spectating
 execute as @a[nbt={RootVehicle:{Entity:{Tags:["spectatorchair"]}}}] run function mcm:game/spectate

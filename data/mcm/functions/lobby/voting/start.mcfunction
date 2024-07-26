@@ -9,12 +9,9 @@
 # 7: Industry
 # 8: A Tragedy on the Boreal Express (train)
 # 9: Snowed Inn (cabin)
-<<<<<<< HEAD
-=======
 # 10: Gumdrop Plains
 # 11: Canyon
 # 12: Stagnant Sanctuary (sculk)
->>>>>>> dev
 
 #> Set interaction response tag to 1 because apparently you can't vote when it's 0
 execute as @e[type=interaction,tag=MapVoteEntity] run data merge entity @s {response:1b}

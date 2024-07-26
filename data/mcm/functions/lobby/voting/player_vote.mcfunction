@@ -34,9 +34,6 @@ tellraw @s[scores={vote_map_id=6}] [{"text":"| ","color":"gray","bold":true}, {"
 tellraw @s[scores={vote_map_id=7}] [{"text":"| ","color":"gray","bold":true}, {"translate":"mcm.lobby.voted.for","color":"gray", "with": [{"translate":"mcm.industry.name", "color":"green"}]}]
 tellraw @s[scores={vote_map_id=8}] [{"text":"| ","color":"gray","bold":true}, {"translate":"mcm.lobby.voted.for","color":"gray", "with": [{"translate":"mcm.train.name", "color":"green"}]}]
 tellraw @s[scores={vote_map_id=9}] [{"text":"| ","color":"gray","bold":true}, {"translate":"mcm.lobby.voted.for","color":"gray", "with": [{"translate":"mcm.cabin.name", "color":"green"}]}]
-<<<<<<< HEAD
-=======
 tellraw @s[scores={vote_map_id=10}] [{"text":"| ","color":"gray","bold":true}, {"translate":"mcm.lobby.voted.for","color":"gray", "with": [{"translate":"mcm.gumdrop.name", "color":"green"}]}]
 tellraw @s[scores={vote_map_id=11}] [{"text":"| ","color":"gray","bold":true}, {"translate":"mcm.lobby.voted.for","color":"gray", "with": [{"translate":"mcm.canyon.name", "color":"green"}]}]
 tellraw @s[scores={vote_map_id=12}] [{"text":"| ","color":"gray","bold":true}, {"translate":"mcm.lobby.voted.for","color":"gray", "with": [{"translate":"mcm.sculk.name", "color":"green"}]}]
->>>>>>> dev

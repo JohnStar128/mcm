@@ -86,14 +86,6 @@ execute if score @s MapValues matches 12 positioned ~-0.01 ~0.5 ~1.5 run summon 
 #execute if score @s MapValues matches 8 positioned ~0.5 ~0.5 ~1.5 as @e[type=glow_item_frame,limit=1,sort=nearest] run data merge entity @s {Item:{id:"minecraft:filled_map",Count:1b,tag:{map:1170}}}
 
 #Winter Cabin (Snowed Inn)
-<<<<<<< HEAD
-execute if score @s MapValues matches 9 positioned ~0.5 ~2.5 ~-0.5 as @e[type=glow_item_frame,limit=1,sort=nearest] run data merge entity @s {Item:{id:"minecraft:filled_map",Count:1b,tag:{map:1171}}}
-execute if score @s MapValues matches 9 positioned ~0.5 ~2.5 ~1.5 as @e[type=glow_item_frame,limit=1,sort=nearest] run data merge entity @s {Item:{id:"minecraft:filled_map",Count:1b,tag:{map:1172}}}
-execute if score @s MapValues matches 9 positioned ~0.5 ~1.5 ~-0.5 as @e[type=glow_item_frame,limit=1,sort=nearest] run data merge entity @s {Item:{id:"minecraft:filled_map",Count:1b,tag:{map:1173}}}
-execute if score @s MapValues matches 9 positioned ~0.5 ~1.5 ~1.5 as @e[type=glow_item_frame,limit=1,sort=nearest] run data merge entity @s {Item:{id:"minecraft:filled_map",Count:1b,tag:{map:1174}}}
-execute if score @s MapValues matches 9 positioned ~0.5 ~0.5 ~-0.5 as @e[type=glow_item_frame,limit=1,sort=nearest] run data merge entity @s {Item:{id:"minecraft:filled_map",Count:1b,tag:{map:1175}}}
-execute if score @s MapValues matches 9 positioned ~0.5 ~0.5 ~1.5 as @e[type=glow_item_frame,limit=1,sort=nearest] run data merge entity @s {Item:{id:"minecraft:filled_map",Count:1b,tag:{map:1176}}}
-=======
 #execute if score @s MapValues matches 9 positioned ~0.5 ~2.5 ~-0.5 as @e[type=glow_item_frame,limit=1,sort=nearest] run data merge entity @s {Item:{id:"minecraft:filled_map",Count:1b,tag:{map:1171}}}
 #execute if score @s MapValues matches 9 positioned ~0.5 ~2.5 ~1.5 as @e[type=glow_item_frame,limit=1,sort=nearest] run data merge entity @s {Item:{id:"minecraft:filled_map",Count:1b,tag:{map:1172}}}
 #execute if score @s MapValues matches 9 positioned ~0.5 ~1.5 ~-0.5 as @e[type=glow_item_frame,limit=1,sort=nearest] run data merge entity @s {Item:{id:"minecraft:filled_map",Count:1b,tag:{map:1173}}}
@@ -125,4 +117,3 @@ execute if score @s MapValues matches 9 positioned ~0.5 ~0.5 ~1.5 as @e[type=glo
 #execute if score @s MapValues matches 12 positioned ~0.5 ~1.5 ~1.5 as @e[type=glow_item_frame,limit=1,sort=nearest] run data merge entity @s {Item:{id:"minecraft:filled_map",Count:1b,tag:{map:86753096}}}
 #execute if score @s MapValues matches 12 positioned ~0.5 ~0.5 ~-0.5 as @e[type=glow_item_frame,limit=1,sort=nearest] run data merge entity @s {Item:{id:"minecraft:filled_map",Count:1b,tag:{map:86753094}}}
 #execute if score @s MapValues matches 12 positioned ~0.5 ~0.5 ~1.5 as @e[type=glow_item_frame,limit=1,sort=nearest] run data merge entity @s {Item:{id:"minecraft:filled_map",Count:1b,tag:{map:86753097}}}
->>>>>>> dev
