@@ -97,3 +97,6 @@ execute as @a[scores={display_events=1}] run scoreboard players set @s display_e
 
 #> Reset carrot on a stick if it somehow doesn't get reset yet
 execute as @a run function mcm:util/reset_carrot_on_stick
+
+#> Branding
+ bossbar set mcm:branding players @a[tag=!spectating,tag=!queued]
