@@ -1,0 +1,17 @@
+[
+    {
+        "function": "set_custom_model_data",
+        "value": 1235
+    },
+    {
+        "function": "set_name",
+        "name": {
+            "translate" : "mcm.item.autoqueue.disable",
+            "italic" : false,
+            "bold" : false,
+            "underlined" : false,
+            "color" : "red"
+        },
+        "entity" : "this"
+    }
+]

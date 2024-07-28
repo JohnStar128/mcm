@@ -1271,6 +1271,6 @@
     },
     {
         "function": "set_name",
-        "tag": "[{\"translate\":\"mcm.book.title\",\"bold\":true,\"italic\":false,\"underlined\":false,\"color\":\"green\"}]"
+        "name": {"translate":"mcm.book.title","bold":true,"italic":false,"underlined":false,"color":"green"}
     }
 ]
