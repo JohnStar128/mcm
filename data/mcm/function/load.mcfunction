@@ -209,6 +209,7 @@ scoreboard players set $current_version version 2
 bossbar remove minecraft:gamedisplay
 
 schedule function mcm:lobby/voting/start 21t
+schedule function mcm:reset_branding 22t
 
 #> Restore devs to previous state
 
@@ -220,4 +221,4 @@ item modify block -1 -1 79 container.0 mcm:refresh_book
 weather clear
 
 #> Branding
-function mcm:reset_branding
+#function mcm:reset_branding

@@ -47,7 +47,7 @@ execute if score $gameEndTimer CmdData matches ..1 run kill @e[type=item,nbt={It
 
 execute if score $gameEndTimer CmdData matches ..1 run effect clear @a
 
-execute if score $gameEndTimer CmdData matches 200 as @a run attribute @s generic.jump_strength base set 0.41
+execute as @a run attribute @s generic.jump_strength base set 0.41
 
 # remove spawnpoints
 #execute if score $gameEndTimer CmdData matches ..1 as @e[type=marker,tag=!available,tag=map_marker] run function mcm:util/dealloc_entity
@@ -126,6 +126,7 @@ execute if score $gameEndTimer CmdData matches ..1 run function mcm:lobby/lobby_
 # set $gamestate to -1 (voting period)
 execute if score $gameEndTimer CmdData matches ..1 run scoreboard players set $gamestate CmdData -1
 execute if score $gameEndTimer CmdData matches ..1 run function mcm:lobby/voting/start
+execute if score $gameEndTimer CmdData matches ..1 run schedule function mcm:reset_branding 5t
 execute if score $gameEndTimer CmdData matches ..1 run scoreboard players set $gameEndTimer CmdData 200
 execute if score $gamestate CmdData matches -1 run scoreboard players set $murderWin CmdData 0
 execute if score $gamestate CmdData matches -1 run scoreboard players set $innocentWin CmdData 0
