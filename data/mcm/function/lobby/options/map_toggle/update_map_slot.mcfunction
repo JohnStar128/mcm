@@ -10,6 +10,7 @@ data merge storage mcm:options {temp:{}}
 
 execute store result storage mcm:options temp.index int 1 run scoreboard players get index temp
 function mcm:lobby/options/map_toggle/update_map_slot_get_name with storage mcm:options temp
+
 function mcm:lobby/options/map_toggle/update_map_slot_get_data with storage mcm:options temp
 
 # Hide if no map is in the slot
@@ -18,3 +19,5 @@ execute unless data storage mcm:options temp.map run data merge entity @s {text:
 function mcm:lobby/options/map_toggle/update_map_slot_inner with storage mcm:options temp
 
 data remove storage mcm:options temp
+
+function mcm:lobby/options/sync_maps

@@ -1,0 +1,20 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "predicates" : {
+                "minecraft:custom_data": "{scrap:1b}"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "mcm:items/root",
+  "rewards": {
+    "function": "mcm:items/cleanup/check_scrap"
+  }
+}

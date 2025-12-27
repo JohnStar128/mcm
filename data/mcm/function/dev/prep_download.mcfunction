@@ -8,9 +8,6 @@ tag @e[type=marker,tag=MapVote] remove disabled
 #> Shuffle maps so disabled slots don't show
 function mcm:dev/shuffle_maps
 
-#> Update version counter to make sure players who update get any new root advancements
-scoreboard players add $current_version version 1
-
 #> Remove old credits before download
 kill @e[type=text_display,tag=game_summary]
 
@@ -18,3 +15,9 @@ function mcm:dev/reset_loadouts
 
 #> Reset default game rules
 function mcm:lobby/options/reset_to_defaults
+
+#> Set current version
+#> ALWAYS TODO: Update this with the current version number!!!
+# Preferred numbering scheme is the version without decimals
+# (2.0 becomes 20, 2.0.1 becomes 201, 2.1 becomes 21, etc.)
+scoreboard players set $current_version version 20

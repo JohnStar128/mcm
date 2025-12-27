@@ -11,7 +11,7 @@
                 "minecraft:stick"
               ],
               "components": {
-                "minecraft:custom_model_data" : 1111
+                "minecraft:item_model" : "minecraft:role_items/player_tracker"
               }
             }
           }
@@ -27,7 +27,7 @@
                 "minecraft:stick"
               ],
               "components": {
-                "minecraft:custom_model_data" : 1111
+                "minecraft:item_model" : "minecraft:role_items/player_tracker"
               }
             }
           }

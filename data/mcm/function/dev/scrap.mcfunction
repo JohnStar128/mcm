@@ -1,0 +1,10 @@
+function mcm:items/give {item:"scrap"}
+function mcm:items/give {item:"scrap"}
+function mcm:items/give {item:"scrap"}
+function mcm:items/give {item:"scrap"}
+function mcm:items/give {item:"scrap"}
+function mcm:items/give {item:"scrap"}
+function mcm:items/give {item:"scrap"}
+function mcm:items/give {item:"scrap"}
+function mcm:items/give {item:"scrap"}
+function mcm:items/give {item:"scrap"}

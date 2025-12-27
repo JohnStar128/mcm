@@ -1,0 +1,19 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "source_entity": {
+            "type": "minecraft:player",
+            "nbt": "{Tags:[\"queued\"]}"
+          }
+        }
+      }
+    }
+  },
+  "parent": "mcm:hit_detection/root",
+  "rewards": {
+    "function": "mcm:player_state/player_got_hit"
+  }
+}

@@ -1,45 +1,42 @@
 #> Called from `mcm:items/give_item` don't call directly
 
 #> Args `id` id of item
-#>      `nbt` item nbt
+#>      `item` item component storage name
 #>      `slot` item slot
 #>      @s[tag=item_replace] to replace item
-
-$scoreboard players set slot temp $(slot)
 
 #> Slot 0-8 refer to hotbar slots (left to right)
 #> Slot -1 is mainhand
 #> Slot -2 is offhand
+#> Slot 103 is head
+#> Slot 102 is chest
+#> Slot 101 is legs
+#> Slot 100 is feet
+
+
+#> Topaz edit 1.21.10 - instead of component string,
+#> put items in a chest and give them from there
+execute positioned -1 -2 77 unless block ~ ~ ~ chest run setblock ~ ~ ~ chest
+$item replace block -1 -2 77 container.0 with $(id)
+$data modify block -1 -2 77 Items[0].components set from storage mcm:items $(item).components
 
 #> Check wether to replace or give
-execute if score slot temp matches -2 run tag @s[nbt=!{Inventory:[{Slot:-106b}]}] add item_replace
-execute if score slot temp matches -1 run tag @s[nbt=!{SelectedItem:{}}] add item_replace
-execute if score slot temp matches 0 run tag @s[nbt=!{Inventory:[{Slot:0b}]}] add item_replace
-execute if score slot temp matches 1 run tag @s[nbt=!{Inventory:[{Slot:1b}]}] add item_replace
-execute if score slot temp matches 2 run tag @s[nbt=!{Inventory:[{Slot:2b}]}] add item_replace
-execute if score slot temp matches 3 run tag @s[nbt=!{Inventory:[{Slot:3b}]}] add item_replace
-execute if score slot temp matches 4 run tag @s[nbt=!{Inventory:[{Slot:4b}]}] add item_replace
-execute if score slot temp matches 5 run tag @s[nbt=!{Inventory:[{Slot:5b}]}] add item_replace
-execute if score slot temp matches 6 run tag @s[nbt=!{Inventory:[{Slot:6b}]}] add item_replace
-execute if score slot temp matches 7 run tag @s[nbt=!{Inventory:[{Slot:7b}]}] add item_replace
-execute if score slot temp matches 8 run tag @s[nbt=!{Inventory:[{Slot:8b}]}] add item_replace
+$execute unless items entity @s $(slot) * run tag @s add item_replace
 
 #> Give item if not replacing
-execute as @e[type=item] run tag @s add dont_kill
-$give @s[tag=!item_replace] $(id)$(nbt)
-execute as @e[type=item,tag=!dont_kill] run kill @s
-execute as @e[type=item,tag=dont_kill] run tag @s remove dont_kill
+execute at @s[tag=!item_replace] run summon item ~ ~0.5 ~ {Tags:["temp_drop"],Item:{id:"stick",count:1b},PickupDelay:0s}
+data modify entity @e[type=item,tag=temp_drop,limit=1] Owner set from entity @s UUID
+item replace entity @e[type=item,tag=temp_drop] contents from block -1 -2 77 container.0
+tag @e[type=item,tag=temp_drop] remove temp_drop
 
 #> Replace item
-$execute if entity @s[tag=item_replace] if score slot temp matches -2 run item replace entity @s weapon.offhand with $(id)$(nbt)
-$execute if entity @s[tag=item_replace] if score slot temp matches -1 run item replace entity @s weapon.mainhand with $(id)$(nbt)
-$execute if entity @s[tag=item_replace] if score slot temp matches 0 run item replace entity @s hotbar.0 with $(id)$(nbt)
-$execute if entity @s[tag=item_replace] if score slot temp matches 1 run item replace entity @s hotbar.1 with $(id)$(nbt)
-$execute if entity @s[tag=item_replace] if score slot temp matches 2 run item replace entity @s hotbar.2 with $(id)$(nbt)
-$execute if entity @s[tag=item_replace] if score slot temp matches 3 run item replace entity @s hotbar.3 with $(id)$(nbt)
-$execute if entity @s[tag=item_replace] if score slot temp matches 4 run item replace entity @s hotbar.4 with $(id)$(nbt)
-$execute if entity @s[tag=item_replace] if score slot temp matches 5 run item replace entity @s hotbar.5 with $(id)$(nbt)
-$execute if entity @s[tag=item_replace] if score slot temp matches 6 run item replace entity @s hotbar.6 with $(id)$(nbt)
-$execute if entity @s[tag=item_replace] if score slot temp matches 7 run item replace entity @s hotbar.7 with $(id)$(nbt)
-$execute if entity @s[tag=item_replace] if score slot temp matches 8 run item replace entity @s hotbar.8 with $(id)$(nbt)
+$execute if entity @s[tag=item_replace] run item replace entity @s $(slot) from block -1 -2 77 container.0
+# for all intents and purposes at the moment, armor will always be replaced
+# it really doesn't make sense in the context of our game to put armor in the player's inventory
+execute if score $slot vars matches 103 run item replace entity @s armor.head from block -1 -2 77 container.0
+execute if score $slot vars matches 102 run item replace entity @s armor.chest from block -1 -2 77 container.0
+execute if score $slot vars matches 101 run item replace entity @s armor.legs from block -1 -2 77 container.0
+execute if score $slot vars matches 100 run item replace entity @s armor.feet from block -1 -2 77 container.0
 
+#> Clean up chest
+item replace block -1 -2 77 container.0 with air

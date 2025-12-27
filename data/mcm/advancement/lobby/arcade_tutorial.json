@@ -9,5 +9,9 @@
         }
       }
     }
-  }
+  },
+  "rewards": {
+    "function": "mcm:lobby/arcade"
+  },
+  "parent": "mcm:lobby/arcade_credits"
 }

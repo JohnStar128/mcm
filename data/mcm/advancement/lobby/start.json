@@ -11,6 +11,6 @@
     }
   },
   "rewards": {
-    "function": "mcm:lobby/queueing/usher"
+    "function": "mcm:queueing/activate_countdown"
   }
 }

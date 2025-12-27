@@ -9,5 +9,8 @@
         }
       }
     }
+  },
+  "rewards": {
+    "function": "mcm:lobby/arcade"
   }
 }

@@ -1,0 +1,7 @@
+{
+    "criteria": {
+    "space": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

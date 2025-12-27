@@ -6,8 +6,8 @@
 #>      `storage_path` the target nbt path
 #>      Call on the player of the inventory to be checked
 
-scoreboard players set count temp 0
-execute store result storage mcm:args count int 1 run scoreboard players get count temp
+scoreboard players set $id_count vars 0
+execute store result storage mcm:args count int 1 run scoreboard players get $id_count vars
 
 $data merge storage mcm:args {path:"$(path)", storage:"$(storage)",storage_path:"$(storage_path)"}
 function mcm:items/find_item_and_copy_data_inner with storage mcm:args
@@ -16,3 +16,4 @@ data remove storage mcm:args path
 data remove storage mcm:args storage
 data remove storage mcm:args storage_path
 data remove storage mcm:args count
+# scoreboard players reset $id_count vars

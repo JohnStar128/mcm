@@ -1,7 +1,9 @@
 [
     {
-        "function": "set_custom_model_data",
-        "value": 1235
+        "function": "set_components",
+        "components": {
+            "minecraft:item_model" : "minecraft:misc/queue_ticket_auto"
+        }
     },
     {
         "function": "set_name",

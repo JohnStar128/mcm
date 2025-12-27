@@ -4,7 +4,7 @@
       "id": "minecraft:snowball",
       "count": 1,
       "components": {
-        "minecraft:custom_model_data": 1111
+        "minecraft:item_model" : "minecraft:role_items/knife"
       }
     },
     "title": {
@@ -17,7 +17,7 @@
     "show_toast": false,
     "announce_to_chat": false,
     "hidden": false,
-    "background": "minecraft:textures/block/brown_mushroom_block.png"
+    "background": "block/brown_mushroom_block"
   },
   "criteria": {
     "space": {

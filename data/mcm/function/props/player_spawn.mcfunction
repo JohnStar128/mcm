@@ -1,0 +1,1 @@
+$summon marker $(pos) {Tags:["player_spawn","scrap_spawn","prop"]}

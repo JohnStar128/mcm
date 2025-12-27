@@ -1,0 +1,1 @@
+$summon item ~ ~ ~ {Tags:["scrap"],Item:{id:"minecraft:netherite_scrap",count: 1b, components: $(components)}}

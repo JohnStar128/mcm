@@ -9,6 +9,10 @@
         }
       }
     }
+  },
+  "parent": "mcm:hit_detection/root",
+  "rewards": {
+    "function": "mcm:lobby/test_range/hit_target"
   }
 }
   

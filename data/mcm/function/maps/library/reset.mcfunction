@@ -2,8 +2,8 @@
 place template minecraft:chandelier_frame0 971 100 997
 
 #> Remove any books still in armorstands at the end of the game, and reset tags
-execute as @e[type=armor_stand,tag=bookspawn,tag=hasbook] at @s run data merge entity @s {ArmorItems:[{},{},{},{}]}
-tag @e[type=armor_stand,tag=hasbook] remove hasbook
+execute as @e[type=armor_stand,tag=bookspawn,tag=has_book] at @s run data remove entity @s equipment.head
+tag @e[type=armor_stand,tag=has_book] remove has_book
 
 #> Replace Basement Walls
 place template minecraft:library_basementwall_full 981 110 979 none none
@@ -12,15 +12,17 @@ place template minecraft:library_basementwall_full 981 110 979 none none
 fill 961 100 996 963 100 1004 dark_oak_planks
 
 #> Empty Book & Void Chests
-setblock 944 108 998 minecraft:chest destroy
-setblock 945 104 996 minecraft:chest destroy
+setblock 944 108 998 chest destroy
+setblock 945 104 996 chest destroy
 
 #> Reset the stairs open score
-scoreboard players set $stairsopen CmdData 0
-scoreboard players set $flipbook CmdData 0
-scoreboard players reset @a flipmap
-scoreboard players reset @a dontfliplibrary
-scoreboard players set $library_flip CmdData 0
+scoreboard players reset $stairsopen vars
+scoreboard players reset $flipbook vars
+scoreboard players reset $flippingmap vars
+scoreboard players reset $mapflipeffect vars
+scoreboard players reset $chandelierdroptimer vars
+scoreboard players reset $chandelierTime vars
+
 
 #> Reset worldborder
 worldborder set 30000000

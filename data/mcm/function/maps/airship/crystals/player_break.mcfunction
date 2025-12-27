@@ -1,8 +1,10 @@
-#> Give crystal
-execute store result score $temp math run clear @s carrot_on_a_stick[custom_model_data=1114] 0
-execute if score $temp math matches 1.. run tellraw @s ["", {"text":"| ","bold":true,"color":"dark_gray"},{"translate":"mcm.airship.crystal.heavy","underlined":false,"color":"red"}]
-execute if score $temp math matches 0 run give @s carrot_on_a_stick[custom_data={NoDrop:1b},custom_model_data=1114,custom_name='{"translate":"item.minecraft.amethyst_shard","italic":false}']
-execute if score $temp math matches 0 at @e[type=interaction,tag=airship_crystal_spawn,limit=1,sort=nearest] run setblock ~ ~ ~ air destroy
+#> Fail if not grown
+execute unless data entity @s data.grown run return fail
+#> Fail if the player already has one
+execute on vehicle on target if items entity @s container.* *[custom_data~{crystal:1b}] run return run tellraw @s ["", {"text":"| ","bold":true,"color":"dark_gray"},{"translate":"mcm.airship.crystal.heavy","underlined":false,"color":"red"}]
 
-#> Remove interactor and reset score
-execute if score $temp math matches 0 as @e[type=interaction,tag=airship_crystal_spawn,limit=1,sort=nearest] run scoreboard players set @s airship_crystal_growth 0
+#> Give crystal and reset properties
+execute on vehicle on target run function mcm:items/give {item:"crystal"}
+execute on vehicle at @s run setblock ~ ~ ~ air destroy
+data modify entity @s data.stage set value 0
+data remove entity @s data.grown

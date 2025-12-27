@@ -1,0 +1,19 @@
+{
+    "criteria": {
+        "requirement1": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+                "item": {
+                    "predicates" : {
+                        "minecraft:custom_data": "{adrenaline:1b}"
+                    }
+                }
+            }
+        }
+    },
+    "parent": "mcm:items/root",
+    "rewards": {
+        "function": "mcm:items/use/adrenaline"
+    }
+}
+  

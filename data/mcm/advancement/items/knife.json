@@ -1,0 +1,19 @@
+{
+    "criteria": {
+        "requirement": {
+            "trigger": "minecraft:shot_crossbow",
+            "conditions": {
+                "item": {
+                    "predicates" : {
+                        "minecraft:custom_data": "{knife:1b}"
+                    }
+                }
+            }
+        }
+    },
+    "parent": "mcm:items/root",
+    "rewards": {
+        "function": "mcm:items/use/knife"
+    }
+}
+  

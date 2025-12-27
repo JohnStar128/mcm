@@ -1,0 +1,19 @@
+{
+    "criteria": {
+        "requirement1": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+                "item": {
+                    "predicates" : {
+                        "minecraft:custom_data": "{lobby_spyglass:1b}"
+                    }
+                }
+            }
+        }
+    },
+    "parent": "mcm:items/root",
+    "rewards": {
+        "function": "mcm:items/use/lobby_spyglass"
+    }
+}
+  
